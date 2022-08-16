@@ -23,7 +23,7 @@
 
 
     <EditText
-        android:id="@+id/edit_email"
+        android:id="@+id/edit_user"
         style="@style/Edit_Text"
         android:hint="Usuário"
         app:layout_constraintStart_toStartOf="@id/containerComponents"
@@ -36,17 +36,36 @@
 
     <EditText
         android:id="@+id/edit_senha"
-        style="@style/Edit_Text"
+        style="@style/Edit_Senha"
         android:hint="Senha"
         app:layout_constraintStart_toStartOf="@id/containerComponents"
         app:layout_constraintEnd_toEndOf="@id/containerComponents"
-        app:layout_constraintTop_toBottomOf="@id/edit_email"
+        app:layout_constraintTop_toBottomOf="@id/edit_user"
 
+        
+        />
+
+    <CheckBox
+        android:id="@+id/check_connected"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mantenha-me Conectado"
+        app:layout_constraintStart_toStartOf="@id/containerComponents"
+        app:layout_constraintEnd_toEndOf="@id/containerComponents"
+        app:layout_constraintTop_toBottomOf="@id/edit_senha"
 
 
         />
 
-
+    <Button
+        android:id="@+id/button_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/containerComponents"
+        app:layout_constraintEnd_toEndOf="@id/containerComponents"
+        app:layout_constraintTop_toBottomOf="@id/check_connected"
+        android:text="uiuuuuiuo"
+        android:textColor="@color/white"/>
 
 
 

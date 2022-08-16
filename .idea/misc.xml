@@ -3,7 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/layout/activity_form_login.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/drawable/background.xml" value="0.1" />
+        <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/drawable/container_components.xml" value="0.1" />
+        <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/drawable/edit_text.xml" value="0.1" />
+        <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/layout/activity_form_login.xml" value="0.33" />
         <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/layout/activity_main.xml" value="0.358695652173913" />
       </map>
     </option>

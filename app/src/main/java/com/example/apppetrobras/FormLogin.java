@@ -46,6 +46,7 @@ public class FormLogin extends AppCompatActivity {
     }
 
     class Task extends AsyncTask<Void, Void, Void> {
+        
         String records = "", error="";
 
         @Override
@@ -56,14 +57,13 @@ public class FormLogin extends AppCompatActivity {
                 //userbd = SELECT username FROM funcionarios;
 
                 Class.forName("com.mysql.jdbc.Driver");
-                Connection connection = DriverManager.getConnection("");
-                Statement statement = connection.createStatement();
+                Connection connection = DriverManager.getConnection("jdbc:mysql://139.177.199.178/test","backend","agathusia");                Statement statement = connection.createStatement();
                 ResultSet resultSet = statement.executeQuery("SELECT FirstName FROM Persons");
-
+                //guardando o FirstName do bd na String userbd
                 while(resultSet.next()) {
-                    userbd += resultSet.getString(1);
+                    userbd = resultSet.getString(1);
                 }
-
+            //levando os erros para a string error
             } catch(Exception e) {
                 error = e.toString();
             }
@@ -71,21 +71,31 @@ public class FormLogin extends AppCompatActivity {
         }
         @Override
         protected void onPostExecute(Void unused) {
+            
+            //testes para ver relaçao do que foi digitado com o que foi buscado no banco
             if (error != "") {
             }
 
             user = edit_user.getText().toString();
             pass = edit_senha.getText().toString();
 
+            Toast.makeText(FormLogin.this, user, Toast.LENGTH_SHORT).show();
+            Toast.makeText(FormLogin.this, userbd, Toast.LENGTH_SHORT).show();
 
-
-            if(user == userbd && pass == passbd) {
-                //codigo para trocar de activity
+            if(user == userbd) {
                 Toast.makeText(FormLogin.this, "funciona", Toast.LENGTH_SHORT).show();
-            } else {
-                Toast.makeText(FormLogin.this, error, Toast.LENGTH_SHORT).show();
 
+            } else {
+                Toast.makeText(FormLogin.this, "N funciona", Toast.LENGTH_SHORT).show();
             }
+
+//            if(user == userbd) {
+//                //codigo para trocar de activity
+//                Toast.makeText(FormLogin.this, "funciona", Toast.LENGTH_SHORT).show();
+//            } else {
+//                Toast.makeText(FormLogin.this, userbd, Toast.LENGTH_SHORT).show();
+//
+//            }
 
             super.onPostExecute(unused);
         }

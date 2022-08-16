@@ -82,12 +82,13 @@ public class FormLogin extends AppCompatActivity {
             Toast.makeText(FormLogin.this, user, Toast.LENGTH_SHORT).show();
             Toast.makeText(FormLogin.this, userbd, Toast.LENGTH_SHORT).show();
 
-            if(user == userbd) {
+            if(user.equalsIgnoreCase(userbd)) {
                 Toast.makeText(FormLogin.this, "funciona", Toast.LENGTH_SHORT).show();
 
             } else {
                 Toast.makeText(FormLogin.this, "N funciona", Toast.LENGTH_SHORT).show();
             }
+
 
 //            if(user == userbd) {
 //                //codigo para trocar de activity

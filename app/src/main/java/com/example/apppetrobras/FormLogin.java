@@ -2,6 +2,7 @@ package com.example.apppetrobras;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -16,8 +17,8 @@ import java.sql.Statement;
 
 public class FormLogin extends AppCompatActivity {
 
-    EditText et_user, et_pass;
-    Button btn_login;
+    EditText edit_user, edit_senha;
+    Button button_login;
     String user, pass, userbd, passbd;
 
 
@@ -27,13 +28,13 @@ public class FormLogin extends AppCompatActivity {
         setContentView(R.layout.activity_form_login);
 
         //fazendo o elo entre os itens da classe java e do XML
-        et_user = findViewById(R.id.et_user);
-        et_pass = findViewById(R.id.et_pass);
-        btn_login = findViewById(R.id.bt_login);
+        edit_user = findViewById(R.id.edit_user);
+        edit_senha = findViewById(R.id.edit_senha);
+        button_login = findViewById(R.id.button_login);
 
 
         //criaçao do evento do botao
-        btn_login.setOnClickListener(new View.OnClickListener() {
+        button_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -44,7 +45,7 @@ public class FormLogin extends AppCompatActivity {
         });
     }
 
-    class Task extends AsyncTask<Void, Void, Void>{
+    class Task extends AsyncTask<Void, Void, Void> {
         String records = "", error="";
 
         @Override
@@ -73,8 +74,8 @@ public class FormLogin extends AppCompatActivity {
             if (error != "") {
             }
 
-            user = et_user.getText().toString();
-            pass = et_pass.getText().toString();
+            user = edit_user.getText().toString();
+            pass = edit_senha.getText().toString();
 
 
 
@@ -86,16 +87,8 @@ public class FormLogin extends AppCompatActivity {
 
             }
 
-
-
-
             super.onPostExecute(unused);
         }
     }
-
-}
-            }
-
-
 
 }

@@ -6,12 +6,61 @@
     tools:context=".fragments.LentidaoFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Tela Lentidão"
-        android:gravity="center"
-        android:textColor="@color/black"
-        android:textSize="30sp"/>
+
+    <!--
+
+    -->
+
+    <ScrollView
+        android:layout_width="380dp"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="
+Teste do Scroll View\n
+O Texto é meramente ilustrativo\n
+\n
+World's Smallest Violin\n
+AJR\n
+\n
+...\n
+The world's smallest violin\n
+Really needs an audience\n
+So if I do not find somebody soon\n
+(That's right, that's right)\n
+I'll blow up in to smithereens\n
+And spew my tiny symphony\n
+Just let me play my violin for you, you, you, you\n
+\n
+Somewhere in the universe\n
+Somewhere, someone's got it worse\n
+Wish that made it easier\n
+Wish I didn't feel the hurt\n
+The world's smallest violin\n
+Really needs an audience\n
+So if I do not find somebody soon\n
+\n
+I'll blow up into smithereens\n
+And spew my tiny symphony\n
+All up and down the city street\n
+While trying to put my mind at ease\n
+Like finishing this melody\n
+This feels like a necessity\n
+So this could be the death of me\n
+Or maybe just a better me\n
+Now come in with the Tympany's\n
+And take a shot of Hennessy\n
+I know I'm not there mentally\n
+But you could be the remedy\n
+So let me play my violin for you\n
+        "
+            android:textColor="@color/black"
+            android:textSize="25sp" />
+
+
+    </ScrollView>
 
 </FrameLayout>

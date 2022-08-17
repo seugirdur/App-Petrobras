@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">APP Petrobras</string>
+    <string name="user">Usuário</string>
+    <string name="password">Senha</string>
 </resources>

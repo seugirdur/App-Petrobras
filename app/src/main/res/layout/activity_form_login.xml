@@ -9,6 +9,8 @@
     tools:ignore="ExtraText">
 
 
+
+
     <View
         android:id="@+id/containerComponents"
         style="@style/ContainerComponents"
@@ -23,8 +25,7 @@
     <EditText
         android:id="@+id/edit_user"
         style="@style/Edit_Text"
-        android:hint="Usuário"
-        android:textColor="@color/black"
+        android:hint="@string/user"
         app:layout_constraintStart_toStartOf="@id/containerComponents"
         app:layout_constraintEnd_toEndOf="@id/containerComponents"
         app:layout_constraintTop_toTopOf="@id/containerComponents"
@@ -36,8 +37,7 @@
     <EditText
         android:id="@+id/edit_senha"
         style="@style/Edit_Senha"
-        android:hint="Senha"
-        android:textColor="@color/black"
+        android:hint="@string/password"
         app:layout_constraintStart_toStartOf="@id/containerComponents"
         app:layout_constraintEnd_toEndOf="@id/containerComponents"
         app:layout_constraintTop_toBottomOf="@id/edit_user"
@@ -47,9 +47,7 @@
 
     <CheckBox
         android:id="@+id/check_connected"
-        style="@style/CheckBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/Check_Connected"
         android:text="Mantenha-me Conectado"
         app:layout_constraintStart_toStartOf="@id/containerComponents"
         app:layout_constraintEnd_toEndOf="@id/containerComponents"
@@ -58,26 +56,15 @@
 
         />
 
-    <!-- Vídeo para criar o "Esqueceu sua senha?" https://www.youtube.com/watch?v=EcTw4dyvFHY -->
-
-    <androidx.appcompat.widget.AppCompatButton
-
+    <Button
         android:id="@+id/button_login"
-        style="@style/Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="@id/containerComponents"
         app:layout_constraintEnd_toEndOf="@id/containerComponents"
         app:layout_constraintTop_toBottomOf="@id/check_connected"
-        android:text="Entrar"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-
-
-
-
-        />
-
-
-
+        android:text="uiuuuuiuo"
+        android:textColor="@color/white"/>
 
 
 

@@ -4,7 +4,7 @@
     <style name="ContainerComponents">
 
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">400dp</item>
+        <item name="android:layout_height">430dp</item>
         <item name="android:background">@drawable/container_components</item>
         <item name="android:layout_margin">20dp</item>
 
@@ -41,10 +41,35 @@
 
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:layout_marginTop">5dp</item>
 
 
     </style>
+
+    <style name="Forgot_Password">
+
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">10dp</item>
+
+
+    </style>
+
+
+    <style name="Button_login">
+
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/button_login</item>
+        <item name="android:padding">20dp</item>
+        <item name="android:layout_marginTop">30dp</item>
+        <item name="android:layout_marginRight">70dp</item>
+        <item name="android:layout_marginLeft">70dp</item>
+
+
+    </style>
+
+
 
 
 </resources>

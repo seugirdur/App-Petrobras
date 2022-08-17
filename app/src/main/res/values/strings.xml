@@ -2,4 +2,6 @@
     <string name="app_name">APP Petrobras</string>
     <string name="user">Usuário</string>
     <string name="password">Senha</string>
+    <string name="forgotpassword">Esqueceu sua senha?</string>
+    <string name="login">Entrar</string>
 </resources>

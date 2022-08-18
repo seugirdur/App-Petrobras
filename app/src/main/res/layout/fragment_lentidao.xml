@@ -7,10 +7,6 @@
 
     <!-- TODO: Update blank fragment layout -->
 
-    <!--
-
-    -->
-
     <ScrollView
         android:layout_width="380dp"
         android:layout_height="wrap_content">
@@ -19,8 +15,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:text="
-Teste do Scroll View\n
+            android:text="Teste do Scroll View\n
 O Texto é meramente ilustrativo\n
 \n
 World's Smallest Violin\n
@@ -55,8 +50,7 @@ Now come in with the Tympany's\n
 And take a shot of Hennessy\n
 I know I'm not there mentally\n
 But you could be the remedy\n
-So let me play my violin for you\n
-        "
+So let me play my violin for you\n"
             android:textColor="@color/black"
             android:textSize="25sp" />
 

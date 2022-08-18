@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
+import android.view.View;
 
 import com.google.android.material.tabs.TabLayout;
 
@@ -49,5 +50,10 @@ public class TabActivity extends AppCompatActivity {
         });
 
 
+    }
+
+    //Captura o click no logo e vai para a tela inicial
+    public void goHome(View view) {
+        viewPager2.setCurrentItem(0);
     }
 }

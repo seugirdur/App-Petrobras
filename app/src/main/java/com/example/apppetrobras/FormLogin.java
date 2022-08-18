@@ -57,7 +57,7 @@ public class FormLogin extends AppCompatActivity {
 
                 Class.forName("com.mysql.jdbc.Driver");
                 Connection connection = DriverManager.getConnection("jdbc:mysql://139.177.199.178/test","backend","agathusia");                Statement statement = connection.createStatement();
-                ResultSet resultSet = statement.executeQuery("SELECT FirstName FROM Persons");
+                ResultSet resultSet = statement.executeQuery("SELECT nome FROM funcionarios where id = 2");
 
                 while(resultSet.next()) {
                     userbd = resultSet.getString(1);

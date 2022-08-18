@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.method.LinkMovementMethod;
@@ -16,19 +17,17 @@ import android.widget.TextView;
 
 import android.os.Bundle;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
 public class FormCadastro extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_form_cadastro);
-
-
-
-
-
-
-
 
         CheckBox textView = findViewById(R.id.aceitoTermos);
         String text = "Li e concordo com os TERMOS DE USO e POLÍTICAS DE PRIVACIDADE";
@@ -122,15 +121,45 @@ public class FormCadastro extends AppCompatActivity {
         String _nome = nome.getText() + "";
         String _tel = tel.getText() + "";
         String _dataNas = dataNas.getText() + "";
-        String _email = dataNas.getText() + "";
+        String _email = email.getText() + "";
         String _chave = chave.getText() + "";
         String _senha = senha.getText() + "";
 
         Infos cliente = new Infos( _nome,  _email,  _tel,  _dataNas,  _chave,  _senha);
 
+        new Task().execute();
+
+        class Task extends AsyncTask<Void, Void, Void> {
+            String records = "", error="";
+
+            @Override
+            protected Void doInBackground(Void... voids) {
+                try {
+
+                    //busca no bd
+                    //userbd = SELECT username FROM funcionarios;
+
+                    Class.forName("com.mysql.jdbc.Driver");
+                    Connection connection = DriverManager.getConnection("jdbc:mysql://139.177.199.178/test","backend","agathusia");
+                    Statement statement = connection.createStatement();
+                    ResultSet resultSet = statement.executeQuery("Insert into funcionarios(nome, email) values (\"" + _nome+ "\"" +"\",\""+ _email +"\" );");
+
+                    while(resultSet.next()) {
+                        //  userbd = resultSet.getString(1);
+                    }
+
+                } catch(Exception e) {
+                    error = e.toString();
+                }
+                return null;
+            }
+
         return cliente;
 
+
     }
+
+
 
     //checar se senhas combinam
     private boolean senhaIgual(){
@@ -150,5 +179,7 @@ public class FormCadastro extends AppCompatActivity {
         }
         return checking;
     }
+
+}
 
 }

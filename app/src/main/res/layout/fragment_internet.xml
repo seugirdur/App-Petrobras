@@ -17,84 +17,112 @@
             android:layout_height="wrap_content"
             android:orientation="vertical" >
 
+            <!-- AA -->
+
+            <!-- Frame Layout 1-->
             <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:background="#A3A3A3">
+                style="@style/Frame_Layout_Problema"
+
+                android:onClick="goHome">
 
                 <ImageView
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:layout_gravity="center_vertical"
-                    android:background="@color/purple_700"
-                    android:layout_marginLeft="15dp" />
+                    style="@style/Icone_Problema"/>
 
                 <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="AAAAAAAAAAAAAAAAAAAA"
-                    android:layout_gravity="center"/>
+                    style="@style/Texto_Problema"
+                    android:text="Problema Internet 1" />
 
             </FrameLayout>
 
+            <!-- Frame Layout 2-->
             <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:background="@color/white">
+                style="@style/Frame_Layout_Problema">
+
+                <ImageView
+                    style="@style/Icone_Problema"/>
+
+                <TextView
+                    style="@style/Texto_Problema"
+                    android:text="Problema Internet 2" />
+
             </FrameLayout>
 
+            <!-- Frame Layout 3-->
             <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:background="#A3A3A3">
+                style="@style/Frame_Layout_Problema">
+
+                <ImageView
+                    style="@style/Icone_Problema"/>
+
+                <TextView
+                    style="@style/Texto_Problema"
+                    android:text="Problema Internet 3" />
+
             </FrameLayout>
 
+            <!-- Frame Layout 4-->
             <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:background="@color/white">
+                style="@style/Frame_Layout_Problema">
+
+                <ImageView
+                    style="@style/Icone_Problema"/>
+
+                <TextView
+                    style="@style/Texto_Problema"
+                    android:text="Problema Internet 4" />
+
             </FrameLayout>
 
+            <!-- Frame Layout 5-->
             <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:background="#A3A3A3">
+                style="@style/Frame_Layout_Problema">
+
+                <ImageView
+                    style="@style/Icone_Problema"/>
+
+                <TextView
+                    style="@style/Texto_Problema"
+                    android:text="Problema Internet 5" />
+
             </FrameLayout>
 
+            <!-- Frame Layout 6-->
             <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:background="@color/white">
+                style="@style/Frame_Layout_Problema">
+
+                <ImageView
+                    style="@style/Icone_Problema"/>
+
+                <TextView
+                    style="@style/Texto_Problema"
+                    android:text="Problema Internet 6" />
+
             </FrameLayout>
 
+            <!-- Frame Layout 7-->
             <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:background="#A3A3A3">
+                style="@style/Frame_Layout_Problema">
+
+                <ImageView
+                    style="@style/Icone_Problema"/>
+
+                <TextView
+                    style="@style/Texto_Problema"
+                    android:text="Problema Internet 7" />
+
             </FrameLayout>
 
+            <!-- Frame Layout 8-->
             <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:background="@color/white">
-            </FrameLayout>
+                style="@style/Frame_Layout_Problema">
 
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:background="#A3A3A3">
-            </FrameLayout>
+                <ImageView
+                    style="@style/Icone_Problema"/>
 
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:background="@color/white">
-            </FrameLayout>
+                <TextView
+                    style="@style/Texto_Problema"
+                    android:text="Problema Internet 8" />
 
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:background="#A3A3A3">
             </FrameLayout>
 
         </LinearLayout>

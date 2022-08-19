@@ -6,12 +6,124 @@
     tools:context=".fragments.OutrosFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Tela Outros"
-        android:gravity="center"
-        android:textColor="@color/black"
-        android:textSize="30sp"/>
+        tools:ignore="SpeakableTextPresentCheck">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <!-- AA -->
+
+            <!-- Frame Layout 1-->
+            <FrameLayout
+                style="@style/Frame_Layout_Problema"
+
+                android:onClick="goHome">
+
+                <ImageView
+                    style="@style/Icone_Problema"/>
+
+                <TextView
+                    style="@style/Texto_Problema"
+                    android:text="Problema Outros 1" />
+
+            </FrameLayout>
+
+            <!-- Frame Layout 2-->
+            <FrameLayout
+                style="@style/Frame_Layout_Problema">
+
+                <ImageView
+                    style="@style/Icone_Problema"/>
+
+                <TextView
+                    style="@style/Texto_Problema"
+                    android:text="Problema Outros 2" />
+
+            </FrameLayout>
+
+            <!-- Frame Layout 3-->
+            <FrameLayout
+                style="@style/Frame_Layout_Problema">
+
+                <ImageView
+                    style="@style/Icone_Problema"/>
+
+                <TextView
+                    style="@style/Texto_Problema"
+                    android:text="Problema Outros 3" />
+
+            </FrameLayout>
+
+            <!-- Frame Layout 4-->
+            <FrameLayout
+                style="@style/Frame_Layout_Problema">
+
+                <ImageView
+                    style="@style/Icone_Problema"/>
+
+                <TextView
+                    style="@style/Texto_Problema"
+                    android:text="Problema Outros 4" />
+
+            </FrameLayout>
+
+            <!-- Frame Layout 5-->
+            <FrameLayout
+                style="@style/Frame_Layout_Problema">
+
+                <ImageView
+                    style="@style/Icone_Problema"/>
+
+                <TextView
+                    style="@style/Texto_Problema"
+                    android:text="Problema Outros 5" />
+
+            </FrameLayout>
+
+            <!-- Frame Layout 6-->
+            <FrameLayout
+                style="@style/Frame_Layout_Problema">
+
+                <ImageView
+                    style="@style/Icone_Problema"/>
+
+                <TextView
+                    style="@style/Texto_Problema"
+                    android:text="Problema Outros 6" />
+
+            </FrameLayout>
+
+            <!-- Frame Layout 7-->
+            <FrameLayout
+                style="@style/Frame_Layout_Problema">
+
+                <ImageView
+                    style="@style/Icone_Problema"/>
+
+                <TextView
+                    style="@style/Texto_Problema"
+                    android:text="Problema Outros 7" />
+
+            </FrameLayout>
+
+            <!-- Frame Layout 8-->
+            <FrameLayout
+                style="@style/Frame_Layout_Problema">
+
+                <ImageView
+                    style="@style/Icone_Problema"/>
+
+                <TextView
+                    style="@style/Texto_Problema"
+                    android:text="Problema Outros 8" />
+
+            </FrameLayout>
+
+        </LinearLayout>
+    </ScrollView>
 </FrameLayout>

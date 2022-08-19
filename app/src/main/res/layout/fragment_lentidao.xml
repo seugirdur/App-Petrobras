@@ -8,53 +8,123 @@
     <!-- TODO: Update blank fragment layout -->
 
     <ScrollView
-        android:layout_width="380dp"
-        android:layout_height="wrap_content">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="SpeakableTextPresentCheck">
 
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="Teste do Scroll View\n
-O Texto é meramente ilustrativo\n
-\n
-World's Smallest Violin\n
-AJR\n
-\n
-...\n
-The world's smallest violin\n
-Really needs an audience\n
-So if I do not find somebody soon\n
-(That's right, that's right)\n
-I'll blow up in to smithereens\n
-And spew my tiny symphony\n
-Just let me play my violin for you, you, you, you\n
-\n
-Somewhere in the universe\n
-Somewhere, someone's got it worse\n
-Wish that made it easier\n
-Wish I didn't feel the hurt\n
-The world's smallest violin\n
-Really needs an audience\n
-So if I do not find somebody soon\n
-\n
-I'll blow up into smithereens\n
-And spew my tiny symphony\n
-All up and down the city street\n
-While trying to put my mind at ease\n
-Like finishing this melody\n
-This feels like a necessity\n
-So this could be the death of me\n
-Or maybe just a better me\n
-Now come in with the Tympany's\n
-And take a shot of Hennessy\n
-I know I'm not there mentally\n
-But you could be the remedy\n
-So let me play my violin for you\n"
-            android:textColor="@color/black"
-            android:textSize="25sp" />
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
 
+            <!-- AA -->
 
+            <!-- Frame Layout 1-->
+            <FrameLayout
+                style="@style/Frame_Layout_Problema"
+
+                android:onClick="goHome">
+
+                <ImageView
+                    style="@style/Icone_Problema"/>
+
+                <TextView
+                    style="@style/Texto_Problema"
+                    android:text="Problema Lentidão 1" />
+
+            </FrameLayout>
+
+            <!-- Frame Layout 2-->
+            <FrameLayout
+                style="@style/Frame_Layout_Problema">
+
+                <ImageView
+                    style="@style/Icone_Problema"/>
+
+                <TextView
+                    style="@style/Texto_Problema"
+                    android:text="Problema Lentidão 2" />
+
+            </FrameLayout>
+
+            <!-- Frame Layout 3-->
+            <FrameLayout
+                style="@style/Frame_Layout_Problema">
+
+                <ImageView
+                    style="@style/Icone_Problema"/>
+
+                <TextView
+                    style="@style/Texto_Problema"
+                    android:text="Problema Lentidão 3" />
+
+            </FrameLayout>
+
+            <!-- Frame Layout 4-->
+            <FrameLayout
+                style="@style/Frame_Layout_Problema">
+
+                <ImageView
+                    style="@style/Icone_Problema"/>
+
+                <TextView
+                    style="@style/Texto_Problema"
+                    android:text="Problema Lentidão 4" />
+
+            </FrameLayout>
+
+            <!-- Frame Layout 5-->
+            <FrameLayout
+                style="@style/Frame_Layout_Problema">
+
+                <ImageView
+                    style="@style/Icone_Problema"/>
+
+                <TextView
+                    style="@style/Texto_Problema"
+                    android:text="Problema Lentidão 5" />
+
+            </FrameLayout>
+
+            <!-- Frame Layout 6-->
+            <FrameLayout
+                style="@style/Frame_Layout_Problema">
+
+                <ImageView
+                    style="@style/Icone_Problema"/>
+
+                <TextView
+                    style="@style/Texto_Problema"
+                    android:text="Problema Lentidão 6" />
+
+            </FrameLayout>
+
+            <!-- Frame Layout 7-->
+            <FrameLayout
+                style="@style/Frame_Layout_Problema">
+
+                <ImageView
+                    style="@style/Icone_Problema"/>
+
+                <TextView
+                    style="@style/Texto_Problema"
+                    android:text="Problema Lentidão 7" />
+
+            </FrameLayout>
+
+            <!-- Frame Layout 8-->
+            <FrameLayout
+                style="@style/Frame_Layout_Problema">
+
+                <ImageView
+                    style="@style/Icone_Problema"/>
+
+                <TextView
+                    style="@style/Texto_Problema"
+                    android:text="Problema Lentidão 8" />
+
+            </FrameLayout>
+
+        </LinearLayout>
     </ScrollView>
-
 </FrameLayout>

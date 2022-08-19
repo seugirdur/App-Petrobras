@@ -16,6 +16,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import android.os.Bundle;
+import android.widget.Toast;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -23,6 +24,8 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class FormCadastro extends AppCompatActivity {
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,6 +94,8 @@ public class FormCadastro extends AppCompatActivity {
             cad.setEnabled(false);
         }
 
+
+
     }
 
     public void cadastro(View view){
@@ -99,18 +104,22 @@ public class FormCadastro extends AppCompatActivity {
         EditText senha2 = (EditText) findViewById(R.id.insertConfirmaSenha);
         resgataInfo();
 
+
+
         if(!senhaIgual()){
             aviso.setVisibility(View.VISIBLE);
             senha1.setText("");
             senha2.setText("");
         }else{
             Infos cadastro = resgataInfo();
+            Toast.makeText(this, "to executando sim", Toast.LENGTH_SHORT).show();
+            new Insert().execute();
         }
 
 
     }
 
-    public Infos resgataInfo(){
+    public Infos resgataInfo() {
         TextView nome = findViewById(R.id.insertNomeCompleto);
         TextView tel = findViewById(R.id.insertTelefone);
         TextView dataNas = findViewById(R.id.insertDataNascimento);
@@ -125,35 +134,8 @@ public class FormCadastro extends AppCompatActivity {
         String _chave = chave.getText() + "";
         String _senha = senha.getText() + "";
 
-        Infos cliente = new Infos( _nome,  _email,  _tel,  _dataNas,  _chave,  _senha);
-
-        new Task().execute();
-
-        class Task extends AsyncTask<Void, Void, Void> {
-            String records = "", error="";
-
-            @Override
-            protected Void doInBackground(Void... voids) {
-                try {
-
-                    //busca no bd
-                    //userbd = SELECT username FROM funcionarios;
-
-                    Class.forName("com.mysql.jdbc.Driver");
-                    Connection connection = DriverManager.getConnection("jdbc:mysql://139.177.199.178/test","backend","agathusia");
-                    Statement statement = connection.createStatement();
-                    ResultSet resultSet = statement.executeQuery("Insert into funcionarios(nome, email) values (\"" + _nome+ "\"" +"\",\""+ _email +"\" );");
-
-                    while(resultSet.next()) {
-                        //  userbd = resultSet.getString(1);
-                    }
-
-                } catch(Exception e) {
-                    error = e.toString();
-                }
-                return null;
-            }
-
+        Infos cliente = new Infos(_nome, _email, _tel, _dataNas, _chave, _senha);
+        //Toast.makeText(this, "Eu guardei tudo sim tá", Toast.LENGTH_SHORT).show();
         return cliente;
 
 
@@ -181,5 +163,42 @@ public class FormCadastro extends AppCompatActivity {
     }
 
 }
+
+
+
+
+class Insert extends AsyncTask<Void, Void, Void> {
+    String records = "teste", error="teste";
+
+    @Override
+    protected Void doInBackground(Void... voids) {
+        try {
+
+            //busca no bd
+            //userbd = SELECT username FROM funcionarios;
+
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection connection = DriverManager.getConnection("jdbc:mysql://139.177.199.178/test","backend","agathusia");
+            Statement statement = connection.createStatement();
+           // ResultSet resultSet = statement.executeQuery("Insert into funcionarios(nome, email) values (\"" + records+ "\"" +"\",\""+ records +"\" );");
+            statement.executeUpdate("INSERT INTO funcionarios (nome, email) values (\"" + records+ "\"" +"\",\""+ records +"\" );");
+
+
+
+
+
+
+//            while(resultSet.next()) {
+//                String userbd = resultSet.getString(1);
+//
+//            }
+
+        } catch(Exception e) {
+            error = e.toString();
+        }
+
+        return null;
+    }
+
 
 }

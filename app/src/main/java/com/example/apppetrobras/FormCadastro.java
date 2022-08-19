@@ -25,7 +25,7 @@ import java.sql.Statement;
 
 public class FormCadastro extends AppCompatActivity {
 
-
+    String userbd="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,6 +88,14 @@ public class FormCadastro extends AppCompatActivity {
         if(check.isChecked())
         {
             cad.setEnabled(true);
+//            cad.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//
+//
+//
+//                }
+//            });
         }
         else
         {
@@ -104,6 +112,9 @@ public class FormCadastro extends AppCompatActivity {
         EditText senha2 = (EditText) findViewById(R.id.insertConfirmaSenha);
         resgataInfo();
 
+        //AQUI FUNCIONA CACETEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+        //new Insert().execute();
+
 
 
         if(!senhaIgual()){
@@ -112,8 +123,7 @@ public class FormCadastro extends AppCompatActivity {
             senha2.setText("");
         }else{
             Infos cadastro = resgataInfo();
-            Toast.makeText(this, "to executando sim", Toast.LENGTH_SHORT).show();
-            new Insert().execute();
+
         }
 
 
@@ -135,7 +145,9 @@ public class FormCadastro extends AppCompatActivity {
         String _senha = senha.getText() + "";
 
         Infos cliente = new Infos(_nome, _email, _tel, _dataNas, _chave, _senha);
-        //Toast.makeText(this, "Eu guardei tudo sim tá", Toast.LENGTH_SHORT).show();
+
+        new Insert().execute();
+
         return cliente;
 
 
@@ -168,38 +180,52 @@ public class FormCadastro extends AppCompatActivity {
 
 
     class Insert extends AsyncTask<Void, Void, Void> {
-        String records = "teste", error="teste";
-
+        //String records="teste7";
+        String checkchave1="";
         @Override
         protected Void doInBackground(Void... voids) {
+            Infos info = new Infos(resgataInfo().nome, resgataInfo().email, resgataInfo().tel, resgataInfo().dataNas, resgataInfo().chave, resgataInfo().senha);
+            String nome = info.nome;
+            String email = info.email;
+            String telefone = info.tel;
+            String datanasc = info.dataNas;
+            String chave = info.chave;
+            String senha = info.senha;
+
+
             try {
-
-                //busca no bd
-                //userbd = SELECT username FROM funcionarios;
-
                 Class.forName("com.mysql.jdbc.Driver");
                 Connection connection = DriverManager.getConnection("jdbc:mysql://139.177.199.178/test","backend","agathusia");
                 Statement statement = connection.createStatement();
-               // ResultSet resultSet = statement.executeQuery("Insert into funcionarios(nome, email) values (\"" + records+ "\"" +"\",\""+ records +"\" );");
-                statement.executeUpdate("INSERT INTO funcionarios (nome, email) values (\"" + records+ "\"" +"\",\""+ records +"\" );");
 
 
+                ResultSet resultSet = statement.executeQuery("SELECT chave FROM funcionarios");
 
+                while(resultSet.next()) {
+                    checkchave1 = resultSet.getString(1);
 
+                    if (checkchave1.equals(chave)) {
+                        break;
 
+                    } else{
+                        statement.executeUpdate("INSERT INTO funcionarios (nome, email, chave) values (\"" + nome + "\",\"" + email + "\",\"" + chave + "\");");
+                        break;
+                    }
+                }
 
-    //            while(resultSet.next()) {
-    //                String userbd = resultSet.getString(1);
-    //
-    //            }
 
             } catch(Exception e) {
-                error = e.toString();
+             //   error = e.toString();
             }
 
             return null;
         }
 
 
+
+
+
     }
+
+
 }

@@ -162,43 +162,44 @@ public class FormCadastro extends AppCompatActivity {
         return checking;
     }
 
-}
-
-
-
-
-class Insert extends AsyncTask<Void, Void, Void> {
-    String records = "teste", error="teste";
-
-    @Override
-    protected Void doInBackground(Void... voids) {
-        try {
-
-            //busca no bd
-            //userbd = SELECT username FROM funcionarios;
-
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection connection = DriverManager.getConnection("jdbc:mysql://139.177.199.178/test","backend","agathusia");
-            Statement statement = connection.createStatement();
-           // ResultSet resultSet = statement.executeQuery("Insert into funcionarios(nome, email) values (\"" + records+ "\"" +"\",\""+ records +"\" );");
-            statement.executeUpdate("INSERT INTO funcionarios (nome, email) values (\"" + records+ "\"" +"\",\""+ records +"\" );");
 
 
 
 
 
+    class Insert extends AsyncTask<Void, Void, Void> {
+        String records = "teste", error="teste";
 
-//            while(resultSet.next()) {
-//                String userbd = resultSet.getString(1);
-//
-//            }
+        @Override
+        protected Void doInBackground(Void... voids) {
+            try {
 
-        } catch(Exception e) {
-            error = e.toString();
+                //busca no bd
+                //userbd = SELECT username FROM funcionarios;
+
+                Class.forName("com.mysql.jdbc.Driver");
+                Connection connection = DriverManager.getConnection("jdbc:mysql://139.177.199.178/test","backend","agathusia");
+                Statement statement = connection.createStatement();
+               // ResultSet resultSet = statement.executeQuery("Insert into funcionarios(nome, email) values (\"" + records+ "\"" +"\",\""+ records +"\" );");
+                statement.executeUpdate("INSERT INTO funcionarios (nome, email) values (\"" + records+ "\"" +"\",\""+ records +"\" );");
+
+
+
+
+
+
+    //            while(resultSet.next()) {
+    //                String userbd = resultSet.getString(1);
+    //
+    //            }
+
+            } catch(Exception e) {
+                error = e.toString();
+            }
+
+            return null;
         }
 
-        return null;
+
     }
-
-
 }

@@ -87,22 +87,12 @@ public class FormCadastro extends AppCompatActivity {
         if(check.isChecked())
         {
             cad.setEnabled(true);
-//            cad.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View view) {
-//
-//
-//
-//                }
-//            });
+
         }
         else
         {
             cad.setEnabled(false);
         }
-
-
-
     }
 
     public void cadastro(View view){
@@ -123,9 +113,6 @@ public class FormCadastro extends AppCompatActivity {
         }else{
 
             Infos cadastro = resgataInfo();
-
-
-
         }
 
 
@@ -148,11 +135,7 @@ public class FormCadastro extends AppCompatActivity {
 
         Infos cliente = new Infos(_nome, _email, _tel, _dataNas, _chave, _senha);
 
-        //new Insert().execute();
-
         return cliente;
-
-
     }
 
 
@@ -205,45 +188,12 @@ public class FormCadastro extends AppCompatActivity {
                 ch= datanasc_br.charAt(i); //extracts each character
                 datanasc= ch+datanasc; //adds each character in front of the existing string
             }
-
-
-
             try {
                 Class.forName("com.mysql.jdbc.Driver");
                 Connection connection = DriverManager.getConnection("jdbc:mysql://139.177.199.178/test","backend","agathusia");
 
-                //Statement statement = connection.createStatement();
                Statement statement = connection.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
-
-
                ResultSet resultSet = statement.executeQuery("SELECT * FROM funcionarios");
-             //checkchave1 = resultSet.getString("chave");
-//               if (checkchave1.equals(chave)) {
-//                   resultSet.last();
-//                   //int id = resultSet.getInt("id") + 1;
-//                   resultSet.moveToInsertRow();
-//                   //resultSet.updateInt("id", id);
-//                   resultSet.updateString("nome", "salve");
-//                   resultSet.insertRow();
-//                   resultSet.beforeFirst();
-//
-//                   } else {
-//
-//                    resultSet.last();
-//                    //int id = resultSet.getInt("id") + 1;
-//                    resultSet.moveToInsertRow();
-//                    //resultSet.updateInt("id", id);
-//                    resultSet.updateString("nome", nome);
-//                    resultSet.updateString("email", email);
-//                    resultSet.updateString("tel", tel);
-//                    //resultSet.updateDate("Date_Of_Birth", new Date(904694400000L));
-//                    resultSet.updateString("chave", chave);
-//                    resultSet.updateString("senha", senha);
-//                    resultSet.insertRow();
-//                    resultSet.beforeFirst();
-//                    checkchave1 = resultSet.getString("chave");
-//
-//               }
 
                     while (resultSet.next()) {
                         checkchave1 = resultSet.getString("chave");
@@ -273,9 +223,7 @@ public class FormCadastro extends AppCompatActivity {
                     resultSet.updateString("senha", senha);
                     resultSet.insertRow();
                     resultSet.beforeFirst();
-
                     }
-
             } catch(Exception e) {
                     error = e.toString();
             }

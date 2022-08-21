@@ -140,6 +140,7 @@ tools:context=".FormCadastro">
         android:layout_marginBottom="8dp"
         android:ems="10"
         android:inputType="date"
+        android:maxLength="8"
         android:text="Data de Nascimento"
         app:layout_constraintBottom_toTopOf="@+id/insertEmail"
         app:layout_constraintEnd_toEndOf="parent"

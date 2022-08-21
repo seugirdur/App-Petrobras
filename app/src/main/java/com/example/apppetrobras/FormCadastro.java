@@ -25,7 +25,6 @@ import java.sql.Statement;
 
 public class FormCadastro extends AppCompatActivity {
 
-    String userbd="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -113,7 +112,7 @@ public class FormCadastro extends AppCompatActivity {
         resgataInfo();
 
         //AQUI FUNCIONA CACETEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
-        //new Insert().execute();
+        new Insert().execute();
 
 
 
@@ -122,7 +121,10 @@ public class FormCadastro extends AppCompatActivity {
             senha1.setText("");
             senha2.setText("");
         }else{
+
             Infos cadastro = resgataInfo();
+
+
 
         }
 
@@ -146,7 +148,7 @@ public class FormCadastro extends AppCompatActivity {
 
         Infos cliente = new Infos(_nome, _email, _tel, _dataNas, _chave, _senha);
 
-        new Insert().execute();
+        //new Insert().execute();
 
         return cliente;
 
@@ -180,52 +182,104 @@ public class FormCadastro extends AppCompatActivity {
 
 
     class Insert extends AsyncTask<Void, Void, Void> {
-        //String records="teste7";
-        String checkchave1="";
+
+        String checkchave1= "";
+        String error="";
+        boolean flag=false;
+
+
         @Override
         protected Void doInBackground(Void... voids) {
             Infos info = new Infos(resgataInfo().nome, resgataInfo().email, resgataInfo().tel, resgataInfo().dataNas, resgataInfo().chave, resgataInfo().senha);
             String nome = info.nome;
             String email = info.email;
-            String telefone = info.tel;
-            String datanasc = info.dataNas;
+            String tel = info.tel;
+            String datanasc = "";
             String chave = info.chave;
             String senha = info.senha;
+            String datanasc_br = info.dataNas;
+            char ch;
+
+            for (int i=0; i<datanasc_br.length(); i++)
+            {
+                ch= datanasc_br.charAt(i); //extracts each character
+                datanasc= ch+datanasc; //adds each character in front of the existing string
+            }
+
 
 
             try {
                 Class.forName("com.mysql.jdbc.Driver");
                 Connection connection = DriverManager.getConnection("jdbc:mysql://139.177.199.178/test","backend","agathusia");
-                Statement statement = connection.createStatement();
+
+                //Statement statement = connection.createStatement();
+               Statement statement = connection.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
 
 
-                ResultSet resultSet = statement.executeQuery("SELECT chave FROM funcionarios");
+               ResultSet resultSet = statement.executeQuery("SELECT * FROM funcionarios");
+             //checkchave1 = resultSet.getString("chave");
+//               if (checkchave1.equals(chave)) {
+//                   resultSet.last();
+//                   //int id = resultSet.getInt("id") + 1;
+//                   resultSet.moveToInsertRow();
+//                   //resultSet.updateInt("id", id);
+//                   resultSet.updateString("nome", "salve");
+//                   resultSet.insertRow();
+//                   resultSet.beforeFirst();
+//
+//                   } else {
+//
+//                    resultSet.last();
+//                    //int id = resultSet.getInt("id") + 1;
+//                    resultSet.moveToInsertRow();
+//                    //resultSet.updateInt("id", id);
+//                    resultSet.updateString("nome", nome);
+//                    resultSet.updateString("email", email);
+//                    resultSet.updateString("tel", tel);
+//                    //resultSet.updateDate("Date_Of_Birth", new Date(904694400000L));
+//                    resultSet.updateString("chave", chave);
+//                    resultSet.updateString("senha", senha);
+//                    resultSet.insertRow();
+//                    resultSet.beforeFirst();
+//                    checkchave1 = resultSet.getString("chave");
+//
+//               }
 
-                while(resultSet.next()) {
-                    checkchave1 = resultSet.getString(1);
+                    while (resultSet.next()) {
+                        checkchave1 = resultSet.getString("chave");
 
-                    if (checkchave1.equals(chave)) {
-                        break;
+                        if (checkchave1.equals(chave)) {
+                            flag=false;
+                            break;
 
-                    } else{
-                        statement.executeUpdate("INSERT INTO funcionarios (nome, email, chave) values (\"" + nome + "\",\"" + email + "\",\"" + chave + "\");");
-                        break;
+                        } else {
+                            flag=true;
+                        }
                     }
-                }
 
+                    if (flag) {
+
+                        //statement.executeUpdate("INSERT INTO funcionarios (nome, email, chave) values (\"" + nome + "\",\"" + email + "\",\"" + chave + "\");");
+
+                    resultSet.last();
+                    //int id = resultSet.getInt("id") + 1;
+                    resultSet.moveToInsertRow();
+                    //resultSet.updateInt("id", id);
+                    resultSet.updateString("nome", nome);
+                    resultSet.updateString("email", email);
+                    resultSet.updateString("tel", tel);
+                    //resultSet.updateString("dataNasc", datanasc);
+                    resultSet.updateString("chave", chave);
+                    resultSet.updateString("senha", senha);
+                    resultSet.insertRow();
+                    resultSet.beforeFirst();
+
+                    }
 
             } catch(Exception e) {
-             //   error = e.toString();
+                    error = e.toString();
             }
-
             return null;
         }
-
-
-
-
-
     }
-
-
 }

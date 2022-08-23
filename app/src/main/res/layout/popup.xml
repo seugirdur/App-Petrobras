@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="280dp"
+    android:layout_height="260dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="center"
+    android:background="@drawable/popup_background">
+
+    <TextView
+        android:id="@+id/problemas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="15dp"
+        android:text="Problemas em se conectar?"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+
+        />
+
+    <TextView
+        android:id="@+id/para_alterar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/problemas"
+        app:layout_constraintEnd_toEndOf="@id/problemas"
+        app:layout_constraintTop_toBottomOf="@id/problemas"
+        android:text="Para alterar sua senha, será necessário entrar em contato com o nosso suporte ao aplicativo."
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="15dp"
+        android:textSize="15dp"
+        android:textColor="@color/black"
+
+        />
+
+    <TextView
+        android:id="@+id/contato"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/problemas"
+        app:layout_constraintTop_toBottomOf="@id/para_alterar"
+        android:text="Contatos:"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:layout_marginTop="30dp"
+        android:textColor="@color/black"
+        />
+
+    <TextView
+        android:id="@+id/n_01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/para_alterar"
+        app:layout_constraintTop_toBottomOf="@id/contato"
+        android:text="(12) 3456-5897"
+        android:layout_marginTop="15dp"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/para_alterar"
+        app:layout_constraintTop_toBottomOf="@id/n_01"
+        android:text="(12) 5658-7854"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/black"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

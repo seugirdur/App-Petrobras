@@ -2,6 +2,9 @@ package com.example.apppetrobras;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
@@ -18,8 +21,9 @@ import java.sql.Statement;
 public class FormLogin extends AppCompatActivity {
 
     EditText edit_user, edit_senha;
-    Button button_login;
+    Button button_login, esqueceu_senha;
     String user, pass, userbd, passbd;
+    Dialog mDialog;
 
 
     @Override
@@ -31,6 +35,9 @@ public class FormLogin extends AppCompatActivity {
         edit_user = findViewById(R.id.edit_user);
         edit_senha = findViewById(R.id.edit_senha);
         button_login = findViewById(R.id.button_login);
+        esqueceu_senha = findViewById(R.id.esqueceu_senha);
+
+        mDialog = new Dialog(this);
 
 
         //criaçao do evento do botao
@@ -43,6 +50,24 @@ public class FormLogin extends AppCompatActivity {
 
             }
         });
+
+        esqueceu_senha.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                mDialog.setContentView(R.layout.popup);
+
+                mDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
+                mDialog.show();
+
+
+
+            }
+        });
+
+
+
     }
 
     class Task extends AsyncTask<Void, Void, Void> {

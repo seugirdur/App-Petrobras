@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Handler;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.method.LinkMovementMethod;
@@ -99,22 +100,44 @@ public class FormCadastro extends AppCompatActivity {
         TextView aviso = findViewById(R.id.avisaSenha);
         EditText senha1 = (EditText) findViewById(R.id.insertSenha);
         EditText senha2 = (EditText) findViewById(R.id.insertConfirmaSenha);
+        TextView nome = findViewById(R.id.insertNomeCompleto);
+        TextView tel = findViewById(R.id.insertTelefone);
+        TextView dataNas = findViewById(R.id.insertDataNascimento);
+        TextView email = findViewById(R.id.insertEmail);
+        TextView chave = findViewById(R.id.insertChave);
+        TextView senha = findViewById(R.id.insertSenha);
         resgataInfo();
-
+        String Checknome = nome.getText().toString();
+        String Checktel = tel.getText().toString();
+        String CheckdataNas = dataNas.getText().toString();
+        String Checkemail = email.getText().toString();
+        String Checkchave =  chave.getText().toString();
+        String Checksenha =  senha.getText().toString();
         //AQUI FUNCIONA CACETEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
-        new Insert().execute();
+
 
 
 
         if(!senhaIgual()){
+            aviso.setText("As senhas não conferem");
             aviso.setVisibility(View.VISIBLE);
             senha1.setText("");
             senha2.setText("");
-        }else{
-
-            Infos cadastro = resgataInfo();
+        }else if(Checknome.isEmpty() | Checkemail.isEmpty() |Checkchave.isEmpty()|Checksenha.isEmpty()|Checktel.isEmpty()|CheckdataNas.isEmpty()){
+          aviso.setText("Preencha as informações");
+          aviso.setVisibility(View.VISIBLE);
         }
-
+        else {
+            new Insert().execute();
+            Infos cadastro = resgataInfo();
+            Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                public void run() {
+                    Intent myIntent = new Intent(FormCadastro.this, FormLogin.class);
+                    startActivity(myIntent);
+                }
+            }, 1500);
+        }
 
     }
 

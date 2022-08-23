@@ -19,7 +19,7 @@ public class FormLogin extends AppCompatActivity {
 
     EditText edit_user, edit_senha;
     Button button_login;
-    String user, pass, userbd, passbd;
+    String userbd, passbd, nomebd;
 
 
     @Override
@@ -47,6 +47,8 @@ public class FormLogin extends AppCompatActivity {
 
     class Task extends AsyncTask<Void, Void, Void> {
         String records = "", error="";
+        String user = edit_user.getText().toString();
+        String pass = edit_senha.getText().toString();
 
         @Override
         protected Void doInBackground(Void... voids) {
@@ -58,10 +60,15 @@ public class FormLogin extends AppCompatActivity {
                 Class.forName("com.mysql.jdbc.Driver");
                 Connection connection = DriverManager.getConnection("jdbc:mysql://139.177.199.178/test","backend","agathusia");
                 Statement statement = connection.createStatement();
-                ResultSet resultSet = statement.executeQuery("SELECT nome FROM funcionarios where id = 2");
+                ResultSet resultSet = statement.executeQuery("SELECT * FROM funcionarios");
 
                 while(resultSet.next()) {
-                    userbd = resultSet.getString(1);
+                    userbd = resultSet.getString("chave");
+                    passbd = resultSet.getString("senha");
+                    nomebd = resultSet.getString("nome");
+                    if(user.equals(userbd) && pass.equals(passbd)) {
+                        break;
+                    }
                 }
 
             } catch(Exception e) {
@@ -74,14 +81,9 @@ public class FormLogin extends AppCompatActivity {
             if (error != "") {
             }
 
-            user = edit_user.getText().toString();
-            pass = edit_senha.getText().toString();
-
-
-
-            if(user.equals(userbd)) {
+            if(user.equals(userbd) && pass.equals(passbd)) {
                 //codigo para trocar de activity
-                Toast.makeText(FormLogin.this, "funciona", Toast.LENGTH_SHORT).show();
+                Toast.makeText(FormLogin.this, "Bem vindo "+nomebd , Toast.LENGTH_SHORT).show();
             } else {
                 Toast.makeText(FormLogin.this, "n foi dnv", Toast.LENGTH_SHORT).show();
 

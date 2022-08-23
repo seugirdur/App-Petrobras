@@ -139,14 +139,12 @@ tools:context=".FormCadastro">
         android:layout_marginEnd="11dp"
         android:layout_marginBottom="8dp"
         android:ems="10"
-        android:inputType="date"
-        android:maxLength="8"
-        android:text="Data de Nascimento"
+
         app:layout_constraintBottom_toTopOf="@+id/insertEmail"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/insertTelefone"
-        tools:text="@tools:sample/date/ddmmyy" />
+         />
 
     <EditText
         android:id="@+id/insertEmail"

@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import java.sql.Connection;
@@ -20,6 +21,7 @@ public class FormLogin extends AppCompatActivity {
     EditText edit_user, edit_senha;
     Button button_login;
     String userbd, passbd, nomebd;
+    ProgressBar progressbar;
 
 
     @Override
@@ -38,8 +40,10 @@ public class FormLogin extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                new Task().execute();
+                progressbar=findViewById(R.id.progressbar);
 
+                new Task().execute();
+                progressbar.setVisibility(View.VISIBLE);
 
             }
         });

@@ -223,6 +223,7 @@ public class FormCadastro extends AppCompatActivity {
 
                         if (checkchave1.equals(chave)) {
                             flag=false;
+                            Toast.makeText(FormCadastro.this, "Usuário já cadastrado", Toast.LENGTH_SHORT).show();
                             break;
 
                         } else {

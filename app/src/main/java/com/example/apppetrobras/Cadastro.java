@@ -16,12 +16,12 @@ import android.widget.TextView;
 
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity {
+public class Cadastro extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.cadastro);
 
 
 
@@ -125,7 +125,7 @@ public class MainActivity extends AppCompatActivity {
         String _nome = nome.getText() + "";
         String _tel = tel.getText() + "";
         String _dataNas = dataNas.getText() + "";
-        String _email = dataNas.getText() + "";
+        String _email = email.getText() + "";
         String _chave = chave.getText() + "";
         String _senha = senha.getText() + "";
 
@@ -155,3 +155,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 }
+/*
+private boolean nomoeCerto(){
+    return false;
+} */

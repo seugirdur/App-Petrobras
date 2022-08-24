@@ -7,6 +7,9 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -24,6 +27,7 @@ public class FormLogin extends AppCompatActivity {
     Button button_login, esqueceu_senha;
     String user, pass, userbd, passbd;
     Dialog mDialog;
+    boolean passwordVisible;
 
 
     @Override
@@ -66,7 +70,51 @@ public class FormLogin extends AppCompatActivity {
             }
         });
 
+         edit_senha.setOnTouchListener(new View.OnTouchListener() {
+             @Override
+             public boolean onTouch(View view, MotionEvent motionEvent) {
 
+                 final int Right=2;
+                 if(motionEvent.getAction()==MotionEvent.ACTION_UP) {
+
+                     if(motionEvent.getRawX()>=edit_senha.getRight()-edit_senha.getCompoundDrawables() [Right].getBounds().width()) {
+
+                         int selection=edit_senha.getSelectionEnd();
+                         if(passwordVisible){
+
+                             // set drawable image here
+                             edit_senha.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0, R.drawable.ic_eye, 0);
+
+                             //for hide password
+                             edit_senha.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                             passwordVisible=false;
+
+
+                         }else {
+
+                             //set drawable image here
+                             edit_senha.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0,R.drawable.ic_eye_off,0);
+
+
+                             //for show password
+                             edit_senha.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                             passwordVisible=true;
+
+
+                         }
+
+                         edit_senha.setSelection(selection);
+                         return true;
+
+                     }
+                 }
+
+
+
+
+                 return false;
+             }
+         });
 
     }
 

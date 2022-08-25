@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RelatorioProcesso"
+    android:background="@color/gray">
+    
+    <TextView
+        android:id="@+id/titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Relatório do Processo"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="25dp"
+         />
+
+
+    <!-- Labels -->
+    
+    <View
+        android:id="@+id/first_label"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/titulo"
+        android:background="@color/gray"
+        android:layout_marginTop="35dp" />
+
+    <View
+        android:id="@+id/second_label"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/first_label"
+        android:background="@color/purple_500"
+        android:layout_marginTop="35dp"
+        />
+
+
+    <!-- Text Views -->
+
+    <TextView
+        android:id="@+id/internet_titulos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="INTERNET"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/first_label"
+        app:layout_constraintTop_toTopOf="@id/first_label"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="15dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Descrição do Problema"
+        app:layout_constraintStart_toStartOf="@id/first_label"
+        app:layout_constraintTop_toBottomOf="@id/internet_titulos"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="5dp"
+
+
+
+    <!-- Check image -->
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/vectors_combined"
+        app:layout_constraintStart_toStartOf="@id/first_label"
+        app:layout_constraintTop_toTopOf="@id/first_label"
+        app:layout_constraintBottom_toBottomOf="@id/first_label"
+        />
+
+
+
+
+
+
+
+
+
+    
+    
+    
+    
+    
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -37,7 +37,7 @@
         android:id="@+id/edit_user"
         style="@style/Edit_Text"
         android:hint="@string/key"
-        android:inputType="textEmailAddress"
+        android:inputType="textCapCharacters"
         android:drawableRight="@drawable/ic_key"
         app:layout_constraintStart_toStartOf="@id/containerComponents"
         app:layout_constraintEnd_toEndOf="@id/containerComponents"

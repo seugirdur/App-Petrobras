@@ -16,7 +16,7 @@ public class Tela_de_escolha extends AppCompatActivity {
     }
     public void cadastrar (View view){
 
-        Intent intent = new Intent(this, Cadastro.class);
+        Intent intent = new Intent(this, FormCadastro.class);
         startActivity(intent);
      }
 }

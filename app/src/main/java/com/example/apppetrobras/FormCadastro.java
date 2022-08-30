@@ -19,12 +19,12 @@ import android.widget.TextView;
 
 import android.os.Bundle;
 
-public class Cadastro extends AppCompatActivity {
+public class FormCadastro extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.cadastro);
+        setContentView(R.layout.activity_form_cadastro);
 
 
 

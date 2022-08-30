@@ -23,7 +23,7 @@
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".Tela_de_escolha"
+            android:name=".FormCadastro"
             android:exported="false" />
         <activity
             android:name=".minhaPagina"
@@ -32,7 +32,7 @@
             android:name=".FormLogin"
             android:exported="false" />
         <activity
-            android:name=".FormCadastro"
+            android:name=".Tela_de_escolha"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

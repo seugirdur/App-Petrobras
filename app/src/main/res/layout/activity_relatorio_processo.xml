@@ -350,7 +350,57 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="50dp" />
 
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/add_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@id/bottom_layout"
+            app:layout_constraintBottom_toBottomOf="@id/bottom_layout"
+            app:layout_constraintEnd_toEndOf="@id/bottom_layout"
+            android:layout_marginRight="15dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/ic_add"
+            android:backgroundTint="@color/white"/>
+
+
+
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/download_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="90dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:visibility="invisible"
+        android:src="@drawable/ic_download"
+
+
+        />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/observacoes_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/download_icon"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="20dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:visibility="invisible"
+        android:src="@drawable/ic_observacoes"
+
+
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

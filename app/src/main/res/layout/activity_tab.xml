@@ -71,11 +71,12 @@
         android:id="@+id/logoDioHome"
         android:layout_width="50dp"
         android:layout_height="50dp"
+        android:onClick="goHome"
         app:layout_constraintBottom_toTopOf="@+id/tab_layout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo_dionisio"
-        android:onClick="goHome"/>
+        tools:ignore="SpeakableTextPresentCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

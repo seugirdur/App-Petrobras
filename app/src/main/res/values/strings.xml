@@ -3,4 +3,42 @@
     <string name="icone_dioniso">Icone Dionisio</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <!-- Titulos Problemas -->
+    <string name="inicio_1">Problema Início 1</string>
+    <string name="inicio_2">Problema Início 2</string>
+    <string name="inicio_3">Problema Início 3</string>
+    <string name="inicio_4">Problema Início 4</string>
+    <string name="inicio_5">Problema Início 5</string>
+    <string name="inicio_6">Problema Início 6</string>
+
+    <string name="lentidao_1">Problema Lentidão 1</string>
+    <string name="lentidao_2">Problema Lentidão 2</string>
+    <string name="lentidao_3">Problema Lentidão 3</string>
+    <string name="lentidao_4">Problema Lentidão 4</string>
+    <string name="lentidao_5">Problema Lentidão 5</string>
+    <string name="lentidao_6">Problema Lentidão 6</string>
+
+    <string name="internet_1">Problema Internet 1</string>
+    <string name="internet_2">Problema Internet 2</string>
+    <string name="internet_3">Problema Internet 3</string>
+    <string name="internet_4">Problema Internet 4</string>
+    <string name="internet_5">Problema Internet 5</string>
+    <string name="internet_6">Problema Internet 6</string>
+
+    <string name="equipamentos_1">Problema Equipamentos 1</string>
+    <string name="equipamentos_2">Problema Equipamentos 2</string>
+    <string name="equipamentos_3">Problema Equipamentos 3</string>
+    <string name="equipamentos_4">Problema Equipamentos 4</string>
+    <string name="equipamentos_5">Problema Equipamentos 5</string>
+    <string name="equipamentos_6">Problema Equipamentos 6</string>
+
+    <string name="outros_1">Problema Outros 1</string>
+    <string name="outros_2">Problema Outros 2</string>
+    <string name="outros_3">Problema Outros 3</string>
+    <string name="outros_4">Problema Outros 4</string>
+    <string name="outros_5">Problema Outros 5</string>
+    <string name="outros_6">Problema Outros 6</string>
+    <string name="textview">TextView</string>
 </resources>

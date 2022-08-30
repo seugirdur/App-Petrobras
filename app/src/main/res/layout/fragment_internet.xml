@@ -1,130 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="match_parent"
     tools:context=".fragments.InternetFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-
-    <ScrollView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:ignore="SpeakableTextPresentCheck">
+        tools:listitem="@layout/item_list"/>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" >
-
-            <!-- AA -->
-
-            <!-- Frame Layout 1-->
-            <FrameLayout
-                style="@style/Frame_Layout_Problema"
-
-                android:onClick="goHome">
-
-                <ImageView
-                    style="@style/Icone_Problema"/>
-
-                <TextView
-                    style="@style/Texto_Problema"
-                    android:text="Problema Internet 1" />
-
-            </FrameLayout>
-
-            <!-- Frame Layout 2-->
-            <FrameLayout
-                style="@style/Frame_Layout_Problema">
-
-                <ImageView
-                    style="@style/Icone_Problema"/>
-
-                <TextView
-                    style="@style/Texto_Problema"
-                    android:text="Problema Internet 2" />
-
-            </FrameLayout>
-
-            <!-- Frame Layout 3-->
-            <FrameLayout
-                style="@style/Frame_Layout_Problema">
-
-                <ImageView
-                    style="@style/Icone_Problema"/>
-
-                <TextView
-                    style="@style/Texto_Problema"
-                    android:text="Problema Internet 3" />
-
-            </FrameLayout>
-
-            <!-- Frame Layout 4-->
-            <FrameLayout
-                style="@style/Frame_Layout_Problema">
-
-                <ImageView
-                    style="@style/Icone_Problema"/>
-
-                <TextView
-                    style="@style/Texto_Problema"
-                    android:text="Problema Internet 4" />
-
-            </FrameLayout>
-
-            <!-- Frame Layout 5-->
-            <FrameLayout
-                style="@style/Frame_Layout_Problema">
-
-                <ImageView
-                    style="@style/Icone_Problema"/>
-
-                <TextView
-                    style="@style/Texto_Problema"
-                    android:text="Problema Internet 5" />
-
-            </FrameLayout>
-
-            <!-- Frame Layout 6-->
-            <FrameLayout
-                style="@style/Frame_Layout_Problema">
-
-                <ImageView
-                    style="@style/Icone_Problema"/>
-
-                <TextView
-                    style="@style/Texto_Problema"
-                    android:text="Problema Internet 6" />
-
-            </FrameLayout>
-
-            <!-- Frame Layout 7-->
-            <FrameLayout
-                style="@style/Frame_Layout_Problema">
-
-                <ImageView
-                    style="@style/Icone_Problema"/>
-
-                <TextView
-                    style="@style/Texto_Problema"
-                    android:text="Problema Internet 7" />
-
-            </FrameLayout>
-
-            <!-- Frame Layout 8-->
-            <FrameLayout
-                style="@style/Frame_Layout_Problema">
-
-                <ImageView
-                    style="@style/Icone_Problema"/>
-
-                <TextView
-                    style="@style/Texto_Problema"
-                    android:text="Problema Internet 8" />
-
-            </FrameLayout>
-
-        </LinearLayout>
-    </ScrollView>
 </FrameLayout>

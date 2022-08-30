@@ -8,7 +8,9 @@ import android.os.AsyncTask;
 import android.os.Handler;
 import android.text.SpannableString;
 import android.text.Spanned;
+import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.LinkMovementMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.text.style.ClickableSpan;
 import android.view.View;
 import android.widget.Button;
@@ -17,6 +19,20 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import android.os.Bundle;
+import android.content.Intent;
+import android.net.Uri;
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.LinkMovementMethod;
+import android.text.method.PasswordTransformationMethod;
+import android.text.style.ClickableSpan;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.sql.Connection;
@@ -25,7 +41,6 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class FormCadastro extends AppCompatActivity {
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,15 +87,63 @@ public class FormCadastro extends AppCompatActivity {
 
 
 
-        //android:visibility="invisible"
     }
 
+    //redirecionamento para ajuda
     public void ajuda(View view){
         Intent intent = new Intent(this, minhaPagina.class);
         startActivity(intent);
 
     }
 
+    public void mostrarSenha(View view){
+        EditText senha = findViewById(R.id.insertSenha);
+        ImageButton imgBtn =(ImageButton) findViewById(R.id.imgMostrarSenha);
+
+
+        if(senha.getTransformationMethod().equals(PasswordTransformationMethod.getInstance())){
+            //mudar imagem
+            imgBtn.setImageResource(R.drawable.ic_baseline_remove_red_eye_24);
+
+            //Mostrar senha
+            senha.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+        }
+        else{
+            //mudar imagem
+            imgBtn.setImageResource(R.drawable.ic_baseline_remove_red_eye);
+
+            //Esconder senha
+            senha.setTransformationMethod(PasswordTransformationMethod.getInstance());
+
+
+        }
+    }
+
+
+    public void mostrarSenha2(View view){
+        EditText senha = findViewById(R.id.insertConfirmaSenha);
+        ImageButton imgBtn =(ImageButton) findViewById(R.id.imgMostrarSenha2);
+
+
+        if(senha.getTransformationMethod().equals(PasswordTransformationMethod.getInstance())){
+            //mudar imagem
+            imgBtn.setImageResource(R.drawable.ic_baseline_remove_red_eye_24);
+
+            //Mostrar senha
+            senha.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+        }
+        else{
+            //mudar imagem
+            imgBtn.setImageResource(R.drawable.ic_baseline_remove_red_eye);
+
+            //Esconder senha
+            senha.setTransformationMethod(PasswordTransformationMethod.getInstance());
+
+
+        }
+    }
+
+    //check-in do termos e condições
     public void checarTermos (View view){
         Button cad = findViewById(R.id.btn);
         CheckBox check = findViewById(R.id.aceitoTermos);
@@ -88,14 +151,15 @@ public class FormCadastro extends AppCompatActivity {
         if(check.isChecked())
         {
             cad.setEnabled(true);
-
         }
         else
         {
             cad.setEnabled(false);
         }
+
     }
 
+    //cadastro das informações
     public void cadastro(View view){
         TextView aviso = findViewById(R.id.avisaSenha);
         EditText senha1 = (EditText) findViewById(R.id.insertSenha);
@@ -160,8 +224,6 @@ public class FormCadastro extends AppCompatActivity {
 
         return cliente;
     }
-
-
 
     //checar se senhas combinam
     private boolean senhaIgual(){

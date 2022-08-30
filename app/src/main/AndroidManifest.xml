@@ -23,6 +23,9 @@
             android:name=".MainActivity"
             android:exported="false" />
         <activity
+            android:name=".Tela_de_escolha"
+            android:exported="false" />
+        <activity
             android:name=".minhaPagina"
             android:exported="false" />
         <activity

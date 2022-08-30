@@ -20,7 +20,7 @@ import java.util.ArrayList;
 
 public class InternetFragment extends Fragment {
 
-    private ArrayList<DadosLista> dataArrayList;
+    private ArrayList<DadosLista> dadosArrayList;
     private String[] titulosProblemas;
     private int[] imagensProblemas;
     private RecyclerView recyclerview;
@@ -41,14 +41,14 @@ public class InternetFragment extends Fragment {
         recyclerview = view.findViewById(R.id.recyclerview);
         recyclerview.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerview.setHasFixedSize(true);
-        RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(getContext(),dataArrayList);
+        RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(getContext(),dadosArrayList);
         recyclerview.setAdapter(recyclerViewAdapter);
         recyclerViewAdapter.notifyDataSetChanged();
     }
 
     private void dataInitialize() {
 
-        dataArrayList = new ArrayList<>();
+        dadosArrayList = new ArrayList<>();
 
         titulosProblemas = new String[]{
                 getString(R.string.internet_1),
@@ -70,7 +70,7 @@ public class InternetFragment extends Fragment {
 
         for(int i = 0; i < titulosProblemas.length; i++){
             DadosLista data = new DadosLista(titulosProblemas[i], imagensProblemas[i]);
-            dataArrayList.add(data);
+            dadosArrayList.add(data);
         }
 
     }

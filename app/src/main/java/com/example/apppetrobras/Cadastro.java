@@ -6,12 +6,15 @@ import android.content.Intent;
 import android.net.Uri;
 import android.text.SpannableString;
 import android.text.Spanned;
+import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.LinkMovementMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.text.style.ClickableSpan;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import android.os.Bundle;
@@ -77,6 +80,53 @@ public class Cadastro extends AppCompatActivity {
         Intent intent = new Intent(this, minhaPagina.class);
         startActivity(intent);
 
+    }
+
+    public void mostrarSenha(View view){
+        EditText senha = findViewById(R.id.insertSenha);
+        ImageButton imgBtn =(ImageButton) findViewById(R.id.imgMostrarSenha);
+
+
+        if(senha.getTransformationMethod().equals(PasswordTransformationMethod.getInstance())){
+            //mudar imagem
+            imgBtn.setImageResource(R.drawable.ic_baseline_remove_red_eye_24);
+
+            //Mostrar senha
+            senha.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+        }
+        else{
+            //mudar imagem
+            imgBtn.setImageResource(R.drawable.ic_baseline_remove_red_eye);
+
+            //Esconder senha
+            senha.setTransformationMethod(PasswordTransformationMethod.getInstance());
+
+
+        }
+    }
+
+
+    public void mostrarSenha2(View view){
+        EditText senha = findViewById(R.id.insertConfirmaSenha);
+        ImageButton imgBtn =(ImageButton) findViewById(R.id.imgMostrarSenha2);
+
+
+        if(senha.getTransformationMethod().equals(PasswordTransformationMethod.getInstance())){
+            //mudar imagem
+            imgBtn.setImageResource(R.drawable.ic_baseline_remove_red_eye_24);
+
+            //Mostrar senha
+            senha.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+        }
+        else{
+            //mudar imagem
+            imgBtn.setImageResource(R.drawable.ic_baseline_remove_red_eye);
+
+            //Esconder senha
+            senha.setTransformationMethod(PasswordTransformationMethod.getInstance());
+
+
+        }
     }
 
     //check-in do termos e condições

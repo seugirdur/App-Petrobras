@@ -23,7 +23,7 @@ public class FormLogin extends AppCompatActivity {
 
     EditText edit_user, edit_senha;
     Button button_login, esqueceu_senha;
-    String user, pass, userbd, passbd,nomebd;
+    String user, pass, userbd, passbd,nomebd, emailbd, telbd;
     Dialog mDialog;
     ProgressBar progressbar;
 
@@ -33,7 +33,6 @@ public class FormLogin extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_form_login);
 
-        //fazendo o elo entre os itens da classe java e do XML
         edit_user = findViewById(R.id.edit_user);
         edit_senha = findViewById(R.id.edit_senha);
         button_login = findViewById(R.id.button_login);
@@ -41,8 +40,6 @@ public class FormLogin extends AppCompatActivity {
 
         mDialog = new Dialog(this);
 
-
-        //criaçao do evento do botao
         button_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -60,18 +57,32 @@ public class FormLogin extends AppCompatActivity {
             public void onClick(View view) {
 
                 mDialog.setContentView(R.layout.popup);
-
                 mDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-
                 mDialog.show();
-
-
 
             }
         });
+    }
 
+    public void guardaInfo() {
+        String guardanome;
+        String guardatel;
+        String guardaemail;
+        String guardachave;
+        String guardasenha;
 
+        guardanome = nomebd;
+        guardatel = telbd;
+        guardaemail = emailbd;
+        guardachave = userbd;
+        guardasenha = passbd;
 
+        userLogged usuario = new userLogged();
+        usuario.setNome(guardanome);
+        usuario.setTel(guardatel);
+        usuario.setEmail(guardaemail);
+        usuario.setChave(guardachave);
+        usuario.setSenha(guardasenha);
     }
 
     class Task extends AsyncTask<Void, Void, Void> {
@@ -83,18 +94,18 @@ public class FormLogin extends AppCompatActivity {
         protected Void doInBackground(Void... voids) {
             try {
 
-                //busca no bd
-                //userbd = SELECT username FROM funcionarios;
-
                 Class.forName("com.mysql.jdbc.Driver");
                 Connection connection = DriverManager.getConnection("jdbc:mysql://139.177.199.178/test","backend","agathusia");
                 Statement statement = connection.createStatement();
                 ResultSet resultSet = statement.executeQuery("SELECT * FROM funcionarios");
 
                 while(resultSet.next()) {
+                    nomebd = resultSet.getString("nome");
+                    telbd = resultSet.getString("tel");
+                    emailbd = resultSet.getString("email");
                     userbd = resultSet.getString("chave");
                     passbd = resultSet.getString("senha");
-                    nomebd = resultSet.getString("nome");
+
                     if(user.equals(userbd) && pass.equals(passbd)) {
                         break;
                     }
@@ -105,21 +116,21 @@ public class FormLogin extends AppCompatActivity {
             }
             return null;
         }
+
         @Override
         protected void onPostExecute(Void unused) {
             if (error != "") {
             }
 
             if(user.equals(userbd) && pass.equals(passbd)) {
-                //codigo para trocar de activity
                 Toast.makeText(FormLogin.this, "Bem vindo "+nomebd , Toast.LENGTH_SHORT).show();
+                guardaInfo();
+
             } else {
                 Toast.makeText(FormLogin.this, "n foi dnv", Toast.LENGTH_SHORT).show();
-
             }
 
             super.onPostExecute(unused);
         }
     }
-
 }

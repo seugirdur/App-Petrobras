@@ -19,6 +19,6 @@ public class ProblemActivity extends AppCompatActivity {
         TextView textView = findViewById(R.id.textProblema);
 
         Toast.makeText(getApplicationContext(), title, Toast.LENGTH_SHORT).show();
-    }
 
+    }
 }

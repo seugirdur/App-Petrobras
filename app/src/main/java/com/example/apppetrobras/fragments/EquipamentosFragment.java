@@ -84,12 +84,4 @@ public class EquipamentosFragment extends Fragment implements RecyclerViewIntefa
         startActivity(intent);
     }
 
-    public void a(View view){
-        recyclerview = view.findViewById(R.id.recyclerview);
-        recyclerview.setLayoutManager(new LinearLayoutManager(getContext()));
-        recyclerview.setHasFixedSize(true);
-        RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(getContext(),dataArrayList, this);
-        recyclerview.setAdapter(recyclerViewAdapter);
-        recyclerViewAdapter.notifyDataSetChanged();
-    }
 }

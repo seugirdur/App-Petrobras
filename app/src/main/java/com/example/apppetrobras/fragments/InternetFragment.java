@@ -1,5 +1,6 @@
 package com.example.apppetrobras.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -13,14 +14,15 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.apppetrobras.DadosLista;
+import com.example.apppetrobras.ProblemActivity;
 import com.example.apppetrobras.R;
 import com.example.apppetrobras.RecyclerViewAdapter;
 
 import java.util.ArrayList;
 
-public class InternetFragment extends Fragment {
+public class InternetFragment extends Fragment implements RecyclerViewInteface{
 
-    private ArrayList<DadosLista> dadosArrayList;
+    private ArrayList<DadosLista> dataArrayList;
     private String[] titulosProblemas;
     private int[] imagensProblemas;
     private RecyclerView recyclerview;
@@ -41,14 +43,14 @@ public class InternetFragment extends Fragment {
         recyclerview = view.findViewById(R.id.recyclerview);
         recyclerview.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerview.setHasFixedSize(true);
-        RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(getContext(),dadosArrayList);
+        RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(getContext(),dataArrayList, this);
         recyclerview.setAdapter(recyclerViewAdapter);
         recyclerViewAdapter.notifyDataSetChanged();
     }
 
     private void dataInitialize() {
 
-        dadosArrayList = new ArrayList<>();
+        dataArrayList = new ArrayList<>();
 
         titulosProblemas = new String[]{
                 getString(R.string.internet_1),
@@ -70,8 +72,15 @@ public class InternetFragment extends Fragment {
 
         for(int i = 0; i < titulosProblemas.length; i++){
             DadosLista data = new DadosLista(titulosProblemas[i], imagensProblemas[i]);
-            dadosArrayList.add(data);
+            dataArrayList.add(data);
         }
 
+    }
+
+    @Override
+    public void onItemClick(int position) {
+        Intent intent = new Intent(getActivity(), ProblemActivity.class);
+        intent.putExtra("title", dataArrayList.get(position).getText());
+        startActivity(intent);
     }
 }

@@ -10,16 +10,22 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.apppetrobras.fragments.RecyclerViewInteface;
+
 import java.util.ArrayList;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder>{
 
+    private final RecyclerViewInteface recyclerViewInteface;
+
     Context context;
     ArrayList<DadosLista> dataArrayList;
 
-    public RecyclerViewAdapter(Context context, ArrayList<DadosLista> dataArrayList) {
+    public RecyclerViewAdapter(Context context, ArrayList<DadosLista> dataArrayList,
+                               RecyclerViewInteface recyclerViewInteface) {
         this.context = context;
         this.dataArrayList = dataArrayList;
+        this.recyclerViewInteface = recyclerViewInteface;
     }
 
     @NonNull
@@ -28,7 +34,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         View view = LayoutInflater.from(context).inflate(R.layout.item_list,parent,false);
 
-        return new MyViewHolder(view);
+        return new MyViewHolder(view, recyclerViewInteface);
     }
 
     @Override
@@ -49,11 +55,30 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         ImageView imagemLista;
         TextView textoLista;
 
-        public MyViewHolder(@NonNull View itemView) {
+        public MyViewHolder(@NonNull View itemView,RecyclerViewInteface recyclerViewInteface) {
             super(itemView);
 
             imagemLista = itemView.findViewById(R.id.imageProblema);
             textoLista = itemView.findViewById(R.id.textProblema);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if(recyclerViewInteface != null){
+
+                        // getAbsoluteAdapterPosition() leva em conta todas as listas
+                        // getBidingAdapterPosition() só considera aquela em que eles está inserido
+
+                        int pos = getBindingAdapterPosition();
+
+                        if (pos != RecyclerView.NO_POSITION) {
+                            recyclerViewInteface.onItemClick(pos);
+                        }
+
+                    }
+                }
+            });
         }
     }
+
 }

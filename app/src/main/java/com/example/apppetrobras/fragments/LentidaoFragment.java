@@ -1,5 +1,6 @@
 package com.example.apppetrobras.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -13,12 +14,17 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.apppetrobras.DadosLista;
+import com.example.apppetrobras.MainActivity;
+import com.example.apppetrobras.ProblemActivity;
 import com.example.apppetrobras.R;
 import com.example.apppetrobras.RecyclerViewAdapter;
+import com.example.apppetrobras.TabActivity;
+import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
 
-public class LentidaoFragment extends Fragment {
+public class LentidaoFragment extends Fragment implements RecyclerViewInteface{
+
 
     private ArrayList<DadosLista> dataArrayList;
     private String[] titulosProblemas;
@@ -42,7 +48,7 @@ public class LentidaoFragment extends Fragment {
         recyclerview = view.findViewById(R.id.recyclerview);
         recyclerview.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerview.setHasFixedSize(true);
-        RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(getContext(),dataArrayList);
+        RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(getContext(), dataArrayList, this);
         recyclerview.setAdapter(recyclerViewAdapter);
         recyclerViewAdapter.notifyDataSetChanged();
     }
@@ -74,5 +80,14 @@ public class LentidaoFragment extends Fragment {
             dataArrayList.add(data);
         }
 
+
+
+    }
+
+    @Override
+    public void onItemClick(int position) {
+        Intent intent = new Intent(getActivity(), ProblemActivity.class);
+        intent.putExtra("title", dataArrayList.get(position).getText());
+        startActivity(intent);
     }
 }

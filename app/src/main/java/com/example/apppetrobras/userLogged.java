@@ -58,14 +58,4 @@ public class userLogged {
     public void setSenha(String senha) {
         this.senha = senha;
     }
-}
-
-
-
-//
-//    TextView nome = findViewById(R.id.insertNomeCompleto);
-//    TextView tel = findViewById(R.id.insertTelefone);
-//    TextView dataNas = findViewById(R.id.insertDataNascimento);
-//    TextView email = findViewById(R.id.insertEmail);
-//    TextView chave = findViewById(R.id.insertChave);
-//    TextView senha = findViewById(R.id.insertSenha);
+};

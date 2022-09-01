@@ -11,7 +11,6 @@ public class Tela_de_escolha extends AppCompatActivity {
     
     Button button2;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

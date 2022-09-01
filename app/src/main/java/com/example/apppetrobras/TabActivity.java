@@ -57,5 +57,5 @@ public class TabActivity extends AppCompatActivity {
     public void goHome(View view) {
         viewPager2.setCurrentItem(0);
     }
-
+    
 }

@@ -19,7 +19,7 @@ public class SplashScreenActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(SplashScreenActivity.this, TabActivity.class);
+                Intent intent = new Intent(SplashScreenActivity.this, Tela_de_escolha.class);
                 startActivity(intent);
                 finish();
             }

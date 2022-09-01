@@ -14,7 +14,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.apppetrobras.DadosLista;
-import com.example.apppetrobras.MainActivity;
 import com.example.apppetrobras.ProblemActivity;
 import com.example.apppetrobras.R;
 import com.example.apppetrobras.RecyclerViewAdapter;

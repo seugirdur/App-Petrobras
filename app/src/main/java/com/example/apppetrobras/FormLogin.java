@@ -3,6 +3,7 @@ package com.example.apppetrobras;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.AsyncTask;
@@ -125,6 +126,10 @@ public class FormLogin extends AppCompatActivity {
             if(user.equals(userbd) && pass.equals(passbd)) {
                 Toast.makeText(FormLogin.this, "Bem vindo "+nomebd , Toast.LENGTH_SHORT).show();
                 guardaInfo();
+
+                Intent intent = new Intent(FormLogin.this, TabActivity.class);
+                startActivity(intent);
+                finish();
 
             } else {
                 Toast.makeText(FormLogin.this, "n foi dnv", Toast.LENGTH_SHORT).show();

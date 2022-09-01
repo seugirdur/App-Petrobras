@@ -88,6 +88,7 @@ public class LentidaoFragment extends Fragment implements RecyclerViewInteface{
     @Override
     public void onItemClick(int position) {
         Intent intent = new Intent(getActivity(), ProblemActivity.class);
+        intent.putExtra("TIPO",1);
         intent.putExtra("ID", dataArrayList.get(position).getId());
         startActivity(intent);
     }

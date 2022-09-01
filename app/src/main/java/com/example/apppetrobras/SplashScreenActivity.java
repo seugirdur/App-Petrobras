@@ -15,6 +15,7 @@ public class SplashScreenActivity extends AppCompatActivity {
         setContentView(R.layout.activity_splash_screen);
 
         // Delay = Tempo de tela da Splash Screen
+        //teste
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {

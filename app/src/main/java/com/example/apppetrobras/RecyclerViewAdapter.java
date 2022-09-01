@@ -62,6 +62,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             textoLista = itemView.findViewById(R.id.textProblema);
 
             itemView.setOnClickListener(new View.OnClickListener() {
+
+                //teste
                 @Override
                 public void onClick(View view) {
                     if(recyclerViewInteface != null){

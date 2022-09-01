@@ -24,7 +24,7 @@ public class EquipamentosFragment extends Fragment implements RecyclerViewIntefa
 
     private ArrayList<DadosLista> dataArrayList;
     private String[] titulosProblemas;
-    private int[] imagensProblemas;
+    private int[] imagensProblemas, idProblemas;
     private RecyclerView recyclerview;
 
     @Override
@@ -61,6 +61,10 @@ public class EquipamentosFragment extends Fragment implements RecyclerViewIntefa
                 getString(R.string.equipamentos_6),
         };
 
+        idProblemas = new int[]{
+                1, 2, 3, 4, 5, 6
+        };
+
         imagensProblemas = new int[]{
                 R.drawable.ic_launcher_background,
                 R.drawable.ic_launcher_background,
@@ -71,7 +75,7 @@ public class EquipamentosFragment extends Fragment implements RecyclerViewIntefa
         };
 
         for(int i = 0; i < titulosProblemas.length; i++){
-            DadosLista data = new DadosLista(titulosProblemas[i], imagensProblemas[i]);
+            DadosLista data = new DadosLista(titulosProblemas[i], idProblemas[i], imagensProblemas[i]);
             dataArrayList.add(data);
         }
 

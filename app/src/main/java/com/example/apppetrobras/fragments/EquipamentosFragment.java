@@ -20,7 +20,7 @@ import com.example.apppetrobras.RecyclerViewAdapter;
 
 import java.util.ArrayList;
 
-public class EquipamentosFragment extends Fragment implements RecyclerViewInteface {
+public class EquipamentosFragment extends Fragment implements RecyclerViewInteface{
 
     private ArrayList<DadosLista> dataArrayList;
     private String[] titulosProblemas;
@@ -53,12 +53,12 @@ public class EquipamentosFragment extends Fragment implements RecyclerViewIntefa
         dataArrayList = new ArrayList<>();
 
         titulosProblemas = new String[]{
-                getString(R.string.equipamentos_1),
-                getString(R.string.equipamentos_2),
-                getString(R.string.equipamentos_3),
-                getString(R.string.equipamentos_4),
-                getString(R.string.equipamentos_5),
-                getString(R.string.equipamentos_6),
+                getString(R.string.inicio_1),
+                getString(R.string.inicio_2),
+                getString(R.string.inicio_3),
+                getString(R.string.inicio_4),
+                getString(R.string.inicio_5),
+                getString(R.string.inicio_6),
         };
 
         idProblemas = new int[]{
@@ -84,7 +84,8 @@ public class EquipamentosFragment extends Fragment implements RecyclerViewIntefa
     @Override
     public void onItemClick(int position) {
         Intent intent = new Intent(getActivity(), ProblemActivity.class);
-        intent.putExtra("title", dataArrayList.get(position).getText());
+        intent.putExtra("TIPO",3);
+        intent.putExtra("ID", dataArrayList.get(position).getId());
         startActivity(intent);
     }
 

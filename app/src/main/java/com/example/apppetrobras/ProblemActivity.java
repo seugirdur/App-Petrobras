@@ -2,23 +2,23 @@ package com.example.apppetrobras;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.os.Bundle;
-import android.os.Handler;
-import android.widget.TextView;
 import android.widget.Toast;
 
 public class ProblemActivity extends AppCompatActivity {
+    int tipoProblema, idProblema;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_problem);
 
-        String title = getIntent().getStringExtra("title");
-        TextView textView = findViewById(R.id.textProblema);
+        tipoProblema = getIntent().getIntExtra("TIPO",0);
+        idProblema = getIntent().getIntExtra("ID",0);
 
-        Toast.makeText(getApplicationContext(), title, Toast.LENGTH_SHORT).show();
+        Toast toast = Toast.makeText(getApplicationContext(), "Tipo: " + tipoProblema + "   id: " + idProblema, Toast.LENGTH_SHORT);
+        toast.show();
 
-    }
+    };
+
 }

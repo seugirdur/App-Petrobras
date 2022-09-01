@@ -84,7 +84,8 @@ public class InternetFragment extends Fragment implements RecyclerViewInteface{
     @Override
     public void onItemClick(int position) {
         Intent intent = new Intent(getActivity(), ProblemActivity.class);
-        intent.putExtra("title", dataArrayList.get(position).getText());
+        intent.putExtra("TIPO",2);
+        intent.putExtra("ID", dataArrayList.get(position).getId());
         startActivity(intent);
     }
 

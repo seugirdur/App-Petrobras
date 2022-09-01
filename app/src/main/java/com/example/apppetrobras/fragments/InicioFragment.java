@@ -84,7 +84,9 @@ public class InicioFragment extends Fragment implements RecyclerViewInteface{
     @Override
     public void onItemClick(int position) {
         Intent intent = new Intent(getActivity(), ProblemActivity.class);
-        intent.putExtra("title", dataArrayList.get(position).getText());
+        //Valor do tipo é temporário. Ainda não foi definido o funcionamento da aba 1(Inicio)
+        intent.putExtra("TIPO",1);
+        intent.putExtra("ID", dataArrayList.get(position).getId());
         startActivity(intent);
     }
 }

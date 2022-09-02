@@ -21,7 +21,7 @@ public class Tela_de_escolha extends AppCompatActivity {
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(Tela_de_escolha.this, FormLogin.class);
+                Intent i = new Intent(Tela_de_escolha.this, RelatorioProcesso.class);
                 startActivity(i);
             }
         });
@@ -29,7 +29,7 @@ public class Tela_de_escolha extends AppCompatActivity {
 
     public void cadastrar (View view){
 
-        Intent intent = new Intent(this, RelatorioProcesso.class);
+        Intent intent = new Intent(this, FormCadastro.class);
         startActivity(intent);
      }
      

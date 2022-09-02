@@ -43,18 +43,6 @@
 
     <!-- Labels -->
 
-    <View
-        android:id="@+id/problem_to_problem_line"
-        android:layout_width="5dp"
-        android:layout_height="400dp"
-        android:background="@color/light_green"
-        app:layout_constraintStart_toStartOf="@id/first_combined_vectors"
-        app:layout_constraintEnd_toEndOf="@id/first_combined_vectors"
-        app:layout_constraintTop_toTopOf="@id/first_combined_vectors"
-        android:layout_marginTop="5dp"
-
-
-        />
 
 
     <View
@@ -66,7 +54,6 @@
         app:layout_constraintTop_toBottomOf="@id/titulo"
         android:background="@android:color/transparent"
         android:layout_marginTop="35dp" />
-
 
 
 

@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.apppetrobras">
 
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
@@ -17,7 +17,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.APPPetrobras"
         tools:targetApi="31">
-
+        <activity
+            android:name=".Ajuda"
+            android:exported="false" />
         <activity
             android:name=".FormCadastro"
             android:exported="false" />
@@ -32,32 +34,28 @@
             android:exported="false" />
         <activity
             android:name=".Tela_de_escolha"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".ProblemActivity"
             android:exported="false"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".TabActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".RelatorioProcesso"
-            android:exported="true"/>
-
+            android:exported="true" />
         <activity
             android:name=".SplashScreenActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.NoActionBar">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
-
     </application>
 
 </manifest>

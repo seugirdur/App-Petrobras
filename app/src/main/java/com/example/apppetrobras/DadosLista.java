@@ -5,6 +5,10 @@ public class DadosLista {
     String text;
     int image, id;
 
+    public DadosLista(String text){
+        this.text = text;
+    }
+
     public DadosLista(String text, int id, int image){
         this.text = text;
         this.image = image;

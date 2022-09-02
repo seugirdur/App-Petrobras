@@ -53,12 +53,12 @@ public class EquipamentosFragment extends Fragment implements RecyclerViewIntefa
         dataArrayList = new ArrayList<>();
 
         titulosProblemas = new String[]{
-                getString(R.string.inicio_1),
-                getString(R.string.inicio_2),
-                getString(R.string.inicio_3),
-                getString(R.string.inicio_4),
-                getString(R.string.inicio_5),
-                getString(R.string.inicio_6),
+                getString(R.string.equipamentos_1),
+                getString(R.string.equipamentos_2),
+                getString(R.string.equipamentos_3),
+                getString(R.string.equipamentos_4),
+                getString(R.string.equipamentos_5),
+                getString(R.string.equipamentos_6),
         };
 
         idProblemas = new int[]{

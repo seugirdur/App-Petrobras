@@ -4,37 +4,50 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SplashScreenActivity">
+    android:background="@drawable/background"
+    tools:context=".FormLogin">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#fff"
-        android:orientation="vertical">
-
-        <ImageView
+    <!--<com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottie"
             android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="150dp"
-            android:src="@drawable/logo_dionisio" />
+            android:layout_height="57dp"
+            android:layout_centerInParent="true"
+            android:elevation="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView"
+            app:layout_constraintVertical_bias="0.293"
+            app:lottie_autoPlay="true"
+            app:lottie_rawRes="@raw/splashscreen" />-->
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text=". . ."
-            android:textColor="@color/black"
-            android:textSize="30dp" />
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="298dp"
+        android:layout_height="279dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.311"
+        app:srcCompat="@drawable/img" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="txt"
-            android:textColor="@color/black"
-            android:textSize="30dp" />
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="175dp"
+        android:layout_height="46dp"
+        android:fontFamily="sans-serif-black"
+        android:text="HelpDesk"
+        android:textSize="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.662" />
 
-    </LinearLayout>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,7 +7,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.apppetrobras"
-        minSdk 28
+        minSdk 21
         targetSdk 32
         versionCode 1
         versionName "1.0"
@@ -32,9 +32,9 @@ android {
 
 dependencies {
 
-    implementation 'androidx.appcompat:appcompat:1.3.0'
-    implementation 'com.google.android.material:material:1.4.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'androidx.appcompat:appcompat:1.5.0'
+    implementation 'com.google.android.material:material:1.6.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation "androidx.cardview:cardview:1.0.0"
     implementation "androidx.recyclerview:recyclerview:1.2.1"
     // For control over item selection of both touch and mouse driven selection
@@ -49,7 +49,7 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     implementation 'com.airbnb.android:lottie:3.4.1'
-b
+
 
 
 

@@ -91,7 +91,7 @@ public class FormCadastro extends AppCompatActivity {
 
     //redirecionamento para ajuda
     public void ajuda(View view){
-        Intent intent = new Intent(this, minhaPagina.class);
+        Intent intent = new Intent(this, Ajuda.class);
         startActivity(intent);
 
     }

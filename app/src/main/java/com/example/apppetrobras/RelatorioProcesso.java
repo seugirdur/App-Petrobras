@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -31,6 +32,8 @@ public class RelatorioProcesso extends AppCompatActivity {
         download_icon = (FloatingActionButton) findViewById(R.id.download_icon);
         observacoes_icon = (FloatingActionButton) findViewById(R.id.observacoes_icon);
         mDialog = new Dialog(this);
+        settingTheName();
+
 
 
         // animations
@@ -71,6 +74,15 @@ public class RelatorioProcesso extends AppCompatActivity {
 
             }
         });
+
+    }
+
+    private void settingTheName() {
+
+        TextView nome_usuario;
+        nome_usuario=findViewById(R.id.nome_usuario);
+        userLogged usuario = getIntent().getParcelableExtra("userlogged");
+        nome_usuario.setText(usuario.getNome());
 
     }
 

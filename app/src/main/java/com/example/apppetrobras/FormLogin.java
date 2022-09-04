@@ -117,7 +117,7 @@ public class FormLogin extends AppCompatActivity {
     }
 
 
-    public void guardaInfo() {
+    public userLogged guardaInfo() {
         String guardanome;
         String guardatel;
         String guardaemail;
@@ -130,12 +130,18 @@ public class FormLogin extends AppCompatActivity {
         guardachave = userbd;
         guardasenha = passbd;
 
-        userLogged usuario = new userLogged();
+        userLogged usuario = new userLogged(guardanome, guardatel, guardaemail, guardachave, guardasenha);
         usuario.setNome(guardanome);
         usuario.setTel(guardatel);
         usuario.setEmail(guardaemail);
         usuario.setChave(guardachave);
         usuario.setSenha(guardasenha);
+
+        //Intent intent = new Intent(this, RelatorioProcesso.class);
+        //intent.putExtra("userlogged", usuario);
+
+        return usuario;
+
     }
 
     class Task extends AsyncTask<Void, Void, Void> {
@@ -177,9 +183,9 @@ public class FormLogin extends AppCompatActivity {
 
             if(user.equals(userbd) && pass.equals(passbd)) {
                 Toast.makeText(FormLogin.this, "Bem vindo "+nomebd , Toast.LENGTH_SHORT).show();
-                guardaInfo();
 
-                Intent intent = new Intent(FormLogin.this, TabActivity.class);
+                Intent intent = new Intent(FormLogin.this, RelatorioProcesso.class);
+                intent.putExtra("userlogged", guardaInfo());
                 startActivity(intent);
                 finish();
 

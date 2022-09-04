@@ -10,4 +10,12 @@
     <color name="gray">#8d8f94</color>
     <color name="dark_green">#4D8940</color>
     <color name="light_green">#4CCD2B</color>
+
+
+    <color name="colorPrimaryDark">#C99A4D</color>
+    <color name="colorPrimary">#ADBD51</color>
+    <color name="colorAccent">#D4C650</color>
+    <color name="colorPrimaryText">#000000</color>
+    <color name="colorWhite">#FFFFFF8F</color>
+    <color name="colorGreen">#73E83A</color>
 </resources>

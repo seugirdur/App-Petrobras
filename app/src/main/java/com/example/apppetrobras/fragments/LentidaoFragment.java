@@ -47,7 +47,8 @@ public class LentidaoFragment extends Fragment implements RecyclerViewInteface{
         recyclerview = view.findViewById(R.id.recyclerview);
         recyclerview.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerview.setHasFixedSize(true);
-        RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(getContext(), dataArrayList, this);
+        RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(getContext(),
+                dataArrayList, this, R.layout.item_list);
         recyclerview.setAdapter(recyclerViewAdapter);
         recyclerViewAdapter.notifyDataSetChanged();
     }

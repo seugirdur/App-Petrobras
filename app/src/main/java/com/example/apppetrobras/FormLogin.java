@@ -33,6 +33,7 @@ public class FormLogin extends AppCompatActivity {
     boolean passwordVisible;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -115,7 +116,6 @@ public class FormLogin extends AppCompatActivity {
         });
 
     }
-
 
     public void guardaInfo() {
         String guardanome;

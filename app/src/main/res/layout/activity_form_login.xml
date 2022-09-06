@@ -19,21 +19,15 @@
 
 
 
-
     <View
         android:id="@+id/containerComponents"
         style="@style/ContainerComponents"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-
-
-        />
-
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
 
     <EditText
-
         android:id="@+id/edit_user"
         style="@style/Edit_Text"
         android:hint="@string/key"
@@ -41,16 +35,9 @@
         android:drawableRight="@drawable/ic_key"
         app:layout_constraintStart_toStartOf="@id/containerComponents"
         app:layout_constraintEnd_toEndOf="@id/containerComponents"
-        app:layout_constraintTop_toTopOf="@id/containerComponents"
-
-        />
-
-
-
-
+        app:layout_constraintTop_toTopOf="@id/containerComponents"/>
 
     <EditText
-
       android:id="@+id/edit_senha"
       style="@style/Edit_Senha"
       android:hint="@string/password"
@@ -59,12 +46,7 @@
       app:layout_constraintStart_toStartOf="@id/containerComponents"
       app:layout_constraintEnd_toEndOf="@id/containerComponents"
       app:layout_constraintTop_toBottomOf="@id/edit_user"
-        android:longClickable="false"
-
-
-      />
-
-
+      android:longClickable="false"/>
 
 
     <CheckBox
@@ -74,10 +56,7 @@
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="@id/containerComponents"
         app:layout_constraintEnd_toEndOf="@id/containerComponents"
-        app:layout_constraintTop_toBottomOf="@id/edit_senha"
-
-
-        />
+        app:layout_constraintTop_toBottomOf="@id/edit_senha"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/esqueceu_senha"
@@ -87,10 +66,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/check_connected"
-        android:background="?android:attr/selectableItemBackground"
-
-
-        />
+        android:background="?android:attr/selectableItemBackground"/>
 
     <androidx.appcompat.widget.AppCompatButton
 
@@ -99,9 +75,7 @@
         app:layout_constraintStart_toStartOf="@id/containerComponents"
         app:layout_constraintEnd_toEndOf="@id/containerComponents"
         app:layout_constraintTop_toBottomOf="@id/esqueceu_senha"
-        android:text="@string/login"
-
-        />
+        android:text="@string/login"/>
 
 
 
@@ -113,15 +87,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/containerComponents"
             android:layout_marginTop="30dp"
-            android:visibility="invisible"
-
-
-
-            />
-
-
-
-
+            android:visibility="invisible"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

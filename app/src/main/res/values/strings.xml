@@ -56,4 +56,29 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="verified">Verified</string>
+    <string name="marquinhos">marquinhos</string>
+    <string name="Marquinhos">Marquinhos</string>
+    <string name="usuario">usuario</string>
+    <string name="perfil">perfil</string>
+    <string name="meus_chamados">Meus Chamados</string>
+    <string name="configura_es">configurações</string>
+    <string name="ajuda_e_suporte" />
+    <string name="sair" />
+    <string name="vers_o_do_app_0_0_1" />
+
+
+
+
 </resources>

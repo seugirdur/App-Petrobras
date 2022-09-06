@@ -36,21 +36,11 @@
         <activity
             android:name=".Ajuda"
             android:exported="false" />
+
         <activity
-            android:name=".FormCadastro"
+            android:name=".MainActivity"
             android:exported="false" />
-        <activity
-            android:name=".SplashScreenActivity"
-            android:exported="false" />
-        <activity
-            android:name=".minhaPagina"
-            android:exported="false" />
-        <activity
-            android:name=".FormLogin"
-            android:exported="false" />
-        <activity
-            android:name=".Tela_de_escolha"
-            android:exported="false" />
+
         <activity
             android:name=".ProblemActivity"
             android:exported="false"
@@ -66,7 +56,7 @@
             android:exported="true" />
 
         <activity
-            android:name=".MainActivity"
+            android:name=".SplashScreenActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.NoActionBar">
 

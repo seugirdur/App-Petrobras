@@ -20,7 +20,8 @@
 
         <activity
             android:name=".FormCadastro"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
         <activity
             android:name=".MainActivity"
             android:exported="false" />
@@ -29,7 +30,8 @@
             android:exported="false" />
         <activity
             android:name=".FormLogin"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
         <activity
             android:name=".Tela_de_escolha"
             android:exported="false"/>

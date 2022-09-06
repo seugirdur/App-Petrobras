@@ -71,7 +71,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                         // getAbsoluteAdapterPosition() leva em conta todas as listas
                         // getBidingAdapterPosition() só considera aquela em que eles está inserido
 
-                        int pos = getBindingAdapterPosition();
+                        int pos = getAdapterPosition();
 
                         if (pos != RecyclerView.NO_POSITION) {
                             recyclerViewInteface.onItemClick(pos);

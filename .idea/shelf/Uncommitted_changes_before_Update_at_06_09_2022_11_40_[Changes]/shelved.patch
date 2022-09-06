@@ -1,0 +1,29 @@
+Index: app/src/main/AndroidManifest.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<manifest xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    package=\"com.example.apppetrobras\">\r\n\r\n    <uses-permission\r\n        android:name=\"android.permission.INTERNET\">\r\n    </uses-permission>\r\n\r\n    <uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />\r\n    <uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\" />\r\n\r\n    <application\r\n        android:allowBackup=\"true\"\r\n        android:dataExtractionRules=\"@xml/data_extraction_rules\"\r\n        android:fullBackupContent=\"@xml/backup_rules\"\r\n        android:icon=\"@drawable/logo_dionisio\"\r\n        android:label=\"@string/app_name\"\r\n        android:roundIcon=\"@drawable/logo_dionisio\"\r\n        android:supportsRtl=\"true\"\r\n        android:theme=\"@style/Theme.APPPetrobras\"\r\n        tools:targetApi=\"31\">\r\n\r\n        <activity\r\n            android:name=\".FormCadastro\"\r\n            android:exported=\"false\"\r\n            android:theme=\"@style/Theme.AppCompat.Light.NoActionBar\"/>\r\n        <activity\r\n            android:name=\".minhaPagina\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".FormLogin\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".Tela_de_escolha\"\r\n            android:exported=\"false\"/>\r\n        <activity\r\n            android:name=\".Ajuda\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".FormCadastro\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".MainActivity\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".minhaPagina\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".FormLogin\"\r\n            android:exported=\"false\"\r\n            android:theme=\"@style/Theme.AppCompat.Light.NoActionBar\"/>\r\n        <activity\r\n            android:name=\".Tela_de_escolha\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".ProblemActivity\"\r\n            android:exported=\"false\"\r\n            android:theme=\"@style/Theme.AppCompat.Light.NoActionBar\" />\r\n\r\n        <activity\r\n            android:name=\".TabActivity\"\r\n            android:exported=\"true\"\r\n            android:theme=\"@style/Theme.AppCompat.Light.NoActionBar\" />\r\n\r\n        <activity\r\n            android:name=\".RelatorioProcesso\"\r\n            android:exported=\"true\" />\r\n\r\n        <activity\r\n            android:name=\".SplashScreenActivity\"\r\n            android:exported=\"true\"\r\n            android:theme=\"@style/Theme.AppCompat.NoActionBar\">\r\n\r\n            <intent-filter>\r\n                <action android:name=\"android.intent.action.MAIN\" />\r\n\r\n                <category android:name=\"android.intent.category.LAUNCHER\" />\r\n            </intent-filter>\r\n\r\n        </activity>\r\n\r\n    </application>\r\n\r\n</manifest>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/AndroidManifest.xml b/app/src/main/AndroidManifest.xml
+--- a/app/src/main/AndroidManifest.xml	(revision 6d5e4ea6883fa43d27699f8f7eaa8c82cacd8d77)
++++ b/app/src/main/AndroidManifest.xml	(date 1662475229056)
+@@ -46,13 +46,11 @@
+         <activity
+             android:name=".minhaPagina"
+             android:exported="false" />
+-        <activity
+-            android:name=".FormLogin"
+-            android:exported="false"
+-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+-        <activity
+-            android:name=".Tela_de_escolha"
+-            android:exported="false" />
++<!--        <activity-->
++<!--            android:name=".FormLogin"-->
++<!--            android:exported="false"-->
++<!--            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>-->
++
+         <activity
+             android:name=".ProblemActivity"
+             android:exported="false"

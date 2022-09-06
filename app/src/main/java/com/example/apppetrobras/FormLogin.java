@@ -185,7 +185,7 @@ public class FormLogin extends AppCompatActivity {
             if(user.equals(userbd) && pass.equals(passbd)) {
                 Toast.makeText(FormLogin.this, "Bem vindo "+nomebd , Toast.LENGTH_SHORT).show();
 
-                Intent intent = new Intent(FormLogin.this, RelatorioProcesso.class);
+                Intent intent = new Intent(FormLogin.this, TabActivity.class);
                 intent.putExtra("userlogged", guardaInfo());
                 startActivity(intent);
                 finish();

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/popup_observacoes_background"
+    android:layout_gravity="center_horizontal"
+    >
+
+
+    <View
+        android:id="@+id/green_view"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:background="@color/light_green"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+       />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="OBSERVAÇÕES"
+        app:layout_constraintStart_toStartOf="@id/green_view"
+        app:layout_constraintEnd_toEndOf="@id/green_view"
+        app:layout_constraintTop_toTopOf="@id/green_view"
+        app:layout_constraintBottom_toBottomOf="@id/green_view"
+        android:textStyle="bold"
+        android:textSize="18dp"
+        android:textColor="@color/black" />
+
+
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,11 +4,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.widget.Toast;
 
 import com.example.apppetrobras.fragments.RecyclerViewInteface;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ArrayList;
 
 public class ProblemActivity extends AppCompatActivity implements RecyclerViewInteface {
@@ -16,7 +21,6 @@ public class ProblemActivity extends AppCompatActivity implements RecyclerViewIn
 
     private ArrayList<DadosLista> dataArrayList;
     private String[] titulosProblemas;
-    private int[] imagensProblemas, idProblemas;
     private RecyclerView recyclerview;
 
     @Override
@@ -28,23 +32,29 @@ public class ProblemActivity extends AppCompatActivity implements RecyclerViewIn
         idProblema = getIntent().getIntExtra("ID",0);
 
 
+
+
+
         dataInitialize();
 
         recyclerview = findViewById(R.id.recyclerview);
         recyclerview.setLayoutManager(new LinearLayoutManager(this));
         recyclerview.setHasFixedSize(true);
-        RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(this,dataArrayList, this);
+        RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(this,
+                dataArrayList, this, R.layout.item_soluction_list);
         recyclerview.setAdapter(recyclerViewAdapter);
         recyclerViewAdapter.notifyDataSetChanged();
     };
 
     private void dataInitialize() {
 
+
         dataArrayList = new ArrayList<>();
 
         titulosProblemas = new String[]{
-                "Exemplo",
-                "Exemplo 2"
+                "começo",
+                "meio",
+                "fim"
         };
 
         for(int i = 0; i < titulosProblemas.length; i++){
@@ -58,4 +68,5 @@ public class ProblemActivity extends AppCompatActivity implements RecyclerViewIn
     public void onItemClick(int position) {
 
     }
+
 }

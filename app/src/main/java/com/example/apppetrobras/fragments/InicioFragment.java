@@ -45,6 +45,7 @@ public class InicioFragment extends Fragment implements RecyclerViewInteface{
         recyclerview.setHasFixedSize(true);
         RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(getContext(),
                 dataArrayList, this, R.layout.item_list);
+
         recyclerview.setAdapter(recyclerViewAdapter);
         recyclerViewAdapter.notifyDataSetChanged();
     }

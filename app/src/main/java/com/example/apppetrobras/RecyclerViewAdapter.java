@@ -17,6 +17,7 @@ import java.util.ArrayList;
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder>{
 
     private final RecyclerViewInteface recyclerViewInteface;
+
     private final int layout;
 
     Context context;
@@ -30,7 +31,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         this.recyclerViewInteface = recyclerViewInteface;
         this.layout = layout;
     }
-
 
     @NonNull
     @Override
@@ -52,7 +52,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                 idImage = R.id.imageProblema;
                 return new MyViewHolder(view, recyclerViewInteface, idTexto, idImage);
         }
-
     }
 
     @Override
@@ -63,6 +62,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         if(holder.imagemLista!=null){
             holder.imagemLista.setImageResource(data.image);
         }
+
     }
 
     @Override
@@ -75,11 +75,13 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         ImageView imagemLista;
         TextView textoLista;
 
+
         public MyViewHolder(@NonNull View itemView,RecyclerViewInteface recyclerViewInteface,
                             int idTexto) {
             super(itemView);
 
             textoLista = itemView.findViewById(idTexto);
+
 
             itemView.setOnClickListener(new View.OnClickListener() {
 
@@ -129,7 +131,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                 }
             });
         }
-
 
     }
 

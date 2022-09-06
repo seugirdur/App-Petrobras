@@ -6,6 +6,7 @@
     <uses-permission
         android:name="android.permission.INTERNET">
     </uses-permission>
+
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
@@ -33,13 +34,36 @@
             android:name=".Tela_de_escolha"
             android:exported="false"/>
         <activity
+            android:name=".Ajuda"
+            android:exported="false" />
+        <activity
+            android:name=".FormCadastro"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".minhaPagina"
+            android:exported="false" />
+        <activity
+            android:name=".FormLogin"
+            android:exported="false" />
+        <activity
+            android:name=".Tela_de_escolha"
+            android:exported="false" />
+        <activity
             android:name=".ProblemActivity"
             android:exported="false"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
         <activity
             android:name=".TabActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
+        <activity
+            android:name=".RelatorioProcesso"
+            android:exported="true" />
 
         <activity
             android:name=".SplashScreenActivity"

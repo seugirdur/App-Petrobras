@@ -1,6 +1,7 @@
 package com.example.apppetrobras;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -30,9 +31,6 @@ public class ProblemActivity extends AppCompatActivity implements RecyclerViewIn
 
         tipoProblema = getIntent().getIntExtra("TIPO",0);
         idProblema = getIntent().getIntExtra("ID",0);
-
-
-
 
 
         dataInitialize();
@@ -68,5 +66,6 @@ public class ProblemActivity extends AppCompatActivity implements RecyclerViewIn
     public void onItemClick(int position) {
 
     }
+
 
 }

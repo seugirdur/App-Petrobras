@@ -17,24 +17,42 @@ import java.util.ArrayList;
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder>{
 
     private final RecyclerViewInteface recyclerViewInteface;
+    private final int layout;
 
     Context context;
     ArrayList<DadosLista> dataArrayList;
 
     public RecyclerViewAdapter(Context context, ArrayList<DadosLista> dataArrayList,
-                               RecyclerViewInteface recyclerViewInteface) {
+                               RecyclerViewInteface recyclerViewInteface,
+                               int layout) {
         this.context = context;
         this.dataArrayList = dataArrayList;
         this.recyclerViewInteface = recyclerViewInteface;
+        this.layout = layout;
     }
+
 
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        View view = LayoutInflater.from(context).inflate(R.layout.item_list,parent,false);
+        View view = LayoutInflater.from(context).inflate(layout,parent,false);
 
-        return new MyViewHolder(view, recyclerViewInteface);
+        int idTexto, idImage;
+
+        switch(layout) {
+
+            case  R.layout.item_soluction_list:
+                idTexto = R.id.title_soluction;
+                return new MyViewHolder(view, recyclerViewInteface, idTexto);
+
+            case R.layout.item_list:
+            default:
+                idTexto = R.id.textProblema;
+                idImage = R.id.imageProblema;
+                return new MyViewHolder(view, recyclerViewInteface, idTexto, idImage);
+        }
+
     }
 
     @Override
@@ -42,7 +60,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         DadosLista data = dataArrayList.get(position);
         holder.textoLista.setText(data.text);
-        holder.imagemLista.setImageResource(data.image);
+        if(holder.imagemLista!=null){
+            holder.imagemLista.setImageResource(data.image);
+        }
     }
 
     @Override
@@ -55,11 +75,11 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         ImageView imagemLista;
         TextView textoLista;
 
-        public MyViewHolder(@NonNull View itemView,RecyclerViewInteface recyclerViewInteface) {
+        public MyViewHolder(@NonNull View itemView,RecyclerViewInteface recyclerViewInteface,
+                            int idTexto) {
             super(itemView);
 
-            imagemLista = itemView.findViewById(R.id.imageProblema);
-            textoLista = itemView.findViewById(R.id.textProblema);
+            textoLista = itemView.findViewById(idTexto);
 
             itemView.setOnClickListener(new View.OnClickListener() {
 
@@ -81,6 +101,36 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                 }
             });
         }
+
+        public MyViewHolder(@NonNull View itemView,RecyclerViewInteface recyclerViewInteface,
+                            int idTexto, int idImage) {
+            super(itemView);
+
+            imagemLista = itemView.findViewById(idImage);
+            textoLista = itemView.findViewById(idTexto);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+
+                //teste
+                @Override
+                public void onClick(View view) {
+                    if(recyclerViewInteface != null){
+
+                        // getAbsoluteAdapterPosition() leva em conta todas as listas
+                        // getBidingAdapterPosition() só considera aquela em que eles está inserido
+
+                        int pos = getBindingAdapterPosition();
+
+                        if (pos != RecyclerView.NO_POSITION) {
+                            recyclerViewInteface.onItemClick(pos);
+                        }
+
+                    }
+                }
+            });
+        }
+
+
     }
 
 }

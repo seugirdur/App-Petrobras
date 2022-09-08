@@ -35,10 +35,18 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.apppetrobras.api.RetroFitClient;
+
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+
+import okhttp3.ResponseBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class FormCadastro extends AppCompatActivity {
 
@@ -177,8 +185,6 @@ public class FormCadastro extends AppCompatActivity {
         String Checkemail = email.getText().toString();
         String Checkchave =  chave.getText().toString();
         String Checksenha =  senha.getText().toString();
-        //AQUI FUNCIONA CACETEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
-
 
 
 
@@ -192,15 +198,16 @@ public class FormCadastro extends AppCompatActivity {
           aviso.setVisibility(View.VISIBLE);
         }
         else {
-            new Insert().execute();
+            //new Insert().execute();
+            registrate();
             Infos cadastro = resgataInfo();
-            Handler handler = new Handler();
-            handler.postDelayed(new Runnable() {
-                public void run() {
-                    Intent myIntent = new Intent(FormCadastro.this, FormLogin.class);
-                    startActivity(myIntent);
-                }
-            }, 1500);
+//            Handler handler = new Handler();
+//            handler.postDelayed(new Runnable() {
+//                public void run() {
+//                    Intent myIntent = new Intent(FormCadastro.this, FormLogin.class);
+//                    startActivity(myIntent);
+//                }
+//            }, 1500);
         }
 
     }
@@ -245,75 +252,108 @@ public class FormCadastro extends AppCompatActivity {
     }
 
 
+private void registrate(){
+    Infos info = new Infos(resgataInfo().nome, resgataInfo().email, resgataInfo().tel, resgataInfo().dataNas, resgataInfo().chave, resgataInfo().senha);
+            String nome = info.nome.toString().trim();
+            String email = info.email.toString().trim();
+            String tel = info.tel.toString().trim();
+            String dataNasc = info.dataNas.toString().trim();
+            String chave = info.chave.toString().trim();
+            String senha = info.senha.toString().trim();
+            //String datanasc_br = info.dataNas;
 
+            Call<ResponseBody> call = RetroFitClient
+                    .getInstance()
+                    .getAPI()
+                    .createUser(nome, email, tel, dataNasc, chave, senha);
 
-
-
-    class Insert extends AsyncTask<Void, Void, Void> {
-
-        String checkchave1= "";
-        String error="";
-        boolean flag=false;
-
-
-        @Override
-        protected Void doInBackground(Void... voids) {
-            Infos info = new Infos(resgataInfo().nome, resgataInfo().email, resgataInfo().tel, resgataInfo().dataNas, resgataInfo().chave, resgataInfo().senha);
-            String nome = info.nome;
-            String email = info.email;
-            String tel = info.tel;
-            String datanasc = "";
-            String chave = info.chave;
-            String senha = info.senha;
-            String datanasc_br = info.dataNas;
-            char ch;
-
-            for (int i=0; i<datanasc_br.length(); i++)
-            {
-                ch= datanasc_br.charAt(i); //extracts each character
-                datanasc= ch+datanasc; //adds each character in front of the existing string
-            }
-            try {
-                Class.forName("com.mysql.jdbc.Driver");
-                Connection connection = DriverManager.getConnection("jdbc:mysql://139.177.199.178/test","backend","agathusia");
-
-               Statement statement = connection.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
-               ResultSet resultSet = statement.executeQuery("SELECT * FROM funcionarios");
-
-                    while (resultSet.next()) {
-                        checkchave1 = resultSet.getString("chave");
-
-                        if (checkchave1.equals(chave)) {
-                            flag=false;
-                            Toast.makeText(FormCadastro.this, "Usuário já cadastrado", Toast.LENGTH_SHORT).show();
-                            break;
-
-                        } else {
-                            flag=true;
-                        }
+            call.enqueue(new Callback<ResponseBody>() {
+                @Override
+                public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                    try {
+                        String body = response.body().string();
+                        Toast.makeText(FormCadastro.this, body, Toast.LENGTH_LONG).show();
+                    }catch (IOException e) {
+                        e.printStackTrace();
                     }
+                }
 
-                    if (flag) {
+                @Override
+                public void onFailure(Call<ResponseBody> call, Throwable t) {
+                    Toast.makeText(FormCadastro.this, t.getMessage(), Toast.LENGTH_LONG).show();
 
-                        //statement.executeUpdate("INSERT INTO funcionarios (nome, email, chave) values (\"" + nome + "\",\"" + email + "\",\"" + chave + "\");");
+                }
+            });
 
-                    resultSet.last();
-                    //int id = resultSet.getInt("id") + 1;
-                    resultSet.moveToInsertRow();
-                    //resultSet.updateInt("id", id);
-                    resultSet.updateString("nome", nome);
-                    resultSet.updateString("email", email);
-                    resultSet.updateString("tel", tel);
-                    //resultSet.updateString("dataNasc", datanasc);
-                    resultSet.updateString("chave", chave);
-                    resultSet.updateString("senha", senha);
-                    resultSet.insertRow();
-                    resultSet.beforeFirst();
-                    }
-            } catch(Exception e) {
-                    error = e.toString();
-            }
-            return null;
-        }
-    }
+}
+
+
+
+//    class Insert extends AsyncTask<Void, Void, Void> {
+//
+//        String checkchave1= "";
+//        String error="";
+//        boolean flag=false;
+//
+//
+//        @Override
+//        protected Void doInBackground(Void... voids) {
+//            Infos info = new Infos(resgataInfo().nome, resgataInfo().email, resgataInfo().tel, resgataInfo().dataNas, resgataInfo().chave, resgataInfo().senha);
+//            String nome = info.nome;
+//            String email = info.email;
+//            String tel = info.tel;
+//            String datanasc = "";
+//            String chave = info.chave;
+//            String senha = info.senha;
+//            String datanasc_br = info.dataNas;
+//            char ch;
+//
+//            for (int i=0; i<datanasc_br.length(); i++)
+//            {
+//                ch= datanasc_br.charAt(i); //extracts each character
+//                datanasc= ch+datanasc; //adds each character in front of the existing string
+//            }
+//            try {
+//                Class.forName("com.mysql.jdbc.Driver");
+//                Connection connection = DriverManager.getConnection("jdbc:mysql://139.177.199.178/test","backend","agathusia");
+//
+//               Statement statement = connection.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+//               ResultSet resultSet = statement.executeQuery("SELECT * FROM funcionarios");
+//
+//                    while (resultSet.next()) {
+//                        checkchave1 = resultSet.getString("chave");
+//
+//                        if (checkchave1.equals(chave)) {
+//                            flag=false;
+//                            Toast.makeText(FormCadastro.this, "Usuário já cadastrado", Toast.LENGTH_SHORT).show();
+//                            break;
+//
+//                        } else {
+//                            flag=true;
+//                        }
+//                    }
+//
+//                    if (flag) {
+//
+//                        //statement.executeUpdate("INSERT INTO funcionarios (nome, email, chave) values (\"" + nome + "\",\"" + email + "\",\"" + chave + "\");");
+//
+//                    resultSet.last();
+//                    //int id = resultSet.getInt("id") + 1;
+//                    resultSet.moveToInsertRow();
+//                    //resultSet.updateInt("id", id);
+//                    resultSet.updateString("nome", nome);
+//                    resultSet.updateString("email", email);
+//                    resultSet.updateString("tel", tel);
+//                    //resultSet.updateString("dataNasc", datanasc);
+//                    resultSet.updateString("chave", chave);
+//                    resultSet.updateString("senha", senha);
+//                    resultSet.insertRow();
+//                    resultSet.beforeFirst();
+//                    }
+//            } catch(Exception e) {
+//                    error = e.toString();
+//            }
+//            return null;
+//        }
+//    }
 }

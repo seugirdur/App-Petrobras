@@ -4,12 +4,12 @@ public class LoginResponse {
 
     private boolean error;
     private String message;
-    private UserAPI user;
+    private String hashlogin;
 
-    public LoginResponse(boolean error, String message, UserAPI user) {
+    public LoginResponse(boolean error, String message, String hashlogin) {
         this.error = error;
         this.message = message;
-        this.user = user;
+        this.hashlogin = hashlogin;
     }
 
     public boolean isError() {
@@ -20,7 +20,7 @@ public class LoginResponse {
         return message;
     }
 
-    public UserAPI getUser() {
-        return user;
+    public String getHashlogin() {
+        return hashlogin;
     }
 }

@@ -17,10 +17,17 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.example.apppetrobras.api.RetroFitClient;
+import com.example.apppetrobras.models.LoginResponse;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 
 public class FormLogin extends AppCompatActivity {
@@ -51,8 +58,8 @@ public class FormLogin extends AppCompatActivity {
             public void onClick(View view) {
 
                 progressbar=findViewById(R.id.progressbar);
-
-                new Task().execute();
+                guardate();
+                //new Task().execute();
                 progressbar.setVisibility(View.VISIBLE);
 
             }
@@ -117,6 +124,44 @@ public class FormLogin extends AppCompatActivity {
 
     }
 
+    private void guardate(){
+
+        String chave = edit_user.getText().toString().trim();
+        String senha = edit_senha.getText().toString().trim();
+
+        Call<LoginResponse> call = RetroFitClient
+                .getInstance()
+                .getAPI()
+                .userLogin(chave, senha);
+
+        call.enqueue(new Callback<LoginResponse>() {
+            @Override
+            public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
+                LoginResponse loginResponse = response.body();
+
+                if (!loginResponse.isError()){
+                    String boradescobrir = loginResponse.getMessage();
+//                    if(boradescobrir.equals(chave)) {
+//                        Intent intent = new Intent(FormLogin.this, TabActivity.class);
+//                        startActivity(intent);
+//                    }
+                    Toast.makeText(FormLogin.this, loginResponse.getMessage(), Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(FormLogin.this, Ajuda.class);
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(FormLogin.this, loginResponse.getMessage(), Toast.LENGTH_LONG).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<LoginResponse> call, Throwable t) {
+                //String happened
+                Toast.makeText(FormLogin.this, t.getMessage(), Toast.LENGTH_LONG).show();
+            }
+        });
+
+    }
+
 
     public userLogged guardaInfo() {
         String guardanome;
@@ -145,56 +190,56 @@ public class FormLogin extends AppCompatActivity {
 
     }
 
-    class Task extends AsyncTask<Void, Void, Void> {
-        String records = "", error="";
-        String user = edit_user.getText().toString();
-        String pass = edit_senha.getText().toString();
-
-        @Override
-        protected Void doInBackground(Void... voids) {
-            try {
-
-                Class.forName("com.mysql.jdbc.Driver");
-                Connection connection = DriverManager.getConnection("jdbc:mysql://139.177.199.178/test","backend","agathusia");
-                Statement statement = connection.createStatement();
-                ResultSet resultSet = statement.executeQuery("SELECT * FROM funcionarios");
-
-                while(resultSet.next()) {
-                    nomebd = resultSet.getString("nome");
-                    telbd = resultSet.getString("tel");
-                    emailbd = resultSet.getString("email");
-                    userbd = resultSet.getString("chave");
-                    passbd = resultSet.getString("senha");
-
-                    if(user.equals(userbd) && pass.equals(passbd)) {
-                        break;
-                    }
-                }
-
-            } catch(Exception e) {
-                error = e.toString();
-            }
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(Void unused) {
-            if (error != "") {
-            }
-
-            if(user.equals(userbd) && pass.equals(passbd)) {
-                Toast.makeText(FormLogin.this, "Bem vindo "+nomebd , Toast.LENGTH_SHORT).show();
-
-                Intent intent = new Intent(FormLogin.this, TabActivity.class);
-                intent.putExtra("userlogged", guardaInfo());
-                startActivity(intent);
-                finish();
-
-            } else {
-                Toast.makeText(FormLogin.this, "n foi dnv", Toast.LENGTH_SHORT).show();
-            }
-
-            super.onPostExecute(unused);
-        }
-    }
+//    class Task extends AsyncTask<Void, Void, Void> {
+//        String records = "", error="";
+//        String user = edit_user.getText().toString();
+//        String pass = edit_senha.getText().toString();
+//
+//        @Override
+//        protected Void doInBackground(Void... voids) {
+//            try {
+//
+//                Class.forName("com.mysql.jdbc.Driver");
+//                Connection connection = DriverManager.getConnection("jdbc:mysql://139.177.199.178/test","backend","agathusia");
+//                Statement statement = connection.createStatement();
+//                ResultSet resultSet = statement.executeQuery("SELECT * FROM funcionarios");
+//
+//                while(resultSet.next()) {
+//                    nomebd = resultSet.getString("nome");
+//                    telbd = resultSet.getString("tel");
+//                    emailbd = resultSet.getString("email");
+//                    userbd = resultSet.getString("chave");
+//                    passbd = resultSet.getString("senha");
+//
+//                    if(user.equals(userbd) && pass.equals(passbd)) {
+//                        break;
+//                    }
+//                }
+//
+//            } catch(Exception e) {
+//                error = e.toString();
+//            }
+//            return null;
+//        }
+//
+//        @Override
+//        protected void onPostExecute(Void unused) {
+//            if (error != "") {
+//            }
+//
+//            if(user.equals(userbd) && pass.equals(passbd)) {
+//                Toast.makeText(FormLogin.this, "Bem vindo "+nomebd , Toast.LENGTH_SHORT).show();
+//
+//                Intent intent = new Intent(FormLogin.this, TabActivity.class);
+//                intent.putExtra("userlogged", guardaInfo());
+//                startActivity(intent);
+//                finish();
+//
+//            } else {
+//                Toast.makeText(FormLogin.this, "n foi dnv", Toast.LENGTH_SHORT).show();
+//            }
+//
+//            super.onPostExecute(unused);
+//        }
+//    }
 }

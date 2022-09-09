@@ -12,7 +12,7 @@ import retrofit2.http.POST;
 public interface API {
 
     @FormUrlEncoded
-    @POST("/usuarios")
+    @POST("/usuarios/cadastro")
     Call<ResponseBody> createUser(
             @Field("nome") String nome,
             @Field("email") String email,
@@ -23,6 +23,9 @@ public interface API {
     );
 
     @FormUrlEncoded
-    @GET("/usuarios")
-    Call<LoginResponse> userLogin();
+    @POST("/usuarios/login")
+    Call<LoginResponse> userLogin(
+            @Field("chave") String chave,
+            @Field("senha") String senha
+    );
 }

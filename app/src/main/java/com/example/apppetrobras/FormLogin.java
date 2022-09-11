@@ -19,6 +19,7 @@ import android.widget.Toast;
 
 import com.example.apppetrobras.api.RetroFitClient;
 import com.example.apppetrobras.models.LoginResponse;
+import com.example.apppetrobras.models.UserAPI;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -145,9 +146,14 @@ public class FormLogin extends AppCompatActivity {
 //                        Intent intent = new Intent(FormLogin.this, TabActivity.class);
 //                        startActivity(intent);
 //                    }
+
+//                    UserAPI userApi = loginResponse.getUserAPI();
+                    String chavedonego = loginResponse.getHashlogin();
                     Toast.makeText(FormLogin.this, loginResponse.getMessage(), Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(FormLogin.this, Ajuda.class);
-                    startActivity(intent);
+
+
+//                    Intent intent = new Intent(FormLogin.this, RelatorioProcesso.class);
+//                    startActivity(intent);
                 } else {
                     Toast.makeText(FormLogin.this, loginResponse.getMessage(), Toast.LENGTH_LONG).show();
                 }

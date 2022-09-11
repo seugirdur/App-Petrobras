@@ -23,4 +23,5 @@ public class LoginResponse {
     public String getHashlogin() {
         return hashlogin;
     }
+
 }

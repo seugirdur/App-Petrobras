@@ -32,7 +32,7 @@ public class RelatorioProcesso extends AppCompatActivity {
         download_icon = (FloatingActionButton) findViewById(R.id.download_icon);
         observacoes_icon = (FloatingActionButton) findViewById(R.id.observacoes_icon);
         mDialog = new Dialog(this);
-        settingTheName();
+//        settingTheName();
 
 
 
@@ -77,14 +77,13 @@ public class RelatorioProcesso extends AppCompatActivity {
 
     }
 
-    private void settingTheName() {
-
-        TextView nome_usuario;
-        nome_usuario=findViewById(R.id.nome_usuario);
-        userLogged usuario = getIntent().getParcelableExtra("userlogged");
-        nome_usuario.setText(usuario.getNome());
-
-    }
+//    private void settingTheName() {
+//
+//        TextView nome_usuario;
+//        nome_usuario=findViewById(R.id.nome_usuario);
+//
+//
+//    }
 
     private void animateFab() {
         if (isOpen) {

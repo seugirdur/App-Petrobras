@@ -1,6 +1,9 @@
 package com.example.apppetrobras.api;
 
+import com.example.apppetrobras.Problems;
 import com.example.apppetrobras.models.LoginResponse;
+
+import java.util.List;
 
 import okhttp3.ResponseBody;
 import retrofit2.Call;
@@ -28,4 +31,7 @@ public interface API {
             @Field("chave") String chave,
             @Field("senha") String senha
     );
+
+    @GET("/problems")
+    Call<List<Problems>> getProblems();
 }

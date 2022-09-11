@@ -2,14 +2,20 @@ package com.example.apppetrobras.models;
 
 public class UserAPI {
     private String nome, email, tel, dataNasc, chave, senha;
+    private Integer id;
 
-    public UserAPI(String nome, String email, String tel, String dataNasc, String chave, String senha) {
+    public UserAPI(Integer id, String nome, String email, String tel, String dataNasc, String chave, String senha) {
+        this.id = id;
         this.nome = nome;
         this.email = email;
         this.tel = tel;
         this.dataNasc = dataNasc;
         this.chave = chave;
         this.senha = senha;
+    }
+
+    public Integer getId() {
+        return id;
     }
 
     public String getNome() {

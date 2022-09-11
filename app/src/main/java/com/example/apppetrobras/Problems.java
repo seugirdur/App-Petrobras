@@ -1,14 +1,14 @@
 package com.example.apppetrobras;
 
 public class Problems {
-    private int idTitulo, idProblema;
+    private String idTitulo, idProblema;
     private String tituloSolucao;
 
-    public int getIdTitulo() {
+    public String getIdTitulo() {
         return idTitulo;
     }
 
-    public int getIdProblema() {
+    public String getIdProblema() {
         return idProblema;
     }
 

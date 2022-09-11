@@ -19,6 +19,7 @@ import retrofit2.Response;
 public class Conteudo extends AppCompatActivity {
 
     private TextView tv_result;
+    private RecyclerView rv_conteudo;
 
 
 
@@ -27,7 +28,10 @@ public class Conteudo extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_conteudo);
 
-        tv_result = findViewById(R.id.tv_result);
+
+        rv_conteudo = findViewById(R.id.rv_conteudo);
+        rv_conteudo.setHasFixedSize(true);
+        rv_conteudo.setLayoutManager(new LinearLayoutManager(this));
 
 
 
@@ -40,25 +44,20 @@ public class Conteudo extends AppCompatActivity {
             @Override
             public void onResponse(Call<List<Problems>> call, Response<List<Problems>> response) {
                 if (!response.isSuccessful()){
-                    tv_result.setText("Code: "+response.code());
+                    Toast.makeText(Conteudo.this, response.code(), Toast.LENGTH_SHORT).show();
                     return;
                 }
                 List<Problems> problemsList = response.body();
-                for (Problems problems : problemsList) {
-                    String content ="";
-                    content += "idTitulo :" + problems.getIdTitulo() + "\n";
-                    content += "idProblema :" + problems.getIdProblema() + "\n";
-                    content += "tituloSolucao :" + problems.getTituloSolucao() + "\n\n";
-
-                    tv_result.append(content);
+                ProblemsAdapter problemsAdapter = new ProblemsAdapter(Conteudo.this, problemsList);
+                rv_conteudo.setAdapter(problemsAdapter);
 
                 }
 
-            }
+
 
             @Override
             public void onFailure(Call<List<Problems>> call, Throwable t) {
-                tv_result.setText(t.getMessage());
+                Toast.makeText(Conteudo.this, t.getMessage(), Toast.LENGTH_SHORT).show();
 
             }
         });

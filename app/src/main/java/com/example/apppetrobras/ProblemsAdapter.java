@@ -18,7 +18,7 @@ public class ProblemsAdapter extends RecyclerView.Adapter<ProblemsAdapter.Proble
     Context context;
 
     public ProblemsAdapter(Context context, List<Problems> problems) {
-        context = this.context;
+        this.context = context;
         problemsList = problems;
     }
     @Override
@@ -47,7 +47,7 @@ public class ProblemsAdapter extends RecyclerView.Adapter<ProblemsAdapter.Proble
     public class ProblemsViewHolder extends RecyclerView.ViewHolder{
         TextView idTitulo_tv, idProblema_tv, tituloSolucao_tv;
 
-        public ProblemsViewHolder( View itemView) {
+        public ProblemsViewHolder(@NonNull View itemView) {
             super(itemView);
 
             idTitulo_tv = itemView.findViewById(R.id.idTitulo_tv);

@@ -3,10 +3,8 @@ package com.example.apppetrobras;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
-import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
@@ -21,10 +19,8 @@ import com.example.apppetrobras.api.RetroFitClient;
 import com.example.apppetrobras.models.LoginResponse;
 import com.example.apppetrobras.models.UserAPI;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -147,8 +143,23 @@ public class FormLogin extends AppCompatActivity {
 //                        startActivity(intent);
 //                    }
 
-//                    UserAPI userApi = loginResponse.getUserAPI();
-                    String chavedonego = loginResponse.getHashlogin();
+
+
+//                    public List<Message> readMessagesArray(JsonReader reader) throws IOException {
+//                        List<Message> messages = new ArrayList<Message>();
+//
+//                        reader.beginArray();
+//                        while (reader.hasNext()) {
+//                            messages.add(readMessage(reader));
+//                        }
+//                        reader.endArray();
+//                        return messages;
+//                    }
+
+
+
+
+
                     Toast.makeText(FormLogin.this, loginResponse.getMessage(), Toast.LENGTH_LONG).show();
 
 

@@ -4,11 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.apppetrobras.api.RetroFitClient;
+import com.example.apppetrobras.fragments.RecyclerViewInteface;
 
 import java.util.List;
 
@@ -16,11 +18,11 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class Conteudo extends AppCompatActivity {
+public class Conteudo extends AppCompatActivity implements RecyclerViewInteface{
 
-    private TextView tv_result;
-    private RecyclerView rv_conteudo;
-
+    private RecyclerView recyclerview;
+    private Context context;
+    private RecyclerViewInteface recyclerViewInteface;
 
 
     @Override
@@ -28,12 +30,12 @@ public class Conteudo extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_conteudo);
 
+        recyclerview = findViewById(R.id.rv_conteudo);
+        recyclerview.setLayoutManager(new LinearLayoutManager(this));
+        recyclerview.setHasFixedSize(true);
 
-        rv_conteudo = findViewById(R.id.rv_conteudo);
-        rv_conteudo.setHasFixedSize(true);
-        rv_conteudo.setLayoutManager(new LinearLayoutManager(this));
-
-
+        context = this;
+        recyclerViewInteface = this;
 
         Call<List<Problems>> call = RetroFitClient
                 .getInstance()
@@ -48,8 +50,10 @@ public class Conteudo extends AppCompatActivity {
                     return;
                 }
                 List<Problems> problemsList = response.body();
-                ProblemsAdapter problemsAdapter = new ProblemsAdapter(Conteudo.this, problemsList);
-                rv_conteudo.setAdapter(problemsAdapter);
+                RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(context,
+                        problemsList, recyclerViewInteface, R.layout.cont_list );
+                recyclerview.setAdapter(recyclerViewAdapter);
+                recyclerViewAdapter.notifyDataSetChanged();
 
                 }
 
@@ -61,6 +65,11 @@ public class Conteudo extends AppCompatActivity {
 
             }
         });
+
+    }
+
+    @Override
+    public void onItemClick(int position) {
 
     }
 }

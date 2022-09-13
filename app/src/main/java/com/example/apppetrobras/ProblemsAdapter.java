@@ -50,9 +50,9 @@ public class ProblemsAdapter extends RecyclerView.Adapter<ProblemsAdapter.Proble
         public ProblemsViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            idTitulo_tv = itemView.findViewById(R.id.idTitulo_tv);
-            idProblema_tv = itemView.findViewById(R.id.idProblema_tv);
-            tituloSolucao_tv = itemView.findViewById(R.id.tituloSolucao_tv);
+            idTitulo_tv = itemView.findViewById(R.id.idTitulo);
+            idProblema_tv = itemView.findViewById(R.id.idProblema);
+            tituloSolucao_tv = itemView.findViewById(R.id.textProblema);
 
         }
     }

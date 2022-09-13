@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.apppetrobras.fragments.RecyclerViewInteface;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder>{
 
@@ -21,6 +22,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     private final int layout;
 
     Context context;
+    List<Problems> problemsList;
     ArrayList<DadosLista> dataArrayList;
 
     public RecyclerViewAdapter(Context context, ArrayList<DadosLista> dataArrayList,
@@ -32,15 +34,30 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         this.layout = layout;
     }
 
+    public RecyclerViewAdapter(Context context, List<Problems> problemsList,
+                               RecyclerViewInteface recyclerViewInteface,
+                               int layout) {
+        this.context = context;
+        this.problemsList = problemsList;
+        this.recyclerViewInteface = recyclerViewInteface;
+        this.layout = layout;
+    }
+
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         View view = LayoutInflater.from(context).inflate(layout,parent,false);
 
-        int idTexto, idImage;
+        int idTexto, idImage, idProblemaID, idTituloID;
 
         switch(layout) {
+
+            case R.layout.cont_list:
+                idTituloID = R.id.idTitulo;
+                idProblemaID = R.id.idProblema;
+                idTexto = R.id.textProblema;
+                return new MyViewHolder(view, recyclerViewInteface, idTituloID, idProblemaID, idTexto);
 
             case  R.layout.item_soluction_list:
                 idTexto = R.id.title_soluction;
@@ -57,23 +74,34 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
 
+        if(dataArrayList!=null){
         DadosLista data = dataArrayList.get(position);
-        holder.textoLista.setText(data.text);
-        if(holder.imagemLista!=null){
-            holder.imagemLista.setImageResource(data.image);
+            if(holder.textoLista!=null){ holder.textoLista.setText(data.text);}
+            if(holder.imagemLista!=null){ holder.imagemLista.setImageResource(data.image);}
+        }
+        else if(problemsList!=null){
+            Problems data = problemsList.get(position);
+            if(holder.textoLista!=null){ holder.textoLista.setText(data.getTituloSolucao());}
+            if(holder.idTitulo!=null){ holder.idTitulo.setText(data.getIdTitulo());}
+            if(holder.idProblema!=null){ holder.idProblema.setText(data.getIdProblema());}
         }
 
     }
 
     @Override
     public int getItemCount() {
-        return dataArrayList.size();
+        if(dataArrayList!=null) {
+            return dataArrayList.size();
+        }
+        else {
+            return problemsList.size();
+        }
     }
 
     public static class MyViewHolder extends RecyclerView.ViewHolder{
 
         ImageView imagemLista;
-        TextView textoLista;
+        TextView textoLista, idTitulo, idProblema;
 
 
         public MyViewHolder(@NonNull View itemView,RecyclerViewInteface recyclerViewInteface,
@@ -90,10 +118,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                 public void onClick(View view) {
                     if(recyclerViewInteface != null){
 
-                        // getAbsoluteAdapterPosition() leva em conta todas as listas
-                        // getBidingAdapterPosition() só considera aquela em que eles está inserido
-
-                        int pos = getAdapterPosition();
+                        int pos = getBindingAdapterPosition();
 
                         if (pos != RecyclerView.NO_POSITION) {
                             recyclerViewInteface.onItemClick(pos);
@@ -118,9 +143,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                 public void onClick(View view) {
                     if(recyclerViewInteface != null){
 
-                        // getAbsoluteAdapterPosition() leva em conta todas as listas
-                        // getBidingAdapterPosition() só considera aquela em que eles está inserido
-
                         int pos = getBindingAdapterPosition();
 
                         if (pos != RecyclerView.NO_POSITION) {
@@ -132,6 +154,31 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             });
         }
 
+        public MyViewHolder(@NonNull View itemView,RecyclerViewInteface recyclerViewInteface,
+                            int idTituloID, int idProblemaID, int idTexto) {
+            super(itemView);
+
+            idTitulo = itemView.findViewById(idTituloID);
+            idProblema = itemView.findViewById(idProblemaID);
+            textoLista = itemView.findViewById(idTexto);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+
+                //teste
+                @Override
+                public void onClick(View view) {
+                    if(recyclerViewInteface != null){
+
+                        int pos = getBindingAdapterPosition();
+
+                        if (pos != RecyclerView.NO_POSITION) {
+                            recyclerViewInteface.onItemClick(pos);
+                        }
+
+                    }
+                }
+            });
+        }
     }
 
 }

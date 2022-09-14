@@ -40,16 +40,19 @@ public class InicioFragment extends Fragment implements RecyclerViewInteface{
 
         dataInitialize();
 
+        // Essa variável recebe (por meio do id) a reciclerView no xml dessa tela
         recyclerview = view.findViewById(R.id.recyclerview);
         recyclerview.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerview.setHasFixedSize(true);
+        // Aqui há uma instância da RecyclerViewAdapter utilizando o construtor adequado:
+        // RecyclerViewAdapter(Context, Lista<Objeto>, RecyclerViewInterface, layout do item)
         RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(getContext(),
                 dataArrayList, this, R.layout.item_list);
-
         recyclerview.setAdapter(recyclerViewAdapter);
         recyclerViewAdapter.notifyDataSetChanged();
     }
 
+    //
     private void dataInitialize() {
 
         dataArrayList = new ArrayList<>();
@@ -60,7 +63,7 @@ public class InicioFragment extends Fragment implements RecyclerViewInteface{
                 getString(R.string.inicio_3),
                 getString(R.string.inicio_4),
                 getString(R.string.inicio_5),
-                getString(R.string.inicio_6),
+                getString(R.string.inicio_6)
         };
 
         idProblemas = new int[]{
@@ -85,8 +88,11 @@ public class InicioFragment extends Fragment implements RecyclerViewInteface{
 
     @Override
     public void onItemClick(int position) {
+        // Redirecionamento para a tela do problema contendo os títulos das soluções
         Intent intent = new Intent(getActivity(), ProblemActivity.class);
-        //Valor do tipo é temporário. Ainda não foi definido o funcionamento da aba 1(Inicio)
+
+        // Definição de valores que serão redirecionados
+        // Valor do tipo é temporário. Ainda não foi definido o funcionamento da aba 1(Inicio)
         intent.putExtra("TIPO",1);
         intent.putExtra("ID", dataArrayList.get(position).getId());
         startActivity(intent);

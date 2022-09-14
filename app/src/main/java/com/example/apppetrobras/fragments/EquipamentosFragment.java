@@ -40,9 +40,12 @@ public class EquipamentosFragment extends Fragment implements RecyclerViewIntefa
 
         dataInitialize();
 
+        // Essa variável recebe (por meio do id) a reciclerView no xml dessa tela
         recyclerview = view.findViewById(R.id.recyclerview);
         recyclerview.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerview.setHasFixedSize(true);
+        // Aqui há uma instância da RecyclerViewAdapter utilizando o construtor adequado:
+        // RecyclerViewAdapter(Context, Lista<Objeto>, RecyclerViewInterface, layout do item)
         RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(getContext(),
                 dataArrayList, this, R.layout.item_list);
         recyclerview.setAdapter(recyclerViewAdapter);
@@ -59,8 +62,7 @@ public class EquipamentosFragment extends Fragment implements RecyclerViewIntefa
                 getString(R.string.equipamentos_3),
                 getString(R.string.equipamentos_4),
                 getString(R.string.equipamentos_5),
-                getString(R.string.equipamentos_6),
-
+                getString(R.string.equipamentos_6)
         };
 
         idProblemas = new int[]{
@@ -85,7 +87,10 @@ public class EquipamentosFragment extends Fragment implements RecyclerViewIntefa
 
     @Override
     public void onItemClick(int position) {
+        // Redirecionamento para a tela do problema contendo os títulos das soluções
         Intent intent = new Intent(getActivity(), ProblemActivity.class);
+
+        // Definição de valores que serão redirecionados
         intent.putExtra("TIPO",3);
         intent.putExtra("ID", dataArrayList.get(position).getId());
         startActivity(intent);

@@ -1,7 +1,7 @@
 package com.example.apppetrobras.api;
 
 import com.example.apppetrobras.Problems;
-import com.example.apppetrobras.models.LoginResponse;
+import com.example.apppetrobras.models.UserAPI;
 
 import java.util.List;
 
@@ -27,7 +27,7 @@ public interface API {
 
     @FormUrlEncoded
     @POST("/usuarios/login")
-    Call<LoginResponse> userLogin(
+    Call<List<UserAPI>> userLogin(
             @Field("chave") String chave,
             @Field("senha") String senha
     );

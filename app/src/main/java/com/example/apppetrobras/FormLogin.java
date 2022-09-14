@@ -3,6 +3,9 @@ package com.example.apppetrobras;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -16,10 +19,8 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.apppetrobras.api.RetroFitClient;
-import com.example.apppetrobras.models.LoginResponse;
 import com.example.apppetrobras.models.UserAPI;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -35,7 +36,8 @@ public class FormLogin extends AppCompatActivity {
     Dialog mDialog;
     ProgressBar progressbar;
     boolean passwordVisible;
-
+    SharedPreferences sp;
+    SharedPreferences.Editor editor;
 
 
     @Override
@@ -126,56 +128,87 @@ public class FormLogin extends AppCompatActivity {
         String chave = edit_user.getText().toString().trim();
         String senha = edit_senha.getText().toString().trim();
 
-        Call<LoginResponse> call = RetroFitClient
+
+        Call<List<UserAPI>> call = RetroFitClient
                 .getInstance()
                 .getAPI()
                 .userLogin(chave, senha);
 
-        call.enqueue(new Callback<LoginResponse>() {
+        call.enqueue(new Callback<List<UserAPI>>() {
             @Override
-            public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
-                LoginResponse loginResponse = response.body();
-
-                if (!loginResponse.isError()){
-                    String boradescobrir = loginResponse.getMessage();
-//                    if(boradescobrir.equals(chave)) {
-//                        Intent intent = new Intent(FormLogin.this, TabActivity.class);
-//                        startActivity(intent);
-//                    }
-
-
-
-//                    public List<Message> readMessagesArray(JsonReader reader) throws IOException {
-//                        List<Message> messages = new ArrayList<Message>();
-//
-//                        reader.beginArray();
-//                        while (reader.hasNext()) {
-//                            messages.add(readMessage(reader));
-//                        }
-//                        reader.endArray();
-//                        return messages;
-//                    }
-
-
-
-
-
-                    Toast.makeText(FormLogin.this, loginResponse.getMessage(), Toast.LENGTH_LONG).show();
-
-
-//                    Intent intent = new Intent(FormLogin.this, RelatorioProcesso.class);
-//                    startActivity(intent);
-                } else {
-                    Toast.makeText(FormLogin.this, loginResponse.getMessage(), Toast.LENGTH_LONG).show();
+            public void onResponse(Call<List<UserAPI>> call, Response<List<UserAPI>> response) {
+                if (!response.isSuccessful()){
+                    Toast.makeText(FormLogin.this, response.code(), Toast.LENGTH_SHORT).show();
+                    return;
                 }
+                List<UserAPI> userAPIList = response.body();
+                UserAPI userAPI = userAPIList.get(0);
+                String lmao = userAPI.getNome();
+                Toast.makeText(FormLogin.this, "Bem vindo "+lmao, Toast.LENGTH_SHORT).show();
+
+                sp = getSharedPreferences("meliorism", MODE_PRIVATE);
+                SharedPreferences.Editor editor = sp.edit();
+                editor.putString(getString(R.string.UserName), lmao);
+                editor.apply();
+
+                Intent intent = new Intent(FormLogin.this, RelatorioProcesso.class);
+                startActivity(intent);
+
             }
 
             @Override
-            public void onFailure(Call<LoginResponse> call, Throwable t) {
-                //String happened
-                Toast.makeText(FormLogin.this, t.getMessage(), Toast.LENGTH_LONG).show();
+            public void onFailure(Call<List<UserAPI>> call, Throwable t) {
+                Toast.makeText(FormLogin.this, t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
+
+//        Call<LoginResponse> call = RetroFitClient
+//                .getInstance()
+//                .getAPI()
+//                .userLogin(chave, senha);
+//
+//        call.enqueue(new Callback<LoginResponse>() {
+//            @Override
+//            public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
+//                LoginResponse loginResponse = response.body();
+//
+//                if (!loginResponse.isError()){
+//                    String boradescobrir = loginResponse.getMessage();
+////                    if(boradescobrir.equals(chave)) {
+////                        Intent intent = new Intent(FormLogin.this, TabActivity.class);
+////                        startActivity(intent);
+////                    }
+//
+//
+//
+////                    public List<Message> readMessagesArray(JsonReader reader) throws IOException {
+////                        List<Message> messages = new ArrayList<Message>();
+////
+////                        reader.beginArray();
+////                        while (reader.hasNext()) {
+////                            messages.add(readMessage(reader));
+////                        }
+////                        reader.endArray();
+////                        return messages;
+////                    }
+//
+//
+//
+//
+//
+//                    Toast.makeText(FormLogin.this, loginResponse.getMessage(), Toast.LENGTH_LONG).show();
+////                    Intent intent = new Intent(FormLogin.this, RelatorioProcesso.class);
+////                    startActivity(intent);
+//                } else {
+//                    Toast.makeText(FormLogin.this, loginResponse.getMessage(), Toast.LENGTH_LONG).show();
+//                }
+//            }
+//
+//            @Override
+//            public void onFailure(Call<LoginResponse> call, Throwable t) {
+//                Toast.makeText(FormLogin.this, t.getMessage(), Toast.LENGTH_LONG).show();
+//            }
+//        });
 
     }
 

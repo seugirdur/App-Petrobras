@@ -36,8 +36,7 @@ public class FormLogin extends AppCompatActivity {
     Dialog mDialog;
     ProgressBar progressbar;
     boolean passwordVisible;
-    SharedPreferences sp;
-    SharedPreferences.Editor editor;
+    public static final String meliorism = "meliorism";
 
 
     @Override
@@ -56,9 +55,9 @@ public class FormLogin extends AppCompatActivity {
         button_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //new Task().execute();
 
                 progressbar=findViewById(R.id.progressbar);
-                //me deixa subirrrr
                 guardate();
                 //new Task().execute();
                 progressbar.setVisibility(View.VISIBLE);
@@ -150,10 +149,28 @@ public class FormLogin extends AppCompatActivity {
                 String lmao = userAPI.getNome();
                 Toast.makeText(FormLogin.this, "Bem vindo "+lmao, Toast.LENGTH_SHORT).show();
 
-                sp = getSharedPreferences("meliorism", MODE_PRIVATE);
-                SharedPreferences.Editor editor = sp.edit();
-                editor.putString(getString(R.string.UserName), lmao);
+
+
+
+
+                SharedPreferences sharedPreferences = getSharedPreferences(
+                        getString(R.string.preference_file_key), Context.MODE_PRIVATE);
+
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString("nome", lmao);
                 editor.apply();
+
+
+
+
+
+
+
+
+
+
+
+
 
                 Intent intent = new Intent(FormLogin.this, RelatorioProcesso.class);
                 startActivity(intent);

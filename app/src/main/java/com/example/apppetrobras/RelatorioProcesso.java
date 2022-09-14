@@ -3,6 +3,7 @@ package com.example.apppetrobras;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -86,11 +87,13 @@ public class RelatorioProcesso extends AppCompatActivity {
         TextView nome_usuario;
         nome_usuario=findViewById(R.id.nome_usuario);
 
-        sp = getSharedPreferences("meliorism", MODE_PRIVATE);
-        String SayMyName = getResources().getString(R.string.UserName);
+
+        SharedPreferences sharedPreferences = getSharedPreferences(
+                getString(R.string.preference_file_key), Context.MODE_PRIVATE);
+
+        String SayMyName = sharedPreferences.getString("nome", "");
+
         nome_usuario.setText(SayMyName);
-
-
 
     }
 

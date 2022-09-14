@@ -14,6 +14,10 @@ import retrofit2.http.POST;
 
 public interface API {
 
+    //Classe com todos os metodos para as diferentes rotas da nossa API
+
+
+    //Rota POST para cadastro
     @FormUrlEncoded
     @POST("/usuarios/cadastro")
     Call<ResponseBody> createUser(
@@ -25,6 +29,7 @@ public interface API {
             @Field("senha") String senha
     );
 
+    //Rota POST para login do usuario
     @FormUrlEncoded
     @POST("/usuarios/login")
     Call<List<UserAPI>> userLogin(
@@ -32,6 +37,7 @@ public interface API {
             @Field("senha") String senha
     );
 
+    //Rota GET para receber o JSON com a lista teste de todos os problemas
     @GET("/problems")
     Call<List<Problems>> getProblems();
 }

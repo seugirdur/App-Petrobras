@@ -1,6 +1,8 @@
 package com.example.apppetrobras.models;
 
 public class UserAPI {
+
+    //Classe publica para guardar as informaçoes do usuario que fizer login para ficar disponivel para classes que precisem dessa informaçao
     private String nome, email, tel, dataNasc, chave, senha;
     private Integer id;
 

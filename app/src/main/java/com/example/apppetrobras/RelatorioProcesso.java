@@ -3,6 +3,7 @@ package com.example.apppetrobras;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -20,6 +21,8 @@ public class RelatorioProcesso extends AppCompatActivity {
     FloatingActionButton add_icon, download_icon, observacoes_icon;
     Animation fabOpen, fabClose, rotateForward, rotateBackward;
     Dialog mDialog;
+    SharedPreferences sp;
+    SharedPreferences.Editor editor;
 
     boolean isOpen = false; // by default it is false
 
@@ -32,7 +35,7 @@ public class RelatorioProcesso extends AppCompatActivity {
         download_icon = (FloatingActionButton) findViewById(R.id.download_icon);
         observacoes_icon = (FloatingActionButton) findViewById(R.id.observacoes_icon);
         mDialog = new Dialog(this);
-//        settingTheName();
+        settingTheName();
 
 
 
@@ -77,13 +80,18 @@ public class RelatorioProcesso extends AppCompatActivity {
 
     }
 
-//    private void settingTheName() {
-//
-//        TextView nome_usuario;
-//        nome_usuario=findViewById(R.id.nome_usuario);
-//
-//
-//    }
+    private void settingTheName() {
+
+        TextView nome_usuario;
+        nome_usuario=findViewById(R.id.nome_usuario);
+
+        sp = getSharedPreferences("meliorism", MODE_PRIVATE);
+        String SayMyName = getResources().getString(R.string.UserName);
+        nome_usuario.setText(SayMyName);
+
+
+
+    }
 
     private void animateFab() {
         if (isOpen) {

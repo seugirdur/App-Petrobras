@@ -46,8 +46,7 @@ public class RelatorioProcesso extends AppCompatActivity {
         rotateForward = AnimationUtils.loadAnimation(this, R.anim.rotate_forward);
         rotateBackward = AnimationUtils.loadAnimation(this, R.anim.rotate_backward);
 
-        // set the click listener on the main floating action button
-
+        // FAB chamando a função "animateFab()"
         add_icon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -58,7 +57,7 @@ public class RelatorioProcesso extends AppCompatActivity {
             }
         });
 
-
+        // Botão de download presente no FAB
         download_icon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -67,6 +66,8 @@ public class RelatorioProcesso extends AppCompatActivity {
             }
         });
 
+
+        // Botão de observações presente no FAB chamando o seu popup de observações
         observacoes_icon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -93,6 +94,8 @@ public class RelatorioProcesso extends AppCompatActivity {
 
     }
 
+
+    // Método para o FAB chamar os botões presentes, realizando sua animação de rotação.
     private void animateFab() {
         if (isOpen) {
 

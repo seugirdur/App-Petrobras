@@ -66,7 +66,7 @@ public class FormLogin extends AppCompatActivity {
         });
 
 
-        // Botão "Esqueceu sua senha?" chamando o popup da tela de Login
+        // Botao esqueceu senha
         esqueceu_senha.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -121,6 +121,8 @@ public class FormLogin extends AppCompatActivity {
             }
         });
 
+
+        //aqui é o dionisio
     }
 
     private void guardate(){

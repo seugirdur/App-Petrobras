@@ -58,6 +58,7 @@ public class FormLogin extends AppCompatActivity {
             public void onClick(View view) {
 
                 progressbar=findViewById(R.id.progressbar);
+                //me deixa subirrrr
                 guardate();
                 //new Task().execute();
                 progressbar.setVisibility(View.VISIBLE);

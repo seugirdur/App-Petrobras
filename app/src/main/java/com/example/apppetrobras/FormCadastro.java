@@ -88,13 +88,6 @@ public class FormCadastro extends AppCompatActivity {
 
         textView.setText(ss);
         textView.setMovementMethod(LinkMovementMethod.getInstance());
-
-
-
-
-
-
-
     }
 
     //redirecionamento para ajuda
@@ -104,6 +97,7 @@ public class FormCadastro extends AppCompatActivity {
 
     }
 
+    //metodo para o botao de Esconder/mostrar senha
     public void mostrarSenha(View view){
         EditText senha = findViewById(R.id.insertSenha);
         ImageButton imgBtn =(ImageButton) findViewById(R.id.imgMostrarSenha);
@@ -188,6 +182,7 @@ public class FormCadastro extends AppCompatActivity {
 
 
 
+        //metodo para conferir se as senhas sao iguais
         if(!senhaIgual()){
             aviso.setText("As senhas não conferem");
             aviso.setVisibility(View.VISIBLE);
@@ -198,16 +193,9 @@ public class FormCadastro extends AppCompatActivity {
           aviso.setVisibility(View.VISIBLE);
         }
         else {
-            //new Insert().execute();
             registrate();
             Infos cadastro = resgataInfo();
-//            Handler handler = new Handler();
-//            handler.postDelayed(new Runnable() {
-//                public void run() {
-//                    Intent myIntent = new Intent(FormCadastro.this, FormLogin.class);
-//                    startActivity(myIntent);
-//                }
-//            }, 1500);
+
         }
 
     }
@@ -251,7 +239,7 @@ public class FormCadastro extends AppCompatActivity {
         return checking;
     }
 
-
+//metodo para registro
 private void registrate(){
     Infos info = new Infos(resgataInfo().nome, resgataInfo().email, resgataInfo().tel, resgataInfo().dataNas, resgataInfo().chave, resgataInfo().senha);
             String nome = info.nome.toString().trim();
@@ -260,8 +248,8 @@ private void registrate(){
             String dataNasc = info.dataNas.toString().trim();
             String chave = info.chave.toString().trim();
             String senha = info.senha.toString().trim();
-            //String datanasc_br = info.dataNas;
 
+            //call para guardar no banco de dados e conferir se o usuario ja existe
             Call<ResponseBody> call = RetroFitClient
                     .getInstance()
                     .getAPI()
@@ -285,75 +273,5 @@ private void registrate(){
                 }
             });
 
-}
-
-
-
-//    class Insert extends AsyncTask<Void, Void, Void> {
-//
-//        String checkchave1= "";
-//        String error="";
-//        boolean flag=false;
-//
-//
-//        @Override
-//        protected Void doInBackground(Void... voids) {
-//            Infos info = new Infos(resgataInfo().nome, resgataInfo().email, resgataInfo().tel, resgataInfo().dataNas, resgataInfo().chave, resgataInfo().senha);
-//            String nome = info.nome;
-//            String email = info.email;
-//            String tel = info.tel;
-//            String datanasc = "";
-//            String chave = info.chave;
-//            String senha = info.senha;
-//            String datanasc_br = info.dataNas;
-//            char ch;
-//
-//            for (int i=0; i<datanasc_br.length(); i++)
-//            {
-//                ch= datanasc_br.charAt(i); //extracts each character
-//                datanasc= ch+datanasc; //adds each character in front of the existing string
-//            }
-//            try {
-//                Class.forName("com.mysql.jdbc.Driver");
-//                Connection connection = DriverManager.getConnection("jdbc:mysql://139.177.199.178/test","backend","agathusia");
-//
-//               Statement statement = connection.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
-//               ResultSet resultSet = statement.executeQuery("SELECT * FROM funcionarios");
-//
-//                    while (resultSet.next()) {
-//                        checkchave1 = resultSet.getString("chave");
-//
-//                        if (checkchave1.equals(chave)) {
-//                            flag=false;
-//                            Toast.makeText(FormCadastro.this, "Usuário já cadastrado", Toast.LENGTH_SHORT).show();
-//                            break;
-//
-//                        } else {
-//                            flag=true;
-//                        }
-//                    }
-//
-//                    if (flag) {
-//
-//                        //statement.executeUpdate("INSERT INTO funcionarios (nome, email, chave) values (\"" + nome + "\",\"" + email + "\",\"" + chave + "\");");
-//
-//                    resultSet.last();
-//                    //int id = resultSet.getInt("id") + 1;
-//                    resultSet.moveToInsertRow();
-//                    //resultSet.updateInt("id", id);
-//                    resultSet.updateString("nome", nome);
-//                    resultSet.updateString("email", email);
-//                    resultSet.updateString("tel", tel);
-//                    //resultSet.updateString("dataNasc", datanasc);
-//                    resultSet.updateString("chave", chave);
-//                    resultSet.updateString("senha", senha);
-//                    resultSet.insertRow();
-//                    resultSet.beforeFirst();
-//                    }
-//            } catch(Exception e) {
-//                    error = e.toString();
-//            }
-//            return null;
-//        }
-//    }
+    }
 }

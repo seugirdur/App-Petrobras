@@ -1,27 +1,16 @@
 package com.example.apppetrobras.models;
 
+import java.util.List;
+
 public class LoginResponse {
 
-    private boolean error;
-    private String message;
-    private String hashlogin;
+    List<UserAPI> userAPIList;
 
-    public LoginResponse(boolean error, String message, String hashlogin) {
-        this.error = error;
-        this.message = message;
-        this.hashlogin = hashlogin;
+    public LoginResponse(List<UserAPI> userAPIList) {
+        this.userAPIList = userAPIList;
     }
 
-    public boolean isError() {
-        return error;
+    public List<UserAPI> getUserAPIList() {
+        return userAPIList;
     }
-
-    public String getMessage() {
-        return message;
-    }
-
-    public String getHashlogin() {
-        return hashlogin;
-    }
-
 }

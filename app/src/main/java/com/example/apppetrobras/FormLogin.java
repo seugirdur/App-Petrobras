@@ -25,6 +25,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -35,11 +36,10 @@ public class FormLogin extends AppCompatActivity {
 
     EditText edit_user, edit_senha;
     Button button_login, esqueceu_senha;
-    String user, pass, userbd, passbd,nomebd, emailbd, telbd;
+    String user, pass, userbd, passbd, nomebd, emailbd, telbd;
     Dialog mDialog;
     ProgressBar progressbar;
     boolean passwordVisible;
-
 
 
     @Override
@@ -58,7 +58,7 @@ public class FormLogin extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                progressbar=findViewById(R.id.progressbar);
+                progressbar = findViewById(R.id.progressbar);
                 guardate();
                 //new Task().execute();
                 progressbar.setVisibility(View.VISIBLE);
@@ -81,31 +81,31 @@ public class FormLogin extends AppCompatActivity {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
 
-                final int Right=2;
-                if(motionEvent.getAction()==MotionEvent.ACTION_UP) {
+                final int Right = 2;
+                if (motionEvent.getAction() == MotionEvent.ACTION_UP) {
 
-                    if(motionEvent.getRawX()>=edit_senha.getRight()-edit_senha.getCompoundDrawables() [Right].getBounds().width()) {
+                    if (motionEvent.getRawX() >= edit_senha.getRight() - edit_senha.getCompoundDrawables()[Right].getBounds().width()) {
 
-                        int selection=edit_senha.getSelectionEnd();
-                        if(passwordVisible){
+                        int selection = edit_senha.getSelectionEnd();
+                        if (passwordVisible) {
 
                             // set drawable image here
-                            edit_senha.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0, R.drawable.ic_eye, 0);
+                            edit_senha.setCompoundDrawablesRelativeWithIntrinsicBounds(0, 0, R.drawable.ic_eye, 0);
 
                             //for hide password
                             edit_senha.setTransformationMethod(PasswordTransformationMethod.getInstance());
-                            passwordVisible=false;
+                            passwordVisible = false;
 
 
-                        }else {
+                        } else {
 
                             //set drawable image here
-                            edit_senha.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0,R.drawable.ic_eye_off,0);
+                            edit_senha.setCompoundDrawablesRelativeWithIntrinsicBounds(0, 0, R.drawable.ic_eye_off, 0);
 
 
                             //for show password
                             edit_senha.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
-                            passwordVisible=true;
+                            passwordVisible = true;
 
 
                         }
@@ -117,84 +117,82 @@ public class FormLogin extends AppCompatActivity {
                 }
 
 
-
-
                 return false;
             }
         });
 
     }
 
-    private void guardate(){
+    private void guardate() {
 
         String chave = edit_user.getText().toString().trim();
         String senha = edit_senha.getText().toString().trim();
 
-        Call<LoginResponse> call = RetroFitClient
-                .getInstance()
-                .getAPI()
-                .userLogin(chave, senha);
+//        Call<LoginResponse> call = RetroFitClient
+//                .getInstance()
+//                .getAPI()
+//                .userLogin(chave, senha);
+//
+//        call.enqueue(new Callback<LoginResponse>() {
+//            @Override
+//            public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
+//                LoginResponse loginResponse = response.body();
+//
+//                if (!loginResponse.isError()){
+//                    String boradescobrir = loginResponse.getMessage();
+////                    if(boradescobrir.equals(chave)) {
+////                        Intent intent = new Intent(FormLogin.this, TabActivity.class);
+////                        startActivity(intent);
+////                    }
+//
+////                    UserAPI userApi = loginResponse.getUserAPI();
+//                    String chavedonego = loginResponse.getHashlogin();
+//                    Toast.makeText(FormLogin.this, loginResponse.getMessage(), Toast.LENGTH_LONG).show();
+//
+//
+////                    Intent intent = new Intent(FormLogin.this, RelatorioProcesso.class);
+////                    startActivity(intent);
+//                } else {
+//                    Toast.makeText(FormLogin.this, loginResponse.getMessage(), Toast.LENGTH_LONG).show();
+//                }
+//            }
+//
+//            @Override
+//            public void onFailure(Call<LoginResponse> call, Throwable t) {
+//                //String happened
+//                Toast.makeText(FormLogin.this, t.getMessage(), Toast.LENGTH_LONG).show();
+//            }
+//        });
+//
+//    }
 
-        call.enqueue(new Callback<LoginResponse>() {
-            @Override
-            public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
-                LoginResponse loginResponse = response.body();
 
-                if (!loginResponse.isError()){
-                    String boradescobrir = loginResponse.getMessage();
-//                    if(boradescobrir.equals(chave)) {
-//                        Intent intent = new Intent(FormLogin.this, TabActivity.class);
-//                        startActivity(intent);
-//                    }
-
-//                    UserAPI userApi = loginResponse.getUserAPI();
-                    String chavedonego = loginResponse.getHashlogin();
-                    Toast.makeText(FormLogin.this, loginResponse.getMessage(), Toast.LENGTH_LONG).show();
-
-
-//                    Intent intent = new Intent(FormLogin.this, RelatorioProcesso.class);
-//                    startActivity(intent);
-                } else {
-                    Toast.makeText(FormLogin.this, loginResponse.getMessage(), Toast.LENGTH_LONG).show();
-                }
-            }
-
-            @Override
-            public void onFailure(Call<LoginResponse> call, Throwable t) {
-                //String happened
-                Toast.makeText(FormLogin.this, t.getMessage(), Toast.LENGTH_LONG).show();
-            }
-        });
-
-    }
-
-
-    public userLogged guardaInfo() {
-        String guardanome;
-        String guardatel;
-        String guardaemail;
-        String guardachave;
-        String guardasenha;
-
-        guardanome = nomebd;
-        guardatel = telbd;
-        guardaemail = emailbd;
-        guardachave = userbd;
-        guardasenha = passbd;
-
-        userLogged usuario = new userLogged(guardanome, guardatel, guardaemail, guardachave, guardasenha);
-        usuario.setNome(guardanome);
-        usuario.setTel(guardatel);
-        usuario.setEmail(guardaemail);
-        usuario.setChave(guardachave);
-        usuario.setSenha(guardasenha);
-
-        //Intent intent = new Intent(this, RelatorioProcesso.class);
-        //intent.putExtra("userlogged", usuario);
-
-        return usuario;
-
-    }
+//    public userLogged guardaInfo() {
+//        String guardanome;
+//        String guardatel;
+//        String guardaemail;
+//        String guardachave;
+//        String guardasenha;
+//
+//        guardanome = nomebd;
+//        guardatel = telbd;
+//        guardaemail = emailbd;
+//        guardachave = userbd;
+//        guardasenha = passbd;
+//
+//        userLogged usuario = new userLogged(guardanome, guardatel, guardaemail, guardachave, guardasenha);
+//        usuario.setNome(guardanome);
+//        usuario.setTel(guardatel);
+//        usuario.setEmail(guardaemail);
+//        usuario.setChave(guardachave);
+//        usuario.setSenha(guardasenha);
+//
+//        //Intent intent = new Intent(this, RelatorioProcesso.class);
+//        //intent.putExtra("userlogged", usuario);
+//
+//        return usuario;
+//
+//    }
 
 //    class Task extends AsyncTask<Void, Void, Void> {
 //        String records = "", error="";
@@ -248,4 +246,5 @@ public class FormLogin extends AppCompatActivity {
 //            super.onPostExecute(unused);
 //        }
 //    }
+    }
 }

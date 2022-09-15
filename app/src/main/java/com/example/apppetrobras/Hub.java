@@ -61,4 +61,10 @@ public class Hub extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
+
+    public void rediriciona8(View view){
+        Intent intent = new Intent(Hub.this, SplashScreenActivity.class);
+        startActivity(intent);
+        finish();
+    }
 }

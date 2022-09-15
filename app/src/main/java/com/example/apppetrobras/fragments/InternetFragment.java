@@ -60,18 +60,14 @@ public class InternetFragment extends Fragment implements RecyclerViewInteface{
                 getString(R.string.internet_1),
                 getString(R.string.internet_2),
                 getString(R.string.internet_3),
-                getString(R.string.internet_4),
-                getString(R.string.internet_5),
-                getString(R.string.internet_6)
+                getString(R.string.internet_4)
         };
 
         idProblemas = new int[]{
-                1, 2, 3, 4, 5, 6
+                1, 2, 3, 4
         };
 
         imagensProblemas = new int[]{
-                R.drawable.ic_launcher_background,
-                R.drawable.ic_launcher_background,
                 R.drawable.ic_launcher_background,
                 R.drawable.ic_launcher_background,
                 R.drawable.ic_launcher_background,

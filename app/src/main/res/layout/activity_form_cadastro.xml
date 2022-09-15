@@ -150,7 +150,7 @@
             android:hint="Data de Nascimento"
             android:textColor="@color/black"
             android:inputType="date"
-            android:maxLength="8"
+            android:maxLength="10"
             app:layout_constraintBottom_toTopOf="@+id/insertEmail"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.25"

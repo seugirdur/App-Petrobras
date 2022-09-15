@@ -64,14 +64,24 @@ public class OutrosFragment extends Fragment implements RecyclerViewInteface{
                 getString(R.string.outros_3),
                 getString(R.string.outros_4),
                 getString(R.string.outros_5),
-                getString(R.string.outros_6)
+                getString(R.string.outros_6),
+                getString(R.string.outros_7),
+                getString(R.string.outros_8),
+                getString(R.string.outros_9),
+                getString(R.string.outros_10),
+                getString(R.string.outros_11)
         };
 
         idProblemas = new int[]{
-                1, 2, 3, 4, 5, 6
+                1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11
         };
 
         imagensProblemas = new int[]{
+                R.drawable.ic_launcher_background,
+                R.drawable.ic_launcher_background,
+                R.drawable.ic_launcher_background,
+                R.drawable.ic_launcher_background,
+                R.drawable.ic_launcher_background,
                 R.drawable.ic_launcher_background,
                 R.drawable.ic_launcher_background,
                 R.drawable.ic_launcher_background,

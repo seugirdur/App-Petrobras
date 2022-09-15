@@ -261,6 +261,7 @@ private void registrate(){
                     try {
                         String body = response.body().string();
                         Toast.makeText(FormCadastro.this, body, Toast.LENGTH_LONG).show();
+                        Toast.makeText(FormCadastro.this, "eu fiz cadastro s", Toast.LENGTH_SHORT).show();
                     }catch (IOException e) {
                         e.printStackTrace();
                     }

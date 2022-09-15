@@ -62,14 +62,28 @@ public class EquipamentosFragment extends Fragment implements RecyclerViewIntefa
                 getString(R.string.equipamentos_3),
                 getString(R.string.equipamentos_4),
                 getString(R.string.equipamentos_5),
-                getString(R.string.equipamentos_6)
+                getString(R.string.equipamentos_6),
+                getString(R.string.equipamentos_7),
+                getString(R.string.equipamentos_8),
+                getString(R.string.equipamentos_9),
+                getString(R.string.equipamentos_10),
+                getString(R.string.equipamentos_11),
+                getString(R.string.equipamentos_12),
+                getString(R.string.equipamentos_13),
         };
 
         idProblemas = new int[]{
-                1, 2, 3, 4, 5, 6
+                1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
         };
 
         imagensProblemas = new int[]{
+                R.drawable.ic_launcher_background,
+                R.drawable.ic_launcher_background,
+                R.drawable.ic_launcher_background,
+                R.drawable.ic_launcher_background,
+                R.drawable.ic_launcher_background,
+                R.drawable.ic_launcher_background,
+                R.drawable.ic_launcher_background,
                 R.drawable.ic_launcher_background,
                 R.drawable.ic_launcher_background,
                 R.drawable.ic_launcher_background,

@@ -146,33 +146,29 @@ public class FormLogin extends AppCompatActivity {
 
                 List<UserAPI> userAPIList = response.body();
                 UserAPI userAPI = userAPIList.get(0);
-                String lmao = userAPI.getNome();
-                Toast.makeText(FormLogin.this, "Bem vindo "+lmao, Toast.LENGTH_SHORT).show();
 
-
-
-
+                int id = userAPI.getId();
+                String nome = userAPI.getNome();
+                String email = userAPI.getEmail();
+                String tel = userAPI.getTel();
+                String dataNasc = userAPI.getDataNasc();
+                String chave = userAPI.getChave();
+                Toast.makeText(FormLogin.this, "Bem vindo "+nome, Toast.LENGTH_SHORT).show();
 
                 SharedPreferences sharedPreferences = getSharedPreferences(
                         getString(R.string.preference_file_key), Context.MODE_PRIVATE);
 
                 SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putString("nome", lmao);
+                editor.putInt("id", id);
+                editor.putString("nome", nome);
+                editor.putString("email", email);
+                editor.putString("tel", tel);
+                editor.putString("dataNasc", dataNasc);
+                editor.putString("chave", chave);
                 editor.apply();
 
 
-
-
-
-
-
-
-
-
-
-
-
-                Intent intent = new Intent(FormLogin.this, RelatorioProcesso.class);
+                Intent intent = new Intent(FormLogin.this, TabActivity.class);
                 startActivity(intent);
             }
 

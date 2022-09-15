@@ -63,20 +63,14 @@ public class LentidaoFragment extends Fragment implements RecyclerViewInteface{
         titulosProblemas = new String[]{
                 getString(R.string.lentidao_1),
                 getString(R.string.lentidao_2),
-                getString(R.string.lentidao_3),
-                getString(R.string.lentidao_4),
-                getString(R.string.lentidao_5),
-                getString(R.string.lentidao_6)
+                getString(R.string.lentidao_3)
         };
 
         idProblemas = new int[]{
-                1, 2, 3, 4, 5, 6
+                1, 2, 3
         };
 
         imagensProblemas = new int[]{
-                R.drawable.ic_launcher_background,
-                R.drawable.ic_launcher_background,
-                R.drawable.ic_launcher_background,
                 R.drawable.ic_launcher_background,
                 R.drawable.ic_launcher_background,
                 R.drawable.ic_launcher_background

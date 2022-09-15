@@ -67,4 +67,5 @@ public class Hub extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
+
 }

@@ -38,6 +38,15 @@ public interface API {
     );
 
     //Rota GET para receber o JSON com a lista teste de todos os problemas
-    @GET("/problems")
-    Call<List<Problems>> getProblems();
+    @GET("/problems/internet")
+    Call<List<Problems>> getInternet();
+
+    @GET("/problems/equipamentos")
+    Call<List<Problems>> getEquipamentos();
+
+    @GET("/problems/lentidao")
+    Call<List<Problems>> getLentidao();
+
+    @GET("/problems/outros")
+    Call<List<Problems>> getOutros();
 }

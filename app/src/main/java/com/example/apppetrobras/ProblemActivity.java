@@ -97,24 +97,29 @@ public class ProblemActivity extends AppCompatActivity implements RecyclerViewIn
                 call = RetroFitClient
                         .getInstance()
                         .getAPI()
-                        .getLentidao();
+                        .getLentidao(idTitulo);
             case 2:
                 call = RetroFitClient
                         .getInstance()
                         .getAPI()
-                        .getInternet();
+                        .getInternet(idTitulo);
             case 3:
                 call = RetroFitClient
                         .getInstance()
                         .getAPI()
-                        .getEquipamentos();
+                        .getEquipamentos(idTitulo);
             case 4:
                 call = RetroFitClient
                         .getInstance()
                         .getAPI()
-                        .getOutros();
+                        .getOutros(idTitulo);
         }
-
+//
+//
+//        call = RetroFitClient
+//                .getInstance()
+//                .getAPI()
+//                .getInternet(idTitulo);
 
         call.enqueue(new Callback<List<Problems>>() {
             @Override
@@ -128,10 +133,10 @@ public class ProblemActivity extends AppCompatActivity implements RecyclerViewIn
                         problemsList, recyclerViewInteface, R.layout.item_soluction_list );
                 recyclerview.setAdapter(recyclerViewAdapter);
                 recyclerViewAdapter.notifyDataSetChanged();
+                Toast.makeText(context, "good morning", Toast.LENGTH_SHORT).show();
+
 
             }
-
-
 
             @Override
             public void onFailure(Call<List<Problems>> call, Throwable t) {

@@ -1,10 +1,12 @@
 package com.example.apppetrobras;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
+import android.os.Build;
 import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -40,16 +42,22 @@ public class Conteudo extends AppCompatActivity implements RecyclerViewInteface{
         Call<List<Problems>> call = RetroFitClient
                 .getInstance()
                 .getAPI()
-                .getOutros();
+                .getInternet();
 
         call.enqueue(new Callback<List<Problems>>() {
+            @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void onResponse(Call<List<Problems>> call, Response<List<Problems>> response) {
                 if (!response.isSuccessful()){
-                    Toast.makeText(Conteudo.this, response.code(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, response.code(), Toast.LENGTH_SHORT).show();
                     return;
                 }
+
                 List<Problems> problemsList = response.body();
+
+                // Exclui a parte do XML que contém tituloSolucao igual a "Cabo"
+                response.body().removeIf(tituloSolucao -> tituloSolucao.getTituloSolucao().equals("Cabo"));
+
                 RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(context,
                         problemsList, recyclerViewInteface, R.layout.cont_list );
                 recyclerview.setAdapter(recyclerViewAdapter);
@@ -61,7 +69,7 @@ public class Conteudo extends AppCompatActivity implements RecyclerViewInteface{
 
             @Override
             public void onFailure(Call<List<Problems>> call, Throwable t) {
-                Toast.makeText(Conteudo.this, t.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, t.getMessage(), Toast.LENGTH_SHORT).show();
 
             }
         });

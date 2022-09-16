@@ -12,7 +12,7 @@ import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 
-public interface API {
+public interface  API {
 
     //Classe com todos os metodos para as diferentes rotas da nossa API
 

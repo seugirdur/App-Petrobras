@@ -12,7 +12,7 @@ import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 
-public interface API {
+public interface  API {
 
     //Classe com todos os metodos para as diferentes rotas da nossa API
 
@@ -38,15 +38,30 @@ public interface API {
     );
 
     //Rota GET para receber o JSON com a lista teste de todos os problemas
-    @GET("/problems/internet")
-    Call<List<Problems>> getInternet();
+    @FormUrlEncoded
+    @POST("/problems/internet")
+    Call<List<Problems>> getInternet(
+            @Field("idTitulo") int idTitulo
+    );
 
-    @GET("/problems/equipamentos")
-    Call<List<Problems>> getEquipamentos();
+    @FormUrlEncoded
+    @POST("/problems/equipamentos")
+    Call<List<Problems>> getEquipamentos(
+            @Field("idTitulo") int idTitulo
 
-    @GET("/problems/lentidao")
-    Call<List<Problems>> getLentidao();
+    );
 
-    @GET("/problems/outros")
-    Call<List<Problems>> getOutros();
+    @FormUrlEncoded
+    @POST("/problems/lentidao")
+    Call<List<Problems>> getLentidao(
+            @Field("idTitulo") int idTitulo
+
+    );
+
+    @FormUrlEncoded
+    @POST("/problems/outros")
+    Call<List<Problems>> getOutros(
+            @Field("idTitulo") int idTitulo
+
+    );
 }

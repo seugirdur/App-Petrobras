@@ -40,7 +40,7 @@ public class Conteudo extends AppCompatActivity implements RecyclerViewInteface{
         Call<List<Problems>> call = RetroFitClient
                 .getInstance()
                 .getAPI()
-                .getProblems();
+                .getOutros();
 
         call.enqueue(new Callback<List<Problems>>() {
             @Override

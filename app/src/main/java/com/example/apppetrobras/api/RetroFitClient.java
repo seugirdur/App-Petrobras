@@ -12,7 +12,7 @@ public class RetroFitClient {
     private static RetroFitClient mInstance;
     private Retrofit retrofit;
 
-    //Codigo padrao para instancia do Reotrofit com o GSON
+    //Codigo padrao para instancia do Retrofit com o GSON
     private RetroFitClient(){
         retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)

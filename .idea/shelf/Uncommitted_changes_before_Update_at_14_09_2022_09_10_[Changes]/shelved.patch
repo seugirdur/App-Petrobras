@@ -1,0 +1,21 @@
+Index: app/src/main/res/layout/activity_splash_screen.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<androidx.constraintlayout.widget.ConstraintLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    tools:context=\".SplashScreenActivity\">\r\n\r\n    <LinearLayout\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"match_parent\"\r\n        android:background=\"#fff\"\r\n        android:orientation=\"vertical\">\r\n\r\n        <ImageView\r\n            android:layout_width=\"200dp\"\r\n            android:layout_height=\"200dp\"\r\n            android:layout_gravity=\"center\"\r\n            android:layout_marginTop=\"150dp\"\r\n            android:src=\"@drawable/ic_launcher_background\" />\r\n\r\n        <TextView\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:gravity=\"center\"\r\n            android:text=\". . .\"\r\n            android:textColor=\"@color/black\"\r\n            android:textSize=\"30dp\" />\r\n\r\n        <TextView\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:gravity=\"center\"\r\n            android:text=\"txt\"\r\n            android:textColor=\"@color/black\"\r\n            android:textSize=\"30dp\" />\r\n\r\n    </LinearLayout>\r\n\r\n</androidx.constraintlayout.widget.ConstraintLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_splash_screen.xml b/app/src/main/res/layout/activity_splash_screen.xml
+--- a/app/src/main/res/layout/activity_splash_screen.xml	(revision e6e8cf3122b3ae037c7a25912cf157aa9b55c37a)
++++ b/app/src/main/res/layout/activity_splash_screen.xml	(date 1663157232538)
+@@ -10,7 +10,9 @@
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:background="#fff"
+-        android:orientation="vertical">
++        android:orientation="vertical"
++        tools:layout_editor_absoluteX="0dp"
++        tools:layout_editor_absoluteY="0dp">
+ 
+         <ImageView
+             android:layout_width="200dp"

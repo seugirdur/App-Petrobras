@@ -10,7 +10,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#fff"
+        android:background="@drawable/backgroud_gradient1"
         android:orientation="vertical"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp">
@@ -20,7 +20,7 @@
             android:layout_height="200dp"
             android:layout_gravity="center"
             android:layout_marginTop="150dp"
-            android:src="@drawable/ic_circle" />
+            android:src="@drawable/ic_circle1" />
 
         <TextView
             android:layout_width="match_parent"
@@ -28,13 +28,13 @@
             android:gravity="center"
             android:text=". . ."
             android:textColor="@color/black"
-            android:textSize="30dp" />
+            android:textSize="35dp" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="txt"
+            android:text="HELP!"
             android:textColor="@color/black"
             android:textSize="30dp" />
 

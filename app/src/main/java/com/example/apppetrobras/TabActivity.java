@@ -7,23 +7,32 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.apppetrobras.databinding.ActivityTabBinding;
 import com.google.android.material.tabs.TabLayout;
 
-public class TabActivity extends AppCompatActivity {
+public class TabActivity extends DrawerBaseActivity {
 
     TabLayout tabLayout;
     ViewPager2 viewPager2;
     ViewPagerAdapter viewPagerAdapter;
+    ActivityTabBinding activityTabBinding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tab);
+
+        // Navigation Drawer
+        activityTabBinding = ActivityTabBinding.inflate(getLayoutInflater());
+        setContentView(activityTabBinding.getRoot());
+        allocateActivityTitle("Menu Principal");
 
         tabLayout = findViewById(R.id.tab_layout);
         viewPager2 = findViewById(R.id.view_pager);
         viewPagerAdapter = new ViewPagerAdapter(this);
         viewPager2.setAdapter(viewPagerAdapter);
+
+
+
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
@@ -57,5 +66,8 @@ public class TabActivity extends AppCompatActivity {
     public void goHome(View view) {
         viewPager2.setCurrentItem(0);
     }
+
+
+
     
 }

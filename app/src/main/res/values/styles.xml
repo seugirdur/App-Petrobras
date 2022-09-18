@@ -1,6 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!--  Tela de escolha -->
+    
+    <style name="btn_tela_escolha">
+
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">100dp</item>
+        <item name="android:layout_marginEnd">100dp</item>
+        <item name="android:layout_marginBottom">320dp</item>
+        <item name="android:layout_marginTop">22dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/btn_tela_escolha</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">16dp</item>
+        <item name="textAllCaps">false</item>
+
+    </style>
+
+    <style name="btn_tela_login">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">100dp</item>
+        <item name="android:layout_marginEnd">100dp</item>
+        <item name="android:layout_marginBottom">320dp</item>
+        <item name="android:layout_marginTop">22dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/btn_tela_login</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">16dp</item>
+        <item name="textAllCaps">false</item>
+    </style>
+
+    
+    <!-- Tela de Cadastro   -->
+
     <style name="ContainerComponents">
 
         <item name="android:layout_width">match_parent</item>

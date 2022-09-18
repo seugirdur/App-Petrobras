@@ -12,50 +12,52 @@
         android:layout_height="match_parent"
         android:background="@drawable/backgroud_gradient1"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteX="25dp"
         tools:layout_editor_absoluteY="0dp">
 
         <ImageView
-            android:layout_width="200dp"
-            android:layout_height="200dp"
+            android:layout_width="220dp"
+            android:layout_height="220dp"
             android:layout_gravity="center"
-            android:layout_marginTop="150dp"
-            android:src="@drawable/ic_circle1"/>
+            android:layout_marginTop="100dp"
+            android:src="@drawable/ic_circle1" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text=". . ."
-            android:textStyle="bold"
             android:textColor="@color/black"
-            android:textSize="40dp" />
+            android:textSize="40dp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
             android:gravity="center"
             android:text="ASET"
             android:textColor="#1A4A1F"
-            android:fontFamily="@font/opensans"
+            android:textSize="40dp"
             android:textStyle="bold"
-            android:textSize="40dp" />
+            android:layout_marginTop="10dp"/>
 
         <TextView
             android:id="@+id/textView11"
             android:layout_width="match_parent"
-            android:layout_height="539dp"
+            android:layout_height="350dp"
             android:gravity="center" />
 
         <TextView
             android:id="@+id/textView13"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:text="PPJA ©"
             android:textColor="#1A4A1F"
-            android:gravity="center"
-            android:textStyle="bold"
-            android:textSize="20dp" />
+            android:textSize="20dp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 

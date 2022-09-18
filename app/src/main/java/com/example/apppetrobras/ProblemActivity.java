@@ -6,18 +6,12 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.widget.Toast;
 
 import com.example.apppetrobras.api.RetroFitClient;
 import com.example.apppetrobras.fragments.RecyclerViewInteface;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
-import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -25,55 +19,14 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class ProblemActivity extends AppCompatActivity implements RecyclerViewInteface {
+
+    // Declaração das variáveis
     int idTitulo;
     String tipoProblema;
 
-    private ArrayList<DadosLista> dataArrayList;
-    private String[] titulosProblemas;
     private RecyclerView recyclerview;
     private Context context;
     private RecyclerViewInteface recyclerViewInteface;
-
-    /*
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_problem);
-
-        tipoProblema = getIntent().getIntExtra("TIPO",0);
-        idTitulo = getIntent().getIntExtra("ID",0);
-
-
-        dataInitialize();
-
-        recyclerview = findViewById(R.id.recyclerview);
-        recyclerview.setLayoutManager(new LinearLayoutManager(this));
-        recyclerview.setHasFixedSize(true);
-        RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(this,
-                dataArrayList, this, R.layout.item_soluction_list);
-        recyclerview.setAdapter(recyclerViewAdapter);
-        recyclerViewAdapter.notifyDataSetChanged();
-    };
-
-        private void dataInitialize() {
-
-
-        dataArrayList = new ArrayList<>();
-
-        titulosProblemas = new String[]{
-                "começo",
-                "meio",
-                "fim"
-        };
-
-        for(int i = 0; i < titulosProblemas.length; i++){
-            DadosLista data = new DadosLista(titulosProblemas[i]);
-            dataArrayList.add(data);
-        }
-
-    }
-    */
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -119,12 +72,6 @@ public class ProblemActivity extends AppCompatActivity implements RecyclerViewIn
                         .getOutros(idTitulo);
                 break;
         }
-//
-//
-//        call = RetroFitClient
-//                .getInstance()
-//                .getAPI()
-//                .getInternet(idTitulo);
 
         call.enqueue(new Callback<List<Problems>>() {
             @Override
@@ -139,25 +86,18 @@ public class ProblemActivity extends AppCompatActivity implements RecyclerViewIn
                 recyclerview.setAdapter(recyclerViewAdapter);
                 recyclerViewAdapter.notifyDataSetChanged();
                 Toast.makeText(context, "item: "+idTitulo, Toast.LENGTH_SHORT).show();
-
-
             }
 
             @Override
             public void onFailure(Call<List<Problems>> call, Throwable t) {
                 Toast.makeText(context, t.getMessage(), Toast.LENGTH_SHORT).show();
-
             }
         });
-
     }
-
-
 
     @Override
     public void onItemClick(int position) {
 
     }
-
 
 }

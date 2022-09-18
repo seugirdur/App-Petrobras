@@ -1,17 +1,16 @@
 package com.example.apppetrobras;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
 
 import com.example.apppetrobras.databinding.ActivityTabBinding;
 import com.google.android.material.tabs.TabLayout;
 
 public class TabActivity extends DrawerBaseActivity {
 
+    // Declaração das variáveis
     TabLayout tabLayout;
     ViewPager2 viewPager2;
     ViewPagerAdapter viewPagerAdapter;
@@ -67,7 +66,4 @@ public class TabActivity extends DrawerBaseActivity {
         viewPager2.setCurrentItem(0);
     }
 
-
-
-    
 }

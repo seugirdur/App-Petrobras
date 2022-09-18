@@ -22,10 +22,8 @@ import java.util.ArrayList;
 
 public class InternetFragment extends Fragment implements RecyclerViewInteface{
 
+    // Declaração das variáveis
     private ArrayList<DadosLista> dataArrayList;
-    private String[] titulosProblemas;
-    private int[] imagensProblemas, idProblemas;
-    private RecyclerView recyclerview;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -41,7 +39,7 @@ public class InternetFragment extends Fragment implements RecyclerViewInteface{
         dataInitialize();
 
         // Essa variável recebe (por meio do id) a reciclerView no xml dessa tela
-        recyclerview = view.findViewById(R.id.recyclerview);
+        RecyclerView recyclerview = view.findViewById(R.id.recyclerview);
         recyclerview.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerview.setHasFixedSize(true);
         // Aqui há uma instância da RecyclerViewAdapter utilizando o construtor adequado:
@@ -49,25 +47,27 @@ public class InternetFragment extends Fragment implements RecyclerViewInteface{
         RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(getContext(),
                 dataArrayList, this, R.layout.item_list);
         recyclerview.setAdapter(recyclerViewAdapter);
-        recyclerViewAdapter.notifyDataSetChanged();
+
+        //recyclerViewAdapter.notifyDataSetChanged();
     }
 
+    // Função para popular a lista usada na recyclerView
     private void dataInitialize() {
 
         dataArrayList = new ArrayList<>();
 
-        titulosProblemas = new String[]{
+        String[] titulosProblemas = new String[]{
                 getString(R.string.internet_1),
                 getString(R.string.internet_2),
                 getString(R.string.internet_3),
                 getString(R.string.internet_4)
         };
 
-        idProblemas = new int[]{
+        int[] idProblemas = new int[]{
                 1, 2, 3, 4
         };
 
-        imagensProblemas = new int[]{
+        int[] imagensProblemas = new int[]{
                 R.drawable.ic_launcher_background,
                 R.drawable.ic_launcher_background,
                 R.drawable.ic_launcher_background,

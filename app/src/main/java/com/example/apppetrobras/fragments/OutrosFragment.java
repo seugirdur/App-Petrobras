@@ -1,6 +1,5 @@
 package com.example.apppetrobras.fragments;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -18,16 +17,13 @@ import com.example.apppetrobras.DadosLista;
 import com.example.apppetrobras.ProblemActivity;
 import com.example.apppetrobras.R;
 import com.example.apppetrobras.RecyclerViewAdapter;
-import com.example.apppetrobras.TabActivity;
 
 import java.util.ArrayList;
 
 public class OutrosFragment extends Fragment implements RecyclerViewInteface{
 
+    // Declaração das variáveis
     private ArrayList<DadosLista> dataArrayList;
-    private String[] titulosProblemas;
-    private int[] imagensProblemas, idProblemas;
-    private RecyclerView recyclerview;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -43,7 +39,7 @@ public class OutrosFragment extends Fragment implements RecyclerViewInteface{
         dataInitialize();
 
         // Essa variável recebe (por meio do id) a reciclerView no xml dessa tela
-        recyclerview = view.findViewById(R.id.recyclerview);
+        RecyclerView recyclerview = view.findViewById(R.id.recyclerview);
         recyclerview.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerview.setHasFixedSize(true);
         // Aqui há uma instância da RecyclerViewAdapter utilizando o construtor adequado:
@@ -51,14 +47,16 @@ public class OutrosFragment extends Fragment implements RecyclerViewInteface{
         RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(getContext(),
                 dataArrayList, this, R.layout.item_list);
         recyclerview.setAdapter(recyclerViewAdapter);
-        recyclerViewAdapter.notifyDataSetChanged();
+
+        //recyclerViewAdapter.notifyDataSetChanged();
     }
 
+    // Função para popular a lista usada na recyclerView
     private void dataInitialize() {
 
         dataArrayList = new ArrayList<>();
 
-        titulosProblemas = new String[]{
+        String[] titulosProblemas = new String[]{
                 getString(R.string.outros_1),
                 getString(R.string.outros_2),
                 getString(R.string.outros_3),
@@ -72,11 +70,11 @@ public class OutrosFragment extends Fragment implements RecyclerViewInteface{
                 getString(R.string.outros_11)
         };
 
-        idProblemas = new int[]{
+        int[] idProblemas = new int[]{
                 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11
         };
 
-        imagensProblemas = new int[]{
+        int[] imagensProblemas = new int[]{
                 R.drawable.ic_launcher_background,
                 R.drawable.ic_launcher_background,
                 R.drawable.ic_launcher_background,

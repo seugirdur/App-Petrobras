@@ -8,394 +8,348 @@
     android:visibility="visible"
     tools:context=".FormCadastro">
 
+    <View
+        android:id="@+id/view_principal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/view_principal_cadastro"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="110dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+
+        />
+
+    <View
+        android:id="@+id/logo_psdesk"
+        android:layout_width="125dp"
+        android:layout_height="125dp"
+        android:background="@drawable/logo_tela_cadastro"
+        app:layout_constraintStart_toStartOf="@id/view_principal"
+        app:layout_constraintEnd_toEndOf="@id/view_principal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/view_principal"
+        android:layout_marginTop="110dp"
+        />
+
+    <TextView
+        android:id="@+id/cadastro_texto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cadastro"
+        android:textColor="@color/black"
+        android:textSize="40dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/logo_psdesk"
+        app:layout_constraintEnd_toEndOf="@id/logo_psdesk"
+        app:layout_constraintTop_toBottomOf="@id/logo_psdesk"
+        android:layout_marginTop="20dp"
+        />
+
+    <View
+        android:id="@+id/first_view"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="40dp"
+        android:background="@color/gray"
+        app:layout_constraintEnd_toEndOf="@id/view_principal"
+        app:layout_constraintStart_toStartOf="@id/view_principal"
+        app:layout_constraintTop_toBottomOf="@id/cadastro_texto" />
+
+    <View
+        android:id="@+id/second_view"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/gray"
+        app:layout_constraintStart_toStartOf="@id/view_principal"
+        app:layout_constraintEnd_toEndOf="@id/view_principal"
+        app:layout_constraintTop_toBottomOf="@id/first_view"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+
+        />
+
+    <View
+        android:id="@+id/third_view"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/gray"
+        app:layout_constraintStart_toStartOf="@id/view_principal"
+        app:layout_constraintEnd_toEndOf="@id/view_principal"
+        app:layout_constraintTop_toBottomOf="@id/second_view"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+
+        />
+
+    <View
+        android:id="@+id/fourth_view"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/gray"
+        app:layout_constraintStart_toStartOf="@id/view_principal"
+        app:layout_constraintEnd_toEndOf="@id/view_principal"
+        app:layout_constraintTop_toBottomOf="@id/third_view"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+
+        />
+
+    <View
+        android:id="@+id/fifth_view"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/gray"
+        app:layout_constraintStart_toStartOf="@id/view_principal"
+        app:layout_constraintEnd_toEndOf="@id/view_principal"
+        app:layout_constraintTop_toBottomOf="@id/fourth_view"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+
+        />
+
+    <View
+        android:id="@+id/sixth_view"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/gray"
+        app:layout_constraintStart_toStartOf="@id/view_principal"
+        app:layout_constraintEnd_toEndOf="@id/view_principal"
+        app:layout_constraintTop_toBottomOf="@id/fifth_view"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+
+        />
+
+
+   <ImageView
+       android:id="@+id/first_icon"
+       android:layout_width="45dp"
+       android:layout_height="50dp"
+       android:layout_marginLeft="15dp"
+       android:src="@drawable/ic_baseline_account_circle_24"
+       app:layout_constraintStart_toStartOf="@id/first_view"
+       app:layout_constraintTop_toTopOf="@id/first_view" />
+
+    <TextView
+        android:id="@+id/nome_completo_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NOME COMPLETO"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@id/first_view"
+        app:layout_constraintTop_toTopOf="@id/first_view"
+        android:layout_marginLeft="65dp"
+        android:layout_marginTop="2dp"
+        />
+
+        <EditText
+            android:id="@+id/nome_completo"
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            app:layout_constraintStart_toStartOf="@id/nome_completo_text"
+            app:layout_constraintTop_toBottomOf="@id/nome_completo_text"
+            app:layout_constraintBottom_toBottomOf="@id/first_view"
+            android:layout_marginStart="100dp"
+            android:layout_marginEnd="60dp"
+           />
+
+    <ImageView
+        android:id="@+id/second_icon"
+        android:layout_width="45dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="15dp"
+        android:src="@drawable/ic_baseline_call_24"
+        app:layout_constraintStart_toStartOf="@id/second_view"
+        app:layout_constraintTop_toTopOf="@id/second_view" />
+
+    <TextView
+        android:id="@+id/telefone_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TELEFONE"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@id/second_view"
+        app:layout_constraintTop_toTopOf="@id/second_view"
+        android:layout_marginLeft="65dp"
+        android:layout_marginTop="2dp"
+        />
+
+    <EditText
+        android:id="@+id/telefone"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        app:layout_constraintStart_toStartOf="@id/telefone_text"
+        app:layout_constraintTop_toBottomOf="@id/telefone_text"
+        app:layout_constraintBottom_toBottomOf="@id/second_view"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="60dp"
+        />
+
+    <ImageView
+        android:id="@+id/third_icon"
+        android:layout_width="45dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="15dp"
+        android:src="@drawable/ic_email"
+        app:layout_constraintStart_toStartOf="@id/third_view"
+        app:layout_constraintTop_toTopOf="@id/third_view" />
+
+    <TextView
+        android:id="@+id/email_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="E-MAIL"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@id/third_view"
+        app:layout_constraintTop_toTopOf="@id/third_view"
+        android:layout_marginLeft="65dp"
+        android:layout_marginTop="2dp"
+        />
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        app:layout_constraintStart_toStartOf="@id/email_text"
+        app:layout_constraintTop_toBottomOf="@id/email_text"
+        app:layout_constraintBottom_toBottomOf="@id/third_view"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="60dp"
+        />
+
+    <ImageView
+        android:id="@+id/fourth_icon"
+        android:layout_width="45dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="15dp"
+        android:src="@drawable/ic_key"
+        app:layout_constraintStart_toStartOf="@id/fourth_view"
+        app:layout_constraintTop_toTopOf="@id/fourth_view" />
+
+    <TextView
+        android:id="@+id/chave_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CHAVE DE ACESSO"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@id/fourth_view"
+        app:layout_constraintTop_toTopOf="@id/fourth_view"
+        android:layout_marginLeft="65dp"
+        android:layout_marginTop="2dp"
+        />
+
+    <EditText
+        android:id="@+id/chave_acesso"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        app:layout_constraintStart_toStartOf="@id/chave_text"
+        app:layout_constraintTop_toBottomOf="@id/chave_text"
+        app:layout_constraintBottom_toBottomOf="@id/fourth_view"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="60dp"
+        />
+
+    <ImageView
+        android:id="@+id/fifth_icon"
+        android:layout_width="45dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="15dp"
+        android:src="@drawable/ic_baseline_lock_24"
+        app:layout_constraintStart_toStartOf="@id/fifth_view"
+        app:layout_constraintTop_toTopOf="@id/fifth_view" />
+
+    <TextView
+        android:id="@+id/senha_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SENHA"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@id/fifth_view"
+        app:layout_constraintTop_toTopOf="@id/fifth_view"
+        android:layout_marginLeft="65dp"
+        android:layout_marginTop="2dp"
+        />
+
+    <EditText
+        android:id="@+id/senha"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        app:layout_constraintStart_toStartOf="@id/senha_text"
+        app:layout_constraintTop_toBottomOf="@id/senha_text"
+        app:layout_constraintBottom_toBottomOf="@id/fifth_view"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="60dp"
+        android:drawableRight="@drawable/ic_eye"
+        />
+
+    <ImageView
+        android:id="@+id/sixth_icon"
+        android:layout_width="45dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="15dp"
+        android:src="@drawable/ic_baseline_lock_24"
+        app:layout_constraintStart_toStartOf="@id/sixth_view"
+        app:layout_constraintTop_toTopOf="@id/sixth_view" />
+
+    <TextView
+        android:id="@+id/confirmar_senha_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CONFIRMAR SENHA"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@id/sixth_view"
+        app:layout_constraintTop_toTopOf="@id/sixth_view"
+        android:layout_marginLeft="65dp"
+        android:layout_marginTop="2dp"
+        />
+
+    <EditText
+        android:id="@+id/confirmar_senha"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        app:layout_constraintStart_toStartOf="@id/confirmar_senha_text"
+        app:layout_constraintTop_toBottomOf="@id/confirmar_senha_text"
+        app:layout_constraintBottom_toBottomOf="@id/sixth_view"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="60dp"
+        android:drawableRight="@drawable/ic_eye"
+        />
+
 
     <CheckBox
         android:id="@+id/aceitoTermos"
-        android:layout_width="252dp"
-        android:layout_height="50dp"
-        android:onClick="checarTermos"
-        android:text="CheckBox"
-        android:textSize="10sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.55"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Li e concordo com os"
+        app:layout_constraintStart_toStartOf="@id/view_principal"
+        app:layout_constraintEnd_toEndOf="@id/view_principal"
+        app:layout_constraintTop_toBottomOf="@id/sixth_view"
+        android:layout_marginTop="30dp" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_cadastro"
+        style="@style/Button_cadastro"
+        android:text="Cadastrar"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/avisaSenha"
-        app:layout_constraintVertical_bias="0.12" />
-
-    <Button
-        android:id="@+id/btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:clickable="true"
-        android:enabled="false"
-        android:onClick="cadastro"
-        android:text="Cadastro"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/aceitoTermos"
-        app:layout_constraintVertical_bias="0.25" />
+        app:layout_constraintTop_toBottomOf="@id/aceitoTermos"
+         />
 
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="ajuda"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.836"
-        app:layout_constraintStart_toEndOf="@+id/btn"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.976"
-        app:srcCompat="@android:drawable/ic_menu_help" />
 
-    <TextView
-        android:id="@+id/textCadastro"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="28dp"
-        android:text="Cadastro"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.666"
-        tools:textColor="Black" />
 
-    <TextView
-        android:id="@+id/avisaSenha"
-        android:layout_width="230dp"
-        android:layout_height="21dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="5dp"
-        android:foregroundTint="#FF0000"
-        android:text="As senhas não conferem"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.638"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2"
-        app:layout_constraintVertical_bias="0.0"
-        tools:textColor="Black"
-        tools:visibility="invisible" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout2"
-        android:layout_width="298dp"
-        android:layout_height="418dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.982"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.345">
 
-        <EditText
-            android:id="@+id/insertSenha"
-            android:layout_width="234dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp"
-            android:ems="10"
-            android:hint="Inserir senha"
-            android:inputType="textPassword"
-            android:minHeight="48dp"
-            app:layout_constraintBottom_toTopOf="@+id/insertConfirmaSenha"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.25"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
-
-        <EditText
-            android:id="@+id/insertNomeCompleto"
-            android:layout_width="234dp"
-            android:layout_height="45dp"
-            android:layout_marginBottom="12dp"
-            android:ems="10"
-            android:hint="Nome Completo"
-            android:textColor="@color/black"
-            android:inputType="textPersonName"
-            app:layout_constraintBottom_toTopOf="@+id/insertTelefone"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.25"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.6" />
-
-        <EditText
-            android:id="@+id/insertTelefone"
-            android:layout_width="234dp"
-            android:layout_height="45dp"
-            android:layout_marginBottom="12dp"
-            android:ems="10"
-            android:hint="Telefone"
-            android:textColor="@color/black"
-            android:inputType="phone"
-            app:layout_constraintBottom_toTopOf="@+id/insertDataNascimento"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.25"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
-
-        <EditText
-            android:id="@+id/insertDataNascimento"
-            android:layout_width="234dp"
-            android:layout_height="45dp"
-            android:layout_marginBottom="13dp"
-            android:ems="10"
-            android:hint="Data de Nascimento"
-            android:textColor="@color/black"
-            android:inputType="date"
-            android:maxLength="10"
-            app:layout_constraintBottom_toTopOf="@+id/insertEmail"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.25"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
-
-        <EditText
-            android:id="@+id/insertEmail"
-            android:layout_width="234dp"
-            android:layout_height="48dp"
-            android:layout_marginBottom="18dp"
-            android:ems="10"
-            android:hint="E-mail"
-            android:textColor="@color/black"
-            android:inputType="textEmailAddress"
-            app:layout_constraintBottom_toTopOf="@+id/insertChave"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.25"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
-
-        <EditText
-            android:id="@+id/insertChave"
-            android:layout_width="234dp"
-            android:layout_height="48dp"
-            android:layout_marginBottom="17dp"
-            android:ems="10"
-            android:hint="Chave de acesso*"
-            android:textColor="@color/black"
-            android:inputType="textPersonName"
-            app:layout_constraintBottom_toTopOf="@+id/insertSenha"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.25"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
-
-        <EditText
-            android:id="@+id/insertConfirmaSenha"
-            android:layout_width="234dp"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Confirmar Senha"
-            android:textColor="@color/black"
-            android:inputType="textPassword"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.25"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0"
-            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck" />
-
-        <ImageButton
-            android:id="@+id/imgMostrarSenha"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:onClick="mostrarSenha"
-            app:layout_constraintBottom_toBottomOf="@+id/insertSenha"
-            app:layout_constraintEnd_toEndOf="@+id/insertSenha"
-            app:layout_constraintHorizontal_bias="0.953"
-            app:layout_constraintStart_toStartOf="@+id/insertSenha"
-            app:layout_constraintTop_toTopOf="@+id/insertSenha"
-            app:layout_constraintVertical_bias="0.56"
-            app:srcCompat="@drawable/ic_baseline_remove_red_eye_24"
-            tools:ignore="TouchTargetSizeCheck" />
-
-        <ImageButton
-            android:id="@+id/imgMostrarSenha2"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_marginTop="13dp"
-            android:onClick="mostrarSenha2"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/insertConfirmaSenha"
-            app:layout_constraintHorizontal_bias="0.953"
-            app:layout_constraintStart_toStartOf="@+id/insertConfirmaSenha"
-            app:layout_constraintTop_toTopOf="@+id/insertConfirmaSenha"
-            app:layout_constraintVertical_bias="0.0"
-            app:srcCompat="@drawable/ic_baseline_remove_red_eye_24"
-            tools:ignore="SpeakableTextPresentCheck" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout"
-        android:layout_width="64dp"
-        android:layout_height="418dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/constraintLayout2"
-        app:layout_constraintHorizontal_bias="0.895"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.348">
-
-        <ImageView
-            android:id="@+id/imgTel"
-            android:layout_width="48dp"
-            android:layout_height="45dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="12dp"
-            app:layout_constraintBottom_toTopOf="@+id/imgNascimento"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imgNome"
-            app:srcCompat="@drawable/ic_baseline_call_24" />
-
-        <ImageView
-            android:id="@+id/imgNascimento"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="124dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="18dp"
-            app:layout_constraintBottom_toTopOf="@+id/imgEmail"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_baseline_calendar_today_24" />
-
-        <ImageView
-            android:id="@+id/imgEmail"
-            android:layout_width="48dp"
-            android:layout_height="45dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="5dp"
-            android:layout_marginBottom="139dp"
-            app:layout_constraintBottom_toTopOf="@+id/imgSenha"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imgNascimento"
-            app:srcCompat="@drawable/ic_baseline_email_24" />
-
-        <ImageView
-            android:id="@+id/imgChave"
-            android:layout_width="48dp"
-            android:layout_height="45dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="12dp"
-            app:layout_constraintBottom_toTopOf="@+id/imgSenha"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imgCinfirmasenha"
-            app:srcCompat="@drawable/ic_baseline_lock_24" />
-
-        <ImageView
-            android:id="@+id/imgCinfirmasenha"
-            android:layout_width="48dp"
-            android:layout_height="45dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="15dp"
-            app:layout_constraintBottom_toTopOf="@+id/imgChave"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imgEmail"
-            app:srcCompat="@drawable/ic_baseline_vpn_key_24" />
-
-        <ImageView
-            android:id="@+id/imgNome"
-            android:layout_width="48dp"
-            android:layout_height="45dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="17dp"
-            app:layout_constraintBottom_toTopOf="@+id/imgTel"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_baseline_account_circle_24" />
-
-        <ImageView
-            android:id="@+id/imgSenha"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="2dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imgEmail"
-            app:srcCompat="@drawable/ic_baseline_lock_24" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="393dp" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="277dp" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="221dp" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="159dp" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="512dp" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="341dp" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline13"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="453dp" />
-
-    <androidx.constraintlayout.widget.Group
-        android:id="@+id/group"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

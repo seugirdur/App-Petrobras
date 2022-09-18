@@ -3,8 +3,11 @@ package com.example.apppetrobras;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.apppetrobras.databinding.ActivityTabBinding;
@@ -21,6 +24,8 @@ public class TabActivity extends DrawerBaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+
+
         // Navigation Drawer
         activityTabBinding = ActivityTabBinding.inflate(getLayoutInflater());
         setContentView(activityTabBinding.getRoot());
@@ -30,6 +35,8 @@ public class TabActivity extends DrawerBaseActivity {
         viewPager2 = findViewById(R.id.view_pager);
         viewPagerAdapter = new ViewPagerAdapter(this);
         viewPager2.setAdapter(viewPagerAdapter);
+
+//        settingTheName();
 
 
 
@@ -50,6 +57,9 @@ public class TabActivity extends DrawerBaseActivity {
 
             }
         });
+
+
+
 
         viewPager2.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
             @Override

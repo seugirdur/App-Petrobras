@@ -4,7 +4,6 @@
     <!--  Tela de escolha -->
     
     <style name="btn_tela_escolha">
-
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginStart">100dp</item>
@@ -17,7 +16,6 @@
         <item name="android:textColor">@color/black</item>
         <item name="android:textSize">16dp</item>
         <item name="textAllCaps">false</item>
-
     </style>
 
     <style name="btn_tela_login">
@@ -34,22 +32,17 @@
         <item name="android:textSize">16dp</item>
         <item name="textAllCaps">false</item>
     </style>
-
     
     <!-- Tela de Cadastro   -->
 
     <style name="ContainerComponents">
-
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">430dp</item>
         <item name="android:background">@drawable/container_components</item>
         <item name="android:layout_margin">20dp</item>
-
     </style>
 
-
     <style name="Edit_Text">
-
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:background">@drawable/edit_text</item>
@@ -60,12 +53,9 @@
         <!--
         Limitar o total de caracteres:
        <item name="android:maxLength">50</item> -->
-
-
     </style>
 
     <style name="Edit_Senha">
-
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:background">@drawable/edit_text</item>
@@ -73,37 +63,25 @@
         <item name="android:layout_marginRight">40dp</item>
         <item name="android:layout_marginLeft">40dp</item>
         <item name="android:layout_marginTop">30dp</item>
-
-
     </style>
 
     <style name="Check_Connected">
-
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginTop">5dp</item>
-
-
     </style>
 
     <style name="Forgot_Password">
-
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">20dp</item>
         <item name="android:layout_marginTop">15dp</item>
         <item name="android:textAllCaps">false</item>
-
-
-
-
     </style>
 
-
     <style name="Button_login">
-
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-       <item name="android:background">@drawable/button_login</item>
+        <item name="android:background">@drawable/button_login</item>
         <item name="android:padding">20dp</item>
         <item name="android:layout_marginTop">30dp</item>
         <item name="android:layout_marginRight">70dp</item>
@@ -111,10 +89,5 @@
         <item name="android:textColor">@color/white</item>
         <item name="android:textAllCaps">false</item>
         <item name="android:textSize">18sp</item>
-
-
     </style>
-
-
-
 </resources>

@@ -18,4 +18,9 @@
     <color name="colorPrimaryText">#000000</color>
     <color name="colorWhite">#FFFFFF8F</color>
     <color name="colorGreen">#73E83A</color>
+
+    <!--    Nathan Color-->
+    <color name="Amarelo">#FFDE59</color>
+    <color name="Verde">#68c956</color>
+    <color name="cinza">#E2E4E4</color>
 </resources>

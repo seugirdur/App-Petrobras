@@ -76,5 +76,11 @@
     <string name="menu_drawer_open">Drawer Open</string>
     <string name="menu_drawer_close">Drawer Close</string>
 
+    <!--    Tela de Escolha     -->
+    <string name="botao_cadastro">Cadastrar nova conta</string>
+    <string name="botao_entrar">Entrar na minha conta</string>
+    <string name="texto_tela_escolha">Está com problemas?\nEntre em contato conosco clicando aqui</string>
+    <string name="ppja">PPJA ©</string>
+
 
 </resources>

@@ -88,7 +88,7 @@ public class LentidaoFragment extends Fragment implements RecyclerViewInteface{
         Intent intent = new Intent(getActivity(), ProblemActivity.class);
 
         // Definição de valores que serão redirecionados
-        intent.putExtra("TIPO",1);
+        intent.putExtra("TIPO","lentidao");
         intent.putExtra("ID", dataArrayList.get(position).getId());
         startActivity(intent);
     }

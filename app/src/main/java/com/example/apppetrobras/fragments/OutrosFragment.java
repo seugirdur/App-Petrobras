@@ -103,7 +103,7 @@ public class OutrosFragment extends Fragment implements RecyclerViewInteface{
         Intent intent = new Intent(getActivity(), ProblemActivity.class);
 
         // Definição de valores que serão redirecionados
-        intent.putExtra("TIPO",4);
+        intent.putExtra("TIPO","outros");
         intent.putExtra("ID", dataArrayList.get(position).getId());
         startActivity(intent);
     }

@@ -2,7 +2,7 @@
 <resources>
 
     <!--  Tela de escolha -->
-    
+
     <style name="btn_tela_escolha">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
@@ -21,8 +21,8 @@
     <style name="btn_tela_login">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginStart">100dp</item>
-        <item name="android:layout_marginEnd">100dp</item>
+        <item name="android:layout_marginStart">80dp</item>
+        <item name="android:layout_marginEnd">80dp</item>
         <item name="android:layout_marginBottom">320dp</item>
         <item name="android:layout_marginTop">22dp</item>
         <item name="android:gravity">center</item>
@@ -32,8 +32,7 @@
         <item name="android:textSize">16dp</item>
         <item name="textAllCaps">false</item>
     </style>
-    
-    <!-- Tela de Cadastro   -->
+
 
     <style name="ContainerComponents">
         <item name="android:layout_width">match_parent</item>
@@ -77,7 +76,7 @@
         <item name="android:layout_marginTop">15dp</item>
         <item name="android:textAllCaps">false</item>
     </style>
-
+<!--
     <style name="Button_login">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
@@ -90,4 +89,5 @@
         <item name="android:textAllCaps">false</item>
         <item name="android:textSize">18sp</item>
     </style>
+   -->
 </resources>

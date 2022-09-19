@@ -105,6 +105,7 @@
         <entry key="..\:/Users/natha/StudioProjects/App-petrobras/app/src/main/res/drawable/backgroud_gradient1.xml" value="0.3675" />
         <entry key="..\:/Users/natha/StudioProjects/App-petrobras/app/src/main/res/drawable/background_gradient.xml" value="0.3675" />
         <entry key="..\:/Users/natha/StudioProjects/App-petrobras/app/src/main/res/drawable/btn_cadastrar.xml" value="0.3665" />
+        <entry key="..\:/Users/natha/StudioProjects/App-petrobras/app/src/main/res/drawable/btn_entrar.xml" value="0.3665" />
         <entry key="..\:/Users/natha/StudioProjects/App-petrobras/app/src/main/res/drawable/btn_tela_escolha.xml" value="0.3675" />
         <entry key="..\:/Users/natha/StudioProjects/App-petrobras/app/src/main/res/drawable/btn_tela_login.xml" value="0.3665" />
         <entry key="..\:/Users/natha/StudioProjects/App-petrobras/app/src/main/res/drawable/button_login.xml" value="0.3675" />
@@ -112,8 +113,10 @@
         <entry key="..\:/Users/natha/StudioProjects/App-petrobras/app/src/main/res/drawable/edit_text.xml" value="0.3675" />
         <entry key="..\:/Users/natha/StudioProjects/App-petrobras/app/src/main/res/drawable/ic_eye.xml" value="0.3675" />
         <entry key="..\:/Users/natha/StudioProjects/App-petrobras/app/src/main/res/drawable/ic_eye_off.xml" value="0.3675" />
+        <entry key="..\:/Users/natha/StudioProjects/App-petrobras/app/src/main/res/drawable/logo_circle.xml" value="0.3675" />
         <entry key="..\:/Users/natha/StudioProjects/App-petrobras/app/src/main/res/drawable/logo_tela_cadastro.xml" value="0.2955" />
         <entry key="..\:/Users/natha/StudioProjects/App-petrobras/app/src/main/res/drawable/view_principal_cadastro.xml" value="0.2255" />
+        <entry key="..\:/Users/natha/StudioProjects/App-petrobras/app/src/main/res/drawable/view_tela_login.xml" value="0.3665" />
         <entry key="..\:/Users/natha/StudioProjects/App-petrobras/app/src/main/res/font/font.xml" value="0.3958333333333333" />
         <entry key="..\:/Users/natha/StudioProjects/App-petrobras/app/src/main/res/font/fonte.xml" value="0.3958333333333333" />
         <entry key="..\:/Users/natha/StudioProjects/App-petrobras/app/src/main/res/layout/activity_ajuda.xml" value="0.36666666666666664" />

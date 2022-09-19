@@ -8,6 +8,7 @@ import android.text.method.LinkMovementMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.ImageButton;
 
 public class Tela_de_escolha extends AppCompatActivity {
     
@@ -29,13 +30,12 @@ public class Tela_de_escolha extends AppCompatActivity {
             }
         });
 
+
         //link no botão 'clique aqui' o texto e o link estão no @strings
         linkTextView=findViewById(R.id.textView12);
         linkTextView.setMovementMethod(LinkMovementMethod.getInstance());
 
     }
-
-
 
 
     //redirecionamento para ajuda
@@ -50,6 +50,7 @@ public class Tela_de_escolha extends AppCompatActivity {
         Intent intent = new Intent(this, FormCadastro.class);
         startActivity(intent);
      }
-     
+
+
 
 }

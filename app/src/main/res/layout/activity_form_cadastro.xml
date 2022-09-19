@@ -8,7 +8,6 @@
     android:visibility="visible"
     tools:context=".FormCadastro">
 
-
     <CheckBox
         android:id="@+id/aceitoTermos"
         android:layout_width="252dp"

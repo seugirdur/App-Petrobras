@@ -151,7 +151,6 @@ public class FormLogin extends AppCompatActivity {
                 String nome = userAPI.getNome();
                 String email = userAPI.getEmail();
                 String tel = userAPI.getTel();
-                String dataNasc = userAPI.getDataNasc();
                 String chave = userAPI.getChave();
                 Toast.makeText(FormLogin.this, "Bem vindo "+nome, Toast.LENGTH_SHORT).show();
 
@@ -163,7 +162,6 @@ public class FormLogin extends AppCompatActivity {
                 editor.putString("nome", nome);
                 editor.putString("email", email);
                 editor.putString("tel", tel);
-                editor.putString("dataNasc", dataNasc);
                 editor.putString("chave", chave);
                 editor.apply();
 

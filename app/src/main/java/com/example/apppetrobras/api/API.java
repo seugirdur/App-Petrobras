@@ -24,7 +24,6 @@ public interface  API {
             @Field("nome") String nome,
             @Field("email") String email,
             @Field("tel") String tel,
-            @Field("dataNasc") String dataNasc,
             @Field("chave") String chave,
             @Field("senha") String senha
     );

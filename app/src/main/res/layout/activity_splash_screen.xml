@@ -37,9 +37,9 @@
             android:gravity="center"
             android:text="ASET"
             android:textColor="#1A4A1F"
-            android:fontFamily="@font/opensans"
             android:textStyle="bold"
-            android:textSize="40dp" />
+            android:textSize="40dp"
+            />
 
         <TextView
             android:id="@+id/textView11"

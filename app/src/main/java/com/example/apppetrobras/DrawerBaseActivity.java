@@ -7,11 +7,14 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.TextView;
 
 import com.google.android.material.navigation.NavigationView;
 
@@ -30,14 +33,26 @@ import com.google.android.material.navigation.NavigationView;
             setSupportActionBar(toolbar);
 
             NavigationView navigationView = drawerLayout.findViewById(R.id.nav_view);
+            View headerView = navigationView.getHeaderView(0);
+            TextView navUsername = (TextView) headerView.findViewById(R.id.tv_name_vand);
+            navUsername.setText(settingTheName());
             navigationView.setNavigationItemSelectedListener(this);
+
 
             ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.menu_drawer_open, R.string.menu_drawer_close);
             drawerLayout.addDrawerListener(toggle);
             toggle.syncState();
         }
 
+        private String settingTheName() {
+            SharedPreferences sharedPreferences = getSharedPreferences(
+                    getString(R.string.preference_file_key), Context.MODE_PRIVATE);
 
+            String SayMyName = sharedPreferences.getString("nome", "");
+
+            String nome = "Olá, "+SayMyName;
+            return nome;
+        }
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {

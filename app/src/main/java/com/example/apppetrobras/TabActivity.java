@@ -15,6 +15,7 @@ import com.google.android.material.tabs.TabLayout;
 
 public class TabActivity extends DrawerBaseActivity {
 
+    // Declaração das variáveis
     TabLayout tabLayout;
     ViewPager2 viewPager2;
     ViewPagerAdapter viewPagerAdapter;
@@ -23,8 +24,6 @@ public class TabActivity extends DrawerBaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
 
         // Navigation Drawer
         activityTabBinding = ActivityTabBinding.inflate(getLayoutInflater());
@@ -57,9 +56,6 @@ public class TabActivity extends DrawerBaseActivity {
 
             }
         });
-
-
-
 
         viewPager2.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
             @Override

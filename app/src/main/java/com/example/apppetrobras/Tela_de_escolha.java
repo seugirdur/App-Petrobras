@@ -4,12 +4,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.method.LinkMovementMethod;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class Tela_de_escolha extends AppCompatActivity {
     
     Button button2;
+    TextView linkTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +28,21 @@ public class Tela_de_escolha extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
+        //link no botão 'clique aqui' o texto e o link estão no @strings
+        linkTextView=findViewById(R.id.textView12);
+        linkTextView.setMovementMethod(LinkMovementMethod.getInstance());
+
+    }
+
+
+
+
+    //redirecionamento para ajuda
+    public void ajuda(View view){
+        Intent intent = new Intent(this, Ajuda.class);
+        startActivity(intent);
+
     }
 
     public void cadastrar (View view){

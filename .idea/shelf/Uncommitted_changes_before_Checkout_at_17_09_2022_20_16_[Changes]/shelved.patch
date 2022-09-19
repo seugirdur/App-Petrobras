@@ -1,0 +1,49 @@
+Index: app/src/main/res/layout/activity_splash_screen.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<androidx.constraintlayout.widget.ConstraintLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    tools:context=\".SplashScreenActivity\">\r\n\r\n\r\n    <LinearLayout\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"match_parent\"\r\n        android:background=\"@drawable/backgroud_gradient1\"\r\n        android:orientation=\"vertical\"\r\n        tools:layout_editor_absoluteX=\"0dp\"\r\n        tools:layout_editor_absoluteY=\"0dp\">\r\n\r\n        <ImageView\r\n            android:layout_width=\"200dp\"\r\n            android:layout_height=\"200dp\"\r\n            android:layout_gravity=\"center\"\r\n            android:layout_marginTop=\"150dp\"\r\n            android:src=\"@drawable/ic_circle1\"/>\r\n\r\n        <TextView\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:gravity=\"center\"\r\n            android:text=\". . .\"\r\n            android:textStyle=\"bold\"\r\n            android:textColor=\"@color/black\"\r\n            android:textSize=\"40dp\" />\r\n\r\n        <TextView\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:gravity=\"center\"\r\n            android:text=\"ASET\"\r\n            android:textColor=\"#1A4A1F\"\r\n            android:fontFamily=\"@font/opensans\"\r\n            android:textStyle=\"bold\"\r\n            android:textSize=\"40dp\" />\r\n\r\n        <TextView\r\n            android:id=\"@+id/textView11\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"539dp\"\r\n            android:gravity=\"center\" />\r\n\r\n        <TextView\r\n            android:id=\"@+id/textView13\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:text=\"PPJA ©\"\r\n            android:textColor=\"#1A4A1F\"\r\n            android:gravity=\"center\"\r\n            android:textStyle=\"bold\"\r\n            android:textSize=\"20dp\" />\r\n\r\n    </LinearLayout>\r\n\r\n</androidx.constraintlayout.widget.ConstraintLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_splash_screen.xml b/app/src/main/res/layout/activity_splash_screen.xml
+--- a/app/src/main/res/layout/activity_splash_screen.xml	
++++ b/app/src/main/res/layout/activity_splash_screen.xml	
+@@ -6,11 +6,10 @@
+     android:layout_height="match_parent"
+     tools:context=".SplashScreenActivity">
+ 
+-
+     <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+-        android:background="@drawable/backgroud_gradient1"
++        android:background="@drawable/background_gradient"
+         android:orientation="vertical"
+         tools:layout_editor_absoluteX="0dp"
+         tools:layout_editor_absoluteY="0dp">
+@@ -20,7 +19,7 @@
+             android:layout_height="200dp"
+             android:layout_gravity="center"
+             android:layout_marginTop="150dp"
+-            android:src="@drawable/ic_circle1"/>
++            android:src="@drawable/ic_circle2"/>
+ 
+         <TextView
+             android:layout_width="match_parent"
+@@ -37,14 +36,14 @@
+             android:gravity="center"
+             android:text="ASET"
+             android:textColor="#1A4A1F"
+-            android:fontFamily="@font/opensans"
++            android:fontFamily="sans-serif"
+             android:textStyle="bold"
+             android:textSize="40dp" />
+ 
+         <TextView
+             android:id="@+id/textView11"
+             android:layout_width="match_parent"
+-            android:layout_height="539dp"
++            android:layout_height="350dp"
+             android:gravity="center" />
+ 
+         <TextView

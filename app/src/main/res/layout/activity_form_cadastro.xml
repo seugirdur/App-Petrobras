@@ -127,15 +127,28 @@
 
         />
 
+    <View
+        android:id="@+id/seventh_view"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/gray"
+        app:layout_constraintStart_toStartOf="@id/view_principal"
+        app:layout_constraintEnd_toEndOf="@id/view_principal"
+        app:layout_constraintTop_toBottomOf="@id/sixth_view"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
 
-   <ImageView
-       android:id="@+id/first_icon"
-       android:layout_width="45dp"
-       android:layout_height="50dp"
-       android:layout_marginLeft="15dp"
-       android:src="@drawable/ic_baseline_account_circle_24"
-       app:layout_constraintStart_toStartOf="@id/first_view"
-       app:layout_constraintTop_toTopOf="@id/first_view" />
+        />
+
+
+    <ImageView
+        android:id="@+id/first_icon"
+        android:layout_width="45dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="15dp"
+        android:src="@drawable/ic_baseline_account_circle_24"
+        app:layout_constraintStart_toStartOf="@id/first_view"
+        app:layout_constraintTop_toTopOf="@id/first_view" />
 
     <TextView
         android:id="@+id/nome_completo_text"
@@ -150,16 +163,17 @@
         android:layout_marginTop="2dp"
         />
 
-        <EditText
-            android:id="@+id/nome_completo"
-            android:layout_width="match_parent"
-            android:layout_height="38dp"
-            app:layout_constraintStart_toStartOf="@id/nome_completo_text"
-            app:layout_constraintTop_toBottomOf="@id/nome_completo_text"
-            app:layout_constraintBottom_toBottomOf="@id/first_view"
-            android:layout_marginStart="100dp"
-            android:layout_marginEnd="60dp"
-           />
+    <EditText
+        android:id="@+id/nome_completo"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        app:layout_constraintStart_toStartOf="@id/nome_completo_text"
+        app:layout_constraintTop_toBottomOf="@id/nome_completo_text"
+        app:layout_constraintBottom_toBottomOf="@id/first_view"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="60dp"
+        android:inputType="textPersonName"
+        />
 
     <ImageView
         android:id="@+id/second_icon"
@@ -186,12 +200,13 @@
     <EditText
         android:id="@+id/telefone"
         android:layout_width="match_parent"
-        android:layout_height="38dp"
+        android:layout_height="42dp"
         app:layout_constraintStart_toStartOf="@id/telefone_text"
         app:layout_constraintTop_toBottomOf="@id/telefone_text"
         app:layout_constraintBottom_toBottomOf="@id/second_view"
         android:layout_marginStart="100dp"
         android:layout_marginEnd="60dp"
+        android:inputType="phone"
         />
 
     <ImageView
@@ -199,15 +214,15 @@
         android:layout_width="45dp"
         android:layout_height="50dp"
         android:layout_marginLeft="15dp"
-        android:src="@drawable/ic_email"
+        android:src="@drawable/ic_calendar"
         app:layout_constraintStart_toStartOf="@id/third_view"
         app:layout_constraintTop_toTopOf="@id/third_view" />
 
     <TextView
-        android:id="@+id/email_text"
+        android:id="@+id/data_nascimento_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="E-MAIL"
+        android:text="DATA DE NASCIMENTO"
         android:textStyle="bold"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="@id/third_view"
@@ -217,30 +232,32 @@
         />
 
     <EditText
-        android:id="@+id/email"
+        android:id="@+id/data_nascimento"
         android:layout_width="match_parent"
-        android:layout_height="38dp"
-        app:layout_constraintStart_toStartOf="@id/email_text"
-        app:layout_constraintTop_toBottomOf="@id/email_text"
+        android:layout_height="42dp"
+        app:layout_constraintStart_toStartOf="@id/data_nascimento_text"
+        app:layout_constraintTop_toBottomOf="@id/data_nascimento_text"
         app:layout_constraintBottom_toBottomOf="@id/third_view"
         android:layout_marginStart="100dp"
         android:layout_marginEnd="60dp"
+        android:inputType="date"
         />
+
 
     <ImageView
         android:id="@+id/fourth_icon"
         android:layout_width="45dp"
         android:layout_height="50dp"
         android:layout_marginLeft="15dp"
-        android:src="@drawable/ic_key"
+        android:src="@drawable/ic_email"
         app:layout_constraintStart_toStartOf="@id/fourth_view"
         app:layout_constraintTop_toTopOf="@id/fourth_view" />
 
     <TextView
-        android:id="@+id/chave_text"
+        android:id="@+id/email_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CHAVE DE ACESSO"
+        android:text="E-MAIL"
         android:textStyle="bold"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="@id/fourth_view"
@@ -250,14 +267,15 @@
         />
 
     <EditText
-        android:id="@+id/chave_acesso"
+        android:id="@+id/email"
         android:layout_width="match_parent"
-        android:layout_height="38dp"
-        app:layout_constraintStart_toStartOf="@id/chave_text"
-        app:layout_constraintTop_toBottomOf="@id/chave_text"
+        android:layout_height="42dp"
+        app:layout_constraintStart_toStartOf="@id/email_text"
+        app:layout_constraintTop_toBottomOf="@id/email_text"
         app:layout_constraintBottom_toBottomOf="@id/fourth_view"
         android:layout_marginStart="100dp"
         android:layout_marginEnd="60dp"
+        android:inputType="textEmailAddress"
         />
 
     <ImageView
@@ -265,15 +283,15 @@
         android:layout_width="45dp"
         android:layout_height="50dp"
         android:layout_marginLeft="15dp"
-        android:src="@drawable/ic_baseline_lock_24"
+        android:src="@drawable/ic_key"
         app:layout_constraintStart_toStartOf="@id/fifth_view"
         app:layout_constraintTop_toTopOf="@id/fifth_view" />
 
     <TextView
-        android:id="@+id/senha_text"
+        android:id="@+id/chave_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="SENHA"
+        android:text="CHAVE DE ACESSO"
         android:textStyle="bold"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="@id/fifth_view"
@@ -283,15 +301,15 @@
         />
 
     <EditText
-        android:id="@+id/senha"
+        android:id="@+id/chave_acesso"
         android:layout_width="match_parent"
-        android:layout_height="38dp"
-        app:layout_constraintStart_toStartOf="@id/senha_text"
-        app:layout_constraintTop_toBottomOf="@id/senha_text"
+        android:layout_height="42dp"
+        app:layout_constraintStart_toStartOf="@id/chave_text"
+        app:layout_constraintTop_toBottomOf="@id/chave_text"
         app:layout_constraintBottom_toBottomOf="@id/fifth_view"
         android:layout_marginStart="100dp"
         android:layout_marginEnd="60dp"
-        android:drawableRight="@drawable/ic_eye"
+        android:inputType="textCapCharacters"
         />
 
     <ImageView
@@ -304,10 +322,10 @@
         app:layout_constraintTop_toTopOf="@id/sixth_view" />
 
     <TextView
-        android:id="@+id/confirmar_senha_text"
+        android:id="@+id/senha_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CONFIRMAR SENHA"
+        android:text="SENHA"
         android:textStyle="bold"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="@id/sixth_view"
@@ -317,15 +335,51 @@
         />
 
     <EditText
-        android:id="@+id/confirmar_senha"
+        android:id="@+id/senha"
         android:layout_width="match_parent"
-        android:layout_height="38dp"
-        app:layout_constraintStart_toStartOf="@id/confirmar_senha_text"
-        app:layout_constraintTop_toBottomOf="@id/confirmar_senha_text"
+        android:layout_height="42dp"
+        app:layout_constraintStart_toStartOf="@id/senha_text"
+        app:layout_constraintTop_toBottomOf="@id/senha_text"
         app:layout_constraintBottom_toBottomOf="@id/sixth_view"
         android:layout_marginStart="100dp"
         android:layout_marginEnd="60dp"
         android:drawableRight="@drawable/ic_eye"
+        android:inputType="textPassword"
+        />
+
+    <ImageView
+        android:id="@+id/seventh_icon"
+        android:layout_width="45dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="15dp"
+        android:src="@drawable/ic_baseline_lock_24"
+        app:layout_constraintStart_toStartOf="@id/seventh_view"
+        app:layout_constraintTop_toTopOf="@id/seventh_view" />
+
+    <TextView
+        android:id="@+id/confirmar_senha_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CONFIRMAR SENHA"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@id/seventh_view"
+        app:layout_constraintTop_toTopOf="@id/seventh_view"
+        android:layout_marginLeft="65dp"
+        android:layout_marginTop="2dp"
+        />
+
+    <EditText
+        android:id="@+id/confirmar_senha"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        app:layout_constraintStart_toStartOf="@id/confirmar_senha_text"
+        app:layout_constraintTop_toBottomOf="@id/confirmar_senha_text"
+        app:layout_constraintBottom_toBottomOf="@id/seventh_view"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="60dp"
+        android:drawableRight="@drawable/ic_eye"
+        android:inputType="textPassword"
         />
 
 
@@ -336,7 +390,7 @@
         android:text="Li e concordo com os"
         app:layout_constraintStart_toStartOf="@id/view_principal"
         app:layout_constraintEnd_toEndOf="@id/view_principal"
-        app:layout_constraintTop_toBottomOf="@id/sixth_view"
+        app:layout_constraintTop_toBottomOf="@id/seventh_view"
         android:layout_marginTop="30dp" />
 
     <androidx.appcompat.widget.AppCompatButton
@@ -346,7 +400,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/aceitoTermos"
-         />
+        />
 
 
 

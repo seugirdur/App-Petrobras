@@ -241,6 +241,7 @@
         android:layout_marginStart="100dp"
         android:layout_marginEnd="60dp"
         android:inputType="date"
+        android:maxLength="10"
         />
 
 

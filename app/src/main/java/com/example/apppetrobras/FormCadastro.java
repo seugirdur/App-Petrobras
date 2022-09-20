@@ -6,8 +6,10 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Handler;
+import android.text.Editable;
 import android.text.SpannableString;
 import android.text.Spanned;
+import android.text.TextWatcher;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.LinkMovementMethod;
 import android.text.method.PasswordTransformationMethod;
@@ -43,6 +45,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.Calendar;
 
 import okhttp3.ResponseBody;
 import retrofit2.Call;
@@ -51,7 +54,7 @@ import retrofit2.Response;
 
 public class FormCadastro extends AppCompatActivity {
 
-    EditText senha, confirmar_senha;
+    EditText senha, confirmar_senha, dataNasc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,9 +96,50 @@ public class FormCadastro extends AppCompatActivity {
         textView.setText(ss);
         textView.setMovementMethod(LinkMovementMethod.getInstance());
 
+        EditText dataNasc;
+
+        dataNasc = (EditText)findViewById(R.id.data_nascimento);
+
+        dataNasc .addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                String str=dataNasc .getText().toString();
+                int textLength=dataNasc .getText().length();
+                if (textLength == 3) {
+
+                    if (!str.contains("/")) {
+                        dataNasc .setText(new StringBuilder(dataNasc .getText().toString()).insert(str.length() - 1, "/").toString());
+                        dataNasc .setSelection(dataNasc .getText().length());
+                    }
+                }
+                if (textLength == 6) {
+
+                        dataNasc .setText(new StringBuilder(dataNasc .getText().toString()).insert(str.length() - 1, "/").toString());
+                        dataNasc .setSelection(dataNasc .getText().length());
+
+                }
 
 
-    }
+
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+        
+
+
+
+
+        }
 
     //redirecionamento para ajuda
     public void ajuda(View view){
@@ -178,12 +222,14 @@ public class FormCadastro extends AppCompatActivity {
         EditText senha2 = (EditText) findViewById(R.id.confirmar_senha);
         TextView nome = findViewById(R.id.nome_completo);
         TextView tel = findViewById(R.id.telefone);
+        TextView dataNasc = findViewById(R.id.data_nascimento);
         TextView email = findViewById(R.id.email);
         TextView chave = findViewById(R.id.chave_acesso);
         TextView senha = findViewById(R.id.senha);
         resgataInfo();
         String Checknome = nome.getText().toString();
         String Checktel = tel.getText().toString();
+       String CheckdataNasc = dataNasc.getText().toString();
         String Checkemail = email.getText().toString();
         String Checkchave =  chave.getText().toString();
         String Checksenha =  senha.getText().toString();
@@ -194,7 +240,7 @@ public class FormCadastro extends AppCompatActivity {
             Toast.makeText(this, "As senhas não coincidem", Toast.LENGTH_SHORT).show();
             senha1.setText("");
             senha2.setText("");
-        }else if(Checknome.isEmpty() | Checkemail.isEmpty() |Checkchave.isEmpty()|Checksenha.isEmpty()|Checktel.isEmpty()){
+        }else if(Checknome.isEmpty() | Checkemail.isEmpty() |Checkchave.isEmpty()|Checksenha.isEmpty()|Checktel.isEmpty()|CheckdataNasc.isEmpty()){
             Toast.makeText(this, "Preencha as informações", Toast.LENGTH_SHORT).show();
         }
         else {
@@ -212,16 +258,23 @@ public class FormCadastro extends AppCompatActivity {
 
     }
 
+
+
+
+
+
+
     public Infos resgataInfo() {
         TextView nome = findViewById(R.id.nome_completo);
         TextView tel = findViewById(R.id.telefone);
+        TextView dataNasc = findViewById(R.id.data_nascimento);
         TextView email = findViewById(R.id.email);
         TextView chave = findViewById(R.id.chave_acesso);
         TextView senha = findViewById(R.id.senha);
 
         String _nome = nome.getText() + "";
         String _tel = tel.getText() + "";
-        String _dataNasc = tel.getText() + "";
+        String _dataNasc = dataNasc.getText() + "";
         String _email = email.getText() + "";
         String _chave = chave.getText() + "";
         String _senha = senha.getText() + "";
@@ -259,7 +312,7 @@ private void registrate(){
             String dataNasc = info.dataNasc.toString().trim();
             String chave = info.chave.toString().trim();
             String senha = info.senha.toString().trim();
-            //String datanasc_br = info.dataNas;
+
 
             Call<ResponseBody> call = RetroFitClient
                     .getInstance()

@@ -49,8 +49,9 @@ import com.google.android.material.navigation.NavigationView;
                     getString(R.string.preference_file_key), Context.MODE_PRIVATE);
 
             String SayMyName = sharedPreferences.getString("nome", "");
-
-            String nome = "Olá, "+SayMyName;
+            String[] fullNameArray = SayMyName.split("\\s+");
+            String firstName = fullNameArray[0];
+            String nome = "Olá, "+firstName;
             return nome;
         }
 

@@ -3,7 +3,7 @@ package com.example.apppetrobras.models;
 public class UserAPI {
 
     //Classe publica para guardar as informaçoes do usuario que fizer login para ficar disponivel para classes que precisem dessa informaçao
-    private String nome, email, tel, chave, senha;
+    private String nome, email, tel, chave, senha, dataNasc;
     private Integer id;
 
     public UserAPI(Integer id, String nome, String email, String tel, String chave, String senha) {
@@ -11,6 +11,7 @@ public class UserAPI {
         this.nome = nome;
         this.email = email;
         this.tel = tel;
+        this.dataNasc = dataNasc;
         this.chave = chave;
         this.senha = senha;
     }
@@ -29,6 +30,10 @@ public class UserAPI {
 
     public String getTel() {
         return tel;
+    }
+
+    public String getDataNasc() {
+        return dataNasc;
     }
 
     public String getChave() {

@@ -221,11 +221,12 @@ public class FormCadastro extends AppCompatActivity {
 
         String _nome = nome.getText() + "";
         String _tel = tel.getText() + "";
+        String _dataNasc = tel.getText() + "";
         String _email = email.getText() + "";
         String _chave = chave.getText() + "";
         String _senha = senha.getText() + "";
 
-        Infos cliente = new Infos(_nome, _email, _tel, _chave, _senha);
+        Infos cliente = new Infos(_nome, _email, _tel, _dataNasc , _chave, _senha);
 
         return cliente;
     }
@@ -251,10 +252,11 @@ public class FormCadastro extends AppCompatActivity {
 
 
 private void registrate(){
-    Infos info = new Infos(resgataInfo().nome, resgataInfo().email, resgataInfo().tel, resgataInfo().chave, resgataInfo().senha);
+    Infos info = new Infos(resgataInfo().nome, resgataInfo().email, resgataInfo().tel,resgataInfo().dataNasc, resgataInfo().chave, resgataInfo().senha);
             String nome = info.nome.toString().trim();
             String email = info.email.toString().trim();
             String tel = info.tel.toString().trim();
+            String dataNasc = info.dataNasc.toString().trim();
             String chave = info.chave.toString().trim();
             String senha = info.senha.toString().trim();
             //String datanasc_br = info.dataNas;
@@ -262,7 +264,7 @@ private void registrate(){
             Call<ResponseBody> call = RetroFitClient
                     .getInstance()
                     .getAPI()
-                    .createUser(nome, email, tel, chave, senha);
+                    .createUser(nome, email, tel, dataNasc, chave, senha);
 
             call.enqueue(new Callback<ResponseBody>() {
                 @Override

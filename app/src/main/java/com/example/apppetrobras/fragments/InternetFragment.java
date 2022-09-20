@@ -87,8 +87,8 @@ public class InternetFragment extends Fragment implements RecyclerViewInteface{
         Intent intent = new Intent(getActivity(), ProblemActivity.class);
 
         // Definição de valores que serão redirecionados
-        intent.putExtra("TIPO","internet");
-        intent.putExtra("ID", dataArrayList.get(position).getId());
+        intent.putExtra("TIPO",2);
+        intent.putExtra("ID_TITULO", dataArrayList.get(position).getId());
         startActivity(intent);
     }
 

@@ -92,8 +92,8 @@ public class InicioFragment extends Fragment implements RecyclerViewInteface{
 
         // Definição de valores que serão redirecionados
         // Valor do tipo é temporário. Ainda não foi definido o funcionamento da aba 1(Inicio)
-        intent.putExtra("TIPO","lentidao");
-        intent.putExtra("ID", dataArrayList.get(position).getId());
+        intent.putExtra("TIPO",1);
+        intent.putExtra("ID_TITULO", dataArrayList.get(position).getId());
         startActivity(intent);
     }
 }

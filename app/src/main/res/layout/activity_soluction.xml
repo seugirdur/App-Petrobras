@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+ <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SoluctionActivity"
+    android:theme="@style/Theme.AppCompat.Light">
+
+    <TextView
+        android:id="@+id/nomeSolucao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:layout_marginStart="50dp"
+        android:text="Nome da Soluçao"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imagemSolucao"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nomeSolucao"
+        app:srcCompat="@drawable/ic_launcher_background" />
+
+    <TextView
+        android:id="@+id/numeroPasso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Número do passo"
+        android:textSize="15sp"
+        android:textColor="@color/black"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        app:layout_constraintTop_toBottomOf="@id/imagemSolucao"
+        app:layout_constraintStart_toStartOf="@id/imagemSolucao"/>
+
+    <TextView
+        android:id="@+id/descricaoPasso"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:text="Texto da solução do problema"
+        app:layout_constraintTop_toBottomOf="@+id/numeroPasso"
+        app:layout_constraintStart_toStartOf="@id/numeroPasso"/>
+
+    <ImageView
+        android:id="@+id/btnResolveu"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="100dp"
+        app:layout_constraintTop_toBottomOf="@id/imagemSolucao"
+        app:layout_constraintStart_toStartOf="@id/imagemSolucao"
+        app:srcCompat="@drawable/ic_check_circle"
+        android:onClick="btnCheck"/>
+
+    <ImageView
+        android:id="@+id/btnNaoResolveu"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="100dp"
+        app:layout_constraintTop_toBottomOf="@id/imagemSolucao"
+        app:layout_constraintEnd_toEndOf="@id/imagemSolucao"
+        app:srcCompat="@drawable/ic_cancel_circle"
+        android:onClick="btnCancel"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

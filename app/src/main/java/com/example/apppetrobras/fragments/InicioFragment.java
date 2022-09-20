@@ -22,10 +22,8 @@ import java.util.ArrayList;
 
 public class InicioFragment extends Fragment implements RecyclerViewInteface{
 
+    // Declaração das variáveis
     private ArrayList<DadosLista> dataArrayList;
-    private String[] titulosProblemas;
-    private int[] imagensProblemas, idProblemas;
-    private RecyclerView recyclerview;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -41,7 +39,7 @@ public class InicioFragment extends Fragment implements RecyclerViewInteface{
         dataInitialize();
 
         // Essa variável recebe (por meio do id) a reciclerView no xml dessa tela
-        recyclerview = view.findViewById(R.id.recyclerview);
+        RecyclerView recyclerview = view.findViewById(R.id.recyclerview);
         recyclerview.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerview.setHasFixedSize(true);
         // Aqui há uma instância da RecyclerViewAdapter utilizando o construtor adequado:
@@ -49,15 +47,16 @@ public class InicioFragment extends Fragment implements RecyclerViewInteface{
         RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(getContext(),
                 dataArrayList, this, R.layout.item_list);
         recyclerview.setAdapter(recyclerViewAdapter);
-        recyclerViewAdapter.notifyDataSetChanged();
+
+        //recyclerViewAdapter.notifyDataSetChanged();
     }
 
-    //
+    // Função para popular a lista usada na recyclerView
     private void dataInitialize() {
 
         dataArrayList = new ArrayList<>();
 
-        titulosProblemas = new String[]{
+        String[] titulosProblemas = new String[]{
                 getString(R.string.inicio_1),
                 getString(R.string.inicio_2),
                 getString(R.string.inicio_3),
@@ -66,11 +65,11 @@ public class InicioFragment extends Fragment implements RecyclerViewInteface{
                 getString(R.string.inicio_6)
         };
 
-        idProblemas = new int[]{
+        int[] idProblemas = new int[]{
                 1, 2, 3, 4, 5, 6
         };
 
-        imagensProblemas = new int[]{
+        int[] imagensProblemas = new int[]{
                 R.drawable.ic_launcher_background,
                 R.drawable.ic_launcher_background,
                 R.drawable.ic_launcher_background,
@@ -93,7 +92,7 @@ public class InicioFragment extends Fragment implements RecyclerViewInteface{
 
         // Definição de valores que serão redirecionados
         // Valor do tipo é temporário. Ainda não foi definido o funcionamento da aba 1(Inicio)
-        intent.putExtra("TIPO",1);
+        intent.putExtra("TIPO","lentidao");
         intent.putExtra("ID", dataArrayList.get(position).getId());
         startActivity(intent);
     }

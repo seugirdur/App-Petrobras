@@ -17,7 +17,7 @@ import java.util.List;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder>{
 
-    // Instanciação das variáveis
+    // Declaração das variáveis
     private final RecyclerViewInteface recyclerViewInteface;
     private final int layout;
     Context context;

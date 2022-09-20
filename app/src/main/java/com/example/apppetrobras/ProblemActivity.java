@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
@@ -21,8 +22,7 @@ import retrofit2.Response;
 public class ProblemActivity extends AppCompatActivity implements RecyclerViewInteface {
 
     // Declaração das variáveis
-    int idTitulo;
-    String tipoProblema;
+    int idTitulo, tipoProblema;
 
     private RecyclerView recyclerview;
     private Context context;
@@ -33,8 +33,8 @@ public class ProblemActivity extends AppCompatActivity implements RecyclerViewIn
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_conteudo);
 
-        tipoProblema = getIntent().getStringExtra("TIPO");
-        idTitulo = getIntent().getIntExtra("ID",0);
+        tipoProblema = getIntent().getIntExtra("TIPO", 1);
+        idTitulo = getIntent().getIntExtra("ID_TITULO",1);
 
         recyclerview = findViewById(R.id.rv_conteudo);
         recyclerview.setLayoutManager(new LinearLayoutManager(this));
@@ -46,26 +46,26 @@ public class ProblemActivity extends AppCompatActivity implements RecyclerViewIn
         Call<List<Problems>> call;
 
         switch (tipoProblema){
-            case "lentidao":
+            case 1:
             default:
                 call = RetroFitClient
                         .getInstance()
                         .getAPI()
                         .getLentidao(idTitulo);
                 break;
-            case "internet":
+            case 2:
                 call = RetroFitClient
                         .getInstance()
                         .getAPI()
                         .getInternet(idTitulo);
                 break;
-            case "equipamentos":
+            case 3:
                 call = RetroFitClient
                         .getInstance()
                         .getAPI()
                         .getEquipamentos(idTitulo);
                 break;
-            case "outros":
+            case 4:
                 call = RetroFitClient
                         .getInstance()
                         .getAPI()
@@ -85,7 +85,7 @@ public class ProblemActivity extends AppCompatActivity implements RecyclerViewIn
                         problemsList, recyclerViewInteface, R.layout.item_soluction_list );
                 recyclerview.setAdapter(recyclerViewAdapter);
                 recyclerViewAdapter.notifyDataSetChanged();
-                Toast.makeText(context, "item: "+idTitulo, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(context, "item: "+idTitulo, Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -97,7 +97,17 @@ public class ProblemActivity extends AppCompatActivity implements RecyclerViewIn
 
     @Override
     public void onItemClick(int position) {
+        // Redirecionamento para a tela do problema contendo os títulos das soluções
+        Intent intent = new Intent(ProblemActivity.this, SoluctionActivity.class);
 
+        // Definição de valores que serão redirecionados
+        intent.putExtra("TIPO",tipoProblema);
+        intent.putExtra("ID_TITULO", idTitulo);
+        // position começa em 0, por isso é necessário adicionar 1 a ele
+        intent.putExtra("ID_SOLUCAO", position+1);
+        //todas as soluções começam pelo primeiro passo
+        intent.putExtra("PASSO", 1);
+        startActivity(intent);
     }
 
 }

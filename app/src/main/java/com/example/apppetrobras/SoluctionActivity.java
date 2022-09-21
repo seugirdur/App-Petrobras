@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.service.autofill.OnClickAction;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,7 +28,8 @@ public class SoluctionActivity extends AppCompatActivity {
 
     Context context;
 
-    TextView numeroPasso;
+    TextView numeroPasso, nomeSolucao, descSolucao;
+    ImageView imagemSolucao;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,7 +81,7 @@ public class SoluctionActivity extends AppCompatActivity {
                         .getTextoOutros(numerojunto, idPasso);
                 break;
         }
-        
+
         call.enqueue(new Callback<List<Soluctions>>() {
             @Override
             public void onResponse(Call<List<Soluctions>> call, Response<List<Soluctions>> response) {
@@ -108,7 +110,15 @@ public class SoluctionActivity extends AppCompatActivity {
 //                .getAPI()
 //                .getLentidao(idTitulo);
 
+        // Inserção dos Valores na tela
+//        nomeSolucao = findViewById(R.id.nomeSolucao);
+//        nomeSolucao.setText("Nome Solucao");
 
+        numeroPasso = findViewById(R.id.numeroPasso);
+        numeroPasso.setText("Passo: "+idPasso);
+
+//        descSolucao = findViewById(R.id.descricao_passo);
+//        descSolucao.setText("Descrição do passo");
     }
 
     public void btnCancel(View view){
@@ -135,8 +145,4 @@ public class SoluctionActivity extends AppCompatActivity {
         intent.putExtra("PASSO", step);
         startActivity(intent);
     }
-
-
-
-
 }

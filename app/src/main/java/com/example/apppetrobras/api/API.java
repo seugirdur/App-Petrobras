@@ -1,6 +1,7 @@
 package com.example.apppetrobras.api;
 
 import com.example.apppetrobras.Problems;
+import com.example.apppetrobras.Soluctions;
 import com.example.apppetrobras.models.UserAPI;
 
 import java.util.List;
@@ -62,6 +63,40 @@ public interface  API {
     @POST("/problems/outros")
     Call<List<Problems>> getOutros(
             @Field("idTitulo") int idTitulo
+
+    );
+
+
+
+    @FormUrlEncoded
+    @POST("/soluctions/textoInternet")
+    Call<List<Soluctions>> getTextoInternet(
+            @Field("idSolucao") int idSolucao,
+            @Field("idtexto") int idtexto
+
+    );
+
+    @FormUrlEncoded
+    @POST("/soluctions/textoLentidao")
+    Call<List<Soluctions>> getTextoLentidao(
+            @Field("idSolucao") int idSolucao,
+            @Field("idtexto") int idtexto
+
+    );
+
+    @FormUrlEncoded
+    @POST("/soluctions/textoOutros")
+    Call<List<Soluctions>> getTextoOutros(
+            @Field("idSolucao") int idSolucao,
+            @Field("idtexto") int idtexto
+
+    );
+
+    @FormUrlEncoded
+    @POST("/soluctions/textoEquipamento")
+    Call<List<Soluctions>> getTextoEquipamento(
+            @Field("idSolucao") int idSolucao,
+            @Field("idtexto") int idtexto
 
     );
 }

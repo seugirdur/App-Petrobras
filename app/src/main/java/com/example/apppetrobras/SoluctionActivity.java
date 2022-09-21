@@ -41,12 +41,66 @@ public class SoluctionActivity extends AppCompatActivity {
 
         Toast.makeText(this, tipoProblema+"-"+idTitulo+"-"+idSolucao+"-"+idPasso, Toast.LENGTH_SHORT).show();
 
+        String concatenar = Integer.toString(idTitulo) + Integer.toString(idSolucao);
+        int numerojunto = Integer.parseInt(concatenar);
+
+        //colocar na tela
         numeroPasso = findViewById(R.id.numeroPasso);
         numeroPasso.setText("Passo: "+idPasso);
 
         context = this;
 
-        Call<List<Problems>> call;
+        Call<List<Soluctions>> call;
+
+        switch (tipoProblema){
+            case 1:
+            default:
+                call = RetroFitClient
+                        .getInstance()
+                        .getAPI()
+                        .getTextoLentidao(numerojunto, idPasso);
+                break;
+            case 2:
+                call = RetroFitClient
+                        .getInstance()
+                        .getAPI()
+                        .getTextoInternet(numerojunto, idPasso);
+                break;
+            case 3:
+                call = RetroFitClient
+                        .getInstance()
+                        .getAPI()
+                        .getTextoEquipamento(numerojunto, idPasso);
+                break;
+            case 4:
+                call = RetroFitClient
+                        .getInstance()
+                        .getAPI()
+                        .getTextoOutros(numerojunto, idPasso);
+                break;
+        }
+        
+        call.enqueue(new Callback<List<Soluctions>>() {
+            @Override
+            public void onResponse(Call<List<Soluctions>> call, Response<List<Soluctions>> response) {
+                if (!response.isSuccessful()){
+                    Toast.makeText(context, response.code(), Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                List<Soluctions> soluctionsList = response.body();
+
+
+
+
+            }
+
+            @Override
+            public void onFailure(Call<List<Soluctions>> call, Throwable t) {
+                Toast.makeText(context, t.getMessage(), Toast.LENGTH_SHORT).show();
+
+            }
+        });
 
         // pega o item no BD da tabela TextoTipo que tenha: tipo-idTitulo-idSolucao-idPasso(1-1-1-1)
 //        call = RetroFitClient
@@ -81,4 +135,8 @@ public class SoluctionActivity extends AppCompatActivity {
         intent.putExtra("PASSO", step);
         startActivity(intent);
     }
+
+
+
+
 }

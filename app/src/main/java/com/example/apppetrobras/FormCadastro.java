@@ -55,6 +55,7 @@ import retrofit2.Response;
 public class FormCadastro extends AppCompatActivity {
 
     EditText senha, confirmar_senha, dataNasc;
+    boolean passwordVisible;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,6 +67,8 @@ public class FormCadastro extends AppCompatActivity {
         String text = "Li e concordo com os TERMOS DE USO e POLÍTICAS DE PRIVACIDADE";
 
         SpannableString ss = new SpannableString(text);
+
+
 
 
         ClickableSpan clicavel1 = new ClickableSpan() {
@@ -134,7 +137,95 @@ public class FormCadastro extends AppCompatActivity {
             }
         });
 
-        
+
+        // Esconder e mostrar senha
+
+        senha = findViewById(R.id.senha);
+        confirmar_senha = findViewById(R.id.confirmar_senha);
+
+        senha.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+
+                final int Right=2;
+                if(motionEvent.getAction()==MotionEvent.ACTION_UP) {
+
+                    if(motionEvent.getRawX()>=senha.getRight()-senha.getCompoundDrawables() [Right].getBounds().width()) {
+
+                        int selection=senha.getSelectionEnd();
+                        if(passwordVisible){
+
+                            // set drawable image here
+                            senha.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0, R.drawable.ic_eye, 0);
+
+                            //for hide password
+                            senha.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                            passwordVisible=false;
+
+
+                        }else {
+
+                            //set drawable image here
+                            senha.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0,R.drawable.ic_eye_off,0);
+
+
+                            //for show password
+                            senha.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                            passwordVisible=true;
+
+
+                        }
+
+                        senha.setSelection(selection);
+                        return true;
+
+                    }
+                }
+                return false;
+            }
+        });
+
+        confirmar_senha.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+
+                final int Right=2;
+                if(motionEvent.getAction()==MotionEvent.ACTION_UP) {
+
+                    if(motionEvent.getRawX()>=confirmar_senha.getRight()-confirmar_senha.getCompoundDrawables() [Right].getBounds().width()) {
+
+                        int selection=confirmar_senha.getSelectionEnd();
+                        if(passwordVisible){
+
+                            // set drawable image here
+                            confirmar_senha.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0, R.drawable.ic_eye, 0);
+
+                            //for hide password
+                            confirmar_senha.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                            passwordVisible=false;
+
+
+                        }else {
+
+                            //set drawable image here
+                            confirmar_senha.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0,R.drawable.ic_eye_off,0);
+
+
+                            //for show password
+                            confirmar_senha.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                            passwordVisible=true;
+
+
+                        }
+
+                        confirmar_senha.setSelection(selection);
+                        return true;
+
+                    }
+                }
+                return false;
+            }
+        });
 
 
 
@@ -202,7 +293,7 @@ public class FormCadastro extends AppCompatActivity {
 
     //check-in do termos e condições
     public void checarTermos (View view){
-        Button cad = findViewById(R.id.button_cadastro);
+        ImageButton cad = findViewById(R.id.button_cadastro);
         CheckBox check = findViewById(R.id.aceitoTermos);
 
         if(check.isChecked())

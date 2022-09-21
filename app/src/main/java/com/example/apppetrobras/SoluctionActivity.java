@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.service.autofill.OnClickAction;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,9 +26,9 @@ public class SoluctionActivity extends AppCompatActivity {
     // Declaração das variáveis
     int idTitulo, idSolucao, tipoProblema, idPasso;
 
-    Context context;
-
-    TextView numeroPasso;
+    // Declaração de variáveis relacionadas aos itens na tela
+    TextView numeroPasso, nomeSolucao, descSolucao;
+    ImageView imagemSolucao;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,11 +42,7 @@ public class SoluctionActivity extends AppCompatActivity {
 
         Toast.makeText(this, tipoProblema+"-"+idTitulo+"-"+idSolucao+"-"+idPasso, Toast.LENGTH_SHORT).show();
 
-        numeroPasso = findViewById(R.id.numeroPasso);
-        numeroPasso.setText("Passo: "+idPasso);
-
-        context = this;
-
+        // List
         Call<List<Problems>> call;
 
         // pega o item no BD da tabela TextoTipo que tenha: tipo-idTitulo-idSolucao-idPasso(1-1-1-1)
@@ -54,7 +51,15 @@ public class SoluctionActivity extends AppCompatActivity {
 //                .getAPI()
 //                .getLentidao(idTitulo);
 
+        // Inserção dos Valores na tela
+//        nomeSolucao = findViewById(R.id.nomeSolucao);
+//        nomeSolucao.setText("Nome Solucao");
 
+        numeroPasso = findViewById(R.id.numeroPasso);
+        numeroPasso.setText("Passo: "+idPasso);
+
+//        descSolucao = findViewById(R.id.descricao_passo);
+//        descSolucao.setText("Descrição do passo");
     }
 
     public void btnCancel(View view){

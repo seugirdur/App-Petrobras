@@ -107,15 +107,21 @@
         <entry key="app/src/main/res/drawable/ic_circle.xml" value="0.172" />
         <entry key="app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.123" />
         <entry key="app/src/main/res/layout/activity_ajuda.xml" value="0.19322916666666667" />
+        <entry key="app/src/main/res/layout/activity_ajudae_suporte.xml" value="0.19322916666666667" />
         <entry key="app/src/main/res/layout/activity_conteudo.xml" value="0.19322916666666667" />
+        <entry key="app/src/main/res/layout/activity_drawer_base.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_form_cadastro.xml" value="0.19322916666666667" />
         <entry key="app/src/main/res/layout/activity_form_login.xml" value="0.19322916666666667" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_relatorio_processo.xml" value="0.19322916666666667" />
         <entry key="app/src/main/res/layout/activity_soluction.xml" value="0.19322916666666667" />
+        <entry key="app/src/main/res/layout/activity_tab.xml" value="0.19322916666666667" />
         <entry key="app/src/main/res/layout/cont_list.xml" value="0.30434782608695654" />
+        <entry key="app/src/main/res/layout/content_layout.xml" value="0.19322916666666667" />
         <entry key="app/src/main/res/layout/item_list.xml" value="0.19322916666666667" />
         <entry key="app/src/main/res/layout/item_soluction_list.xml" value="0.19322916666666667" />
+        <entry key="app/src/main/res/layout/main_drawer_header.xml" value="0.1" />
+        <entry key="app/src/main/res/menu/main_drawer_menu.xml" value="0.19322916666666667" />
       </map>
     </option>
   </component>

@@ -19,7 +19,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class ProblemActivity extends AppCompatActivity implements RecyclerViewInteface {
+public class ProblemActivity extends DrawerBaseActivity implements RecyclerViewInteface {
 
     // Declaração das variáveis
     int idTitulo, tipoProblema;
@@ -27,6 +27,7 @@ public class ProblemActivity extends AppCompatActivity implements RecyclerViewIn
     private RecyclerView recyclerview;
     private Context context;
     private RecyclerViewInteface recyclerViewInteface;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

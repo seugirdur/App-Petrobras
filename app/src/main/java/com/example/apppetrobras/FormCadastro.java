@@ -6,8 +6,10 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Handler;
+import android.text.Editable;
 import android.text.SpannableString;
 import android.text.Spanned;
+import android.text.TextWatcher;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.LinkMovementMethod;
 import android.text.method.PasswordTransformationMethod;
@@ -43,6 +45,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.Calendar;
 
 import okhttp3.ResponseBody;
 import retrofit2.Call;
@@ -51,7 +54,8 @@ import retrofit2.Response;
 
 public class FormCadastro extends AppCompatActivity {
 
-    EditText senha, confirmar_senha;
+    EditText senha, confirmar_senha, dataNasc;
+    boolean passwordVisible;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +67,8 @@ public class FormCadastro extends AppCompatActivity {
         String text = "Li e concordo com os TERMOS DE USO e POLÍTICAS DE PRIVACIDADE";
 
         SpannableString ss = new SpannableString(text);
+
+
 
 
         ClickableSpan clicavel1 = new ClickableSpan() {
@@ -93,9 +99,138 @@ public class FormCadastro extends AppCompatActivity {
         textView.setText(ss);
         textView.setMovementMethod(LinkMovementMethod.getInstance());
 
+        EditText dataNasc;
+
+        dataNasc = (EditText)findViewById(R.id.data_nascimento);
+
+        dataNasc .addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                String str=dataNasc .getText().toString();
+                int textLength=dataNasc .getText().length();
+                if (textLength == 3) {
+
+                    if (!str.contains("/")) {
+                        dataNasc .setText(new StringBuilder(dataNasc .getText().toString()).insert(str.length() - 1, "/").toString());
+                        dataNasc .setSelection(dataNasc .getText().length());
+                    }
+                }
+                if (textLength == 6) {
+
+                        dataNasc .setText(new StringBuilder(dataNasc .getText().toString()).insert(str.length() - 1, "/").toString());
+                        dataNasc .setSelection(dataNasc .getText().length());
+
+                }
 
 
-    }
+
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+
+        // Esconder e mostrar senha
+
+        senha = findViewById(R.id.senha);
+        confirmar_senha = findViewById(R.id.confirmar_senha);
+
+        senha.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+
+                final int Right=2;
+                if(motionEvent.getAction()==MotionEvent.ACTION_UP) {
+
+                    if(motionEvent.getRawX()>=senha.getRight()-senha.getCompoundDrawables() [Right].getBounds().width()) {
+
+                        int selection=senha.getSelectionEnd();
+                        if(passwordVisible){
+
+                            // set drawable image here
+                            senha.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0, R.drawable.ic_eye, 0);
+
+                            //for hide password
+                            senha.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                            passwordVisible=false;
+
+
+                        }else {
+
+                            //set drawable image here
+                            senha.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0,R.drawable.ic_eye_off,0);
+
+
+                            //for show password
+                            senha.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                            passwordVisible=true;
+
+
+                        }
+
+                        senha.setSelection(selection);
+                        return true;
+
+                    }
+                }
+                return false;
+            }
+        });
+
+        confirmar_senha.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+
+                final int Right=2;
+                if(motionEvent.getAction()==MotionEvent.ACTION_UP) {
+
+                    if(motionEvent.getRawX()>=confirmar_senha.getRight()-confirmar_senha.getCompoundDrawables() [Right].getBounds().width()) {
+
+                        int selection=confirmar_senha.getSelectionEnd();
+                        if(passwordVisible){
+
+                            // set drawable image here
+                            confirmar_senha.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0, R.drawable.ic_eye, 0);
+
+                            //for hide password
+                            confirmar_senha.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                            passwordVisible=false;
+
+
+                        }else {
+
+                            //set drawable image here
+                            confirmar_senha.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0,R.drawable.ic_eye_off,0);
+
+
+                            //for show password
+                            confirmar_senha.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                            passwordVisible=true;
+
+
+                        }
+
+                        confirmar_senha.setSelection(selection);
+                        return true;
+
+                    }
+                }
+                return false;
+            }
+        });
+
+
+
+
+        }
 
     //redirecionamento para ajuda
     public void ajuda(View view){
@@ -158,7 +293,7 @@ public class FormCadastro extends AppCompatActivity {
 
     //check-in do termos e condições
     public void checarTermos (View view){
-        Button cad = findViewById(R.id.button_cadastro);
+        ImageButton cad = findViewById(R.id.button_cadastro);
         CheckBox check = findViewById(R.id.aceitoTermos);
 
         if(check.isChecked())
@@ -178,12 +313,14 @@ public class FormCadastro extends AppCompatActivity {
         EditText senha2 = (EditText) findViewById(R.id.confirmar_senha);
         TextView nome = findViewById(R.id.nome_completo);
         TextView tel = findViewById(R.id.telefone);
+        TextView dataNasc = findViewById(R.id.data_nascimento);
         TextView email = findViewById(R.id.email);
         TextView chave = findViewById(R.id.chave_acesso);
         TextView senha = findViewById(R.id.senha);
         resgataInfo();
         String Checknome = nome.getText().toString();
         String Checktel = tel.getText().toString();
+       String CheckdataNasc = dataNasc.getText().toString();
         String Checkemail = email.getText().toString();
         String Checkchave =  chave.getText().toString();
         String Checksenha =  senha.getText().toString();
@@ -194,7 +331,7 @@ public class FormCadastro extends AppCompatActivity {
             Toast.makeText(this, "As senhas não coincidem", Toast.LENGTH_SHORT).show();
             senha1.setText("");
             senha2.setText("");
-        }else if(Checknome.isEmpty() | Checkemail.isEmpty() |Checkchave.isEmpty()|Checksenha.isEmpty()|Checktel.isEmpty()){
+        }else if(Checknome.isEmpty() | Checkemail.isEmpty() |Checkchave.isEmpty()|Checksenha.isEmpty()|Checktel.isEmpty()|CheckdataNasc.isEmpty()){
             Toast.makeText(this, "Preencha as informações", Toast.LENGTH_SHORT).show();
         }
         else {
@@ -212,16 +349,23 @@ public class FormCadastro extends AppCompatActivity {
 
     }
 
+
+
+
+
+
+
     public Infos resgataInfo() {
         TextView nome = findViewById(R.id.nome_completo);
         TextView tel = findViewById(R.id.telefone);
+        TextView dataNasc = findViewById(R.id.data_nascimento);
         TextView email = findViewById(R.id.email);
         TextView chave = findViewById(R.id.chave_acesso);
         TextView senha = findViewById(R.id.senha);
 
         String _nome = nome.getText() + "";
         String _tel = tel.getText() + "";
-        String _dataNasc = tel.getText() + "";
+        String _dataNasc = dataNasc.getText() + "";
         String _email = email.getText() + "";
         String _chave = chave.getText() + "";
         String _senha = senha.getText() + "";
@@ -259,7 +403,7 @@ private void registrate(){
             String dataNasc = info.dataNasc.toString().trim();
             String chave = info.chave.toString().trim();
             String senha = info.senha.toString().trim();
-            //String datanasc_br = info.dataNas;
+
 
             Call<ResponseBody> call = RetroFitClient
                     .getInstance()

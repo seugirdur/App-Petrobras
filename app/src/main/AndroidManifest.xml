@@ -24,12 +24,7 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
         <activity
             android:name=".Hub"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="true"/>
         <activity
             android:name=".AjudaeSuporte"
             android:exported="false" />
@@ -76,6 +71,14 @@
         <activity
             android:name=".RelatorioProcesso"
             android:exported="true" />
+        <activity
+            android:name=".arrastaprolado"
+            android:exported="true" >
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+    </activity>
         <activity
             android:name=".SplashScreenActivity"
             android:exported="true"

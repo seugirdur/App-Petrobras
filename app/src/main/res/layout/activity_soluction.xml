@@ -43,22 +43,23 @@
         app:layout_constraintTop_toBottomOf="@id/imagemSolucao"
         app:layout_constraintStart_toStartOf="@id/imagemSolucao"/>
 
-    <TextView
-        android:id="@+id/descricaoPasso"
-        android:layout_width="280dp"
-        android:layout_height="wrap_content"
-        android:text="Texto da solução do problema"
-        android:textSize="15sp"
-        android:textColor="@color/black"
-        app:layout_constraintTop_toBottomOf="@+id/numeroPasso"
-        app:layout_constraintStart_toStartOf="@id/numeroPasso"/>
+   <TextView
+       android:id="@+id/descricaoPasso"
+       android:layout_width="280dp"
+       android:layout_height="wrap_content"
+       android:text="Texto da solução do problema"
+       android:textColor="@color/black"
+       android:textSize="15sp"
+       app:layout_constraintEnd_toEndOf="@id/imagemSolucao"
+       app:layout_constraintStart_toStartOf="@id/imagemSolucao"
+       app:layout_constraintTop_toBottomOf="@+id/numeroPasso" />
 
     <ImageView
         android:id="@+id/btnResolveu"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginTop="100dp"
-        app:layout_constraintTop_toBottomOf="@id/imagemSolucao"
+        android:layout_marginBottom="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@id/imagemSolucao"
         app:srcCompat="@drawable/ic_check_circle"
         android:onClick="btnCheck"/>
@@ -67,8 +68,8 @@
         android:id="@+id/btnNaoResolveu"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginTop="100dp"
-        app:layout_constraintTop_toBottomOf="@id/imagemSolucao"
+        android:layout_marginBottom="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/imagemSolucao"
         app:srcCompat="@drawable/ic_cancel_circle"
         android:onClick="btnCancel"/>

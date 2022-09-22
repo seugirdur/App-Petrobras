@@ -24,7 +24,7 @@ import retrofit2.Retrofit;
 public class SoluctionActivity extends AppCompatActivity {
 
     // Declaração das variáveis
-    int idTitulo, idSolucao, tipoProblema, idPasso;
+    int idTitulo, idSolucao, tipoProblema, idPasso, qtdPassos;
     String tituloSolucao;
 
     Context context;
@@ -33,6 +33,8 @@ public class SoluctionActivity extends AppCompatActivity {
     ImageView imagemSolucao;
 
     List<Soluctions> soluctionsList;
+
+    Call<List<Soluctions>> call;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,14 +47,10 @@ public class SoluctionActivity extends AppCompatActivity {
         idPasso = getIntent().getIntExtra("PASSO",1);
         tituloSolucao = getIntent().getStringExtra("TITULO_SOLUCAO");
 
-        Toast.makeText(this, tipoProblema+"-"+idTitulo+"-"+idSolucao+"-"+idPasso, Toast.LENGTH_SHORT).show();
-
         String concatenar = Integer.toString(idTitulo) + Integer.toString(idSolucao);
         int numerojunto = Integer.parseInt(concatenar);
 
         context = this;
-
-        Call<List<Soluctions>> call;
 
         switch (tipoProblema){
             case 1:
@@ -90,6 +88,9 @@ public class SoluctionActivity extends AppCompatActivity {
                     return;
                 }
                 soluctionsList = response.body();
+                // Armazena o total de passos dessa solução
+                qtdPassos = soluctionsList.size();
+                inserirTela();
             }
 
             @Override
@@ -98,6 +99,27 @@ public class SoluctionActivity extends AppCompatActivity {
             }
         });
 
+
+    }
+
+
+    public void btnCancel(View view){
+        if (idPasso > 1) {
+            idPasso-=1;
+            inserirTela();
+        }
+    }
+
+    public void btnCheck(View view){
+        // verifica se há mais um passo então atualiza as informações na tela:
+        if (idPasso < qtdPassos) {
+            idPasso+=1;
+            //restartPage(idPasso);
+            inserirTela();
+        }
+    }
+
+    public void inserirTela(){
         // Inserção dos Valores na tela
         nomeSolucao = findViewById(R.id.nomeSolucao);
         nomeSolucao.setText(tituloSolucao);
@@ -105,35 +127,9 @@ public class SoluctionActivity extends AppCompatActivity {
         numeroPasso = findViewById(R.id.numeroPasso);
         numeroPasso.setText("Passo: "+idPasso);
 
-        // NÃO ESTÁ FUNCIONANDO
-//        descSolucao = findViewById(R.id.descricao_passo);
-//        String descricao = soluctionsList.get(0).getTexto();
-//        descSolucao.setText(descricao);
-    }
-
-    public void btnCancel(View view){
-        if (idPasso > 1) { restartPage(idPasso-1); }
-    }
-
-    public void btnCheck(View view){
-        // verificar se há mais um passo e executar a seguinte linha:
-        restartPage(idPasso+1);
-    }
-
-    public void restartPage(int step){
-        // Reinicia a activity passando um novo passo
-
-        Intent intent = getIntent();
-        finish();
-
-        // Definição de valores que serão redirecionados
-        intent.putExtra("TIPO",tipoProblema);
-        intent.putExtra("ID_TITULO", idTitulo);
-        // position começa em 0, por isso é necessário adicionar 1 a ele
-        intent.putExtra("ID_SOLUCAO", idSolucao);
-        // A atualização do passo:
-        intent.putExtra("PASSO", step);
-        intent.putExtra("TITULO_SOLUCAO",tituloSolucao);
-        startActivity(intent);
+        descSolucao = findViewById(R.id.descricaoPasso);
+        // idPasso começa em 0, preciso somar 1 a ele para se adequar ao BD
+        String descricaoBD = soluctionsList.get(idPasso-1).getTexto();
+        descSolucao.setText(descricaoBD);
     }
 }

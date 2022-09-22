@@ -15,7 +15,15 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.apppetrobras.api.RetroFitClient;
+import com.example.apppetrobras.models.UserAPI;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class RelatorioProcesso extends AppCompatActivity {
 
@@ -79,6 +87,40 @@ public class RelatorioProcesso extends AppCompatActivity {
 
             }
         });
+
+        SharedPreferences sharedPreferences = getSharedPreferences(
+                getString(R.string.preference_file_key), Context.MODE_PRIVATE);
+
+        String chave = sharedPreferences.getString("nome", "");
+
+        Call<List<CRelatorio>> call = RetroFitClient
+                .getInstance()
+                .getAPI()
+                .getRelatorio(chave);
+
+        call.enqueue(new Callback<List<CRelatorio>>() {
+            @Override
+            public void onResponse(Call<List<CRelatorio>> call, Response<List<CRelatorio>> response) {
+                if (!response.isSuccessful()){
+                    Toast.makeText(RelatorioProcesso.this, response.code(), Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                List<CRelatorio> cRelatorioList = response.body();
+                CRelatorio cRelatorio = cRelatorioList.get(0);
+                String secao = cRelatorio.getSecao();
+
+                Toast.makeText(RelatorioProcesso.this, secao, Toast.LENGTH_SHORT).show();
+                Toast.makeText(RelatorioProcesso.this, "secao", Toast.LENGTH_SHORT).show();
+
+            }
+
+            @Override
+            public void onFailure(Call<List<CRelatorio>> call, Throwable t) {
+
+            }
+        });
+
 
     }
 

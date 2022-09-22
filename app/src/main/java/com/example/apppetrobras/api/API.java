@@ -1,5 +1,6 @@
 package com.example.apppetrobras.api;
 
+import com.example.apppetrobras.CRelatorio;
 import com.example.apppetrobras.Problems;
 import com.example.apppetrobras.Soluctions;
 import com.example.apppetrobras.models.UserAPI;
@@ -97,6 +98,13 @@ public interface  API {
     Call<List<Soluctions>> getTextoEquipamento(
             @Field("idSolucao") int idSolucao,
             @Field("idtexto") int idtexto
+
+    );
+
+    @FormUrlEncoded
+    @POST("/relatorios")
+    Call<List<CRelatorio>> getRelatorio(
+            @Field("chave") String chave
 
     );
 }

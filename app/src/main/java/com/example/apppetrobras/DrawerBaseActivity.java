@@ -67,7 +67,7 @@ import com.google.android.material.navigation.NavigationView;
                     break;
 
                 case R.id.historico:
-                    startActivity(new Intent(this, Historico.class));
+                    startActivity(new Intent(this, RelatorioProcesso.class));
                     overridePendingTransition(0, 0);
                     break;
 

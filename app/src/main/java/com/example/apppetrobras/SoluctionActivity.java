@@ -90,7 +90,7 @@ public class SoluctionActivity extends AppCompatActivity {
                 soluctionsList = response.body();
                 // Armazena o total de passos dessa solução
                 qtdPassos = soluctionsList.size();
-                inserirTela();
+                inserirNaTela();
             }
 
             @Override
@@ -99,14 +99,12 @@ public class SoluctionActivity extends AppCompatActivity {
             }
         });
 
-
     }
-
 
     public void btnCancel(View view){
         if (idPasso > 1) {
             idPasso-=1;
-            inserirTela();
+            inserirNaTela();
         }
     }
 
@@ -114,12 +112,11 @@ public class SoluctionActivity extends AppCompatActivity {
         // verifica se há mais um passo então atualiza as informações na tela:
         if (idPasso < qtdPassos) {
             idPasso+=1;
-            //restartPage(idPasso);
-            inserirTela();
+            inserirNaTela();
         }
     }
 
-    public void inserirTela(){
+    public void inserirNaTela(){
         // Inserção dos Valores na tela
         nomeSolucao = findViewById(R.id.nomeSolucao);
         nomeSolucao.setText(tituloSolucao);
@@ -131,5 +128,9 @@ public class SoluctionActivity extends AppCompatActivity {
         // idPasso começa em 0, preciso somar 1 a ele para se adequar ao BD
         String descricaoBD = soluctionsList.get(idPasso-1).getTexto();
         descSolucao.setText(descricaoBD);
+
+//        //Imagens ainda não selecionadas
+//        imagemSolucao = findViewById(R.id.imagemSolucao);
+//        imagemSolucao.setImageResource();
     }
 }

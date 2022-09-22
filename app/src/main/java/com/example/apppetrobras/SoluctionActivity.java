@@ -25,11 +25,14 @@ public class SoluctionActivity extends AppCompatActivity {
 
     // Declaração das variáveis
     int idTitulo, idSolucao, tipoProblema, idPasso;
+    String tituloSolucao;
 
     Context context;
 
     TextView numeroPasso, nomeSolucao, descSolucao;
     ImageView imagemSolucao;
+
+    List<Soluctions> soluctionsList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,15 +43,12 @@ public class SoluctionActivity extends AppCompatActivity {
         idTitulo = getIntent().getIntExtra("ID_TITULO",1);
         idSolucao = getIntent().getIntExtra("ID_SOLUCAO",1);
         idPasso = getIntent().getIntExtra("PASSO",1);
+        tituloSolucao = getIntent().getStringExtra("TITULO_SOLUCAO");
 
         Toast.makeText(this, tipoProblema+"-"+idTitulo+"-"+idSolucao+"-"+idPasso, Toast.LENGTH_SHORT).show();
 
         String concatenar = Integer.toString(idTitulo) + Integer.toString(idSolucao);
         int numerojunto = Integer.parseInt(concatenar);
-
-        //colocar na tela
-        numeroPasso = findViewById(R.id.numeroPasso);
-        numeroPasso.setText("Passo: "+idPasso);
 
         context = this;
 
@@ -89,36 +89,26 @@ public class SoluctionActivity extends AppCompatActivity {
                     Toast.makeText(context, response.code(), Toast.LENGTH_SHORT).show();
                     return;
                 }
-
-                List<Soluctions> soluctionsList = response.body();
-
-
-
-
+                soluctionsList = response.body();
             }
 
             @Override
             public void onFailure(Call<List<Soluctions>> call, Throwable t) {
                 Toast.makeText(context, t.getMessage(), Toast.LENGTH_SHORT).show();
-
             }
         });
 
-        // pega o item no BD da tabela TextoTipo que tenha: tipo-idTitulo-idSolucao-idPasso(1-1-1-1)
-//        call = RetroFitClient
-//                .getInstance()
-//                .getAPI()
-//                .getLentidao(idTitulo);
-
         // Inserção dos Valores na tela
-//        nomeSolucao = findViewById(R.id.nomeSolucao);
-//        nomeSolucao.setText("Nome Solucao");
+        nomeSolucao = findViewById(R.id.nomeSolucao);
+        nomeSolucao.setText(tituloSolucao);
 
         numeroPasso = findViewById(R.id.numeroPasso);
         numeroPasso.setText("Passo: "+idPasso);
 
+        // NÃO ESTÁ FUNCIONANDO
 //        descSolucao = findViewById(R.id.descricao_passo);
-//        descSolucao.setText("Descrição do passo");
+//        String descricao = soluctionsList.get(0).getTexto();
+//        descSolucao.setText(descricao);
     }
 
     public void btnCancel(View view){
@@ -143,6 +133,7 @@ public class SoluctionActivity extends AppCompatActivity {
         intent.putExtra("ID_SOLUCAO", idSolucao);
         // A atualização do passo:
         intent.putExtra("PASSO", step);
+        intent.putExtra("TITULO_SOLUCAO",tituloSolucao);
         startActivity(intent);
     }
 }

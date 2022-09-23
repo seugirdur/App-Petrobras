@@ -63,10 +63,10 @@ public class FormCadastro extends AppCompatActivity {
         setContentView(R.layout.activity_form_cadastro);
 
 
-        CheckBox textView = findViewById(R.id.aceitoTermos);
-        String text = "Li e concordo com os TERMOS DE USO e POLÍTICAS DE PRIVACIDADE";
-
-        SpannableString ss = new SpannableString(text);
+//        CheckBox textView = findViewById(R.id.aceitoTermos);
+//        String text = "Li e concordo com os TERMOS DE USO e POLÍTICAS DE PRIVACIDADE";
+//
+//        SpannableString ss = new SpannableString(text);
 
 
 
@@ -93,11 +93,11 @@ public class FormCadastro extends AppCompatActivity {
         };
 
         // declarando parte que funcionará como clicável
-        ss.setSpan(clicavel1, 21, 34, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-        ss.setSpan(clicavel2, 37, 61, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-
-        textView.setText(ss);
-        textView.setMovementMethod(LinkMovementMethod.getInstance());
+//        ss.setSpan(clicavel1, 21, 34, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+//        ss.setSpan(clicavel2, 37, 61, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+//
+//        textView.setText(ss);
+//        textView.setMovementMethod(LinkMovementMethod.getInstance());
 
         EditText dataNasc;
 

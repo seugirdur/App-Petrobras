@@ -407,8 +407,11 @@
         android:id="@+id/aceitoTermos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Li e concordo com os termos de uso\ne política de privacidade."
+        android:text="@string/texto_cadastr"
         app:layout_constraintStart_toStartOf="@id/view_principal"
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
         app:layout_constraintEnd_toEndOf="@id/view_principal"
         app:layout_constraintTop_toBottomOf="@id/seventh_view"
         android:layout_marginTop="20dp" />

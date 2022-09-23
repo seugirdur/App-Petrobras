@@ -52,5 +52,6 @@ public class Tela_de_escolha extends AppCompatActivity {
      }
 
 
-
+    public void setCurrentItemPager(int i) {
+    }
 }

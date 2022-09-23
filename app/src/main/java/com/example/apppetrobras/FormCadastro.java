@@ -54,7 +54,7 @@ import retrofit2.Response;
 
 public class FormCadastro extends AppCompatActivity {
 
-    EditText senha, confirmar_senha, dataNasc;
+    EditText senha, confirmar_senha;
     boolean passwordVisible;
 
     @Override
@@ -128,6 +128,57 @@ public class FormCadastro extends AppCompatActivity {
 
 
 
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+        EditText tel;
+
+        tel = (EditText)findViewById(R.id.telefone);
+
+        tel .addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                String str=tel .getText().toString();
+                int textLength=tel .getText().length();
+                if (textLength == 1) {
+
+                    if (!str.contains("(")) {
+                        tel .setText(new StringBuilder(tel.getText().toString()).insert(str.length() - 1, "(").toString());
+                        tel.setSelection(tel .getText().length());
+                    }
+                }
+                if (textLength == 4) {
+
+                    if (!str.contains(")")) {
+                        tel .setText(new StringBuilder(tel.getText().toString()).insert(str.length() - 1, ")").toString());
+                        tel.setSelection(tel .getText().length());
+                    }
+                }
+
+                if (textLength == 5) {
+
+                    if (!str.contains(" ")) {
+                        tel .setText(new StringBuilder(tel.getText().toString()).insert(str.length() - 1, " ").toString());
+                        tel.setSelection(tel .getText().length());
+                    }
+                }
+                if (textLength == 11) {
+
+                    if (!str.contains("-")) {
+                        tel .setText(new StringBuilder(tel.getText().toString()).insert(str.length() - 1, "-").toString());
+                        tel.setSelection(tel .getText().length());
+                    }
+                }
 
             }
 

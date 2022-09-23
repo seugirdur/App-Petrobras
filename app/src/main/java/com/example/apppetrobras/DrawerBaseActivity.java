@@ -82,6 +82,11 @@ import com.google.android.material.navigation.NavigationView;
                     overridePendingTransition(0, 0);
                     break;
 
+                case R.id.sair:
+                    startActivity(new Intent(this, SplashScreenActivity.class));
+                    finish();
+                    overridePendingTransition(0, 0);
+                    break;
 
             }
 

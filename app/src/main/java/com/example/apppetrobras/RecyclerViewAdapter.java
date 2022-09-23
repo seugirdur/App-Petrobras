@@ -61,7 +61,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                 idTituloID = R.id.idTitulo;
                 idProblemaID = R.id.idProblema;
                 idTexto = R.id.textProblema;
-                return new MyViewHolder(view, recyclerViewInteface, idTituloID, idProblemaID, idTexto);
+                return new MyViewHolder(view, recyclerViewInteface, idTexto, idTituloID, idProblemaID);
             case  R.layout.item_soluction_list:
                 idTexto = R.id.title_soluction;
                 return new MyViewHolder(view, recyclerViewInteface, idTexto);
@@ -82,18 +82,17 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             DadosLista data = dataArrayList.get(position);
             // Há a verificação de cada variável, caso ela tenha sido definida, ela passa o valor
             // Isso é necessário pois as listas recebem diferentes quantidades de valores
-            if(holder.textoLista!=null){ holder.textoLista.setText(data.getText());}
-            if(holder.imagemLista!=null){ holder.imagemLista.setImageResource(data.getImage());}
+            if(holder.textView1 !=null){ holder.textView1.setText(data.getText());}
+            if(holder.imageView1 !=null){ holder.imageView1.setImageResource(data.getImage());}
         }
         else if(problemsList!=null){
             Problems data = problemsList.get(position);
             // Há a verificação de cada variável, caso ela tenha sido definida, ela passa o valor
             // Isso é necessário pois as listas recebem diferentes quantidades de valores
-            if(holder.textoLista!=null){ holder.textoLista.setText(data.getTituloSolucao());}
-            if(holder.idTitulo!=null){ holder.idTitulo.setText(data.getIdTitulo());}
-            if(holder.idProblema!=null){ holder.idProblema.setText(data.getIdProblema());}
+            if(holder.textView1 !=null){ holder.textView1.setText(data.getTituloSolucao());}
+            if(holder.textView2 !=null){ holder.textView2.setText(data.getIdTitulo());}
+            if(holder.textView3 !=null){ holder.textView3.setText(data.getIdProblema());}
         }
-
     }
 
     @Override
@@ -112,8 +111,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public static class MyViewHolder extends RecyclerView.ViewHolder{
 
         // Instanciação das variáveis
-        ImageView imagemLista;
-        TextView textoLista, idTitulo, idProblema;
+        ImageView imageView1;
+        TextView textView1, textView2, textView3;
 
 
         // Sobrecarga de construtor para cada layout (xml) de RecyclerView:
@@ -123,7 +122,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             super(itemView);
 
             // Definição de variáveis com os valores dos id's
-            textoLista = itemView.findViewById(idTexto);
+            textView1 = itemView.findViewById(idTexto);
 
             // Define o método onItemClik da interface para cada item da RecyclerView
             moduleOnClick(recyclerViewInteface);
@@ -134,21 +133,21 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             super(itemView);
 
             // Definição de variáveis com os valores dos id's
-            imagemLista = itemView.findViewById(idImage);
-            textoLista = itemView.findViewById(idTexto);
+            textView1 = itemView.findViewById(idTexto);
+            imageView1 = itemView.findViewById(idImage);
 
             // Define o método onItemClik da interface para cada item da RecyclerView
             moduleOnClick(recyclerViewInteface);
         }
 
         public MyViewHolder(@NonNull View itemView,RecyclerViewInteface recyclerViewInteface,
-                            int idTituloID, int idProblemaID, int idTexto) {
+                            int idTexto, int idTituloID, int idProblemaID) {
             super(itemView);
 
             // Definição de variáveis com os valores dos id's
-            idTitulo = itemView.findViewById(idTituloID);
-            idProblema = itemView.findViewById(idProblemaID);
-            textoLista = itemView.findViewById(idTexto);
+            textView1 = itemView.findViewById(idTexto);
+            textView2 = itemView.findViewById(idTituloID);
+            textView3 = itemView.findViewById(idProblemaID);
 
             // Define o método onItemClik da interface para cada item da RecyclerView
             moduleOnClick(recyclerViewInteface);

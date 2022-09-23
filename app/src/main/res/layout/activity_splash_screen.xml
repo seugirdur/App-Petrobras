@@ -14,12 +14,12 @@
         tools:layout_editor_absoluteX="25dp"
         tools:layout_editor_absoluteY="0dp">
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:layout_width="220dp"
             android:layout_height="220dp"
             android:layout_gravity="center"
             android:layout_marginTop="100dp"
-            android:src="@drawable/ic_circle1" />
+            android:src="@drawable/logo_aset" />
 
         <TextView
             android:layout_width="match_parent"
@@ -34,7 +34,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="sans-serif"
+            android:fontFamily="@font/open_sans_bold"
             android:gravity="center"
             android:text="ASET"
             android:textColor="#1A4A1F"

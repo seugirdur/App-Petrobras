@@ -28,6 +28,7 @@ public class ProblemActivity extends DrawerBaseActivity implements RecyclerViewI
     private Context context;
     private RecyclerViewInteface recyclerViewInteface;
 
+    List<Problems> problemsList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,7 +82,7 @@ public class ProblemActivity extends DrawerBaseActivity implements RecyclerViewI
                     Toast.makeText(context, response.code(), Toast.LENGTH_SHORT).show();
                     return;
                 }
-                List<Problems> problemsList = response.body();
+                problemsList = response.body();
                 RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(context,
                         problemsList, recyclerViewInteface, R.layout.item_soluction_list );
                 recyclerview.setAdapter(recyclerViewAdapter);
@@ -101,16 +102,18 @@ public class ProblemActivity extends DrawerBaseActivity implements RecyclerViewI
         // Redirecionamento para a tela do problema contendo os títulos das soluções
         Intent intent = new Intent(ProblemActivity.this, SoluctionActivity.class);
 
+        // Insere na variável o titulo da solução clickada
+        String tituloSolucao = problemsList.get(position).getTituloSolucao();
+
         // Definição de valores que serão redirecionados
         intent.putExtra("TIPO",tipoProblema);
         intent.putExtra("ID_TITULO", idTitulo);
-        // position começa em 0, por isso é necessário adicionar 1 a ele
+        // position começa em 0, para condizer ao BD é necessário adicionar 1 a ele
         intent.putExtra("ID_SOLUCAO", position+1);
         //todas as soluções começam pelo primeiro passo
         intent.putExtra("PASSO", 1);
+        intent.putExtra("TITULO_SOLUCAO", tituloSolucao);
         startActivity(intent);
     }
-
-
 
 }

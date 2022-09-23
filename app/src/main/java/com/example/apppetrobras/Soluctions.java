@@ -1,15 +1,21 @@
 package com.example.apppetrobras;
 
 public class Soluctions {
-    private int idSolucao, idtexto;
+    private int idSolucao, idTexto;
     private String texto;
+
+    Soluctions(int idSolucao, int idTexto, String texto){
+        this.idSolucao = idSolucao;
+        this.idTexto = idTexto;
+        this.texto = texto;
+    }
 
     public int getIdSolucao() {
         return idSolucao;
     }
 
     public int getIdtexto() {
-        return idtexto;
+        return idTexto;
     }
 
     public String getTexto() {

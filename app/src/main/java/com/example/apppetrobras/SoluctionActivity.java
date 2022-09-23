@@ -24,12 +24,17 @@ import retrofit2.Retrofit;
 public class SoluctionActivity extends AppCompatActivity {
 
     // Declaração das variáveis
-    int idTitulo, idSolucao, tipoProblema, idPasso;
+    int idTitulo, idSolucao, tipoProblema, idPasso, qtdPassos;
+    String tituloSolucao;
 
     Context context;
 
     TextView numeroPasso, nomeSolucao, descSolucao;
     ImageView imagemSolucao;
+
+    List<Soluctions> soluctionsList;
+
+    Call<List<Soluctions>> call;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,19 +45,12 @@ public class SoluctionActivity extends AppCompatActivity {
         idTitulo = getIntent().getIntExtra("ID_TITULO",1);
         idSolucao = getIntent().getIntExtra("ID_SOLUCAO",1);
         idPasso = getIntent().getIntExtra("PASSO",1);
-
-        Toast.makeText(this, tipoProblema+"-"+idTitulo+"-"+idSolucao+"-"+idPasso, Toast.LENGTH_SHORT).show();
+        tituloSolucao = getIntent().getStringExtra("TITULO_SOLUCAO");
 
         String concatenar = Integer.toString(idTitulo) + Integer.toString(idSolucao);
         int numerojunto = Integer.parseInt(concatenar);
 
-        //colocar na tela
-        numeroPasso = findViewById(R.id.numeroPasso);
-        numeroPasso.setText("Passo: "+idPasso);
-
         context = this;
-
-        Call<List<Soluctions>> call;
 
         switch (tipoProblema){
             case 1:
@@ -89,60 +87,50 @@ public class SoluctionActivity extends AppCompatActivity {
                     Toast.makeText(context, response.code(), Toast.LENGTH_SHORT).show();
                     return;
                 }
-
-                List<Soluctions> soluctionsList = response.body();
-
-
-
-
+                soluctionsList = response.body();
+                // Armazena o total de passos dessa solução
+                qtdPassos = soluctionsList.size();
+                inserirNaTela();
             }
 
             @Override
             public void onFailure(Call<List<Soluctions>> call, Throwable t) {
                 Toast.makeText(context, t.getMessage(), Toast.LENGTH_SHORT).show();
-
             }
         });
 
-        // pega o item no BD da tabela TextoTipo que tenha: tipo-idTitulo-idSolucao-idPasso(1-1-1-1)
-//        call = RetroFitClient
-//                .getInstance()
-//                .getAPI()
-//                .getLentidao(idTitulo);
+    }
 
+    public void btnCancel(View view){
+        if (idPasso > 1) {
+            idPasso-=1;
+            inserirNaTela();
+        }
+    }
+
+    public void btnCheck(View view){
+        // verifica se há mais um passo então atualiza as informações na tela:
+        if (idPasso < qtdPassos) {
+            idPasso+=1;
+            inserirNaTela();
+        }
+    }
+
+    public void inserirNaTela(){
         // Inserção dos Valores na tela
-//        nomeSolucao = findViewById(R.id.nomeSolucao);
-//        nomeSolucao.setText("Nome Solucao");
+        nomeSolucao = findViewById(R.id.nomeSolucao);
+        nomeSolucao.setText(tituloSolucao);
 
         numeroPasso = findViewById(R.id.numeroPasso);
         numeroPasso.setText("Passo: "+idPasso);
 
-//        descSolucao = findViewById(R.id.descricao_passo);
-//        descSolucao.setText("Descrição do passo");
-    }
+        descSolucao = findViewById(R.id.descricaoPasso);
+        // idPasso começa em 0, preciso somar 1 a ele para se adequar ao BD
+        String descricaoBD = soluctionsList.get(idPasso-1).getTexto();
+        descSolucao.setText(descricaoBD);
 
-    public void btnCancel(View view){
-        if (idPasso > 1) { restartPage(idPasso-1); }
-    }
-
-    public void btnCheck(View view){
-        // verificar se há mais um passo e executar a seguinte linha:
-        restartPage(idPasso+1);
-    }
-
-    public void restartPage(int step){
-        // Reinicia a activity passando um novo passo
-
-        Intent intent = getIntent();
-        finish();
-
-        // Definição de valores que serão redirecionados
-        intent.putExtra("TIPO",tipoProblema);
-        intent.putExtra("ID_TITULO", idTitulo);
-        // position começa em 0, por isso é necessário adicionar 1 a ele
-        intent.putExtra("ID_SOLUCAO", idSolucao);
-        // A atualização do passo:
-        intent.putExtra("PASSO", step);
-        startActivity(intent);
+//        //Imagens ainda não selecionadas
+//        imagemSolucao = findViewById(R.id.imagemSolucao);
+//        imagemSolucao.setImageResource();
     }
 }

@@ -16,13 +16,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder>{
-
+// CRelatorio
     // Declaração das variáveis
     private final RecyclerViewInteface recyclerViewInteface;
     private final int layout;
     Context context;
     List<Problems> problemsList;
     ArrayList<DadosLista> dataArrayList;
+    List<CPassosRelatorio> relatorioList;
+
+    // Sobrecarga de contrutor da classe para o objeto Problems
+    public RecyclerViewAdapter(List<CPassosRelatorio> relatorioList, RecyclerViewInteface recyclerViewInteface, int layout, Context context) {
+        this.context = context;
+        this.relatorioList = relatorioList;
+        this.recyclerViewInteface = recyclerViewInteface;
+        this.layout = layout;
+    }
 
     // Sobrecarga de contrutor da classe para o objeto DadosLista
     public RecyclerViewAdapter(Context context, ArrayList<DadosLista> dataArrayList,
@@ -52,7 +61,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         View view = LayoutInflater.from(context).inflate(layout,parent,false);
 
         // Instanciação das variáveis
-        int idTexto, idImage, idProblemaID, idTituloID;
+        int idTexto, idImage, idProblemaID, idTituloID, idSubtitulo;
+        String titulo, subtitulo;
 
         // Estrutura de decisão de acordo com o layout(xml) da recyclerview,
         // a partir disso são atribuídos os id's que existem em cada item
@@ -66,11 +76,22 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                 idTexto = R.id.title_soluction;
                 return new MyViewHolder(view, recyclerViewInteface, idTexto);
 
+            case R.layout.item_relatorio:
+                idImage = R.id.imgConfirma;
+                idTexto = R.id.txtTitulo;
+                idSubtitulo = R.id.txtSubtit;
+                return new MyViewHolder(view, idSubtitulo, recyclerViewInteface, idImage, idTexto);
+
+
+
             case R.layout.item_list:
             default:
                 idTexto = R.id.textProblema;
                 idImage = R.id.imageProblema;
                 return new MyViewHolder(view, recyclerViewInteface, idTexto, idImage);
+
+
+
         }
     }
 
@@ -93,6 +114,12 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             if(holder.idTitulo!=null){ holder.idTitulo.setText(data.getIdTitulo());}
             if(holder.idProblema!=null){ holder.idProblema.setText(data.getIdProblema());}
         }
+        else if(relatorioList!=null){
+            CPassosRelatorio data = relatorioList.get(position);
+            if(holder.textoLista!=null){ holder.textoLista.setText(data.getTitulo());}
+            if(holder.idTitulo!=null){ holder.idTitulo.setText(data.getImagem());}
+            if(holder.idProblema!=null){ holder.idProblema.setText(data.getSubtitulo());}
+        }
 
     }
 
@@ -113,7 +140,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         // Instanciação das variáveis
         ImageView imagemLista;
-        TextView textoLista, idTitulo, idProblema;
+        TextView textoLista, idTitulo, idProblema, subtitulo;
 
 
         // Sobrecarga de construtor para cada layout (xml) de RecyclerView:
@@ -128,6 +155,22 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             // Define o método onItemClik da interface para cada item da RecyclerView
             moduleOnClick(recyclerViewInteface);
         }
+
+
+
+        public MyViewHolder(@NonNull View itemView, int idSubtitulo, RecyclerViewInteface recyclerViewInteface,
+                            int idImage, int idTexto) {
+            super(itemView);
+
+            // Definição de variáveis com os valores dos id's
+            subtitulo = itemView.findViewById(idSubtitulo);
+            imagemLista = itemView.findViewById(idImage);
+            idTitulo =  itemView.findViewById(idTexto);
+
+            // Define o método onItemClik da interface para cada item da RecyclerView
+            moduleOnClick(recyclerViewInteface);
+        }
+
 
         public MyViewHolder(@NonNull View itemView,RecyclerViewInteface recyclerViewInteface,
                             int idTexto, int idImage) {

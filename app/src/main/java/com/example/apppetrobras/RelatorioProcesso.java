@@ -1,6 +1,8 @@
 package com.example.apppetrobras;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -15,10 +17,23 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.apppetrobras.api.RetroFitClient;
+import com.example.apppetrobras.models.UserAPI;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.example.apppetrobras.fragments.RecyclerViewInteface;
 
-public class RelatorioProcesso extends AppCompatActivity {
 
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+public class RelatorioProcesso extends AppCompatActivity implements RecyclerViewInteface{
+
+    private RecyclerView recyclerview;
+    private Context context;
+    private RecyclerViewInteface recyclerViewInteface;
     FloatingActionButton add_icon, download_icon, observacoes_icon;
     Animation fabOpen, fabClose, rotateForward, rotateBackward;
     Dialog mDialog;
@@ -80,6 +95,62 @@ public class RelatorioProcesso extends AppCompatActivity {
             }
         });
 
+//        SharedPreferences sharedPreferences = getSharedPreferences(
+//                getString(R.string.preference_file_key), Context.MODE_PRIVATE);
+//
+        String chave = "D8X0";
+
+
+        Call<List<CRelatorio>> call = RetroFitClient
+                .getInstance()
+                .getAPI().
+                getRelatorios(chave);
+
+
+        recyclerview = findViewById(R.id.rv_conteudo);
+        recyclerview.setLayoutManager(new LinearLayoutManager(this));
+        recyclerview.setHasFixedSize(true);
+
+        context = this;
+        recyclerViewInteface = this;
+
+        call.enqueue(new Callback<List<CRelatorio>>() {
+            @Override
+            public void onResponse(Call<List<CRelatorio>> call, Response<List<CRelatorio>> response) {
+                if (!response.isSuccessful()){
+                    Toast.makeText(RelatorioProcesso.this, response.code(), Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                List<CRelatorio> cRelatorioList = response.body();
+                CRelatorio cRelatorio = cRelatorioList.get(1);
+                int datadocara = cRelatorio.idSecao;
+
+
+                RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(
+                        cRelatorioList, recyclerViewInteface, R.layout.item_relatorio, context );
+                recyclerview.setAdapter(recyclerViewAdapter);
+                recyclerViewAdapter.notifyDataSetChanged();
+
+
+
+
+
+
+
+                Toast.makeText(RelatorioProcesso.this, datadocara, Toast.LENGTH_SHORT).show();
+
+            }
+
+            @Override
+            public void onFailure(Call<List<CRelatorio>> call, Throwable t) {
+                Toast.makeText(RelatorioProcesso.this, t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+
+
+
     }
 
     private void settingTheName() {
@@ -125,4 +196,8 @@ public class RelatorioProcesso extends AppCompatActivity {
     }
 
 
+    @Override
+    public void onItemClick(int position) {
+
+    }
 }

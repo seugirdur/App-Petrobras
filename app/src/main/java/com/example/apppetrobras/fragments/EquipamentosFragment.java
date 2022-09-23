@@ -22,10 +22,8 @@ import java.util.ArrayList;
 
 public class EquipamentosFragment extends Fragment implements RecyclerViewInteface{
 
+    // Declaração das variáveis
     private ArrayList<DadosLista> dataArrayList;
-    private String[] titulosProblemas;
-    private int[] imagensProblemas, idProblemas;
-    private RecyclerView recyclerview;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -41,7 +39,7 @@ public class EquipamentosFragment extends Fragment implements RecyclerViewIntefa
         dataInitialize();
 
         // Essa variável recebe (por meio do id) a reciclerView no xml dessa tela
-        recyclerview = view.findViewById(R.id.recyclerview);
+        RecyclerView recyclerview = view.findViewById(R.id.recyclerview);
         recyclerview.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerview.setHasFixedSize(true);
         // Aqui há uma instância da RecyclerViewAdapter utilizando o construtor adequado:
@@ -49,14 +47,16 @@ public class EquipamentosFragment extends Fragment implements RecyclerViewIntefa
         RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(getContext(),
                 dataArrayList, this, R.layout.item_list);
         recyclerview.setAdapter(recyclerViewAdapter);
-        recyclerViewAdapter.notifyDataSetChanged();
+
+        //recyclerViewAdapter.notifyDataSetChanged();
     }
 
+    // Função para popular a lista usada na recyclerView
     private void dataInitialize() {
 
         dataArrayList = new ArrayList<>();
 
-        titulosProblemas = new String[]{
+        String[] titulosProblemas = new String[]{
                 getString(R.string.equipamentos_1),
                 getString(R.string.equipamentos_2),
                 getString(R.string.equipamentos_3),
@@ -72,11 +72,11 @@ public class EquipamentosFragment extends Fragment implements RecyclerViewIntefa
                 getString(R.string.equipamentos_13),
         };
 
-        idProblemas = new int[]{
+        int[] idProblemas = new int[]{
                 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
         };
 
-        imagensProblemas = new int[]{
+        int[] imagensProblemas = new int[]{
                 R.drawable.ic_launcher_background,
                 R.drawable.ic_launcher_background,
                 R.drawable.ic_launcher_background,
@@ -105,7 +105,7 @@ public class EquipamentosFragment extends Fragment implements RecyclerViewIntefa
         Intent intent = new Intent(getActivity(), ProblemActivity.class);
 
         // Definição de valores que serão redirecionados
-        intent.putExtra("TIPO",3);
+        intent.putExtra("TIPO","equipamentos");
         intent.putExtra("ID", dataArrayList.get(position).getId());
         startActivity(intent);
     }

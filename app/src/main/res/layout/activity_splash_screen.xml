@@ -19,7 +19,7 @@
             android:layout_height="220dp"
             android:layout_gravity="center"
             android:layout_marginTop="100dp"
-            android:src="@drawable/Logo_Aset" />
+            android:src="@drawable/logo_aset" />
 
         <TextView
             android:layout_width="match_parent"

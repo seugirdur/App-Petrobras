@@ -32,7 +32,7 @@
         android:layout_height="200dp"
         android:layout_marginTop="60dp"
         android:foregroundGravity="center"
-        android:src="@drawable/Logo_Aset"
+        android:src="@drawable/logo_aset"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+ <?xml version="1.0" encoding="utf-8"?>
 
 <androidx.core.widget.NestedScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -39,7 +39,7 @@
             android:layout_height="200dp"
             android:layout_marginTop="16dp"
             android:foregroundGravity="center"
-            android:src="@drawable/Logo_Aset"
+            android:src="@drawable/logo_aset"
             app:layout_constraintEnd_toEndOf="@+id/view"
             app:layout_constraintStart_toStartOf="@+id/view"
             app:layout_constraintTop_toTopOf="parent" />

@@ -33,12 +33,12 @@ public class ProblemActivity extends DrawerBaseActivity implements RecyclerViewI
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_conteudo);
+        setContentView(R.layout.activity_problem);
 
         tipoProblema = getIntent().getIntExtra("TIPO", 1);
         idTitulo = getIntent().getIntExtra("ID_TITULO",1);
 
-        recyclerview = findViewById(R.id.rv_conteudo);
+        recyclerview = findViewById(R.id.recyclerview);
         recyclerview.setLayoutManager(new LinearLayoutManager(this));
         recyclerview.setHasFixedSize(true);
 

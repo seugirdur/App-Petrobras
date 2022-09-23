@@ -102,8 +102,9 @@ public class FormCadastro extends AppCompatActivity {
         EditText dataNasc;
 
         dataNasc = (EditText)findViewById(R.id.data_nascimento);
-
         dataNasc .addTextChangedListener(new TextWatcher() {
+            boolean flag= true;
+
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -112,6 +113,8 @@ public class FormCadastro extends AppCompatActivity {
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 String str=dataNasc .getText().toString();
                 int textLength=dataNasc .getText().length();
+
+                String[] dataNascArray = str.split("");
                 if (textLength == 3) {
 
                     if (!str.contains("/")) {
@@ -119,15 +122,21 @@ public class FormCadastro extends AppCompatActivity {
                         dataNasc .setSelection(dataNasc .getText().length());
                     }
                 }
-                if (textLength == 6) {
 
-                        dataNasc .setText(new StringBuilder(dataNasc .getText().toString()).insert(str.length() - 1, "/").toString());
-                        dataNasc .setSelection(dataNasc .getText().length());
+
+                    if (textLength == 6) {
+
+                        if (dataNascArray[5] != "/" && flag == true) {
+                            dataNasc.setText(new StringBuilder(dataNasc.getText().toString()).insert(str.length() - 1, "/").toString());
+                            dataNasc.setSelection(dataNasc.getText().length());
+                            flag = false;
+                        }
 
                 }
 
-
-
+                if (flag==false && textLength <= 5) {
+                    flag = true;
+                }
 
             }
 

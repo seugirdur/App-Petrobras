@@ -69,9 +69,10 @@ public class Hub extends AppCompatActivity {
     }
 
     public void rediriciona9(View view){
-        Intent intent = new Intent(Hub.this, Conteudo.class);
+        Intent intent = new Intent(Hub.this, SoluctionActivity.class);
         startActivity(intent);
         finish();
     }
+
 
 }

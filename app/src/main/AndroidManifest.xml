@@ -43,9 +43,6 @@
             android:name=".DrawerBaseActivity"
             android:exported="false" />
         <activity
-            android:name=".Conteudo"
-            android:exported="false" />
-        <activity
             android:name=".FormCadastro"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />

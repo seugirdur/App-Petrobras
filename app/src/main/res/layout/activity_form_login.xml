@@ -45,25 +45,24 @@
         <EditText
             android:id="@+id/edit_user"
             style="@style/btn_tela_login"
-            android:layout_marginTop="36dp"
-            android:drawableLeft="@drawable/ic_key"
+            android:layout_marginTop="26dp"
+            android:drawableLeft="@drawable/ic_key2"
             android:hint="@string/key"
             android:inputType="textCapCharacters"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/view"
+            app:layout_constraintStart_toStartOf="@+id/view"
             app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
         <EditText
             android:id="@+id/edit_senha"
             style="@style/btn_tela_login"
-            android:layout_marginTop="20dp"
             android:drawableLeft="@drawable/ic_lock_v24"
             android:drawableRight="@drawable/ic_eye"
             android:hint="@string/password"
             android:inputType="textPassword"
             android:longClickable="false"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/view"
+            app:layout_constraintStart_toStartOf="@+id/view"
             app:layout_constraintTop_toBottomOf="@+id/edit_user" />
 
         <CheckBox

@@ -3,46 +3,28 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/App-petrobras/app/src/main/res/drawable-v24/ic_conf.xml" value="0.2665" />
-        <entry key="..\:/App-petrobras/app/src/main/res/drawable-v24/ic_help.xml" value="0.2665" />
-        <entry key="..\:/App-petrobras/app/src/main/res/drawable-v24/ic_hist.xml" value="0.2665" />
-        <entry key="..\:/App-petrobras/app/src/main/res/drawable-v24/ic_menu.xml" value="0.2665" />
-        <entry key="..\:/App-petrobras/app/src/main/res/drawable-v24/ic_menu_camera.xml" value="0.2665" />
-        <entry key="..\:/App-petrobras/app/src/main/res/drawable-v24/ic_menu_gallery.xml" value="0.2665" />
-        <entry key="..\:/App-petrobras/app/src/main/res/drawable-v24/ic_menu_slideshow.xml" value="0.2665" />
-        <entry key="..\:/App-petrobras/app/src/main/res/drawable-v24/side_nav_bar.xml" value="0.1" />
-        <entry key="..\:/App-petrobras/app/src/main/res/drawable/background.xml" value="0.1" />
-        <entry key="..\:/App-petrobras/app/src/main/res/drawable/button_login.xml" value="0.1" />
-        <entry key="..\:/App-petrobras/app/src/main/res/drawable/container_components.xml" value="0.1" />
-        <entry key="..\:/App-petrobras/app/src/main/res/drawable/edit_text.xml" value="0.1" />
-        <entry key="..\:/App-petrobras/app/src/main/res/drawable/ic_baseline_account_box_24.xml" value="0.1" />
-        <entry key="..\:/App-petrobras/app/src/main/res/drawable/ic_baseline_account_circle_24.xml" value="0.1" />
-        <entry key="..\:/App-petrobras/app/src/main/res/drawable/ic_baseline_arrow_back_ios_new_24.xml" value="0.1" />
-        <entry key="..\:/App-petrobras/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
-        <entry key="..\:/App-petrobras/app/src/main/res/drawable/ic_observacoes.xml" value="0.1" />
-        <entry key="..\:/App-petrobras/app/src/main/res/drawable/popup_background.xml" value="0.1" />
         <entry key="..\:/App-petrobras/app/src/main/res/layout/activity_ajuda_suporte.xml" value="0.358695652173913" />
         <entry key="..\:/App-petrobras/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/App-petrobras/app/src/main/res/layout/activity_minha_pagina.xml" value="0.358695652173913" />
-        <entry key="..\:/App-petrobras/app/src/main/res/layout/activity_relatorio_processo.xml" value="0.36666666666666664" />
-        <entry key="..\:/App-petrobras/app/src/main/res/layout/activity_tab.xml" value="0.2875" />
         <entry key="..\:/App-petrobras/app/src/main/res/layout/activity_tela_de_escolha.xml" value="0.358695652173913" />
-        <entry key="..\:/App-petrobras/app/src/main/res/layout/app_bar_main.xml" value="0.1" />
-        <entry key="..\:/App-petrobras/app/src/main/res/layout/cadastro.xml" value="0.33" />
-        <entry key="..\:/App-petrobras/app/src/main/res/layout/content_main.xml" value="0.36666666666666664" />
-        <entry key="..\:/App-petrobras/app/src/main/res/layout/fragment_gallery.xml" value="0.17806484295845998" />
-        <entry key="..\:/App-petrobras/app/src/main/res/layout/fragment_home.xml" value="0.36666666666666664" />
-        <entry key="..\:/App-petrobras/app/src/main/res/layout/fragment_slideshow.xml" value="0.36666666666666664" />
+        <entry key="..\:/App-petrobras/app/src/main/res/layout/cadastro.xml" value="0.358695652173913" />
         <entry key="..\:/App-petrobras/app/src/main/res/layout/header.xml" value="0.1" />
         <entry key="..\:/App-petrobras/app/src/main/res/layout/teste2.xml" value="0.358695652173913" />
         <entry key="..\:/App-petrobras/app/src/main/res/menu/main_menu.xml" value="0.1" />
+        <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/drawable-v24/ic_conf.xml" value="0.3675" />
         <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2435" />
+        <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/drawable-v24/ic_menu.xml" value="0.3675" />
+        <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/drawable-v24/ic_menu_gallery.xml" value="0.3675" />
+        <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/drawable-v24/side_nav_bar.xml" value="0.2705" />
+        <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/drawable/arrow_forward_24.xml" value="0.2705" />
+        <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/drawable/backgroud_gradient1.xml" value="0.3665" />
         <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/drawable/background.xml" value="0.1" />
         <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/drawable/button.xml" value="0.1115" />
         <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/drawable/button_login.xml" value="0.3015" />
         <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/drawable/container_components.xml" value="0.1" />
         <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/drawable/edit_text.xml" value="0.1" />
         <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/drawable/ic_add.xml" value="0.335" />
+        <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/drawable/ic_baseline_account_box_24.xml" value="0.3675" />
         <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/drawable/ic_check.xml" value="0.3575" />
         <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/drawable/ic_circle.xml" value="0.3575" />
         <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/drawable/ic_down_arrow.xml" value="0.3575" />
@@ -51,85 +33,121 @@
         <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/drawable/ic_eye_off.xml" value="0.316" />
         <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
         <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.2435" />
+        <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/drawable/ic_logo1petrobras.xml" value="0.3675" />
         <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/drawable/ic_observacoes.xml" value="0.2695" />
         <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/drawable/ic_up_arrow.xml" value="0.2695" />
         <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/drawable/popup_background.xml" value="0.3205" />
         <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/drawable/popup_observacoes_background.xml" value="0.2035" />
         <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/drawable/progress_bar.xml" value="0.3665" />
         <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/drawable/vectors_combined.xml" value="0.3575" />
+        <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/layout/activity_ajuda.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/layout/activity_conteudo.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/layout/activity_dashboard.xml" value="0.1" />
+        <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/layout/activity_drawer_base.xml" value="0.22" />
         <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/layout/activity_form_cadastro.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/layout/activity_form_login.xml" value="0.2893258426966292" />
+        <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/layout/activity_hub.xml" value="0.265625" />
         <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/layout/activity_main.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/layout/activity_minha_pagina.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/layout/activity_problem.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/layout/activity_relatorio_processo.xml" value="0.33" />
+        <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/layout/activity_splash_screen.xml" value="0.17831813576494426" />
+        <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/layout/activity_tab.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/layout/activity_tela_de_escolha.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/layout/app_bar_main.xml" value="0.29846014492753625" />
+        <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/layout/cont_list.xml" value="0.29846014492753625" />
+        <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/layout/content_layout.xml" value="0.1" />
+        <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/layout/content_main.xml" value="0.29846014492753625" />
+        <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/layout/fragment_equipamentos.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/layout/fragment_gallery.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/layout/fragment_home.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/layout/fragment_inicio.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/layout/fragment_internet.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/layout/fragment_lentidao.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/layout/item_list.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/layout/item_soluction_list.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/layout/main_drawer_header.xml" value="0.1" />
+        <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/layout/nav_header_main.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/layout/passos_observacoes.xml" value="0.365625" />
         <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/layout/popup.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/layout/popup_observacoes.xml" value="0.5" />
+        <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/menu/activity_main_drawer.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/menu/main.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/menu/main_drawer_menu.xml" value="0.1" />
         <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2435" />
         <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.2435" />
         <entry key="..\:/Users/Aluno/Desktop/App-petrobras/App-petrobras/app/src/main/res/drawable/ic_baseline_remove_red_eye_24.xml" value="0.2995" />
         <entry key="..\:/Users/Aluno/Documents/GitHub/App-petrobras/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/Aluno/Documents/GitHub/App-petrobras/app/src/main/res/layout/activity_minha_pagina.xml" value="0.1" />
         <entry key="..\:/Users/Dev/AndroidStudioProjects/App-petrobras/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2985" />
-        <entry key="..\:/Users/Dev/AndroidStudioProjects/App-petrobras/app/src/main/res/drawable/arrow_forward_24.xml" value="0.3215" />
+        <entry key="..\:/Users/Dev/AndroidStudioProjects/App-petrobras/app/src/main/res/drawable-v24/ic_menu.xml" value="0.3675" />
+        <entry key="..\:/Users/Dev/AndroidStudioProjects/App-petrobras/app/src/main/res/drawable/arrow_forward_24.xml" value="0.3675" />
+        <entry key="..\:/Users/Dev/AndroidStudioProjects/App-petrobras/app/src/main/res/drawable/ic_check_circle.xml" value="0.3675" />
+        <entry key="..\:/Users/Dev/AndroidStudioProjects/App-petrobras/app/src/main/res/drawable/ic_circle.xml" value="0.3675" />
+        <entry key="..\:/Users/Dev/AndroidStudioProjects/App-petrobras/app/src/main/res/drawable/ic_down_arrow.xml" value="0.3675" />
         <entry key="..\:/Users/Dev/AndroidStudioProjects/App-petrobras/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2985" />
         <entry key="..\:/Users/Dev/AndroidStudioProjects/App-petrobras/app/src/main/res/drawable/ic_logo1petrobras.xml" value="0.2985" />
+        <entry key="..\:/Users/Dev/AndroidStudioProjects/App-petrobras/app/src/main/res/layout/activity_ajuda.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Dev/AndroidStudioProjects/App-petrobras/app/src/main/res/layout/activity_drawer_base.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Dev/AndroidStudioProjects/App-petrobras/app/src/main/res/layout/activity_form_cadastro.xml" value="0.2722222222222222" />
         <entry key="..\:/Users/Dev/AndroidStudioProjects/App-petrobras/app/src/main/res/layout/activity_form_login.xml" value="0.2722222222222222" />
+        <entry key="..\:/Users/Dev/AndroidStudioProjects/App-petrobras/app/src/main/res/layout/activity_hub.xml" value="0.20244565217391305" />
         <entry key="..\:/Users/Dev/AndroidStudioProjects/App-petrobras/app/src/main/res/layout/activity_main.xml" value="0.2722222222222222" />
         <entry key="..\:/Users/Dev/AndroidStudioProjects/App-petrobras/app/src/main/res/layout/activity_problem.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/Dev/AndroidStudioProjects/App-petrobras/app/src/main/res/layout/activity_relatorio_processo.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Dev/AndroidStudioProjects/App-petrobras/app/src/main/res/layout/activity_soluction.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Dev/AndroidStudioProjects/App-petrobras/app/src/main/res/layout/activity_splash_screen.xml" value="0.358695652173913" />
         <entry key="..\:/Users/Dev/AndroidStudioProjects/App-petrobras/app/src/main/res/layout/activity_tab.xml" value="0.33" />
         <entry key="..\:/Users/Dev/AndroidStudioProjects/App-petrobras/app/src/main/res/layout/activity_tela_de_escolha.xml" value="0.15364583333333334" />
         <entry key="..\:/Users/Dev/AndroidStudioProjects/App-petrobras/app/src/main/res/layout/cadastro.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Dev/AndroidStudioProjects/App-petrobras/app/src/main/res/layout/cont_list.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Dev/AndroidStudioProjects/App-petrobras/app/src/main/res/layout/fragment_ajuda_fragment.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Dev/AndroidStudioProjects/App-petrobras/app/src/main/res/layout/fragment_equipamentos.xml" value="0.358695652173913" />
         <entry key="..\:/Users/Dev/AndroidStudioProjects/App-petrobras/app/src/main/res/layout/fragment_inicio.xml" value="0.358695652173913" />
         <entry key="..\:/Users/Dev/AndroidStudioProjects/App-petrobras/app/src/main/res/layout/fragment_internet.xml" value="0.358695652173913" />
         <entry key="..\:/Users/Dev/AndroidStudioProjects/App-petrobras/app/src/main/res/layout/fragment_lentidao.xml" value="0.33" />
         <entry key="..\:/Users/Dev/AndroidStudioProjects/App-petrobras/app/src/main/res/layout/fragment_outros.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/Dev/AndroidStudioProjects/App-petrobras/app/src/main/res/layout/item_ajuda_list.xml" value="0.35260416666666666" />
         <entry key="..\:/Users/Dev/AndroidStudioProjects/App-petrobras/app/src/main/res/layout/item_list.xml" value="0.358695652173913" />
-        <entry key="..\:/Users/Dev/AndroidStudioProjects/App-petrobras/app/src/main/res/layout/item_soluction_list.xml" value="0.5" />
+        <entry key="..\:/Users/Dev/AndroidStudioProjects/App-petrobras/app/src/main/res/layout/item_soluction_list.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Dev/AndroidStudioProjects/App-petrobras/app/src/main/res/layout/main_drawer_header.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Dev/AndroidStudioProjects/App-petrobras/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.2985" />
-        <entry key="..\:/Users/Suporte/AndroidStudioProjects/App-petrobras/app/src/main/res/drawable/button_login.xml" value="0.3675" />
-        <entry key="..\:/Users/Suporte/AndroidStudioProjects/App-petrobras/app/src/main/res/drawable/container_components.xml" value="0.3675" />
-        <entry key="..\:/Users/Suporte/AndroidStudioProjects/App-petrobras/app/src/main/res/drawable/edit_text.xml" value="0.3675" />
-        <entry key="..\:/Users/Suporte/AndroidStudioProjects/App-petrobras/app/src/main/res/drawable/ic_baseline_priority_high_24.xml" value="0.3675" />
-        <entry key="..\:/Users/Suporte/AndroidStudioProjects/App-petrobras/app/src/main/res/drawable/ic_check.xml" value="0.3675" />
-        <entry key="..\:/Users/Suporte/AndroidStudioProjects/App-petrobras/app/src/main/res/drawable/ic_circle.xml" value="0.3675" />
-        <entry key="..\:/Users/Suporte/AndroidStudioProjects/App-petrobras/app/src/main/res/drawable/not_circle.xml" value="0.3665" />
-        <entry key="..\:/Users/Suporte/AndroidStudioProjects/App-petrobras/app/src/main/res/drawable/priv_icon.xml" value="0.3675" />
-        <entry key="..\:/Users/Suporte/AndroidStudioProjects/App-petrobras/app/src/main/res/drawable/term_icon.xml" value="0.3665" />
-        <entry key="..\:/Users/Suporte/AndroidStudioProjects/App-petrobras/app/src/main/res/layout/activity_ajuda.xml" value="0.33" />
-        <entry key="..\:/Users/Suporte/AndroidStudioProjects/App-petrobras/app/src/main/res/layout/activity_ajudae_suporte.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/Suporte/AndroidStudioProjects/App-petrobras/app/src/main/res/layout/activity_arrastaprolado.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/Suporte/AndroidStudioProjects/App-petrobras/app/src/main/res/layout/activity_form_login.xml" value="0.32563405797101447" />
-        <entry key="..\:/Users/Suporte/AndroidStudioProjects/App-petrobras/app/src/main/res/layout/activity_outratelai.xml" value="0.31476449275362317" />
-        <entry key="..\:/Users/Suporte/AndroidStudioProjects/App-petrobras/app/src/main/res/layout/activity_perfil_rlt.xml" value="0.33" />
-        <entry key="..\:/Users/Suporte/AndroidStudioProjects/App-petrobras/app/src/main/res/layout/activity_problem.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/Suporte/AndroidStudioProjects/App-petrobras/app/src/main/res/layout/activity_soluction.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/Suporte/AndroidStudioProjects/App-petrobras/app/src/main/res/layout/activity_splash_screen.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/Suporte/AndroidStudioProjects/App-petrobras/app/src/main/res/layout/activity_tab.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/Suporte/AndroidStudioProjects/App-petrobras/app/src/main/res/layout/activity_tela_de_escolha.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/Suporte/AndroidStudioProjects/App-petrobras/app/src/main/res/layout/fragment_ajuda.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/Suporte/AndroidStudioProjects/App-petrobras/app/src/main/res/layout/fragment_ajuda_fragment.xml" value="0.35260416666666666" />
-        <entry key="..\:/Users/Suporte/AndroidStudioProjects/App-petrobras/app/src/main/res/layout/fragment_inicio.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/Suporte/AndroidStudioProjects/App-petrobras/app/src/main/res/layout/fragment_sobre_app.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/Suporte/AndroidStudioProjects/App-petrobras/app/src/main/res/layout/fragment_tela.xml" value="0.36666666666666664" />
-        <entry key="app/src/main/res/drawable/background.xml" value="0.1" />
-        <entry key="app/src/main/res/drawable/button_login.xml" value="0.1" />
-        <entry key="app/src/main/res/drawable/container_components.xml" value="0.1" />
-        <entry key="app/src/main/res/drawable/ic_baseline_arrow_back_ios_new_24.xml" value="0.1" />
-        <entry key="app/src/main/res/drawable/ic_baseline_brightness_1_24.xml" value="0.1" />
+        <entry key="..\:/Users/natha/StudioProjects/App-petrobras/app/src/main/res/drawable-v24/ic_help.xml" value="0.3675" />
+        <entry key="..\:/Users/natha/StudioProjects/App-petrobras/app/src/main/res/drawable/backgroud_gradient1.xml" value="0.3675" />
+        <entry key="..\:/Users/natha/StudioProjects/App-petrobras/app/src/main/res/drawable/background_gradient.xml" value="0.3675" />
+        <entry key="..\:/Users/natha/StudioProjects/App-petrobras/app/src/main/res/drawable/btn_cadastrar.xml" value="0.3665" />
+        <entry key="..\:/Users/natha/StudioProjects/App-petrobras/app/src/main/res/drawable/btn_entrar.xml" value="0.3665" />
+        <entry key="..\:/Users/natha/StudioProjects/App-petrobras/app/src/main/res/drawable/btn_tela_escolha.xml" value="0.3675" />
+        <entry key="..\:/Users/natha/StudioProjects/App-petrobras/app/src/main/res/drawable/btn_tela_login.xml" value="0.3665" />
+        <entry key="..\:/Users/natha/StudioProjects/App-petrobras/app/src/main/res/drawable/button_login.xml" value="0.3675" />
+        <entry key="..\:/Users/natha/StudioProjects/App-petrobras/app/src/main/res/drawable/container_components.xml" value="0.3675" />
+        <entry key="..\:/Users/natha/StudioProjects/App-petrobras/app/src/main/res/drawable/edit_text.xml" value="0.3675" />
+        <entry key="..\:/Users/natha/StudioProjects/App-petrobras/app/src/main/res/drawable/ic_eye.xml" value="0.3675" />
+        <entry key="..\:/Users/natha/StudioProjects/App-petrobras/app/src/main/res/drawable/ic_eye_off.xml" value="0.3675" />
+        <entry key="..\:/Users/natha/StudioProjects/App-petrobras/app/src/main/res/drawable/logo_circle.xml" value="0.3675" />
+        <entry key="..\:/Users/natha/StudioProjects/App-petrobras/app/src/main/res/drawable/logo_tela_cadastro.xml" value="0.2955" />
+        <entry key="..\:/Users/natha/StudioProjects/App-petrobras/app/src/main/res/drawable/view_principal_cadastro.xml" value="0.2255" />
+        <entry key="..\:/Users/natha/StudioProjects/App-petrobras/app/src/main/res/drawable/view_tela_login.xml" value="0.3665" />
+        <entry key="..\:/Users/natha/StudioProjects/App-petrobras/app/src/main/res/font/font.xml" value="0.3958333333333333" />
+        <entry key="..\:/Users/natha/StudioProjects/App-petrobras/app/src/main/res/font/fonte.xml" value="0.3958333333333333" />
+        <entry key="..\:/Users/natha/StudioProjects/App-petrobras/app/src/main/res/layout/activity_ajuda.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/natha/StudioProjects/App-petrobras/app/src/main/res/layout/activity_ajudae_suporte.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/natha/StudioProjects/App-petrobras/app/src/main/res/layout/activity_configuracoes.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/natha/StudioProjects/App-petrobras/app/src/main/res/layout/activity_conteudo.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/natha/StudioProjects/App-petrobras/app/src/main/res/layout/activity_form_cadastro.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/natha/StudioProjects/App-petrobras/app/src/main/res/layout/activity_form_login.xml" value="0.33" />
+        <entry key="..\:/Users/natha/StudioProjects/App-petrobras/app/src/main/res/layout/activity_historico.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/natha/StudioProjects/App-petrobras/app/src/main/res/layout/activity_splash_screen.xml" value="0.25" />
+        <entry key="..\:/Users/natha/StudioProjects/App-petrobras/app/src/main/res/layout/activity_tela_de_escolha.xml" value="0.33" />
+        <entry key="..\:/Users/natha/StudioProjects/App-petrobras/app/src/main/res/layout/item_list.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/natha/StudioProjects/App-petrobras/app/src/main/res/layout/item_soluction_list.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/natha/StudioProjects/App-petrobras/app/src/main/res/layout/passos_observacoes.xml" value="0.36666666666666664" />
         <entry key="app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.123" />
-        <entry key="app/src/main/res/layout/activity_ajuda.xml" value="0.19322916666666667" />
-        <entry key="app/src/main/res/layout/activity_conteudo.xml" value="0.19322916666666667" />
         <entry key="app/src/main/res/layout/activity_form_cadastro.xml" value="0.19322916666666667" />
         <entry key="app/src/main/res/layout/activity_form_login.xml" value="0.19322916666666667" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.33" />
-        <entry key="app/src/main/res/layout/activity_relatorio_processo.xml" value="0.19322916666666667" />
-        <entry key="app/src/main/res/layout/cont_list.xml" value="0.30434782608695654" />
-        <entry key="app/src/main/res/layout/item_list.xml" value="0.19322916666666667" />
-        <entry key="app/src/main/res/layout/item_soluction_list.xml" value="0.19322916666666667" />
+        <entry key="app/src/main/res/layout/activity_tela_de_escolha.xml" value="0.19322916666666667" />
+        <entry key="app/src/main/res/layout/main_drawer_header.xml" value="0.19322916666666667" />
       </map>
     </option>
   </component>

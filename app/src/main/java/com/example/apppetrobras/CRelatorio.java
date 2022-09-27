@@ -1,7 +1,7 @@
 package com.example.apppetrobras;
 
 public class CRelatorio {
-    String nome, chave, dataProcesso, secao, titulo;
+    String nome, chave, dataProcesso, secao, titulo, made_check;
     int idRelatorio, solucaostop, funcionou;
 
 
@@ -36,6 +36,9 @@ public class CRelatorio {
     public int getFuncionou() {
         return funcionou;
     }
-}
 
+    public String getMade_check() {
+        return made_check;
+    }
+}
 

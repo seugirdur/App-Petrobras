@@ -108,7 +108,17 @@ public class RelatorioProcesso extends AppCompatActivity {
 
                 List<CRelatorio> cRelatorioList = response.body();
                 CRelatorio cRelatorio = cRelatorioList.get(0);
+
+                int idRelatorio =cRelatorio.getIdRelatorio();
+                String Nome =cRelatorio.getNome();
+                String Chave =cRelatorio.getChave();
+                String DataProcesso =cRelatorio.getDataProcesso();
                 String secao = cRelatorio.getSecao();
+                String Titulo =cRelatorio.getTitulo();
+                int SolucaoStop = cRelatorio.getSolucaostop();
+                int Funcionou = cRelatorio.getFuncionou();
+                String Made_check = cRelatorio.getMade_check();
+
 
                 Toast.makeText(RelatorioProcesso.this, secao, Toast.LENGTH_SHORT).show();
                 Toast.makeText(RelatorioProcesso.this, "secao", Toast.LENGTH_SHORT).show();

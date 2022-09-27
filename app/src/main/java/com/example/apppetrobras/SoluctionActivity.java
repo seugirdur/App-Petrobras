@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.example.apppetrobras.api.RetroFitClient;
 
 import java.util.List;
@@ -130,7 +131,21 @@ public class SoluctionActivity extends AppCompatActivity {
         descSolucao.setText(descricaoBD);
 
 //        //Imagens ainda não selecionadas
-//        imagemSolucao = findViewById(R.id.imagemSolucao);
-//        imagemSolucao.setImageResource();
+        imagemSolucao = findViewById(R.id.imagemSolucao);
+        switch (idPasso){
+            case 1:
+                Glide.with(this).load("https://osnumeros.com/wp-content/uploads/2020/04/Numero-1-1.jpg").into(imagemSolucao);
+                break;
+            case 2:
+                Glide.with(this).load("https://www.mepoenahistoria.com.br/wp-content/uploads/2020/07/o-n%C3%BAmero.png").into(imagemSolucao);
+                        break;
+            case 3:
+                Glide.with(this).load("https://i.pinimg.com/originals/a2/37/59/a237597ee81f2fabbc1db5a5dcade8c8.png").into(imagemSolucao);
+                break;
+            case 4:
+            default:
+                Glide.with(this).load("https://i.pinimg.com/originals/25/a4/17/25a417024f7821760d19a265e9fcb90e.jpg").into(imagemSolucao);
+                break;
+        }
     }
 }

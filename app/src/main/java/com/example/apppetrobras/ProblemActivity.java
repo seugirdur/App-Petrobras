@@ -23,7 +23,7 @@ public class ProblemActivity extends DrawerBaseActivity implements RecyclerViewI
 
     // Declaração das variáveis
     int idTitulo, tipoProblema;
-
+    String titulo, titulosProblemas;
     private RecyclerView recyclerview;
     private Context context;
     private RecyclerViewInteface recyclerViewInteface;
@@ -37,7 +37,11 @@ public class ProblemActivity extends DrawerBaseActivity implements RecyclerViewI
 
         tipoProblema = getIntent().getIntExtra("TIPO", 1);
         idTitulo = getIntent().getIntExtra("ID_TITULO",1);
+        titulo = getIntent().getStringExtra("titulo");
+        titulosProblemas = getIntent().getStringExtra("titulosProblemas");
 
+
+        Toast.makeText(this, titulosProblemas, Toast.LENGTH_SHORT).show();
         recyclerview = findViewById(R.id.recyclerview);
         recyclerview.setLayoutManager(new LinearLayoutManager(this));
         recyclerview.setHasFixedSize(true);
@@ -105,9 +109,12 @@ public class ProblemActivity extends DrawerBaseActivity implements RecyclerViewI
         // Insere na variável o titulo da solução clickada
         String tituloSolucao = problemsList.get(position).getTituloSolucao();
 
+
         // Definição de valores que serão redirecionados
         intent.putExtra("TIPO",tipoProblema);
         intent.putExtra("ID_TITULO", idTitulo);
+        intent.putExtra("titulo", titulo);
+
         // position começa em 0, para condizer ao BD é necessário adicionar 1 a ele
         intent.putExtra("ID_SOLUCAO", position+1);
         //todas as soluções começam pelo primeiro passo

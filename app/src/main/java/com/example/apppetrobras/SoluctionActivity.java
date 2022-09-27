@@ -25,7 +25,7 @@ public class SoluctionActivity extends AppCompatActivity {
 
     // Declaração das variáveis
     int idTitulo, idSolucao, tipoProblema, idPasso, qtdPassos;
-    String tituloSolucao;
+    String tituloSolucao, titulo;
 
     Context context;
 
@@ -46,7 +46,9 @@ public class SoluctionActivity extends AppCompatActivity {
         idSolucao = getIntent().getIntExtra("ID_SOLUCAO",1);
         idPasso = getIntent().getIntExtra("PASSO",1);
         tituloSolucao = getIntent().getStringExtra("TITULO_SOLUCAO");
+        titulo = getIntent().getStringExtra("titulo");
 
+        Toast.makeText(this, idTitulo, Toast.LENGTH_SHORT).show();
         String concatenar = Integer.toString(idTitulo) + Integer.toString(idSolucao);
         int numerojunto = Integer.parseInt(concatenar);
 

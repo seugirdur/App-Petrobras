@@ -1,0 +1,1260 @@
+Index: app/src/main/res/layout/fragment_ajuda_fragment.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/fragment_ajuda_fragment.xml b/app/src/main/res/layout/fragment_ajuda_fragment.xml
+new file mode 100644
+--- /dev/null	
++++ b/app/src/main/res/layout/fragment_ajuda_fragment.xml	
+@@ -0,0 +1,242 @@
++<?xml version="1.0" encoding="utf-8"?>
++<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    android:background="@color/white">
++
++
++    <TextView
++        android:id="@+id/textView2"
++        android:layout_width="221dp"
++        android:layout_height="43dp"
++        android:fontFamily="sans-serif-black"
++        android:text="Ajuda e Suporte"
++        android:textColor="@color/black"
++        android:textSize="30dp"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent"
++        app:layout_constraintVertical_bias="0.023" />
++
++    <TextView
++        android:id="@+id/textView3"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:fontFamily="sans-serif"
++        android:text="Manual do Aplicativo"
++        android:textColor="@color/black"
++        android:textSize="15dp"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="0.527"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent"
++        app:layout_constraintVertical_bias="0.102" />
++
++    <TextView
++        android:id="@+id/textView4"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:fontFamily="sans-serif"
++        android:text="Como usar o aplicativo?"
++        android:textColor="@color/black"
++        android:textSize="18dp"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="0.132"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent"
++        app:layout_constraintVertical_bias="0.513" />
++
++    <TextView
++        android:id="@+id/textView5"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:fontFamily="sans-serif"
++        android:text="Como ver meus chamados?"
++        android:textColor="@color/black"
++        android:textSize="18dp"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="0.154"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent"
++        app:layout_constraintVertical_bias="0.404" />
++
++    <TextView
++        android:id="@+id/textView9"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:fontFamily="sans-serif"
++        android:text="Como funciona a tela de chamado?"
++        android:textColor="@color/black"
++        android:textSize="18dp"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="0.226"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent"
++        app:layout_constraintVertical_bias="0.816" />
++
++    <TextView
++        android:id="@+id/textView10"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:fontFamily="sans-serif"
++        android:text="Como funciona a tela de escolha?"
++        android:textColor="@color/black"
++        android:textSize="18dp"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="0.205"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent"
++        app:layout_constraintVertical_bias="0.705" />
++
++    <TextView
++        android:id="@+id/textView6"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:fontFamily="sans-serif"
++        android:text="Como buscar a solução?"
++        android:textColor="@color/black"
++        android:textSize="18dp"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="0.136"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent"
++        app:layout_constraintVertical_bias="0.302" />
++
++    <TextView
++        android:id="@+id/textView7"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:fontFamily="sans-serif"
++        android:text="Como chamar um Técnico?"
++        android:textColor="@color/black"
++        android:textSize="18dp"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="0.151"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent"
++        app:layout_constraintVertical_bias="0.207" />
++
++    <androidx.constraintlayout.widget.Barrier
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        app:barrierDirection="top"
++        tools:layout_editor_absoluteX="143dp"
++        tools:layout_editor_absoluteY="360dp" />
++
++    <androidx.constraintlayout.widget.Barrier
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        app:barrierDirection="top"
++        tools:layout_editor_absoluteX="180dp"
++        tools:layout_editor_absoluteY="394dp" />
++
++    <ImageButton
++        android:id="@+id/btn4"
++        android:layout_width="46dp"
++        android:layout_height="48dp"
++        android:background="?android:attr/selectableItemBackground"
++        android:rotation="180"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="0.904"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent"
++        app:layout_constraintVertical_bias="0.512"
++        app:srcCompat="@drawable/ic_baseline_arrow_back_ios_new_24" />
++
++    <ImageButton
++        android:id="@+id/btn6"
++        android:layout_width="46dp"
++        android:layout_height="48dp"
++        android:background="?android:attr/selectableItemBackground"
++        android:rotation="180"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="0.904"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent"
++        app:layout_constraintVertical_bias="0.828"
++        app:srcCompat="@drawable/ic_baseline_arrow_back_ios_new_24" />
++
++    <ImageButton
++        android:id="@+id/btn5"
++        android:layout_width="46dp"
++        android:layout_height="48dp"
++        android:background="?android:attr/selectableItemBackground"
++        android:rotation="180"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="0.904"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent"
++        app:layout_constraintVertical_bias="0.718"
++        app:srcCompat="@drawable/ic_baseline_arrow_back_ios_new_24" />
++
++    <ImageButton
++        android:id="@+id/btn"
++        android:layout_width="46dp"
++        android:layout_height="48dp"
++        android:background="?android:attr/selectableItemBackground"
++        android:rotation="180"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="0.904"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent"
++        app:layout_constraintVertical_bias="0.196"
++        app:srcCompat="@drawable/ic_baseline_arrow_back_ios_new_24" />
++
++    <ImageButton
++        android:id="@+id/btn2"
++        android:layout_width="46dp"
++        android:layout_height="48dp"
++        android:background="?android:attr/selectableItemBackground"
++        android:rotation="180"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="0.904"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent"
++        app:layout_constraintVertical_bias="0.301"
++        app:srcCompat="@drawable/ic_baseline_arrow_back_ios_new_24" />
++
++    <ImageButton
++        android:id="@+id/btn3"
++        android:layout_width="46dp"
++        android:layout_height="48dp"
++        android:background="?android:attr/selectableItemBackground"
++        android:rotation="180"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="0.904"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent"
++        app:layout_constraintVertical_bias="0.407"
++        app:srcCompat="@drawable/ic_baseline_arrow_back_ios_new_24" />
++
++    <TextView
++        android:id="@+id/textView8"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:fontFamily="sans-serif-black"
++        android:text="Funcionalidade do APP"
++        android:textSize="25dp"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="0.456"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent"
++        app:layout_constraintVertical_bias="0.614"
++        android:textColor="@color/black"/>
++
++</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+Index: app/src/main/java/com/example/apppetrobras/Historico_Fragment.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/apppetrobras/Historico_Fragment.java b/app/src/main/java/com/example/apppetrobras/Historico_Fragment.java
+new file mode 100644
+--- /dev/null	
++++ b/app/src/main/java/com/example/apppetrobras/Historico_Fragment.java	
+@@ -0,0 +1,64 @@
++package com.example.apppetrobras;
++
++import android.os.Bundle;
++
++import androidx.fragment.app.Fragment;
++
++import android.view.LayoutInflater;
++import android.view.View;
++import android.view.ViewGroup;
++
++/**
++ * A simple {@link Fragment} subclass.
++ * Use the {@link Historico_Fragment#newInstance} factory method to
++ * create an instance of this fragment.
++ */
++public class Historico_Fragment extends Fragment {
++
++    // TODO: Rename parameter arguments, choose names that match
++    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
++    private static final String ARG_PARAM1 = "param1";
++    private static final String ARG_PARAM2 = "param2";
++
++    // TODO: Rename and change types of parameters
++    private String mParam1;
++    private String mParam2;
++
++    public Historico_Fragment() {
++        // Required empty public constructor
++    }
++
++    /**
++     * Use this factory method to create a new instance of
++     * this fragment using the provided parameters.
++     *
++     * @param param1 Parameter 1.
++     * @param param2 Parameter 2.
++     * @return A new instance of fragment Historico_Fragment.
++     */
++    // TODO: Rename and change types and number of parameters
++    public static Historico_Fragment newInstance(String param1, String param2) {
++        Historico_Fragment fragment = new Historico_Fragment();
++        Bundle args = new Bundle();
++        args.putString(ARG_PARAM1, param1);
++        args.putString(ARG_PARAM2, param2);
++        fragment.setArguments(args);
++        return fragment;
++    }
++
++    @Override
++    public void onCreate(Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++        if (getArguments() != null) {
++            mParam1 = getArguments().getString(ARG_PARAM1);
++            mParam2 = getArguments().getString(ARG_PARAM2);
++        }
++    }
++
++    @Override
++    public View onCreateView(LayoutInflater inflater, ViewGroup container,
++                             Bundle savedInstanceState) {
++        // Inflate the layout for this fragment
++        return inflater.inflate(R.layout.fragment_historico_, container, false);
++    }
++}
+\ No newline at end of file
+Index: app/src/main/java/com/example/apppetrobras/ViewPager.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/apppetrobras/ViewPager.java b/app/src/main/java/com/example/apppetrobras/ViewPager.java
+new file mode 100644
+--- /dev/null	
++++ b/app/src/main/java/com/example/apppetrobras/ViewPager.java	
+@@ -0,0 +1,43 @@
++package com.example.apppetrobras;
++
++import androidx.annotation.NonNull;
++import androidx.fragment.app.Fragment;
++import androidx.fragment.app.FragmentActivity;
++import androidx.viewpager2.adapter.FragmentStateAdapter;
++
++import com.example.apppetrobras.fragments.EquipamentosFragment;
++import com.example.apppetrobras.fragments.InicioFragment;
++import com.example.apppetrobras.fragments.InternetFragment;
++import com.example.apppetrobras.fragments.LentidaoFragment;
++import com.example.apppetrobras.fragments.OutrosFragment;
++
++public class ViewPager extends FragmentStateAdapter {
++
++    public ViewPager(@NonNull FragmentActivity fragmentActivity) {
++        super(fragmentActivity);
++    }
++
++    //Retorna a tela(fragment) atual
++    @NonNull
++    @Override
++    public Fragment createFragment(int position) {
++        switch (position){
++            case 0:
++                return new Perfil_Fragment();
++            case 1:
++                return new Historico_Fragment();
++            case 2:
++                return new Opcoes_Fragment();
++            case 3:
++                return new Ajuda_fragment();
++            default:
++                return new Perfil_Fragment();
++        }
++    }
++
++    //Retorna a quantidade de telas(fragment)
++    @Override
++    public int getItemCount() {
++        return 4;
++    }
++}
+\ No newline at end of file
+Index: app/src/main/res/drawable/ic_baseline_priority_high_24.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/drawable/ic_baseline_priority_high_24.xml b/app/src/main/res/drawable/ic_baseline_priority_high_24.xml
+new file mode 100644
+--- /dev/null	
++++ b/app/src/main/res/drawable/ic_baseline_priority_high_24.xml	
+@@ -0,0 +1,6 @@
++<vector android:height="24dp" android:tint="#000000"
++    android:viewportHeight="24" android:viewportWidth="24"
++    android:width="24dp" xmlns:android="http://schemas.android.com/apk/res/android">
++    <path android:fillColor="@android:color/white" android:pathData="M12,19m-2,0a2,2 0,1 1,4 0a2,2 0,1 1,-4 0"/>
++    <path android:fillColor="@android:color/white" android:pathData="M10,3h4v12h-4z"/>
++</vector>
+Index: app/src/main/res/layout/fragment_historico_.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/fragment_historico_.xml b/app/src/main/res/layout/fragment_historico_.xml
+new file mode 100644
+--- /dev/null	
++++ b/app/src/main/res/layout/fragment_historico_.xml	
+@@ -0,0 +1,14 @@
++<?xml version="1.0" encoding="utf-8"?>
++<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    tools:context=".Historico_Fragment">
++
++    <!-- TODO: Update blank fragment layout -->
++    <TextView
++        android:layout_width="match_parent"
++        android:layout_height="match_parent"
++        android:text="@string/hello_blank_fragment" />
++
++</FrameLayout>
+\ No newline at end of file
+Index: app/src/main/java/com/example/apppetrobras/Opcoes_Fragment.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/apppetrobras/Opcoes_Fragment.java b/app/src/main/java/com/example/apppetrobras/Opcoes_Fragment.java
+new file mode 100644
+--- /dev/null	
++++ b/app/src/main/java/com/example/apppetrobras/Opcoes_Fragment.java	
+@@ -0,0 +1,64 @@
++package com.example.apppetrobras;
++
++import android.os.Bundle;
++
++import androidx.fragment.app.Fragment;
++
++import android.view.LayoutInflater;
++import android.view.View;
++import android.view.ViewGroup;
++
++/**
++ * A simple {@link Fragment} subclass.
++ * Use the {@link Opcoes_Fragment#newInstance} factory method to
++ * create an instance of this fragment.
++ */
++public class Opcoes_Fragment extends Fragment {
++
++    // TODO: Rename parameter arguments, choose names that match
++    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
++    private static final String ARG_PARAM1 = "param1";
++    private static final String ARG_PARAM2 = "param2";
++
++    // TODO: Rename and change types of parameters
++    private String mParam1;
++    private String mParam2;
++
++    public Opcoes_Fragment() {
++        // Required empty public constructor
++    }
++
++    /**
++     * Use this factory method to create a new instance of
++     * this fragment using the provided parameters.
++     *
++     * @param param1 Parameter 1.
++     * @param param2 Parameter 2.
++     * @return A new instance of fragment Opcoes_Fragment.
++     */
++    // TODO: Rename and change types and number of parameters
++    public static Opcoes_Fragment newInstance(String param1, String param2) {
++        Opcoes_Fragment fragment = new Opcoes_Fragment();
++        Bundle args = new Bundle();
++        args.putString(ARG_PARAM1, param1);
++        args.putString(ARG_PARAM2, param2);
++        fragment.setArguments(args);
++        return fragment;
++    }
++
++    @Override
++    public void onCreate(Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++        if (getArguments() != null) {
++            mParam1 = getArguments().getString(ARG_PARAM1);
++            mParam2 = getArguments().getString(ARG_PARAM2);
++        }
++    }
++
++    @Override
++    public View onCreateView(LayoutInflater inflater, ViewGroup container,
++                             Bundle savedInstanceState) {
++        // Inflate the layout for this fragment
++        return inflater.inflate(R.layout.fragment_opcoes_, container, false);
++    }
++}
+\ No newline at end of file
+Index: app/src/main/res/layout/fragment_tela.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/fragment_tela.xml b/app/src/main/res/layout/fragment_tela.xml
+new file mode 100644
+--- /dev/null	
++++ b/app/src/main/res/layout/fragment_tela.xml	
+@@ -0,0 +1,119 @@
++<?xml version="1.0" encoding="utf-8"?>
++<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    tools:context=".TelaFragment">
++
++
++    <ImageButton
++        android:id="@+id/btn2"
++        android:layout_width="46dp"
++        android:layout_height="46dp"
++        android:rotation="180"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="0.956"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent"
++        app:layout_constraintVertical_bias="0.145"
++        app:srcCompat="@drawable/ic_baseline_arrow_back_ios_new_24"
++        />
++
++    <ImageButton
++        android:id="@+id/btn3"
++        android:layout_width="46dp"
++        android:layout_height="46dp"
++        android:rotation="180"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="0.956"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent"
++        app:layout_constraintVertical_bias="0.242"
++        app:srcCompat="@drawable/ic_baseline_arrow_back_ios_new_24" />
++
++    <TextView
++        android:id="@+id/textView11"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:text="Notificações"
++        android:textSize="18dp"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="0.277"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent"
++        app:layout_constraintVertical_bias="0.059" />
++
++    <CheckBox
++        android:id="@+id/checkBox"
++        android:layout_width="46dp"
++        android:layout_height="46dp"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="0.956"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent"
++        app:layout_constraintVertical_bias="0.046" />
++
++    <TextView
++        android:id="@+id/textView13"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:text="Privacidade e Segurança"
++        android:textSize="18dp"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="0.403"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent"
++        app:layout_constraintVertical_bias="0.151" />
++
++    <TextView
++        android:id="@+id/textView14"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:text="Termos de uso"
++        android:textSize="18dp"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="0.294"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent"
++        app:layout_constraintVertical_bias="0.247" />
++
++    <ImageView
++        android:id="@+id/imageView9"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:src="@drawable/not_circle"
++        tools:layout_editor_absoluteX="14dp"
++        tools:layout_editor_absoluteY="32dp" />
++
++    <ImageView
++        android:id="@+id/imageView10"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:src="@drawable/priv_icon"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="0.044"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent"
++        app:layout_constraintVertical_bias="0.139" />
++
++    <ImageView
++        android:id="@+id/imageView11"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:src="@drawable/term_icon"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="0.044"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent"
++        app:layout_constraintVertical_bias="0.237" />
++
++</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+Index: app/src/main/java/com/example/apppetrobras/arrastaprolado.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/apppetrobras/arrastaprolado.java b/app/src/main/java/com/example/apppetrobras/arrastaprolado.java
+new file mode 100644
+--- /dev/null	
++++ b/app/src/main/java/com/example/apppetrobras/arrastaprolado.java	
+@@ -0,0 +1,71 @@
++package com.example.apppetrobras;
++
++import androidx.viewpager2.widget.ViewPager2;
++
++import android.os.Bundle;
++
++import com.google.android.material.tabs.TabLayout;
++
++public class arrastaprolado extends DrawerBaseActivity {
++
++    // Declaração das variáveis
++    TabLayout tabLayout;
++    ViewPager2 viewPager2;
++    ViewPager viewPager;
++
++    @Override
++    protected void onCreate(Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++        setContentView(R.layout.activity_arrastaprolado);
++
++        // Navigation Drawer
++        //activityTabBinding = ActivityTabBinding.inflate(getLayoutInflater());
++       // setContentView(activityTabBinding.getRoot());
++        //allocateActivityTitle("Menu Principal");
++
++        tabLayout = findViewById(R.id.tabLayout);
++        viewPager2 = findViewById(R.id.view_pager);
++        viewPager = new ViewPager(this);
++        viewPager2.setAdapter(viewPager);
++
++//       settingTheName();
++
++
++
++
++        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
++            @Override
++            public void onTabSelected(TabLayout.Tab tab) {
++                viewPager2.setCurrentItem(tab.getPosition());
++            }
++
++            @Override
++            public void onTabUnselected(TabLayout.Tab tab) {
++
++            }
++
++            @Override
++            public void onTabReselected(TabLayout.Tab tab) {
++
++            }
++        });
++
++        viewPager2.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
++            @Override
++            public void onPageSelected(int position) {
++                super.onPageSelected(position);
++                tabLayout.getTabAt(position).select();
++            }
++        });
++
++
++    }
++
++    //Captura o click no logo e vai para a tela inicial
++    //public void goHome(View view) {
++        //viewPager2.setCurrentItem(0);
++    }
++
++
++
++
+Index: app/src/main/res/layout/fragment_opcoes_.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/fragment_opcoes_.xml b/app/src/main/res/layout/fragment_opcoes_.xml
+new file mode 100644
+--- /dev/null	
++++ b/app/src/main/res/layout/fragment_opcoes_.xml	
+@@ -0,0 +1,14 @@
++<?xml version="1.0" encoding="utf-8"?>
++<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    tools:context=".Opcoes_Fragment">
++
++    <!-- TODO: Update blank fragment layout -->
++    <TextView
++        android:layout_width="match_parent"
++        android:layout_height="match_parent"
++        android:text="@string/hello_blank_fragment" />
++
++</FrameLayout>
+\ No newline at end of file
+Index: app/src/main/java/com/example/apppetrobras/Ajuda_fragment.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/apppetrobras/Ajuda_fragment.java b/app/src/main/java/com/example/apppetrobras/Ajuda_fragment.java
+new file mode 100644
+--- /dev/null	
++++ b/app/src/main/java/com/example/apppetrobras/Ajuda_fragment.java	
+@@ -0,0 +1,64 @@
++package com.example.apppetrobras;
++
++import android.os.Bundle;
++
++import androidx.fragment.app.Fragment;
++
++import android.view.LayoutInflater;
++import android.view.View;
++import android.view.ViewGroup;
++
++/**
++ * A simple {@link Fragment} subclass.
++ * Use the {@link Ajuda_fragment#newInstance} factory method to
++ * create an instance of this fragment.
++ */
++public class Ajuda_fragment extends Fragment {
++
++    // TODO: Rename parameter arguments, choose names that match
++    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
++    private static final String ARG_PARAM1 = "param1";
++    private static final String ARG_PARAM2 = "param2";
++
++    // TODO: Rename and change types of parameters
++    private String mParam1;
++    private String mParam2;
++
++    public Ajuda_fragment() {
++        // Required empty public constructor
++    }
++
++    /**
++     * Use this factory method to create a new instance of
++     * this fragment using the provided parameters.
++     *
++     * @param param1 Parameter 1.
++     * @param param2 Parameter 2.
++     * @return A new instance of fragment Ajuda_fragment.
++     */
++    // TODO: Rename and change types and number of parameters
++    public static Ajuda_fragment newInstance(String param1, String param2) {
++        Ajuda_fragment fragment = new Ajuda_fragment();
++        Bundle args = new Bundle();
++        args.putString(ARG_PARAM1, param1);
++        args.putString(ARG_PARAM2, param2);
++        fragment.setArguments(args);
++        return fragment;
++    }
++
++    @Override
++    public void onCreate(Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++        if (getArguments() != null) {
++            mParam1 = getArguments().getString(ARG_PARAM1);
++            mParam2 = getArguments().getString(ARG_PARAM2);
++        }
++    }
++
++    @Override
++    public View onCreateView(LayoutInflater inflater, ViewGroup container,
++                             Bundle savedInstanceState) {
++        // Inflate the layout for this fragment
++        return inflater.inflate(R.layout.fragment_ajuda_fragment, container, false);
++    }
++}
+\ No newline at end of file
+Index: app/src/main/res/drawable/priv_icon.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/drawable/priv_icon.xml b/app/src/main/res/drawable/priv_icon.xml
+new file mode 100644
+--- /dev/null	
++++ b/app/src/main/res/drawable/priv_icon.xml	
+@@ -0,0 +1,9 @@
++<?xml version="1.0" encoding="utf-8"?>
++<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
++    <item
++        android:drawable="@drawable/ic_circle"
++        android:gravity="center" />
++    <item
++        android:drawable="@drawable/ic_baseline_lock_24"
++        android:gravity="center" />
++</layer-list>
+\ No newline at end of file
+Index: app/src/main/java/com/example/apppetrobras/TelaFragment.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/apppetrobras/TelaFragment.java b/app/src/main/java/com/example/apppetrobras/TelaFragment.java
+new file mode 100644
+--- /dev/null	
++++ b/app/src/main/java/com/example/apppetrobras/TelaFragment.java	
+@@ -0,0 +1,64 @@
++package com.example.apppetrobras;
++
++import android.os.Bundle;
++
++import androidx.fragment.app.Fragment;
++
++import android.view.LayoutInflater;
++import android.view.View;
++import android.view.ViewGroup;
++import android.widget.ImageButton;
++
++/**
++ * A simple {@link Fragment} subclass.
++ * Use the {@link TelaFragment#newInstance} factory method to
++ * create an instance of this fragment.
++ */
++public class TelaFragment extends Fragment {
++
++    ImageButton btn12;
++
++    private static final String ARG_PARAM1 = "param1";
++    private static final String ARG_PARAM2 = "param2";
++
++    private String mParam1;
++    private String mParam2;
++
++    public TelaFragment() {
++    }
++
++    /**
++     * Use this factory method to create a new instance of
++     * this fragment using the provided parameters.
++     *
++     * @param param1 Parameter 1.
++     * @param param2 Parameter 2.
++     * @return A new instance of fragment TelaFragment.
++     */
++    // TODO: Rename and change types and number of parameters
++    public static TelaFragment newInstance(String param1, String param2) {
++        TelaFragment fragment = new TelaFragment();
++        Bundle args = new Bundle();
++        args.putString(ARG_PARAM1, param1);
++        args.putString(ARG_PARAM2, param2);
++        fragment.setArguments(args);
++        return fragment;
++    }
++
++    @Override
++    public void onCreate(Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++        if (getArguments() != null) {
++            mParam1 = getArguments().getString(ARG_PARAM1);
++            mParam2 = getArguments().getString(ARG_PARAM2);
++        }
++    }
++
++    @Override
++    public View onCreateView(LayoutInflater inflater, ViewGroup container,
++                             Bundle savedInstanceState) {
++        // Inflate the layout for this fragment
++        return inflater.inflate(R.layout.fragment_tela, container, false);
++    }
++
++}
+\ No newline at end of file
+Index: app/src/main/java/com/example/apppetrobras/Splash_Screen.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/apppetrobras/Splash_Screen.java b/app/src/main/java/com/example/apppetrobras/Splash_Screen.java
+new file mode 100644
+--- /dev/null	
++++ b/app/src/main/java/com/example/apppetrobras/Splash_Screen.java	
+@@ -0,0 +1,14 @@
++package com.example.apppetrobras;
++
++import androidx.appcompat.app.AppCompatActivity;
++
++import android.os.Bundle;
++
++public class Splash_Screen extends AppCompatActivity {
++
++    @Override
++    protected void onCreate(Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++        setContentView(R.layout.activity_splash_screen);
++    }
++}
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_arrastaprolado.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_arrastaprolado.xml b/app/src/main/res/layout/activity_arrastaprolado.xml
+new file mode 100644
+--- /dev/null	
++++ b/app/src/main/res/layout/activity_arrastaprolado.xml	
+@@ -0,0 +1,65 @@
++<?xml version="1.0" encoding="utf-8"?>
++<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    tools:context=".arrastaprolado">
++
++    <com.google.android.material.tabs.TabLayout
++        android:id="@+id/tabLayout"
++        android:layout_width="415dp"
++        android:layout_height="46dp"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent"
++        app:layout_constraintVertical_bias="0.102">
++
++        <com.google.android.material.tabs.TabItem
++            android:layout_width="wrap_content"
++            android:layout_height="wrap_content"
++            android:text="Perfil" />
++
++        <com.google.android.material.tabs.TabItem
++            android:layout_width="wrap_content"
++            android:layout_height="wrap_content"
++            android:text="Histórico" />
++
++        <com.google.android.material.tabs.TabItem
++            android:layout_width="wrap_content"
++            android:layout_height="wrap_content"
++            android:text="Opções" />
++
++        <com.google.android.material.tabs.TabItem
++            android:layout_width="wrap_content"
++            android:layout_height="wrap_content"
++            android:text="Ajuda e Suporte" />
++    </com.google.android.material.tabs.TabLayout>
++
++    <androidx.viewpager2.widget.ViewPager2
++        android:id="@+id/view_pager"
++        android:layout_width="412dp"
++        android:layout_height="617dp"
++        android:layout_marginStart="1dp"
++        android:layout_marginTop="1dp"
++        android:layout_marginEnd="1dp"
++        android:layout_marginBottom="1dp"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toBottomOf="@+id/tabLayout"
++        app:layout_constraintVertical_bias="0.972" />
++
++    <ImageView
++        android:id="@+id/imageView3"
++        android:layout_width="55dp"
++        android:layout_height="55dp"
++        app:layout_constraintBottom_toTopOf="@+id/tabLayout"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent"
++        app:layout_constraintVertical_bias="0.4"
++        app:srcCompat="@drawable/background" />
++
++</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+Index: app/src/main/res/layout/fragment_sobre_app.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/fragment_sobre_app.xml b/app/src/main/res/layout/fragment_sobre_app.xml
+new file mode 100644
+--- /dev/null	
++++ b/app/src/main/res/layout/fragment_sobre_app.xml	
+@@ -0,0 +1,19 @@
++<?xml version="1.0" encoding="utf-8"?>
++<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    tools:context=".SobreApp">
++
++    <TextView
++        android:id="@+id/textView20"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:text="Explicação sobre o app"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent"
++        app:layout_constraintVertical_bias="0.071" />
++</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+Index: app/src/main/res/drawable/term_icon.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/drawable/term_icon.xml b/app/src/main/res/drawable/term_icon.xml
+new file mode 100644
+--- /dev/null	
++++ b/app/src/main/res/drawable/term_icon.xml	
+@@ -0,0 +1,13 @@
++<?xml version="1.0" encoding="utf-8"?>
++<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
++
++    <item
++        android:drawable="@drawable/ic_circle"
++        android:gravity="center"
++        />
++    <item
++        android:drawable="@drawable/ic_baseline_priority_high_24"
++        android:gravity="center"
++        />
++
++</layer-list>
+\ No newline at end of file
+Index: app/src/main/res/drawable/not_circle.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/drawable/not_circle.xml b/app/src/main/res/drawable/not_circle.xml
+new file mode 100644
+--- /dev/null	
++++ b/app/src/main/res/drawable/not_circle.xml	
+@@ -0,0 +1,15 @@
++<?xml version="1.0" encoding="utf-8"?>
++<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
++
++    <item
++        android:drawable="@drawable/ic_circle"
++        android:gravity="center"
++        />
++
++    <item
++        android:drawable="@drawable/ic_baseline_call_24"
++        android:gravity="center"
++
++        />
++
++</layer-list>
+\ No newline at end of file
+Index: app/src/main/java/com/example/apppetrobras/SobreApp.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/apppetrobras/SobreApp.java b/app/src/main/java/com/example/apppetrobras/SobreApp.java
+new file mode 100644
+--- /dev/null	
++++ b/app/src/main/java/com/example/apppetrobras/SobreApp.java	
+@@ -0,0 +1,64 @@
++package com.example.apppetrobras;
++
++import android.os.Bundle;
++
++import androidx.fragment.app.Fragment;
++
++import android.view.LayoutInflater;
++import android.view.View;
++import android.view.ViewGroup;
++
++/**
++ * A simple {@link Fragment} subclass.
++ * Use the {@link SobreApp#newInstance} factory method to
++ * create an instance of this fragment.
++ */
++public class SobreApp extends Fragment {
++
++    // TODO: Rename parameter arguments, choose names that match
++    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
++    private static final String ARG_PARAM1 = "param1";
++    private static final String ARG_PARAM2 = "param2";
++
++    // TODO: Rename and change types of parameters
++    private String mParam1;
++    private String mParam2;
++
++    public SobreApp() {
++        // Required empty public constructor
++    }
++
++    /**
++     * Use this factory method to create a new instance of
++     * this fragment using the provided parameters.
++     *
++     * @param param1 Parameter 1.
++     * @param param2 Parameter 2.
++     * @return A new instance of fragment SobreApp.
++     */
++    // TODO: Rename and change types and number of parameters
++    public static SobreApp newInstance(String param1, String param2) {
++        SobreApp fragment = new SobreApp();
++        Bundle args = new Bundle();
++        args.putString(ARG_PARAM1, param1);
++        args.putString(ARG_PARAM2, param2);
++        fragment.setArguments(args);
++        return fragment;
++    }
++
++    @Override
++    public void onCreate(Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++        if (getArguments() != null) {
++            mParam1 = getArguments().getString(ARG_PARAM1);
++            mParam2 = getArguments().getString(ARG_PARAM2);
++        }
++    }
++
++    @Override
++    public View onCreateView(LayoutInflater inflater, ViewGroup container,
++                             Bundle savedInstanceState) {
++        // Inflate the layout for this fragment
++        return inflater.inflate(R.layout.fragment_sobre_app, container, false);
++    }
++}
+\ No newline at end of file
+Index: app/src/main/java/com/example/apppetrobras/Perfil_Fragment.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/apppetrobras/Perfil_Fragment.java b/app/src/main/java/com/example/apppetrobras/Perfil_Fragment.java
+new file mode 100644
+--- /dev/null	
++++ b/app/src/main/java/com/example/apppetrobras/Perfil_Fragment.java	
+@@ -0,0 +1,64 @@
++package com.example.apppetrobras;
++
++import android.os.Bundle;
++
++import androidx.fragment.app.Fragment;
++
++import android.view.LayoutInflater;
++import android.view.View;
++import android.view.ViewGroup;
++
++/**
++ * A simple {@link Fragment} subclass.
++ * Use the {@link Perfil_Fragment#newInstance} factory method to
++ * create an instance of this fragment.
++ */
++public class Perfil_Fragment extends Fragment {
++
++    // TODO: Rename parameter arguments, choose names that match
++    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
++    private static final String ARG_PARAM1 = "param1";
++    private static final String ARG_PARAM2 = "param2";
++
++    // TODO: Rename and change types of parameters
++    private String mParam1;
++    private String mParam2;
++
++    public Perfil_Fragment() {
++        // Required empty public constructor
++    }
++
++    /**
++     * Use this factory method to create a new instance of
++     * this fragment using the provided parameters.
++     *
++     * @param param1 Parameter 1.
++     * @param param2 Parameter 2.
++     * @return A new instance of fragment Perfil_Fragment.
++     */
++    // TODO: Rename and change types and number of parameters
++    public static Perfil_Fragment newInstance(String param1, String param2) {
++        Perfil_Fragment fragment = new Perfil_Fragment();
++        Bundle args = new Bundle();
++        args.putString(ARG_PARAM1, param1);
++        args.putString(ARG_PARAM2, param2);
++        fragment.setArguments(args);
++        return fragment;
++    }
++
++    @Override
++    public void onCreate(Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++        if (getArguments() != null) {
++            mParam1 = getArguments().getString(ARG_PARAM1);
++            mParam2 = getArguments().getString(ARG_PARAM2);
++        }
++    }
++
++    @Override
++    public View onCreateView(LayoutInflater inflater, ViewGroup container,
++                             Bundle savedInstanceState) {
++        // Inflate the layout for this fragment
++        return inflater.inflate(R.layout.fragment_perfil_, container, false);
++    }
++}
+\ No newline at end of file
+Index: app/src/main/res/layout/fragment_perfil_.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/fragment_perfil_.xml b/app/src/main/res/layout/fragment_perfil_.xml
+new file mode 100644
+--- /dev/null	
++++ b/app/src/main/res/layout/fragment_perfil_.xml	
+@@ -0,0 +1,14 @@
++<?xml version="1.0" encoding="utf-8"?>
++<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    tools:context=".Perfil_Fragment">
++
++    <!-- TODO: Update blank fragment layout -->
++    <TextView
++        android:layout_width="match_parent"
++        android:layout_height="match_parent"
++        android:text="@string/hello_blank_fragment" />
++
++</FrameLayout>
+\ No newline at end of file

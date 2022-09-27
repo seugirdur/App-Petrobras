@@ -28,9 +28,11 @@
         <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/drawable/edit_text.xml" value="0.1" />
         <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/drawable/ic_add.xml" value="0.335" />
         <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/drawable/ic_arrow_right.xml" value="0.3525" />
+        <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/drawable/ic_avanca_passo.xml" value="0.344" />
         <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/drawable/ic_baseline_account_box_24.xml" value="0.3675" />
         <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/drawable/ic_baseline_account_circle_24.xml" value="0.35" />
         <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/drawable/ic_baseline_arrow_back_ios_new_24.xml" value="0.367" />
+        <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/drawable/ic_baseline_arrow_forward_ios_24.xml" value="0.344" />
         <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/drawable/ic_baseline_brightness_1_24.xml" value="0.367" />
         <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/drawable/ic_baseline_calendar_today_24.xml" value="0.367" />
         <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/drawable/ic_baseline_call_24.xml" value="0.367" />
@@ -39,7 +41,9 @@
         <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/drawable/ic_calendar.xml" value="0.367" />
         <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/drawable/ic_calendar_and_circle.xml" value="0.367" />
         <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/drawable/ic_call_and_circle.xml" value="0.3665" />
+        <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/drawable/ic_cancel_circle.xml" value="0.3525" />
         <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/drawable/ic_check.xml" value="0.3575" />
+        <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/drawable/ic_check_circle.xml" value="0.3525" />
         <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/drawable/ic_circle.xml" value="0.3575" />
         <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/drawable/ic_conf.xml" value="0.3525" />
         <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/drawable/ic_down_arrow.xml" value="0.3575" />
@@ -62,10 +66,12 @@
         <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/drawable/ic_second_circle.xml" value="0.3525" />
         <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/drawable/ic_up_arrow.xml" value="0.2695" />
         <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/drawable/ic_user_and_circle.xml" value="0.3665" />
+        <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/drawable/ic_volta_passo.xml" value="0.344" />
         <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/drawable/logo_tela_cadastro.xml" value="0.35" />
         <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/drawable/popup_background.xml" value="0.3205" />
         <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/drawable/popup_observacoes_background.xml" value="0.2035" />
         <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/drawable/progress_bar.xml" value="0.3665" />
+        <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/drawable/ripple_effect.xml" value="0.3515" />
         <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/drawable/vectors_combined.xml" value="0.3575" />
         <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/drawable/view_principal_cadastro.xml" value="0.35" />
         <entry key="..\:/Users/Aluno/AndroidStudioProjects/App-petrobras/app/src/main/res/layout/activity_ajuda.xml" value="0.36666666666666664" />

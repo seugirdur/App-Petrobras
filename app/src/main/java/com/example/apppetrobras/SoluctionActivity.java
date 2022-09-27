@@ -13,6 +13,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.apppetrobras.api.RetroFitClient;
+import com.example.apppetrobras.databinding.ActivityConfiguracoesBinding;
+import com.example.apppetrobras.databinding.ActivitySoluctionBinding;
 
 import java.util.List;
 
@@ -36,8 +38,10 @@ public class SoluctionActivity extends AppCompatActivity {
 
     Call<List<Soluctions>> call;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_soluction);
 

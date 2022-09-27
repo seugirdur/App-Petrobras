@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.apppetrobras.DadosLista;
 import com.example.apppetrobras.ProblemActivity;
@@ -101,12 +102,17 @@ public class EquipamentosFragment extends Fragment implements RecyclerViewIntefa
 
     @Override
     public void onItemClick(int position) {
+        //criação da string para armazenamento no banco
+        String titulo = "Equipamento";
+
         // Redirecionamento para a tela do problema contendo os títulos das soluções
         Intent intent = new Intent(getActivity(), ProblemActivity.class);
 
         // Definição de valores que serão redirecionados
         intent.putExtra("TIPO",3);
+        intent.putExtra("titulo",titulo);
         intent.putExtra("ID_TITULO", dataArrayList.get(position).getId());
+        intent.putExtra("titulosProblemas", dataArrayList.get(position).getText());
         startActivity(intent);
     }
 

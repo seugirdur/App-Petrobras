@@ -80,12 +80,18 @@ public class LentidaoFragment extends Fragment implements RecyclerViewInteface{
 
     @Override
     public void onItemClick(int position) {
+        //criação da string para armazenamento no banco
+        String titulo = "Lentidão";
+
         // Redirecionamento para a tela do problema contendo os títulos das soluções
         Intent intent = new Intent(getActivity(), ProblemActivity.class);
 
         // Definição de valores que serão redirecionados
         intent.putExtra("TIPO",1);
+        intent.putExtra("titulo",titulo);
         intent.putExtra("ID_TITULO", dataArrayList.get(position).getId());
+        intent.putExtra("titulosProblemas", dataArrayList.get(position).getText());
         startActivity(intent);
     }
+
 }

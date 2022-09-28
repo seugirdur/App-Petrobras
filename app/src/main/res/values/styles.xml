@@ -33,6 +33,19 @@
         <item name="textAllCaps">false</item>
     </style>
 
+    <style name="btn_tela_perfil">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">80dp</item>
+        <item name="android:layout_marginEnd">80dp</item>
+        <item name="android:layout_marginBottom">320dp</item>
+        <item name="android:layout_marginTop">22dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/btn_perfil</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">16dp</item>
+    </style>
 
     <style name="ContainerComponents">
         <item name="android:layout_width">match_parent</item>

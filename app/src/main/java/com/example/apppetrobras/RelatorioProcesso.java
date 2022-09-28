@@ -16,6 +16,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.apppetrobras.api.RetroFitClient;
+import com.example.apppetrobras.databinding.ActivityAjudaBinding;
+import com.example.apppetrobras.databinding.ActivityRelatorioProcessoBinding;
 import com.example.apppetrobras.models.UserAPI;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -25,20 +27,23 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class RelatorioProcesso extends AppCompatActivity {
+public class RelatorioProcesso extends DrawerBaseActivity{
 
     FloatingActionButton add_icon, download_icon, observacoes_icon;
     Animation fabOpen, fabClose, rotateForward, rotateBackward;
     Dialog mDialog;
     SharedPreferences sp;
     SharedPreferences.Editor editor;
+    ActivityRelatorioProcessoBinding activityRelatorioProcessoBinding;
 
     boolean isOpen = false; // by default it is false
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_relatorio_processo);
+        activityRelatorioProcessoBinding = activityRelatorioProcessoBinding.inflate(getLayoutInflater());
+        setContentView(activityRelatorioProcessoBinding.getRoot());
+        allocateActivityTitle("Histórico");
 
         add_icon = (FloatingActionButton) findViewById(R.id.add_icon);
         download_icon = (FloatingActionButton) findViewById(R.id.download_icon);

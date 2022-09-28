@@ -161,10 +161,10 @@
         tools:layout_editor_absoluteY="526dp" />
 
     <TextView
-        android:id="@+id/textView16"
+        android:id="@+id/nome_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/nome_do_login"
+        android:text="nome do login"
         android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/view2"

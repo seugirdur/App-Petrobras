@@ -10,7 +10,7 @@ import android.widget.TextView;
 public class Perfil extends AppCompatActivity {
 
 
-    TextView nomecompleto,num_tel,email1,num_chave;
+    TextView nomecompleto,num_tel,email1,num_chave, nome1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +24,12 @@ public class Perfil extends AppCompatActivity {
         String tel = sharedPreferences.getString("tel", "");
         String email = sharedPreferences.getString("email", "");
         String chave = sharedPreferences.getString("chave", "");
+
+
+        String[] fullNameArray = nome.split("\\s+");
+        String firstName = fullNameArray[0];
+        nome1=findViewById(R.id.nome_login);
+        nome1.setText(firstName);
 
         nomecompleto = findViewById(R.id.nomecompleto);
         nomecompleto.setText(nome);

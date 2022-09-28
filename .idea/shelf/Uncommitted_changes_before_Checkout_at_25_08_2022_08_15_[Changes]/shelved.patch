@@ -1,0 +1,3 @@
+diff --git a/app/src/main/java/com/example/apppetrobras/MainActivity.java b/app/src/main/java/com/example/apppetrobras/Cadastro.java
+rename from app/src/main/java/com/example/apppetrobras/MainActivity.java
+rename to app/src/main/java/com/example/apppetrobras/Cadastro.java

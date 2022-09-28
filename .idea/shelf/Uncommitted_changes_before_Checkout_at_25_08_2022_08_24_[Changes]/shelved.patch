@@ -1,0 +1,62 @@
+Index: app/src/main/java/com/example/apppetrobras/Tela_de_escolha.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.apppetrobras;\r\n\r\nimport androidx.appcompat.app.AppCompatActivity;\r\n\r\nimport android.content.Intent;\r\nimport android.os.Bundle;\r\nimport android.view.View;\r\n\r\npublic class Tela_de_escolha extends AppCompatActivity {\r\n\r\n\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.activity_tela_de_escolha);\r\n    }\r\n    public void cadastrar (View view){\r\n\r\n        Intent intent = new Intent(this, Cadastro.class);\r\n        startActivity(intent);\r\n     }\r\n}
+===================================================================
+diff --git a/app/src/main/java/com/example/apppetrobras/Tela_de_escolha.java b/app/src/main/java/com/example/apppetrobras/Tela_de_escolha.java
+--- a/app/src/main/java/com/example/apppetrobras/Tela_de_escolha.java	
++++ b/app/src/main/java/com/example/apppetrobras/Tela_de_escolha.java	
+@@ -16,7 +16,7 @@
+     }
+     public void cadastrar (View view){
+ 
+-        Intent intent = new Intent(this, Cadastro.class);
++        Intent intent = new Intent(this, FormCadastro.class);
+         startActivity(intent);
+      }
+ }
+\ No newline at end of file
+Index: app/src/main/java/com/example/apppetrobras/Cadastro.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/apppetrobras/Cadastro.java b/app/src/main/java/com/example/apppetrobras/FormCadastro.java
+rename from app/src/main/java/com/example/apppetrobras/Cadastro.java
+rename to app/src/main/java/com/example/apppetrobras/FormCadastro.java
+--- a/app/src/main/java/com/example/apppetrobras/Cadastro.java	
++++ b/app/src/main/java/com/example/apppetrobras/FormCadastro.java	
+@@ -16,12 +16,12 @@
+ 
+ import android.os.Bundle;
+ 
+-public class Cadastro extends AppCompatActivity {
++public class FormCadastro extends AppCompatActivity {
+ 
+     @Override
+     protected void onCreate(Bundle savedInstanceState) {
+         super.onCreate(savedInstanceState);
+-        setContentView(R.layout.cadastro);
++        setContentView(R.layout.activity_form_cadastro);
+ 
+ 
+ 
+Index: app/src/main/res/layout/cadastro.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/cadastro.xml b/app/src/main/res/layout/activity_form_cadastro.xml
+rename from app/src/main/res/layout/cadastro.xml
+rename to app/src/main/res/layout/activity_form_cadastro.xml
+--- a/app/src/main/res/layout/cadastro.xml	
++++ b/app/src/main/res/layout/activity_form_cadastro.xml	
+@@ -5,7 +5,7 @@
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+     android:visibility="visible"
+-    tools:context=".Cadastro">
++    tools:context=".FormCadastro">
+ 
+ 
+     <TextView

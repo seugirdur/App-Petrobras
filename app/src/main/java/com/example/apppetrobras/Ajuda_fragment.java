@@ -72,10 +72,10 @@ public class Ajuda_fragment extends Fragment implements RecyclerViewInteface {
         dataArrayList1 = new ArrayList<>();
 
         String[] titulosProblemas = new String[]{
-                "1",
-                "2",
-                "3",
-                "4"
+                "Como chamar um técnico?",
+                "Como buscar a solução?",
+                "Como ver meus chamados?",
+                "Como usar o aplicativo?"
         };
 
         for(int i = 0; i < titulosProblemas.length; i++){
@@ -89,8 +89,8 @@ public class Ajuda_fragment extends Fragment implements RecyclerViewInteface {
         dataArrayList2 = new ArrayList<>();
 
         String[] titulosProblemas = new String[]{
-                "1",
-                "2"
+                "Como funciona a tela de escolha?",
+                "Como funciona a tela de chamado?"
         };
 
         for(int i = 0; i < titulosProblemas.length; i++){

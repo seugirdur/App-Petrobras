@@ -23,21 +23,19 @@ public class ViewPager extends FragmentStateAdapter {
     public Fragment createFragment(int position) {
         switch (position){
             case 0:
-                return new Perfil_Fragment();
-            case 1:
                 return new Historico_Fragment();
-            case 2:
+            case 1:
                 return new Opcoes_Fragment();
-            case 3:
+            case 2:
                 return new Ajuda_fragment();
             default:
-                return new Perfil_Fragment();
+                return new Historico_Fragment();
         }
     }
 
     //Retorna a quantidade de telas(fragment)
     @Override
     public int getItemCount() {
-        return 4;
+        return 3;
     }
 }

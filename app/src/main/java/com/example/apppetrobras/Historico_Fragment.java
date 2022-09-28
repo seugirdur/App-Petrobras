@@ -1,59 +1,33 @@
 package com.example.apppetrobras;
 
+import android.app.Activity;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link Historico_Fragment#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class Historico_Fragment extends Fragment {
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+import com.example.apppetrobras.fragments.RecyclerViewInteface;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+import java.util.ArrayList;
 
-    public Historico_Fragment() {
-        // Required empty public constructor
-    }
+public class Historico_Fragment extends Fragment implements RecyclerViewInteface {
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment Historico_Fragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static Historico_Fragment newInstance(String param1, String param2) {
-        Historico_Fragment fragment = new Historico_Fragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
+    private ArrayList<DadosLista> dataArrayList4, dataArrayList5;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -61,4 +35,89 @@ public class Historico_Fragment extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_historico_, container, false);
     }
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        dataInitialize1();
+
+        // Essa variável recebe (por meio do id) a reciclerView no xml dessa tela
+        RecyclerView recyclerview4 = view.findViewById(R.id.recyclerviewhst);
+        recyclerview4.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerview4.setHasFixedSize(true);
+        // Aqui há uma instância da RecyclerViewAdapter utilizando o construtor adequado:
+        // RecyclerViewAdapter(Context, Lista<Objeto>, RecyclerViewInterface, layout do item)
+        RecyclerViewAdapter recyclerViewAdapter1 = new RecyclerViewAdapter(getContext(),
+                dataArrayList4, this, R.layout.item_historico);
+        recyclerview4.setAdapter(recyclerViewAdapter1);
+
+//        dataInitialize2();
+//
+//        // Essa variável recebe (por meio do id) a reciclerView no xml dessa tela
+//        RecyclerView recyclerview5 = view.findViewById(R.id.recyclerviewhst);
+//        recyclerview5.setLayoutManager(new LinearLayoutManager(getContext()));
+//        recyclerview5.setHasFixedSize(true);
+//        // Aqui há uma instância da RecyclerViewAdapter utilizando o construtor adequado:
+//        // RecyclerViewAdapter(Context, Lista<Objeto>, RecyclerViewInterface, layout do item)
+//        RecyclerViewAdapter recyclerViewAdapter2 = new RecyclerViewAdapter(getContext(),
+//                dataArrayList5, this, R.layout.item_historico);
+//        recyclerview5.setAdapter(recyclerViewAdapter2);
+
+        //recyclerViewAdapter.notifyDataSetChanged();
+    }
+
+    // Função para popular a lista usada na recyclerView
+    private void dataInitialize1() {
+
+        dataArrayList4 = new ArrayList<>();
+
+        String[] titulosProblemas = new String[]{
+                "Relatório do dia --/--/----",
+                "Relatório do dia --/--/----",
+                "Relatório do dia --/--/----",
+                "Relatório do dia --/--/----",
+                "Relatório do dia --/--/----",
+                "Relatório do dia --/--/----",
+                "Relatório do dia --/--/----",
+                "Relatório do dia --/--/----",
+                "Relatório do dia --/--/----",
+                "Relatório do dia --/--/----",
+                "Relatório do dia --/--/----",
+                "Relatório do dia --/--/----",
+                "Relatório do dia --/--/----",
+                "Relatório do dia --/--/----",
+        };
+
+        for(int i = 0; i < titulosProblemas.length; i++){
+            DadosLista data = new DadosLista(titulosProblemas[i]);
+            dataArrayList4.add(data);
+        }
+    }
+
+//    private void dataInitialize2() {
+//
+//        dataArrayList5 = new ArrayList<>();
+//
+//        String[] titulosProblemas = new String[]{
+//                "Relatório do dia --/--/----",
+//                "Relatório do dia --/--/----"
+//        };
+//
+//        for(int i = 0; i < titulosProblemas.length; i++){
+//            DadosLista data = new DadosLista(titulosProblemas[i]);
+//            dataArrayList5.add(data);
+//        }
+//    }
+
+    @Override
+    public void onItemClick(int position) {
+        // Redirecionamento para a tela do problema contendo os títulos das soluções
+        Intent intent = new Intent(getActivity(), Tela_de_escolha.class);
+
+        // Definição de valores que serão redirecionados
+        intent.putExtra("TIPO",3);
+        intent.putExtra("ID_TITULO", dataArrayList4.get(position).getId());
+        startActivity(intent);
+    }
+
 }

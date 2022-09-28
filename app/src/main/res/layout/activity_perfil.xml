@@ -176,7 +176,7 @@
         android:id="@+id/imageView5"
         android:layout_width="75dp"
         android:layout_height="50dp"
-        app:srcCompat="@drawable/ic_baseline_call_24"
+        app:srcCompat="@drawable/ic_baseline_call_preto"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="39dp"
         tools:layout_editor_absoluteY="460dp" />

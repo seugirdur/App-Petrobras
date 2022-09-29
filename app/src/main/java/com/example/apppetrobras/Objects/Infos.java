@@ -1,12 +1,12 @@
-package com.example.apppetrobras;
+package com.example.apppetrobras.Objects;
 
 public class Infos {
-    String nome;
-    String email;
-    String tel;
-    String dataNasc;
-    String chave;
-    String senha;
+    public String nome;
+    public String email;
+    public String tel;
+    public String dataNasc;
+    public String chave;
+    public String senha;
 
 
     public Infos(String _nome, String _email, String _tel, String _dataNasc, String _chave, String _senha){

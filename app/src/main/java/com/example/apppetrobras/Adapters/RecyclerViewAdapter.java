@@ -1,4 +1,4 @@
-package com.example.apppetrobras;
+package com.example.apppetrobras.Adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,6 +10,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.apppetrobras.Objects.DadosLista;
+import com.example.apppetrobras.Objects.Problems;
+import com.example.apppetrobras.R;
 import com.example.apppetrobras.fragments.RecyclerViewInteface;
 
 import java.util.ArrayList;

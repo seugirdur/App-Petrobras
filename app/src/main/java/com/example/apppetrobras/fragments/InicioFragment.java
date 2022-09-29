@@ -13,10 +13,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.apppetrobras.DadosLista;
-import com.example.apppetrobras.ProblemActivity;
+import com.example.apppetrobras.Objects.DadosLista;
+import com.example.apppetrobras.Activitys.ProblemActivity;
 import com.example.apppetrobras.R;
-import com.example.apppetrobras.RecyclerViewAdapter;
+import com.example.apppetrobras.Adapters.RecyclerViewAdapter;
 
 import java.util.ArrayList;
 

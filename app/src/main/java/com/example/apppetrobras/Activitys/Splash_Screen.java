@@ -1,8 +1,10 @@
-package com.example.apppetrobras;
+package com.example.apppetrobras.Activitys;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.apppetrobras.R;
 
 public class Splash_Screen extends AppCompatActivity {
 

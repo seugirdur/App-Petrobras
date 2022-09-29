@@ -6,6 +6,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.Navigations.TabActivity;
+import com.example.apppetrobras.Activitys.AjudaeSuporte;
+import com.example.apppetrobras.Activitys.FormCadastro;
+import com.example.apppetrobras.Activitys.FormLogin;
+import com.example.apppetrobras.Activitys.ProblemActivity;
+import com.example.apppetrobras.Activitys.RelatorioProcesso;
+import com.example.apppetrobras.Activitys.SoluctionActivity;
+import com.example.apppetrobras.Activitys.Tela_de_escolha;
+
 public class Hub extends AppCompatActivity {
 
     @Override

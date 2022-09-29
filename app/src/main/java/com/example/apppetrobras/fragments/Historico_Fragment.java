@@ -1,6 +1,5 @@
 package com.example.apppetrobras.fragments;
 
-import android.app.Activity;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -10,22 +9,16 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentActivity;
+
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.ImageButton;
 
-import com.example.apppetrobras.DadosLista;
+import com.example.apppetrobras.Objects.DadosLista;
 import com.example.apppetrobras.R;
-import com.example.apppetrobras.RecyclerViewAdapter;
-import com.example.apppetrobras.Tela_de_escolha;
-import com.example.apppetrobras.fragments.RecyclerViewInteface;
+import com.example.apppetrobras.Adapters.RecyclerViewAdapter;
+import com.example.apppetrobras.Activitys.Tela_de_escolha;
 
 import java.util.ArrayList;
 

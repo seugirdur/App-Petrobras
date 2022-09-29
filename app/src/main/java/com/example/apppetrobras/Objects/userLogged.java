@@ -1,8 +1,7 @@
-package com.example.apppetrobras;
+package com.example.apppetrobras.Objects;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.widget.TextView;
 
 public class userLogged implements Parcelable {
     public String nome;

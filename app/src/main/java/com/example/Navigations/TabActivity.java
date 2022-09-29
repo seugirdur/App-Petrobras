@@ -1,39 +1,38 @@
-package com.example.apppetrobras;
+package com.example.Navigations;
 
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
+import android.view.View;
 
-import com.example.apppetrobras.databinding.ActivityArrastaproladoBinding;
+import com.example.apppetrobras.Adapters.ViewPagerAdapter;
+import com.example.apppetrobras.R;
 import com.example.apppetrobras.databinding.ActivityTabBinding;
 import com.google.android.material.tabs.TabLayout;
 
-public class arrastaprolado extends DrawerBaseActivity {
+public class TabActivity extends DrawerBaseActivity {
 
     // Declaração das variáveis
     TabLayout tabLayout;
     ViewPager2 viewPager2;
-    ViewPager viewPager;
-    ActivityArrastaproladoBinding activityArrastaproladoBinding;
+    ViewPagerAdapter viewPagerAdapter;
+    ActivityTabBinding activityTabBinding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        activityArrastaproladoBinding = ActivityArrastaproladoBinding.inflate(getLayoutInflater());
-        setContentView(activityArrastaproladoBinding.getRoot());
-        allocateActivityTitle("Configurações do Usuário");
 
         // Navigation Drawer
-        //activityTabBinding = ActivityTabBinding.inflate(getLayoutInflater());
-       // setContentView(activityTabBinding.getRoot());
-        //allocateActivityTitle("Menu Principal");
+        activityTabBinding = ActivityTabBinding.inflate(getLayoutInflater());
+        setContentView(activityTabBinding.getRoot());
+        allocateActivityTitle("Menu Principal");
 
-        tabLayout = findViewById(R.id.tabLayout);
+        tabLayout = findViewById(R.id.tab_layout);
         viewPager2 = findViewById(R.id.view_pager);
-        viewPager = new ViewPager(this);
-        viewPager2.setAdapter(viewPager);
+        viewPagerAdapter = new ViewPagerAdapter(this);
+        viewPager2.setAdapter(viewPagerAdapter);
 
-//       settingTheName();
+//        settingTheName();
 
 
 
@@ -67,10 +66,11 @@ public class arrastaprolado extends DrawerBaseActivity {
     }
 
     //Captura o click no logo e vai para a tela inicial
-    //public void goHome(View view) {
-        //viewPager2.setCurrentItem(0);
+    public void goHome(View view) {
+        viewPager2.setCurrentItem(0);
     }
 
 
 
-
+    
+}

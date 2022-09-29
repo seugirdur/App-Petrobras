@@ -1,11 +1,9 @@
-package com.example.apppetrobras;
+package com.example.apppetrobras.Activitys;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.net.Uri;
-import android.os.AsyncTask;
-import android.os.Handler;
 import android.text.Editable;
 import android.text.SpannableString;
 import android.text.Spanned;
@@ -16,36 +14,19 @@ import android.text.method.PasswordTransformationMethod;
 import android.text.style.ClickableSpan;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 
 import android.os.Bundle;
-import android.content.Intent;
-import android.net.Uri;
-import android.text.SpannableString;
-import android.text.Spanned;
-import android.text.method.HideReturnsTransformationMethod;
-import android.text.method.LinkMovementMethod;
-import android.text.method.PasswordTransformationMethod;
-import android.text.style.ClickableSpan;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.apppetrobras.Objects.Infos;
+import com.example.apppetrobras.R;
 import com.example.apppetrobras.api.RetroFitClient;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
-import java.util.Calendar;
 
 import okhttp3.ResponseBody;
 import retrofit2.Call;
@@ -464,7 +445,6 @@ public class FormCadastro extends AppCompatActivity {
         }
         return checking;
     }
-
 
 private void registrate(){
     Infos info = new Infos(resgataInfo().nome, resgataInfo().email, resgataInfo().tel,resgataInfo().dataNasc, resgataInfo().chave, resgataInfo().senha);

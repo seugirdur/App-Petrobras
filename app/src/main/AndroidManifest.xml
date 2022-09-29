@@ -22,7 +22,7 @@
             android:name=".Perfil"
             android:exported="false" />
         <activity
-            android:name=".SoluctionActivity"
+            android:name=".Activitys.SoluctionActivity"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
@@ -35,7 +35,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".AjudaeSuporte"
+            android:name=".Activitys.AjudaeSuporte"
             android:exported="false" />
         <activity
             android:name=".Configuracoes"
@@ -44,38 +44,38 @@
             android:name=".Historico"
             android:exported="false" />
         <activity
-            android:name=".DrawerBaseActivity"
+            android:name="com.example.Navigations.DrawerBaseActivity"
             android:exported="false" />
         <activity
             android:name=".Conteudo"
             android:exported="false" />
         <activity
-            android:name=".FormCadastro"
+            android:name=".Activitys.FormCadastro"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".minhaPagina"
             android:exported="false" />
         <activity
-            android:name=".FormLogin"
+            android:name=".Activitys.FormLogin"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".Tela_de_escolha"
+            android:name=".Activitys.Tela_de_escolha"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".ProblemActivity"
+            android:name=".Activitys.ProblemActivity"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".TabActivity"
+            android:name="com.example.Navigations.TabActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".RelatorioProcesso"
+            android:name=".Activitys.RelatorioProcesso"
             android:exported="true" />
         <activity
             android:name=".FormLoginPedro"
@@ -83,7 +83,7 @@
 
         </activity>
         <activity
-            android:name=".arrastaprolado"
+            android:name="com.example.Navigations.arrastaprolado"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>

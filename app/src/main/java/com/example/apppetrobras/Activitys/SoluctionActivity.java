@@ -1,18 +1,17 @@
-package com.example.apppetrobras;
+package com.example.apppetrobras.Activitys;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
-import android.service.autofill.OnClickAction;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.example.apppetrobras.R;
+import com.example.apppetrobras.Objects.Soluctions;
 import com.example.apppetrobras.api.RetroFitClient;
 
 import java.util.List;
@@ -20,7 +19,6 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
 
 public class SoluctionActivity extends AppCompatActivity {
 

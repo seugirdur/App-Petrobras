@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
+import com.example.apppetrobras.Activitys.Tela_de_escolha;
+
 public class SplashScreenActivity extends AppCompatActivity {
 
     @Override

@@ -1,9 +1,9 @@
 package com.example.apppetrobras.api;
 
-import com.example.apppetrobras.CRelatorio;
-import com.example.apppetrobras.Problems;
-import com.example.apppetrobras.Soluctions;
-import com.example.apppetrobras.models.UserAPI;
+import com.example.apppetrobras.Objects.CRelatorio;
+import com.example.apppetrobras.Objects.Problems;
+import com.example.apppetrobras.Objects.Soluctions;
+import com.example.apppetrobras.Objects.UserAPI;
 
 import java.util.List;
 
@@ -11,7 +11,6 @@ import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
-import retrofit2.http.GET;
 import retrofit2.http.POST;
 
 public interface  API {

@@ -1,6 +1,4 @@
-package com.example.apppetrobras;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.apppetrobras.Activitys;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -10,6 +8,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import com.example.Navigations.DrawerBaseActivity;
+import com.example.apppetrobras.Objects.Problems;
+import com.example.apppetrobras.R;
+import com.example.apppetrobras.Adapters.RecyclerViewAdapter;
 import com.example.apppetrobras.api.RetroFitClient;
 import com.example.apppetrobras.fragments.RecyclerViewInteface;
 

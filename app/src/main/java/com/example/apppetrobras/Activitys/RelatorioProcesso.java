@@ -1,6 +1,4 @@
-package com.example.apppetrobras;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.apppetrobras.Activitys;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -11,14 +9,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.apppetrobras.Objects.CRelatorio;
+import com.example.Navigations.DrawerBaseActivity;
+import com.example.apppetrobras.R;
 import com.example.apppetrobras.api.RetroFitClient;
-import com.example.apppetrobras.databinding.ActivityAjudaBinding;
 import com.example.apppetrobras.databinding.ActivityRelatorioProcessoBinding;
-import com.example.apppetrobras.models.UserAPI;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
@@ -27,7 +25,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class RelatorioProcesso extends DrawerBaseActivity{
+public class RelatorioProcesso extends DrawerBaseActivity {
 
     FloatingActionButton add_icon, download_icon, observacoes_icon;
     Animation fabOpen, fabClose, rotateForward, rotateBackward;

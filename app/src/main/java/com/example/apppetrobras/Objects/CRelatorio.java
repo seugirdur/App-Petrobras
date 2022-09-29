@@ -1,4 +1,4 @@
-package com.example.apppetrobras;
+package com.example.apppetrobras.Objects;
 
 public class CRelatorio {
     String nome, chave, dataProcesso, secao, titulo, made_check;

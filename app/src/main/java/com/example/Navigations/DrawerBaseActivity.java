@@ -1,4 +1,4 @@
-package com.example.apppetrobras;
+package com.example.Navigations;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -10,12 +10,17 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
+import com.example.Navigations.TabActivity;
+import com.example.Navigations.arrastaprolado;
+import com.example.apppetrobras.Activitys.AjudaeSuporte;
+import com.example.apppetrobras.Activitys.RelatorioProcesso;
+import com.example.apppetrobras.R;
+import com.example.apppetrobras.SplashScreenActivity;
 import com.google.android.material.navigation.NavigationView;
 
     public class DrawerBaseActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {

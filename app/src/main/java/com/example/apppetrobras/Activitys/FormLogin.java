@@ -1,4 +1,4 @@
-package com.example.apppetrobras;
+package com.example.apppetrobras.Activitys;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -18,8 +18,10 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.example.apppetrobras.R;
+import com.example.Navigations.TabActivity;
 import com.example.apppetrobras.api.RetroFitClient;
-import com.example.apppetrobras.models.UserAPI;
+import com.example.apppetrobras.Objects.UserAPI;
 
 import java.util.List;
 

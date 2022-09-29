@@ -21,7 +21,7 @@ public class arrastaprolado extends DrawerBaseActivity {
         super.onCreate(savedInstanceState);
         activityArrastaproladoBinding = ActivityArrastaproladoBinding.inflate(getLayoutInflater());
         setContentView(activityArrastaproladoBinding.getRoot());
-        allocateActivityTitle("Configurações for real");
+        allocateActivityTitle("Configurações do Usuário");
 
         // Navigation Drawer
         //activityTabBinding = ActivityTabBinding.inflate(getLayoutInflater());

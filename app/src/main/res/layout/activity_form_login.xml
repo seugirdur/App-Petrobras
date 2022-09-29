@@ -81,10 +81,12 @@
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/esqueceu_senha"
             style="@style/Forgot_Password"
+            android:layout_width="261dp"
+            android:layout_height="23dp"
             android:layout_marginTop="24dp"
             android:background="?android:attr/selectableItemBackground"
             android:gravity="center"
-            android:text="@string/forgotpassword"
+            android:text="@string/texto_tela_escolha"
             android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="@+id/view"
             app:layout_constraintHorizontal_bias="0.502"

@@ -1,0 +1,179 @@
+Index: app/src/main/res/layout/activity_ajuda.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<androidx.constraintlayout.widget.ConstraintLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    android:background=\"@color/white\"\r\n    tools:context=\".Ajuda\">\r\n\r\n\r\n    <Button\r\n        android:id=\"@+id/button\"\r\n        android:layout_width=\"46dp\"\r\n        android:layout_height=\"48dp\"\r\n        android:fontFamily=\"sans-serif-black\"\r\n        android:rotation=\"270\"\r\n        android:text=\"|||\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintHorizontal_bias=\"0.043\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\"\r\n        app:layout_constraintVertical_bias=\"0.011\" />\r\n\r\n    <ImageButton\r\n        android:id=\"@+id/imageButton3\"\r\n        android:layout_width=\"50dp\"\r\n        android:layout_height=\"45dp\"\r\n        app:layout_constraintBottom_toTopOf=\"@+id/textView2\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintHorizontal_bias=\"0.498\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\"\r\n        app:layout_constraintVertical_bias=\"0.222\"\r\n        tools:srcCompat=\"@tools:sample/avatars\" />\r\n\r\n    <TextView\r\n        android:id=\"@+id/textView2\"\r\n        android:layout_width=\"221dp\"\r\n        android:layout_height=\"43dp\"\r\n        android:fontFamily=\"sans-serif-black\"\r\n        android:text=\"Ajuda e Suporte\"\r\n        android:textSize=\"30dp\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\"\r\n        app:layout_constraintVertical_bias=\"0.125\" />\r\n\r\n    <TextView\r\n        android:id=\"@+id/textView3\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:fontFamily=\"sans-serif\"\r\n        android:text=\"Manual do Aplicativo\"\r\n        android:textSize=\"15dp\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintHorizontal_bias=\"0.498\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\"\r\n        app:layout_constraintVertical_bias=\"0.199\" />\r\n\r\n    <TextView\r\n        android:id=\"@+id/textView4\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:fontFamily=\"sans-serif\"\r\n        android:text=\"Como usar o aplicativo?\"\r\n        android:textSize=\"18dp\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintHorizontal_bias=\"0.073\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"@+id/imageButton3\"\r\n        app:layout_constraintVertical_bias=\"0.309\" />\r\n\r\n    <TextView\r\n        android:id=\"@+id/textView5\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:fontFamily=\"sans-serif\"\r\n        android:text=\"Como ver meus chamados?\"\r\n        android:textSize=\"18dp\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintHorizontal_bias=\"0.037\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\"\r\n        app:layout_constraintVertical_bias=\"0.581\" />\r\n\r\n    <TextView\r\n        android:id=\"@+id/textView9\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:fontFamily=\"sans-serif\"\r\n        android:text=\"Como funciona a tela de chamado?\"\r\n        android:textSize=\"18dp\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintHorizontal_bias=\"0.085\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\"\r\n        app:layout_constraintVertical_bias=\"0.868\" />\r\n\r\n    <TextView\r\n        android:id=\"@+id/textView10\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:fontFamily=\"sans-serif\"\r\n        android:text=\"Como funciona a tela de escolha?\"\r\n        android:textSize=\"18dp\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintHorizontal_bias=\"0.085\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\"\r\n        app:layout_constraintVertical_bias=\"0.783\" />\r\n\r\n    <TextView\r\n        android:id=\"@+id/textView6\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:fontFamily=\"sans-serif\"\r\n        android:text=\"Como buscar a solução?\"\r\n        android:textSize=\"18dp\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintHorizontal_bias=\"0.051\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\" />\r\n\r\n    <TextView\r\n        android:id=\"@+id/textView7\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:fontFamily=\"sans-serif\"\r\n        android:text=\"Como chamar um Técnico?\"\r\n        android:textSize=\"18dp\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintHorizontal_bias=\"0.057\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\"\r\n        app:layout_constraintVertical_bias=\"0.413\" />\r\n\r\n    <androidx.constraintlayout.widget.Barrier\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        app:barrierDirection=\"top\"\r\n        tools:layout_editor_absoluteX=\"143dp\"\r\n        tools:layout_editor_absoluteY=\"360dp\" />\r\n\r\n    <androidx.constraintlayout.widget.Barrier\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        app:barrierDirection=\"top\"\r\n        tools:layout_editor_absoluteX=\"180dp\"\r\n        tools:layout_editor_absoluteY=\"394dp\" />\r\n\r\n    <ImageView\r\n        android:id=\"@+id/imageView6\"\r\n        android:layout_width=\"408dp\"\r\n        android:layout_height=\"73dp\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintHorizontal_bias=\"0.333\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\"\r\n        app:layout_constraintVertical_bias=\"0.051\"\r\n        app:srcCompat=\"@drawable/img_1\" />\r\n\r\n    <ImageButton\r\n        android:id=\"@+id/imageButton\"\r\n        android:layout_width=\"46dp\"\r\n        android:layout_height=\"48dp\"\r\n        android:rotation=\"270\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintHorizontal_bias=\"0.904\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\"\r\n        app:layout_constraintVertical_bias=\"0.587\"\r\n        app:srcCompat=\"@drawable/ic_baseline_arrow_back_ios_new_24\" />\r\n\r\n    <ImageButton\r\n        android:id=\"@+id/imageButton10\"\r\n        android:layout_width=\"46dp\"\r\n        android:layout_height=\"48dp\"\r\n        android:rotation=\"270\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintHorizontal_bias=\"0.904\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\"\r\n        app:layout_constraintVertical_bias=\"0.885\"\r\n        app:srcCompat=\"@drawable/ic_baseline_arrow_back_ios_new_24\" />\r\n\r\n    <ImageButton\r\n        android:id=\"@+id/imageButton11\"\r\n        android:layout_width=\"46dp\"\r\n        android:layout_height=\"48dp\"\r\n        android:rotation=\"270\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintHorizontal_bias=\"0.904\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\"\r\n        app:layout_constraintVertical_bias=\"0.793\"\r\n        app:srcCompat=\"@drawable/ic_baseline_arrow_back_ios_new_24\" />\r\n\r\n    <ImageButton\r\n        android:id=\"@+id/imageButton7\"\r\n        android:layout_width=\"46dp\"\r\n        android:layout_height=\"48dp\"\r\n        android:rotation=\"270\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintHorizontal_bias=\"0.904\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\"\r\n        app:layout_constraintVertical_bias=\"0.314\"\r\n        app:srcCompat=\"@drawable/ic_baseline_arrow_back_ios_new_24\" />\r\n\r\n    <ImageButton\r\n        android:id=\"@+id/imageButton8\"\r\n        android:layout_width=\"46dp\"\r\n        android:layout_height=\"48dp\"\r\n        android:rotation=\"270\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintHorizontal_bias=\"0.904\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\"\r\n        app:layout_constraintVertical_bias=\"0.407\"\r\n        app:srcCompat=\"@drawable/ic_baseline_arrow_back_ios_new_24\" />\r\n\r\n    <ImageButton\r\n        android:id=\"@+id/imageButton9\"\r\n        android:layout_width=\"46dp\"\r\n        android:layout_height=\"48dp\"\r\n        android:rotation=\"270\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintHorizontal_bias=\"0.904\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\"\r\n        app:layout_constraintVertical_bias=\"0.499\"\r\n        app:srcCompat=\"@drawable/ic_baseline_arrow_back_ios_new_24\" />\r\n\r\n    <TextView\r\n        android:id=\"@+id/textView8\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:fontFamily=\"sans-serif-black\"\r\n        android:text=\"Funcionalidade do APP\"\r\n        android:textSize=\"25dp\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintHorizontal_bias=\"0.496\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toBottomOf=\"@+id/textView5\"\r\n        app:layout_constraintVertical_bias=\"0.171\" />\r\n\r\n</androidx.constraintlayout.widget.ConstraintLayout>
+===================================================================
+diff --git a/app/src/main/res/layout/activity_ajuda.xml b/app/src/main/res/layout/activity_ajuda.xml
+--- a/app/src/main/res/layout/activity_ajuda.xml	
++++ b/app/src/main/res/layout/activity_ajuda.xml	
+@@ -8,6 +8,33 @@
+     tools:context=".Ajuda">
+ 
+ 
++    <!--<com.ms.square.android.expandabletextview.ExpandableTextView
++        android:id="@+id/expand_text_view"
++        android:layout_width="9dp"
++        android:layout_height="6dp"
++        app:animDuration="2000"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="0.231"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent"
++        app:layout_constraintVertical_bias="0.021"
++        app:maxCollapsedLines="3" />
++
++    <TextView
++        android:id="@+id/expandable_text"
++        android:textColor="#ff33"
++        android:textSize="18dp"
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="0.231"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent"-->
++
++        />
++
+     <Button
+         android:id="@+id/button"
+         android:layout_width="46dp"
+@@ -17,10 +44,10 @@
+         android:text="|||"
+         app:layout_constraintBottom_toBottomOf="parent"
+         app:layout_constraintEnd_toEndOf="parent"
+-        app:layout_constraintHorizontal_bias="0.043"
++        app:layout_constraintHorizontal_bias="0.03"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toTopOf="parent"
+-        app:layout_constraintVertical_bias="0.011" />
++        app:layout_constraintVertical_bias="0.046" />
+ 
+     <ImageButton
+         android:id="@+id/imageButton3"
+@@ -31,7 +58,7 @@
+         app:layout_constraintHorizontal_bias="0.498"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toTopOf="parent"
+-        app:layout_constraintVertical_bias="0.222"
++        app:layout_constraintVertical_bias="0.627"
+         tools:srcCompat="@tools:sample/avatars" />
+ 
+     <TextView
+@@ -45,7 +72,7 @@
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toTopOf="parent"
+-        app:layout_constraintVertical_bias="0.125" />
++        app:layout_constraintVertical_bias="0.139" />
+ 
+     <TextView
+         android:id="@+id/textView3"
+@@ -59,7 +86,7 @@
+         app:layout_constraintHorizontal_bias="0.498"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toTopOf="parent"
+-        app:layout_constraintVertical_bias="0.199" />
++        app:layout_constraintVertical_bias="0.23" />
+ 
+     <TextView
+         android:id="@+id/textView4"
+@@ -70,10 +97,10 @@
+         android:textSize="18dp"
+         app:layout_constraintBottom_toBottomOf="parent"
+         app:layout_constraintEnd_toEndOf="parent"
+-        app:layout_constraintHorizontal_bias="0.073"
++        app:layout_constraintHorizontal_bias="0.077"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toTopOf="@+id/imageButton3"
+-        app:layout_constraintVertical_bias="0.309" />
++        app:layout_constraintVertical_bias="0.294" />
+ 
+     <TextView
+         android:id="@+id/textView5"
+@@ -84,10 +111,10 @@
+         android:textSize="18dp"
+         app:layout_constraintBottom_toBottomOf="parent"
+         app:layout_constraintEnd_toEndOf="parent"
+-        app:layout_constraintHorizontal_bias="0.037"
++        app:layout_constraintHorizontal_bias="0.09"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toTopOf="parent"
+-        app:layout_constraintVertical_bias="0.581" />
++        app:layout_constraintVertical_bias="0.582" />
+ 
+     <TextView
+         android:id="@+id/textView9"
+@@ -126,9 +153,10 @@
+         android:textSize="18dp"
+         app:layout_constraintBottom_toBottomOf="parent"
+         app:layout_constraintEnd_toEndOf="parent"
+-        app:layout_constraintHorizontal_bias="0.051"
++        app:layout_constraintHorizontal_bias="0.079"
+         app:layout_constraintStart_toStartOf="parent"
+-        app:layout_constraintTop_toTopOf="parent" />
++        app:layout_constraintTop_toTopOf="parent"
++        app:layout_constraintVertical_bias="0.499" />
+ 
+     <TextView
+         android:id="@+id/textView7"
+@@ -139,10 +167,10 @@
+         android:textSize="18dp"
+         app:layout_constraintBottom_toBottomOf="parent"
+         app:layout_constraintEnd_toEndOf="parent"
+-        app:layout_constraintHorizontal_bias="0.057"
++        app:layout_constraintHorizontal_bias="0.088"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toTopOf="parent"
+-        app:layout_constraintVertical_bias="0.413" />
++        app:layout_constraintVertical_bias="0.41" />
+ 
+     <androidx.constraintlayout.widget.Barrier
+         android:layout_width="wrap_content"
+@@ -160,14 +188,13 @@
+ 
+     <ImageView
+         android:id="@+id/imageView6"
+-        android:layout_width="408dp"
+-        android:layout_height="73dp"
++        android:layout_width="451dp"
++        android:layout_height="106dp"
+         app:layout_constraintBottom_toBottomOf="parent"
+         app:layout_constraintEnd_toEndOf="parent"
+-        app:layout_constraintHorizontal_bias="0.333"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toTopOf="parent"
+-        app:layout_constraintVertical_bias="0.051"
++        app:layout_constraintVertical_bias="0.052"
+         app:srcCompat="@drawable/img_1" />
+ 
+     <ImageButton
+Index: app/src/main/java/com/example/apppetrobras/Ajuda.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.apppetrobras;\r\n\r\nimport androidx.appcompat.app.AppCompatActivity;\r\n\r\nimport android.os.Bundle;\r\n\r\npublic class Ajuda extends AppCompatActivity {\r\n\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.activity_ajuda);\r\n    }\r\n}
+===================================================================
+diff --git a/app/src/main/java/com/example/apppetrobras/Ajuda.java b/app/src/main/java/com/example/apppetrobras/Ajuda.java
+--- a/app/src/main/java/com/example/apppetrobras/Ajuda.java	
++++ b/app/src/main/java/com/example/apppetrobras/Ajuda.java	
+@@ -4,11 +4,17 @@
+ 
+ import android.os.Bundle;
+ 
++import com.ms.square.android.expandabletextview.ExpandableTextView;
++
+ public class Ajuda extends AppCompatActivity {
+ 
+     @Override
+     protected void onCreate(Bundle savedInstanceState) {
+         super.onCreate(savedInstanceState);
+         setContentView(R.layout.activity_ajuda);
++
++//        ExpandableTextView textView=findViewById(R.id.expand_text_view);
++//        textView.setText(getString(R.string.umText));
++
+     }
+ }
+\ No newline at end of file

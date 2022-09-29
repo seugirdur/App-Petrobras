@@ -65,7 +65,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             case  R.layout.item_soluction_list:
                 idTexto = R.id.title_soluction;
                 return new MyViewHolder(view, recyclerViewInteface, idTexto);
-
+            case R.layout.item_ajuda_list:
+                idTexto = R.id.txt1;
+                return  new MyViewHolder(view, recyclerViewInteface, idTexto);
             case R.layout.item_list:
             default:
                 idTexto = R.id.textProblema;

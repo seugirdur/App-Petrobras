@@ -83,6 +83,12 @@
 
     <string name="bemVindo">Bem Vindo!</string>
 
+    <string name="dummyText">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</string>
+
     <string name="texto_cadastr">Li e concordo com os <a href='https://github.com/seugirdur/App-petrobras'>Termos de uso</a> e <a href='https://github.com/seugirdur/App-petrobras'>Politicas de privacidade</a></string>
 
 

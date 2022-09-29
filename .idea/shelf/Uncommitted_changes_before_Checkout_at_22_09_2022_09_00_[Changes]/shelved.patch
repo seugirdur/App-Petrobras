@@ -1,0 +1,112 @@
+Index: app/src/main/res/layout/activity_perfil_rlt.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<androidx.constraintlayout.widget.ConstraintLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    tools:context=\".Perfil_rlt\">\r\n\r\n    <ImageView\r\n        android:id=\"@+id/logoHome2\"\r\n        android:layout_width=\"50dp\"\r\n        android:layout_height=\"50dp\"\r\n        android:layout_marginTop=\"16dp\"\r\n        app:layout_constraintBottom_toTopOf=\"@+id/Layoutab\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintHorizontal_bias=\"0.498\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\"\r\n        app:srcCompat=\"@drawable/ic_launcher_background\"\r\n        tools:ignore=\"SpeakableTextPresentCheck\" />\r\n\r\n    <com.google.android.material.tabs.TabLayout\r\n        android:id=\"@+id/Layoutab\"\r\n        android:layout_width=\"409dp\"\r\n        android:layout_height=\"wrap_content\"\r\n        app:layout_constraintBottom_toTopOf=\"@+id/viewPager\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintHorizontal_bias=\"1.0\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\"\r\n        app:layout_constraintVertical_bias=\"1.0\">\r\n\r\n        <com.google.android.material.tabs.TabItem\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:text=\"Tela\" />\r\n\r\n        <com.google.android.material.tabs.TabItem\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:text=\"Sobre o APP\" />\r\n    </com.google.android.material.tabs.TabLayout>\r\n\r\n    <androidx.viewpager2.widget.ViewPager2\r\n        android:id=\"@+id/viewPager\"\r\n        android:layout_width=\"409dp\"\r\n        android:layout_height=\"604dp\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintStart_toStartOf=\"parent\" />\r\n</androidx.constraintlayout.widget.ConstraintLayout>
+===================================================================
+diff --git a/app/src/main/res/layout/activity_perfil_rlt.xml b/app/src/main/res/layout/activity_perfil_rlt.xml
+--- a/app/src/main/res/layout/activity_perfil_rlt.xml	
++++ b/app/src/main/res/layout/activity_perfil_rlt.xml	
+@@ -4,20 +4,8 @@
+     xmlns:tools="http://schemas.android.com/tools"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+-    tools:context=".Perfil_rlt">
+-
+-    <ImageView
+-        android:id="@+id/logoHome2"
+-        android:layout_width="50dp"
+-        android:layout_height="50dp"
+-        android:layout_marginTop="16dp"
+-        app:layout_constraintBottom_toTopOf="@+id/Layoutab"
+-        app:layout_constraintEnd_toEndOf="parent"
+-        app:layout_constraintHorizontal_bias="0.498"
+-        app:layout_constraintStart_toStartOf="parent"
+-        app:layout_constraintTop_toTopOf="parent"
+-        app:srcCompat="@drawable/ic_launcher_background"
+-        tools:ignore="SpeakableTextPresentCheck" />
++    tools:context=".Perfil_rlt"
++    android:background="@color/white">
+ 
+     <com.google.android.material.tabs.TabLayout
+         android:id="@+id/Layoutab"
+@@ -25,7 +13,6 @@
+         android:layout_height="wrap_content"
+         app:layout_constraintBottom_toTopOf="@+id/viewPager"
+         app:layout_constraintEnd_toEndOf="parent"
+-        app:layout_constraintHorizontal_bias="1.0"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toTopOf="parent"
+         app:layout_constraintVertical_bias="1.0">
+@@ -33,7 +20,7 @@
+         <com.google.android.material.tabs.TabItem
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+-            android:text="Tela" />
++            android:text="Configurações" />
+ 
+         <com.google.android.material.tabs.TabItem
+             android:layout_width="wrap_content"
+@@ -43,9 +30,21 @@
+ 
+     <androidx.viewpager2.widget.ViewPager2
+         android:id="@+id/viewPager"
+-        android:layout_width="409dp"
+-        android:layout_height="604dp"
++        android:layout_width="392dp"
++        android:layout_height="601dp"
++        android:layout_marginBottom="4dp"
+         app:layout_constraintBottom_toBottomOf="parent"
+         app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="0.9"
+         app:layout_constraintStart_toStartOf="parent" />
++
++    <ImageView
++        android:id="@+id/imageView3"
++        android:layout_width="64dp"
++        android:layout_height="52dp"
++        app:layout_constraintBottom_toTopOf="@+id/Layoutab"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent"
++        app:srcCompat="@drawable/background" />
+ </androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+Index: app/src/main/java/com/example/apppetrobras/ViewPagerAdapter2.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.apppetrobras;\r\n\r\nimport androidx.annotation.NonNull;\r\nimport androidx.fragment.app.Fragment;\r\nimport androidx.fragment.app.FragmentActivity;\r\nimport androidx.viewpager2.adapter.FragmentStateAdapter;\r\n\r\nimport com.example.apppetrobras.fragments.EquipamentosFragment;\r\nimport com.example.apppetrobras.fragments.InicioFragment;\r\nimport com.example.apppetrobras.fragments.InternetFragment;\r\nimport com.example.apppetrobras.fragments.LentidaoFragment;\r\nimport com.example.apppetrobras.fragments.OutrosFragment;\r\n\r\npublic class ViewPagerAdapter2 extends FragmentStateAdapter {\r\n\r\n    public ViewPagerAdapter2(@NonNull FragmentActivity fragmentActivity) {\r\n        super(fragmentActivity);\r\n    }\r\n\r\n    //Retorna a tela(fragment) atual\r\n    @NonNull\r\n    @Override\r\n    public Fragment createFragment(int position) {\r\n        switch (position){\r\n            case 0:\r\n                return new InicioFragment();\r\n            case 1:\r\n                return new LentidaoFragment();\r\n            default:\r\n                return new InicioFragment();\r\n        }\r\n    }\r\n\r\n    //Retorna a quantidade de telas(fragment)\r\n    @Override\r\n    public int getItemCount() {\r\n        return 2;\r\n    }\r\n}\r\n
+===================================================================
+diff --git a/app/src/main/java/com/example/apppetrobras/ViewPagerAdapter2.java b/app/src/main/java/com/example/apppetrobras/ViewPagerAdapter2.java
+--- a/app/src/main/java/com/example/apppetrobras/ViewPagerAdapter2.java	
++++ b/app/src/main/java/com/example/apppetrobras/ViewPagerAdapter2.java	
+@@ -23,9 +23,9 @@
+     public Fragment createFragment(int position) {
+         switch (position){
+             case 0:
+-                return new InicioFragment();
++                return new TelaFragment();
+             case 1:
+-                return new LentidaoFragment();
++                return new SobreApp();
+             default:
+                 return new InicioFragment();
+         }
+Index: app/src/main/java/com/example/apppetrobras/Perfil_rlt.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.apppetrobras;\r\n\r\nimport androidx.appcompat.app.AppCompatActivity;\r\nimport androidx.viewpager.widget.ViewPager;\r\nimport androidx.viewpager2.widget.ViewPager2;\r\n\r\nimport android.os.Bundle;\r\nimport android.view.View;\r\n\r\nimport com.google.android.material.tabs.TabLayout;\r\n\r\npublic class Perfil_rlt extends AppCompatActivity {\r\n\r\n    TabLayout layoutab;\r\n    ViewPager2 viewPager2;\r\n    ViewPagerAdapter2 viewPagerAdapter2;\r\n\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.activity_perfil_rlt);\r\n\r\n        layoutab = findViewById(R.id.tab_layout);\r\n        viewPager2 = findViewById(R.id.view_pager);\r\n        viewPagerAdapter2 = new ViewPagerAdapter2(this);\r\n        viewPager2.setAdapter(viewPagerAdapter2);\r\n\r\n        layoutab.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {\r\n            @Override\r\n            public void onTabSelected(TabLayout.Tab tab) {\r\n                viewPager2.setCurrentItem(tab.getPosition());\r\n            }\r\n\r\n            @Override\r\n            public void onTabUnselected(TabLayout.Tab tab) {\r\n\r\n            }\r\n\r\n            @Override\r\n            public void onTabReselected(TabLayout.Tab tab) {\r\n\r\n            }\r\n        });\r\n\r\n        viewPager2.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {\r\n            @Override\r\n            public void onPageSelected(int position) {\r\n                super.onPageSelected(position);\r\n                layoutab.getTabAt(position).select();\r\n            }\r\n        });\r\n    }\r\n}
+===================================================================
+diff --git a/app/src/main/java/com/example/apppetrobras/Perfil_rlt.java b/app/src/main/java/com/example/apppetrobras/Perfil_rlt.java
+--- a/app/src/main/java/com/example/apppetrobras/Perfil_rlt.java	
++++ b/app/src/main/java/com/example/apppetrobras/Perfil_rlt.java	
+@@ -20,8 +20,8 @@
+         super.onCreate(savedInstanceState);
+         setContentView(R.layout.activity_perfil_rlt);
+ 
+-        layoutab = findViewById(R.id.tab_layout);
+-        viewPager2 = findViewById(R.id.view_pager);
++        layoutab = findViewById(R.id.Layoutab);
++        viewPager2 = findViewById(R.id.viewPager);
+         viewPagerAdapter2 = new ViewPagerAdapter2(this);
+         viewPager2.setAdapter(viewPagerAdapter2);
+ 

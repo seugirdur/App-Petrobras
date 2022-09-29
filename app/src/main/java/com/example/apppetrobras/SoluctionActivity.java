@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.example.apppetrobras.api.RetroFitClient;
 
 import java.util.List;
@@ -131,8 +132,14 @@ public class SoluctionActivity extends AppCompatActivity {
         String descricaoBD = soluctionsList.get(idPasso-1).getTexto();
         descSolucao.setText(descricaoBD);
 
-//        //Imagens ainda não selecionadas
-//        imagemSolucao = findViewById(R.id.imagemSolucao);
-//        imagemSolucao.setImageResource();
+        imagemSolucao = findViewById(R.id.imagemSolucao);
+        // idPasso começa em 0, preciso somar 1 a ele para se adequar ao BD
+//        String imagemBD = soluctionsList.get(idPasso-1).getUrl();
+        String imagemBD = "";
+        Glide.with(this)
+                .load(imagemBD)
+                .placeholder(R.drawable.ic_image_search)
+                .error(R.drawable.ic_error)
+                .into(imagemSolucao);
     }
 }

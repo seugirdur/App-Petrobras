@@ -195,7 +195,7 @@
             app:layout_constraintStart_toStartOf="@id/second_layout"
             android:background="?android:attr/selectableItemBackground"
             android:layout_marginLeft="5dp"
-            />
+            android:onClick="proxPasso" />
 
            <ImageView
                 android:id="@+id/btnResolveu"
@@ -207,8 +207,7 @@
                 android:clickable="true"
                 android:src="@drawable/ic_check_circle"
                 android:background="@drawable/ripple_effect_soluction"
-                android:onClick="btnCheck"
-                />
+                android:onClick="rtrnPasso" />
 
             <ImageView
                 android:id="@+id/btnNaoResolveu"
@@ -219,8 +218,7 @@
                 android:layout_marginTop="50dp"
                 android:clickable="true"
                 android:background="@drawable/ripple_effect_soluction"
-                app:srcCompat="@drawable/ic_cancel_circle"
-                android:onClick="btnCancel"/>
+                app:srcCompat="@drawable/ic_cancel_circle"/>
 
       <!--  <ImageButton
             android:id="@+id/btnResolveu"

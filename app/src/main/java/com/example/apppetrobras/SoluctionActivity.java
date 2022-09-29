@@ -105,14 +105,14 @@ public class SoluctionActivity extends AppCompatActivity {
 
     }
 
-    public void btnCancel(View view){
+    public void proxPasso(View view){
         if (idPasso > 1) {
             idPasso-=1;
             inserirNaTela();
         }
     }
 
-    public void btnCheck(View view){
+    public void rtrnPasso(View view){
         // verifica se há mais um passo então atualiza as informações na tela:
         if (idPasso < qtdPassos) {
             idPasso+=1;

@@ -40,7 +40,7 @@ public class Tela_de_escolha extends AppCompatActivity {
 
     //redirecionamento para ajuda
     public void ajuda(View view){
-        Intent intent = new Intent(this, Ajuda.class);
+        Intent intent = new Intent(this, AjudaeSuporte.class);
         startActivity(intent);
 
     }

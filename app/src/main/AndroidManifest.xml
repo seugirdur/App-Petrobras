@@ -64,9 +64,6 @@
             android:name=".Tela_de_escolha"
             android:exported="false" />
         <activity
-            android:name=".Ajuda"
-            android:exported="false" />
-        <activity
             android:name=".MainActivity"
             android:exported="false" />
         <activity

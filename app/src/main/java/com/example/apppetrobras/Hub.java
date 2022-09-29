@@ -51,7 +51,7 @@ public class Hub extends AppCompatActivity {
     }
 
     public void rediriciona6(View view){
-        Intent intent = new Intent(Hub.this, Ajuda.class);
+        Intent intent = new Intent(Hub.this, AjudaeSuporte.class);
         startActivity(intent);
         finish();
     }

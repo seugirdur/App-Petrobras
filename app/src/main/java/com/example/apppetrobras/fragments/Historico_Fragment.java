@@ -1,4 +1,4 @@
-package com.example.apppetrobras;
+package com.example.apppetrobras.fragments;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -21,6 +21,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
+import com.example.apppetrobras.DadosLista;
+import com.example.apppetrobras.R;
+import com.example.apppetrobras.RecyclerViewAdapter;
+import com.example.apppetrobras.Tela_de_escolha;
 import com.example.apppetrobras.fragments.RecyclerViewInteface;
 
 import java.util.ArrayList;

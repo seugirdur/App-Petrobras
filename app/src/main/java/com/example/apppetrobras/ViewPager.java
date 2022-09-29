@@ -5,11 +5,9 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-import com.example.apppetrobras.fragments.EquipamentosFragment;
-import com.example.apppetrobras.fragments.InicioFragment;
-import com.example.apppetrobras.fragments.InternetFragment;
-import com.example.apppetrobras.fragments.LentidaoFragment;
-import com.example.apppetrobras.fragments.OutrosFragment;
+import com.example.apppetrobras.fragments.Ajuda_fragment;
+import com.example.apppetrobras.fragments.Historico_Fragment;
+import com.example.apppetrobras.fragments.Opcoes_Fragment;
 
 public class ViewPager extends FragmentStateAdapter {
 

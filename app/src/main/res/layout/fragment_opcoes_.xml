@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Opcoes_Fragment">
+    tools:context=".fragments.Opcoes_Fragment">
 
     <ImageView
         android:id="@+id/imageView4"

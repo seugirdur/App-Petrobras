@@ -40,8 +40,6 @@ public class ProblemActivity extends DrawerBaseActivity implements RecyclerViewI
         titulo = getIntent().getStringExtra("titulo");
         titulosProblemas = getIntent().getStringExtra("titulosProblemas");
 
-
-        Toast.makeText(this, titulosProblemas, Toast.LENGTH_SHORT).show();
         recyclerview = findViewById(R.id.recyclerview);
         recyclerview.setLayoutManager(new LinearLayoutManager(this));
         recyclerview.setHasFixedSize(true);

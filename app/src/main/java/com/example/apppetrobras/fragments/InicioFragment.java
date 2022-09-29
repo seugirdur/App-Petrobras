@@ -87,13 +87,19 @@ public class InicioFragment extends Fragment implements RecyclerViewInteface{
 
     @Override
     public void onItemClick(int position) {
+        //criação da string para armazenamento no banco
+        // Esse valor é temporário. Ainda não foi definido o funcionamento da aba 1(Inicio)
+        String titulo = "Lentidão";
+
         // Redirecionamento para a tela do problema contendo os títulos das soluções
         Intent intent = new Intent(getActivity(), ProblemActivity.class);
 
         // Definição de valores que serão redirecionados
         // Valor do tipo é temporário. Ainda não foi definido o funcionamento da aba 1(Inicio)
         intent.putExtra("TIPO",1);
+        intent.putExtra("titulo",titulo);
         intent.putExtra("ID_TITULO", dataArrayList.get(position).getId());
+        intent.putExtra("titulosProblemas", dataArrayList.get(position).getText());
         startActivity(intent);
     }
 }

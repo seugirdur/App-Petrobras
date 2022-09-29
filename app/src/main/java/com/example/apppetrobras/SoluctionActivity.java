@@ -49,7 +49,7 @@ public class SoluctionActivity extends AppCompatActivity {
         tituloSolucao = getIntent().getStringExtra("TITULO_SOLUCAO");
         titulo = getIntent().getStringExtra("titulo");
 
-        Toast.makeText(this, idTitulo, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, ""+idTitulo, Toast.LENGTH_SHORT).show();
         String concatenar = Integer.toString(idTitulo) + Integer.toString(idSolucao);
         int numerojunto = Integer.parseInt(concatenar);
 
@@ -138,7 +138,6 @@ public class SoluctionActivity extends AppCompatActivity {
         String imagemBD = "";
         Glide.with(this)
                 .load(imagemBD)
-                .placeholder(R.drawable.ic_image_search)
                 .error(R.drawable.ic_error)
                 .into(imagemSolucao);
     }

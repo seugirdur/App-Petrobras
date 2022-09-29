@@ -73,7 +73,7 @@ import com.google.android.material.navigation.NavigationView;
 
 
                 case R.id.configuracoes:
-                    startActivity(new Intent(this, Configuracoes.class));
+                    startActivity(new Intent(this, arrastaprolado.class));
                     overridePendingTransition(0, 0);
                     break;
 

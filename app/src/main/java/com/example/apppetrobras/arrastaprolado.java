@@ -4,6 +4,8 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
 
+import com.example.apppetrobras.databinding.ActivityArrastaproladoBinding;
+import com.example.apppetrobras.databinding.ActivityTabBinding;
 import com.google.android.material.tabs.TabLayout;
 
 public class arrastaprolado extends DrawerBaseActivity {
@@ -12,11 +14,14 @@ public class arrastaprolado extends DrawerBaseActivity {
     TabLayout tabLayout;
     ViewPager2 viewPager2;
     ViewPager viewPager;
+    ActivityArrastaproladoBinding activityArrastaproladoBinding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_arrastaprolado);
+        activityArrastaproladoBinding = ActivityArrastaproladoBinding.inflate(getLayoutInflater());
+        setContentView(activityArrastaproladoBinding.getRoot());
+        allocateActivityTitle("Configurações for real");
 
         // Navigation Drawer
         //activityTabBinding = ActivityTabBinding.inflate(getLayoutInflater());

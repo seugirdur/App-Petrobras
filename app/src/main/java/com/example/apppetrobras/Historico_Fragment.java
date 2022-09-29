@@ -27,7 +27,7 @@ import java.util.ArrayList;
 
 public class Historico_Fragment extends Fragment implements RecyclerViewInteface {
 
-    private ArrayList<DadosLista> dataArrayList4, dataArrayList5;
+    private ArrayList<DadosLista> dataArrayList;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -39,37 +39,23 @@ public class Historico_Fragment extends Fragment implements RecyclerViewInteface
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        dataInitialize1();
+        dataInitialize();
 
         // Essa variável recebe (por meio do id) a reciclerView no xml dessa tela
-        RecyclerView recyclerview4 = view.findViewById(R.id.recyclerviewhst);
-        recyclerview4.setLayoutManager(new LinearLayoutManager(getContext()));
-        recyclerview4.setHasFixedSize(true);
+        RecyclerView recyclerview = view.findViewById(R.id.recyclerviewhst);
+        recyclerview.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerview.setHasFixedSize(true);
         // Aqui há uma instância da RecyclerViewAdapter utilizando o construtor adequado:
         // RecyclerViewAdapter(Context, Lista<Objeto>, RecyclerViewInterface, layout do item)
-        RecyclerViewAdapter recyclerViewAdapter1 = new RecyclerViewAdapter(getContext(),
-                dataArrayList4, this, R.layout.item_historico);
-        recyclerview4.setAdapter(recyclerViewAdapter1);
-
-//        dataInitialize2();
-//
-//        // Essa variável recebe (por meio do id) a reciclerView no xml dessa tela
-//        RecyclerView recyclerview5 = view.findViewById(R.id.recyclerviewhst);
-//        recyclerview5.setLayoutManager(new LinearLayoutManager(getContext()));
-//        recyclerview5.setHasFixedSize(true);
-//        // Aqui há uma instância da RecyclerViewAdapter utilizando o construtor adequado:
-//        // RecyclerViewAdapter(Context, Lista<Objeto>, RecyclerViewInterface, layout do item)
-//        RecyclerViewAdapter recyclerViewAdapter2 = new RecyclerViewAdapter(getContext(),
-//                dataArrayList5, this, R.layout.item_historico);
-//        recyclerview5.setAdapter(recyclerViewAdapter2);
-
-        //recyclerViewAdapter.notifyDataSetChanged();
+        RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(getContext(),
+                dataArrayList, this, R.layout.item_historico);
+        recyclerview.setAdapter(recyclerViewAdapter);
     }
 
     // Função para popular a lista usada na recyclerView
-    private void dataInitialize1() {
+    private void dataInitialize() {
 
-        dataArrayList4 = new ArrayList<>();
+        dataArrayList = new ArrayList<>();
 
         String[] titulosProblemas = new String[]{
                 "Relatório do dia --/--/----",
@@ -90,24 +76,9 @@ public class Historico_Fragment extends Fragment implements RecyclerViewInteface
 
         for(int i = 0; i < titulosProblemas.length; i++){
             DadosLista data = new DadosLista(titulosProblemas[i]);
-            dataArrayList4.add(data);
+            dataArrayList.add(data);
         }
     }
-
-//    private void dataInitialize2() {
-//
-//        dataArrayList5 = new ArrayList<>();
-//
-//        String[] titulosProblemas = new String[]{
-//                "Relatório do dia --/--/----",
-//                "Relatório do dia --/--/----"
-//        };
-//
-//        for(int i = 0; i < titulosProblemas.length; i++){
-//            DadosLista data = new DadosLista(titulosProblemas[i]);
-//            dataArrayList5.add(data);
-//        }
-//    }
 
     @Override
     public void onItemClick(int position) {
@@ -116,7 +87,7 @@ public class Historico_Fragment extends Fragment implements RecyclerViewInteface
 
         // Definição de valores que serão redirecionados
         intent.putExtra("TIPO",3);
-        intent.putExtra("ID_TITULO", dataArrayList4.get(position).getId());
+        intent.putExtra("ID_TITULO", dataArrayList.get(position).getId());
         startActivity(intent);
     }
 

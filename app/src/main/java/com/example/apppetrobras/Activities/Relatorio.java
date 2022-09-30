@@ -38,7 +38,7 @@ import retrofit2.Response;
 
 
 
-public class RelatorioProcesso extends AppCompatActivity implements RecyclerViewInteface{
+public class Relatorio extends AppCompatActivity implements RecyclerViewInteface{
 
     private RecyclerView recyclerview;
     private String checking;
@@ -58,7 +58,7 @@ public class RelatorioProcesso extends AppCompatActivity implements RecyclerView
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_relatorio_processo);
+        setContentView(R.layout.layout_relatorio);
 
         add_icon = (FloatingActionButton) findViewById(R.id.add_icon);
         download_icon = (FloatingActionButton) findViewById(R.id.download_icon);
@@ -91,7 +91,7 @@ public class RelatorioProcesso extends AppCompatActivity implements RecyclerView
             @Override
             public void onClick(View view) {
                 animateFab();
-                Toast.makeText(RelatorioProcesso.this, "download clicked", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Relatorio.this, "download clicked", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -126,7 +126,7 @@ public class RelatorioProcesso extends AppCompatActivity implements RecyclerView
             @Override
             public void onResponse(Call<List<RelatorioObj>> call, Response<List<RelatorioObj>> response) {
                 if (!response.isSuccessful()){
-                    Toast.makeText(RelatorioProcesso.this, response.code(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Relatorio.this, response.code(), Toast.LENGTH_SHORT).show();
                     return;
                 }
 
@@ -180,7 +180,7 @@ public class RelatorioProcesso extends AppCompatActivity implements RecyclerView
                     @Override
                     public void onResponse(Call<List<SolucoesObj>> call, Response<List<SolucoesObj>> response) {
                         if (!response.isSuccessful()){
-                            Toast.makeText(RelatorioProcesso.this, response.code(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Relatorio.this, response.code(), Toast.LENGTH_SHORT).show();
                             return;
                         }
 
@@ -203,7 +203,7 @@ public class RelatorioProcesso extends AppCompatActivity implements RecyclerView
                         }
                         //configuração da recyclerview
                         recyclerview = findViewById(R.id.recicle);
-                        RecyclerViewAdapter adapter = new RecyclerViewAdapter(items);
+                        RelatorioAdapter adapter = new RelatorioAdapter(items);
                         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
                         recyclerview.setLayoutManager(layoutManager);
                         recyclerview.setAdapter(adapter);

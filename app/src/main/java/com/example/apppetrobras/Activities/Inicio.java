@@ -19,7 +19,7 @@ public class Inicio extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.inicio_layout);
+        setContentView(R.layout.layout_inicio);
 
         button2 = findViewById(R.id.button2);
 

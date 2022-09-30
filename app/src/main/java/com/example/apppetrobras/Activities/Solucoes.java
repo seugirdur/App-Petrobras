@@ -35,7 +35,7 @@ public class Solucoes extends Drawer implements RecyclerViewInteface {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.solucoes_layout);
+        setContentView(R.layout.layout_solucoes);
 
         tipoProblema = getIntent().getIntExtra("TIPO", 1);
         idTitulo = getIntent().getIntExtra("ID_TITULO",1);

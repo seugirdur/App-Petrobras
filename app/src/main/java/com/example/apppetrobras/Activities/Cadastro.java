@@ -41,7 +41,7 @@ public class Cadastro extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.cadastro_layout);
+        setContentView(R.layout.layout_cadastro);
 
 
         CheckBox textView = findViewById(R.id.aceitoTermos);

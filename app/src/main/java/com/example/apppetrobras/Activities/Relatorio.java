@@ -16,7 +16,7 @@ import com.example.apppetrobras.Objects.RelatorioObj;
 import com.example.Navigations.Drawer;
 import com.example.apppetrobras.R;
 import com.example.apppetrobras.api.RetroFitClient;
-import com.example.apppetrobras.databinding.RelatorioLayoutBinding;
+import com.example.apppetrobras.databinding.LayoutRelatorioBinding;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
@@ -32,14 +32,14 @@ public class Relatorio extends Drawer {
     Dialog mDialog;
     SharedPreferences sp;
     SharedPreferences.Editor editor;
-    RelatorioLayoutBinding relatorioLayoutBinding;
+    LayoutRelatorioBinding relatorioLayoutBinding;
 
     boolean isOpen = false; // by default it is false
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        relatorioLayoutBinding = RelatorioLayoutBinding.inflate(getLayoutInflater());
+        relatorioLayoutBinding = LayoutRelatorioBinding.inflate(getLayoutInflater());
         setContentView(relatorioLayoutBinding.getRoot());
         allocateActivityTitle("Histórico");
 

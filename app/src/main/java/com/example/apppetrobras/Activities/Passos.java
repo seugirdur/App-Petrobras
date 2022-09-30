@@ -38,7 +38,7 @@ public class Passos extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.passos_layout);
+        setContentView(R.layout.layout_passos);
 
         tipoProblema = getIntent().getIntExtra("TIPO", 1);
         idTitulo = getIntent().getIntExtra("ID_TITULO",1);

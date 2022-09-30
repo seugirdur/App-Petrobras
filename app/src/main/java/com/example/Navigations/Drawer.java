@@ -27,7 +27,7 @@ import com.google.android.material.navigation.NavigationView;
 
         @Override
         public void setContentView(View view) {
-            drawerLayout = (DrawerLayout) getLayoutInflater().inflate(R.layout.activity_drawer_base, null);
+            drawerLayout = (DrawerLayout) getLayoutInflater().inflate(R.layout.layout_drawer, null);
             FrameLayout container = drawerLayout.findViewById(R.id.activityContainer);
             container.addView(view);
             super.setContentView(drawerLayout);

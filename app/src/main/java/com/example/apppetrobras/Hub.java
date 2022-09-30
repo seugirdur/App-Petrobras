@@ -22,7 +22,7 @@ public class Hub extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_hub);
+        setContentView(R.layout.layout_hub);
     }
 
     public void rediriciona0(View view){

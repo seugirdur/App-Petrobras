@@ -14,7 +14,7 @@ public class SplashScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.splashscreen_layout);
+        setContentView(R.layout.layout_splashscreen);
 
         // Delay = Tempo de tela da Splash Screen
         //teste

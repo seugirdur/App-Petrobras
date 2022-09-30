@@ -18,8 +18,8 @@
         android:layout_height="match_parent"
         android:fitsSystemWindows="true"
         android:layout_gravity="start"
-        app:headerLayout="@layout/main_drawer_header"
-        app:menu="@menu/main_drawer_menu"/>
+        app:headerLayout="@layout/drawer_header"
+        app:menu="@menu/menu"/>
 
 
 

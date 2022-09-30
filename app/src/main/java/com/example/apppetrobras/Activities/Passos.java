@@ -219,8 +219,14 @@ public class Passos extends Drawer {
             }
         }
 
-        // Redirecionamento para a tela de "parabéns" e adição dos dados no relatório
+        // Adição de um relatório no Banco de Dados
 
+
+
+
+        // Redirecionamento para a tela de "parabéns"
+        //temporario:
+        Intent intent = new Intent(Passos.this, Inicio.class);
 
     }
 

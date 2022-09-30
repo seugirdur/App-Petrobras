@@ -17,6 +17,10 @@
             android:title="Configurações"
             android:icon="@drawable/ic_settings"/>
 
+        <item android:id="@+id/perfil"
+            android:title="Perfil"
+            android:icon="@drawable/ic_foto_perfil"/>
+
         <item android:id="@+id/ajuda_suporte"
             android:title="Ajuda e Suporte"
             android:icon="@drawable/ic_question"/>

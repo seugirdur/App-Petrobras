@@ -5,8 +5,7 @@ import androidx.viewpager2.widget.ViewPager2;
 import android.os.Bundle;
 
 import com.example.apppetrobras.R;
-import com.example.apppetrobras.ViewPager;
-import com.example.apppetrobras.databinding.ActivityConfiguracoesBinding;
+import com.example.apppetrobras.Adapters.ViewPager;
 import com.google.android.material.tabs.TabLayout;
 
 public class Configuracoes extends Drawer {
@@ -15,14 +14,16 @@ public class Configuracoes extends Drawer {
     TabLayout tabLayout;
     ViewPager2 viewPager2;
     ViewPager viewPager;
-    ActivityConfiguracoesBinding activityConfiguracoesBinding;
+    //ActivityConfiguracoesBinding activityConfiguracoesBinding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        activityConfiguracoesBinding = ActivityConfiguracoesBinding.inflate(getLayoutInflater());
-        setContentView(activityConfiguracoesBinding.getRoot());
-        allocateActivityTitle("Configurações do Usuário");
+        //activityConfiguracoesBinding = ActivityConfiguracoesBinding.inflate(getLayoutInflater());
+        //setContentView(activityConfiguracoesBinding.getRoot());
+        //allocateActivityTitle("Configurações do Usuário");
+        setContentView(R.layout.activity_configuracoes);
+
 
         // Navigation Drawer
         //activityTabBinding = ActivityTabBinding.inflate(getLayoutInflater());

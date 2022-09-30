@@ -17,6 +17,7 @@ import com.example.apppetrobras.Objects.PassosObj;
 import com.example.apppetrobras.api.RetroFitClient;
 import com.example.apppetrobras.databinding.LayoutPassosBinding;
 
+
 import java.util.List;
 
 import retrofit2.Call;
@@ -49,8 +50,16 @@ public class Passos extends Drawer {
         setContentView(layoutPassosBinding.getRoot());
         allocateActivityTitle("Menu Principal");
 
+        // Criação de variáveis para se referenciar aos intens do layout
+        nomeSolucao = findViewById(R.id.nomeSolucao);
+        nomeSolucao.setSelected(true);
+        nomeSolucao.setEllipsize(TextUtils.TruncateAt.MARQUEE);
+        nomeSolucao.setSingleLine(true);
+        numeroPasso = findViewById(R.id.numeroPasso);
+        descSolucao = findViewById(R.id.descricaoPasso);
+        imagemSolucao = findViewById(R.id.imagemSolucao);
 
-
+        // Requisição dos dados passados durante o intent
         tipoProblema = getIntent().getIntExtra("TIPO", 1);
         idTitulo = getIntent().getIntExtra("ID_TITULO",1);
         idSolucao = getIntent().getIntExtra("ID_SOLUCAO",1);
@@ -129,22 +138,15 @@ public class Passos extends Drawer {
 
     public void inserirNaTela(){
         // Inserção dos Valores na tela
-        nomeSolucao = findViewById(R.id.nomeSolucao);
+
         nomeSolucao.setText(tituloSolucao);
 
-        nomeSolucao.setSelected(true);
-        nomeSolucao.setEllipsize(TextUtils.TruncateAt.MARQUEE);
-        nomeSolucao.setSingleLine(true);
-
-        numeroPasso = findViewById(R.id.numeroPasso);
         numeroPasso.setText("Passo: "+idPasso);
 
-        descSolucao = findViewById(R.id.descricaoPasso);
         // idPasso começa em 0, preciso somar 1 a ele para se adequar ao BD
         String descricaoBD = passosObjList.get(idPasso-1).getTexto();
         descSolucao.setText(descricaoBD);
 
-        imagemSolucao = findViewById(R.id.imagemSolucao);
         // idPasso começa em 0, preciso somar 1 a ele para se adequar ao BD
 //        String imagemBD = soluctionsList.get(idPasso-1).getUrl();
         String imagemBD = "";

@@ -48,8 +48,6 @@ public class Solucoes extends Drawer implements RecyclerViewInteface {
         titulosProblemas = getIntent().getStringExtra("titulosProblemas");
         check = getIntent().getStringExtra("CHECK");
 
-
-
         recyclerview = findViewById(R.id.recyclerview);
         recyclerview.setLayoutManager(new LinearLayoutManager(this));
         recyclerview.setHasFixedSize(true);
@@ -99,11 +97,16 @@ public class Solucoes extends Drawer implements RecyclerViewInteface {
                         solucoesObjList, recyclerViewInteface, R.layout.item_soluction_list );
                 recyclerview.setAdapter(recyclerViewAdapter);
                 recyclerViewAdapter.notifyDataSetChanged();
-                //Toast.makeText(context, "item: "+idTitulo, Toast.LENGTH_SHORT).show();
 
                 qtdSolucoes = solucoesObjList.size();
 
-
+                if(check == null){
+                    check = "";
+                    for (int i = 0; i < qtdSolucoes; i++) {
+                        check += "0";
+                    }
+                }
+                Toast.makeText(context, ""+check, Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -123,11 +126,6 @@ public class Solucoes extends Drawer implements RecyclerViewInteface {
         // Insere na variável o titulo da solução clickada
         String tituloSolucao = solucoesObjList.get(position).getTituloSolucao();
 
-        if(check == "0") {
-            check = "";
-            for (int i = 0; i < qtdSolucoes; i++) { check += "0"; }
-        }
-
         // Definição de valores que serão redirecionados
         intent.putExtra("TIPO",tipoProblema);
         intent.putExtra("ID_TITULO", idTitulo);
@@ -135,12 +133,11 @@ public class Solucoes extends Drawer implements RecyclerViewInteface {
 
         // position começa em 0, para condizer ao BD é necessário adicionar 1 a ele
         intent.putExtra("ID_SOLUCAO", position+1);
-        //todas as soluções começam pelo primeiro passo
-        intent.putExtra("PASSO", 1);
         intent.putExtra("TITULO_SOLUCAO", tituloSolucao);
 
-        intent.putExtra("QTD_SOLUCOES",qtdSolucoes);
         intent.putExtra("CHECK",check);
+
+        intent.putExtra("titulosProblemas",titulosProblemas);
         startActivity(intent);
     }
 

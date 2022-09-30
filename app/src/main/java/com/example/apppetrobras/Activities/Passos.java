@@ -1,7 +1,5 @@
 package com.example.apppetrobras.Activities;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -20,6 +18,7 @@ import com.example.apppetrobras.databinding.LayoutPassosBinding;
 
 
 import java.util.List;
+import java.util.Objects;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -28,8 +27,8 @@ import retrofit2.Response;
 public class Passos extends Drawer {
 
     // Declaração das variáveis
-    int idTitulo, idSolucao, tipoProblema, idPasso, qtdPassos, estadoCheck;
-    String tituloSolucao, titulo, check;
+    int idTitulo, idSolucao, idPasso, tipoProblema, qtdPassos;
+    String tituloSolucao, titulo, check, titulosProblemas;
 
     Context context;
 
@@ -41,9 +40,6 @@ public class Passos extends Drawer {
     Call<List<PassosObj>> call;
 
     LayoutPassosBinding layoutPassosBinding;
-
-
-    int qtdSolucoes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,18 +62,18 @@ public class Passos extends Drawer {
         tipoProblema = getIntent().getIntExtra("TIPO", 1);
         idTitulo = getIntent().getIntExtra("ID_TITULO",1);
         idSolucao = getIntent().getIntExtra("ID_SOLUCAO",1);
-        idPasso = getIntent().getIntExtra("PASSO",1);
         tituloSolucao = getIntent().getStringExtra("TITULO_SOLUCAO");
         titulo = getIntent().getStringExtra("titulo");
         check = getIntent().getStringExtra("CHECK");
-        qtdSolucoes = getIntent().getIntExtra("QTD_SOLUCOES",1);
+        titulosProblemas = getIntent().getStringExtra("titulosProblemas");
 
-//        Toast.makeText(context, ""+check, Toast.LENGTH_SHORT).show();
-
+        // Instanciação de variáveis chave
+        context = this;
+        idPasso = 1;
         String concatenar = Integer.toString(idTitulo) + Integer.toString(idSolucao);
         int numerojunto = Integer.parseInt(concatenar);
 
-        context = this;
+
 
         switch (tipoProblema){
             case 1:
@@ -106,6 +102,8 @@ public class Passos extends Drawer {
                         .getTextoOutros(numerojunto, idPasso);
                 break;
         }
+
+
 
         call.enqueue(new Callback<List<PassosObj>>() {
             @Override
@@ -165,67 +163,77 @@ public class Passos extends Drawer {
     }
 
     public void solucionado(View v){
-        trataCheck(2);
+       trataCheck(2);
        Toast.makeText(context, ""+check, Toast.LENGTH_SHORT).show();
+       mudarTela();
     }
 
     public void naoSolucionado(View v){
-        Toast.makeText(context,  trataCheck(1), Toast.LENGTH_SHORT).show();
+        trataCheck(1);
+        Toast.makeText(context, ""+check , Toast.LENGTH_SHORT).show();
+        mudarTela();
     }
 
     public void semAcesso(View v) {
         trataCheck(3);
         Toast.makeText(context, ""+check, Toast.LENGTH_SHORT).show();
+        mudarTela();
     }
 
 
 
-    public String trataCheck(int _estadoCheck){
-        String checkTemporario = "";
+    public void trataCheck(int _estadoCheck){
+        String holder = "";
 
-        // Cria a
-        for (int i = 0; i < qtdSolucoes; i++){
+        for (int i = 0; i < check.length(); i++){
             if (i != idSolucao-1){
-                checkTemporario += check.substring(i,i);
+                holder += check.charAt(i);
             }
             else{
-                checkTemporario += _estadoCheck;
+                holder += _estadoCheck;
             }
         }
 
-        check = checkTemporario;
-
-        return check;
+        check = holder;
     }
 
-//    public void intent(){
-//        // Redirecionamento para a tela do problema contendo os títulos das soluções
-//        Intent intent = new Intent(Passos.this, Solucoes.class);
-//
-//        // Insere na variável o titulo da solução clickada
-//        String tituloSolucao = solucoesObjList.get(position).getTituloSolucao();
-//
-//
-//        // Definição de valores que serão redirecionados
-//        intent.putExtra("TIPO",tipoProblema);
-//        intent.putExtra("ID_TITULO", idTitulo);
-//        intent.putExtra("titulo", titulo);
-//
-//        // position começa em 0, para condizer ao BD é necessário adicionar 1 a ele
-//        intent.putExtra("ID_SOLUCAO", position+1);
-//        //todas as soluções começam pelo primeiro passo
-//        intent.putExtra("PASSO", 1);
-//        intent.putExtra("TITULO_SOLUCAO", tituloSolucao);
-//
-//        intent.putExtra("QTD_SOLUCOES",qtdSolucoes);
-//        startActivity(intent);
-//
-//
-//
-//        tipoProblema = getIntent().getIntExtra("TIPO", 1);
-//        idTitulo = getIntent().getIntExtra("ID_TITULO",1);
-//        titulo = getIntent().getStringExtra("titulo");
-//        titulosProblemas = getIntent().getStringExtra("titulosProblemas");
-//        check = getIntent().getStringExtra("CHECK");
-//    }
+    public void mudarTela(){
+        if (check.contains("0")){
+            retornarParaSolucoes();
+        }
+        else {
+            finalizarSolucao();
+        }
+    }
+
+    private void finalizarSolucao() {
+
+        // Trata a checagem interna para ser enviada ao Banco de Dados (substitui o 3 por 0)
+        String holder = "";
+        for (int i = 0; i < check.length(); i++){
+            if (check.charAt(i) == '3'){
+                holder += "0";
+            }
+            else {
+                holder += check.charAt(i);
+            }
+        }
+
+        // Redirecionamento para a tela de "parabéns" e adição dos dados no relatório
+
+
+    }
+
+    public void retornarParaSolucoes(){
+        // Redirecionamento para a tela do problema contendo os títulos das soluções
+        Intent intent = new Intent(Passos.this, Solucoes.class);
+
+        // Definição de valores que serão redirecionados
+        intent.putExtra("TIPO",tipoProblema);
+        intent.putExtra("ID_TITULO", idTitulo);
+        intent.putExtra("titulo", titulo);
+        intent.putExtra("CHECK",check);
+        intent.putExtra("titulosProblemas",titulosProblemas);
+        startActivity(intent);
+    }
 }

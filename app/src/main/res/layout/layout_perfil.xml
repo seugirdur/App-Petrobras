@@ -9,217 +9,250 @@
     <View
         android:id="@+id/view2"
         android:layout_width="358dp"
-        android:layout_height="0dp"
+        android:layout_height="688dp"
+        android:layout_marginTop="24dp"
         android:background="@drawable/view_tela_login"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tit_perfil"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:layout_editor_absoluteX="26dp" />
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tit_perfil"
+        tools:ignore="MissingConstraints" />
 
     <ImageView
-        android:id="@+id/perfilmaior"
+        android:id="@+id/imageView3"
         android:layout_width="149dp"
         android:layout_height="156dp"
+        android:layout_marginStart="104dp"
+        android:layout_marginEnd="105dp"
         android:foregroundGravity="center"
         app:layout_constraintEnd_toEndOf="@+id/view2"
-        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="@+id/view2"
         app:layout_constraintTop_toTopOf="@+id/view2"
         app:srcCompat="@drawable/ic_foto_perfil"
         tools:ignore="MissingConstraints" />
 
     <ImageView
-        android:id="@+id/perfilmenor"
+        android:id="@+id/imageView5"
         android:layout_width="75dp"
         android:layout_height="50dp"
-        app:srcCompat="@drawable/ic_baseline_account_circle_24"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="39dp"
-        tools:layout_editor_absoluteY="320dp" />
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="281dp"
+        app:layout_constraintEnd_toEndOf="@+id/view2"
+        app:layout_constraintStart_toStartOf="@+id/view2"
+        app:layout_constraintTop_toBottomOf="@+id/imageView7"
+        app:srcCompat="@drawable/ic_baseline_email_24"
+        tools:ignore="MissingConstraints" />
 
     <ImageView
-        android:id="@+id/tel"
+        android:id="@+id/imageView4"
         android:layout_width="75dp"
         android:layout_height="50dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="222dp"
+        android:layout_marginEnd="281dp"
+        app:layout_constraintEnd_toEndOf="@+id/view2"
+        app:layout_constraintStart_toStartOf="@+id/view2"
+        app:layout_constraintTop_toTopOf="@+id/view2"
+        app:srcCompat="@drawable/ic_baseline_account_circle_24"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="75dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="281dp"
+        app:layout_constraintEnd_toEndOf="@+id/view2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/view2"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4"
         app:srcCompat="@drawable/ic_baseline_call_preto"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="39dp"
-        tools:layout_editor_absoluteY="386dp" />
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/num_chave"
-        android:layout_width="0dp"
+        android:layout_width="240dp"
         android:layout_height="25dp"
-        android:layout_marginEnd="42dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginEnd="26dp"
         android:text="Chave"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/regisfun"
+        app:layout_constraintEnd_toEndOf="@+id/view2"
+        app:layout_constraintStart_toStartOf="@+id/view2"
         app:layout_constraintTop_toBottomOf="@+id/editText4"
         tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/editText4"
-        android:layout_width="0dp"
+        android:layout_width="240dp"
         android:layout_height="25dp"
-        android:layout_marginEnd="42dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="26dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Registro do Funcionário"
         android:textColor="@color/black"
         android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/regisfun"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="526dp" />
+        app:layout_constraintEnd_toEndOf="@+id/view2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/view2"
+        app:layout_constraintTop_toBottomOf="@+id/email"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/email"
-        android:layout_width="0dp"
+        android:layout_width="240dp"
         android:layout_height="25dp"
-        android:layout_marginEnd="42dp"
+        android:layout_marginStart="93dp"
+        android:layout_marginEnd="25dp"
         android:text="E-Mail"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/iconeemail"
+        app:layout_constraintEnd_toEndOf="@+id/view2"
+        app:layout_constraintStart_toStartOf="@+id/view2"
         app:layout_constraintTop_toBottomOf="@+id/editText3"
         tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/editText3"
-        android:layout_width="0dp"
+        android:layout_width="240dp"
         android:layout_height="25dp"
-        android:layout_marginEnd="42dp"
+        android:layout_marginStart="93dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="25dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="E-Mail"
         android:textColor="@color/black"
         android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/iconeemail"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="460dp" />
+        app:layout_constraintEnd_toEndOf="@+id/view2"
+        app:layout_constraintStart_toStartOf="@+id/view2"
+        app:layout_constraintTop_toBottomOf="@+id/num_tel"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/num_tel"
-        android:layout_width="0dp"
+        android:layout_width="240dp"
         android:layout_height="25dp"
-        android:layout_marginEnd="42dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginEnd="26dp"
         android:text="Número de Telefone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tel"
+        app:layout_constraintEnd_toEndOf="@+id/view2"
+        app:layout_constraintStart_toStartOf="@+id/view2"
         app:layout_constraintTop_toBottomOf="@+id/editText2"
         tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/editText2"
-        android:layout_width="0dp"
+        android:layout_width="240dp"
         android:layout_height="25dp"
-        android:layout_marginEnd="42dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="26dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Telefone"
         android:textColor="@color/black"
         android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tel"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="386dp" />
+        app:layout_constraintEnd_toEndOf="@+id/view2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/view2"
+        app:layout_constraintTop_toBottomOf="@+id/nomecompleto"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/nomecompleto"
-        android:layout_width="0dp"
+        android:layout_width="240dp"
         android:layout_height="25dp"
-        android:layout_marginEnd="42dp"
-        android:text="nome"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/perfilmenor"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="345dp" />
+        android:layout_marginStart="93dp"
+        android:layout_marginEnd="25dp"
+        android:text="Nome Completo"
+        app:layout_constraintEnd_toEndOf="@+id/view2"
+        app:layout_constraintStart_toStartOf="@+id/view2"
+        app:layout_constraintTop_toBottomOf="@+id/editText1"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/editText1"
-        android:layout_width="0dp"
+        android:layout_width="240dp"
         android:layout_height="25dp"
-        android:layout_marginEnd="42dp"
+        android:layout_marginStart="93dp"
+        android:layout_marginTop="39dp"
+        android:layout_marginEnd="25dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Nome Completo"
         android:textColor="@color/black"
         android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/perfilmenor"
-        tools:layout_editor_absoluteY="320dp"
+        app:layout_constraintEnd_toEndOf="@+id/view2"
+        app:layout_constraintStart_toStartOf="@+id/view2"
+        app:layout_constraintTop_toBottomOf="@+id/nome_login"
         tools:ignore="MissingConstraints" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_tela_perfil"
         style="@style/btn_tela_perfil"
+        android:layout_marginStart="53dp"
+        android:layout_marginTop="38dp"
+        android:layout_marginEnd="54dp"
         android:drawableStart="@drawable/ic_conf"
         android:text="EDITAR PERFIL"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="80dp"
-        tools:layout_editor_absoluteY="615dp" />
+        app:layout_constraintEnd_toEndOf="@+id/view2"
+        app:layout_constraintStart_toStartOf="@+id/view2"
+        app:layout_constraintTop_toBottomOf="@+id/num_chave"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView18"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="PPJA c"
-        tools:ignore="MissingConstraints,UnknownId"
-        tools:layout_editor_absoluteX="184dp"
-        tools:layout_editor_absoluteY="663dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_tela_perfil"
+        tools:ignore="MissingConstraints,UnknownId" />
+
+    <!--style="@style/btn_tela_login"-->
 
     <ImageView
-        android:id="@+id/regisfun"
+        android:id="@+id/imageView8"
         android:layout_width="75dp"
         android:layout_height="50dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="281dp"
+        app:layout_constraintEnd_toEndOf="@+id/view2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/view2"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5"
         app:srcCompat="@drawable/ic_resgis_do_func"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="39dp"
-        tools:layout_editor_absoluteY="526dp" />
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/nome_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="nome do login"
+        android:text="nome_do_login"
         android:textColor="@color/black"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@+id/view2"
-        app:layout_constraintStart_toStartOf="@+id/view2"
-        app:layout_constraintTop_toBottomOf="@+id/perfilmaior"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3"
         tools:ignore="MissingConstraints" />
-
-    <ImageView
-        android:id="@+id/iconeemail"
-        android:layout_width="75dp"
-        android:layout_height="50dp"
-        app:srcCompat="@drawable/ic_baseline_email_24"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="39dp"
-        tools:layout_editor_absoluteY="460dp" />
-
-    <!--style="@style/btn_tela_login"-->
 
     <TextView
         android:id="@+id/tit_perfil"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:layout_marginBottom="36dp"
+        android:layout_marginTop="44dp"
         android:text="PERFIL"
         android:textColor="@color/black"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/view2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="173dp" />
-
-    <androidx.constraintlayout.widget.Group
-        android:id="@+id/group"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:constraint_referenced_ids="view2,perfilmaior,perfilmenor,tel,num_chave,editText4,email,editText3,num_tel,editText2,nomecompleto,editText1,btn_tela_perfil,textView18,regisfun,nome_login,iconeemail,tit_perfil" />
+        tools:ignore="MissingConstraints" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

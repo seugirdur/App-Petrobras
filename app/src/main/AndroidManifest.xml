@@ -15,7 +15,7 @@
         android:label="@string/app_name"
         android:roundIcon="@drawable/logo_aset"
         android:supportsRtl="true"
-        android:theme="@style/Theme.APPPetrobras"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
@@ -24,7 +24,7 @@
         <activity
             android:name=".Activities.Passos"
             android:exported="false"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+            />
         <activity
             android:name=".Hub"
             android:exported="true">
@@ -49,25 +49,25 @@
         <activity
             android:name=".Activities.Cadastro"
             android:exported="false"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+             />
         <activity
             android:name=".minhaPagina"
             android:exported="false" />
         <activity
             android:name=".Activities.Login"
             android:exported="false"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+             />
         <activity
             android:name=".Activities.Inicio"
             android:exported="false" />
         <activity
             android:name=".Activities.Solucoes"
             android:exported="false"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+             />
         <activity
             android:name="com.example.Navigations.Tabs"
             android:exported="true"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+             />
         <activity
             android:name=".Activities.Relatorio"
             android:exported="true" />

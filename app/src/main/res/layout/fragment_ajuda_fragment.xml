@@ -8,14 +8,14 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview1"
-        android:layout_width="match_parent"
-        android:layout_height="280dp"
+        android:layout_width="392dp"
+        android:layout_height="290dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3"
-        android:layout_marginTop="20dp"
-        tools:listitem="@layout/item_ajuda_list"
-        />
+        tools:listitem="@layout/item_ajuda_list" />
 
     <TextView
         android:id="@+id/textView2"
@@ -27,9 +27,10 @@
         android:textSize="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.395"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023" />
+        app:layout_constraintVertical_bias="0.021" />
 
     <TextView
         android:id="@+id/textView3"
@@ -41,10 +42,10 @@
         android:textSize="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.527"
+        app:layout_constraintHorizontal_bias="0.437"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.102" />
+        app:layout_constraintVertical_bias="0.09" />
 
     <TextView
         android:id="@+id/textView8"
@@ -52,24 +53,24 @@
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-black"
         android:text="Funcionalidade do APP"
+        android:textColor="@color/black"
         android:textSize="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.456"
+        app:layout_constraintHorizontal_bias="0.348"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.614"
-        android:textColor="@color/black"/>
+        app:layout_constraintVertical_bias="0.525" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview2"
         android:layout_width="match_parent"
         android:layout_height="150dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView8"
-        android:layout_marginTop="20dp"
-        tools:listitem="@layout/item_ajuda_list"
-        />
+        tools:listitem="@layout/item_ajuda_list" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

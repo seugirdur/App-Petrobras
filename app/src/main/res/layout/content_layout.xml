@@ -8,7 +8,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/appBarLayout"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:elevation="0dp"
+        >
 
 
         <androidx.appcompat.widget.Toolbar
@@ -16,8 +18,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/Verde_Petrobras"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            app:titleTextColor="@color/black" />
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            app:titleTextColor="@color/black"
+            />
 
 
 

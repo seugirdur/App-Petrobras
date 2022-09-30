@@ -19,23 +19,21 @@
         <View
             android:id="@+id/view_principal"
             android:layout_width="match_parent"
-            android:layout_height="736dp"
+            android:layout_height="740dp"
             android:layout_marginLeft="40dp"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="60dp"
             android:layout_marginRight="40dp"
             android:background="@drawable/view_principal_cadastro"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintTop_toTopOf="parent"/>
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/logo_psdesk"
             android:layout_width="150dp"
             android:layout_height="150dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="60dp"
             android:src="@drawable/logo_aset"
             app:layout_constraintBottom_toTopOf="@id/view_principal"
             app:layout_constraintEnd_toEndOf="@id/view_principal"
@@ -57,7 +55,7 @@
             android:id="@+id/cadastro_texto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="13dp"
             android:text="Cadastro"
             android:textColor="@color/black"
             android:textSize="40dp"
@@ -71,7 +69,7 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_marginLeft="40dp"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="22dp"
             android:layout_marginRight="40dp"
             android:background="@color/cinza"
             app:layout_constraintEnd_toEndOf="@id/view_principal"
@@ -407,14 +405,14 @@
             android:text="@string/texto_cadastr"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="13dp"
             app:layout_constraintTop_toBottomOf="@+id/seventh_view" />
 
         <ImageButton
             android:id="@+id/button_cadastro"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="7dp"
             android:background="?android:attr/selectableItemBackgroundBorderless"
             android:src="@drawable/ic_button_cadastro_and_login"
             app:layout_constraintEnd_toEndOf="@id/aceitoTermos"
@@ -426,8 +424,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="PPJA &#xA9;"
+            android:text="PPJA - SANTOS &#xA9;"
             android:textColor="@color/black"
+            android:textSize="12dp"
             app:layout_constraintEnd_toEndOf="@id/button_cadastro"
             app:layout_constraintStart_toStartOf="@id/button_cadastro"
             app:layout_constraintTop_toBottomOf="@id/button_cadastro" />

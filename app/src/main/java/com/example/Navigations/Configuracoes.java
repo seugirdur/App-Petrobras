@@ -5,7 +5,7 @@ import androidx.viewpager2.widget.ViewPager2;
 import android.os.Bundle;
 
 import com.example.apppetrobras.R;
-import com.example.apppetrobras.ViewPager;
+import com.example.apppetrobras.Adapters.ViewPager;
 import com.example.apppetrobras.databinding.ActivityConfiguracoesBinding;
 import com.google.android.material.tabs.TabLayout;
 
@@ -23,6 +23,7 @@ public class Configuracoes extends Drawer {
         activityConfiguracoesBinding = ActivityConfiguracoesBinding.inflate(getLayoutInflater());
         setContentView(activityConfiguracoesBinding.getRoot());
         allocateActivityTitle("Configurações do Usuário");
+
 
         // Navigation Drawer
         //activityTabBinding = ActivityTabBinding.inflate(getLayoutInflater());

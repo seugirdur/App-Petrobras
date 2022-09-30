@@ -16,6 +16,7 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 
 import com.example.apppetrobras.Activities.Ajuda;
+import com.example.apppetrobras.Activities.Perfil;
 import com.example.apppetrobras.Activities.Relatorio;
 import com.example.apppetrobras.R;
 import com.example.apppetrobras.Activities.SplashScreen;
@@ -77,6 +78,11 @@ import com.google.android.material.navigation.NavigationView;
 
                 case R.id.configuracoes:
                     startActivity(new Intent(this, Configuracoes.class));
+                    overridePendingTransition(0, 0);
+                    break;
+
+                case R.id.perfil:
+                    startActivity(new Intent(this, Perfil.class));
                     overridePendingTransition(0, 0);
                     break;
 

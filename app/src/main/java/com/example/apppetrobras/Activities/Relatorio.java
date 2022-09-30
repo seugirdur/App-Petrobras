@@ -187,20 +187,25 @@ public class Relatorio extends AppCompatActivity implements RecyclerViewInteface
                         List<SolucoesObj> problemsList;
                         problemsList = response.body();
                         checking = cRelatorio.getMade_check();
+                        String realizado;
 
 
 
                         //for para adicionar cada solução testada numa lista
                         for(int i=0; i<quant; i++){
-                            int checou;
 
-                            if (i==quant){checou = Integer.parseInt(checking.substring(i)); funciona = checkResolvido(Integer.parseInt(checking.substring(i)));}else {checou = Integer.parseInt(checking.substring(i, i + 1)); funciona = checkResolvido(Integer.parseInt(checking.substring(i, i+1)));}
+                            int substring;
+
+                            if (i==quant){substring = Integer.parseInt(checking.substring(i));}else {substring = Integer.parseInt(checking.substring(i, i + 1));}
                             SolucoesObj solucao = problemsList.get(i);
+                            funciona = checkResolvido(substring);
 
-                            EtapasRelatorioObj itemRel = new EtapasRelatorioObj(cRelatorio.getTitulo(), solucao.getTituloSolucao(), check(checou));
+                            //vai enviar o nome da solução, se foi feito ou não e imagem de reforço
+                            EtapasRelatorioObj itemRel = new EtapasRelatorioObj(solucao.getTituloSolucao(), feito(substring), check(substring));
                             items.add(itemRel);
                             if(funciona){break;}
                         }
+
                         //configuração da recyclerview
                         recyclerview = findViewById(R.id.recicle);
                         RelatorioAdapter adapter = new RelatorioAdapter(items);
@@ -211,6 +216,10 @@ public class Relatorio extends AppCompatActivity implements RecyclerViewInteface
 
                         //alterando o texto da barra fixa com informações da API
                         TextView solucionado = findViewById(R.id.resultado_processo);
+                        TextView secao = findViewById(R.id.txtSecao);
+                        TextView problema = findViewById(R.id.txtProblema);
+                        secao.setText(cRelatorio.getSecao());
+                        problema.setText(cRelatorio.getTitulo());
                         TextView nome = findViewById(R.id.nome_usuario);
                         TextView data = findViewById(R.id.data_atual);
                         String textData = cRelatorio.getDataProcesso();
@@ -296,6 +305,17 @@ public class Relatorio extends AppCompatActivity implements RecyclerViewInteface
             return R.drawable.ic_check_circle;
         }
     }
+
+    //declarar mensagem se não foi realizado
+    public String feito(int a){
+        if(a==0){
+            return "Não realizado";
+        }
+        else {
+            return "Realizado";
+        }
+    }
+
 
     //declarar se o problem foi resolvido
     public boolean checkResolvido(int a){

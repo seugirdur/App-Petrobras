@@ -13,7 +13,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,14 +20,12 @@ import com.example.apppetrobras.Adapters.RelatorioAdapter;
 import com.example.apppetrobras.Objects.EtapasRelatorioObj;
 import com.example.apppetrobras.Objects.ProblemasObj;
 import com.example.apppetrobras.Objects.RelatorioObj;
+import com.example.apppetrobras.Objects.SolucoesObj;
 import com.example.apppetrobras.R;
 import com.example.apppetrobras.api.RetroFitClient;
-import com.example.apppetrobras.api.API;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.example.apppetrobras.fragments.RecyclerViewInteface;
 
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -149,7 +146,7 @@ public class RelatorioProcesso extends AppCompatActivity implements RecyclerView
                 int idTitulo = cRelatorio.getIdTitulo();
                 int idSecao = cRelatorio.getIdSecao();
 
-                Call<List<ProblemasObj>> call2;
+                Call<List<SolucoesObj>> call2;
 
                 switch (idSecao){
                     case 1:
@@ -179,16 +176,16 @@ public class RelatorioProcesso extends AppCompatActivity implements RecyclerView
                         break;
                 }
 
-                call2.enqueue(new Callback<List<ProblemasObj>>() {
+                call2.enqueue(new Callback<List<SolucoesObj>>() {
                     @Override
-                    public void onResponse(Call<List<ProblemasObj>> call, Response<List<ProblemasObj>> response) {
+                    public void onResponse(Call<List<SolucoesObj>> call, Response<List<SolucoesObj>> response) {
                         if (!response.isSuccessful()){
                             Toast.makeText(RelatorioProcesso.this, response.code(), Toast.LENGTH_SHORT).show();
                             return;
                         }
 
-                        List<ProblemasObj> problemsList;
-                        problemsList = response.body();
+                        List<SolucoesObj> solucoesList;
+                        solucoesList = response.body();
                         checking = cRelatorio.getMade_check();
 
 
@@ -198,7 +195,7 @@ public class RelatorioProcesso extends AppCompatActivity implements RecyclerView
                             int checou;
 
                             if (i==quant){checou = Integer.parseInt(checking.substring(i)); funciona = checkResolvido(Integer.parseInt(checking.substring(i)));}else {checou = Integer.parseInt(checking.substring(i, i + 1)); funciona = checkResolvido(Integer.parseInt(checking.substring(i, i+1)));}
-                            Problems solucao = problemsList.get(i);
+                            SolucoesObj solucao = solucoesList.get(i);
 
                             EtapasRelatorioObj itemRel = new EtapasRelatorioObj(cRelatorio.getTitulo(), solucao.getTituloSolucao(), check(checou));
                             items.add(itemRel);
@@ -227,10 +224,9 @@ public class RelatorioProcesso extends AppCompatActivity implements RecyclerView
 
                     }
 
-                    @Override
-                    public void onFailure(Call<List<ProblemasObj>> call, Throwable t) {
 
-                    }
+
+
                 });
 
 

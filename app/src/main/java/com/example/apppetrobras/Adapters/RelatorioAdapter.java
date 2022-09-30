@@ -1,4 +1,4 @@
-package com.example.apppetrobras;
+package com.example.apppetrobras.Adapters;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,13 +10,14 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.apppetrobras.Objects.EtapasRelatorioObj;
+import com.example.apppetrobras.R;
 
 import java.util.List;
 
-public class adapter extends RecyclerView.Adapter<adapter.MyViewHolder> {
+public class RelatorioAdapter extends RecyclerView.Adapter<RelatorioAdapter.MyViewHolder> {
     private List<EtapasRelatorioObj> listaRel;
 
-    public adapter(List<EtapasRelatorioObj> lista){
+    public RelatorioAdapter(List<EtapasRelatorioObj> lista){
         this.listaRel = lista;
     }
 

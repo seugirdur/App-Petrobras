@@ -19,10 +19,10 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".Perfil"
+            android:name=".Activities.Perfil"
             android:exported="false" />
         <activity
-            android:name=".Activitys.SoluctionActivity"
+            android:name=".Activities.Passos"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
@@ -35,47 +35,41 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Activitys.AjudaeSuporte"
-            android:exported="false" />
-        <activity
-            android:name=".Configuracoes"
+            android:name=".Activities.Ajuda"
             android:exported="false" />
         <activity
             android:name=".Historico"
             android:exported="false" />
         <activity
-            android:name="com.example.Navigations.DrawerBaseActivity"
+            android:name="com.example.Navigations.Drawer"
             android:exported="false" />
         <activity
             android:name=".Conteudo"
             android:exported="false" />
         <activity
-            android:name=".Activitys.FormCadastro"
+            android:name=".Activities.Cadastro"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".minhaPagina"
             android:exported="false" />
         <activity
-            android:name=".Activitys.FormLogin"
+            android:name=".Activities.Login"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".Activitys.Tela_de_escolha"
+            android:name=".Activities.Inicio"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Activitys.ProblemActivity"
+            android:name=".Activities.Solucoes"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name="com.example.Navigations.TabActivity"
+            android:name="com.example.Navigations.Tabs"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".Activitys.RelatorioProcesso"
+            android:name=".Activities.Relatorio"
             android:exported="true" />
         <activity
             android:name=".FormLoginPedro"
@@ -83,7 +77,7 @@
 
         </activity>
         <activity
-            android:name="com.example.Navigations.arrastaprolado"
+            android:name="com.example.Navigations.Configuracoes"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
@@ -92,7 +86,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SplashScreenActivity"
+            android:name=".Activities.SplashScreen"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.NoActionBar" >
         </activity>

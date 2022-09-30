@@ -1,15 +1,15 @@
 package com.example.apppetrobras.Objects;
 
-public class DadosLista {
+public class ProblemasObj {
 
     String text;
     int image, id;
 
-    public DadosLista(String text){
+    public ProblemasObj(String text){
         this.text = text;
     }
 
-    public DadosLista(String text, int id, int image){
+    public ProblemasObj(String text, int id, int image){
         this.text = text;
         this.image = image;
         this.id = id;

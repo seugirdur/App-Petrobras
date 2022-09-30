@@ -6,14 +6,16 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.example.Navigations.TabActivity;
-import com.example.apppetrobras.Activitys.AjudaeSuporte;
-import com.example.apppetrobras.Activitys.FormCadastro;
-import com.example.apppetrobras.Activitys.FormLogin;
-import com.example.apppetrobras.Activitys.ProblemActivity;
-import com.example.apppetrobras.Activitys.RelatorioProcesso;
-import com.example.apppetrobras.Activitys.SoluctionActivity;
-import com.example.apppetrobras.Activitys.Tela_de_escolha;
+import com.example.Navigations.Tabs;
+import com.example.apppetrobras.Activities.Ajuda;
+import com.example.apppetrobras.Activities.Cadastro;
+import com.example.apppetrobras.Activities.Login;
+import com.example.apppetrobras.Activities.Perfil;
+import com.example.apppetrobras.Activities.Solucoes;
+import com.example.apppetrobras.Activities.Relatorio;
+import com.example.apppetrobras.Activities.Passos;
+import com.example.apppetrobras.Activities.SplashScreen;
+import com.example.apppetrobras.Activities.Inicio;
 
 public class Hub extends AppCompatActivity {
 
@@ -24,61 +26,61 @@ public class Hub extends AppCompatActivity {
     }
 
     public void rediriciona0(View view){
-        Intent intent = new Intent(Hub.this, Tela_de_escolha.class);
+        Intent intent = new Intent(Hub.this, Inicio.class);
         startActivity(intent);
         finish();
     }
 
     public void rediriciona1(View view){
-        Intent intent = new Intent(Hub.this, FormLogin.class);
+        Intent intent = new Intent(Hub.this, Login.class);
         startActivity(intent);
         finish();
     }
 
     public void rediriciona2(View view){
-        Intent intent = new Intent(Hub.this, FormCadastro.class);
+        Intent intent = new Intent(Hub.this, Cadastro.class);
         startActivity(intent);
         finish();
     }
 
     public void rediriciona3(View view){
-        Intent intent = new Intent(Hub.this, TabActivity.class);
+        Intent intent = new Intent(Hub.this, Tabs.class);
         startActivity(intent);
         finish();
     }
 
     public void rediriciona4(View view){
-        Intent intent = new Intent(Hub.this, ProblemActivity.class);
+        Intent intent = new Intent(Hub.this, Solucoes.class);
         startActivity(intent);
         finish();
     }
 
     public void rediriciona5(View view){
-        Intent intent = new Intent(Hub.this, RelatorioProcesso.class);
+        Intent intent = new Intent(Hub.this, Relatorio.class);
         startActivity(intent);
         finish();
     }
 
     public void rediriciona6(View view){
-        Intent intent = new Intent(Hub.this, AjudaeSuporte.class);
+        Intent intent = new Intent(Hub.this, Ajuda.class);
         startActivity(intent);
         finish();
     }
 
-    public void rediriciona7(View view){
-        Intent intent = new Intent(Hub.this, MainActivity.class);
-        startActivity(intent);
-        finish();
-    }
+    //public void rediriciona7(View view){
+      //  Intent intent = new Intent(Hub.this, MainActivity.class);
+        //startActivity(intent);
+      //  finish();
+    //}
 
     public void rediriciona8(View view){
-        Intent intent = new Intent(Hub.this, SplashScreenActivity.class);
+        Intent intent = new Intent(Hub.this, SplashScreen.class);
         startActivity(intent);
         finish();
     }
 
     public void rediriciona9(View view){
-        Intent intent = new Intent(Hub.this, SoluctionActivity.class);
+        Intent intent = new Intent(Hub.this, Passos.class);
         startActivity(intent);
         finish();
     }

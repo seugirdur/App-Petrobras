@@ -1,11 +1,11 @@
-package com.example.apppetrobras.Activitys;
+package com.example.apppetrobras.Activities;
 
 import android.os.Bundle;
 
-import com.example.Navigations.DrawerBaseActivity;
+import com.example.Navigations.Drawer;
 import com.example.apppetrobras.databinding.ActivityAjudaBinding;
 
-public class AjudaeSuporte extends DrawerBaseActivity {
+public class Ajuda extends Drawer {
 
     ActivityAjudaBinding activityAjudaBinding;
 

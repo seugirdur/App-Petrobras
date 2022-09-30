@@ -1,6 +1,6 @@
 package com.example.apppetrobras.Objects;
 
-public class Infos {
+public class CadastroObj {
     public String nome;
     public String email;
     public String tel;
@@ -9,7 +9,7 @@ public class Infos {
     public String senha;
 
 
-    public Infos(String _nome, String _email, String _tel, String _dataNasc, String _chave, String _senha){
+    public CadastroObj(String _nome, String _email, String _tel, String _dataNasc, String _chave, String _senha){
         this.nome = _nome;
         this.email = _email;
         this.tel = _tel;

@@ -1,10 +1,10 @@
 package com.example.apppetrobras.Objects;
 
-public class Soluctions {
+public class PassosObj {
     private int idSolucao, idTexto;
     private String texto;
 
-    Soluctions(int idSolucao, int idTexto, String texto){
+    PassosObj(int idSolucao, int idTexto, String texto){
         this.idSolucao = idSolucao;
         this.idTexto = idTexto;
         this.texto = texto;

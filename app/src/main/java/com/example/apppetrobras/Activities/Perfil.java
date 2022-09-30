@@ -1,4 +1,4 @@
-package com.example.apppetrobras;
+package com.example.apppetrobras.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,8 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.TextView;
+
+import com.example.apppetrobras.R;
 
 public class Perfil extends AppCompatActivity {
 

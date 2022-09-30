@@ -15,16 +15,16 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 
-import com.example.apppetrobras.Objects.DadosLista;
+import com.example.apppetrobras.Objects.ProblemasObj;
 import com.example.apppetrobras.R;
 import com.example.apppetrobras.Adapters.RecyclerViewAdapter;
-import com.example.apppetrobras.Activitys.Tela_de_escolha;
+import com.example.apppetrobras.Activities.Inicio;
 
 import java.util.ArrayList;
 
 public class Historico_Fragment extends Fragment implements RecyclerViewInteface {
 
-    private ArrayList<DadosLista> dataArrayList;
+    private ArrayList<ProblemasObj> dataArrayList;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -72,7 +72,7 @@ public class Historico_Fragment extends Fragment implements RecyclerViewInteface
         };
 
         for(int i = 0; i < titulosProblemas.length; i++){
-            DadosLista data = new DadosLista(titulosProblemas[i]);
+            ProblemasObj data = new ProblemasObj(titulosProblemas[i]);
             dataArrayList.add(data);
         }
     }
@@ -80,7 +80,7 @@ public class Historico_Fragment extends Fragment implements RecyclerViewInteface
     @Override
     public void onItemClick(int position) {
         // Redirecionamento para a tela do problema contendo os títulos das soluções
-        Intent intent = new Intent(getActivity(), Tela_de_escolha.class);
+        Intent intent = new Intent(getActivity(), Inicio.class);
 
         // Definição de valores que serão redirecionados
         intent.putExtra("TIPO",3);

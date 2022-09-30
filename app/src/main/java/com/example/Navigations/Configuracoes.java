@@ -3,36 +3,38 @@ package com.example.Navigations;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
-import android.view.View;
 
-import com.example.apppetrobras.Adapters.ViewPagerAdapter;
 import com.example.apppetrobras.R;
-import com.example.apppetrobras.databinding.ActivityTabBinding;
+import com.example.apppetrobras.ViewPager;
+import com.example.apppetrobras.databinding.ActivityConfiguracoesBinding;
 import com.google.android.material.tabs.TabLayout;
 
-public class TabActivity extends DrawerBaseActivity {
+public class Configuracoes extends Drawer {
 
     // Declaração das variáveis
     TabLayout tabLayout;
     ViewPager2 viewPager2;
-    ViewPagerAdapter viewPagerAdapter;
-    ActivityTabBinding activityTabBinding;
+    ViewPager viewPager;
+    ActivityConfiguracoesBinding activityConfiguracoesBinding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        activityConfiguracoesBinding = ActivityConfiguracoesBinding.inflate(getLayoutInflater());
+        setContentView(activityConfiguracoesBinding.getRoot());
+        allocateActivityTitle("Configurações do Usuário");
 
         // Navigation Drawer
-        activityTabBinding = ActivityTabBinding.inflate(getLayoutInflater());
-        setContentView(activityTabBinding.getRoot());
-        allocateActivityTitle("Menu Principal");
+        //activityTabBinding = ActivityTabBinding.inflate(getLayoutInflater());
+       // setContentView(activityTabBinding.getRoot());
+        //allocateActivityTitle("Menu Principal");
 
-        tabLayout = findViewById(R.id.tab_layout);
+        tabLayout = findViewById(R.id.tabLayout);
         viewPager2 = findViewById(R.id.view_pager);
-        viewPagerAdapter = new ViewPagerAdapter(this);
-        viewPager2.setAdapter(viewPagerAdapter);
+        viewPager = new ViewPager(this);
+        viewPager2.setAdapter(viewPager);
 
-//        settingTheName();
+//       settingTheName();
 
 
 
@@ -66,11 +68,10 @@ public class TabActivity extends DrawerBaseActivity {
     }
 
     //Captura o click no logo e vai para a tela inicial
-    public void goHome(View view) {
-        viewPager2.setCurrentItem(0);
+    //public void goHome(View view) {
+        //viewPager2.setCurrentItem(0);
     }
 
 
 
-    
-}
+

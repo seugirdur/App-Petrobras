@@ -2,10 +2,10 @@ package com.example.apppetrobras;
 
 import android.os.Bundle;
 
-import com.example.Navigations.DrawerBaseActivity;
+import com.example.Navigations.Drawer;
 import com.example.apppetrobras.databinding.ActivityHistoricoBinding;
 
-public class Historico extends DrawerBaseActivity {
+public class Historico extends Drawer {
 
     ActivityHistoricoBinding activityHistoricoBinding;
 

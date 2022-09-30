@@ -1,4 +1,4 @@
-package com.example.apppetrobras.Activitys;
+package com.example.apppetrobras.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -22,7 +22,7 @@ import android.os.Bundle;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
-import com.example.apppetrobras.Objects.Infos;
+import com.example.apppetrobras.Objects.CadastroObj;
 import com.example.apppetrobras.R;
 import com.example.apppetrobras.api.RetroFitClient;
 
@@ -33,7 +33,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class FormCadastro extends AppCompatActivity {
+public class Cadastro extends AppCompatActivity {
 
     EditText senha, confirmar_senha;
     boolean passwordVisible;
@@ -41,7 +41,7 @@ public class FormCadastro extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_form_cadastro);
+        setContentView(R.layout.cadastro_layout);
 
 
         CheckBox textView = findViewById(R.id.aceitoTermos);
@@ -286,7 +286,7 @@ public class FormCadastro extends AppCompatActivity {
 
     //redirecionamento para ajuda
     public void ajuda(View view){
-        Intent intent = new Intent(this, AjudaeSuporte.class);
+        Intent intent = new Intent(this, Ajuda.class);
         startActivity(intent);
 
     }
@@ -389,7 +389,7 @@ public class FormCadastro extends AppCompatActivity {
         else {
             //new Insert().execute();
             registrate();
-            Infos cadastro = resgataInfo();
+            CadastroObj cadastro = resgataInfo();
 //            Handler handler = new Handler();
 //            handler.postDelayed(new Runnable() {
 //                public void run() {
@@ -407,7 +407,7 @@ public class FormCadastro extends AppCompatActivity {
 
 
 
-    public Infos resgataInfo() {
+    public CadastroObj resgataInfo() {
         TextView nome = findViewById(R.id.nome_completo);
         TextView tel = findViewById(R.id.telefone);
         TextView dataNasc = findViewById(R.id.data_nascimento);
@@ -422,7 +422,7 @@ public class FormCadastro extends AppCompatActivity {
         String _chave = chave.getText() + "";
         String _senha = senha.getText() + "";
 
-        Infos cliente = new Infos(_nome, _email, _tel, _dataNasc , _chave, _senha);
+        CadastroObj cliente = new CadastroObj(_nome, _email, _tel, _dataNasc , _chave, _senha);
 
         return cliente;
     }
@@ -447,7 +447,7 @@ public class FormCadastro extends AppCompatActivity {
     }
 
 private void registrate(){
-    Infos info = new Infos(resgataInfo().nome, resgataInfo().email, resgataInfo().tel,resgataInfo().dataNasc, resgataInfo().chave, resgataInfo().senha);
+    CadastroObj info = new CadastroObj(resgataInfo().nome, resgataInfo().email, resgataInfo().tel,resgataInfo().dataNasc, resgataInfo().chave, resgataInfo().senha);
             String nome = info.nome.toString().trim();
             String email = info.email.toString().trim();
             String tel = info.tel.toString().trim();
@@ -466,7 +466,7 @@ private void registrate(){
                 public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                     try {
                         String body = response.body().string();
-                        Toast.makeText(FormCadastro.this, body, Toast.LENGTH_LONG).show();
+                        Toast.makeText(Cadastro.this, body, Toast.LENGTH_LONG).show();
                     }catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -474,7 +474,7 @@ private void registrate(){
 
                 @Override
                 public void onFailure(Call<ResponseBody> call, Throwable t) {
-                    Toast.makeText(FormCadastro.this, t.getMessage(), Toast.LENGTH_LONG).show();
+                    Toast.makeText(Cadastro.this, t.getMessage(), Toast.LENGTH_LONG).show();
 
                 }
             });

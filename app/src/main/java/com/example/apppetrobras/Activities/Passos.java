@@ -1,4 +1,4 @@
-package com.example.apppetrobras.Activitys;
+package com.example.apppetrobras.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.apppetrobras.R;
-import com.example.apppetrobras.Objects.Soluctions;
+import com.example.apppetrobras.Objects.PassosObj;
 import com.example.apppetrobras.api.RetroFitClient;
 
 import java.util.List;
@@ -20,7 +20,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class SoluctionActivity extends AppCompatActivity {
+public class Passos extends AppCompatActivity {
 
     // Declaração das variáveis
     int idTitulo, idSolucao, tipoProblema, idPasso, qtdPassos;
@@ -31,14 +31,14 @@ public class SoluctionActivity extends AppCompatActivity {
     TextView numeroPasso, nomeSolucao, descSolucao;
     ImageView imagemSolucao;
 
-    List<Soluctions> soluctionsList;
+    List<PassosObj> passosObjList;
 
-    Call<List<Soluctions>> call;
+    Call<List<PassosObj>> call;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_soluction);
+        setContentView(R.layout.passos_layout);
 
         tipoProblema = getIntent().getIntExtra("TIPO", 1);
         idTitulo = getIntent().getIntExtra("ID_TITULO",1);
@@ -81,21 +81,21 @@ public class SoluctionActivity extends AppCompatActivity {
                 break;
         }
 
-        call.enqueue(new Callback<List<Soluctions>>() {
+        call.enqueue(new Callback<List<PassosObj>>() {
             @Override
-            public void onResponse(Call<List<Soluctions>> call, Response<List<Soluctions>> response) {
+            public void onResponse(Call<List<PassosObj>> call, Response<List<PassosObj>> response) {
                 if (!response.isSuccessful()){
                     Toast.makeText(context, response.code(), Toast.LENGTH_SHORT).show();
                     return;
                 }
-                soluctionsList = response.body();
+                passosObjList = response.body();
                 // Armazena o total de passos dessa solução
-                qtdPassos = soluctionsList.size();
+                qtdPassos = passosObjList.size();
                 inserirNaTela();
             }
 
             @Override
-            public void onFailure(Call<List<Soluctions>> call, Throwable t) {
+            public void onFailure(Call<List<PassosObj>> call, Throwable t) {
                 Toast.makeText(context, t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
@@ -127,7 +127,7 @@ public class SoluctionActivity extends AppCompatActivity {
 
         descSolucao = findViewById(R.id.descricaoPasso);
         // idPasso começa em 0, preciso somar 1 a ele para se adequar ao BD
-        String descricaoBD = soluctionsList.get(idPasso-1).getTexto();
+        String descricaoBD = passosObjList.get(idPasso-1).getTexto();
         descSolucao.setText(descricaoBD);
 
         imagemSolucao = findViewById(R.id.imagemSolucao);

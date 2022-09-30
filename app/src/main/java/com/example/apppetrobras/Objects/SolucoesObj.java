@@ -1,6 +1,6 @@
 package com.example.apppetrobras.Objects;
 
-public class Problems {
+public class SolucoesObj {
     private String idTitulo, idProblema;
     private String tituloSolucao;
 

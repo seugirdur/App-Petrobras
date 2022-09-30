@@ -1,4 +1,4 @@
-package com.example.apppetrobras.Activitys;
+package com.example.apppetrobras.Activities;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -12,11 +12,11 @@ import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.apppetrobras.Objects.CRelatorio;
-import com.example.Navigations.DrawerBaseActivity;
+import com.example.apppetrobras.Objects.RelatorioObj;
+import com.example.Navigations.Drawer;
 import com.example.apppetrobras.R;
 import com.example.apppetrobras.api.RetroFitClient;
-import com.example.apppetrobras.databinding.ActivityRelatorioProcessoBinding;
+import com.example.apppetrobras.databinding.RelatorioLayoutBinding;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
@@ -25,22 +25,22 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class RelatorioProcesso extends DrawerBaseActivity {
+public class Relatorio extends Drawer {
 
     FloatingActionButton add_icon, download_icon, observacoes_icon;
     Animation fabOpen, fabClose, rotateForward, rotateBackward;
     Dialog mDialog;
     SharedPreferences sp;
     SharedPreferences.Editor editor;
-    ActivityRelatorioProcessoBinding activityRelatorioProcessoBinding;
+    RelatorioLayoutBinding relatorioLayoutBinding;
 
     boolean isOpen = false; // by default it is false
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        activityRelatorioProcessoBinding = activityRelatorioProcessoBinding.inflate(getLayoutInflater());
-        setContentView(activityRelatorioProcessoBinding.getRoot());
+        relatorioLayoutBinding = RelatorioLayoutBinding.inflate(getLayoutInflater());
+        setContentView(relatorioLayoutBinding.getRoot());
         allocateActivityTitle("Histórico");
 
         add_icon = (FloatingActionButton) findViewById(R.id.add_icon);
@@ -74,7 +74,7 @@ public class RelatorioProcesso extends DrawerBaseActivity {
             @Override
             public void onClick(View view) {
                 animateFab();
-                Toast.makeText(RelatorioProcesso.this, "download clicked", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Relatorio.this, "download clicked", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -96,40 +96,40 @@ public class RelatorioProcesso extends DrawerBaseActivity {
 
         String chave = sharedPreferences.getString("nome", "");
 
-        Call<List<CRelatorio>> call = RetroFitClient
+        Call<List<RelatorioObj>> call = RetroFitClient
                 .getInstance()
                 .getAPI()
                 .getRelatorio(chave);
 
-        call.enqueue(new Callback<List<CRelatorio>>() {
+        call.enqueue(new Callback<List<RelatorioObj>>() {
             @Override
-            public void onResponse(Call<List<CRelatorio>> call, Response<List<CRelatorio>> response) {
+            public void onResponse(Call<List<RelatorioObj>> call, Response<List<RelatorioObj>> response) {
                 if (!response.isSuccessful()){
-                    Toast.makeText(RelatorioProcesso.this, response.code(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Relatorio.this, response.code(), Toast.LENGTH_SHORT).show();
                     return;
                 }
 
-                List<CRelatorio> cRelatorioList = response.body();
-                CRelatorio cRelatorio = cRelatorioList.get(0);
+                List<RelatorioObj> relatorioObjList = response.body();
+                RelatorioObj relatorioObj = relatorioObjList.get(0);
 
-                int idRelatorio =cRelatorio.getIdRelatorio();
-                String Nome =cRelatorio.getNome();
-                String Chave =cRelatorio.getChave();
-                String DataProcesso =cRelatorio.getDataProcesso();
-                String secao = cRelatorio.getSecao();
-                String Titulo =cRelatorio.getTitulo();
-                int SolucaoStop = cRelatorio.getSolucaostop();
-                int Funcionou = cRelatorio.getFuncionou();
-                String Made_check = cRelatorio.getMade_check();
+                int idRelatorio = relatorioObj.getIdRelatorio();
+                String Nome = relatorioObj.getNome();
+                String Chave = relatorioObj.getChave();
+                String DataProcesso = relatorioObj.getDataProcesso();
+                String secao = relatorioObj.getSecao();
+                String Titulo = relatorioObj.getTitulo();
+                int SolucaoStop = relatorioObj.getSolucaostop();
+                int Funcionou = relatorioObj.getFuncionou();
+                String Made_check = relatorioObj.getMade_check();
 
 
-                Toast.makeText(RelatorioProcesso.this, secao, Toast.LENGTH_SHORT).show();
-                Toast.makeText(RelatorioProcesso.this, "secao", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Relatorio.this, secao, Toast.LENGTH_SHORT).show();
+                Toast.makeText(Relatorio.this, "secao", Toast.LENGTH_SHORT).show();
 
             }
 
             @Override
-            public void onFailure(Call<List<CRelatorio>> call, Throwable t) {
+            public void onFailure(Call<List<RelatorioObj>> call, Throwable t) {
 
             }
         });

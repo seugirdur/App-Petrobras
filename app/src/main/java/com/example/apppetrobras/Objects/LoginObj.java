@@ -1,12 +1,12 @@
 package com.example.apppetrobras.Objects;
 
-public class UserAPI {
+public class LoginObj {
 
     //Classe publica para guardar as informaçoes do usuario que fizer login para ficar disponivel para classes que precisem dessa informaçao
     private String nome, email, tel, chave, senha, dataNasc;
     private Integer id;
 
-    public UserAPI(Integer id, String nome, String email, String tel, String chave, String senha) {
+    public LoginObj(Integer id, String nome, String email, String tel, String chave, String senha) {
         this.id = id;
         this.nome = nome;
         this.email = email;

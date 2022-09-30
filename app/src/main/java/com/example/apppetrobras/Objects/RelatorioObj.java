@@ -1,6 +1,6 @@
 package com.example.apppetrobras.Objects;
 
-public class CRelatorio {
+public class RelatorioObj {
     String nome, chave, dataProcesso, secao, titulo, made_check;
     int idRelatorio, solucaostop, funcionou;
 

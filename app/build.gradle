@@ -15,6 +15,16 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    sourceSets {
+        main {
+            res.srcDirs = [
+                    'src/main/res/layouts/act',
+                    'src/main/res/layouts',
+                    'src/main/res'
+            ]
+        }
+    }
+
     buildFeatures {
 
         viewBinding true

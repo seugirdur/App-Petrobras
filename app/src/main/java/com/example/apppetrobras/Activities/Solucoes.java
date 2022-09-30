@@ -1,4 +1,4 @@
-package com.example.apppetrobras.Activitys;
+package com.example.apppetrobras.Activities;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -8,8 +8,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
-import com.example.Navigations.DrawerBaseActivity;
-import com.example.apppetrobras.Objects.Problems;
+import com.example.Navigations.Drawer;
+import com.example.apppetrobras.Objects.SolucoesObj;
 import com.example.apppetrobras.R;
 import com.example.apppetrobras.Adapters.RecyclerViewAdapter;
 import com.example.apppetrobras.api.RetroFitClient;
@@ -21,7 +21,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class ProblemActivity extends DrawerBaseActivity implements RecyclerViewInteface {
+public class Solucoes extends Drawer implements RecyclerViewInteface {
 
     // Declaração das variáveis
     int idTitulo, tipoProblema;
@@ -30,12 +30,12 @@ public class ProblemActivity extends DrawerBaseActivity implements RecyclerViewI
     private Context context;
     private RecyclerViewInteface recyclerViewInteface;
 
-    List<Problems> problemsList;
+    List<SolucoesObj> solucoesObjList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_problem);
+        setContentView(R.layout.solucoes_layout);
 
         tipoProblema = getIntent().getIntExtra("TIPO", 1);
         idTitulo = getIntent().getIntExtra("ID_TITULO",1);
@@ -49,7 +49,7 @@ public class ProblemActivity extends DrawerBaseActivity implements RecyclerViewI
         context = this;
         recyclerViewInteface = this;
 
-        Call<List<Problems>> call;
+        Call<List<SolucoesObj>> call;
 
         switch (tipoProblema){
             case 1:
@@ -79,23 +79,23 @@ public class ProblemActivity extends DrawerBaseActivity implements RecyclerViewI
                 break;
         }
 
-        call.enqueue(new Callback<List<Problems>>() {
+        call.enqueue(new Callback<List<SolucoesObj>>() {
             @Override
-            public void onResponse(Call<List<Problems>> call, Response<List<Problems>> response) {
+            public void onResponse(Call<List<SolucoesObj>> call, Response<List<SolucoesObj>> response) {
                 if (!response.isSuccessful()){
                     Toast.makeText(context, response.code(), Toast.LENGTH_SHORT).show();
                     return;
                 }
-                problemsList = response.body();
+                solucoesObjList = response.body();
                 RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(context,
-                        problemsList, recyclerViewInteface, R.layout.item_soluction_list );
+                        solucoesObjList, recyclerViewInteface, R.layout.item_soluction_list );
                 recyclerview.setAdapter(recyclerViewAdapter);
                 recyclerViewAdapter.notifyDataSetChanged();
                 //Toast.makeText(context, "item: "+idTitulo, Toast.LENGTH_SHORT).show();
             }
 
             @Override
-            public void onFailure(Call<List<Problems>> call, Throwable t) {
+            public void onFailure(Call<List<SolucoesObj>> call, Throwable t) {
                 Toast.makeText(context, t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
@@ -104,10 +104,10 @@ public class ProblemActivity extends DrawerBaseActivity implements RecyclerViewI
     @Override
     public void onItemClick(int position) {
         // Redirecionamento para a tela do problema contendo os títulos das soluções
-        Intent intent = new Intent(ProblemActivity.this, SoluctionActivity.class);
+        Intent intent = new Intent(Solucoes.this, Passos.class);
 
         // Insere na variável o titulo da solução clickada
-        String tituloSolucao = problemsList.get(position).getTituloSolucao();
+        String tituloSolucao = solucoesObjList.get(position).getTituloSolucao();
 
 
         // Definição de valores que serão redirecionados

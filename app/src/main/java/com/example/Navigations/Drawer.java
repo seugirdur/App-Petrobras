@@ -15,15 +15,13 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
-import com.example.Navigations.TabActivity;
-import com.example.Navigations.arrastaprolado;
-import com.example.apppetrobras.Activitys.AjudaeSuporte;
-import com.example.apppetrobras.Activitys.RelatorioProcesso;
+import com.example.apppetrobras.Activities.Ajuda;
+import com.example.apppetrobras.Activities.Relatorio;
 import com.example.apppetrobras.R;
-import com.example.apppetrobras.SplashScreenActivity;
+import com.example.apppetrobras.Activities.SplashScreen;
 import com.google.android.material.navigation.NavigationView;
 
-    public class DrawerBaseActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+    public class Drawer extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
         DrawerLayout drawerLayout;
 
@@ -67,28 +65,28 @@ import com.google.android.material.navigation.NavigationView;
             switch (item.getItemId()) {
 
                 case R.id.menu_principal:
-                    startActivity(new Intent(this, TabActivity.class));
+                    startActivity(new Intent(this, Tabs.class));
                     overridePendingTransition(0, 0);
                     break;
 
                 case R.id.historico:
-                    startActivity(new Intent(this, RelatorioProcesso.class));
+                    startActivity(new Intent(this, Relatorio.class));
                     overridePendingTransition(0, 0);
                     break;
 
 
                 case R.id.configuracoes:
-                    startActivity(new Intent(this, arrastaprolado.class));
+                    startActivity(new Intent(this, Configuracoes.class));
                     overridePendingTransition(0, 0);
                     break;
 
                 case R.id.ajuda_suporte:
-                    startActivity(new Intent(this, AjudaeSuporte.class));
+                    startActivity(new Intent(this, Ajuda.class));
                     overridePendingTransition(0, 0);
                     break;
 
                 case R.id.sair:
-                    startActivity(new Intent(this, SplashScreenActivity.class));
+                    startActivity(new Intent(this, SplashScreen.class));
                     finish();
                     overridePendingTransition(0, 0);
                     break;

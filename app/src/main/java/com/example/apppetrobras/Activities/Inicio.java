@@ -1,4 +1,4 @@
-package com.example.apppetrobras.Activitys;
+package com.example.apppetrobras.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 import com.example.apppetrobras.R;
 
-public class Tela_de_escolha extends AppCompatActivity {
+public class Inicio extends AppCompatActivity {
     
     Button button2;
     TextView linkTextView;
@@ -19,14 +19,14 @@ public class Tela_de_escolha extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tela_de_escolha);
+        setContentView(R.layout.inicio_layout);
 
         button2 = findViewById(R.id.button2);
 
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(Tela_de_escolha.this, FormLogin.class);
+                Intent i = new Intent(Inicio.this, Login.class);
                 startActivity(i);
             }
         });
@@ -41,14 +41,14 @@ public class Tela_de_escolha extends AppCompatActivity {
 
     //redirecionamento para ajuda
     public void ajuda(View view){
-        Intent intent = new Intent(this, AjudaeSuporte.class);
+        Intent intent = new Intent(this, Ajuda.class);
         startActivity(intent);
 
     }
 
     public void cadastrar (View view){
 
-        Intent intent = new Intent(this, FormCadastro.class);
+        Intent intent = new Intent(this, Cadastro.class);
         startActivity(intent);
      }
 

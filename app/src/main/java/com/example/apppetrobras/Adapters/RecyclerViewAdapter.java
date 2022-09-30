@@ -10,8 +10,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.apppetrobras.Objects.DadosLista;
-import com.example.apppetrobras.Objects.Problems;
+import com.example.apppetrobras.Objects.ProblemasObj;
+import com.example.apppetrobras.Objects.SolucoesObj;
 import com.example.apppetrobras.R;
 import com.example.apppetrobras.fragments.RecyclerViewInteface;
 
@@ -24,11 +24,11 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     private final RecyclerViewInteface recyclerViewInteface;
     private final int layout;
     Context context;
-    List<Problems> problemsList;
-    ArrayList<DadosLista> dataArrayList;
+    List<SolucoesObj> solucoesObjList;
+    ArrayList<ProblemasObj> dataArrayList;
 
     // Sobrecarga de contrutor da classe para o objeto DadosLista
-    public RecyclerViewAdapter(Context context, ArrayList<DadosLista> dataArrayList,
+    public RecyclerViewAdapter(Context context, ArrayList<ProblemasObj> dataArrayList,
                                RecyclerViewInteface recyclerViewInteface,
                                int layout) {
         this.context = context;
@@ -38,11 +38,11 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     }
 
     // Sobrecarga de contrutor da classe para o objeto Problems
-    public RecyclerViewAdapter(Context context, List<Problems> problemsList,
+    public RecyclerViewAdapter(Context context, List<SolucoesObj> solucoesObjList,
                                RecyclerViewInteface recyclerViewInteface,
                                int layout) {
         this.context = context;
-        this.problemsList = problemsList;
+        this.solucoesObjList = solucoesObjList;
         this.recyclerViewInteface = recyclerViewInteface;
         this.layout = layout;
     }
@@ -84,14 +84,14 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         // Estrutura de decisão para cada objeto diferente
         // Em cada uma, há a passagem de valores do array para cada item da lista
         if(dataArrayList!=null){
-            DadosLista data = dataArrayList.get(position);
+            ProblemasObj data = dataArrayList.get(position);
             // Há a verificação de cada variável, caso ela tenha sido definida, ela passa o valor
             // Isso é necessário pois as listas recebem diferentes quantidades de valores
             if(holder.textView1 !=null){ holder.textView1.setText(data.getText());}
             if(holder.imageView1 !=null){ holder.imageView1.setImageResource(data.getImage());}
         }
-        else if(problemsList!=null){
-            Problems data = problemsList.get(position);
+        else if(solucoesObjList !=null){
+            SolucoesObj data = solucoesObjList.get(position);
             // Há a verificação de cada variável, caso ela tenha sido definida, ela passa o valor
             // Isso é necessário pois as listas recebem diferentes quantidades de valores
             if(holder.textView1 !=null){ holder.textView1.setText(data.getTituloSolucao());}
@@ -108,7 +108,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             return dataArrayList.size();
         }
         else {
-            return problemsList.size();
+            return solucoesObjList.size();
         }
     }
 

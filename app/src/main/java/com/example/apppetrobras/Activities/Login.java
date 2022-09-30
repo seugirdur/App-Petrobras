@@ -1,4 +1,4 @@
-package com.example.apppetrobras.Activitys;
+package com.example.apppetrobras.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -19,9 +19,9 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.apppetrobras.R;
-import com.example.Navigations.TabActivity;
+import com.example.Navigations.Tabs;
 import com.example.apppetrobras.api.RetroFitClient;
-import com.example.apppetrobras.Objects.UserAPI;
+import com.example.apppetrobras.Objects.LoginObj;
 
 import java.util.List;
 
@@ -30,7 +30,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 
-public class FormLogin extends AppCompatActivity {
+public class Login extends AppCompatActivity {
 
     EditText edit_user, edit_senha;
     Button button_login, esqueceu_senha;
@@ -44,7 +44,7 @@ public class FormLogin extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_form_login);
+        setContentView(R.layout.login_layout);
 
         edit_user = findViewById(R.id.edit_user);
         edit_senha = findViewById(R.id.edit_senha);
@@ -133,29 +133,29 @@ public class FormLogin extends AppCompatActivity {
         String senha = edit_senha.getText().toString().trim();
 
 
-        Call<List<UserAPI>> call = RetroFitClient
+        Call<List<LoginObj>> call = RetroFitClient
                 .getInstance()
                 .getAPI()
                 .userLogin(chave, senha);
 
-        call.enqueue(new Callback<List<UserAPI>>() {
+        call.enqueue(new Callback<List<LoginObj>>() {
             @Override
-            public void onResponse(Call<List<UserAPI>> call, Response<List<UserAPI>> response) {
+            public void onResponse(Call<List<LoginObj>> call, Response<List<LoginObj>> response) {
                 if (!response.isSuccessful()){
-                    Toast.makeText(FormLogin.this, response.code(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Login.this, response.code(), Toast.LENGTH_SHORT).show();
                     return;
                 }
 
-                List<UserAPI> userAPIList = response.body();
-                UserAPI userAPI = userAPIList.get(0);
+                List<LoginObj> loginObjList = response.body();
+                LoginObj loginObj = loginObjList.get(0);
 
-                int id = userAPI.getId();
-                String nome = userAPI.getNome();
-                String email = userAPI.getEmail();
-                String tel = userAPI.getTel();
-                String dataNasc = userAPI.getDataNasc();
-                String chave = userAPI.getChave();
-                Toast.makeText(FormLogin.this, "Bem vindo "+nome, Toast.LENGTH_SHORT).show();
+                int id = loginObj.getId();
+                String nome = loginObj.getNome();
+                String email = loginObj.getEmail();
+                String tel = loginObj.getTel();
+                String dataNasc = loginObj.getDataNasc();
+                String chave = loginObj.getChave();
+                Toast.makeText(Login.this, "Bem vindo "+nome, Toast.LENGTH_SHORT).show();
 
                 SharedPreferences sharedPreferences = getSharedPreferences(
                         getString(R.string.preference_file_key), Context.MODE_PRIVATE);
@@ -170,13 +170,13 @@ public class FormLogin extends AppCompatActivity {
                 editor.apply();
 
 
-                Intent intent = new Intent(FormLogin.this, TabActivity.class);
+                Intent intent = new Intent(Login.this, Tabs.class);
                 startActivity(intent);
             }
 
             @Override
-            public void onFailure(Call<List<UserAPI>> call, Throwable t) {
-                Toast.makeText(FormLogin.this, t.getMessage(), Toast.LENGTH_SHORT).show();
+            public void onFailure(Call<List<LoginObj>> call, Throwable t) {
+                Toast.makeText(Login.this, t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }

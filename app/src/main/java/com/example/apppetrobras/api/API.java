@@ -1,9 +1,9 @@
 package com.example.apppetrobras.api;
 
-import com.example.apppetrobras.Objects.CRelatorio;
-import com.example.apppetrobras.Objects.Problems;
-import com.example.apppetrobras.Objects.Soluctions;
-import com.example.apppetrobras.Objects.UserAPI;
+import com.example.apppetrobras.Objects.RelatorioObj;
+import com.example.apppetrobras.Objects.SolucoesObj;
+import com.example.apppetrobras.Objects.PassosObj;
+import com.example.apppetrobras.Objects.LoginObj;
 
 import java.util.List;
 
@@ -33,7 +33,7 @@ public interface  API {
     //Rota POST para login do usuario
     @FormUrlEncoded
     @POST("/usuarios/login")
-    Call<List<UserAPI>> userLogin(
+    Call<List<LoginObj>> userLogin(
             @Field("chave") String chave,
             @Field("senha") String senha
     );
@@ -41,27 +41,27 @@ public interface  API {
     //Rota GET para receber o JSON com a lista teste de todos os problemas
     @FormUrlEncoded
     @POST("/problems/internet")
-    Call<List<Problems>> getInternet(
+    Call<List<SolucoesObj>> getInternet(
             @Field("idTitulo") int idTitulo
     );
 
     @FormUrlEncoded
     @POST("/problems/equipamentos")
-    Call<List<Problems>> getEquipamentos(
+    Call<List<SolucoesObj>> getEquipamentos(
             @Field("idTitulo") int idTitulo
 
     );
 
     @FormUrlEncoded
     @POST("/problems/lentidao")
-    Call<List<Problems>> getLentidao(
+    Call<List<SolucoesObj>> getLentidao(
             @Field("idTitulo") int idTitulo
 
     );
 
     @FormUrlEncoded
     @POST("/problems/outros")
-    Call<List<Problems>> getOutros(
+    Call<List<SolucoesObj>> getOutros(
             @Field("idTitulo") int idTitulo
 
     );
@@ -70,7 +70,7 @@ public interface  API {
 
     @FormUrlEncoded
     @POST("/soluctions/textoInternet")
-    Call<List<Soluctions>> getTextoInternet(
+    Call<List<PassosObj>> getTextoInternet(
             @Field("idSolucao") int idSolucao,
             @Field("idtexto") int idtexto
 
@@ -78,7 +78,7 @@ public interface  API {
 
     @FormUrlEncoded
     @POST("/soluctions/textoLentidao")
-    Call<List<Soluctions>> getTextoLentidao(
+    Call<List<PassosObj>> getTextoLentidao(
             @Field("idSolucao") int idSolucao,
             @Field("idtexto") int idtexto
 
@@ -86,7 +86,7 @@ public interface  API {
 
     @FormUrlEncoded
     @POST("/soluctions/textoOutros")
-    Call<List<Soluctions>> getTextoOutros(
+    Call<List<PassosObj>> getTextoOutros(
             @Field("idSolucao") int idSolucao,
             @Field("idtexto") int idtexto
 
@@ -94,7 +94,7 @@ public interface  API {
 
     @FormUrlEncoded
     @POST("/soluctions/textoEquipamento")
-    Call<List<Soluctions>> getTextoEquipamento(
+    Call<List<PassosObj>> getTextoEquipamento(
             @Field("idSolucao") int idSolucao,
             @Field("idtexto") int idtexto
 
@@ -102,7 +102,7 @@ public interface  API {
 
     @FormUrlEncoded
     @POST("/relatorios")
-    Call<List<CRelatorio>> getRelatorio(
+    Call<List<RelatorioObj>> getRelatorio(
             @Field("chave") String chave
 
     );

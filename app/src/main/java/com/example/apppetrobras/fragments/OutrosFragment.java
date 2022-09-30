@@ -13,8 +13,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.apppetrobras.Objects.DadosLista;
-import com.example.apppetrobras.Activitys.ProblemActivity;
+import com.example.apppetrobras.Objects.ProblemasObj;
+import com.example.apppetrobras.Activities.Solucoes;
 import com.example.apppetrobras.R;
 import com.example.apppetrobras.Adapters.RecyclerViewAdapter;
 
@@ -23,7 +23,7 @@ import java.util.ArrayList;
 public class OutrosFragment extends Fragment implements RecyclerViewInteface{
 
     // Declaração das variáveis
-    private ArrayList<DadosLista> dataArrayList;
+    private ArrayList<ProblemasObj> dataArrayList;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -89,7 +89,7 @@ public class OutrosFragment extends Fragment implements RecyclerViewInteface{
         };
 
         for(int i = 0; i < titulosProblemas.length; i++){
-            DadosLista data = new DadosLista(titulosProblemas[i], idProblemas[i], imagensProblemas[i]);
+            ProblemasObj data = new ProblemasObj(titulosProblemas[i], idProblemas[i], imagensProblemas[i]);
             dataArrayList.add(data);
         }
 
@@ -101,7 +101,7 @@ public class OutrosFragment extends Fragment implements RecyclerViewInteface{
         String titulo = "Outros";
 
        // Redirecionamento para a tela do problema contendo os títulos das soluções
-        Intent intent = new Intent(getActivity(), ProblemActivity.class);
+        Intent intent = new Intent(getActivity(), Solucoes.class);
 
         // Definição de valores que serão redirecionados
         intent.putExtra("TIPO",4);

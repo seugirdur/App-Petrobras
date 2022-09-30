@@ -13,6 +13,8 @@ import com.example.apppetrobras.Objects.SolucoesObj;
 import com.example.apppetrobras.R;
 import com.example.apppetrobras.Adapters.RecyclerViewAdapter;
 import com.example.apppetrobras.api.RetroFitClient;
+import com.example.apppetrobras.databinding.LayoutSolucoesBinding;
+import com.example.apppetrobras.databinding.LayoutTabBinding;
 import com.example.apppetrobras.fragments.RecyclerViewInteface;
 
 import java.util.List;
@@ -29,13 +31,16 @@ public class Solucoes extends Drawer implements RecyclerViewInteface {
     private RecyclerView recyclerview;
     private Context context;
     private RecyclerViewInteface recyclerViewInteface;
+    LayoutSolucoesBinding layoutSolucoesBinding;
 
     List<SolucoesObj> solucoesObjList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.layout_solucoes);
+        layoutSolucoesBinding = LayoutSolucoesBinding.inflate(getLayoutInflater());
+        setContentView(layoutSolucoesBinding.getRoot());
+        allocateActivityTitle("Menu Principal");
 
         tipoProblema = getIntent().getIntExtra("TIPO", 1);
         idTitulo = getIntent().getIntExtra("ID_TITULO",1);

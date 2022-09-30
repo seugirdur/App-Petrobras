@@ -4,15 +4,18 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.example.Navigations.Drawer;
 import com.example.apppetrobras.R;
 import com.example.apppetrobras.Objects.PassosObj;
 import com.example.apppetrobras.api.RetroFitClient;
+import com.example.apppetrobras.databinding.LayoutPassosBinding;
 
 import java.util.List;
 
@@ -20,7 +23,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class Passos extends AppCompatActivity {
+public class Passos extends Drawer {
 
     // Declaração das variáveis
     int idTitulo, idSolucao, tipoProblema, idPasso, qtdPassos;
@@ -35,10 +38,18 @@ public class Passos extends AppCompatActivity {
 
     Call<List<PassosObj>> call;
 
+    LayoutPassosBinding layoutPassosBinding;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.layout_passos);
+        layoutPassosBinding = LayoutPassosBinding.inflate(getLayoutInflater());
+        setContentView(layoutPassosBinding.getRoot());
+        allocateActivityTitle("Menu Principal");
+
+
 
         tipoProblema = getIntent().getIntExtra("TIPO", 1);
         idTitulo = getIntent().getIntExtra("ID_TITULO",1);
@@ -47,7 +58,6 @@ public class Passos extends AppCompatActivity {
         tituloSolucao = getIntent().getStringExtra("TITULO_SOLUCAO");
         titulo = getIntent().getStringExtra("titulo");
 
-        Toast.makeText(this, ""+idTitulo, Toast.LENGTH_SHORT).show();
         String concatenar = Integer.toString(idTitulo) + Integer.toString(idSolucao);
         int numerojunto = Integer.parseInt(concatenar);
 
@@ -102,14 +112,14 @@ public class Passos extends AppCompatActivity {
 
     }
 
-    public void btnCancel(View view){
+    public void rtrnPasso(View view){
         if (idPasso > 1) {
             idPasso-=1;
             inserirNaTela();
         }
     }
 
-    public void btnCheck(View view){
+    public void proxPasso(View view){
         // verifica se há mais um passo então atualiza as informações na tela:
         if (idPasso < qtdPassos) {
             idPasso+=1;
@@ -121,6 +131,10 @@ public class Passos extends AppCompatActivity {
         // Inserção dos Valores na tela
         nomeSolucao = findViewById(R.id.nomeSolucao);
         nomeSolucao.setText(tituloSolucao);
+
+        nomeSolucao.setSelected(true);
+        nomeSolucao.setEllipsize(TextUtils.TruncateAt.MARQUEE);
+        nomeSolucao.setSingleLine(true);
 
         numeroPasso = findViewById(R.id.numeroPasso);
         numeroPasso.setText("Passo: "+idPasso);

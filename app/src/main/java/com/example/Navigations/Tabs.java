@@ -7,7 +7,7 @@ import android.view.View;
 
 import com.example.apppetrobras.Adapters.ViewPagerAdapter;
 import com.example.apppetrobras.R;
-import com.example.apppetrobras.databinding.ActivityTabBinding;
+import com.example.apppetrobras.databinding.LayoutTabBinding;
 import com.google.android.material.tabs.TabLayout;
 
 public class Tabs extends Drawer {
@@ -16,15 +16,15 @@ public class Tabs extends Drawer {
     TabLayout tabLayout;
     ViewPager2 viewPager2;
     ViewPagerAdapter viewPagerAdapter;
-    ActivityTabBinding activityTabBinding;
+    LayoutTabBinding layoutTabBinding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         // Navigation Drawer
-        activityTabBinding = ActivityTabBinding.inflate(getLayoutInflater());
-        setContentView(activityTabBinding.getRoot());
+        layoutTabBinding = LayoutTabBinding.inflate(getLayoutInflater());
+        setContentView(layoutTabBinding.getRoot());
         allocateActivityTitle("Menu Principal");
 
         tabLayout = findViewById(R.id.tab_layout);

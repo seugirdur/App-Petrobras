@@ -1,5 +1,9 @@
 package com.example.apppetrobras.Activities;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import android.app.Dialog;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -9,39 +13,54 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.apppetrobras.Adapters.RelatorioAdapter;
+import com.example.apppetrobras.Objects.EtapasRelatorioObj;
+import com.example.apppetrobras.Objects.ProblemasObj;
 import com.example.apppetrobras.Objects.RelatorioObj;
-import com.example.Navigations.Drawer;
 import com.example.apppetrobras.R;
 import com.example.apppetrobras.api.RetroFitClient;
-import com.example.apppetrobras.databinding.LayoutRelatorioBinding;
+import com.example.apppetrobras.api.API;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.example.apppetrobras.fragments.RecyclerViewInteface;
 
+
+import org.w3c.dom.Text;
+
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class Relatorio extends Drawer {
 
+
+
+public class RelatorioProcesso extends AppCompatActivity implements RecyclerViewInteface{
+
+    private RecyclerView recyclerview;
+    private String checking;
+    private Context context;
+    private RecyclerViewInteface recyclerViewInteface;
+    private List<EtapasRelatorioObj> items = new ArrayList<>();
+    private boolean funciona = false;
     FloatingActionButton add_icon, download_icon, observacoes_icon;
     Animation fabOpen, fabClose, rotateForward, rotateBackward;
     Dialog mDialog;
     SharedPreferences sp;
     SharedPreferences.Editor editor;
-    LayoutRelatorioBinding relatorioLayoutBinding;
+
 
     boolean isOpen = false; // by default it is false
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        relatorioLayoutBinding = LayoutRelatorioBinding.inflate(getLayoutInflater());
-        setContentView(relatorioLayoutBinding.getRoot());
-        allocateActivityTitle("Histórico");
+        setContentView(R.layout.activity_relatorio_processo);
 
         add_icon = (FloatingActionButton) findViewById(R.id.add_icon);
         download_icon = (FloatingActionButton) findViewById(R.id.download_icon);
@@ -74,7 +93,7 @@ public class Relatorio extends Drawer {
             @Override
             public void onClick(View view) {
                 animateFab();
-                Toast.makeText(Relatorio.this, "download clicked", Toast.LENGTH_SHORT).show();
+                Toast.makeText(RelatorioProcesso.this, "download clicked", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -94,37 +113,128 @@ public class Relatorio extends Drawer {
         SharedPreferences sharedPreferences = getSharedPreferences(
                 getString(R.string.preference_file_key), Context.MODE_PRIVATE);
 
-        String chave = sharedPreferences.getString("nome", "");
+        String chave = "D8X0";
+        //= sharedPreferences.getString("nome", "");
 
         Call<List<RelatorioObj>> call = RetroFitClient
                 .getInstance()
                 .getAPI()
                 .getRelatorio(chave);
 
+
+
+
+
         call.enqueue(new Callback<List<RelatorioObj>>() {
             @Override
             public void onResponse(Call<List<RelatorioObj>> call, Response<List<RelatorioObj>> response) {
                 if (!response.isSuccessful()){
-                    Toast.makeText(Relatorio.this, response.code(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RelatorioProcesso.this, response.code(), Toast.LENGTH_SHORT).show();
                     return;
                 }
 
-                List<RelatorioObj> relatorioObjList = response.body();
-                RelatorioObj relatorioObj = relatorioObjList.get(0);
 
-                int idRelatorio = relatorioObj.getIdRelatorio();
-                String Nome = relatorioObj.getNome();
-                String Chave = relatorioObj.getChave();
-                String DataProcesso = relatorioObj.getDataProcesso();
-                String secao = relatorioObj.getSecao();
-                String Titulo = relatorioObj.getTitulo();
-                int SolucaoStop = relatorioObj.getSolucaostop();
-                int Funcionou = relatorioObj.getFuncionou();
-                String Made_check = relatorioObj.getMade_check();
+                //pegar dados da api
+                List<RelatorioObj> cRelatorioList = response.body();
+                RelatorioObj cRelatorio = cRelatorioList.get(1);
+
+                //pegar a quantidade de soluções testadas
+                //pegar o size do Problems da Api
+                //string para desfragmentar em vários int
+                checking = cRelatorio.getMade_check();
+                int quant = checking.length();
 
 
-                Toast.makeText(Relatorio.this, secao, Toast.LENGTH_SHORT).show();
-                Toast.makeText(Relatorio.this, "secao", Toast.LENGTH_SHORT).show();
+
+                int idTitulo = cRelatorio.getIdTitulo();
+                int idSecao = cRelatorio.getIdSecao();
+
+                Call<List<ProblemasObj>> call2;
+
+                switch (idSecao){
+                    case 1:
+                    default:
+                        call2 = RetroFitClient
+                                .getInstance()
+                                .getAPI()
+                                .getLentidao(idTitulo);
+                        break;
+                    case 2:
+                        call2 = RetroFitClient
+                                .getInstance()
+                                .getAPI()
+                                .getInternet(idTitulo);
+                        break;
+                    case 3:
+                        call2 = RetroFitClient
+                                .getInstance()
+                                .getAPI()
+                                .getEquipamentos(idTitulo);
+                        break;
+                    case 4:
+                        call2 = RetroFitClient
+                                .getInstance()
+                                .getAPI()
+                                .getOutros(idTitulo);
+                        break;
+                }
+
+                call2.enqueue(new Callback<List<ProblemasObj>>() {
+                    @Override
+                    public void onResponse(Call<List<ProblemasObj>> call, Response<List<ProblemasObj>> response) {
+                        if (!response.isSuccessful()){
+                            Toast.makeText(RelatorioProcesso.this, response.code(), Toast.LENGTH_SHORT).show();
+                            return;
+                        }
+
+                        List<ProblemasObj> problemsList;
+                        problemsList = response.body();
+                        checking = cRelatorio.getMade_check();
+
+
+
+                        //for para adicionar cada solução testada numa lista
+                        for(int i=0; i<quant; i++){
+                            int checou;
+
+                            if (i==quant){checou = Integer.parseInt(checking.substring(i)); funciona = checkResolvido(Integer.parseInt(checking.substring(i)));}else {checou = Integer.parseInt(checking.substring(i, i + 1)); funciona = checkResolvido(Integer.parseInt(checking.substring(i, i+1)));}
+                            Problems solucao = problemsList.get(i);
+
+                            EtapasRelatorioObj itemRel = new EtapasRelatorioObj(cRelatorio.getTitulo(), solucao.getTituloSolucao(), check(checou));
+                            items.add(itemRel);
+                            if(funciona){break;}
+                        }
+                        //configuração da recyclerview
+                        recyclerview = findViewById(R.id.recicle);
+                        RelatorioAdapter adapter = new RelatorioAdapter(items);
+                        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
+                        recyclerview.setLayoutManager(layoutManager);
+                        recyclerview.setAdapter(adapter);
+                        recyclerview.setHasFixedSize(true);
+
+                        //alterando o texto da barra fixa com informações da API
+                        TextView solucionado = findViewById(R.id.resultado_processo);
+                        TextView nome = findViewById(R.id.nome_usuario);
+                        TextView data = findViewById(R.id.data_atual);
+                        String textData = cRelatorio.getDataProcesso();
+                        //String textData = "310505";
+                        textData = textData.substring(0,2) + "/" + textData.substring(2,4) + "/20" + textData.substring(4);
+                        data.setText(textData);
+                        nome.setText(cRelatorio.getNome());
+                        if(funciona){solucionado.setText("Solucionado");}else{solucionado.setText("Não solucionado");}
+
+
+
+                    }
+
+                    @Override
+                    public void onFailure(Call<List<ProblemasObj>> call, Throwable t) {
+
+                    }
+                });
+
+
+
 
             }
 
@@ -180,4 +290,27 @@ public class Relatorio extends Drawer {
     }
 
 
+    //declarar a imagem do "se deu certo ou errado"
+    public int check(int a){
+        if(a==0){
+            return R.drawable.ic_cancel_circle;
+        }
+        else {
+            return R.drawable.ic_check_circle;
+        }
+    }
+
+    //declarar se o problem foi resolvido
+    public boolean checkResolvido(int a){
+        if(a == 2){
+            return true;
+        }
+        return false;
+    }
+
+
+    @Override
+    public void onItemClick(int position) {
+
+    }
 }

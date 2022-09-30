@@ -91,6 +91,7 @@ public class LentidaoFragment extends Fragment implements RecyclerViewInteface{
         intent.putExtra("titulo",titulo);
         intent.putExtra("ID_TITULO", dataArrayList.get(position).getId());
         intent.putExtra("titulosProblemas", dataArrayList.get(position).getText());
+        intent.putExtra("CHECK", "0");
         startActivity(intent);
     }
 

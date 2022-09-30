@@ -115,7 +115,8 @@
                 android:layout_marginTop="20dp"
                 android:clickable="true"
                 android:src="@drawable/ic_check_circle"
-                android:background="@drawable/ripple_effect_soluction"/>
+                android:background="@drawable/ripple_effect_soluction"
+                android:onClick="solucionado"/>
 
             <ImageView
                 android:id="@+id/btnNaoResolveu"
@@ -126,7 +127,8 @@
                 android:layout_marginTop="20dp"
                 android:clickable="true"
                 android:background="@drawable/ripple_effect_soluction"
-                app:srcCompat="@drawable/ic_cancel_circle"/>
+                app:srcCompat="@drawable/ic_cancel_circle"
+                android:onClick="naoSolucionado"/>
 
 
          <androidx.constraintlayout.widget.ConstraintLayout

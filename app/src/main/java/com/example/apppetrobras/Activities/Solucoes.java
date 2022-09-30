@@ -26,8 +26,8 @@ import retrofit2.Response;
 public class Solucoes extends Drawer implements RecyclerViewInteface {
 
     // Declaração das variáveis
-    int idTitulo, tipoProblema;
-    String titulo, titulosProblemas;
+    int idTitulo, tipoProblema, qtdSolucoes;
+    String titulo, titulosProblemas, check;
     private RecyclerView recyclerview;
     private Context context;
     private RecyclerViewInteface recyclerViewInteface;
@@ -46,6 +46,9 @@ public class Solucoes extends Drawer implements RecyclerViewInteface {
         idTitulo = getIntent().getIntExtra("ID_TITULO",1);
         titulo = getIntent().getStringExtra("titulo");
         titulosProblemas = getIntent().getStringExtra("titulosProblemas");
+        check = getIntent().getStringExtra("CHECK");
+
+
 
         recyclerview = findViewById(R.id.recyclerview);
         recyclerview.setLayoutManager(new LinearLayoutManager(this));
@@ -97,6 +100,10 @@ public class Solucoes extends Drawer implements RecyclerViewInteface {
                 recyclerview.setAdapter(recyclerViewAdapter);
                 recyclerViewAdapter.notifyDataSetChanged();
                 //Toast.makeText(context, "item: "+idTitulo, Toast.LENGTH_SHORT).show();
+
+                qtdSolucoes = solucoesObjList.size();
+
+
             }
 
             @Override
@@ -104,6 +111,8 @@ public class Solucoes extends Drawer implements RecyclerViewInteface {
                 Toast.makeText(context, t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
+
+
     }
 
     @Override
@@ -114,6 +123,10 @@ public class Solucoes extends Drawer implements RecyclerViewInteface {
         // Insere na variável o titulo da solução clickada
         String tituloSolucao = solucoesObjList.get(position).getTituloSolucao();
 
+        if(check == "0") {
+            check = "";
+            for (int i = 0; i < qtdSolucoes; i++) { check += "0"; }
+        }
 
         // Definição de valores que serão redirecionados
         intent.putExtra("TIPO",tipoProblema);
@@ -125,7 +138,13 @@ public class Solucoes extends Drawer implements RecyclerViewInteface {
         //todas as soluções começam pelo primeiro passo
         intent.putExtra("PASSO", 1);
         intent.putExtra("TITULO_SOLUCAO", tituloSolucao);
+
+        intent.putExtra("QTD_SOLUCOES",qtdSolucoes);
+        intent.putExtra("CHECK",check);
         startActivity(intent);
     }
+
+
+
 
 }

@@ -1,4 +1,4 @@
-package com.example.apppetrobras;
+package com.example.apppetrobras.Adapters;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;

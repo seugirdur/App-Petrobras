@@ -16,6 +16,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.apppetrobras.Adapters.RecyclerViewAdapter;
 import com.example.apppetrobras.Adapters.RelatorioAdapter;
 import com.example.apppetrobras.Objects.EtapasRelatorioObj;
 import com.example.apppetrobras.Objects.ProblemasObj;
@@ -121,7 +122,6 @@ public class RelatorioProcesso extends AppCompatActivity implements RecyclerView
 
 
 
-
         call.enqueue(new Callback<List<RelatorioObj>>() {
             @Override
             public void onResponse(Call<List<RelatorioObj>> call, Response<List<RelatorioObj>> response) {
@@ -184,8 +184,8 @@ public class RelatorioProcesso extends AppCompatActivity implements RecyclerView
                             return;
                         }
 
-                        List<SolucoesObj> solucoesList;
-                        solucoesList = response.body();
+                        List<SolucoesObj> problemsList;
+                        problemsList = response.body();
                         checking = cRelatorio.getMade_check();
 
 
@@ -195,7 +195,7 @@ public class RelatorioProcesso extends AppCompatActivity implements RecyclerView
                             int checou;
 
                             if (i==quant){checou = Integer.parseInt(checking.substring(i)); funciona = checkResolvido(Integer.parseInt(checking.substring(i)));}else {checou = Integer.parseInt(checking.substring(i, i + 1)); funciona = checkResolvido(Integer.parseInt(checking.substring(i, i+1)));}
-                            SolucoesObj solucao = solucoesList.get(i);
+                            SolucoesObj solucao = problemsList.get(i);
 
                             EtapasRelatorioObj itemRel = new EtapasRelatorioObj(cRelatorio.getTitulo(), solucao.getTituloSolucao(), check(checou));
                             items.add(itemRel);
@@ -203,7 +203,7 @@ public class RelatorioProcesso extends AppCompatActivity implements RecyclerView
                         }
                         //configuração da recyclerview
                         recyclerview = findViewById(R.id.recicle);
-                        RelatorioAdapter adapter = new RelatorioAdapter(items);
+                        RecyclerViewAdapter adapter = new RecyclerViewAdapter(items);
                         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
                         recyclerview.setLayoutManager(layoutManager);
                         recyclerview.setAdapter(adapter);
@@ -224,9 +224,10 @@ public class RelatorioProcesso extends AppCompatActivity implements RecyclerView
 
                     }
 
+                    @Override
+                    public void onFailure(Call<List<SolucoesObj>> call, Throwable t) {
 
-
-
+                    }
                 });
 
 

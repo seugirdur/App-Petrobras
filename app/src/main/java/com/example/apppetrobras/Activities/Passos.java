@@ -34,7 +34,7 @@ public class Passos extends Drawer {
 
     // Declaração das variáveis
     int idTitulo, idSolucao, tipoProblema, idPasso, qtdPassos;
-    String tituloSolucao, titulo;
+    String tituloSolucao, titulo, made_check;
 
     Context context;
 
@@ -139,7 +139,36 @@ public class Passos extends Drawer {
         if (idPasso < qtdPassos) {
             idPasso+=1;
             inserirNaTela();
+            thereIsNoPasso();
+
         }
+    }
+
+    //vendo que chegou no ultimo passo e revelando os botoes de conseguiu e nao conseguiu
+    public void thereIsNoPasso(){
+        if (idPasso == qtdPassos) {
+            ImageView right = findViewById(R.id.btnResolveu);
+            ImageView wrong = findViewById(R.id.btnNaoResolveu);
+
+            right.setVisibility(View.VISIBLE);
+            wrong.setVisibility(View.VISIBLE);
+        }
+    }
+    //função do botao de X
+    public void dontGetMeWrong(View view){
+//        ele vai fazer uma funcao que vai conferir na made_check se o usuario já abriu todos os problemas,
+//         se sim ele poe no relatorio
+
+//        if(!made_check.contains("0")){
+//            iAmWhoKnocks();
+//        }
+
+    }
+
+    //função do botao de correto
+    public void dontGetMeRight(View view){
+//Ele chama a API independente da situação, já que será guardado no relatorio que o individuo terminou o uso
+            iAmWhoKnocks();
     }
 
     public void inserirNaTela(){
@@ -162,7 +191,12 @@ public class Passos extends Drawer {
                 .into(imagemSolucao);
     }
 
-    public void iAmWhoKnocks(View view){
+
+    //função que guarda no bd o relatório
+    public void iAmWhoKnocks(){
+
+        //COLOCAR AQUI A STRING CONCATENADA DOQ O MLK FEZ
+        made_check="";
 
 
         Date currentTime = Calendar.getInstance().getTime();
@@ -174,10 +208,6 @@ public class Passos extends Drawer {
 
         String nome = sharedPreferences.getString("nome", "");
         String chave = sharedPreferences.getString("chave", "");
-
-
-
-
 
         Call<ResponseBody> call = RetroFitClient
                 .getInstance()
@@ -198,4 +228,5 @@ public class Passos extends Drawer {
             }
         });
     }
+
 }

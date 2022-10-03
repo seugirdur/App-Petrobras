@@ -208,13 +208,6 @@ public class Passos extends Drawer {
     //função que guarda no bd o relatório
     public void iAmWhoKnocks(){
 
-        //COLOCAR AQUI A STRING CONCATENADA DOQ O MLK FEZ
-//        check="";
-
-
-
-
-
 
         SharedPreferences sharedPreferences = getSharedPreferences(
                 getString(R.string.preference_file_key), Context.MODE_PRIVATE);

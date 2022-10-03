@@ -3,9 +3,11 @@ package com.example.Navigations;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 
-import com.example.apppetrobras.Adapters.ViewPagerAdapter;
+import com.example.apppetrobras.Adapters.VPTabs;
 import com.example.apppetrobras.R;
 import com.example.apppetrobras.databinding.LayoutTabBinding;
 import com.google.android.material.tabs.TabLayout;
@@ -15,12 +17,14 @@ public class Tabs extends Drawer {
     // Declaração das variáveis
     TabLayout tabLayout;
     ViewPager2 viewPager2;
-    ViewPagerAdapter viewPagerAdapter;
+    VPTabs VPTabs;
     LayoutTabBinding layoutTabBinding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
 
         // Navigation Drawer
         layoutTabBinding = LayoutTabBinding.inflate(getLayoutInflater());
@@ -29,8 +33,8 @@ public class Tabs extends Drawer {
 
         tabLayout = findViewById(R.id.tab_layout);
         viewPager2 = findViewById(R.id.view_pager);
-        viewPagerAdapter = new ViewPagerAdapter(this);
-        viewPager2.setAdapter(viewPagerAdapter);
+        VPTabs = new VPTabs(this);
+        viewPager2.setAdapter(VPTabs);
 
 //        settingTheName();
 

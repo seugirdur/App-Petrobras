@@ -155,6 +155,7 @@ public class Login extends AppCompatActivity {
                 String tel = loginObj.getTel();
                 String dataNasc = loginObj.getDataNasc();
                 String chave = loginObj.getChave();
+                int isAdmin = loginObj.getIsAdmin();
                 Toast.makeText(Login.this, "Bem vindo "+nome, Toast.LENGTH_SHORT).show();
 
                 SharedPreferences sharedPreferences = getSharedPreferences(
@@ -162,6 +163,7 @@ public class Login extends AppCompatActivity {
 
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putInt("id", id);
+                editor.putInt("isAdmin", isAdmin);
                 editor.putString("nome", nome);
                 editor.putString("email", email);
                 editor.putString("tel", tel);

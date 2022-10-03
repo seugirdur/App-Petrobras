@@ -11,9 +11,9 @@ import com.example.apppetrobras.fragments.InternetFragment;
 import com.example.apppetrobras.fragments.LentidaoFragment;
 import com.example.apppetrobras.fragments.OutrosFragment;
 
-public class ViewPagerAdapter extends FragmentStateAdapter {
+public class VPTabs extends FragmentStateAdapter {
 
-    public ViewPagerAdapter(@NonNull FragmentActivity fragmentActivity) {
+    public VPTabs(@NonNull FragmentActivity fragmentActivity) {
         super(fragmentActivity);
     }
 

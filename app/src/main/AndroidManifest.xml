@@ -77,6 +77,11 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         </activity>
         <activity
+            android:name="com.example.Navigations.Administrador"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        </activity>
+        <activity
             android:name=".Activities.SplashScreen"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.NoActionBar" >

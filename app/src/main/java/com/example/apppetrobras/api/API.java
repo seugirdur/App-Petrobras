@@ -11,6 +11,7 @@ import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.GET;
 import retrofit2.http.POST;
 
 public interface  API {
@@ -120,6 +121,13 @@ public interface  API {
             @Field("made_check") String made_check
 
     );
+
+    @GET("/relatorios/admin/aberto")
+    Call<List<RelatorioObj>> getAllRelatoriosOpen();
+
+
+    @GET("/relatorios/admin/fechado")
+    Call<List<RelatorioObj>> getAllRelatoriosClosed();
 
 
 }

@@ -4,6 +4,17 @@ public class RelatorioObj {
     String nome, chave, dataProcesso, secao, titulo, made_check;
     int idRelatorio, idSecao, idTitulo;
 
+    public RelatorioObj(String nome, String chave, String dataProcesso, String secao, String titulo, String made_check, int idRelatorio, int idSecao, int idTitulo) {
+        this.nome = nome;
+        this.chave = chave;
+        this.dataProcesso = dataProcesso;
+        this.secao = secao;
+        this.titulo = titulo;
+        this.made_check = made_check;
+        this.idRelatorio = idRelatorio;
+        this.idSecao = idSecao;
+        this.idTitulo = idTitulo;
+    }
 
     public String getNome() {
         return nome;

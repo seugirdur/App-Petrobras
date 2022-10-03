@@ -9,9 +9,9 @@ import com.example.apppetrobras.fragments.Ajuda_fragment;
 import com.example.apppetrobras.fragments.Historico_Fragment;
 import com.example.apppetrobras.fragments.Opcoes_Fragment;
 
-public class ViewPager extends FragmentStateAdapter {
+public class VPConfigurações extends FragmentStateAdapter {
 
-    public ViewPager(@NonNull FragmentActivity fragmentActivity) {
+    public VPConfigurações(@NonNull FragmentActivity fragmentActivity) {
         super(fragmentActivity);
     }
 

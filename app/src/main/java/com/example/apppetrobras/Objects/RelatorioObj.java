@@ -2,7 +2,7 @@ package com.example.apppetrobras.Objects;
 
 public class RelatorioObj {
     String nome, chave, dataProcesso, secao, titulo, made_check;
-    int idRelatorio, solucaostop, funcionou;
+    int idRelatorio, idSecao, idTitulo;
 
 
     public String getNome() {
@@ -29,12 +29,12 @@ public class RelatorioObj {
         return idRelatorio;
     }
 
-    public int getSolucaostop() {
-        return solucaostop;
+    public int getIdSecao() {
+        return idSecao;
     }
 
-    public int getFuncionou() {
-        return funcionou;
+    public int getIdTitulo() {
+        return idTitulo;
     }
 
     public String getMade_check() {

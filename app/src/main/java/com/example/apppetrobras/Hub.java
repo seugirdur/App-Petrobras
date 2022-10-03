@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.Navigations.Administrador;
 import com.example.Navigations.Tabs;
 import com.example.apppetrobras.Activities.Ajuda;
 import com.example.apppetrobras.Activities.Cadastro;
@@ -67,11 +68,11 @@ public class Hub extends AppCompatActivity {
         finish();
     }
 
-    //public void rediriciona7(View view){
-      //  Intent intent = new Intent(Hub.this, MainActivity.class);
-        //startActivity(intent);
-      //  finish();
-    //}
+    public void rediriciona7(View view){
+        Intent intent = new Intent(Hub.this, Administrador.class);
+        startActivity(intent);
+        finish();
+    }
 
     public void rediriciona8(View view){
         Intent intent = new Intent(Hub.this, SplashScreen.class);

@@ -1,27 +1,28 @@
 package com.example.Navigations;
 
-import androidx.viewpager2.widget.ViewPager2;
-
 import android.os.Bundle;
 
+import androidx.viewpager2.widget.ViewPager2;
+
+import com.example.apppetrobras.Adapters.VPAdministrador;
 import com.example.apppetrobras.R;
-import com.example.apppetrobras.Adapters.VPConfigurações;
-import com.example.apppetrobras.databinding.LayoutConfiguracoesBinding;
+import com.example.apppetrobras.databinding.LayoutAdministradorBinding;
 import com.google.android.material.tabs.TabLayout;
 
-public class Configuracoes extends Drawer {
+public class Administrador extends Drawer {
 
     // Declaração das variáveis
     TabLayout tabLayout;
     ViewPager2 viewPager2;
-    VPConfigurações VPConfigurações;
-    LayoutConfiguracoesBinding layoutConfiguracoesBinding;
+    VPAdministrador VPAdministrador;
+    LayoutAdministradorBinding layoutAdministradorBinding;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        layoutConfiguracoesBinding = LayoutConfiguracoesBinding.inflate(getLayoutInflater());
-        setContentView(layoutConfiguracoesBinding.getRoot());
-        allocateActivityTitle("Configurações do Usuário");
+        layoutAdministradorBinding = LayoutAdministradorBinding.inflate(getLayoutInflater());
+        setContentView(layoutAdministradorBinding.getRoot());
+        allocateActivityTitle("Configurações do Administrador");
 
 
         // Navigation Drawer
@@ -31,8 +32,8 @@ public class Configuracoes extends Drawer {
 
         tabLayout = findViewById(R.id.tabLayout);
         viewPager2 = findViewById(R.id.view_pager);
-        VPConfigurações = new VPConfigurações(this);
-        viewPager2.setAdapter(VPConfigurações);
+        VPAdministrador = new VPAdministrador(this);
+        viewPager2.setAdapter(VPAdministrador);
 
 //       settingTheName();
 

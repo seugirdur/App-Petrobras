@@ -43,16 +43,11 @@
         <activity
             android:name="com.example.Navigations.Drawer"
             android:exported="false" />
-        <activity
-            android:name=".Conteudo"
-            android:exported="false" />
+
         <activity
             android:name=".Activities.Cadastro"
             android:exported="false"
              />
-        <activity
-            android:name=".minhaPagina"
-            android:exported="false" />
         <activity
             android:name=".Activities.Login"
             android:exported="false"
@@ -80,10 +75,11 @@
             android:name="com.example.Navigations.Configuracoes"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.Navigations.Administrador"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         </activity>
         <activity
             android:name=".Activities.SplashScreen"

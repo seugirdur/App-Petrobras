@@ -10,6 +10,8 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -32,6 +34,7 @@ import com.google.android.material.navigation.NavigationView;
             FrameLayout container = drawerLayout.findViewById(R.id.activityContainer);
             container.addView(view);
             super.setContentView(drawerLayout);
+
 
             Toolbar toolbar = drawerLayout.findViewById(R.id.toolBar);
             setSupportActionBar(toolbar);
@@ -113,6 +116,9 @@ import com.google.android.material.navigation.NavigationView;
 
 
 
+        }
+
+        protected void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         }
     }
 

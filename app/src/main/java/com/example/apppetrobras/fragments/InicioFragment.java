@@ -17,6 +17,7 @@ import com.example.apppetrobras.Objects.ProblemasObj;
 import com.example.apppetrobras.Activities.Solucoes;
 import com.example.apppetrobras.R;
 import com.example.apppetrobras.Adapters.RecyclerViewAdapter;
+import com.example.apppetrobras.api.RetroFitClient;
 
 import java.util.ArrayList;
 
@@ -57,16 +58,24 @@ public class InicioFragment extends Fragment implements RecyclerViewInteface{
         dataArrayList = new ArrayList<>();
 
         String[] titulosProblemas = new String[]{
-                getString(R.string.inicio_1),
-                getString(R.string.inicio_2),
-                getString(R.string.inicio_3),
-                getString(R.string.inicio_4),
-                getString(R.string.inicio_5),
-                getString(R.string.inicio_6)
+                getString(R.string.internet_2),
+                //lentidao
+                getString(R.string.lentidao_3),
+                //equipamento
+                getString(R.string.equipamentos_1),
+                //outros
+                getString(R.string.outros_9),
+                //outros
+                getString(R.string.outros_7),
+                //internet
+                getString(R.string.internet_1),
+                //equipamento
+                getString(R.string.equipamentos_8)
+
         };
 
         int[] idProblemas = new int[]{
-                1, 2, 3, 4, 5, 6
+                1, 2, 3, 4, 5, 6, 7
         };
 
         int[] imagensProblemas = new int[]{
@@ -75,7 +84,9 @@ public class InicioFragment extends Fragment implements RecyclerViewInteface{
                 R.drawable.ic_launcher_background,
                 R.drawable.ic_launcher_background,
                 R.drawable.ic_launcher_background,
+                R.drawable.ic_launcher_background,
                 R.drawable.ic_launcher_background
+
         };
 
         for(int i = 0; i < titulosProblemas.length; i++){
@@ -87,19 +98,61 @@ public class InicioFragment extends Fragment implements RecyclerViewInteface{
 
     @Override
     public void onItemClick(int position) {
+
+        int idtype, posi_id;
+        String titulo = "", posi_title="";
         //criação da string para armazenamento no banco
         // Esse valor é temporário. Ainda não foi definido o funcionamento da aba 1(Inicio)
-        String titulo = "Lentidão";
+        switch (position){
+            case 1:
+            default:
+                 titulo = "Lentidão";
+                 idtype = 1;
+                 posi_id = 3;
+                 posi_title = "Computador está muito lento";
+                break;
+            case 2:
+                 titulo = "Equipamentos";
+                 idtype = 3;
+                posi_id = 1;
+                posi_title = "Quando eu clico no botão de ligar do meu computador, ele faz barulho e fica toda hora reiniciando";
+                break;
+            case 3:
+                 titulo = "Outros";
+                idtype = 4;
+                posi_id = 9;
+                posi_title = "Como recuperar um arquivo que apaguei?";
+                break;
+            case 4:
+                 titulo = "Outros";
+                idtype = 4;
+                posi_id = 7;
+                posi_title = "O meu navegador diz que estou com problema de memória";
+                break;
+            case 5:
+                titulo = "Internet";
+                idtype = 2;
+                posi_id = 1;
+                posi_title = "Meu computador não consegue se conectar a rede";
+                break;
+            case 6:
+                titulo = "Equipamentos";
+                idtype = 3;
+                posi_id = 8;
+                posi_title = "Quando eu clico no botão de ligar do computador, não acontece nada";
+                break;
+        }
+
 
         // Redirecionamento para a tela do problema contendo os títulos das soluções
         Intent intent = new Intent(getActivity(), Solucoes.class);
 
         // Definição de valores que serão redirecionados
         // Valor do tipo é temporário. Ainda não foi definido o funcionamento da aba 1(Inicio)
-        intent.putExtra("TIPO",1);
+        intent.putExtra("TIPO",idtype);
         intent.putExtra("titulo",titulo);
-        intent.putExtra("ID_TITULO", dataArrayList.get(position).getId());
-        intent.putExtra("titulosProblemas", dataArrayList.get(position).getText());
+        intent.putExtra("ID_TITULO", posi_id );
+        intent.putExtra("titulosProblemas", posi_title);
         startActivity(intent);
     }
 }

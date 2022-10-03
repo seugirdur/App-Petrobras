@@ -3,6 +3,7 @@ package com.example.apppetrobras.Activities;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -10,16 +11,21 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.Calendar;
+import java.util.Date;
 import com.bumptech.glide.Glide;
 import com.example.Navigations.Drawer;
+import com.example.apppetrobras.Objects.RelatorioObj;
 import com.example.apppetrobras.R;
 import com.example.apppetrobras.Objects.PassosObj;
 import com.example.apppetrobras.api.RetroFitClient;
 import com.example.apppetrobras.databinding.LayoutPassosBinding;
 
 
+import java.io.IOException;
 import java.util.List;
 
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -154,5 +160,42 @@ public class Passos extends Drawer {
                 .load(imagemBD)
                 .error(R.drawable.ic_error)
                 .into(imagemSolucao);
+    }
+
+    public void iAmWhoKnocks(View view){
+
+
+        Date currentTime = Calendar.getInstance().getTime();
+
+        String date = currentTime.toString();
+
+        SharedPreferences sharedPreferences = getSharedPreferences(
+                getString(R.string.preference_file_key), Context.MODE_PRIVATE);
+
+        String nome = sharedPreferences.getString("nome", "");
+        String chave = sharedPreferences.getString("chave", "");
+
+
+
+
+
+        Call<ResponseBody> call = RetroFitClient
+                .getInstance()
+                .getAPI().postRelatorio(nome, chave, date, tipoProblema, titulo,idTitulo,tituloSolucao,"01112");
+        
+        call.enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                    Toast.makeText(Passos.this, "Relatorio criado", Toast.LENGTH_LONG).show();
+                
+            }
+            
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+                Toast.makeText(Passos.this, t.getMessage(), Toast.LENGTH_LONG).show();
+
+            }
+        });
     }
 }

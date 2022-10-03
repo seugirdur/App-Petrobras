@@ -101,9 +101,25 @@ public interface  API {
     );
 
     @FormUrlEncoded
-    @POST("/relatorios")
+    @POST("/relatorios/access")
     Call<List<RelatorioObj>> getRelatorio(
             @Field("chave") String chave
 
     );
+
+    @FormUrlEncoded
+    @POST("/relatorios/store")
+    Call<ResponseBody> postRelatorio(
+            @Field("nome") String nome,
+            @Field("chave") String chave,
+            @Field("dataProcesso") String dataProcesso,
+            @Field("idSecao") int idSecao,
+            @Field("secao") String secao,
+            @Field("idTitulo") int idTitulo,
+            @Field("titulo") String titulo,
+            @Field("made_check") String made_check
+
+    );
+
+
 }

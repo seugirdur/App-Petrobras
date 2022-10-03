@@ -106,16 +106,17 @@
             android:layout_marginLeft="5dp"
             android:onClick="rtrnPasso" />
 
-           <ImageView
-                android:id="@+id/btnResolveu"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="@id/text_layout"
-                app:layout_constraintTop_toBottomOf="@id/text_layout"
-                android:layout_marginTop="20dp"
-                android:clickable="true"
-                android:src="@drawable/ic_check_circle"
-                android:background="@drawable/ripple_effect_soluction"/>
+        <ImageView
+            android:id="@+id/btnResolveu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/ripple_effect_soluction"
+            android:clickable="true"
+            android:onClick="iAmWhoKnocks"
+            android:src="@drawable/ic_check_circle"
+            app:layout_constraintStart_toStartOf="@id/text_layout"
+            app:layout_constraintTop_toBottomOf="@id/text_layout" />
 
             <ImageView
                 android:id="@+id/btnNaoResolveu"

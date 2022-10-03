@@ -119,6 +119,19 @@
             app:layout_constraintStart_toStartOf="@id/text_layout"
             app:layout_constraintTop_toBottomOf="@id/text_layout" />
 
+        <ImageView
+            android:id="@+id/btnSemAcesso"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/ripple_effect_soluction"
+            android:clickable="true"
+            android:onClick="dontGetMeLost"
+            android:src="@drawable/ic_conf"
+            app:layout_constraintStart_toStartOf="@id/text_layout"
+            app:layout_constraintEnd_toEndOf="@id/text_layout"
+            app:layout_constraintTop_toBottomOf="@id/text_layout" />
+
             <ImageView
                 android:id="@+id/btnNaoResolveu"
                 android:layout_width="wrap_content"

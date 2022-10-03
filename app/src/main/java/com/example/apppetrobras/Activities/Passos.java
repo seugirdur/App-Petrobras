@@ -69,10 +69,8 @@ public class Passos extends Drawer {
         tipoProblema = getIntent().getIntExtra("TIPO", 1);
         idTitulo = getIntent().getIntExtra("ID_TITULO",1);
         idSolucao = getIntent().getIntExtra("ID_SOLUCAO",1);
-        idPasso = getIntent().getIntExtra("PASSO",1);
         tituloSolucao = getIntent().getStringExtra("TITULO_SOLUCAO");
         titulo = getIntent().getStringExtra("titulo");
-        check = getIntent().getStringExtra("CHECK");
         titulosProblemas = getIntent().getStringExtra("titulosProblemas");
 
         // Instanciação de variáveis chave
@@ -162,19 +160,28 @@ public class Passos extends Drawer {
     }
     //função do botao de X
     public void dontGetMeWrong(View view){
-//        ele vai fazer uma funcao que vai conferir na made_check se o usuario já abriu todos os problemas,
-//         se sim ele poe no relatorio
-
-//        if(!made_check.contains("0")){
-//            iAmWhoKnocks();
-//        }
+        trataCheck(1);
+        Toast.makeText(context, ""+check , Toast.LENGTH_SHORT).show();
+        mudarTela();
 
     }
 
     //função do botao de correto
     public void dontGetMeRight(View view){
-//Ele chama a API independente da situação, já que será guardado no relatorio que o individuo terminou o uso
-            iAmWhoKnocks();
+        trataCheck(2);
+        Toast.makeText(context, ""+check, Toast.LENGTH_SHORT).show();
+        mudarTela();
+
+        iAmWhoKnocks();
+    }
+
+    //função do botao sem acesso
+    public void dontGetMeLost(View view){
+        trataCheck(3);
+        Toast.makeText(context, ""+check, Toast.LENGTH_SHORT).show();
+        mudarTela();
+
+
     }
 
     public void inserirNaTela(){
@@ -236,25 +243,6 @@ public class Passos extends Drawer {
     }
 
 
-    public void solucionado(View v){
-       trataCheck(2);
-       Toast.makeText(context, ""+check, Toast.LENGTH_SHORT).show();
-       mudarTela();
-    }
-
-    public void naoSolucionado(View v){
-        trataCheck(1);
-        Toast.makeText(context, ""+check , Toast.LENGTH_SHORT).show();
-        mudarTela();
-    }
-
-    public void semAcesso(View v) {
-        trataCheck(3);
-        Toast.makeText(context, ""+check, Toast.LENGTH_SHORT).show();
-        mudarTela();
-    }
-
-
 
     public void trataCheck(int _estadoCheck){
         String holder = "";
@@ -307,13 +295,6 @@ public class Passos extends Drawer {
     public void retornarParaSolucoes(){
         // Redirecionamento para a tela do problema contendo os títulos das soluções
         Intent intent = new Intent(Passos.this, Solucoes.class);
-
-        // Definição de valores que serão redirecionados
-        intent.putExtra("TIPO",tipoProblema);
-        intent.putExtra("ID_TITULO", idTitulo);
-        intent.putExtra("titulo", titulo);
-        intent.putExtra("CHECK",check);
-        intent.putExtra("titulosProblemas",titulosProblemas);
         startActivity(intent);
     }
 }

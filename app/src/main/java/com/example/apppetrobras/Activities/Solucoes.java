@@ -130,13 +130,10 @@ public class Solucoes extends Drawer implements RecyclerViewInteface {
         intent.putExtra("TIPO",tipoProblema);
         intent.putExtra("ID_TITULO", idTitulo);
         intent.putExtra("titulo", titulo);
-
+        tituloSolucao = solucoesObjList.get(position+1).getTituloSolucao();
+        intent.putExtra("TITULO_SOLUCAO", tituloSolucao);
         // position começa em 0, para condizer ao BD é necessário adicionar 1 a ele
         intent.putExtra("ID_SOLUCAO", position+1);
-        intent.putExtra("TITULO_SOLUCAO", tituloSolucao);
-
-        intent.putExtra("CHECK",check);
-
         intent.putExtra("titulosProblemas",titulosProblemas);
         startActivity(intent);
     }

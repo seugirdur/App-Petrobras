@@ -117,6 +117,8 @@ public class EmAbertoFragment extends Fragment implements RecyclerViewInteface{
                 Toast.makeText(getContext(), "wassup", Toast.LENGTH_SHORT).show();
                 return;
             }
+
+            //tentando guardar num objeto para que seja depois visivel no item_list_admin do dionisio
             relatorioObjList = response.body();
 
 

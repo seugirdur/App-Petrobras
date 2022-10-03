@@ -20,10 +20,10 @@ public class VPAdministrador extends FragmentStateAdapter {
     public Fragment createFragment(int position) {
         switch (position){
             case 0:
-                return new SolucionadoFragment();
+                return new EmAbertoFragment();
 
             default:
-                return new EmAbertoFragment();
+                return new SolucionadoFragment();
         }
     }
 

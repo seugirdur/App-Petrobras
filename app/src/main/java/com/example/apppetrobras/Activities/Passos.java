@@ -10,20 +10,20 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.Calendar;
-import java.util.Date;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+
 import com.bumptech.glide.Glide;
 import com.example.Navigations.Drawer;
-import com.example.apppetrobras.Objects.RelatorioObj;
 import com.example.apppetrobras.R;
 import com.example.apppetrobras.Objects.PassosObj;
 import com.example.apppetrobras.api.RetroFitClient;
 import com.example.apppetrobras.databinding.LayoutPassosBinding;
 
 
-import java.io.IOException;
+import java.util.Date;
 import java.util.List;
-import java.util.Objects;
+import java.util.Locale;
 
 import okhttp3.ResponseBody;
 import retrofit2.Call;
@@ -212,9 +212,9 @@ public class Passos extends Drawer {
 //        check="";
 
 
-        Date currentTime = Calendar.getInstance().getTime();
 
-        String date = currentTime.toString();
+
+
 
         SharedPreferences sharedPreferences = getSharedPreferences(
                 getString(R.string.preference_file_key), Context.MODE_PRIVATE);
@@ -224,7 +224,7 @@ public class Passos extends Drawer {
 
         Call<ResponseBody> call = RetroFitClient
                 .getInstance()
-                .getAPI().postRelatorio(nome, chave, date, tipoProblema, titulo,idTitulo,tituloSolucao,"01112");
+                .getAPI().postRelatorio(nome, chave, getTodaysDate(), tipoProblema, titulo,idTitulo,tituloSolucao,check);
 
         call.enqueue(new Callback<ResponseBody>() {
             @Override
@@ -291,6 +291,11 @@ public class Passos extends Drawer {
         Intent intent = new Intent(Passos.this, Inicio.class);
 
     }
+
+    public String getTodaysDate() {
+        return new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).format(new Date());
+    }
+
 
     public void retornarParaSolucoes(){
         // Redirecionamento para a tela do problema contendo os títulos das soluções

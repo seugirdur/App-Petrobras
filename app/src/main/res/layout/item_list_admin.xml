@@ -2,14 +2,13 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
+    android:layout_width="364dp"
     android:layout_height="wrap_content"
     android:padding="10dp">
 
     <androidx.cardview.widget.CardView
-        android:layout_width="364dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:background="#EDEDED"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,21 +21,9 @@
             tools:layout_editor_absoluteX="-55dp"
             tools:layout_editor_absoluteY="-10dp">
 
-            <ImageView
-                android:id="@+id/imageProblema"
-                android:layout_width="46dp"
-                android:layout_height="20dp"
-                android:contentDescription="@string/todo"
-                app:layout_constraintBottom_toBottomOf="@+id/textProblema"
-                app:layout_constraintEnd_toStartOf="@+id/textProblema"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_launcher_background"
-                tools:ignore="MissingConstraints" />
-
             <TextView
                 android:id="@+id/textProblema"
-                android:layout_width="240dp"
+                android:layout_width="wrap_content"
                 android:layout_marginTop="20px"
                 android:layout_height="20dp"
                 android:text="@string/data_do_relat_rio_dd_mm_yyyy"
@@ -48,7 +35,7 @@
 
             <TextView
                 android:id="@+id/textView24"
-                android:layout_width="240dp"
+                android:layout_width="wrap_content"
                 android:layout_height="15dp"
                 android:layout_marginTop="15px"
                 android:text="NOME COMPLETO"
@@ -60,7 +47,7 @@
 
             <TextView
                 android:id="@+id/textView26"
-                android:layout_width="240dp"
+                android:layout_width="wrap_content"
                 android:layout_marginTop="15px"
                 android:layout_height="15dp"
                 android:text="EMAIL"
@@ -72,7 +59,7 @@
 
             <TextView
                 android:id="@+id/textView27"
-                android:layout_width="240dp"
+                android:layout_width="wrap_content"
                 android:layout_height="15dp"
                 android:text="@string/email_robson_petrobras_com_br"
                 android:textSize="12sp"
@@ -82,7 +69,7 @@
 
             <TextView
                 android:id="@+id/textView25"
-                android:layout_width="240dp"
+                android:layout_width="wrap_content"
                 android:layout_height="15dp"
                 android:text="@string/nome_completo"
                 android:textSize="12sp"
@@ -92,7 +79,7 @@
 
             <TextView
                 android:id="@+id/textView28"
-                android:layout_width="240dp"
+                android:layout_width="wrap_content"
                 android:layout_height="15dp"
                 android:text="@string/setor"
                 android:textColor="@color/black"
@@ -104,7 +91,7 @@
 
             <TextView
                 android:id="@+id/textView29"
-                android:layout_width="240dp"
+                android:layout_width="wrap_content"
                 android:layout_height="15dp"
                 android:text="Setor do Usuário"
                 android:textSize="12sp"
@@ -120,7 +107,7 @@
                 android:layout_marginTop="30px"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView29" />
+                app:layout_constraintTop_toBottomOf="@+id/textView29"/>
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

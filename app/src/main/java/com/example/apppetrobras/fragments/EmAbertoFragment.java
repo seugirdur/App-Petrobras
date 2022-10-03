@@ -16,12 +16,15 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.apppetrobras.Activities.Inicio;
 import com.example.apppetrobras.Activities.Solucoes;
+import com.example.apppetrobras.Adapters.RVAdapterEmAberto;
 import com.example.apppetrobras.Adapters.RecyclerViewAdapter;
+import com.example.apppetrobras.Adapters.RelatorioAdapter;
 import com.example.apppetrobras.Objects.ProblemasObj;
 import com.example.apppetrobras.Objects.RelatorioObj;
 import com.example.apppetrobras.Objects.SolucoesObj;
 import com.example.apppetrobras.R;
 import com.example.apppetrobras.api.RetroFitClient;
+import com.example.apppetrobras.databinding.LayoutSolucoesBinding;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,7 +38,10 @@ public class EmAbertoFragment extends Fragment implements RecyclerViewInteface{
     // Declaração das variáveis
     private ArrayList<ProblemasObj> dataArrayList;
     List<RelatorioObj> relatorioObjList;
-    Context context;
+
+    private RecyclerView recyclerview;
+    private Context context;
+    private RecyclerViewInteface recyclerViewInteface;
 
 
     @Override
@@ -43,53 +49,21 @@ public class EmAbertoFragment extends Fragment implements RecyclerViewInteface{
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.layout_tela_admin_chamadas, container, false);
+
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        dataInitialize();
+        context = getContext();
+        recyclerViewInteface = this;
 
-        // Essa variável recebe (por meio do id) a reciclerView no xml dessa tela
-        RecyclerView recyclerview = view.findViewById(R.id.recyclerviewadmin);
-        recyclerview.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerview = view.findViewById(R.id.recyclerviewadmin);
+        recyclerview.setLayoutManager(new LinearLayoutManager(context));
         recyclerview.setHasFixedSize(true);
-        // Aqui há uma instância da RecyclerViewAdapter utilizando o construtor adequado:
-        // RecyclerViewAdapter(Context, Lista<Objeto>, RecyclerViewInterface, layout do item)
-        RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(getContext(),
-                dataArrayList, this, R.layout.item_list_admin);
-        recyclerview.setAdapter(recyclerViewAdapter);
 
-        //recyclerViewAdapter.notifyDataSetChanged();
-    }
-
-    // Função para popular a lista usada na recyclerView
-    private void dataInitialize() {
-
-        dataArrayList = new ArrayList<>();
-
-        String[] titulosProblemas = new String[]{
-                "Data do Relatório dd/mm/yyyy",
-                "Data do Relatório dd/mm/yyyy",
-                "Data do Relatório dd/mm/yyyy",
-                "Data do Relatório dd/mm/yyyy",
-                "Data do Relatório dd/mm/yyyy",
-                "Data do Relatório dd/mm/yyyy",
-                "Data do Relatório dd/mm/yyyy",
-                "Data do Relatório dd/mm/yyyy",
-                "Data do Relatório dd/mm/yyyy",
-                "Data do Relatório dd/mm/yyyy",
-                "Data do Relatório dd/mm/yyyy",
-                "Data do Relatório dd/mm/yyyy",
-                "Data do Relatório dd/mm/yyyy",
-                "Data do Relatório dd/mm/yyyy",
-        };
-
-        for(int i = 0; i < titulosProblemas.length; i++){
-            ProblemasObj data = new ProblemasObj(titulosProblemas[i]);
-            dataArrayList.add(data);
-        }
+        listen();
     }
 
     @Override
@@ -105,30 +79,34 @@ public class EmAbertoFragment extends Fragment implements RecyclerViewInteface{
 
     private void listen(){
 
-    Call<List<RelatorioObj>> callme = RetroFitClient
-            .getInstance()
-            .getAPI()
-            .getAllRelatoriosOpen();
+        Call<List<RelatorioObj>> callme = RetroFitClient
+                .getInstance()
+                .getAPI()
+                .getAllRelatoriosOpen();
 
-    callme.enqueue(new Callback<List<RelatorioObj>>() {
-        @Override
-        public void onResponse(Call<List<RelatorioObj>> call, Response<List<RelatorioObj>> response) {
-            if (!response.isSuccessful()){
-                Toast.makeText(getContext(), "wassup", Toast.LENGTH_SHORT).show();
-                return;
+        callme.enqueue(new Callback<List<RelatorioObj>>() {
+            @Override
+            public void onResponse(Call<List<RelatorioObj>> call, Response<List<RelatorioObj>> response) {
+                if (!response.isSuccessful()){
+                    Toast.makeText(getContext(), "wassup", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                //tentando guardar num objeto para que seja depois visivel no item_list_admin do dionisio
+                relatorioObjList = response.body();
+
+                RVAdapterEmAberto recyclerViewAdapter = new RVAdapterEmAberto(context,
+                        relatorioObjList, recyclerViewInteface, R.layout.item_list_admin);
+                recyclerview.setAdapter(recyclerViewAdapter);
+                recyclerViewAdapter.notifyDataSetChanged();
+
             }
 
-            //tentando guardar num objeto para que seja depois visivel no item_list_admin do dionisio
-            relatorioObjList = response.body();
+            @Override
+            public void onFailure(Call<List<RelatorioObj>> call, Throwable t) {
 
-
-        }
-
-        @Override
-        public void onFailure(Call<List<RelatorioObj>> call, Throwable t) {
-
-        }
-    });
+            }
+        });
 
     }
 

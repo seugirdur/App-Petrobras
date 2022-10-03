@@ -45,15 +45,16 @@
 
     <string name="outros_1">Abas ficam abrindo sozinhas no meu navegador </string>
     <string name="outros_2">Como Remover Propagandas Estranhas que Aparecem no Navegador</string>
-    <string name="outros_3">Alguns sites do navegador não carregam no meu computador </string>
-    <string name="outros_4">Como saber se um site é seguro?</string>
-    <string name="outros_5">Meu computador está com vírus, como eu faço para retira-lo ?</string>
-    <string name="outros_6">O meu navegador diz que estou com problema de memória </string>
-    <string name="outros_7">A barra de tarefa do windows desapareceu </string>
-    <string name="outros_8">Como recuperar um arquivo que apaguei ?</string>
-    <string name="outros_9">Inverti minha tela, como faço para ela voltar ao normal ? </string>
-    <string name="outros_10">Apaguei um aplicativo da mimnha área de trabalho, o que faço ? </string>
-    <string name="outros_11">Não consigo fechar uma página do meu navegador </string>
+    <string name="outros_3">Como Liberar os Cookies</string>
+    <string name="outros_4">Alguns sites do navegador não carregam no meu computador </string>
+    <string name="outros_5">Como saber se um site é seguro?</string>
+    <string name="outros_6">Meu computador está com vírus, como eu faço para retira-lo ?</string>
+    <string name="outros_7">O meu navegador diz que estou com problema de memória </string>
+    <string name="outros_8">A barra de tarefa do windows desapareceu </string>
+    <string name="outros_9">Como recuperar um arquivo que apaguei ?</string>
+    <string name="outros_10">Inverti minha tela, como faço para ela voltar ao normal ? </string>
+    <string name="outros_11">Apaguei um aplicativo da mimnha área de trabalho, o que faço ? </string>
+    <string name="outros_12">Não consigo fechar uma página do meu navegador </string>
 
 
     <string name="textview">TextView</string>

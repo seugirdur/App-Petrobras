@@ -1,9 +1,8 @@
 package com.example.apppetrobras.Activities;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -24,6 +23,7 @@ import com.example.apppetrobras.databinding.LayoutPassosBinding;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Objects;
 
 import okhttp3.ResponseBody;
 import retrofit2.Call;
@@ -33,8 +33,9 @@ import retrofit2.Response;
 public class Passos extends Drawer {
 
     // Declaração das variáveis
-    int idTitulo, idSolucao, tipoProblema, idPasso, qtdPassos;
-    String tituloSolucao, titulo, made_check;
+
+    int idTitulo, idSolucao, idPasso, tipoProblema, qtdPassos;
+    String tituloSolucao, titulo, check, titulosProblemas;
 
     Context context;
 
@@ -46,7 +47,6 @@ public class Passos extends Drawer {
     Call<List<PassosObj>> call;
 
     LayoutPassosBinding layoutPassosBinding;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,11 +72,16 @@ public class Passos extends Drawer {
         idPasso = getIntent().getIntExtra("PASSO",1);
         tituloSolucao = getIntent().getStringExtra("TITULO_SOLUCAO");
         titulo = getIntent().getStringExtra("titulo");
+        check = getIntent().getStringExtra("CHECK");
+        titulosProblemas = getIntent().getStringExtra("titulosProblemas");
 
+        // Instanciação de variáveis chave
+        context = this;
+        idPasso = 1;
         String concatenar = Integer.toString(idTitulo) + Integer.toString(idSolucao);
         int numerojunto = Integer.parseInt(concatenar);
 
-        context = this;
+
 
         switch (tipoProblema){
             case 1:
@@ -117,6 +122,7 @@ public class Passos extends Drawer {
                 // Armazena o total de passos dessa solução
                 qtdPassos = passosObjList.size();
                 inserirNaTela();
+
             }
 
             @Override
@@ -196,7 +202,7 @@ public class Passos extends Drawer {
     public void iAmWhoKnocks(){
 
         //COLOCAR AQUI A STRING CONCATENADA DOQ O MLK FEZ
-        made_check="";
+//        check="";
 
 
         Date currentTime = Calendar.getInstance().getTime();
@@ -212,14 +218,14 @@ public class Passos extends Drawer {
         Call<ResponseBody> call = RetroFitClient
                 .getInstance()
                 .getAPI().postRelatorio(nome, chave, date, tipoProblema, titulo,idTitulo,tituloSolucao,"01112");
-        
+
         call.enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                     Toast.makeText(Passos.this, "Relatorio criado", Toast.LENGTH_LONG).show();
-                
+
             }
-            
+
 
             @Override
             public void onFailure(Call<ResponseBody> call, Throwable t) {
@@ -229,4 +235,85 @@ public class Passos extends Drawer {
         });
     }
 
+
+    public void solucionado(View v){
+       trataCheck(2);
+       Toast.makeText(context, ""+check, Toast.LENGTH_SHORT).show();
+       mudarTela();
+    }
+
+    public void naoSolucionado(View v){
+        trataCheck(1);
+        Toast.makeText(context, ""+check , Toast.LENGTH_SHORT).show();
+        mudarTela();
+    }
+
+    public void semAcesso(View v) {
+        trataCheck(3);
+        Toast.makeText(context, ""+check, Toast.LENGTH_SHORT).show();
+        mudarTela();
+    }
+
+
+
+    public void trataCheck(int _estadoCheck){
+        String holder = "";
+
+        for (int i = 0; i < check.length(); i++){
+            if (i != idSolucao-1){
+                holder += check.charAt(i);
+            }
+            else{
+                holder += _estadoCheck;
+            }
+        }
+
+        check = holder;
+    }
+
+    public void mudarTela(){
+        if (check.contains("0")){
+            retornarParaSolucoes();
+        }
+        else {
+            finalizarSolucao();
+        }
+    }
+
+    private void finalizarSolucao() {
+
+        // Trata a checagem interna para ser enviada ao Banco de Dados (substitui o 3 por 0)
+        String holder = "";
+        for (int i = 0; i < check.length(); i++){
+            if (check.charAt(i) == '3'){
+                holder += "0";
+            }
+            else {
+                holder += check.charAt(i);
+            }
+        }
+
+        // Adição de um relatório no Banco de Dados
+
+
+
+
+        // Redirecionamento para a tela de "parabéns"
+        //temporario:
+        Intent intent = new Intent(Passos.this, Inicio.class);
+
+    }
+
+    public void retornarParaSolucoes(){
+        // Redirecionamento para a tela do problema contendo os títulos das soluções
+        Intent intent = new Intent(Passos.this, Solucoes.class);
+
+        // Definição de valores que serão redirecionados
+        intent.putExtra("TIPO",tipoProblema);
+        intent.putExtra("ID_TITULO", idTitulo);
+        intent.putExtra("titulo", titulo);
+        intent.putExtra("CHECK",check);
+        intent.putExtra("titulosProblemas",titulosProblemas);
+        startActivity(intent);
+    }
 }

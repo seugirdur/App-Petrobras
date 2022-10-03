@@ -91,6 +91,11 @@
     aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</string>
 
     <string name="texto_cadastr">Li e concordo com os <a href='https://github.com/seugirdur/App-petrobras'>Termos de uso</a> e <a href='https://github.com/seugirdur/App-petrobras'>Politicas de privacidade</a></string>
+    <string name="nome_completo">Nome Completo</string>
+    <string name="data_do_relat_rio_dd_mm_yyyy">Data do Relatório dd/mm/yyyy</string>
+    <string name="todo">TODO</string>
+    <string name="setor">SETOR</string>
+    <string name="email_robson_petrobras_com_br">Email (robson@petrobras.com.br)</string>
 
 
 </resources>

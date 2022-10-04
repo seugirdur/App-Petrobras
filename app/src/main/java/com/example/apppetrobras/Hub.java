@@ -93,7 +93,7 @@ public class Hub extends AppCompatActivity {
     }
 
     public void rediriciona11(View view){
-        Intent intent = new Intent(Hub.this, FormLoginPedro.class);
+        Intent intent = new Intent(Hub.this, Ajuda.class);
         startActivity(intent);
         finish();
     }

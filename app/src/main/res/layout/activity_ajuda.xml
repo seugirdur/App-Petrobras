@@ -5,261 +5,284 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".Ajuda">
+    tools:context=".Activities.Ajuda">
 
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="46dp"
-        android:layout_height="48dp"
-        android:fontFamily="sans-serif-black"
-        android:rotation="270"
-        android:text="|||"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.043"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.011" />
-
-    <ImageButton
-        android:id="@+id/imageButton3"
-        android:layout_width="50dp"
-        android:layout_height="45dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.222"
-        tools:srcCompat="@tools:sample/avatars" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="221dp"
-        android:layout_height="43dp"
-        android:fontFamily="sans-serif-black"
-        android:text="Ajuda e Suporte"
-        android:textSize="30dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.125" />
-
-    <TextView
-        android:id="@+id/textView3"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="sans-serif"
-        android:text="Manual do Aplicativo"
-        android:textSize="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imgSeparador"
+            android:layout_width="408dp"
+            android:layout_height="73dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginEnd="1dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/img_1" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="415dp"
+        android:layout_height="631dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.199" />
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif"
-        android:text="Como usar o aplicativo?"
-        android:textSize="18dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.073"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageButton3"
-        app:layout_constraintVertical_bias="0.309" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutScroll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif"
-        android:text="Como ver meus chamados?"
-        android:textSize="18dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.037"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.581" />
+            <TextView
+                android:id="@+id/txtAjuda"
+                android:layout_width="221dp"
+                android:layout_height="43dp"
+                android:layout_marginStart="97dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="95dp"
+                android:layout_marginBottom="35dp"
+                android:fontFamily="sans-serif-black"
+                android:text="Ajuda e Suporte"
+                android:textSize="30dp"
+                app:layout_constraintBottom_toTopOf="@+id/txtUsar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif"
-        android:text="Como funciona a tela de chamado?"
-        android:textSize="18dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.085"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.868" />
+            <TextView
+                android:id="@+id/txtManual"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="137dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="55dp"
+                android:layout_marginBottom="9dp"
+                android:fontFamily="sans-serif"
+                android:text="Manual do Aplicativo"
+                android:textSize="15dp"
+                app:layout_constraintBottom_toTopOf="@+id/txtEscolha"
+                app:layout_constraintEnd_toStartOf="@+id/btnEscolha"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtFuncionalidade" />
 
-    <TextView
-        android:id="@+id/textView10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif"
-        android:text="Como funciona a tela de escolha?"
-        android:textSize="18dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.085"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.783" />
+            <TextView
+                android:id="@+id/txtUsar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="120dp"
+                android:layout_marginBottom="30dp"
+                android:fontFamily="sans-serif"
+                android:text="Como usar o aplicativo?"
+                android:textSize="18dp"
+                app:layout_constraintBottom_toTopOf="@+id/txtChamar"
+                app:layout_constraintEnd_toStartOf="@+id/btnUsar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtAjuda" />
 
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif"
-        android:text="Como buscar a solução?"
-        android:textSize="18dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.051"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/txtChamar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="95dp"
+                android:fontFamily="sans-serif"
+                android:text="Como chamar um Técnico?"
+                android:textSize="18dp"
+                app:layout_constraintBottom_toTopOf="@+id/txtBuscar"
+                app:layout_constraintEnd_toStartOf="@+id/btnChamar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/solUsar" />
 
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif"
-        android:text="Como chamar um Técnico?"
-        android:textSize="18dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.057"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.413" />
+            <ImageButton
+                android:id="@+id/btnChamar"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="50dp"
+                android:rotation="270"
+                app:layout_constraintBottom_toTopOf="@+id/btnBuscar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/txtChamar"
+                app:layout_constraintTop_toBottomOf="@id/btnUsar"
+                app:srcCompat="@drawable/ic_baseline_arrow_back_ios_new_24"
+                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
-    <androidx.constraintlayout.widget.Barrier
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:barrierDirection="top"
-        tools:layout_editor_absoluteX="143dp"
-        tools:layout_editor_absoluteY="360dp" />
+            <ImageButton
+                android:id="@+id/btnUsar"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="50dp"
+                android:onClick="btnUsar"
+                android:rotation="270"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/txtUsar"
+                app:srcCompat="@drawable/ic_baseline_arrow_back_ios_new_24"
+                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck"
+                tools:layout_editor_absoluteY="98dp" />
 
-    <androidx.constraintlayout.widget.Barrier
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:barrierDirection="top"
-        tools:layout_editor_absoluteX="180dp"
-        tools:layout_editor_absoluteY="394dp" />
+            <TextView
+                android:id="@+id/txtBuscar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="25dp"
+                android:fontFamily="sans-serif"
+                android:text="Como buscar a solução?"
+                android:textSize="18dp"
+                app:layout_constraintBottom_toTopOf="@+id/txtVer"
+                app:layout_constraintStart_toStartOf="@+id/txtChamar"
+                app:layout_constraintTop_toBottomOf="@+id/txtChamar" />
 
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="408dp"
-        android:layout_height="73dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.333"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.051"
-        app:srcCompat="@drawable/img_1" />
+            <ImageButton
+                android:id="@+id/btnBuscar"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="50dp"
+                android:rotation="270"
+                app:layout_constraintBottom_toTopOf="@+id/btnVer"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnChamar"
+                app:srcCompat="@drawable/ic_baseline_arrow_back_ios_new_24"
+                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="46dp"
-        android:layout_height="48dp"
-        android:rotation="270"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.904"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.587"
-        app:srcCompat="@drawable/ic_baseline_arrow_back_ios_new_24" />
+            <TextView
+                android:id="@+id/txtVer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="92dp"
+                android:layout_marginBottom="188dp"
+                android:fontFamily="sans-serif"
+                android:text="Como ver meus chamados?"
+                android:textSize="18dp"
+                app:layout_constraintBottom_toTopOf="@+id/txtFuncionalidade"
+                app:layout_constraintEnd_toStartOf="@+id/btnVer"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtBuscar" />
 
-    <ImageButton
-        android:id="@+id/imageButton10"
-        android:layout_width="46dp"
-        android:layout_height="48dp"
-        android:rotation="270"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.904"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.885"
-        app:srcCompat="@drawable/ic_baseline_arrow_back_ios_new_24" />
+            <ImageButton
+                android:id="@+id/btnVer"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="50dp"
+                android:layout_marginBottom="176dp"
+                android:rotation="270"
+                app:layout_constraintBottom_toTopOf="@+id/txtFuncionalidade"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/txtVer"
+                app:layout_constraintTop_toBottomOf="@+id/btnBuscar"
+                app:srcCompat="@drawable/ic_baseline_arrow_back_ios_new_24"
+                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
-    <ImageButton
-        android:id="@+id/imageButton11"
-        android:layout_width="46dp"
-        android:layout_height="48dp"
-        android:rotation="270"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.904"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.793"
-        app:srcCompat="@drawable/ic_baseline_arrow_back_ios_new_24" />
+            <TextView
+                android:id="@+id/txtFuncionalidade"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="74dp"
+                android:layout_marginEnd="79dp"
+                android:layout_marginBottom="15dp"
+                android:fontFamily="sans-serif-black"
+                android:text="Funcionalidade do APP"
+                android:textSize="25dp"
+                app:layout_constraintBottom_toTopOf="@+id/txtManual"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnVer" />
 
-    <ImageButton
-        android:id="@+id/imageButton7"
-        android:layout_width="46dp"
-        android:layout_height="48dp"
-        android:rotation="270"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.904"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.314"
-        app:srcCompat="@drawable/ic_baseline_arrow_back_ios_new_24" />
+            <TextView
+                android:id="@+id/txtEscolha"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="11dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="48dp"
+                android:layout_marginBottom="26dp"
+                android:fontFamily="sans-serif"
+                android:text="Como funciona a tela de escolha?"
+                android:textSize="18dp"
+                app:layout_constraintBottom_toTopOf="@+id/txtChamado"
+                app:layout_constraintEnd_toStartOf="@+id/btnEscolha"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtManual" />
 
-    <ImageButton
-        android:id="@+id/imageButton8"
-        android:layout_width="46dp"
-        android:layout_height="48dp"
-        android:rotation="270"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.904"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.407"
-        app:srcCompat="@drawable/ic_baseline_arrow_back_ios_new_24" />
+            <ImageButton
+                android:id="@+id/btnEscolha"
+                android:layout_width="46dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="49dp"
+                android:layout_marginTop="500dp"
+                android:layout_marginEnd="38dp"
+                android:rotation="270"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/txtEscolha"
+                app:layout_constraintTop_toBottomOf="@+id/btnVer"
+                app:srcCompat="@drawable/ic_baseline_arrow_back_ios_new_24"
+                tools:ignore="SpeakableTextPresentCheck" />
 
-    <ImageButton
-        android:id="@+id/imageButton9"
-        android:layout_width="46dp"
-        android:layout_height="48dp"
-        android:rotation="270"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.904"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499"
-        app:srcCompat="@drawable/ic_baseline_arrow_back_ios_new_24" />
+            <TextView
+                android:id="@+id/txtChamado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="11dp"
+                android:layout_marginTop="26dp"
+                android:layout_marginEnd="36dp"
+                android:layout_marginBottom="210dp"
+                android:fontFamily="sans-serif"
+                android:text="Como funciona a tela de chamado?"
+                android:textSize="18dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/btnChamado"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtEscolha" />
 
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-black"
-        android:text="Funcionalidade do APP"
-        android:textSize="25dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5"
-        app:layout_constraintVertical_bias="0.171" />
+            <ImageButton
+                android:id="@+id/btnChamado"
+                android:layout_width="46dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="36dp"
+                android:layout_marginTop="95dp"
+                android:layout_marginEnd="39dp"
+                android:layout_marginBottom="148dp"
+                android:rotation="270"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toTopOf="@+id/btnEscolha"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/txtChamado"
+                app:layout_constraintTop_toBottomOf="@+id/txtFuncionalidade"
+                app:srcCompat="@drawable/ic_baseline_arrow_back_ios_new_24"
+                tools:visibility="invisible" />
+
+            <TextView
+                android:id="@+id/solUsar"
+                android:layout_width="360dp"
+                android:layout_height="164dp"
+                android:layout_marginTop="100dp"
+                android:text="O aplicativo é feito totalmente com botões intuitivos. Onde você irá procurar o problema que está passando, o aplicativo ajudará a solucionar esse seu problema. Após ter instalado o aplicativo, em seu primeiro contato, você deve se direcionar para uma tela de cadastro, onde você deve criar uma senha que vai ser utilizada para você entrar no aplicativo todas as vezes que desejar usá-lo.   Após isso você pode realizar seu login utilizando sua chave de acesso e a senha criada. "
+
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@id/txtChamar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/txtUsar"
+                app:layout_constraintTop_toTopOf="@id/txtChamar" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

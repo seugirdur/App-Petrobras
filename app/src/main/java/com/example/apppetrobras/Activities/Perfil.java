@@ -3,8 +3,10 @@ package com.example.apppetrobras.Activities;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import com.example.apppetrobras.R;
@@ -44,9 +46,12 @@ public class Perfil extends AppCompatActivity {
 
         num_chave = findViewById(R.id.num_chave);
         num_chave.setText(chave);
-
-
-
-
     }
+
+    public void mudame(View view){
+        Intent intent = new Intent(Perfil.this, PerfilAtualizar.class);
+        startActivity(intent);
+    }
+
+
 }

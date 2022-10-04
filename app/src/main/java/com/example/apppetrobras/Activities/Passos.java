@@ -15,6 +15,7 @@ import java.time.LocalDate;
 
 import com.bumptech.glide.Glide;
 import com.example.Navigations.Drawer;
+import com.example.Navigations.Tabs;
 import com.example.apppetrobras.R;
 import com.example.apppetrobras.Objects.PassosObj;
 import com.example.apppetrobras.api.RetroFitClient;
@@ -79,7 +80,10 @@ public class Passos extends Drawer {
         String concatenar = Integer.toString(idTitulo) + Integer.toString(idSolucao);
         int numerojunto = Integer.parseInt(concatenar);
 
+        // Resgata o check
 
+        // Trata o check para o caso do usuário retornar às soluções inadequadamente
+        trataCheck(3);
 
         switch (tipoProblema){
             case 1:
@@ -161,27 +165,19 @@ public class Passos extends Drawer {
     //função do botao de X
     public void dontGetMeWrong(View view){
         trataCheck(1);
-        Toast.makeText(context, ""+check , Toast.LENGTH_SHORT).show();
         mudarTela();
-
     }
 
     //função do botao de correto
     public void dontGetMeRight(View view){
         trataCheck(2);
-        Toast.makeText(context, ""+check, Toast.LENGTH_SHORT).show();
-        mudarTela();
-
-        iAmWhoKnocks();
+        finalizarSolucao();
     }
 
     //função do botao sem acesso
     public void dontGetMeLost(View view){
         trataCheck(3);
-        Toast.makeText(context, ""+check, Toast.LENGTH_SHORT).show();
         mudarTela();
-
-
     }
 
     public void inserirNaTela(){
@@ -233,11 +229,21 @@ public class Passos extends Drawer {
 
             }
         });
+
+        // Zera o check (Só pra garantir)
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("check", "");
+        editor.apply();
     }
 
 
 
     public void trataCheck(int _estadoCheck){
+        // Resgata check
+        SharedPreferences sharedPreferences = getSharedPreferences(
+                getString(R.string.preference_file_key), Context.MODE_PRIVATE);
+        check = sharedPreferences.getString("check","");
+
         String holder = "";
 
         for (int i = 0; i < check.length(); i++){
@@ -250,6 +256,11 @@ public class Passos extends Drawer {
         }
 
         check = holder;
+
+        // Atualização do check
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("check", check);
+        editor.apply();
     }
 
     public void mudarTela(){
@@ -273,16 +284,23 @@ public class Passos extends Drawer {
                 holder += check.charAt(i);
             }
         }
+        check = holder;
+
+        // Atualização do check
+        SharedPreferences sharedPreferences = getSharedPreferences(
+                getString(R.string.preference_file_key), Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("check", check);
+        editor.apply();
 
         // Adição de um relatório no Banco de Dados
-
-
-
+        iAmWhoKnocks();
 
         // Redirecionamento para a tela de "parabéns"
         //temporario:
-        Intent intent = new Intent(Passos.this, Inicio.class);
-
+        Intent intent = new Intent(Passos.this, Tabs.class);
+        startActivity(intent);
+        finish();
     }
 
     public String getTodaysDate() {
@@ -293,6 +311,13 @@ public class Passos extends Drawer {
     public void retornarParaSolucoes(){
         // Redirecionamento para a tela do problema contendo os títulos das soluções
         Intent intent = new Intent(Passos.this, Solucoes.class);
+
+        intent.putExtra("TIPO",tipoProblema);
+        intent.putExtra("ID_TITULO",idTitulo);
+        intent.putExtra("titulo", titulo);
+        intent.putExtra("titulosProblemas", titulosProblemas);
+
         startActivity(intent);
+        finish();
     }
 }

@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.Editable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -66,6 +67,9 @@ public class PerfilAtualizar extends AppCompatActivity {
         num_chave.setHint(chave);
 
 
+//        String emailatualizado = String.valueOf(email1.getText());
+
+
 
 
 
@@ -74,7 +78,14 @@ public class PerfilAtualizar extends AppCompatActivity {
         btn_tela_perfil_update.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                registrate(nome, tel, email, chave);
+                String nomeatualizado = nomecompleto.getText().toString();
+                String telatualizado = num_tel.getText().toString();
+                String emailatualizado = email1.getText().toString();
+//        String telatualizado = String.valueOf(num_tel.getText());
+
+
+
+                atualizate(nomeatualizado, telatualizado, emailatualizado, chave);
 
                 btn_tela_perfil_update.setEnabled(false);
 
@@ -88,7 +99,7 @@ public class PerfilAtualizar extends AppCompatActivity {
 
 
 
-    private void registrate(String nome, String email, String tel, String chave){
+    private void atualizate(String nome, String email, String tel, String chave){
 //        PerfilObj perfilObj = new PerfilObj();
 //
 //        perfilObj.setNome(nome);
@@ -129,7 +140,16 @@ public class PerfilAtualizar extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<List<PerfilObj>> call, Throwable t) {
-                Toast.makeText(PerfilAtualizar.this, t.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(PerfilAtualizar.this, "Cadastro atualizado com sucesso!", Toast.LENGTH_SHORT).show();
+                SharedPreferences sharedPreferences = getSharedPreferences(
+                        getString(R.string.preference_file_key), Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString("nome", nome);
+                editor.putString("email", email);
+                editor.putString("tel", tel);
+                editor.apply();
+                Intent intent = new Intent(PerfilAtualizar.this, Perfil.class);
+                startActivity(intent);
             }
         });
 

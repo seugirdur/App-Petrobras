@@ -34,7 +34,7 @@
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_marginTop="60dp"
-            android:src="@drawable/logo_aset"
+            android:src="@drawable/aset_logo"
             app:layout_constraintBottom_toTopOf="@id/view_principal"
             app:layout_constraintEnd_toEndOf="@id/view_principal"
             app:layout_constraintStart_toStartOf="@id/view_principal"

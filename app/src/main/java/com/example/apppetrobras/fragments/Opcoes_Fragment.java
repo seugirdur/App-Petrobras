@@ -18,6 +18,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import com.example.Navigations.Tabs;
 import com.example.apppetrobras.Activities.Cadastro;
@@ -29,11 +30,11 @@ import com.example.apppetrobras.Adapters.RecyclerViewAdapter;
 
 import java.util.ArrayList;
 
-public class Opcoes_Fragment extends Fragment  {
+public class Opcoes_Fragment extends Fragment implements View.OnClickListener {
 
-    Dialog nDialog;
-    ImageButton btnab2;
+    private ImageButton btnab1,btnab2,btnab3;
     View view;
+
 
     // Declaração das variáveis
 
@@ -41,30 +42,47 @@ public class Opcoes_Fragment extends Fragment  {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_opcoes_, container, false);
+        //return inflater.inflate(R.layout.fragment_opcoes_, container, false);
+        View view = inflater.inflate(R.layout.fragment_opcoes_, container, false);
 
-        public void abrir_popup (View view){
 
-            Intent intent = new Intent(this, .class);
-            startActivity(intent);
-        }
+        btnab2 = view.findViewById(R.id.btnab2);
 
-    }
-//        btnab5.setOnClickListener(new View.OnClickListener(){
-//        @Override
-//        public void onClick(View){
+        btnab2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), Cadastro.class);
+                startActivity(intent);
+
+            }
+        });
+
+        btnab1 = view.findViewById(R.id.btnab1);
+        btnab1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), Cadastro.class);
+                startActivity(intent);
+            }
+        });
+
+        return view;
+
+
+
+//    @Override
+//    public void onClick(View view) {
 //
-//        nDialog.setContentView(R.layout.popup_termos);
-//        nDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-//        nDialog.show();
+//    }
+//    @Override
+//    public void onClick(View view) {
 //
 //    }
 
-//    public void pop_termos() {
-//
-        Intent intent = new Intent(Login.this, Tabs.class);
-        //startActivity(intent);
-//    }
+    }
+
+    @Override
+    public void onClick(View view) {
 
     }
-//}
+}

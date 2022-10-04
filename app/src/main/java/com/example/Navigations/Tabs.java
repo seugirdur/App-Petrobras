@@ -27,11 +27,10 @@ public class Tabs extends Drawer {
         super.onCreate(savedInstanceState);
 
         // Zera o check das soluções
-        String check = "";
         SharedPreferences sharedPreferences = getSharedPreferences(
                 getString(R.string.preference_file_key), Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString("check", check);
+        editor.putString("check","");
         editor.apply();
 
 

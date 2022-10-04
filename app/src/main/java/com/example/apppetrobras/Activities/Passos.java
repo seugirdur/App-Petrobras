@@ -15,6 +15,7 @@ import java.time.LocalDate;
 
 import com.bumptech.glide.Glide;
 import com.example.Navigations.Drawer;
+import com.example.Navigations.Tabs;
 import com.example.apppetrobras.R;
 import com.example.apppetrobras.Objects.PassosObj;
 import com.example.apppetrobras.api.RetroFitClient;
@@ -83,8 +84,6 @@ public class Passos extends Drawer {
 
         // Trata o check para o caso do usuário retornar às soluções inadequadamente
         trataCheck(3);
-
-        Toast.makeText(context, ""+check, Toast.LENGTH_SHORT).show();
 
         switch (tipoProblema){
             case 1:
@@ -167,23 +166,18 @@ public class Passos extends Drawer {
     public void dontGetMeWrong(View view){
         trataCheck(1);
         mudarTela();
-
     }
 
     //função do botao de correto
     public void dontGetMeRight(View view){
         trataCheck(2);
-        mudarTela();
-
-
+        finalizarSolucao();
     }
 
     //função do botao sem acesso
     public void dontGetMeLost(View view){
         trataCheck(3);
         mudarTela();
-
-
     }
 
     public void inserirNaTela(){
@@ -235,6 +229,11 @@ public class Passos extends Drawer {
 
             }
         });
+
+        // Zera o check (Só pra garantir)
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("check", "");
+        editor.apply();
     }
 
 
@@ -299,8 +298,9 @@ public class Passos extends Drawer {
 
         // Redirecionamento para a tela de "parabéns"
         //temporario:
-        Intent intent = new Intent(Passos.this, Inicio.class);
+        Intent intent = new Intent(Passos.this, Tabs.class);
         startActivity(intent);
+        finish();
     }
 
     public String getTodaysDate() {
@@ -318,5 +318,6 @@ public class Passos extends Drawer {
         intent.putExtra("titulosProblemas", titulosProblemas);
 
         startActivity(intent);
+        finish();
     }
 }

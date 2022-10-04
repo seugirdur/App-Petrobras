@@ -18,6 +18,7 @@ import com.example.apppetrobras.databinding.LayoutSolucoesBinding;
 import com.example.apppetrobras.databinding.LayoutTabBinding;
 import com.example.apppetrobras.fragments.RecyclerViewInteface;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -62,8 +63,6 @@ public class Solucoes extends Drawer implements RecyclerViewInteface {
         recyclerview = findViewById(R.id.recyclerview);
         recyclerview.setLayoutManager(new LinearLayoutManager(this));
         recyclerview.setHasFixedSize(true);
-
-        Toast.makeText(context, ""+check, Toast.LENGTH_SHORT).show();
 
         Call<List<SolucoesObj>> call;
 
@@ -110,7 +109,10 @@ public class Solucoes extends Drawer implements RecyclerViewInteface {
 
                 qtdSolucoes = solucoesObjList.size();
 
-                if(check.isEmpty() || !check.contains("[1..3]")){
+                //
+
+                if(check.isEmpty()){
+
                     check = "";
                     for (int i = 0; i < qtdSolucoes; i++) {
                         check += "0";
@@ -121,7 +123,6 @@ public class Solucoes extends Drawer implements RecyclerViewInteface {
                     editor.apply();
                 }
 
-                Toast.makeText(context, ""+check, Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -154,6 +155,16 @@ public class Solucoes extends Drawer implements RecyclerViewInteface {
     }
 
 
+    @Override
+    public void onBackPressed() {
+        // Resgata o check
+        SharedPreferences sharedPreferences = getSharedPreferences(
+                getString(R.string.preference_file_key), Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("check", "");
+        editor.apply();
 
+        finish();
+    }
 
 }

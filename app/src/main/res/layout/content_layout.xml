@@ -19,7 +19,7 @@
             android:layout_height="match_parent"
             android:background="@color/Verde_Petrobras"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-            app:titleTextColor="@color/black"
+            app:titleTextColor="@color/white"
             />
 
 

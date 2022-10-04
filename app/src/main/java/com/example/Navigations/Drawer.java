@@ -47,6 +47,7 @@ import com.google.android.material.navigation.NavigationView;
 
 
             ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.menu_drawer_open, R.string.menu_drawer_close);
+            toggle.getDrawerArrowDrawable().setColor(getResources().getColor(R.color.white));
             drawerLayout.addDrawerListener(toggle);
             toggle.syncState();
         }

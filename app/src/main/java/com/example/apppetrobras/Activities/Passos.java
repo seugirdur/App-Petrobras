@@ -1,8 +1,11 @@
 package com.example.apppetrobras.Activities;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -41,13 +44,15 @@ public class Passos extends Drawer {
     Context context;
 
     TextView numeroPasso, nomeSolucao, descSolucao;
-    ImageView imagemSolucao;
+    ImageView imagemSolucao, btnSemAcesso;
 
     List<PassosObj> passosObjList;
 
     Call<List<PassosObj>> call;
 
     LayoutPassosBinding layoutPassosBinding;
+
+    Dialog mDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,6 +70,7 @@ public class Passos extends Drawer {
         numeroPasso = findViewById(R.id.numeroPasso);
         descSolucao = findViewById(R.id.descricaoPasso);
         imagemSolucao = findViewById(R.id.imagemSolucao);
+        btnSemAcesso = findViewById(R.id.btnSemAcesso);
 
         // Requisição dos dados passados durante o intent
         tipoProblema = getIntent().getIntExtra("TIPO", 1);
@@ -73,6 +79,7 @@ public class Passos extends Drawer {
         tituloSolucao = getIntent().getStringExtra("TITULO_SOLUCAO");
         titulo = getIntent().getStringExtra("titulo");
         titulosProblemas = getIntent().getStringExtra("titulosProblemas");
+
 
         // Instanciação de variáveis chave
         context = this;
@@ -176,8 +183,28 @@ public class Passos extends Drawer {
 
     //função do botao sem acesso
     public void dontGetMeLost(View view){
+
         trataCheck(3);
         mudarTela();
+
+    }
+
+    //função para abrir o popup
+    public void abrirpopup(View view){
+
+        mDialog = new Dialog(this);
+
+        btnSemAcesso.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                mDialog.setContentView(R.layout.popup_cadeado_solucoes);
+                mDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                mDialog.show();
+
+            }
+        });
+
     }
 
     public void inserirNaTela(){

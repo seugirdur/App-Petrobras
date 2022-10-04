@@ -2,6 +2,8 @@ package com.example.Navigations;
 
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -24,6 +26,13 @@ public class Tabs extends Drawer {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        // Zera o check das soluções
+        String check = "";
+        SharedPreferences sharedPreferences = getSharedPreferences(
+                getString(R.string.preference_file_key), Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("check", check);
+        editor.apply();
 
 
         // Navigation Drawer
@@ -37,9 +46,6 @@ public class Tabs extends Drawer {
         viewPager2.setAdapter(VPTabs);
 
 //        settingTheName();
-
-
-
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override

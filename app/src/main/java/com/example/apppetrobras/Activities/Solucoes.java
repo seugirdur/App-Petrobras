@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Toast;
 
@@ -38,22 +39,31 @@ public class Solucoes extends Drawer implements RecyclerViewInteface {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        context = this;
+        recyclerViewInteface = this;
+
         layoutSolucoesBinding = LayoutSolucoesBinding.inflate(getLayoutInflater());
         setContentView(layoutSolucoesBinding.getRoot());
         allocateActivityTitle("Menu Principal");
 
+        // Resgata as informações da teka anterior
         tipoProblema = getIntent().getIntExtra("TIPO", 1);
         idTitulo = getIntent().getIntExtra("ID_TITULO",1);
         titulo = getIntent().getStringExtra("titulo");
         titulosProblemas = getIntent().getStringExtra("titulosProblemas");
-        check = getIntent().getStringExtra("CHECK");
 
+        // Resgata o check
+        SharedPreferences sharedPreferences = getSharedPreferences(
+                getString(R.string.preference_file_key), Context.MODE_PRIVATE);
+        check = sharedPreferences.getString("check","");
+
+        // RecyclerView instanciação
         recyclerview = findViewById(R.id.recyclerview);
         recyclerview.setLayoutManager(new LinearLayoutManager(this));
         recyclerview.setHasFixedSize(true);
 
-        context = this;
-        recyclerViewInteface = this;
+        Toast.makeText(context, ""+check, Toast.LENGTH_SHORT).show();
 
         Call<List<SolucoesObj>> call;
 
@@ -100,12 +110,17 @@ public class Solucoes extends Drawer implements RecyclerViewInteface {
 
                 qtdSolucoes = solucoesObjList.size();
 
-                if(check == null){
+                if(check.isEmpty() || !check.contains("[1..3]")){
                     check = "";
                     for (int i = 0; i < qtdSolucoes; i++) {
                         check += "0";
                     }
+
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putString("check", check);
+                    editor.apply();
                 }
+
                 Toast.makeText(context, ""+check, Toast.LENGTH_SHORT).show();
             }
 

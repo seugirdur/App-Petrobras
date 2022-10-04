@@ -12,6 +12,7 @@ import com.example.apppetrobras.Activities.Ajuda;
 import com.example.apppetrobras.Activities.Cadastro;
 import com.example.apppetrobras.Activities.Login;
 import com.example.apppetrobras.Activities.Perfil;
+import com.example.apppetrobras.Activities.PerfilAtualizar;
 import com.example.apppetrobras.Activities.Solucoes;
 import com.example.apppetrobras.Activities.Relatorio;
 import com.example.apppetrobras.Activities.Passos;
@@ -93,6 +94,21 @@ public class Hub extends AppCompatActivity {
     }
 
     public void rediriciona11(View view){
+        Intent intent = new Intent(Hub.this, FormLoginPedro.class);
+        startActivity(intent);
+        finish();
+    }
+    public void rediriciona12(View view){
+        Intent intent = new Intent(Hub.this, PerfilAtualizar.class);
+        startActivity(intent);
+        finish();
+    }
+    public void rediriciona13(View view){
+        Intent intent = new Intent(Hub.this, FormLoginPedro.class);
+        startActivity(intent);
+        finish();
+    }
+    public void rediriciona14(View view){
         Intent intent = new Intent(Hub.this, FormLoginPedro.class);
         startActivity(intent);
         finish();

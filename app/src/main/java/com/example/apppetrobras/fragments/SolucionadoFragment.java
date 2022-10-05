@@ -1,10 +1,12 @@
 package com.example.apppetrobras.fragments;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -12,145 +14,102 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.apppetrobras.Activities.Inicio;
 import com.example.apppetrobras.Activities.Solucoes;
+import com.example.apppetrobras.Adapters.RVAdapterEmAberto;
 import com.example.apppetrobras.Adapters.RecyclerViewAdapter;
+import com.example.apppetrobras.Adapters.RelatorioAdapter;
 import com.example.apppetrobras.Objects.ProblemasObj;
+import com.example.apppetrobras.Objects.AdminObj;
+import com.example.apppetrobras.Objects.SolucoesObj;
 import com.example.apppetrobras.R;
+import com.example.apppetrobras.api.RetroFitClient;
+import com.example.apppetrobras.databinding.LayoutSolucoesBinding;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class SolucionadoFragment extends Fragment implements RecyclerViewInteface{
 
     // Declaração das variáveis
     private ArrayList<ProblemasObj> dataArrayList;
+    List<AdminObj> AdminObjList;
+
+    private RecyclerView recyclerview;
+    private Context context;
+    private RecyclerViewInteface recyclerViewInteface;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_inicio, container, false);
+        return inflater.inflate(R.layout.layout_tela_admin_chamadas, container, false);
+
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        dataInitialize();
+        context = getContext();
+        recyclerViewInteface = this;
 
-        // Essa variável recebe (por meio do id) a reciclerView no xml dessa tela
-        RecyclerView recyclerview = view.findViewById(R.id.recyclerview);
-        recyclerview.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerview = view.findViewById(R.id.recyclerviewadmin);
+        recyclerview.setLayoutManager(new LinearLayoutManager(context));
         recyclerview.setHasFixedSize(true);
-        // Aqui há uma instância da RecyclerViewAdapter utilizando o construtor adequado:
-        // RecyclerViewAdapter(Context, Lista<Objeto>, RecyclerViewInterface, layout do item)
-        RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(getContext(),
-                dataArrayList, this, R.layout.item_list);
-        recyclerview.setAdapter(recyclerViewAdapter);
 
-        //recyclerViewAdapter.notifyDataSetChanged();
-    }
-
-    // Função para popular a lista usada na recyclerView
-    private void dataInitialize() {
-
-        dataArrayList = new ArrayList<>();
-
-        String[] titulosProblemas = new String[]{
-                getString(R.string.internet_2),
-                //lentidao
-                getString(R.string.lentidao_3),
-                //equipamento
-                getString(R.string.equipamentos_1),
-                //outros
-                getString(R.string.outros_9),
-                //outros
-                getString(R.string.outros_7),
-                //internet
-                getString(R.string.internet_1),
-                //equipamento
-                getString(R.string.equipamentos_8)
-
-        };
-
-        int[] idProblemas = new int[]{
-                1, 2, 3, 4, 5, 6, 7
-        };
-
-        int[] imagensProblemas = new int[]{
-                R.drawable.ic_launcher_background,
-                R.drawable.ic_launcher_background,
-                R.drawable.ic_launcher_background,
-                R.drawable.ic_launcher_background,
-                R.drawable.ic_launcher_background,
-                R.drawable.ic_launcher_background,
-                R.drawable.ic_launcher_background
-
-        };
-
-        for(int i = 0; i < titulosProblemas.length; i++){
-            ProblemasObj data = new ProblemasObj(titulosProblemas[i], idProblemas[i], imagensProblemas[i]);
-            dataArrayList.add(data);
-        }
-
+        listen();
     }
 
     @Override
     public void onItemClick(int position) {
-
-        int idtype, posi_id;
-        String titulo = "", posi_title="";
-        //criação da string para armazenamento no banco
-        // Esse valor é temporário. Ainda não foi definido o funcionamento da aba 1(Inicio)
-        switch (position){
-            case 1:
-            default:
-                 titulo = "Lentidão";
-                 idtype = 1;
-                 posi_id = 3;
-                 posi_title = "Computador está muito lento";
-                break;
-            case 2:
-                 titulo = "Equipamentos";
-                 idtype = 3;
-                posi_id = 1;
-                posi_title = "Quando eu clico no botão de ligar do meu computador, ele faz barulho e fica toda hora reiniciando";
-                break;
-            case 3:
-                 titulo = "Outros";
-                idtype = 4;
-                posi_id = 9;
-                posi_title = "Como recuperar um arquivo que apaguei?";
-                break;
-            case 4:
-                 titulo = "Outros";
-                idtype = 4;
-                posi_id = 7;
-                posi_title = "O meu navegador diz que estou com problema de memória";
-                break;
-            case 5:
-                titulo = "Internet";
-                idtype = 2;
-                posi_id = 1;
-                posi_title = "Meu computador não consegue se conectar a rede";
-                break;
-            case 6:
-                titulo = "Equipamentos";
-                idtype = 3;
-                posi_id = 8;
-                posi_title = "Quando eu clico no botão de ligar do computador, não acontece nada";
-                break;
-        }
-
-
         // Redirecionamento para a tela do problema contendo os títulos das soluções
-        Intent intent = new Intent(getActivity(), Solucoes.class);
+        Intent intent = new Intent(getActivity(), Inicio.class);
 
         // Definição de valores que serão redirecionados
-        // Valor do tipo é temporário. Ainda não foi definido o funcionamento da aba 1(Inicio)
-        intent.putExtra("TIPO",idtype);
-        intent.putExtra("titulo",titulo);
-        intent.putExtra("ID_TITULO", posi_id );
-        intent.putExtra("titulosProblemas", posi_title);
+        intent.putExtra("TIPO",3);
+        intent.putExtra("ID_TITULO", dataArrayList.get(position).getId());
         startActivity(intent);
     }
+
+    private void listen(){
+
+        Call<List<AdminObj>> callme = RetroFitClient
+                .getInstance()
+                .getAPI()
+                .getAllRelatoriosClosed();
+
+        callme.enqueue(new Callback<List<AdminObj>>() {
+            @Override
+            public void onResponse(Call<List<AdminObj>> call, Response<List<AdminObj>> response) {
+                if (!response.isSuccessful()){
+                    Toast.makeText(getContext(), "wassup", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                //tentando guardar num objeto para que seja depois visivel no item_list_admin do dionisio
+                AdminObjList = response.body();
+
+                RVAdapterEmAberto recyclerViewAdapter = new RVAdapterEmAberto(context,
+                        AdminObjList, recyclerViewInteface, R.layout.item_list_admin);
+                recyclerview.setAdapter(recyclerViewAdapter);
+                recyclerViewAdapter.notifyDataSetChanged();
+
+            }
+
+            @Override
+            public void onFailure(Call<List<AdminObj>> call, Throwable t) {
+
+            }
+        });
+
+    }
+
+
+
 }

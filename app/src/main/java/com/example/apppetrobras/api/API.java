@@ -1,5 +1,7 @@
 package com.example.apppetrobras.api;
 
+import com.example.apppetrobras.Objects.AdminObj;
+import com.example.apppetrobras.Objects.PerfilObj;
 import com.example.apppetrobras.Objects.RelatorioObj;
 import com.example.apppetrobras.Objects.SolucoesObj;
 import com.example.apppetrobras.Objects.PassosObj;
@@ -37,6 +39,15 @@ public interface  API {
     Call<List<LoginObj>> userLogin(
             @Field("chave") String chave,
             @Field("senha") String senha
+    );
+
+    @FormUrlEncoded
+    @POST("/usuarios/update")
+    Call<List<PerfilObj>> updateUser(
+            @Field("nome") String nome,
+            @Field("tel") String tel,
+            @Field("email") String email,
+            @Field("chave") String chave
     );
 
     //Rota GET para receber o JSON com a lista teste de todos os problemas
@@ -123,11 +134,11 @@ public interface  API {
     );
 
     @GET("/relatorios/admin/aberto")
-    Call<List<RelatorioObj>> getAllRelatoriosOpen();
+    Call<List<AdminObj>> getAllRelatoriosOpen();
 
 
     @GET("/relatorios/admin/fechado")
-    Call<List<RelatorioObj>> getAllRelatoriosClosed();
+    Call<List<AdminObj>> getAllRelatoriosClosed();
 
 
 }

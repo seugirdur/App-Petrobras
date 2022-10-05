@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Handler;
 import android.text.Editable;
 import android.text.SpannableString;
 import android.text.Spanned;
@@ -292,57 +293,6 @@ public class Cadastro extends AppCompatActivity {
     }
 
 
-
-
-
-
-//    public void mostrarSenha(View view){
-//        EditText senha = findViewById(R.id.senha);
-//        ImageButton imgBtn =(ImageButton) findViewById(R.id.imgMostrarSenha);
-//
-//
-//        if(senha.getTransformationMethod().equals(PasswordTransformationMethod.getInstance())){
-//            //mudar imagem
-//            imgBtn.setImageResource(R.drawable.ic_baseline_remove_red_eye_24);
-//
-//            //Mostrar senha
-//            senha.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
-//        }
-//        else{
-//            //mudar imagem
-//            imgBtn.setImageResource(R.drawable.ic_baseline_remove_red_eye);
-//
-//            //Esconder senha
-//            senha.setTransformationMethod(PasswordTransformationMethod.getInstance());
-//
-//
-//        }
-//    }
-//
-//
-//    public void mostrarSenha2(View view){
-//        EditText senha = findViewById(R.id.confirmar_senha);
-//        ImageButton imgBtn =(ImageButton) findViewById(R.id.senha);
-//
-//
-//        if(senha.getTransformationMethod().equals(PasswordTransformationMethod.getInstance())){
-//            //mudar imagem
-//            imgBtn.setImageResource(R.drawable.ic_baseline_remove_red_eye_24);
-//
-//            //Mostrar senha
-//            senha.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
-//        }
-//        else{
-//            //mudar imagem
-//            imgBtn.setImageResource(R.drawable.ic_baseline_remove_red_eye);
-//
-//            //Esconder senha
-//            senha.setTransformationMethod(PasswordTransformationMethod.getInstance());
-//
-//
-//        }
-//    }
-
     //check-in do termos e condições
     public void checarTermos (View view){
         ImageButton cad = findViewById(R.id.button_cadastro);
@@ -372,7 +322,7 @@ public class Cadastro extends AppCompatActivity {
         resgataInfo();
         String Checknome = nome.getText().toString();
         String Checktel = tel.getText().toString();
-       String CheckdataNasc = dataNasc.getText().toString();
+        String CheckdataNasc = dataNasc.getText().toString();
         String Checkemail = email.getText().toString();
         String Checkchave =  chave.getText().toString();
         String Checksenha =  senha.getText().toString();
@@ -390,13 +340,13 @@ public class Cadastro extends AppCompatActivity {
             //new Insert().execute();
             registrate();
             CadastroObj cadastro = resgataInfo();
-//            Handler handler = new Handler();
-//            handler.postDelayed(new Runnable() {
-//                public void run() {
-//                    Intent myIntent = new Intent(FormCadastro.this, FormLogin.class);
-//                    startActivity(myIntent);
-//                }
-//            }, 1500);
+            Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                public void run() {
+                    Intent myIntent = new Intent(Cadastro.this, Login.class);
+                    startActivity(myIntent);
+                }
+            }, 1500);
         }
 
     }

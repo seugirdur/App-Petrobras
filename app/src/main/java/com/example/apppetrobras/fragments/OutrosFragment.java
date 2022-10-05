@@ -76,18 +76,18 @@ public class OutrosFragment extends Fragment implements RecyclerViewInteface{
         };
 
         int[] imagensProblemas = new int[]{
-                R.drawable.ic_launcher_background,
-                R.drawable.ic_launcher_background,
-                R.drawable.ic_launcher_background,
-                R.drawable.ic_launcher_background,
-                R.drawable.ic_launcher_background,
-                R.drawable.ic_launcher_background,
-                R.drawable.ic_launcher_background,
-                R.drawable.ic_launcher_background,
-                R.drawable.ic_launcher_background,
-                R.drawable.ic_launcher_background,
-                R.drawable.ic_launcher_background,
-                R.drawable.ic_launcher_background
+                R.drawable.outros,
+                R.drawable.outros,
+                R.drawable.outros,
+                R.drawable.outros,
+                R.drawable.outros,
+                R.drawable.outros,
+                R.drawable.outros,
+                R.drawable.outros,
+                R.drawable.outros,
+                R.drawable.outros,
+                R.drawable.outros,
+                R.drawable.outros
         };
 
         for(int i = 0; i < titulosProblemas.length; i++){

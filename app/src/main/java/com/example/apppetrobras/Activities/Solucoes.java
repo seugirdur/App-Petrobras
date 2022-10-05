@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.widget.Toast;
 
 import com.example.Navigations.Drawer;
+import com.example.apppetrobras.Adapters.RVAdapterSolucoes;
 import com.example.apppetrobras.Objects.SolucoesObj;
 import com.example.apppetrobras.R;
 import com.example.apppetrobras.Adapters.RecyclerViewAdapter;
@@ -102,14 +103,8 @@ public class Solucoes extends Drawer implements RecyclerViewInteface {
                     return;
                 }
                 solucoesObjList = response.body();
-                RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(context,
-                        solucoesObjList, recyclerViewInteface, R.layout.item_soluction_list );
-                recyclerview.setAdapter(recyclerViewAdapter);
-                recyclerViewAdapter.notifyDataSetChanged();
 
                 qtdSolucoes = solucoesObjList.size();
-
-                //
 
                 if(check.isEmpty()){
 
@@ -123,6 +118,10 @@ public class Solucoes extends Drawer implements RecyclerViewInteface {
                     editor.apply();
                 }
 
+                RVAdapterSolucoes recyclerViewAdapter = new RVAdapterSolucoes(context,
+                        solucoesObjList, recyclerViewInteface, R.layout.item_soluction_list, check);
+                recyclerview.setAdapter(recyclerViewAdapter);
+                recyclerViewAdapter.notifyDataSetChanged();
             }
 
             @Override
@@ -152,6 +151,7 @@ public class Solucoes extends Drawer implements RecyclerViewInteface {
         intent.putExtra("ID_SOLUCAO", position+1);
         intent.putExtra("titulosProblemas",titulosProblemas);
         startActivity(intent);
+        finish();
     }
 
 

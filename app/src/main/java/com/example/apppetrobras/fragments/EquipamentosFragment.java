@@ -77,19 +77,19 @@ public class EquipamentosFragment extends Fragment implements RecyclerViewIntefa
         };
 
         int[] imagensProblemas = new int[]{
-                R.drawable.ic_launcher_background,
-                R.drawable.ic_launcher_background,
-                R.drawable.ic_launcher_background,
-                R.drawable.ic_launcher_background,
-                R.drawable.ic_launcher_background,
-                R.drawable.ic_launcher_background,
-                R.drawable.ic_launcher_background,
-                R.drawable.ic_launcher_background,
-                R.drawable.ic_launcher_background,
-                R.drawable.ic_launcher_background,
-                R.drawable.ic_launcher_background,
-                R.drawable.ic_launcher_background,
-                R.drawable.ic_launcher_background
+                R.drawable.equipamentos,
+                R.drawable.equipamentos,
+                R.drawable.equipamentos,
+                R.drawable.equipamentos,
+                R.drawable.equipamentos,
+                R.drawable.equipamentos,
+                R.drawable.equipamentos,
+                R.drawable.equipamentos,
+                R.drawable.equipamentos,
+                R.drawable.equipamentos,
+                R.drawable.equipamentos,
+                R.drawable.equipamentos,
+                R.drawable.equipamentos
         };
 
         for(int i = 0; i < titulosProblemas.length; i++){

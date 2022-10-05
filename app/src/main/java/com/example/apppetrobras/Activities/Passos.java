@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.ImageView;
@@ -54,6 +55,7 @@ public class Passos extends Drawer {
 
     Dialog mDialog;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -79,7 +81,6 @@ public class Passos extends Drawer {
         tituloSolucao = getIntent().getStringExtra("TITULO_SOLUCAO");
         titulo = getIntent().getStringExtra("titulo");
         titulosProblemas = getIntent().getStringExtra("titulosProblemas");
-
 
         // Instanciação de variáveis chave
         context = this;
@@ -300,7 +301,8 @@ public class Passos extends Drawer {
     }
 
     private void finalizarSolucao() {
-
+        Dialog mdialog;
+        mdialog = new Dialog(this);
         // Trata a checagem interna para ser enviada ao Banco de Dados (substitui o 3 por 0)
         String holder = "";
         for (int i = 0; i < check.length(); i++){
@@ -324,10 +326,20 @@ public class Passos extends Drawer {
         iAmWhoKnocks();
 
         // Redirecionamento para a tela de "parabéns"
+        mdialog.setContentView(R.layout.popupparabens);
+        mdialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        mdialog.show();
+
         //temporario:
-        Intent intent = new Intent(Passos.this, Tabs.class);
-        startActivity(intent);
-        finish();
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Intent intent = new Intent(Passos.this, Relatorio.class);
+                startActivity(intent);
+                finish();
+            }
+        }, 3500);
+
     }
 
     public String getTodaysDate() {
@@ -346,5 +358,10 @@ public class Passos extends Drawer {
 
         startActivity(intent);
         finish();
+    }
+
+    @Override
+    public void onBackPressed() {
+        mudarTela();
     }
 }

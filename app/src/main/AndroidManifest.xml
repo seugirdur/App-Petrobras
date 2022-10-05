@@ -19,6 +19,12 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".Seguranca"
+            android:exported="false" />
+        <activity
+            android:name=".Privacidade"
+            android:exported="false" />
+        <activity
             android:name=".Activities.Perfil"
             android:exported="false" />
         <activity

@@ -9,15 +9,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-        android:id="@+id/viewRec"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fillViewport="true"
-        tools:layout_editor_absoluteX="-147dp"
-        tools:layout_editor_absoluteY="108dp">
-        android:fillViewport="true"
-        tools:layout_editor_absoluteX="-77dp"
-        tools:layout_editor_absoluteY="-347dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/second_layout"
@@ -31,56 +22,46 @@
             tools:context=".RelatorioProcesso">
 
             <TextView
-                android:id="@+id/txtTitulo"
+                android:id="@+id/txtSecao"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
-                android:text="Relatório do Processo"
+                android:text="Tipo do Problema"
                 android:textColor="@color/black"
-                android:textSize="20dp"
+                android:textSize="25dp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/txtProblema"/>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recicle"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_marginTop="70dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/txtTitulo"
+                android:layout_marginTop="25dp"
                 app:layout_constraintBottom_toTopOf="@id/bottom_label"
-                tools:listitem="@layout/item_relatorio"/>
-
-            <TextView
-                android:id="@+id/txtSecao"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="9dp"
-                android:layout_marginTop="48dp"
-                android:layout_marginEnd="39dp"
-                android:layout_marginBottom="1dp"
-                android:text="TextView"
-                app:layout_constraintBottom_toTopOf="@+id/txtProblema"
-                app:layout_constraintEnd_toStartOf="@+id/txtTitulo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@id/txtProblema"
+                tools:listitem="@layout/item_relatorio" />
 
             <TextView
                 android:id="@+id/txtProblema"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="7dp"
-                android:layout_marginTop="1dp"
-                android:layout_marginEnd="346dp"
-                android:layout_marginBottom="14dp"
-                android:text="TextView"
-                app:layout_constraintBottom_toTopOf="@+id/recicle"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="15dp"
+                android:text="Problema Específico"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:paddingRight="5dp"
+                android:paddingLeft="5dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtSecao" />
+                app:layout_constraintTop_toBottomOf="@id/txtSecao"
+                app:layout_constraintBottom_toTopOf="@id/recicle"
+                />
 
 
             <!-- Labels -->
@@ -112,8 +93,7 @@
             android:layout_height="wrap_content"
             android:text="Usuário:"
             android:textSize="17dp"
-            android:textStyle="bold"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             app:layout_constraintStart_toStartOf="@id/bottom_label"
             app:layout_constraintTop_toTopOf="@id/bottom_label"
             android:layout_marginLeft="20dp"
@@ -125,8 +105,7 @@
             android:layout_height="wrap_content"
             android:text="Juvanilson"
             android:textSize="17dp"
-            android:textStyle="bold"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             app:layout_constraintStart_toStartOf="@id/bottom_label"
             app:layout_constraintTop_toTopOf="@id/bottom_label"
             android:layout_marginLeft="120dp"
@@ -140,8 +119,7 @@
             android:layout_height="wrap_content"
             android:text="Data:"
             android:textSize="17dp"
-            android:textStyle="bold"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             app:layout_constraintStart_toStartOf="@id/bottom_label"
             app:layout_constraintTop_toTopOf="@id/bottom_label"
             android:layout_marginLeft="20dp"
@@ -153,8 +131,7 @@
             android:layout_height="wrap_content"
             android:text="31/08/2022"
             android:textSize="17dp"
-            android:textStyle="bold"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             app:layout_constraintStart_toStartOf="@id/bottom_label"
             app:layout_constraintTop_toTopOf="@id/bottom_label"
             android:layout_marginLeft="120dp"
@@ -167,8 +144,7 @@
             android:layout_height="wrap_content"
             android:text="Processo:"
             android:textSize="17dp"
-            android:textStyle="bold"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             app:layout_constraintStart_toStartOf="@id/bottom_label"
             app:layout_constraintTop_toTopOf="@id/bottom_label"
             android:layout_marginLeft="20dp"
@@ -180,8 +156,7 @@
             android:layout_height="wrap_content"
             android:text="Solucionado"
             android:textSize="17dp"
-            android:textStyle="bold"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             app:layout_constraintStart_toStartOf="@id/bottom_label"
             app:layout_constraintTop_toTopOf="@id/bottom_label"
             android:layout_marginLeft="120dp"
@@ -195,11 +170,12 @@
             app:layout_constraintTop_toTopOf="@id/bottom_label"
             app:layout_constraintBottom_toBottomOf="@id/bottom_label"
             app:layout_constraintEnd_toEndOf="@id/bottom_label"
-            android:layout_marginRight="15dp"
+            android:layout_marginRight="16dp"
             android:clickable="true"
             android:focusable="true"
+            android:elevation="0dp"
             android:src="@drawable/ic_add"
-            android:backgroundTint="@color/white"/>
+            android:backgroundTint="@color/Amarelo_Petrobras"/>
 
 
 
@@ -213,13 +189,13 @@
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginRight="15dp"
+        android:layout_marginRight="16dp"
         android:layout_marginBottom="90dp"
         android:clickable="true"
         android:focusable="true"
         android:visibility="invisible"
         android:src="@drawable/ic_download"
-        android:backgroundTint="@color/Verde_Petrobras"
+        android:backgroundTint="@color/Amarelo_Petrobras"
 
         />
 
@@ -229,13 +205,13 @@
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@id/download_icon"
-        android:layout_marginRight="15dp"
+        android:layout_marginRight="16dp"
         android:layout_marginBottom="20dp"
         android:clickable="true"
         android:focusable="true"
         android:visibility="invisible"
         android:src="@drawable/ic_observacoes"
-        android:backgroundTint="@color/Verde_Petrobras"
+        android:backgroundTint="@color/Amarelo_Petrobras"
 
         />
 

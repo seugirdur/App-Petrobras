@@ -79,13 +79,13 @@ public class InicioFragment extends Fragment implements RecyclerViewInteface{
         };
 
         int[] imagensProblemas = new int[]{
-                R.drawable.ic_launcher_background,
-                R.drawable.ic_launcher_background,
-                R.drawable.ic_launcher_background,
-                R.drawable.ic_launcher_background,
-                R.drawable.ic_launcher_background,
-                R.drawable.ic_launcher_background,
-                R.drawable.ic_launcher_background
+                R.drawable.internet,
+                R.drawable.lentidao,
+                R.drawable.equipamentos,
+                R.drawable.outros,
+                R.drawable.outros,
+                R.drawable.internet,
+                R.drawable.equipamentos
 
         };
 

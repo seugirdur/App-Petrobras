@@ -221,7 +221,7 @@ public class Passos extends Drawer {
 
         // idPasso começa em 0, preciso somar 1 a ele para se adequar ao BD
 //        String imagemBD = soluctionsList.get(idPasso-1).getUrl();
-        String imagemBD = "";
+        String imagemBD = passosObjList.get(idPasso-1).getUrl();
         Glide.with(this)
                 .load(imagemBD)
                 .error(R.drawable.ic_error)

@@ -67,9 +67,9 @@ public class LentidaoFragment extends Fragment implements RecyclerViewInteface{
         };
 
         int[] imagensProblemas = new int[]{
-                R.drawable.ic_launcher_background,
-                R.drawable.ic_launcher_background,
-                R.drawable.ic_launcher_background
+                R.drawable.lentidao,
+                R.drawable.lentidao,
+                R.drawable.lentidao
         };
 
         for(int i = 0; i < titulosProblemas.length; i++){

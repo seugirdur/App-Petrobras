@@ -342,6 +342,6 @@ public class Passos extends Drawer {
 
     @Override
     public void onBackPressed() {
-        retornarParaSolucoes();
+        mudarTela();
     }
 }

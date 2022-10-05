@@ -16,6 +16,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.Navigations.Drawer;
 import com.example.apppetrobras.Adapters.RecyclerViewAdapter;
 import com.example.apppetrobras.Adapters.RelatorioAdapter;
 import com.example.apppetrobras.Objects.EtapasRelatorioObj;
@@ -24,6 +25,8 @@ import com.example.apppetrobras.Objects.RelatorioObj;
 import com.example.apppetrobras.Objects.SolucoesObj;
 import com.example.apppetrobras.R;
 import com.example.apppetrobras.api.RetroFitClient;
+import com.example.apppetrobras.databinding.LayoutPassosBinding;
+import com.example.apppetrobras.databinding.LayoutRelatorioBinding;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.example.apppetrobras.fragments.RecyclerViewInteface;
 
@@ -38,7 +41,7 @@ import retrofit2.Response;
 
 
 
-public class Relatorio extends AppCompatActivity implements RecyclerViewInteface{
+public class Relatorio extends Drawer implements RecyclerViewInteface{
 
     private RecyclerView recyclerview;
     private String checking;
@@ -51,14 +54,17 @@ public class Relatorio extends AppCompatActivity implements RecyclerViewInteface
     Dialog mDialog;
     SharedPreferences sp;
     SharedPreferences.Editor editor;
-
+    LayoutRelatorioBinding layoutRelatorioBinding;
 
     boolean isOpen = false; // by default it is false
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.layout_relatorio);
+        layoutRelatorioBinding = LayoutRelatorioBinding.inflate(getLayoutInflater());
+        setContentView(layoutRelatorioBinding.getRoot());
+        allocateActivityTitle("Relatório");
+
 
         add_icon = (FloatingActionButton) findViewById(R.id.add_icon);
         download_icon = (FloatingActionButton) findViewById(R.id.download_icon);

@@ -1,7 +1,9 @@
 package com.example.apppetrobras.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Handler;
@@ -281,8 +283,6 @@ public class Cadastro extends AppCompatActivity {
         });
 
 
-
-
         }
 
     //redirecionamento para ajuda
@@ -297,14 +297,17 @@ public class Cadastro extends AppCompatActivity {
     public void checarTermos (View view){
         ImageButton cad = findViewById(R.id.button_cadastro);
         CheckBox check = findViewById(R.id.aceitoTermos);
+        ImageButton cad1 = findViewById(R.id.button_cadastro1);
 
         if(check.isChecked())
         {
             cad.setEnabled(true);
+            cad1.setVisibility(View.INVISIBLE);
         }
         else
         {
             cad.setEnabled(false);
+            cad1.setVisibility(View.VISIBLE);
         }
 
     }
@@ -352,11 +355,6 @@ public class Cadastro extends AppCompatActivity {
     }
 
 
-
-
-
-
-
     public CadastroObj resgataInfo() {
         TextView nome = findViewById(R.id.nome_completo);
         TextView tel = findViewById(R.id.telefone);
@@ -372,7 +370,7 @@ public class Cadastro extends AppCompatActivity {
         String _chave = chave.getText() + "";
         String _senha = senha.getText() + "";
 
-        CadastroObj cliente = new CadastroObj(_nome, _email, _tel, _dataNasc , _chave, _senha);
+        CadastroObj cliente = new CadastroObj(_nome, _email, _tel, _dataNasc , _chave, _senha,0 );
 
         return cliente;
     }
@@ -397,26 +395,26 @@ public class Cadastro extends AppCompatActivity {
     }
 
 private void registrate(){
-    CadastroObj info = new CadastroObj(resgataInfo().nome, resgataInfo().email, resgataInfo().tel,resgataInfo().dataNasc, resgataInfo().chave, resgataInfo().senha);
+    CadastroObj info = new CadastroObj(resgataInfo().nome, resgataInfo().email, resgataInfo().tel,resgataInfo().dataNasc, resgataInfo().chave, resgataInfo().senha, resgataInfo().isAdmin);
             String nome = info.nome.toString().trim();
             String email = info.email.toString().trim();
             String tel = info.tel.toString().trim();
             String dataNasc = info.dataNasc.toString().trim();
             String chave = info.chave.toString().trim();
             String senha = info.senha.toString().trim();
-
+            int isAdmin = 0;
 
             Call<ResponseBody> call = RetroFitClient
                     .getInstance()
                     .getAPI()
-                    .createUser(nome, email, tel, dataNasc, chave, senha);
+                    .createUser(nome, email, tel, dataNasc, 0 , chave, senha);
 
             call.enqueue(new Callback<ResponseBody>() {
                 @Override
                 public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                     try {
                         String body = response.body().string();
-                        Toast.makeText(Cadastro.this, body, Toast.LENGTH_LONG).show();
+                        Toast.makeText(Cadastro.this, "Cadastrado com sucesso", Toast.LENGTH_LONG).show();
                     }catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -424,7 +422,7 @@ private void registrate(){
 
                 @Override
                 public void onFailure(Call<ResponseBody> call, Throwable t) {
-                    Toast.makeText(Cadastro.this, t.getMessage(), Toast.LENGTH_LONG).show();
+                    Toast.makeText(Cadastro.this, "Cadastro não realizado", Toast.LENGTH_LONG).show();
 
                 }
             });

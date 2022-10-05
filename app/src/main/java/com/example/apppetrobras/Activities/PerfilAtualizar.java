@@ -14,11 +14,14 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.Navigations.Drawer;
 import com.example.apppetrobras.Objects.CadastroObj;
 import com.example.apppetrobras.Objects.LoginObj;
 import com.example.apppetrobras.Objects.PerfilObj;
 import com.example.apppetrobras.R;
 import com.example.apppetrobras.api.RetroFitClient;
+import com.example.apppetrobras.databinding.LayoutPassosBinding;
+import com.example.apppetrobras.databinding.LayoutPerfilAtualizarBinding;
 
 import java.io.IOException;
 import java.util.List;
@@ -28,16 +31,20 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class PerfilAtualizar extends AppCompatActivity {
+public class PerfilAtualizar extends Drawer {
 
     TextView nome1,num_chave;
     EditText nomecompleto, num_tel, email1;
     Button btn_tela_perfil_update;
+    LayoutPerfilAtualizarBinding layoutPerfilAtualizarBinding;
 
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        layoutPerfilAtualizarBinding = LayoutPerfilAtualizarBinding.inflate(getLayoutInflater());
+        setContentView(layoutPerfilAtualizarBinding.getRoot());
+        allocateActivityTitle("Editar Perfil");
         setContentView(R.layout.layout_perfil_atualizar);
 
         SharedPreferences sharedPreferences = getSharedPreferences(

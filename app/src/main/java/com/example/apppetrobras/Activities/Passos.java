@@ -13,7 +13,7 @@ import android.widget.Toast;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 
-import com.bumptech.glide.Glide;
+//import com.bumptech.glide.Glide;
 import com.example.Navigations.Drawer;
 import com.example.apppetrobras.R;
 import com.example.apppetrobras.Objects.PassosObj;
@@ -198,10 +198,10 @@ public class Passos extends Drawer {
         // idPasso começa em 0, preciso somar 1 a ele para se adequar ao BD
 //        String imagemBD = soluctionsList.get(idPasso-1).getUrl();
         String imagemBD = "";
-        Glide.with(this)
-                .load(imagemBD)
-                .error(R.drawable.ic_error)
-                .into(imagemSolucao);
+        //Glide.with(this)
+                //.load(imagemBD)
+                //.error(R.drawable.ic_error)
+                //.into(imagemSolucao);
     }
 
 

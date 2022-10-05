@@ -13,7 +13,7 @@ import android.widget.Toast;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 
-import com.bumptech.glide.Glide;
+//import com.bumptech.glide.Glide;
 import com.example.Navigations.Drawer;
 import com.example.apppetrobras.R;
 import com.example.apppetrobras.Objects.PassosObj;

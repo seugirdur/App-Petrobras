@@ -436,7 +436,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="PPJA - SANTOS &#xA9;"
+            android:text="@string/ppja"
             android:textColor="@color/black"
             android:textSize="12dp"
             app:layout_constraintEnd_toEndOf="@id/button_cadastro"

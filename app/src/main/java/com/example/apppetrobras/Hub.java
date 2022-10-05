@@ -10,6 +10,7 @@ import com.example.Navigations.Administrador;
 import com.example.Navigations.Tabs;
 import com.example.apppetrobras.Activities.Ajuda;
 import com.example.apppetrobras.Activities.Cadastro;
+import com.example.apppetrobras.Activities.Ligacao;
 import com.example.apppetrobras.Activities.Login;
 import com.example.apppetrobras.Activities.Perfil;
 import com.example.apppetrobras.Activities.Solucoes;
@@ -93,7 +94,7 @@ public class Hub extends AppCompatActivity {
     }
 
     public void rediriciona11(View view){
-        Intent intent = new Intent(Hub.this, FormLoginPedro.class);
+        Intent intent = new Intent(Hub.this, Ligacao.class);
         startActivity(intent);
         finish();
     }

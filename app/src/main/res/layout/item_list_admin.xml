@@ -21,6 +21,18 @@
             tools:layout_editor_absoluteX="-55dp"
             tools:layout_editor_absoluteY="-10dp">
 
+            <ImageView
+                android:id="@+id/imageProblema"
+                android:layout_width="46dp"
+                android:layout_marginTop="4dp"
+                android:layout_height="20dp"
+                android:contentDescription="@string/todo"
+                app:layout_constraintEnd_toStartOf="@+id/textProblema"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_launcher_background"
+                tools:ignore="MissingConstraints" />
+
             <TextView
                 android:id="@+id/textProblema"
                 android:layout_width="wrap_content"

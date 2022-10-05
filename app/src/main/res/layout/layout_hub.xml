@@ -136,7 +136,7 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:gravity="center"
-        android:text="Tela Pedro"
+        android:text="Ligacao"
         android:textColor="@color/black"
         android:textSize="20dp"
         app:layout_constraintTop_toBottomOf="@id/tex10"

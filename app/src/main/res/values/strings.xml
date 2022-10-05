@@ -84,11 +84,32 @@
 
     <string name="bemVindo">Bem Vindo!</string>
 
-    <string name="dummyText">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</string>
+    <string name="dummyText">
+        <p>1. Informações fornecidas pelo usuário:
+O aplicativo obtém as informações que você fornece quando você baixa e registra no aplicativo. O registro conosco é obrigatório, para que possa utilizar todos os serviços fornecidos pelo aplicativo.</p> \n
+        <p>2. Quando você se registra conosco e usa o aplicativo, irá fornecer:
+Seu nome completo, telefone, data de nascimento, e-mail, chave de acesso e irá criar uma senha;  Informações que você nos fornece quando nos contata para obter ajuda;  Informações que você insere em nosso sistema ao usar o aplicativo. </p> \n
+        <p>3. Informações coletadas automaticamente
+Além disso, o aplicativo pode coletar certas informações automaticamente, incluindo, mas não se limitando ao tipo de dispositivo móvel que você usa, o ID exclusivo do dispositivo móvel, o endereço IP do dispositivo móvel, o sistema operacional móvel, o tipo de dispositivo móvel, navegadores de internet que você usa e informações sobre como você usa o aplicativo.
+</p> \n
+        <p></p> \n
+        <p></p> \n
+        <p></p> \n
+        <p></p> \n
+        <p></p> \n
+        <p></p>
+    </string>
+    <string name="segundoTexto">
+        <p>“O aplicativo coleta informações precisas de localização em tempo real do dispositivo?”
+Este Aplicativo não coleta informações precisas sobre a localização do seu dispositivo móvel.
+</p> \n
+        <p>“Terceiros veem e/ou têm acesso às informações obtidas pelo aplicativo?”
+Apenas dados agregados e anônimos são transmitidos periodicamente para serviços externos para nos ajudar a melhorar o aplicativo e nosso serviço. Compartilharemos suas informações com terceiros apenas nas formas descritas nesta declaração de privacidade. </p> \n
+    </string>
+    <string name="terceiroTexto">
+        <p></p> \n
+        <p></p> \n
+    </string>
 
     <string name="texto_cadastr">Li e concordo com os <a href='https://github.com/seugirdur/App-petrobras'>Termos de uso</a> e <a href='https://github.com/seugirdur/App-petrobras'>Politicas de privacidade</a></string>
     <string name="nome_completo">Nome Completo</string>

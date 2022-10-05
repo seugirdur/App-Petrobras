@@ -339,4 +339,9 @@ public class Passos extends Drawer {
         startActivity(intent);
         finish();
     }
+
+    @Override
+    public void onBackPressed() {
+        retornarParaSolucoes();
+    }
 }

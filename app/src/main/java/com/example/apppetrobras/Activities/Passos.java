@@ -194,18 +194,6 @@ public class Passos extends Drawer {
     public void abrirpopup(View view){
 
         mDialog = new Dialog(this);
-
-        btnSemAcesso.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                mDialog.setContentView(R.layout.popup_cadeado_solucoes);
-                mDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-                mDialog.show();
-
-            }
-        });
-
     }
 
     public void inserirNaTela(){
@@ -363,5 +351,9 @@ public class Passos extends Drawer {
     @Override
     public void onBackPressed() {
         mudarTela();
+    }
+
+    public void fecharPopup(View view){
+        finish();
     }
 }

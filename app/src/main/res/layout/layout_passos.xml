@@ -126,7 +126,6 @@
             android:layout_marginTop="20dp"
             android:background="@drawable/ripple_effect_soluction"
             android:visibility="visible"
-            android:clickable="true"
             android:onClick="abrirpopup"
             android:src="@drawable/lock_open_and_circle"
             app:layout_constraintStart_toStartOf="@id/text_layout"

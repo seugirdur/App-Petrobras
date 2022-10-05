@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="364dp"
+    android:layout_width="350dp"
     android:layout_height="wrap_content"
     android:padding="10dp">
 
@@ -16,7 +16,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="155dp"
             android:padding="10dp"
             tools:layout_editor_absoluteX="-55dp"
             tools:layout_editor_absoluteY="-10dp">
@@ -24,10 +24,11 @@
             <ImageView
                 android:id="@+id/imageProblema"
                 android:layout_width="46dp"
-                android:layout_marginTop="4dp"
                 android:layout_height="20dp"
+                android:layout_marginTop="8dp"
                 android:contentDescription="@string/todo"
-                app:layout_constraintEnd_toStartOf="@+id/textProblema"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/ic_launcher_background"
@@ -36,90 +37,97 @@
             <TextView
                 android:id="@+id/textProblema"
                 android:layout_width="wrap_content"
-                android:layout_marginTop="20px"
                 android:layout_height="20dp"
+                android:layout_marginStart="28dp"
                 android:text="@string/data_do_relat_rio_dd_mm_yyyy"
                 android:textColor="@color/black"
                 android:textSize="15sp"
+                app:layout_constraintStart_toEndOf="@+id/imageProblema"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:ignore="MissingConstraints"
-                tools:layout_editor_absoluteX="74dp" />
+                tools:ignore="MissingConstraints" />
 
             <TextView
                 android:id="@+id/textView24"
                 android:layout_width="wrap_content"
                 android:layout_height="15dp"
+                android:layout_marginStart="28dp"
                 android:layout_marginTop="15px"
                 android:text="NOME COMPLETO"
                 android:textColor="@color/black"
                 android:textSize="12sp"
+                app:layout_constraintStart_toEndOf="@+id/imageProblema"
                 app:layout_constraintTop_toBottomOf="@+id/textProblema"
-                tools:ignore="HardcodedText,MissingConstraints"
-                tools:layout_editor_absoluteX="74dp" />
+                tools:ignore="HardcodedText,MissingConstraints" />
 
             <TextView
                 android:id="@+id/textView26"
                 android:layout_width="wrap_content"
-                android:layout_marginTop="15px"
                 android:layout_height="15dp"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="15px"
                 android:text="EMAIL"
                 android:textColor="@color/black"
                 android:textSize="12sp"
+                app:layout_constraintStart_toEndOf="@+id/imageProblema"
                 app:layout_constraintTop_toBottomOf="@+id/textView25"
-                tools:ignore="HardcodedText,MissingConstraints"
-                tools:layout_editor_absoluteX="74dp" />
+                tools:ignore="HardcodedText,MissingConstraints" />
 
             <TextView
                 android:id="@+id/textView27"
                 android:layout_width="wrap_content"
                 android:layout_height="15dp"
+                android:layout_marginStart="28dp"
                 android:text="@string/email_robson_petrobras_com_br"
                 android:textSize="12sp"
+                app:layout_constraintStart_toEndOf="@+id/imageProblema"
                 app:layout_constraintTop_toBottomOf="@+id/textView26"
-                tools:ignore="MissingConstraints"
-                tools:layout_editor_absoluteX="74dp" />
+                tools:ignore="MissingConstraints" />
 
             <TextView
                 android:id="@+id/textView25"
                 android:layout_width="wrap_content"
                 android:layout_height="15dp"
+                android:layout_marginStart="28dp"
                 android:text="@string/nome_completo"
                 android:textSize="12sp"
+                app:layout_constraintStart_toEndOf="@+id/imageProblema"
                 app:layout_constraintTop_toBottomOf="@+id/textView24"
-                tools:ignore="MissingConstraints"
-                tools:layout_editor_absoluteX="75dp" />
+                tools:ignore="MissingConstraints" />
 
             <TextView
                 android:id="@+id/textView28"
                 android:layout_width="wrap_content"
                 android:layout_height="15dp"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="15px"
                 android:text="@string/setor"
                 android:textColor="@color/black"
-                android:layout_marginTop="15px"
                 android:textSize="12sp"
+                app:layout_constraintStart_toEndOf="@+id/imageProblema"
                 app:layout_constraintTop_toBottomOf="@+id/textView27"
-                tools:ignore="MissingConstraints"
-                tools:layout_editor_absoluteX="75dp" />
+                tools:ignore="MissingConstraints" />
 
             <TextView
                 android:id="@+id/textView29"
                 android:layout_width="wrap_content"
                 android:layout_height="15dp"
+                android:layout_marginStart="28dp"
                 android:text="Setor do Usuário"
                 android:textSize="12sp"
+                app:layout_constraintStart_toEndOf="@+id/imageProblema"
                 app:layout_constraintTop_toBottomOf="@+id/textView28"
-                tools:ignore="MissingConstraints"
-                tools:layout_editor_absoluteX="74dp" />
+                tools:ignore="MissingConstraints" />
 
             <View
                 android:id="@+id/divider3"
                 android:layout_width="400dp"
                 android:layout_height="1dp"
+                android:layout_marginTop="5dp"
                 android:background="@color/black"
-                android:layout_marginTop="30px"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView29"/>
+                app:layout_constraintTop_toBottomOf="@+id/textView29" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

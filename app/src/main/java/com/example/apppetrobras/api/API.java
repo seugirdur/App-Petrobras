@@ -1,5 +1,6 @@
 package com.example.apppetrobras.api;
 
+import com.example.apppetrobras.Objects.AdminObj;
 import com.example.apppetrobras.Objects.PerfilObj;
 import com.example.apppetrobras.Objects.RelatorioObj;
 import com.example.apppetrobras.Objects.SolucoesObj;
@@ -133,11 +134,11 @@ public interface  API {
     );
 
     @GET("/relatorios/admin/aberto")
-    Call<List<RelatorioObj>> getAllRelatoriosOpen();
+    Call<List<AdminObj>> getAllRelatoriosOpen();
 
 
     @GET("/relatorios/admin/fechado")
-    Call<List<RelatorioObj>> getAllRelatoriosClosed();
+    Call<List<AdminObj>> getAllRelatoriosClosed();
 
 
 }

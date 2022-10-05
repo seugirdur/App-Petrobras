@@ -20,7 +20,7 @@ import com.example.apppetrobras.Adapters.RVAdapterEmAberto;
 import com.example.apppetrobras.Adapters.RecyclerViewAdapter;
 import com.example.apppetrobras.Adapters.RelatorioAdapter;
 import com.example.apppetrobras.Objects.ProblemasObj;
-import com.example.apppetrobras.Objects.RelatorioObj;
+import com.example.apppetrobras.Objects.AdminObj;
 import com.example.apppetrobras.Objects.SolucoesObj;
 import com.example.apppetrobras.R;
 import com.example.apppetrobras.api.RetroFitClient;
@@ -37,7 +37,7 @@ public class EmAbertoFragment extends Fragment implements RecyclerViewInteface{
 
     // Declaração das variáveis
     private ArrayList<ProblemasObj> dataArrayList;
-    List<RelatorioObj> relatorioObjList;
+    List<AdminObj> AdminObjList;
 
     private RecyclerView recyclerview;
     private Context context;
@@ -79,31 +79,31 @@ public class EmAbertoFragment extends Fragment implements RecyclerViewInteface{
 
     private void listen(){
 
-        Call<List<RelatorioObj>> callme = RetroFitClient
+        Call<List<AdminObj>> callme = RetroFitClient
                 .getInstance()
                 .getAPI()
                 .getAllRelatoriosOpen();
 
-        callme.enqueue(new Callback<List<RelatorioObj>>() {
+        callme.enqueue(new Callback<List<AdminObj>>() {
             @Override
-            public void onResponse(Call<List<RelatorioObj>> call, Response<List<RelatorioObj>> response) {
+            public void onResponse(Call<List<AdminObj>> call, Response<List<AdminObj>> response) {
                 if (!response.isSuccessful()){
                     Toast.makeText(getContext(), "wassup", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
                 //tentando guardar num objeto para que seja depois visivel no item_list_admin do dionisio
-                relatorioObjList = response.body();
+                AdminObjList = response.body();
 
                 RVAdapterEmAberto recyclerViewAdapter = new RVAdapterEmAberto(context,
-                        relatorioObjList, recyclerViewInteface, R.layout.item_list_admin);
+                        AdminObjList, recyclerViewInteface, R.layout.item_list_admin);
                 recyclerview.setAdapter(recyclerViewAdapter);
                 recyclerViewAdapter.notifyDataSetChanged();
 
             }
 
             @Override
-            public void onFailure(Call<List<RelatorioObj>> call, Throwable t) {
+            public void onFailure(Call<List<AdminObj>> call, Throwable t) {
 
             }
         });

@@ -11,7 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.apppetrobras.Objects.ProblemasObj;
-import com.example.apppetrobras.Objects.RelatorioObj;
+import com.example.apppetrobras.Objects.AdminObj;
 import com.example.apppetrobras.R;
 import com.example.apppetrobras.fragments.RecyclerViewInteface;
 import java.util.List;
@@ -21,12 +21,12 @@ public class RVAdapterEmAberto extends RecyclerView.Adapter<RVAdapterEmAberto.My
     private final RecyclerViewInteface recyclerViewInteface;
     private final int layout;
     Context context;
-    List<RelatorioObj> relatorioObjList;
+    List<AdminObj> AdminObjList;
 
-    public RVAdapterEmAberto(Context context, List<RelatorioObj> relatorioObjList,
+    public RVAdapterEmAberto(Context context, List<AdminObj> AdminObjList,
                              RecyclerViewInteface recyclerViewInteface, int layout){
         this.context = context;
-        this.relatorioObjList = relatorioObjList;
+        this.AdminObjList = AdminObjList;
         this.recyclerViewInteface = recyclerViewInteface;
         this.layout = layout;
     }
@@ -53,22 +53,20 @@ public class RVAdapterEmAberto extends RecyclerView.Adapter<RVAdapterEmAberto.My
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
 
 
-        RelatorioObj data = relatorioObjList.get(position);
+        AdminObj data = AdminObjList.get(position);
         // Há a verificação de cada variável, caso ela tenha sido definida, ela passa o valor
         // Isso é necessário pois as listas recebem diferentes quantidades de valores
 
-        String dataProccesso = data.getDataProcesso().substring(0,2) + "/"
-                + data.getDataProcesso().substring(2,4) + "/"
-                + data.getDataProcesso().substring(4,6);
-        if(holder.text1 !=null){ holder.text1.setText(dataProccesso);}
+
+        if(holder.text1 !=null){ holder.text1.setText(data.getDataProcesso());}
         if(holder.text2 !=null){ holder.text2.setText(data.getNome());}
-        if(holder.text3 !=null){ holder.text3.setText("Não é possível resgatar dessa tabela do BD");}
-        if(holder.text4 !=null){ holder.text4.setText("Não é possível resgatar dessa tabela do BD");}
+        if(holder.text3 !=null){ holder.text3.setText(data.getEmail());}
+        if(holder.text4 !=null){ holder.text4.setText(data.getSetor());}
     }
 
     @Override
     public int getItemCount() {
-        return relatorioObjList.size();
+        return AdminObjList.size();
     }
 
     public static class MyViewHolder extends RecyclerView.ViewHolder{

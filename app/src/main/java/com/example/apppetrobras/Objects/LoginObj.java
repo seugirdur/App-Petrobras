@@ -6,7 +6,7 @@ public class LoginObj {
     private String nome, email, tel, chave, senha, dataNasc;
     private Integer id, isAdmin;
 
-    public LoginObj(Integer id, String nome, String email, String tel, String chave, String senha) {
+    public LoginObj(Integer id, String nome, String email, String tel, String chave, String senha, int isAdmin) {
         this.id = id;
         this.nome = nome;
         this.email = email;

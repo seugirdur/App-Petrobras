@@ -97,8 +97,8 @@ import com.google.android.material.navigation.NavigationView;
 
                 case R.id.sair:
                     startActivity(new Intent(this, SplashScreen.class));
-                    finish();
                     overridePendingTransition(0, 0);
+                    finish();
                     break;
 
             }

@@ -9,17 +9,24 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import com.example.Navigations.Drawer;
 import com.example.apppetrobras.R;
+import com.example.apppetrobras.databinding.LayoutPassosBinding;
+import com.example.apppetrobras.databinding.LayoutPerfilBinding;
 
-public class Perfil extends AppCompatActivity {
+public class Perfil extends Drawer {
 
+    LayoutPerfilBinding layoutPerfilBinding;
 
     TextView nomecompleto,num_tel,email1,num_chave, nome1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.layout_perfil);
+        layoutPerfilBinding= LayoutPerfilBinding.inflate(getLayoutInflater());
+        setContentView(layoutPerfilBinding.getRoot());
+        allocateActivityTitle("Perfil");
+
 
         SharedPreferences sharedPreferences = getSharedPreferences(
                 getString(R.string.preference_file_key), Context.MODE_PRIVATE);

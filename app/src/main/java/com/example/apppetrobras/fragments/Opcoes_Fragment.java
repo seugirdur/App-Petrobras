@@ -1,34 +1,16 @@
 package com.example.apppetrobras.fragments;
 
-import android.app.Dialog;
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.Toast;
 
-import com.example.Navigations.Tabs;
-import com.example.apppetrobras.Activities.Cadastro;
-import com.example.apppetrobras.Activities.Login;
-import com.example.apppetrobras.Objects.ProblemasObj;
-import com.example.apppetrobras.Activities.Solucoes;
 import com.example.apppetrobras.R;
-import com.example.apppetrobras.Adapters.RecyclerViewAdapter;
-
-import java.util.ArrayList;
 
 public class Opcoes_Fragment extends Fragment implements View.OnClickListener {
 
@@ -51,7 +33,7 @@ public class Opcoes_Fragment extends Fragment implements View.OnClickListener {
         btnab2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), Cadastro.class);
+                Intent intent = new Intent(getActivity(), Privacidade.class);
                 startActivity(intent);
 
             }
@@ -61,7 +43,7 @@ public class Opcoes_Fragment extends Fragment implements View.OnClickListener {
         btnab1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), Cadastro.class);
+                Intent intent = new Intent(getActivity(), Privacidade.class);
                 startActivity(intent);
             }
         });

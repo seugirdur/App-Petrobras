@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.apppetrobras">
+    package="com.example.apppetrobras" >
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -17,17 +17,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         android:usesCleartextTraffic="true"
-        tools:targetApi="31">
+        tools:targetApi="31" >
+        <activity
+            android:name=".Seguranca"
+            android:exported="false" />
+        <activity
+            android:name=".Privacidade"
+            android:exported="false" />
         <activity
             android:name=".Activities.Perfil"
             android:exported="false" />
         <activity
             android:name=".Activities.Passos"
-            android:exported="false"
-            />
+            android:exported="false" />
         <activity
             android:name=".Hub"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -41,55 +46,46 @@
             android:name=".Historico"
             android:exported="false" />
         <activity
-            android:name="com.example.Navigations.Drawer"
+            android:name=".Navigations.Drawer"
             android:exported="false" />
         <activity
             android:name=".Conteudo"
             android:exported="false" />
         <activity
-            android:name=".Activities.Cadastro"
-            android:exported="false"
-             />
-        <activity
             android:name=".minhaPagina"
             android:exported="false" />
         <activity
             android:name=".Activities.Login"
-            android:exported="false"
-             />
+            android:exported="false" />
         <activity
             android:name=".Activities.Inicio"
             android:exported="false" />
         <activity
             android:name=".Activities.Solucoes"
-            android:exported="false"
-             />
+            android:exported="false" />
         <activity
-            android:name="com.example.Navigations.Tabs"
-            android:exported="true"
-             />
+            android:name=".Navigations.Tabs"
+            android:exported="true" />
         <activity
             android:name=".Activities.Relatorio"
             android:exported="true" />
         <activity
             android:name=".FormLoginPedro"
-            android:exported="true">
-
-        </activity>
+            android:exported="true" />
         <activity
-            android:name="com.example.Navigations.Configuracoes"
+            android:name=".Navigations.Configuracoes"
             android:exported="true"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".Activities.SplashScreen"
             android:exported="true"
-            android:theme="@style/Theme.AppCompat.NoActionBar" >
-        </activity>
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
 
         <meta-data
             android:name="preloaded_fonts"

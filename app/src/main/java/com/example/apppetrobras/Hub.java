@@ -8,7 +8,6 @@ import android.view.View;
 
 import com.example.Navigations.Tabs;
 import com.example.apppetrobras.Activities.Ajuda;
-import com.example.apppetrobras.Activities.Cadastro;
 import com.example.apppetrobras.Activities.Login;
 import com.example.apppetrobras.Activities.Perfil;
 import com.example.apppetrobras.Activities.Solucoes;

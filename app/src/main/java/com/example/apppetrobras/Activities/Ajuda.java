@@ -28,16 +28,16 @@ public class Ajuda extends AppCompatActivity {
         //TextView solBuscar = findViewById(R.id.solBuscar);
         //TextView solVer = findViewById(R.id.solVer);
 
-         Usar = findViewById(R.id.txtUsar);
-         Chamar = findViewById(R.id.txtChamar);
-         Buscar = findViewById(R.id.txtBuscar);
-         Ver = findViewById(R.id.txtVer);
-         btnUsar = findViewById(R.id.btnUsar);
-         btnChamar = findViewById(R.id.btnChamar);
-         btnBuscar = findViewById(R.id.btnBuscar);
-         btnVer = findViewById(R.id.btnVer);
-         scroll = findViewById(R.id.layoutScroll);
-         //usar
+        Usar = findViewById(R.id.txtUsar);
+        Chamar = findViewById(R.id.txtChamar);
+        Buscar = findViewById(R.id.txtBuscar);
+        Ver = findViewById(R.id.txtVer);
+        btnUsar = findViewById(R.id.btnUsar);
+        btnChamar = findViewById(R.id.btnChamar);
+        btnBuscar = findViewById(R.id.btnBuscar);
+        btnVer = findViewById(R.id.btnVer);
+        scroll = findViewById(R.id.layoutScroll);
+        //usar
         //chamar
         //buscar
         //ver

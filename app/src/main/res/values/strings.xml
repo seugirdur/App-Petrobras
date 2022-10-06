@@ -84,32 +84,38 @@
 
     <string name="bemVindo">Bem Vindo!</string>
 
-    <string name="dummyText">
-        <p>1. Informações fornecidas pelo usuário:
+    <string name="dummyText"><p>1. Informações fornecidas pelo usuário:
 O aplicativo obtém as informações que você fornece quando você baixa e registra no aplicativo. O registro conosco é obrigatório, para que possa utilizar todos os serviços fornecidos pelo aplicativo.</p> \n
         <p>2. Quando você se registra conosco e usa o aplicativo, irá fornecer:
 Seu nome completo, telefone, data de nascimento, e-mail, chave de acesso e irá criar uma senha;  Informações que você nos fornece quando nos contata para obter ajuda;  Informações que você insere em nosso sistema ao usar o aplicativo. </p> \n
         <p>3. Informações coletadas automaticamente
-Além disso, o aplicativo pode coletar certas informações automaticamente, incluindo, mas não se limitando ao tipo de dispositivo móvel que você usa, o ID exclusivo do dispositivo móvel, o endereço IP do dispositivo móvel, o sistema operacional móvel, o tipo de dispositivo móvel, navegadores de internet que você usa e informações sobre como você usa o aplicativo.
-</p> \n
-        <p></p> \n
-        <p></p> \n
-        <p></p> \n
-        <p></p> \n
-        <p></p> \n
-        <p></p>
+Além disso, o aplicativo pode coletar certas informações automaticamente, incluindo, mas não se limitando ao tipo de dispositivo móvel que você usa, o ID exclusivo do dispositivo móvel, o endereço IP do dispositivo móvel, o sistema operacional móvel, o tipo de dispositivo móvel, navegadores de internet que você usa e informações sobre como você usa o aplicativo.</p>
     </string>
-    <string name="segundoTexto">
-        <p>“O aplicativo coleta informações precisas de localização em tempo real do dispositivo?”
-Este Aplicativo não coleta informações precisas sobre a localização do seu dispositivo móvel.
-</p> \n
+
+
+
+
+    <string name="segundoTexto"><p>“O aplicativo coleta informações precisas de localização em tempo real do dispositivo?”
+Este Aplicativo não coleta informações precisas sobre a localização do seu dispositivo móvel.</p>\n
         <p>“Terceiros veem e/ou têm acesso às informações obtidas pelo aplicativo?”
-Apenas dados agregados e anônimos são transmitidos periodicamente para serviços externos para nos ajudar a melhorar o aplicativo e nosso serviço. Compartilharemos suas informações com terceiros apenas nas formas descritas nesta declaração de privacidade. </p> \n
+Apenas dados agregados e anônimos são transmitidos periodicamente para serviços externos para nos ajudar a melhorar o aplicativo e nosso serviço. Compartilharemos suas informações com terceiros apenas nas formas descritas nesta declaração de privacidade.</p>
     </string>
-    <string name="terceiroTexto">
-        <p></p> \n
-        <p></p> \n
+
+
+
+
+    <string name="terceiroTexto"><p>    -Conforme exigido por lei, como para cumprir uma intimação ou processo legal similar;</p>\n
+        <p>-Quando acreditarmos de boa fé que a divulgação é necessária para proteger nossos direitos, proteger sua segurança ou a segurança de terceiros, investigar fraudes ou responder a uma solicitação do governo;</p>\n
+        <p>-Com nossos provedores de serviços confiáveis que trabalham em nosso nome, não têm um uso independente das informações que divulgamos a eles e concordaram em aderir às regras estabelecidas nesta declaração de privacidade.</p>\n
+        <p>-Se a PPJA estiver envolvida em uma fusão, aquisição ou venda de todos ou parte de seus ativos, você será notificado por e-mail e/ou um aviso em destaque em nosso site sobre qualquer mudança de propriedade ou uso dessas informações, bem como como quaisquer escolhas que você possa ter em relação a essas informações.</p>
     </string>
+
+
+
+
+    <string name="quartoTexto"><p>Você pode interromper toda a coleta de informações pelo aplicativo facilmente desinstalando o aplicativo. Você pode usar os processos de desinstalação padrão conforme podem estar disponíveis como parte de seu dispositivo móvel ou por meio do mercado ou rede de aplicativos móveis. Você também pode solicitar o opt-out por e-mail, em suporte@aset.com.br.</p></string>
+
+
 
     <string name="texto_cadastr">Li e concordo com os <a href='https://github.com/seugirdur/App-petrobras'>Termos de uso</a> e <a href='https://github.com/seugirdur/App-petrobras'>Politicas de privacidade</a></string>
     <string name="nome_completo">Nome Completo</string>

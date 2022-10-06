@@ -53,14 +53,14 @@ public class Opcoes_Fragment extends Fragment implements View.OnClickListener {
         btnab2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), TelaPrivacidade.class); //abre o privacidade e segurança
+                Intent intent = new Intent(getActivity(), Privacidade.class); //abre o privacidade e segurança
                 startActivity(intent);
             }
         });
         btnab1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getActivity(), Privacidade.class); //abre o termos de uso
+                Intent i = new Intent(getActivity(), TelaPrivacidade.class); //abre o termos de uso
                 startActivity(i);
             }
         });

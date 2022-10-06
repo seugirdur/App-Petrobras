@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="140dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="center"
+    android:background="@drawable/popup_background">
+
+
+    <TextView
+        android:id="@+id/realmente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Realmente deseja sair?"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="15dp"/>
+
+    <ImageView
+        android:id="@+id/confirmar_sair"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        app:srcCompat="@drawable/ic_cancel_circle"
+        app:layout_constraintStart_toStartOf="@id/realmente"
+        app:layout_constraintTop_toBottomOf="@id/realmente"
+        android:layout_marginTop="25dp"
+        />
+
+    <ImageView
+        android:id="@+id/confirmar_nao_sair"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        app:srcCompat="@drawable/ic_check_circle"
+        app:layout_constraintEnd_toEndOf="@id/realmente"
+        app:layout_constraintTop_toBottomOf="@id/realmente"
+        android:layout_marginTop="25dp"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

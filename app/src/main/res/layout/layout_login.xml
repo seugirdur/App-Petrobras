@@ -46,7 +46,7 @@
             android:id="@+id/edit_user"
             style="@style/btn_tela_login"
             android:layout_marginTop="26dp"
-            android:drawableLeft="@drawable/ic_key2"
+            android:drawableRight="@drawable/ic_key2"
             android:hint="@string/key"
             android:inputType="textCapCharacters"
             app:layout_constraintEnd_toEndOf="@+id/view"
@@ -56,7 +56,6 @@
         <EditText
             android:id="@+id/edit_senha"
             style="@style/btn_tela_login"
-            android:drawableLeft="@drawable/ic_lock_v24"
             android:drawableRight="@drawable/ic_eye"
             android:hint="@string/password"
             android:inputType="textPassword"

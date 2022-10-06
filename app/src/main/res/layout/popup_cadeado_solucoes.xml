@@ -39,7 +39,7 @@
         app:layout_constraintEnd_toStartOf="@id/linha_vertical"
         app:layout_constraintTop_toBottomOf="@id/linha_horizontal"
         android:layout_marginTop="5dp"
-        android:clickable="true"
+        android:onClick="fecharPopup"
         app:srcCompat="@drawable/ic_cancel_circle"/>
 
     <ImageView
@@ -52,7 +52,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="5dp"
         android:onClick="dontGetMeLost"
-        android:clickable="true"
         app:srcCompat="@drawable/ic_check_circle"/>
 
     <View

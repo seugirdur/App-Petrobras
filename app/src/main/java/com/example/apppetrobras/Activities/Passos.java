@@ -133,6 +133,7 @@ public class Passos extends Drawer {
                 qtdPassos = passosObjList.size();
                 inserirNaTela();
 
+                thereIsNoPasso();
             }
 
             @Override
@@ -192,20 +193,23 @@ public class Passos extends Drawer {
 
     //função para abrir o popup
     public void abrirpopup(View view){
-
         mDialog = new Dialog(this);
 
-        btnSemAcesso.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        // Defini o click dentro do popup
+        mDialog.setContentView(R.layout.popup_cadeado_solucoes);
+        mDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        mDialog.show();
 
-                mDialog.setContentView(R.layout.popup_cadeado_solucoes);
-                mDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-                mDialog.show();
-
-            }
-        });
-
+//        btnSemAcesso.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//                mDialog.setContentView(R.layout.popup_cadeado_solucoes);
+//                mDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+//                mDialog.show();
+//
+//            }
+//        });
     }
 
     public void inserirNaTela(){
@@ -363,5 +367,9 @@ public class Passos extends Drawer {
     @Override
     public void onBackPressed() {
         mudarTela();
+    }
+
+    public void fecharPopup(View view){
+        mDialog.dismiss();
     }
 }

@@ -121,6 +121,13 @@ public interface  API {
     );
 
     @FormUrlEncoded
+    @POST("/relatorios/access")
+    Call<List<RelatorioObj>> getRelatorioUnico(
+            @Field("idRelatorio") int idRelatorio
+
+    );
+
+    @FormUrlEncoded
     @POST("/relatorios/store")
     Call<ResponseBody> postRelatorio(
             @Field("nome") String nome,

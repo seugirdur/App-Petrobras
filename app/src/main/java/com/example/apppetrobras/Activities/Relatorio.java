@@ -74,6 +74,7 @@ public class Relatorio extends Drawer implements RecyclerViewInteface{
 
 
 
+
         // animations
         fabOpen = AnimationUtils.loadAnimation(this, R.anim.fab_open);
         fabClose = AnimationUtils.loadAnimation(this, R.anim.fab_close);

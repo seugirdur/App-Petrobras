@@ -28,6 +28,15 @@ public class Ajuda extends AppCompatActivity {
         solChamado = findViewById(R.id.solChamado);
 
 
+         btnUsar = findViewById(R.id.btnUsar);
+         btnChamar = findViewById(R.id.btnChamar);
+         btnBuscar = findViewById(R.id.btnBuscar);
+         btnChamado = findViewById(R.id.btnChamado);
+
+         btnVer = findViewById(R.id.btnVer);
+
+
+
         btnUsar = findViewById(R.id.btnUsar);
         btnChamar = findViewById(R.id.btnChamar);
         btnBuscar = findViewById(R.id.btnBuscar);

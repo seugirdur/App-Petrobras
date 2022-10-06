@@ -78,20 +78,51 @@
             app:layout_constraintStart_toStartOf="@+id/view"
             app:layout_constraintTop_toBottomOf="@+id/edit_senha" />
 
+        <TextView
+            android:id="@+id/esta_com_problemas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Está com problemas?"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/check_connected"
+            app:layout_constraintEnd_toEndOf="@id/check_connected"
+            app:layout_constraintTop_toBottomOf="@id/check_connected"
+            android:layout_marginTop="20dp"
+
+            />
+
+        <TextView
+            android:id="@+id/entre_em_contato_conosco"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Entre em contato conosco "
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/esta_com_problemas"
+            app:layout_constraintEnd_toStartOf="@id/esqueceu_senha"
+            app:layout_constraintTop_toBottomOf="@id/esta_com_problemas"
+            app:layout_constraintBottom_toTopOf="@id/button_login"
+            android:layout_marginBottom="50dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginLeft="15dp"
+            />
+
+
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/esqueceu_senha"
             style="@style/Forgot_Password"
-            android:layout_width="273dp"
-            android:layout_height="44dp"
-            android:layout_marginTop="24dp"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
             android:background="?android:attr/selectableItemBackground"
-            android:gravity="center"
             android:text="@string/texto_tela_escolha"
             android:textColor="@color/black"
-            app:layout_constraintEnd_toEndOf="@+id/view"
-            app:layout_constraintHorizontal_bias="0.502"
-            app:layout_constraintStart_toStartOf="@+id/view"
-            app:layout_constraintTop_toBottomOf="@+id/check_connected" />
+            app:layout_constraintStart_toEndOf="@id/entre_em_contato_conosco"
+            app:layout_constraintTop_toBottomOf="@id/esta_com_problemas"
+            app:layout_constraintBottom_toTopOf="@id/button_login"
+            app:layout_constraintEnd_toEndOf="@id/esta_com_problemas"
+            android:layout_marginTop="7dp"
+             />
 
         <androidx.appcompat.widget.AppCompatButton
 

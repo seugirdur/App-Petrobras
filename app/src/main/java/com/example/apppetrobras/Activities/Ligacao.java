@@ -18,6 +18,7 @@ import com.example.Navigations.Drawer;
 import com.example.apppetrobras.R;
 import com.example.apppetrobras.Objects.PassosObj;
 import com.example.apppetrobras.api.RetroFitClient;
+import com.example.apppetrobras.databinding.LayoutLigacaoBinding;
 import com.example.apppetrobras.databinding.LayoutPassosBinding;
 
 
@@ -32,10 +33,14 @@ import retrofit2.Response;
 
 public class Ligacao extends Drawer {
 
+    LayoutLigacaoBinding layoutLigacaoBinding;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.layout_ligacao);
+        layoutLigacaoBinding = LayoutLigacaoBinding.inflate(getLayoutInflater());
+        setContentView(layoutLigacaoBinding.getRoot());
+        allocateActivityTitle("Ligação");
     }
 
 }

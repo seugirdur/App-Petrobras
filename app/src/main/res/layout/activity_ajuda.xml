@@ -8,50 +8,37 @@
     tools:context=".Activities.Ajuda">
 
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout"
-        android:layout_width="410dp"
-        android:layout_height="106dp"
+    <ImageView
+        android:id="@+id/imgSeparador"
+        android:layout_width="404dp"
+        android:layout_height="47dp"
+        android:layout_marginBottom="-5dp"
         app:layout_constraintBottom_toTopOf="@+id/scrollView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:srcCompat="@drawable/img_1" />
 
-        <ImageView
-            android:id="@+id/imgSeparador"
-            android:layout_width="408dp"
-            android:layout_height="84dp"
-            android:layout_marginStart="1dp"
-            android:layout_marginEnd="1dp"
-            android:layout_marginBottom="16dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:srcCompat="@drawable/img_1" />
-
-        <TextView
-            android:id="@+id/txtAjuda"
-            android:layout_width="221dp"
-            android:layout_height="43dp"
-            android:fontFamily="sans-serif-black"
-            android:paddingStart="0dp"
-            android:paddingEnd="0dp"
-            android:text="Ajuda e Suporte"
-            android:textSize="30dp"
-            tools:layout_editor_absoluteX="95dp"
-            tools:layout_editor_absoluteY="58dp" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/txtAjuda"
+        android:layout_width="221dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="sans-serif-black"
+        android:paddingStart="0dp"
+        android:paddingEnd="0dp"
+        android:text="Ajuda e Suporte"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ScrollView
         android:id="@+id/scrollView2"
-        android:layout_width="414dp"
-        android:layout_height="624dp"
+        android:layout_width="410dp"
+        android:layout_height="632dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+        app:layout_constraintStart_toStartOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/layoutScroll"
@@ -59,139 +46,206 @@
             android:layout_height="wrap_content">
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/layoutVer"
+                android:id="@+id/layoutUsar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                tools:layout_editor_absoluteX="1dp">
-
-                <TextView
-                    android:id="@+id/solVer"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="TextView"
-                    tools:layout_editor_absoluteX="1dp" />
-
-                <ImageButton
-                    android:id="@+id/btnVer"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:rotation="270"
-                    app:srcCompat="@drawable/ic_baseline_arrow_back_ios_new_24"
-                    tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck"
-                    tools:layout_editor_absoluteX="325dp" />
-
-                <TextView
-                    android:id="@+id/txtVer"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif"
-                    android:text="Como ver meus chamados?"
-                    android:textSize="18dp"
-                    tools:layout_editor_absoluteX="10dp" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/layoutChamar"
-                android:layout_width="280dp"
-                android:layout_height="56dp"
-                tools:layout_editor_absoluteX="43dp"
-                tools:layout_editor_absoluteY="301dp">
-
-                <TextView
-                    android:id="@+id/txtChamar"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif"
-                    android:text="Como chamar um Técnico?"
-                    android:textSize="18dp"
-                    tools:layout_editor_absoluteX="1dp"
-                    tools:layout_editor_absoluteY="19dp" />
-
-                <ImageButton
-                    android:id="@+id/btnChamar"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:rotation="270"
-                    app:srcCompat="@drawable/ic_baseline_arrow_back_ios_new_24"
-                    tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck"
-                    tools:layout_editor_absoluteX="224dp"
-                    tools:layout_editor_absoluteY="8dp" />
-
-                <TextView
-                    android:id="@+id/solChamar"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="TextView"
-                    tools:layout_editor_absoluteX="1dp" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/layoutUsar"
-                android:layout_width="363dp"
-                android:layout_height="69dp"
-                tools:layout_editor_absoluteX="16dp"
-                tools:layout_editor_absoluteY="193dp">
+                android:layout_marginTop="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtManual">
 
                 <ImageButton
                     android:id="@+id/btnUsar"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="5dp"
                     android:onClick="btnUsar"
                     android:rotation="270"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
                     app:srcCompat="@drawable/ic_baseline_arrow_back_ios_new_24"
-                    tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck"
-                    tools:layout_editor_absoluteX="323dp" />
+                    tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
                 <TextView
                     android:id="@+id/txtUsar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="101dp"
                     android:fontFamily="sans-serif"
                     android:text="Como usar o aplicativo?"
                     android:textSize="18dp"
-                    tools:layout_editor_absoluteX="9dp" />
+                    app:layout_constraintEnd_toStartOf="@+id/btnUsar"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/solUsar"
-                    android:layout_width="175dp"
-                    android:layout_height="62dp"
-                    android:text="textview"
+                    android:layout_width="333dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
 
-                    android:visibility="visible"
-                    tools:layout_editor_absoluteX="124dp"
-                    tools:layout_editor_absoluteY="0dp" />
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="15dp"
+                    android:text="Morbi a arcu nisl. Sed ornare lacinia lacus sed sodales. Aenean purus elit, ullamcorper nec vulputate eget, convallis nec odio. Etiam sed ex accumsan, venenatis quam vitae, mattis mauris. Vivamus eleifend posuere libero, sed commodo enim accumsan sollicitudin. Sed faucibus nunc non lorem maximus luctus a sit amet augue. Sed hendrerit luctus efficitur. Cras ut dui iaculis, molestie eros fringilla, ornare felis. Vestibulum at lacus magna. Praesent vestibulum mi libero, non mollis diam scelerisque in. Aliquam est orci, porta ut porta ut, ornare ut tellus. Mauris consectetur elit erat, et ornare elit venenatis eget. Aliquam eu ante ac quam mollis pulvinar vel ut turpis. Vestibulum facilisis lectus tempus, condimentum urna et, dictum metus. Donec sed ullamcorper risus. Donec quis sapien et nibh ultricies luctus.  "
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/btnUsar" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/layoutBuscar"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                tools:layout_editor_absoluteX="0dp"
-                tools:layout_editor_absoluteY="136dp">
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layoutUsar">
 
                 <TextView
                     android:id="@+id/txtBuscar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="96dp"
                     android:fontFamily="sans-serif"
                     android:text="Como buscar a solução?"
-                    android:textSize="18dp" />
+                    android:textSize="18dp"
+                    app:layout_constraintEnd_toStartOf="@+id/btnBuscar"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageButton
                     android:id="@+id/btnBuscar"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:onClick="btnBuscar"
                     android:rotation="270"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
                     app:srcCompat="@drawable/ic_baseline_arrow_back_ios_new_24"
-                    tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck"
-                    tools:layout_editor_absoluteX="325dp" />
+                    tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
                 <TextView
                     android:id="@+id/solBuscar"
+                    android:layout_width="333dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="15dp"
+                    android:text="Morbi a arcu nisl. Sed ornare lacinia lacus sed sodales. Aenean purus elit, ullamcorper nec vulputate eget, convallis nec odio. Etiam sed ex accumsan, venenatis quam vitae, mattis mauris. Vivamus eleifend posuere libero, sed commodo enim accumsan sollicitudin. Sed faucibus nunc non lorem maximus luctus a sit amet augue. Sed hendrerit luctus efficitur. Cras ut dui iaculis, molestie eros fringilla, ornare felis. Vestibulum at lacus magna. Praesent vestibulum mi libero, non mollis diam scelerisque in. Aliquam est orci, porta ut porta ut, ornare ut tellus. Mauris consectetur elit erat, et ornare elit venenatis eget. Aliquam eu ante ac quam mollis pulvinar vel ut turpis. Vestibulum facilisis lectus tempus, condimentum urna et, dictum metus. Donec sed ullamcorper risus. Donec quis sapien et nibh ultricies luctus.  "
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/btnBuscar" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutVer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layoutChamar">
+
+                <TextView
+                    android:id="@+id/solVer"
+                    android:layout_width="333dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="15dp"
+                    android:text="Morbi a arcu nisl. Sed ornare lacinia lacus sed sodales. Aenean purus elit, ullamcorper nec vulputate eget, convallis nec odio. Etiam sed ex accumsan, venenatis quam vitae, mattis mauris. Vivamus eleifend posuere libero, sed commodo enim accumsan sollicitudin. Sed faucibus nunc non lorem maximus luctus a sit amet augue. Sed hendrerit luctus efficitur. Cras ut dui iaculis, molestie eros fringilla, ornare felis. Vestibulum at lacus magna. Praesent vestibulum mi libero, non mollis diam scelerisque in. Aliquam est orci, porta ut porta ut, ornare ut tellus. Mauris consectetur elit erat, et ornare elit venenatis eget. Aliquam eu ante ac quam mollis pulvinar vel ut turpis. Vestibulum facilisis lectus tempus, condimentum urna et, dictum metus. Donec sed ullamcorper risus. Donec quis sapien et nibh ultricies luctus.  "
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.466"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/btnVer" />
+
+                <ImageButton
+                    android:id="@+id/btnVer"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:onClick="btnVer"
+                    android:rotation="270"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_baseline_arrow_back_ios_new_24"
+                    tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+                <TextView
+                    android:id="@+id/txtVer"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="TextView"
-                    tools:layout_editor_absoluteX="1dp" />
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="70dp"
+                    android:fontFamily="sans-serif"
+                    android:text="Como ver meus chamados?"
+                    android:textSize="18dp"
+                    app:layout_constraintEnd_toStartOf="@+id/btnVer"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutChamar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layoutBuscar">
+
+                <TextView
+                    android:id="@+id/txtChamar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="77dp"
+                    android:fontFamily="sans-serif"
+                    android:text="Como chamar um Técnico?"
+                    android:textSize="18dp"
+                    app:layout_constraintEnd_toStartOf="@+id/btnChamar"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageButton
+                    android:id="@+id/btnChamar"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:onClick="btnChamar"
+                    android:rotation="270"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_baseline_arrow_back_ios_new_24"
+                    tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+                <TextView
+                    android:id="@+id/solChamar"
+                    android:layout_width="333dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="15dp"
+                    android:text="Morbi a arcu nisl. Sed ornare lacinia lacus sed sodales. Aenean purus elit, ullamcorper nec vulputate eget, convallis nec odio. Etiam sed ex accumsan, venenatis quam vitae, mattis mauris. Vivamus eleifend posuere libero, sed commodo enim accumsan sollicitudin. Sed faucibus nunc non lorem maximus luctus a sit amet augue. Sed hendrerit luctus efficitur. Cras ut dui iaculis, molestie eros fringilla, ornare felis. Vestibulum at lacus magna. Praesent vestibulum mi libero, non mollis diam scelerisque in. Aliquam est orci, porta ut porta ut, ornare ut tellus. Mauris consectetur elit erat, et ornare elit venenatis eget. Aliquam eu ante ac quam mollis pulvinar vel ut turpis. Vestibulum facilisis lectus tempus, condimentum urna et, dictum metus. Donec sed ullamcorper risus. Donec quis sapien et nibh ultricies luctus.  "
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/btnChamar" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <TextView
@@ -201,85 +255,72 @@
                 android:fontFamily="sans-serif"
                 android:text="Manual do Aplicativo"
                 android:textSize="15dp"
-                tools:layout_editor_absoluteX="192dp"
-                tools:layout_editor_absoluteY="412dp" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtFuncionalidade" />
 
             <TextView
                 android:id="@+id/txtFuncionalidade"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
                 android:fontFamily="sans-serif-black"
                 android:text="Funcionalidade do APP"
                 android:textSize="25dp"
-                tools:layout_editor_absoluteX="68dp"
-                tools:layout_editor_absoluteY="78dp" />
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/layoutEscolha"
-                android:layout_width="409dp"
-                android:layout_height="636dp"
-                tools:layout_editor_absoluteX="1dp"
-                tools:layout_editor_absoluteY="8dp">
-
-                <TextView
-                    android:id="@+id/txtEscolha"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif"
-                    android:text="Como funciona a tela de escolha?"
-                    android:textSize="18dp"
-                    tools:layout_editor_absoluteX="11dp"
-                    tools:layout_editor_absoluteY="426dp" />
-
-                <ImageButton
-                    android:id="@+id/btnEscolha"
-                    android:layout_width="46dp"
-                    android:layout_height="48dp"
-                    android:rotation="270"
-                    app:srcCompat="@drawable/ic_baseline_arrow_back_ios_new_24"
-                    tools:ignore="SpeakableTextPresentCheck"
-                    tools:layout_editor_absoluteX="330dp"
-                    tools:layout_editor_absoluteY="317dp" />
-
-                <TextView
-                    android:id="@+id/solEscolha"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="TextView"
-                    tools:layout_editor_absoluteX="1dp" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/layoutChamado"
-                android:layout_width="412dp"
-                android:layout_height="45dp"
-                tools:layout_editor_absoluteX="1dp"
-                tools:layout_editor_absoluteY="366dp">
+                android:layout_width="348dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layoutVer">
 
                 <TextView
                     android:id="@+id/txtChamado"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="11dp"
                     android:fontFamily="sans-serif"
                     android:text="Como funciona a tela de chamado?"
                     android:textSize="18dp"
-                    tools:layout_editor_absoluteX="10dp" />
+                    app:layout_constraintEnd_toStartOf="@+id/btnChamado"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/solChamado"
-                    android:layout_width="wrap_content"
+                    android:layout_width="333dp"
                     android:layout_height="wrap_content"
-                    android:text="TextView" />
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="1dp"
+                    android:layout_marginEnd="15dp"
+                    android:text="Morbi a arcu nisl. Sed ornare lacinia lacus sed sodales. Aenean purus elit, ullamcorper nec vulputate eget, convallis nec odio. Etiam sed ex accumsan, venenatis quam vitae, mattis mauris. Vivamus eleifend posuere libero, sed commodo enim accumsan sollicitudin. Sed faucibus nunc non lorem maximus luctus a sit amet augue. Sed hendrerit luctus efficitur. Cras ut dui iaculis, molestie eros fringilla, ornare felis. Vestibulum at lacus magna. Praesent vestibulum mi libero, non mollis diam scelerisque in. Aliquam est orci, porta ut porta ut, ornare ut tellus. Mauris consectetur elit erat, et ornare elit venenatis eget. Aliquam eu ante ac quam mollis pulvinar vel ut turpis. Vestibulum facilisis lectus tempus, condimentum urna et, dictum metus. Donec sed ullamcorper risus. Donec quis sapien et nibh ultricies luctus.  "
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/btnChamado" />
 
                 <ImageButton
                     android:id="@+id/btnChamado"
-                    android:layout_width="46dp"
-                    android:layout_height="48dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="5dp"
+                    android:onClick="btnChamado"
                     android:rotation="270"
-                    android:visibility="invisible"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
                     app:srcCompat="@drawable/ic_baseline_arrow_back_ios_new_24"
-                    tools:layout_editor_absoluteX="328dp"
-                    tools:visibility="invisible" />
+                    tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck"
+                    tools:visibility="visible" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>

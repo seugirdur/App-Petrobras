@@ -19,7 +19,7 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".Historico"
+            android:name=".Activities.Historico"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -38,7 +38,7 @@
             android:name=".Activities.Ligacao"
             android:exported="false" />
         <activity
-            android:name=".Hub"
+            android:name="com.example.Navigations.Hub"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -72,19 +72,19 @@
             android:exported="true" />
         <activity
             android:name=".FormLoginPedro"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name="com.example.Navigations.Configuracoes"
             android:exported="true"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name="com.example.Navigations.Administrador"
             android:exported="true"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".Activities.SplashScreen"
             android:exported="true"
-            android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
 
         <meta-data
             android:name="preloaded_fonts"

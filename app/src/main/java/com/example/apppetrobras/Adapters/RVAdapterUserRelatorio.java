@@ -1,7 +1,6 @@
 package com.example.apppetrobras.Adapters;
 
 import android.content.Context;
-import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,23 +9,24 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.apppetrobras.Objects.ProblemasObj;
-import com.example.apppetrobras.Objects.AdminObj;
+import com.example.apppetrobras.Objects.UserRelatorioObj;
+import com.example.apppetrobras.Objects.UserRelatorioObj;
 import com.example.apppetrobras.R;
 import com.example.apppetrobras.fragments.RecyclerViewInteface;
+
 import java.util.List;
 
-public class RVAdapterEmAberto extends RecyclerView.Adapter<RVAdapterEmAberto.MyViewHolder>{
+public class RVAdapterUserRelatorio extends RecyclerView.Adapter<RVAdapterUserRelatorio.MyViewHolder>{
     // Declaração das variáveis
     private final RecyclerViewInteface recyclerViewInteface;
     private final int layout;
     Context context;
-    List<AdminObj> AdminObjList;
+    List<UserRelatorioObj> UserRelatorioObjList;
 
-    public RVAdapterEmAberto(Context context, List<AdminObj> AdminObjList,
-                             RecyclerViewInteface recyclerViewInteface, int layout){
+    public RVAdapterUserRelatorio(Context context, List<UserRelatorioObj> UserRelatorioObjList,
+                                  RecyclerViewInteface recyclerViewInteface, int layout){
         this.context = context;
-        this.AdminObjList = AdminObjList;
+        this.UserRelatorioObjList = UserRelatorioObjList;
         this.recyclerViewInteface = recyclerViewInteface;
         this.layout = layout;
     }
@@ -45,7 +45,7 @@ public class RVAdapterEmAberto extends RecyclerView.Adapter<RVAdapterEmAberto.My
         idTexto2 = R.id.textView25;
         idTexto3 = R.id.textView27;
         idTexto4 = R.id.textView29;
-        return new RVAdapterEmAberto.MyViewHolder(view, recyclerViewInteface,
+        return new RVAdapterUserRelatorio.MyViewHolder(view, recyclerViewInteface,
                 idTexto1, idTexto2, idTexto3, idTexto4);
     }
 
@@ -53,7 +53,7 @@ public class RVAdapterEmAberto extends RecyclerView.Adapter<RVAdapterEmAberto.My
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
 
 
-        AdminObj data = AdminObjList.get(position);
+        UserRelatorioObj data = UserRelatorioObjList.get(position);
         // Há a verificação de cada variável, caso ela tenha sido definida, ela passa o valor
         // Isso é necessário pois as listas recebem diferentes quantidades de valores
 
@@ -61,12 +61,12 @@ public class RVAdapterEmAberto extends RecyclerView.Adapter<RVAdapterEmAberto.My
         if(holder.text1 !=null){ holder.text1.setText(data.getDataProcesso());}
         if(holder.text2 !=null){ holder.text2.setText(data.getNome());}
         if(holder.text3 !=null){ holder.text3.setText(data.getEmail());}
-        if(holder.text4 !=null){ holder.text4.setText(data.getsecao());}
+        if(holder.text4 !=null){ holder.text4.setText(data.getSetor());}
     }
 
     @Override
     public int getItemCount() {
-        return AdminObjList.size();
+        return UserRelatorioObjList.size();
     }
 
     public static class MyViewHolder extends RecyclerView.ViewHolder{

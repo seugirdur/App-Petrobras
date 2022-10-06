@@ -1,4 +1,4 @@
-package com.example.apppetrobras;
+package com.example.Navigations;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,10 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.example.Navigations.Administrador;
-import com.example.Navigations.Tabs;
 import com.example.apppetrobras.Activities.Ajuda;
 import com.example.apppetrobras.Activities.Cadastro;
+import com.example.apppetrobras.Activities.Historico;
 import com.example.apppetrobras.Activities.Ligacao;
 import com.example.apppetrobras.Activities.Login;
 import com.example.apppetrobras.Activities.Perfil;
@@ -19,6 +18,8 @@ import com.example.apppetrobras.Activities.Relatorio;
 import com.example.apppetrobras.Activities.Passos;
 import com.example.apppetrobras.Activities.SplashScreen;
 import com.example.apppetrobras.Activities.Inicio;
+import com.example.apppetrobras.FormLoginPedro;
+import com.example.apppetrobras.R;
 
 public class Hub extends AppCompatActivity {
 
@@ -105,7 +106,7 @@ public class Hub extends AppCompatActivity {
         finish();
     }
     public void rediriciona13(View view){
-        Intent intent = new Intent(Hub.this, FormLoginPedro.class);
+        Intent intent = new Intent(Hub.this, Historico.class);
         startActivity(intent);
         finish();
     }

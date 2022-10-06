@@ -51,6 +51,7 @@ public class Relatorio extends Drawer implements RecyclerViewInteface{
     private boolean funciona = false;
     FloatingActionButton add_icon, download_icon, observacoes_icon;
     Animation fabOpen, fabClose, rotateForward, rotateBackward;
+    int idRelatorio;
     Dialog mDialog;
     SharedPreferences sp;
     SharedPreferences.Editor editor;
@@ -64,6 +65,7 @@ public class Relatorio extends Drawer implements RecyclerViewInteface{
         layoutRelatorioBinding = LayoutRelatorioBinding.inflate(getLayoutInflater());
         setContentView(layoutRelatorioBinding.getRoot());
         allocateActivityTitle("Relatório");
+        idRelatorio = getIntent().getIntExtra("idRelatorio",6);
 
 
         add_icon = (FloatingActionButton) findViewById(R.id.add_icon);
@@ -124,7 +126,7 @@ public class Relatorio extends Drawer implements RecyclerViewInteface{
         Call<List<RelatorioObj>> call = RetroFitClient
                 .getInstance()
                 .getAPI()
-                .getRelatorio(chave);
+                .getRelatorioUnico(idRelatorio);
 
 
 
@@ -140,7 +142,7 @@ public class Relatorio extends Drawer implements RecyclerViewInteface{
 
                 //pegar dados da api
                 List<RelatorioObj> cRelatorioList = response.body();
-                RelatorioObj cRelatorio = cRelatorioList.get(1);
+                RelatorioObj cRelatorio = cRelatorioList.get(0);
 
                 //pegar a quantidade de soluções testadas
                 //pegar o size do Problems da Api

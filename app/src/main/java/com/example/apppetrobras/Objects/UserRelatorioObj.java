@@ -1,17 +1,17 @@
 package com.example.apppetrobras.Objects;
 
-public class AdminObj {
+public class UserRelatorioObj {
 
     int idRelatorio;
-    String nome, email, dataProcesso, secao;
+    String nome, email, dataProcesso, Setor;
 
 
-    public AdminObj(int idRelatorio, String nome, String email, String dataProcesso, String secao) {
+    public UserRelatorioObj(int idRelatorio, String nome, String email, String dataProcesso, String Setor) {
         this.idRelatorio = idRelatorio;
         this.nome = nome;
         this.email = email;
         this.dataProcesso = dataProcesso;
-        secao = secao;
+        this.Setor = Setor;
     }
 
     public int getIdRelatorio() {
@@ -46,8 +46,8 @@ public class AdminObj {
         this.dataProcesso = dataProcesso;
     }
 
-    public String getsecao() {
-        return secao;
+    public String getSetor() {
+        return Setor;
     }
 
     public void setsecao(String secao) {

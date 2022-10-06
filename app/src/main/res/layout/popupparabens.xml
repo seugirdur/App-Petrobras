@@ -41,7 +41,7 @@
         android:layout_height="24dp"
         android:layout_marginStart="12dp"
         android:layout_marginTop="8dp"
-        android:text="Confira seu relatório a seguir"
+        android:text="Confira seu relatório na aba Histórico"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textStyle="bold"

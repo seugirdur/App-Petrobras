@@ -94,6 +94,7 @@ public class Cadastro extends AppCompatActivity {
         textView.setText(ss);
         textView.setMovementMethod(LinkMovementMethod.getInstance());
 
+
         EditText dataNasc;
 
         dataNasc = (EditText)findViewById(R.id.data_nascimento);

@@ -118,7 +118,8 @@ public class Relatorio extends Drawer implements RecyclerViewInteface{
         SharedPreferences sharedPreferences = getSharedPreferences(
                 getString(R.string.preference_file_key), Context.MODE_PRIVATE);
 
-        String chave = "D8X0";
+        String chave = sharedPreferences.getString("chave", "");
+
         //= sharedPreferences.getString("nome", "");
 
         Call<List<RelatorioObj>> call = RetroFitClient

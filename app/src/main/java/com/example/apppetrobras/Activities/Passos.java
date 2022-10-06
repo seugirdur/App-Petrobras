@@ -338,7 +338,7 @@ public class Passos extends Drawer {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(Passos.this, Relatorio.class);
+                Intent intent = new Intent(Passos.this, Tabs.class);
                 startActivity(intent);
                 finish();
             }

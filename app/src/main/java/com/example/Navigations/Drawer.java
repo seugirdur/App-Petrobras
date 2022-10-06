@@ -17,7 +17,6 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
-import com.example.apppetrobras.Activities.Ajuda;
 import com.example.apppetrobras.Activities.Perfil;
 import com.example.apppetrobras.Activities.Relatorio;
 import com.example.apppetrobras.R;
@@ -91,8 +90,8 @@ import com.google.android.material.navigation.NavigationView;
                     break;
 
                 case R.id.ajuda_suporte:
-                    startActivity(new Intent(this, Ajuda.class));
-                    overridePendingTransition(0, 0);
+                    //startActivity(new Intent(this, Ajuda.class));
+                    //overridePendingTransition(0, 0);
                     break;
 
                 case R.id.sair:

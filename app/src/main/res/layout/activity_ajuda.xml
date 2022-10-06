@@ -5,261 +5,284 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".Ajuda">
+    tools:context=".Activities.Ajuda">
 
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="46dp"
-        android:layout_height="48dp"
-        android:fontFamily="sans-serif-black"
-        android:rotation="270"
-        android:text="|||"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="410dp"
+        android:layout_height="106dp"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imgSeparador"
+            android:layout_width="408dp"
+            android:layout_height="84dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginEnd="1dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/img_1" />
+
+        <TextView
+            android:id="@+id/txtAjuda"
+            android:layout_width="221dp"
+            android:layout_height="43dp"
+            android:fontFamily="sans-serif-black"
+            android:paddingStart="0dp"
+            android:paddingEnd="0dp"
+            android:text="Ajuda e Suporte"
+            android:textSize="30dp"
+            tools:layout_editor_absoluteX="95dp"
+            tools:layout_editor_absoluteY="58dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="414dp"
+        android:layout_height="624dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.043"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.011" />
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
 
-    <ImageButton
-        android:id="@+id/imageButton3"
-        android:layout_width="50dp"
-        android:layout_height="45dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.222"
-        tools:srcCompat="@tools:sample/avatars" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutScroll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="221dp"
-        android:layout_height="43dp"
-        android:fontFamily="sans-serif-black"
-        android:text="Ajuda e Suporte"
-        android:textSize="30dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.125" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutVer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:layout_editor_absoluteX="1dp">
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif"
-        android:text="Manual do Aplicativo"
-        android:textSize="15dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.199" />
+                <TextView
+                    android:id="@+id/solVer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TextView"
+                    tools:layout_editor_absoluteX="1dp" />
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif"
-        android:text="Como usar o aplicativo?"
-        android:textSize="18dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.073"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageButton3"
-        app:layout_constraintVertical_bias="0.309" />
+                <ImageButton
+                    android:id="@+id/btnVer"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:rotation="270"
+                    app:srcCompat="@drawable/ic_baseline_arrow_back_ios_new_24"
+                    tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck"
+                    tools:layout_editor_absoluteX="325dp" />
 
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif"
-        android:text="Como ver meus chamados?"
-        android:textSize="18dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.037"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.581" />
+                <TextView
+                    android:id="@+id/txtVer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif"
+                    android:text="Como ver meus chamados?"
+                    android:textSize="18dp"
+                    tools:layout_editor_absoluteX="10dp" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif"
-        android:text="Como funciona a tela de chamado?"
-        android:textSize="18dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.085"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.868" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutChamar"
+                android:layout_width="280dp"
+                android:layout_height="56dp"
+                tools:layout_editor_absoluteX="43dp"
+                tools:layout_editor_absoluteY="301dp">
 
-    <TextView
-        android:id="@+id/textView10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif"
-        android:text="Como funciona a tela de escolha?"
-        android:textSize="18dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.085"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.783" />
+                <TextView
+                    android:id="@+id/txtChamar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif"
+                    android:text="Como chamar um Técnico?"
+                    android:textSize="18dp"
+                    tools:layout_editor_absoluteX="1dp"
+                    tools:layout_editor_absoluteY="19dp" />
 
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif"
-        android:text="Como buscar a solução?"
-        android:textSize="18dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.051"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+                <ImageButton
+                    android:id="@+id/btnChamar"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:rotation="270"
+                    app:srcCompat="@drawable/ic_baseline_arrow_back_ios_new_24"
+                    tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck"
+                    tools:layout_editor_absoluteX="224dp"
+                    tools:layout_editor_absoluteY="8dp" />
 
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif"
-        android:text="Como chamar um Técnico?"
-        android:textSize="18dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.057"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.413" />
+                <TextView
+                    android:id="@+id/solChamar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TextView"
+                    tools:layout_editor_absoluteX="1dp" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <androidx.constraintlayout.widget.Barrier
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:barrierDirection="top"
-        tools:layout_editor_absoluteX="143dp"
-        tools:layout_editor_absoluteY="360dp" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutUsar"
+                android:layout_width="363dp"
+                android:layout_height="69dp"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="193dp">
 
-    <androidx.constraintlayout.widget.Barrier
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:barrierDirection="top"
-        tools:layout_editor_absoluteX="180dp"
-        tools:layout_editor_absoluteY="394dp" />
+                <ImageButton
+                    android:id="@+id/btnUsar"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:onClick="btnUsar"
+                    android:rotation="270"
+                    app:srcCompat="@drawable/ic_baseline_arrow_back_ios_new_24"
+                    tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck"
+                    tools:layout_editor_absoluteX="323dp" />
 
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="408dp"
-        android:layout_height="73dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.333"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.051"
-        app:srcCompat="@drawable/img_1" />
+                <TextView
+                    android:id="@+id/txtUsar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif"
+                    android:text="Como usar o aplicativo?"
+                    android:textSize="18dp"
+                    tools:layout_editor_absoluteX="9dp" />
 
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="46dp"
-        android:layout_height="48dp"
-        android:rotation="270"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.904"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.587"
-        app:srcCompat="@drawable/ic_baseline_arrow_back_ios_new_24" />
+                <TextView
+                    android:id="@+id/solUsar"
+                    android:layout_width="175dp"
+                    android:layout_height="62dp"
+                    android:text="textview"
 
-    <ImageButton
-        android:id="@+id/imageButton10"
-        android:layout_width="46dp"
-        android:layout_height="48dp"
-        android:rotation="270"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.904"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.885"
-        app:srcCompat="@drawable/ic_baseline_arrow_back_ios_new_24" />
+                    android:visibility="visible"
+                    tools:layout_editor_absoluteX="124dp"
+                    tools:layout_editor_absoluteY="0dp" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <ImageButton
-        android:id="@+id/imageButton11"
-        android:layout_width="46dp"
-        android:layout_height="48dp"
-        android:rotation="270"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.904"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.793"
-        app:srcCompat="@drawable/ic_baseline_arrow_back_ios_new_24" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutBuscar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="136dp">
 
-    <ImageButton
-        android:id="@+id/imageButton7"
-        android:layout_width="46dp"
-        android:layout_height="48dp"
-        android:rotation="270"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.904"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.314"
-        app:srcCompat="@drawable/ic_baseline_arrow_back_ios_new_24" />
+                <TextView
+                    android:id="@+id/txtBuscar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif"
+                    android:text="Como buscar a solução?"
+                    android:textSize="18dp" />
 
-    <ImageButton
-        android:id="@+id/imageButton8"
-        android:layout_width="46dp"
-        android:layout_height="48dp"
-        android:rotation="270"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.904"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.407"
-        app:srcCompat="@drawable/ic_baseline_arrow_back_ios_new_24" />
+                <ImageButton
+                    android:id="@+id/btnBuscar"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:rotation="270"
+                    app:srcCompat="@drawable/ic_baseline_arrow_back_ios_new_24"
+                    tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck"
+                    tools:layout_editor_absoluteX="325dp" />
 
-    <ImageButton
-        android:id="@+id/imageButton9"
-        android:layout_width="46dp"
-        android:layout_height="48dp"
-        android:rotation="270"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.904"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499"
-        app:srcCompat="@drawable/ic_baseline_arrow_back_ios_new_24" />
+                <TextView
+                    android:id="@+id/solBuscar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TextView"
+                    tools:layout_editor_absoluteX="1dp" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-black"
-        android:text="Funcionalidade do APP"
-        android:textSize="25dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5"
-        app:layout_constraintVertical_bias="0.171" />
+            <TextView
+                android:id="@+id/txtManual"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:text="Manual do Aplicativo"
+                android:textSize="15dp"
+                tools:layout_editor_absoluteX="192dp"
+                tools:layout_editor_absoluteY="412dp" />
+
+            <TextView
+                android:id="@+id/txtFuncionalidade"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-black"
+                android:text="Funcionalidade do APP"
+                android:textSize="25dp"
+                tools:layout_editor_absoluteX="68dp"
+                tools:layout_editor_absoluteY="78dp" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutEscolha"
+                android:layout_width="409dp"
+                android:layout_height="636dp"
+                tools:layout_editor_absoluteX="1dp"
+                tools:layout_editor_absoluteY="8dp">
+
+                <TextView
+                    android:id="@+id/txtEscolha"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif"
+                    android:text="Como funciona a tela de escolha?"
+                    android:textSize="18dp"
+                    tools:layout_editor_absoluteX="11dp"
+                    tools:layout_editor_absoluteY="426dp" />
+
+                <ImageButton
+                    android:id="@+id/btnEscolha"
+                    android:layout_width="46dp"
+                    android:layout_height="48dp"
+                    android:rotation="270"
+                    app:srcCompat="@drawable/ic_baseline_arrow_back_ios_new_24"
+                    tools:ignore="SpeakableTextPresentCheck"
+                    tools:layout_editor_absoluteX="330dp"
+                    tools:layout_editor_absoluteY="317dp" />
+
+                <TextView
+                    android:id="@+id/solEscolha"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TextView"
+                    tools:layout_editor_absoluteX="1dp" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutChamado"
+                android:layout_width="412dp"
+                android:layout_height="45dp"
+                tools:layout_editor_absoluteX="1dp"
+                tools:layout_editor_absoluteY="366dp">
+
+                <TextView
+                    android:id="@+id/txtChamado"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif"
+                    android:text="Como funciona a tela de chamado?"
+                    android:textSize="18dp"
+                    tools:layout_editor_absoluteX="10dp" />
+
+                <TextView
+                    android:id="@+id/solChamado"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TextView" />
+
+                <ImageButton
+                    android:id="@+id/btnChamado"
+                    android:layout_width="46dp"
+                    android:layout_height="48dp"
+                    android:rotation="270"
+                    android:visibility="invisible"
+                    app:srcCompat="@drawable/ic_baseline_arrow_back_ios_new_24"
+                    tools:layout_editor_absoluteX="328dp"
+                    tools:visibility="invisible" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

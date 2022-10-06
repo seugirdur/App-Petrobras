@@ -14,11 +14,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/txtManual"
         tools:listitem="@layout/item_ajuda_list" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/txtAjuda"
         android:layout_width="221dp"
         android:layout_height="43dp"
         android:fontFamily="sans-serif-black"
@@ -33,7 +33,7 @@
         app:layout_constraintVertical_bias="0.021" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/txtManual"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif"
@@ -48,7 +48,7 @@
         app:layout_constraintVertical_bias="0.09" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/txtFuncionalidade"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-black"
@@ -70,7 +70,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView8"
+        app:layout_constraintTop_toBottomOf="@+id/txtFuncionalidade"
         tools:listitem="@layout/item_ajuda_list" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

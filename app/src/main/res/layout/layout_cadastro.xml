@@ -153,7 +153,6 @@
 
             />
 
-
         <ImageView
             android:id="@+id/first_icon"
             android:layout_width="50dp"
@@ -182,7 +181,7 @@
             android:layout_height="42dp"
             android:layout_marginStart="100dp"
             android:layout_marginEnd="60dp"
-            android:inputType="textPersonName"
+            android:inputType="textCapWords"
             app:layout_constraintBottom_toBottomOf="@id/first_view"
             app:layout_constraintStart_toStartOf="@id/nome_completo_text"
             app:layout_constraintTop_toBottomOf="@id/nome_completo_text" />
@@ -320,10 +319,10 @@
             android:layout_marginStart="100dp"
             android:layout_marginEnd="60dp"
             android:inputType="textCapCharacters"
+            android:maxLength="4"
             app:layout_constraintBottom_toBottomOf="@id/fifth_view"
             app:layout_constraintStart_toStartOf="@id/chave_text"
             app:layout_constraintTop_toBottomOf="@id/chave_text"
-
             />
 
         <ImageView

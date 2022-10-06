@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -45,7 +46,7 @@ public class PerfilAtualizar extends Drawer {
         layoutPerfilAtualizarBinding = LayoutPerfilAtualizarBinding.inflate(getLayoutInflater());
         setContentView(layoutPerfilAtualizarBinding.getRoot());
         allocateActivityTitle("Editar Perfil");
-        setContentView(R.layout.layout_perfil_atualizar);
+
 
         SharedPreferences sharedPreferences = getSharedPreferences(
                 getString(R.string.preference_file_key), Context.MODE_PRIVATE);
@@ -73,6 +74,52 @@ public class PerfilAtualizar extends Drawer {
         num_chave = findViewById(R.id.num_chave);
         num_chave.setHint(chave);
 
+        num_tel .addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                String str=num_tel .getText().toString();
+                int textLength=num_tel .getText().length();
+                if (textLength == 1) {
+
+                    if (!str.contains("(")) {
+                        num_tel .setText(new StringBuilder(num_tel.getText().toString()).insert(str.length() - 1, "(").toString());
+                        num_tel.setSelection(num_tel .getText().length());
+                    }
+                }
+                if (textLength == 4) {
+
+                    if (!str.contains(")")) {
+                        num_tel .setText(new StringBuilder(num_tel.getText().toString()).insert(str.length() - 1, ")").toString());
+                        num_tel.setSelection(num_tel .getText().length());
+                    }
+                }
+
+                if (textLength == 5) {
+
+                    if (!str.contains(" ")) {
+                        num_tel .setText(new StringBuilder(num_tel.getText().toString()).insert(str.length() - 1, " ").toString());
+                        num_tel.setSelection(num_tel .getText().length());
+                    }
+                }
+                if (textLength == 11) {
+
+                    if (!str.contains("-")) {
+                        num_tel .setText(new StringBuilder(num_tel.getText().toString()).insert(str.length() - 1, "-").toString());
+                        num_tel.setSelection(num_tel .getText().length());
+                    }
+                }
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
 
 //        String emailatualizado = String.valueOf(email1.getText());
 
@@ -92,7 +139,36 @@ public class PerfilAtualizar extends Drawer {
 
 
 
-                atualizate(nomeatualizado, telatualizado, emailatualizado, chave);
+
+
+                if(nomeatualizado.isEmpty()){
+                    atualizate(nome, telatualizado, emailatualizado,chave);
+
+                }
+                if(telatualizado.isEmpty()){
+                    atualizate(nomeatualizado,tel,emailatualizado,chave);
+                }
+
+                if(emailatualizado.isEmpty()){
+                    atualizate(nomeatualizado,telatualizado,email,chave);
+                }
+                if(emailatualizado.isEmpty() && telatualizado.isEmpty()){
+                    atualizate(nomeatualizado,tel,email,chave);
+                }
+
+                if(emailatualizado.isEmpty() && nomeatualizado.isEmpty()){
+                    atualizate(nome,telatualizado,email,chave);
+                }
+                if(telatualizado.isEmpty() && nomeatualizado.isEmpty()){
+                    atualizate(nome,tel,emailatualizado,chave);
+                }
+                if(nomeatualizado.isEmpty() && emailatualizado.isEmpty() && telatualizado.isEmpty()){
+                    atualizate(nome,tel,email,chave);
+                }
+
+                if(!nomeatualizado.isEmpty() && !emailatualizado.isEmpty() && !telatualizado.isEmpty()){
+                    atualizate(nomeatualizado, telatualizado, emailatualizado, chave);}
+
 
                 btn_tela_perfil_update.setEnabled(false);
 
@@ -106,7 +182,7 @@ public class PerfilAtualizar extends Drawer {
 
 
 
-    private void atualizate(String nome, String email, String tel, String chave){
+    private void atualizate(String nome, String tel,String email, String chave){
 //        PerfilObj perfilObj = new PerfilObj();
 //
 //        perfilObj.setNome(nome);

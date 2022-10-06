@@ -29,6 +29,10 @@
             android:exported="false"
             />
         <activity
+            android:name=".Activities.Ligacao"
+            android:exported="false"
+            />
+        <activity
             android:name=".Hub"
             android:exported="true">
             <intent-filter>

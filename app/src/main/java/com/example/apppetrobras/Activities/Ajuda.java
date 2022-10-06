@@ -14,51 +14,85 @@ import com.example.apppetrobras.R;
 
 public class Ajuda extends AppCompatActivity {
 
-    private TextView solUsar, Usar, Chamar, Buscar, Ver;
-    private ImageButton btnUsar, btnChamar, btnBuscar, btnVer;
-    private ConstraintLayout scroll;
-    private ConstraintSet mConstraintSet = new ConstraintSet();
+    private TextView solUsar, solChamar, solBuscar, solVer, solChamado, solEscolha;
+    private ImageButton btnUsar, btnChamar, btnBuscar, btnVer, btnEscolha, btnChamado;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ajuda);
         solUsar = findViewById(R.id.solUsar);
-        //TextView solChamar = findViewById(R.id.solChamar);
-        //TextView solBuscar = findViewById(R.id.solBuscar);
-        //TextView solVer = findViewById(R.id.solVer);
+        solChamar = findViewById(R.id.solChamar);
+        solBuscar = findViewById(R.id.solBuscar);
+        solVer = findViewById(R.id.solVer);
+        solChamado = findViewById(R.id.solChamado);
 
-         Usar = findViewById(R.id.txtUsar);
-         Chamar = findViewById(R.id.txtChamar);
-         Buscar = findViewById(R.id.txtBuscar);
-         Ver = findViewById(R.id.txtVer);
+
          btnUsar = findViewById(R.id.btnUsar);
          btnChamar = findViewById(R.id.btnChamar);
          btnBuscar = findViewById(R.id.btnBuscar);
+         btnChamado = findViewById(R.id.btnChamado);
+
          btnVer = findViewById(R.id.btnVer);
-         scroll = findViewById(R.id.layoutScroll);
-         //usar
-        //chamar
-        //buscar
-        //ver
+
+
     }
     public void btnUsar(View view){
         if (solUsar.getVisibility() == View.GONE) {
             solUsar.setVisibility(View.VISIBLE);
-            mConstraintSet.clone(scroll);
-            mConstraintSet.connect(R.id.txtChamar,ConstraintSet.TOP,R.id.solUsar,ConstraintSet.TOP,25);
-            mConstraintSet.connect(R.id.btnChamar,ConstraintSet.TOP,R.id.solUsar,ConstraintSet.TOP,15);
-            mConstraintSet.connect(R.id.txtChamar,ConstraintSet.TOP,R.id.solUsar,ConstraintSet.TOP,25);
-            mConstraintSet.connect(R.id.btnChamar,ConstraintSet.TOP,R.id.solUsar,ConstraintSet.TOP,15);
-            mConstraintSet.applyTo(scroll);
+            btnUsar.setRotation(90);
+
         }else{
             solUsar.setVisibility(View.GONE);
-            mConstraintSet.clone(scroll);
-            mConstraintSet.connect(R.id.txtChamar,ConstraintSet.TOP,R.id.txtUsar,ConstraintSet.TOP,25);
-            mConstraintSet.connect(R.id.btnChamar,ConstraintSet.TOP,R.id.txtUsar,ConstraintSet.TOP,15);
-            mConstraintSet.applyTo(scroll);
+            btnUsar.setRotation(270);
         }
-
     }
+
+    public void btnChamar(View view){
+        if (solChamar.getVisibility() == View.GONE) {
+            solChamar.setVisibility(View.VISIBLE);
+            btnChamar.setRotation(90);
+
+        }else{
+            solChamar.setVisibility(View.GONE);
+            btnChamar.setRotation(270);
+        }
+    }
+
+    public void btnBuscar(View view){
+        if (solBuscar.getVisibility() == View.GONE) {
+            solBuscar.setVisibility(View.VISIBLE);
+            btnBuscar.setRotation(90);
+
+        }else{
+            solBuscar.setVisibility(View.GONE);
+            btnBuscar.setRotation(270);
+        }
+    }
+
+    public void btnVer(View view){
+        if (solVer.getVisibility() == View.GONE) {
+            solVer.setVisibility(View.VISIBLE);
+            btnVer.setRotation(90);
+
+        }else{
+            solVer.setVisibility(View.GONE);
+            btnVer.setRotation(270);
+        }
+    }
+
+    public void btnChamado(View view){
+        if (solChamado.getVisibility() == View.GONE) {
+            solChamado.setVisibility(View.VISIBLE);
+            btnChamado.setRotation(90);
+
+        }else{
+            solChamado.setVisibility(View.GONE);
+            btnChamado.setRotation(270);
+        }
+    }
+
+
+
 
 }

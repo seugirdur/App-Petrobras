@@ -17,6 +17,8 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
+import com.example.apppetrobras.Activities.Ajuda;
+import com.example.apppetrobras.Activities.Historico;
 import com.example.apppetrobras.Activities.Perfil;
 import com.example.apppetrobras.Activities.Relatorio;
 import com.example.apppetrobras.R;
@@ -74,7 +76,7 @@ import com.google.android.material.navigation.NavigationView;
                     break;
 
                 case R.id.historico:
-                    startActivity(new Intent(this, Relatorio.class));
+                    startActivity(new Intent(this, Historico.class));
                     overridePendingTransition(0, 0);
                     break;
 

@@ -100,6 +100,7 @@ public class EmAbertoFragment extends Fragment implements RecyclerViewInteface{
                 recyclerview.setAdapter(recyclerViewAdapter);
                 recyclerViewAdapter.notifyDataSetChanged();
 
+
             }
 
             @Override

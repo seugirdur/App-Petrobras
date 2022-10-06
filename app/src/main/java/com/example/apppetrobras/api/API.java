@@ -6,6 +6,7 @@ import com.example.apppetrobras.Objects.RelatorioObj;
 import com.example.apppetrobras.Objects.SolucoesObj;
 import com.example.apppetrobras.Objects.PassosObj;
 import com.example.apppetrobras.Objects.LoginObj;
+import com.example.apppetrobras.Objects.UserRelatorioObj;
 
 import java.util.List;
 
@@ -115,13 +116,13 @@ public interface  API {
 
     @FormUrlEncoded
     @POST("/relatorios/access")
-    Call<List<RelatorioObj>> getRelatorio(
+    Call<List<UserRelatorioObj>> getRelatorio(
             @Field("chave") String chave
 
     );
 
     @FormUrlEncoded
-    @POST("/relatorios/access")
+    @POST("/relatorios/specific")
     Call<List<RelatorioObj>> getRelatorioUnico(
             @Field("idRelatorio") int idRelatorio
 

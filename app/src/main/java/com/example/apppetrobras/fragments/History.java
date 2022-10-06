@@ -22,7 +22,7 @@ import com.example.apppetrobras.Activities.Inicio;
 
 import java.util.ArrayList;
 
-public class Historico_Fragment extends Fragment implements RecyclerViewInteface {
+public class History extends Fragment implements RecyclerViewInteface {
 
     private ArrayList<ProblemasObj> dataArrayList;
 

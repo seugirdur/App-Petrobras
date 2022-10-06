@@ -6,7 +6,7 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 import com.example.apppetrobras.fragments.Ajuda_fragment;
-import com.example.apppetrobras.fragments.Historico_Fragment;
+import com.example.apppetrobras.fragments.History;
 import com.example.apppetrobras.fragments.Opcoes_Fragment;
 
 public class VPConfigurações extends FragmentStateAdapter {
@@ -21,13 +21,13 @@ public class VPConfigurações extends FragmentStateAdapter {
     public Fragment createFragment(int position) {
         switch (position){
             case 0:
-                return new Historico_Fragment();
+                return new History();
             case 1:
                 return new Opcoes_Fragment();
             case 2:
                 return new Ajuda_fragment();
             default:
-                return new Historico_Fragment();
+                return new History();
         }
     }
 

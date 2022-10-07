@@ -34,7 +34,6 @@
         <activity
             android:name=".Activities.Passos"
             android:exported="false" />
-            android:exported="false" />
         <activity
             android:name=".Activities.Ligacao"
             android:exported="false" />

@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.apppetrobras.Activities.Inicio;
+import com.example.apppetrobras.Activities.Relatorio;
 import com.example.apppetrobras.Activities.Solucoes;
 import com.example.apppetrobras.Adapters.RVAdapterEmAberto;
 import com.example.apppetrobras.Adapters.RecyclerViewAdapter;
@@ -69,7 +70,7 @@ public class EmAbertoFragment extends Fragment implements RecyclerViewInteface{
     @Override
     public void onItemClick(int position) {
         // Redirecionamento para a tela do problema contendo os títulos das soluções
-        Intent intent = new Intent(getActivity(), Inicio.class);
+        Intent intent = new Intent(getActivity(), Relatorio.class);
 
         // Definição de valores que serão redirecionados
         intent.putExtra("TIPO",3);

@@ -25,6 +25,11 @@
             android:title="Ajuda e Suporte"
             android:icon="@drawable/ic_question"/>
 
+        <item android:id="@+id/administrador"
+            android:title="Administrador"
+            android:icon="@drawable/ic_baseline_privacy_tip_24"
+         />
+
         <item android:id="@+id/sair"
             android:title="Sair"
             android:icon="@drawable/ic_logout"/>

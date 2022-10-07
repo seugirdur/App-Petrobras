@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:gravity="center"
-        android:onClick="rediriciona0"
+        android:onClick="redireciona0"
         android:text="Tela de Escolha"
         android:textColor="@color/black"
         android:textSize="20dp"

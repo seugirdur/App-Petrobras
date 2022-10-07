@@ -63,7 +63,7 @@ public class RVAdapterEmAberto extends RecyclerView.Adapter<RVAdapterEmAberto.My
         if(holder.text1 !=null){ holder.text1.setText(data.getDataProcesso());}
         if(holder.text2 !=null){ holder.text2.setText(data.getNome());}
         if(holder.text3 !=null){ holder.text3.setText(data.getEmail());}
-        if(holder.text4 !=null){ holder.text4.setText(data.getSecao());}
+        if(holder.text4 !=null){ holder.text4.setText(data.getSetor());}
         if(holder.visual1 != null){
             if (data.getMade_check() != null) {
                 if(data.getMade_check().contains("2")){ holder.visual1.setImageResource(R.drawable.ic_check_circle);}

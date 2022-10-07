@@ -44,6 +44,7 @@ public class SolucionadoFragment extends Fragment implements RecyclerViewIntefac
     List<AdminObj> AdminObjList;
     List<RelatorioObj> relatorioObjList;
 
+
     private RecyclerView recyclerview;
     private Context context;
     private RecyclerViewInteface recyclerViewInteface;
@@ -76,7 +77,7 @@ public class SolucionadoFragment extends Fragment implements RecyclerViewIntefac
         Intent intent = new Intent(getActivity(), Relatorio.class);
 
         // Definição de valores que serão redirecionados
-        int idRelatorio = relatorioObjList.get(position).getIdRelatorio();
+        int idRelatorio = AdminObjList.get(position).getIdRelatorio();
         intent.putExtra("idRelatorio", idRelatorio);
         startActivity(intent);
     }
@@ -90,32 +91,37 @@ public class SolucionadoFragment extends Fragment implements RecyclerViewIntefac
         return chave;
     }
 
-    public void listen(){
-        Call<List<RelatorioObj>> callme = RetroFitClient
+    private void listen(){
+
+        Call<List<AdminObj>> callme = RetroFitClient
                 .getInstance()
                 .getAPI()
-                .getRelatorio(sayMyChave());
+                .getAllRelatoriosClosed();
 
-        callme.enqueue(new Callback<List<RelatorioObj>>() {
+        callme.enqueue(new Callback<List<AdminObj>>() {
             @Override
-            public void onResponse(Call<List<RelatorioObj>> call, Response<List<RelatorioObj>> response) {
+            public void onResponse(Call<List<AdminObj>> call, Response<List<AdminObj>> response) {
                 if (!response.isSuccessful()){
-                    Toast.makeText(context, "wassup", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "wassup", Toast.LENGTH_SHORT).show();
                     return;
                 }
+
                 //tentando guardar num objeto para que seja depois visivel no item_list_admin do dionisio
-                relatorioObjList = response.body();
-                RelatorioObj relatorioObj = relatorioObjList.get(0);
-                int id = relatorioObj.getIdRelatorio();
-                RVAdapterUserRelatorio recyclerViewAdapter = new RVAdapterUserRelatorio(context,
-                        relatorioObjList, recyclerViewInteface, R.layout.item_historico);
+                AdminObjList = response.body();
+
+                RVAdapterEmAberto recyclerViewAdapter = new RVAdapterEmAberto(context,
+                        AdminObjList, recyclerViewInteface, R.layout.item_list_admin);
                 recyclerview.setAdapter(recyclerViewAdapter);
                 recyclerViewAdapter.notifyDataSetChanged();
+
             }
+
             @Override
-            public void onFailure(Call<List<RelatorioObj>> call, Throwable t) {
+            public void onFailure(Call<List<AdminObj>> call, Throwable t) {
+
             }
         });
+
     }
 
 

@@ -77,7 +77,7 @@ public class EmAbertoFragment extends Fragment implements RecyclerViewInteface{
         Intent intent = new Intent(getActivity(), Relatorio.class);
 
         // Definição de valores que serão redirecionados
-        int idRelatorio = relatorioObjList.get(position).getIdRelatorio();
+        int idRelatorio = AdminObjList.get(position).getIdRelatorio();
         intent.putExtra("idRelatorio", idRelatorio);
         startActivity(intent);
     }

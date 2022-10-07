@@ -8,7 +8,8 @@
     tools:context=".Activities.Ajuda">
 
 
-    <ImageView
+
+  <!--  <ImageView
         android:id="@+id/imgSeparador"
         android:layout_width="404dp"
         android:layout_height="47dp"
@@ -16,54 +17,79 @@
         app:layout_constraintBottom_toTopOf="@+id/scrollView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/img_1" />
+        app:srcCompat="@drawable/img_1" /> -->
 
-    <TextView
-        android:id="@+id/txtAjuda"
-        android:layout_width="221dp"
-        android:layout_height="43dp"
-        android:layout_marginTop="24dp"
-        android:fontFamily="sans-serif-black"
-        android:paddingStart="0dp"
-        android:paddingEnd="0dp"
-        android:text="Ajuda e Suporte"
-        android:textSize="30dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <ScrollView
-        android:id="@+id/scrollView2"
-        android:layout_width="410dp"
-        android:layout_height="632dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+
+<!--    <ScrollView-->
+<!--        android:id="@+id/scrollView2"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        app:layout_constraintStart_toStartOf="@id/txtManual"-->
+<!--        app:layout_constraintEnd_toEndOf="@id/txtManual"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/txtManual">-->
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/layoutScroll"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent"
+            >
+
+            <TextView
+                android:id="@+id/txtAjuda"
+                android:layout_width="221dp"
+                android:layout_height="43dp"
+                android:layout_marginTop="24dp"
+                android:fontFamily="sans-serif-black"
+                android:paddingStart="0dp"
+                android:paddingEnd="0dp"
+                android:text="Ajuda e Suporte"
+                android:textColor="@color/black"
+                android:textSize="30dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txtManual"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:text="Manual do Aplicativo"
+                android:textSize="20dp"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="@id/txtAjuda"
+                app:layout_constraintEnd_toEndOf="@id/txtAjuda"
+                app:layout_constraintTop_toBottomOf="@id/txtAjuda"
+                android:layout_marginTop="15dp"
+                />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/layoutUsar"
-                android:layout_width="wrap_content"
+                android:layout_width="350dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtManual">
+                android:layout_marginTop="50dp"
+                app:layout_constraintStart_toStartOf="@id/txtManual"
+                app:layout_constraintEnd_toEndOf="@id/txtManual"
+                app:layout_constraintTop_toBottomOf="@id/txtManual"
+                >
 
                 <ImageButton
                     android:id="@+id/btnUsar"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginEnd="5dp"
                     android:onClick="btnUsar"
                     android:rotation="270"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    android:layout_marginLeft="60dp"
+                    app:layout_constraintEnd_toEndOf="@id/layoutUsar"
+                    app:layout_constraintTop_toTopOf="@id/txtUsar"
+                    app:layout_constraintBottom_toBottomOf="@id/txtUsar"
                     app:srcCompat="@drawable/ic_baseline_arrow_back_ios_new_24"
                     tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
@@ -72,63 +98,63 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="101dp"
                     android:fontFamily="sans-serif"
                     android:text="Como usar o aplicativo?"
                     android:textSize="18dp"
-                    app:layout_constraintEnd_toStartOf="@+id/btnUsar"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toStartOf="@id/layoutUsar"
+                    app:layout_constraintTop_toTopOf="@id/layoutUsar"
+                    app:layout_constraintBottom_toTopOf="@id/solUsar"
+                    />
 
                 <TextView
                     android:id="@+id/solUsar"
                     android:layout_width="333dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="15dp"
-
-                    android:layout_marginTop="16dp"
-                    android:layout_marginEnd="15dp"
-                    android:text="Morbi a arcu nisl. Sed ornare lacinia lacus sed sodales. Aenean purus elit, ullamcorper nec vulputate eget, convallis nec odio. Etiam sed ex accumsan, venenatis quam vitae, mattis mauris. Vivamus eleifend posuere libero, sed commodo enim accumsan sollicitudin. Sed faucibus nunc non lorem maximus luctus a sit amet augue. Sed hendrerit luctus efficitur. Cras ut dui iaculis, molestie eros fringilla, ornare felis. Vestibulum at lacus magna. Praesent vestibulum mi libero, non mollis diam scelerisque in. Aliquam est orci, porta ut porta ut, ornare ut tellus. Mauris consectetur elit erat, et ornare elit venenatis eget. Aliquam eu ante ac quam mollis pulvinar vel ut turpis. Vestibulum facilisis lectus tempus, condimentum urna et, dictum metus. Donec sed ullamcorper risus. Donec quis sapien et nibh ultricies luctus.  "
+                    android:text="O aplicativo é feito totalmente com botões intuitivos. Onde você irá procurar o problema que está passando, o aplicativo ajudará a solucionar esse seu problema. Após ter instalado o aplicativo, em seu primeiro contato, você deve se direcionar para uma tela de cadastro, onde você deve criar uma senha que vai ser utilizada para você entrar no aplicativo todas as vezes que desejar usá-lo.\n\nApós isso você pode realizar seu login utilizando sua chave de acesso e a senha criada.  "
                     android:visibility="gone"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/btnUsar" />
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="2dp"
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toStartOf="@id/txtUsar"
+                    app:layout_constraintEnd_toEndOf="@id/layoutUsar"
+                    app:layout_constraintTop_toBottomOf="@id/btnUsar"
+                     />
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/layoutBuscar"
-                android:layout_width="wrap_content"
+                android:layout_width="350dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/layoutUsar">
+                app:layout_constraintStart_toStartOf="@id/layoutUsar"
+                app:layout_constraintEnd_toEndOf="@id/layoutUsar"
+                app:layout_constraintTop_toBottomOf="@id/layoutUsar">
 
                 <TextView
                     android:id="@+id/txtBuscar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="96dp"
                     android:fontFamily="sans-serif"
                     android:text="Como buscar a solução?"
                     android:textSize="18dp"
-                    app:layout_constraintEnd_toStartOf="@+id/btnBuscar"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toStartOf="@id/layoutBuscar"
+                    app:layout_constraintTop_toTopOf="@id/layoutBuscar"
+                    app:layout_constraintBottom_toTopOf="@id/solBuscar"/>
 
                 <ImageButton
                     android:id="@+id/btnBuscar"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginEnd="5dp"
                     android:onClick="btnBuscar"
                     android:rotation="270"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    app:layout_constraintEnd_toEndOf="@id/layoutBuscar"
+                    app:layout_constraintTop_toTopOf="@id/txtBuscar"
+                    app:layout_constraintBottom_toBottomOf="@id/txtBuscar"
                     app:srcCompat="@drawable/ic_baseline_arrow_back_ios_new_24"
                     tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
@@ -136,50 +162,49 @@
                     android:id="@+id/solBuscar"
                     android:layout_width="333dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginTop="4dp"
-                    android:layout_marginEnd="15dp"
-                    android:text="Morbi a arcu nisl. Sed ornare lacinia lacus sed sodales. Aenean purus elit, ullamcorper nec vulputate eget, convallis nec odio. Etiam sed ex accumsan, venenatis quam vitae, mattis mauris. Vivamus eleifend posuere libero, sed commodo enim accumsan sollicitudin. Sed faucibus nunc non lorem maximus luctus a sit amet augue. Sed hendrerit luctus efficitur. Cras ut dui iaculis, molestie eros fringilla, ornare felis. Vestibulum at lacus magna. Praesent vestibulum mi libero, non mollis diam scelerisque in. Aliquam est orci, porta ut porta ut, ornare ut tellus. Mauris consectetur elit erat, et ornare elit venenatis eget. Aliquam eu ante ac quam mollis pulvinar vel ut turpis. Vestibulum facilisis lectus tempus, condimentum urna et, dictum metus. Donec sed ullamcorper risus. Donec quis sapien et nibh ultricies luctus.  "
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="2dp"
+                    android:textColor="@color/black"
+                    android:text="Na primeira tela, já estão disponíveis alguns problemas que são pesquisados com mais frequência por nossos funcionários. Teremos também os títulos de áreas de problemas classificados em “internet”, “lentidão”, “Equipamentos” e “Outros”. Nestas páginas, eles vão lhe mostrar problemas e a partir disto você encontrará sua solução.\n\nAo selecionar o seu problema, irá ser direcionado para uma tela onde aparecerão possíveis soluções e clicando em uma delas, haverá um passo-a-passo de como executá-las para solucionar o seu problema.\n\nCaso o seu problema seja solucionado antes de terminar todas as soluções, é só você finalizar a sua seção, porém, se o seu problema não for solucionado, mesmo após testar todas, você deve selecionar a opção de entrar em contato com a assistência técnica para agendar uma visita, onde o técnico da empresa irá até você para solucionar o problema. "
                     android:visibility="gone"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/btnBuscar" />
+                    app:layout_constraintStart_toStartOf="@id/txtBuscar"
+                    app:layout_constraintEnd_toEndOf="@id/layoutBuscar"
+                    app:layout_constraintTop_toBottomOf="@id/btnBuscar"/>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/layoutVer"
-                android:layout_width="wrap_content"
+                android:layout_width="350dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toStartOf="@id/layoutChamar"
+                app:layout_constraintEnd_toEndOf="@id/layoutChamar"
                 app:layout_constraintTop_toBottomOf="@+id/layoutChamar">
 
                 <TextView
                     android:id="@+id/solVer"
                     android:layout_width="333dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginEnd="15dp"
-                    android:text="Morbi a arcu nisl. Sed ornare lacinia lacus sed sodales. Aenean purus elit, ullamcorper nec vulputate eget, convallis nec odio. Etiam sed ex accumsan, venenatis quam vitae, mattis mauris. Vivamus eleifend posuere libero, sed commodo enim accumsan sollicitudin. Sed faucibus nunc non lorem maximus luctus a sit amet augue. Sed hendrerit luctus efficitur. Cras ut dui iaculis, molestie eros fringilla, ornare felis. Vestibulum at lacus magna. Praesent vestibulum mi libero, non mollis diam scelerisque in. Aliquam est orci, porta ut porta ut, ornare ut tellus. Mauris consectetur elit erat, et ornare elit venenatis eget. Aliquam eu ante ac quam mollis pulvinar vel ut turpis. Vestibulum facilisis lectus tempus, condimentum urna et, dictum metus. Donec sed ullamcorper risus. Donec quis sapien et nibh ultricies luctus.  "
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="2dp"
+                    android:textColor="@color/black"
+                    android:text="No canto superior esquerdo da tela, aperte no botão de “Menu”, o qual o ícone é 3 linhas paralelas na horizontal. Ao apertar no botão de menu, ele irá abrir uma tela com diversas opções, ao qual você deverá apertar no botão com a descrição “Histórico”. \n\nNesta tela, você irá ter todos os chamados que foram pedidos por você! Aqui você terá como achar seus chamados organizados por data e verá se encontra em pendência ou não. Ao clicar em um deles, você será redirecionado a um relatório resumido, o qual informará quais soluções você testou e se seu problema foi resolvido. "
                     android:visibility="gone"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.466"
-                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="@id/layoutVer"
+                    app:layout_constraintStart_toStartOf="@id/txtVer"
                     app:layout_constraintTop_toBottomOf="@+id/btnVer" />
 
                 <ImageButton
                     android:id="@+id/btnVer"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginEnd="5dp"
                     android:onClick="btnVer"
                     android:rotation="270"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    app:layout_constraintEnd_toEndOf="@id/layoutVer"
+                    app:layout_constraintTop_toTopOf="@id/txtVer"
+                    app:layout_constraintBottom_toBottomOf="@id/txtVer"
                     app:srcCompat="@drawable/ic_baseline_arrow_back_ios_new_24"
                     tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
@@ -188,23 +213,24 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="70dp"
                     android:fontFamily="sans-serif"
                     android:text="Como ver meus chamados?"
                     android:textSize="18dp"
-                    app:layout_constraintEnd_toStartOf="@+id/btnVer"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toStartOf="@id/layoutVer"
+                    app:layout_constraintTop_toTopOf="@id/layoutVer"
+                    app:layout_constraintBottom_toTopOf="@id/solVer"
+                     />
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/layoutChamar"
-                android:layout_width="wrap_content"
+                android:layout_width="350dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toStartOf="@id/layoutBuscar"
+                app:layout_constraintEnd_toEndOf="@id/layoutBuscar"
                 app:layout_constraintTop_toBottomOf="@+id/layoutBuscar">
 
                 <TextView
@@ -212,25 +238,24 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="77dp"
                     android:fontFamily="sans-serif"
                     android:text="Como chamar um Técnico?"
                     android:textSize="18dp"
-                    app:layout_constraintEnd_toStartOf="@+id/btnChamar"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toStartOf="@id/layoutChamar"
+                    app:layout_constraintTop_toTopOf="@id/layoutChamar"
+                    app:layout_constraintBottom_toTopOf="@id/solChamar"/>
 
                 <ImageButton
                     android:id="@+id/btnChamar"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginEnd="5dp"
                     android:onClick="btnChamar"
                     android:rotation="270"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    app:layout_constraintEnd_toEndOf="@id/layoutChamar"
+                    app:layout_constraintTop_toTopOf="@id/txtChamar"
+                    app:layout_constraintBottom_toBottomOf="@id/txtChamar"
                     app:srcCompat="@drawable/ic_baseline_arrow_back_ios_new_24"
                     tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
@@ -238,92 +263,86 @@
                     android:id="@+id/solChamar"
                     android:layout_width="333dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginEnd="15dp"
-                    android:text="Morbi a arcu nisl. Sed ornare lacinia lacus sed sodales. Aenean purus elit, ullamcorper nec vulputate eget, convallis nec odio. Etiam sed ex accumsan, venenatis quam vitae, mattis mauris. Vivamus eleifend posuere libero, sed commodo enim accumsan sollicitudin. Sed faucibus nunc non lorem maximus luctus a sit amet augue. Sed hendrerit luctus efficitur. Cras ut dui iaculis, molestie eros fringilla, ornare felis. Vestibulum at lacus magna. Praesent vestibulum mi libero, non mollis diam scelerisque in. Aliquam est orci, porta ut porta ut, ornare ut tellus. Mauris consectetur elit erat, et ornare elit venenatis eget. Aliquam eu ante ac quam mollis pulvinar vel ut turpis. Vestibulum facilisis lectus tempus, condimentum urna et, dictum metus. Donec sed ullamcorper risus. Donec quis sapien et nibh ultricies luctus.  "
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="2dp"
+                    android:textColor="@color/black"
+                    android:text="Após testar todas as possíveis soluções e seu problema não ter sido resolvido, automaticamente você será redirecionado para uma tela onde você poderá chamar um técnico que será encaminhado para te ajudar a resolver o problema do seu dispositivo, basta apenas clicar no botão “Chamada” que se localiza abaixo da caixa de texto. Lembre-se, só chame um técnico caso tenha feito todos os passos do problema e ele ainda não foi solucionado.  "
                     android:visibility="gone"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="@id/layoutChamar"
+                    app:layout_constraintStart_toStartOf="@id/txtChamar"
                     app:layout_constraintTop_toBottomOf="@+id/btnChamar" />
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <TextView
-                android:id="@+id/txtManual"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="sans-serif"
-                android:text="Manual do Aplicativo"
-                android:textSize="15dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtFuncionalidade" />
 
-            <TextView
-                android:id="@+id/txtFuncionalidade"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:fontFamily="sans-serif-black"
-                android:text="Funcionalidade do APP"
-                android:textSize="25dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/layoutChamado"
-                android:layout_width="348dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/layoutVer">
+<!--            <TextView-->
+<!--                android:id="@+id/txtFuncionalidade"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="70dp"-->
+<!--                android:fontFamily="sans-serif-black"-->
+<!--                android:text="Funcionalidade do APP"-->
+<!--                android:textSize="25dp"-->
+<!--                android:textColor="@color/black"-->
+<!--                app:layout_constraintStart_toStartOf="@id/layoutVer"-->
+<!--                app:layout_constraintEnd_toEndOf="@id/layoutVer"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/layoutVer"/>-->
 
-                <TextView
-                    android:id="@+id/txtChamado"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="11dp"
-                    android:fontFamily="sans-serif"
-                    android:text="Como funciona a tela de chamado?"
-                    android:textSize="18dp"
-                    app:layout_constraintEnd_toStartOf="@+id/btnChamado"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+<!--             <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                android:id="@+id/layoutChamado"-->
+<!--                android:layout_width="350dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="30dp"-->
+<!--                app:layout_constraintStart_toStartOf="@id/txtFuncionalidade"-->
+<!--                 app:layout_constraintEnd_toEndOf="@id/txtFuncionalidade"-->
+<!--                 app:layout_constraintTop_toBottomOf="@id/txtFuncionalidade">-->
 
-                <TextView
-                    android:id="@+id/solChamado"
-                    android:layout_width="333dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginTop="1dp"
-                    android:layout_marginEnd="15dp"
-                    android:text="Morbi a arcu nisl. Sed ornare lacinia lacus sed sodales. Aenean purus elit, ullamcorper nec vulputate eget, convallis nec odio. Etiam sed ex accumsan, venenatis quam vitae, mattis mauris. Vivamus eleifend posuere libero, sed commodo enim accumsan sollicitudin. Sed faucibus nunc non lorem maximus luctus a sit amet augue. Sed hendrerit luctus efficitur. Cras ut dui iaculis, molestie eros fringilla, ornare felis. Vestibulum at lacus magna. Praesent vestibulum mi libero, non mollis diam scelerisque in. Aliquam est orci, porta ut porta ut, ornare ut tellus. Mauris consectetur elit erat, et ornare elit venenatis eget. Aliquam eu ante ac quam mollis pulvinar vel ut turpis. Vestibulum facilisis lectus tempus, condimentum urna et, dictum metus. Donec sed ullamcorper risus. Donec quis sapien et nibh ultricies luctus.  "
-                    android:visibility="gone"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/btnChamado" />
+<!--                <TextView-->
+<!--                    android:id="@+id/txtChamado"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="10dp"-->
+<!--                    android:fontFamily="sans-serif"-->
+<!--                    android:text="Como funciona a tela de chamado?"-->
+<!--                    android:textSize="18dp"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    app:layout_constraintStart_toStartOf="@id/layoutChamado"-->
+<!--                    app:layout_constraintTop_toTopOf="@id/layoutChamado"-->
+<!--                    app:layout_constraintBottom_toTopOf="@id/solChamado"/>-->
 
-                <ImageButton
-                    android:id="@+id/btnChamado"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="5dp"
-                    android:onClick="btnChamado"
-                    android:rotation="270"
-                    android:visibility="visible"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/ic_baseline_arrow_back_ios_new_24"
-                    tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck"
-                    tools:visibility="visible" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
+<!--                <TextView-->
+<!--                    android:id="@+id/solChamado"-->
+<!--                    android:layout_width="333dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="10dp"-->
+<!--                    android:layout_marginRight="2dp"-->
+<!--                    android:text="Morbi a arcu nisl. Sed ornare lacinia lacus sed sodales. Aenean purus elit, ullamcorper nec vulputate eget, convallis nec odio. Etiam sed ex accumsan, venenatis quam vitae, mattis mauris. Vivamus eleifend posuere libero, sed commodo enim accumsan sollicitudin. Sed faucibus nunc non lorem maximus luctus a sit amet augue. Sed hendrerit luctus efficitur. Cras ut dui iaculis, molestie eros fringilla, ornare felis. Vestibulum at lacus magna. Praesent vestibulum mi libero, non mollis diam scelerisque in. Aliquam est orci, porta ut porta ut, ornare ut tellus. Mauris consectetur elit erat, et ornare elit venenatis eget. Aliquam eu ante ac quam mollis pulvinar vel ut turpis. Vestibulum facilisis lectus tempus, condimentum urna et, dictum metus. Donec sed ullamcorper risus. Donec quis sapien et nibh ultricies luctus.  "-->
+<!--                    android:visibility="gone"-->
+<!--                    app:layout_constraintStart_toStartOf="@id/txtChamado"-->
+<!--                    app:layout_constraintEnd_toEndOf="@id/layoutChamado"-->
+<!--                    app:layout_constraintTop_toBottomOf="@+id/btnChamado" />-->
+
+<!--                <ImageButton-->
+<!--                    android:id="@+id/btnChamado"-->
+<!--                    android:layout_width="40dp"-->
+<!--                    android:layout_height="40dp"-->
+<!--                    android:onClick="btnChamado"-->
+<!--                    android:rotation="270"-->
+<!--                    android:background="?android:attr/selectableItemBackgroundBorderless"-->
+<!--                    android:visibility="visible"-->
+<!--                    app:layout_constraintEnd_toEndOf="@id/layoutChamado"-->
+<!--                    app:layout_constraintTop_toTopOf="@id/txtChamado"-->
+<!--                    app:layout_constraintBottom_toBottomOf="@id/txtChamado"-->
+<!--                    app:srcCompat="@drawable/ic_baseline_arrow_back_ios_new_24"-->
+<!--                    tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck"-->
+<!--                     />-->
+<!--                 -->
+<!--            </androidx.constraintlayout.widget.ConstraintLayout> &ndash;&gt;-->
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </ScrollView>
+
+    </androidx.core.widget.NestedScrollView>
+<!--    </ScrollView>-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

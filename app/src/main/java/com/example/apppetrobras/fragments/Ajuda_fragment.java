@@ -39,15 +39,7 @@ public class Ajuda_fragment extends Fragment {
         //LayoutInflater lf = getActivity().getLayoutInflater();
         View view = inflater.inflate(R.layout.fragment_ajuda_fragment, container, false);
 
-        btn = view.findViewById(R.id.btn_tela_perfil);
 
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(getActivity(), PerfilAtualizar.class);
-                startActivity(i);
-            }
-        });
 
         SharedPreferences sharedPreferences = this.getActivity().getSharedPreferences(
                 getString(R.string.preference_file_key), Context.MODE_PRIVATE);
@@ -60,23 +52,35 @@ public class Ajuda_fragment extends Fragment {
 
         String[] fullNameArray = nome.split("\\s+");
         String firstName = fullNameArray[0];
-        nome1 = this.getActivity().findViewById(R.id.nome_login);
+        nome1 = view.findViewById(R.id.nome_login);
         nome1.setText(firstName);
 
-        nomecompleto = this.getActivity().findViewById(R.id.nomecompleto);
+
+        nomecompleto = view.findViewById(R.id.nomecompleto);
         nomecompleto.setText(nome);
 
-        num_tel = this.getActivity().findViewById(R.id.num_tel);
+        num_tel = view.findViewById(R.id.num_tel);
         num_tel.setText(tel);
 
-        email1 = this.getActivity().findViewById(R.id.email);
+        email1 = view.findViewById(R.id.email);
         email1.setText(email);
 
-        num_chave = this.getActivity().findViewById(R.id.num_chave);
+        num_chave = view.findViewById(R.id.num_chave);
         num_chave.setText(chave);
 
-        return view;
-    }
+
+    btn = view.findViewById(R.id.btn_tela_perfil);
+
+        btn.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            Intent i = new Intent(getActivity(), PerfilAtualizar.class);
+            startActivity(i);
+        }
+    });
+
+  return view;
+}
 
 
     @Override

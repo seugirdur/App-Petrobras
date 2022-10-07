@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.Navigations.Configuracoes;
 import com.example.Navigations.Drawer;
 import com.example.apppetrobras.Objects.CadastroObj;
 import com.example.apppetrobras.Objects.LoginObj;
@@ -232,7 +233,7 @@ public class PerfilAtualizar extends Drawer {
                 editor.putString("email", email);
                 editor.putString("tel", tel);
                 editor.apply();
-                Intent intent = new Intent(PerfilAtualizar.this, Ajuda_fragment.class);
+                Intent intent = new Intent(PerfilAtualizar.this, Configuracoes.class);
                 startActivity(intent);
             }
         });

@@ -69,7 +69,7 @@ public class Inicio extends AppCompatActivity {
 
     public void cadastrar (View view){
 
-        Intent intent = new Intent(this, Cadastro.class);
+        Intent intent = new Intent(this, Solucoes.class);
         startActivity(intent);
      }
 

@@ -9,6 +9,7 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.view.MotionEvent;
@@ -178,7 +179,12 @@ public class Login extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<List<LoginObj>> call, Throwable t) {
-                Toast.makeText(Login.this, t.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(Login.this, "O dados estão incorretos", Toast.LENGTH_SHORT).show();
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() { progressbar.setVisibility(View.INVISIBLE); }
+                }, 2000);
+
             }
         });
     }

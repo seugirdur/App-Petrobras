@@ -14,8 +14,10 @@ import android.text.method.PasswordTransformationMethod;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.apppetrobras.R;
@@ -52,6 +54,7 @@ public class Login extends AppCompatActivity {
         esqueceu_senha = findViewById(R.id.esqueceu_senha);
 
         mDialog = new Dialog(this);
+        checkconn();
 
         //botao de login que chama o metodo de login
         button_login.setOnClickListener(new View.OnClickListener() {
@@ -127,6 +130,43 @@ public class Login extends AppCompatActivity {
         //aqui é o dionisio
     }
 
+    public void storecheckconn(View view){
+        CheckBox check_connected = findViewById(R.id.check_connected);
+        Boolean checktorf = check_connected.isChecked();
+        SharedPreferences sharedPreferences = getSharedPreferences(
+                getString(R.string.preference_file_key), Context.MODE_PRIVATE);
+
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putBoolean("checktorf", checktorf);
+        editor.apply();
+
+    }
+
+    private void checkconn() {
+        CheckBox check_connected = findViewById(R.id.check_connected);
+
+        SharedPreferences sharedPreferences = getSharedPreferences(
+                getString(R.string.preference_file_key), Context.MODE_PRIVATE);
+
+        Boolean checktorf = sharedPreferences.getBoolean("checktorf", false);
+        edit_user=findViewById(R.id.edit_user);
+        if(checktorf){
+            check_connected.setChecked(true);
+            SharedPreferences sharedPreferences1 = getSharedPreferences(
+                    getString(R.string.preference_file_key), Context.MODE_PRIVATE);
+
+            String sayMyChave = sharedPreferences1.getString("chave", "");
+
+            edit_user.setText(sayMyChave);
+        }
+        else{
+            check_connected.setChecked(false);
+            edit_user.setText("");
+
+        }
+    }
+
+
     private void guardate(){
 
         String chave = edit_user.getText().toString().trim();
@@ -142,7 +182,7 @@ public class Login extends AppCompatActivity {
             @Override
             public void onResponse(Call<List<LoginObj>> call, Response<List<LoginObj>> response) {
                 if (!response.isSuccessful()){
-                    Toast.makeText(Login.this, response.code(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Login.this, "Cheque sua conexão", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
@@ -178,7 +218,7 @@ public class Login extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<List<LoginObj>> call, Throwable t) {
-                Toast.makeText(Login.this, t.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(Login.this, "As informações estão incorretas, tente novamente", Toast.LENGTH_SHORT).show();
             }
         });
     }

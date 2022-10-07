@@ -1,0 +1,92 @@
+Index: app/src/main/java/com/example/apppetrobras/Activities/Perfil.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.apppetrobras.Activities;\r\n\r\nimport androidx.appcompat.app.AppCompatActivity;\r\n\r\nimport android.content.Context;\r\nimport android.content.SharedPreferences;\r\nimport android.os.Bundle;\r\nimport android.widget.TextView;\r\n\r\nimport com.example.apppetrobras.R;\r\n\r\npublic class Perfil extends AppCompatActivity {\r\n\r\n\r\n    TextView nomecompleto,num_tel,email1,num_chave, nome1;\r\n\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.layout_perfil);\r\n\r\n        SharedPreferences sharedPreferences = getSharedPreferences(\r\n                getString(R.string.preference_file_key), Context.MODE_PRIVATE);\r\n\r\n        String nome = sharedPreferences.getString(\"nome\", \"\");\r\n        String tel = sharedPreferences.getString(\"tel\", \"\");\r\n        String email = sharedPreferences.getString(\"email\", \"\");\r\n        String chave = sharedPreferences.getString(\"chave\", \"\");\r\n\r\n\r\n        String[] fullNameArray = nome.split(\"\\\\s+\");\r\n        String firstName = fullNameArray[0];\r\n        nome1=findViewById(R.id.nome_login);\r\n        nome1.setText(firstName);\r\n\r\n        nomecompleto = findViewById(R.id.nomecompleto);\r\n        nomecompleto.setText(nome);\r\n\r\n        num_tel = findViewById(R.id.num_tel);\r\n        num_tel.setText(tel);\r\n\r\n        email1 = findViewById(R.id.email);\r\n        email1.setText(email);\r\n\r\n        num_chave = findViewById(R.id.num_chave);\r\n        num_chave.setText(chave);\r\n\r\n\r\n\r\n\r\n    }\r\n}
+===================================================================
+diff --git a/app/src/main/java/com/example/apppetrobras/Activities/Perfil.java b/app/src/main/java/com/example/apppetrobras/Activities/Perfil.java
+--- a/app/src/main/java/com/example/apppetrobras/Activities/Perfil.java	
++++ b/app/src/main/java/com/example/apppetrobras/Activities/Perfil.java	
+@@ -12,7 +12,7 @@
+ public class Perfil extends AppCompatActivity {
+ 
+ 
+-    TextView nomecompleto,num_tel,email1,num_chave, nome1;
++    //TextView nomecompleto,num_tel,email1,num_chave, nome1;
+ 
+     @Override
+     protected void onCreate(Bundle savedInstanceState) {
+@@ -28,22 +28,22 @@
+         String chave = sharedPreferences.getString("chave", "");
+ 
+ 
+-        String[] fullNameArray = nome.split("\\s+");
+-        String firstName = fullNameArray[0];
+-        nome1=findViewById(R.id.nome_login);
+-        nome1.setText(firstName);
+-
+-        nomecompleto = findViewById(R.id.nomecompleto);
+-        nomecompleto.setText(nome);
+-
+-        num_tel = findViewById(R.id.num_tel);
+-        num_tel.setText(tel);
+-
+-        email1 = findViewById(R.id.email);
+-        email1.setText(email);
+-
+-        num_chave = findViewById(R.id.num_chave);
+-        num_chave.setText(chave);
++//        String[] fullNameArray = nome.split("\\s+");
++//        String firstName = fullNameArray[0];
++////        nome1=findViewById(R.id.nome_do_login);
++//        nome1.setText(firstName);
++//
++//        nomecompleto = findViewById(R.id.nomecompleto);
++//        nomecompleto.setText(nome);
++//
++//        num_tel = findViewById(R.id.num_tel);
++//        num_tel.setText(tel);
++//
++//        email1 = findViewById(R.id.email);
++//        email1.setText(email);
++//
++////        num_chave = findViewById(R.id.num_chave);
++//        num_chave.setText(chave);
+ 
+ 
+ 
+Index: app/src/main/java/com/example/Navigations/Tabs.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.Navigations;\r\n\r\nimport androidx.viewpager2.widget.ViewPager2;\r\n\r\nimport android.os.Bundle;\r\nimport android.view.View;\r\n\r\nimport com.example.apppetrobras.Adapters.ViewPagerAdapter;\r\nimport com.example.apppetrobras.R;\r\nimport com.example.apppetrobras.databinding.ActivityTabBinding;\r\nimport com.google.android.material.tabs.TabLayout;\r\n\r\npublic class Tabs extends Drawer {\r\n\r\n    // Declaração das variáveis\r\n    TabLayout tabLayout;\r\n    ViewPager2 viewPager2;\r\n    ViewPagerAdapter viewPagerAdapter;\r\n    ActivityTabBinding activityTabBinding;\r\n\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n\r\n        // Navigation Drawer\r\n        activityTabBinding = ActivityTabBinding.inflate(getLayoutInflater());\r\n        setContentView(activityTabBinding.getRoot());\r\n        allocateActivityTitle(\"Menu Principal\");\r\n\r\n        tabLayout = findViewById(R.id.tab_layout);\r\n        viewPager2 = findViewById(R.id.view_pager);\r\n        viewPagerAdapter = new ViewPagerAdapter(this);\r\n        viewPager2.setAdapter(viewPagerAdapter);\r\n\r\n//        settingTheName();\r\n\r\n\r\n\r\n\r\n        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {\r\n            @Override\r\n            public void onTabSelected(TabLayout.Tab tab) {\r\n                viewPager2.setCurrentItem(tab.getPosition());\r\n            }\r\n\r\n            @Override\r\n            public void onTabUnselected(TabLayout.Tab tab) {\r\n\r\n            }\r\n\r\n            @Override\r\n            public void onTabReselected(TabLayout.Tab tab) {\r\n\r\n            }\r\n        });\r\n\r\n        viewPager2.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {\r\n            @Override\r\n            public void onPageSelected(int position) {\r\n                super.onPageSelected(position);\r\n                tabLayout.getTabAt(position).select();\r\n            }\r\n        });\r\n\r\n\r\n    }\r\n\r\n    //Captura o click no logo e vai para a tela inicial\r\n    public void goHome(View view) {\r\n        viewPager2.setCurrentItem(0);\r\n    }\r\n\r\n\r\n\r\n    \r\n}\r\n
+===================================================================
+diff --git a/app/src/main/java/com/example/Navigations/Tabs.java b/app/src/main/java/com/example/Navigations/Tabs.java
+--- a/app/src/main/java/com/example/Navigations/Tabs.java	
++++ b/app/src/main/java/com/example/Navigations/Tabs.java	
+@@ -7,7 +7,7 @@
+ 
+ import com.example.apppetrobras.Adapters.ViewPagerAdapter;
+ import com.example.apppetrobras.R;
+-import com.example.apppetrobras.databinding.ActivityTabBinding;
++import com.example.apppetrobras.databinding.LayoutTabBinding;
+ import com.google.android.material.tabs.TabLayout;
+ 
+ public class Tabs extends Drawer {
+@@ -16,15 +16,15 @@
+     TabLayout tabLayout;
+     ViewPager2 viewPager2;
+     ViewPagerAdapter viewPagerAdapter;
+-    ActivityTabBinding activityTabBinding;
++    LayoutTabBinding layoutTabBinding;
+ 
+     @Override
+     protected void onCreate(Bundle savedInstanceState) {
+         super.onCreate(savedInstanceState);
+ 
+         // Navigation Drawer
+-        activityTabBinding = ActivityTabBinding.inflate(getLayoutInflater());
+-        setContentView(activityTabBinding.getRoot());
++        layoutTabBinding = LayoutTabBinding.inflate(getLayoutInflater());
++        setContentView(layoutTabBinding.getRoot());
+         allocateActivityTitle("Menu Principal");
+ 
+         tabLayout = findViewById(R.id.tab_layout);

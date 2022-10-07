@@ -5,6 +5,7 @@ import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -37,16 +38,17 @@ public class RVAdapterEmAberto extends RecyclerView.Adapter<RVAdapterEmAberto.My
         View view = LayoutInflater.from(context).inflate(layout,parent,false);
 
         // Instanciação das variáveis
-        int idTexto1, idTexto2, idTexto3, idTexto4;
+        int idTexto1, idTexto2, idTexto3, idTexto4, idVisual;
 
         // Estrutura de decisão de acordo com o layout(xml) da recyclerview,
         // a partir disso são atribuídos os id's que existem em cada item
-        idTexto1 = R.id.textProblema;
-        idTexto2 = R.id.textView25;
-        idTexto3 = R.id.textView27;
-        idTexto4 = R.id.textView29;
+        idTexto1 = R.id.dataRelatorio;
+        idTexto2 = R.id.textNome;
+        idTexto3 = R.id.textEmail;
+        idTexto4 = R.id.textSetor;
+        idVisual = R.id.imageProblema;
         return new RVAdapterEmAberto.MyViewHolder(view, recyclerViewInteface,
-                idTexto1, idTexto2, idTexto3, idTexto4);
+                idTexto1, idTexto2, idTexto3, idTexto4, idVisual);
     }
 
     @Override
@@ -61,7 +63,13 @@ public class RVAdapterEmAberto extends RecyclerView.Adapter<RVAdapterEmAberto.My
         if(holder.text1 !=null){ holder.text1.setText(data.getDataProcesso());}
         if(holder.text2 !=null){ holder.text2.setText(data.getNome());}
         if(holder.text3 !=null){ holder.text3.setText(data.getEmail());}
-        if(holder.text4 !=null){ holder.text4.setText(data.getsecao());}
+        if(holder.text4 !=null){ holder.text4.setText(data.getSecao());}
+        if(holder.visual1 != null){
+            if (data.getMade_check() != null) {
+                if(data.getMade_check().contains("2")){ holder.visual1.setImageResource(R.drawable.ic_check_circle);}
+                else{ holder.visual1.setImageResource(R.drawable.ic_cancel_circle);}
+            }
+        }
     }
 
     @Override
@@ -72,9 +80,10 @@ public class RVAdapterEmAberto extends RecyclerView.Adapter<RVAdapterEmAberto.My
     public static class MyViewHolder extends RecyclerView.ViewHolder{
 
         TextView text1, text2, text3, text4;
+        ImageView visual1;
 
         public MyViewHolder(@NonNull View itemView, RecyclerViewInteface recyclerViewInteface,
-                            int item1, int item2, int item3, int item4) {
+                            int item1, int item2, int item3, int item4, int itemVisual) {
             super(itemView);
 
             // Definição de variáveis com os valores dos id's
@@ -82,6 +91,7 @@ public class RVAdapterEmAberto extends RecyclerView.Adapter<RVAdapterEmAberto.My
             text2 = itemView.findViewById(item2);
             text3 = itemView.findViewById(item3);
             text4 = itemView.findViewById(item4);
+            visual1 = itemView.findViewById(itemVisual);
 
             // Define o método onItemClik da interface para cada item da RecyclerView
             moduleOnClick(recyclerViewInteface);

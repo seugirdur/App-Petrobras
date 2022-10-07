@@ -245,7 +245,7 @@
         android:id="@+id/tit_perfil"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="4dp"
         android:text="PERFIL"
         android:textColor="@color/black"
         android:textSize="20sp"

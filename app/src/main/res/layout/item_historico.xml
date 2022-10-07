@@ -26,7 +26,7 @@
                 android:layout_height="wrap_content"
                 android:text="Data do processo"
                 android:textColor="@color/black"
-                android:textSize="17dp"
+                android:textSize="20dp"
                 android:layout_marginStart="20dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/incentivoVisual"
@@ -48,8 +48,8 @@
 
             <ImageView
                 android:id="@+id/incentivoVisual"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
                 android:background="?android:attr/selectableItemBackground"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

@@ -8,11 +8,12 @@ import android.view.ViewGroup;
 import androidx.fragment.app.Fragment;
 
 import com.example.Navigations.Drawer;
-import com.example.apppetrobras.databinding.ActivityHistoricoBinding;
+//import com.example.apppetrobras.databinding.ActivityHistoricoBinding;
+
 
 public class Historico extends Fragment {
 
-    ActivityHistoricoBinding activityHistoricoBinding;
+    //ActivityHistoricoBinding activityHistoricoBinding;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

@@ -12,61 +12,62 @@
         android:id="@+id/second_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_constraintStart_toStartOf="@id/layout_principal"
-        app:layout_constraintEnd_toEndOf="@id/layout_principal"
-        app:layout_constraintTop_toTopOf="@id/layout_principal"
         android:background="@color/white"
-         >
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/layout_principal"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/layout_principal"
+        app:layout_constraintTop_toTopOf="@id/layout_principal">
 
         <TextView
             android:id="@+id/nomeSolucao"
-            android:layout_height="wrap_content"
             android:layout_width="match_parent"
-            android:text=""
-            android:textStyle="bold"
-            android:textColor="@color/Verde_Petrobras"
-            android:textSize="25dp"
-            android:paddingLeft="5dp"
-            android:paddingRight="5dp"
-            android:textAlignment="center"
-            app:layout_constraintStart_toStartOf="@id/second_layout"
-            app:layout_constraintEnd_toEndOf="@id/second_layout"
-            app:layout_constraintTop_toTopOf="@id/second_layout"
-            app:layout_constraintBottom_toTopOf="@id/view_content"
+            android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:ellipsize="marquee"
             android:fadingEdge="horizontal"
             android:lines="1"
             android:marqueeRepeatLimit="marquee_forever"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
             android:scrollHorizontally="true"
             android:singleLine="true"
+            android:text=""
+            android:textAlignment="center"
+            android:textColor="@color/Verde_Petrobras"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/view_content"
+            app:layout_constraintEnd_toEndOf="@id/second_layout"
+            app:layout_constraintStart_toStartOf="@id/second_layout"
+            app:layout_constraintTop_toTopOf="@id/second_layout"
             tools:ignore="EllipsizeMaxLines" />
 
         <View
             android:id="@+id/view_content"
             android:layout_width="match_parent"
             android:layout_height="380dp"
-            android:background="@drawable/passos_background_1"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/nomeSolucao"
             android:layout_marginLeft="50dp"
-            android:layout_marginRight="50dp"
             android:layout_marginTop="20dp"
-            />
+            android:layout_marginRight="50dp"
+            android:background="@drawable/passos_background_1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/nomeSolucao" />
+
 
         <ImageView
             android:id="@+id/imagemSolucao"
             android:layout_width="match_parent"
             android:layout_height="300dp"
-            app:srcCompat="@drawable/ic_image_search"
-            app:layout_constraintStart_toStartOf="@id/view_content"
-            app:layout_constraintEnd_toEndOf="@id/view_content"
-            app:layout_constraintTop_toTopOf="@id/view_content"
             android:layout_marginLeft="50dp"
+            android:layout_marginTop="8dp"
             android:layout_marginRight="50dp"
-            android:layout_marginTop="10dp"  />
-
+            app:layout_constraintEnd_toEndOf="@id/view_content"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@id/view_content"
+            app:layout_constraintTop_toTopOf="@id/view_content"
+            app:srcCompat="@drawable/ic_image_search" />
 
         <TextView
             android:id="@+id/numeroPasso"
@@ -85,39 +86,44 @@
             android:id="@+id/avanca_passo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:onClick="proxPasso"
             android:src="@drawable/ic_avanca_passo"
-            app:layout_constraintTop_toTopOf="@id/view_content"
             app:layout_constraintBottom_toBottomOf="@id/text_layout"
             app:layout_constraintEnd_toEndOf="@id/second_layout"
-            android:background="?android:attr/selectableItemBackground"
-            android:layout_marginRight="5dp"
-            android:onClick="proxPasso"
-            />
+            app:layout_constraintTop_toTopOf="@id/view_content" />
 
         <ImageButton
             android:id="@+id/volta_passo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:onClick="rtrnPasso"
             android:src="@drawable/ic_volta_passo"
-            app:layout_constraintTop_toTopOf="@id/view_content"
             app:layout_constraintBottom_toBottomOf="@id/text_layout"
             app:layout_constraintStart_toStartOf="@id/second_layout"
-            android:background="?android:attr/selectableItemBackground"
-            android:layout_marginLeft="5dp"
-            android:onClick="rtrnPasso" />
+            app:layout_constraintTop_toTopOf="@id/view_content" />
+
 
         <ImageView
             android:id="@+id/btnResolveu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:visibility="invisible"
-            android:layout_marginTop="20dp"
+            android:layout_marginStart="64dp"
+            android:layout_marginTop="220dp"
+            android:layout_marginEnd="48dp"
             android:background="@drawable/ripple_effect_soluction"
             android:clickable="true"
             android:onClick="dontGetMeRight"
             android:src="@drawable/ic_check_circle"
-            app:layout_constraintStart_toStartOf="@id/text_layout"
-            app:layout_constraintTop_toBottomOf="@id/text_layout" />
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/text_layout"
+            app:layout_constraintHorizontal_bias="0.02"
+            app:layout_constraintStart_toEndOf="@+id/btnSemAcesso"
+            app:layout_constraintTop_toTopOf="@+id/text_layout" />
 
         <ImageView
             android:id="@+id/btnSemAcesso"
@@ -125,66 +131,69 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:background="@drawable/ripple_effect_soluction"
-            android:visibility="visible"
             android:onClick="abrirpopup"
             android:src="@drawable/lock_open_and_circle"
-            app:layout_constraintStart_toStartOf="@id/text_layout"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@id/text_layout"
-            app:layout_constraintTop_toBottomOf="@id/text_layout" />
+            app:layout_constraintHorizontal_bias="0.502"
+            app:layout_constraintStart_toStartOf="@id/text_layout"
+            app:layout_constraintTop_toBottomOf="@id/text_layout"
+            app:layout_constraintVertical_bias="0.0" />
 
-            <ImageView
-                android:id="@+id/btnNaoResolveu"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:visibility="invisible"
-                app:layout_constraintEnd_toEndOf="@id/text_layout"
-                app:layout_constraintTop_toBottomOf="@id/text_layout"
-                android:layout_marginTop="20dp"
-                android:onClick="dontGetMeWrong"
-                android:clickable="true"
-                android:background="@drawable/ripple_effect_soluction"
-                app:srcCompat="@drawable/ic_cancel_circle"/>
+        <ImageView
+            android:id="@+id/btnNaoResolveu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="64dp"
+            android:background="@drawable/ripple_effect_soluction"
+            android:clickable="true"
+            android:onClick="dontGetMeWrong"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btnSemAcesso"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/text_layout"
+            app:layout_constraintTop_toBottomOf="@+id/text_layout"
+            app:srcCompat="@drawable/ic_cancel_circle" />
 
-
-         <androidx.constraintlayout.widget.ConstraintLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/text_layout"
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:background="@drawable/passos_background_2"
-            app:layout_constraintStart_toStartOf="@id/view_content"
-            app:layout_constraintEnd_toEndOf="@id/view_content"
-            app:layout_constraintTop_toBottomOf="@id/numeroPasso"
             android:layout_marginLeft="50dp"
+            android:layout_marginTop="20dp"
             android:layout_marginRight="50dp"
-             android:layout_marginTop="20dp"
-            >
+            android:background="@drawable/passos_background_2"
+            app:layout_constraintEnd_toEndOf="@id/view_content"
+            app:layout_constraintStart_toStartOf="@id/view_content"
+            app:layout_constraintTop_toBottomOf="@id/numeroPasso">
 
             <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                app:layout_constraintStart_toStartOf="@id/text_layout"
-                app:layout_constraintTop_toTopOf="@id/text_layout"
-                app:layout_constraintBottom_toBottomOf="@id/text_layout"
-                app:layout_constraintEnd_toEndOf="@id/text_layout"
                 android:fillViewport="true"
-                >
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/text_layout"
+                app:layout_constraintStart_toStartOf="@id/text_layout"
+                app:layout_constraintTop_toTopOf="@id/text_layout">
 
-            <TextView
-                android:id="@+id/descricaoPasso"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text=""
-                android:textSize="18dp"
-                android:textColor="@color/black"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="3dp"
-                />
+                <TextView
+                    android:id="@+id/descricaoPasso"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="3dp"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
             </ScrollView>
 
-         </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

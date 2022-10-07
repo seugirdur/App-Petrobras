@@ -116,7 +116,7 @@ public interface  API {
 
     @FormUrlEncoded
     @POST("/relatorios/access")
-    Call<List<UserRelatorioObj>> getRelatorio(
+    Call<List<RelatorioObj>> getRelatorio(
             @Field("chave") String chave
 
     );

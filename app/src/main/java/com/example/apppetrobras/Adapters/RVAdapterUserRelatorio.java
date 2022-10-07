@@ -10,7 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.apppetrobras.Objects.UserRelatorioObj;
+import com.example.apppetrobras.Objects.RelatorioObj;
 import com.example.apppetrobras.Objects.UserRelatorioObj;
 import com.example.apppetrobras.R;
 import com.example.apppetrobras.fragments.RecyclerViewInteface;
@@ -22,12 +22,12 @@ public class RVAdapterUserRelatorio extends RecyclerView.Adapter<RVAdapterUserRe
     private final RecyclerViewInteface recyclerViewInteface;
     private final int layout;
     Context context;
-    List<UserRelatorioObj> UserRelatorioObjList;
+    List<RelatorioObj> relatorioObjList;
 
-    public RVAdapterUserRelatorio(Context context, List<UserRelatorioObj> UserRelatorioObjList,
+    public RVAdapterUserRelatorio(Context context, List<RelatorioObj> relatorioObjList,
                                   RecyclerViewInteface recyclerViewInteface, int layout){
         this.context = context;
-        this.UserRelatorioObjList = UserRelatorioObjList;
+        this.relatorioObjList = relatorioObjList;
         this.recyclerViewInteface = recyclerViewInteface;
         this.layout = layout;
     }
@@ -52,18 +52,21 @@ public class RVAdapterUserRelatorio extends RecyclerView.Adapter<RVAdapterUserRe
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
 
 
-        UserRelatorioObj data = UserRelatorioObjList.get(position);
+        RelatorioObj data = relatorioObjList.get(position);
         // Há a verificação de cada variável, caso ela tenha sido definida, ela passa o valor
         // Isso é necessário pois as listas recebem diferentes quantidades de valores
 
 
         if(holder.text1 != null){ holder.text1.setText(data.getDataProcesso());}
-        if(holder.text1 != null){ holder.visual1.setImageResource(R.drawable.ic_add);}
+        if(holder.visual1 != null){
+            if(data.getMade_check().contains("2")){ holder.visual1.setImageResource(R.drawable.ic_check_circle);}
+            else{ holder.visual1.setImageResource(R.drawable.ic_cancel_circle);}
+        }
     }
 
     @Override
     public int getItemCount() {
-        return UserRelatorioObjList.size();
+        return relatorioObjList.size();
     }
 
     public static class MyViewHolder extends RecyclerView.ViewHolder{

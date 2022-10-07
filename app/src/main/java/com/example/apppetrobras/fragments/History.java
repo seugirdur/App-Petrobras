@@ -20,6 +20,7 @@ import android.widget.Toast;
 
 import com.example.apppetrobras.Activities.Relatorio;
 import com.example.apppetrobras.Adapters.RVAdapterUserRelatorio;
+import com.example.apppetrobras.Objects.RelatorioObj;
 import com.example.apppetrobras.Objects.UserRelatorioObj;
 import com.example.apppetrobras.R;
 import com.example.apppetrobras.api.RetroFitClient;
@@ -30,7 +31,7 @@ import retrofit2.Response;
 
 public class History extends Fragment implements RecyclerViewInteface {
 
-    List<UserRelatorioObj> userRelatorioObjList;
+    List<RelatorioObj> relatorioObjList;
 
     private RecyclerView recyclerview;
     private Context context;
@@ -50,49 +51,43 @@ public class History extends Fragment implements RecyclerViewInteface {
         recyclerViewInteface = this;
 
         // Essa variável recebe (por meio do id) a reciclerView no xml dessa tela
-        RecyclerView recyclerview = view.findViewById(R.id.recyclerviewhst);
+        recyclerview = view.findViewById(R.id.recyclerviewhst);
         recyclerview.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerview.setHasFixedSize(true);
 
         listen();
-        sayMyName();
+        sayMyChave();
     }
 
     public void listen(){
-
-        Call<List<UserRelatorioObj>> callme = RetroFitClient
+        Call<List<RelatorioObj>> callme = RetroFitClient
                 .getInstance()
                 .getAPI()
-                .getRelatorio(sayMyName());
+                .getRelatorio(sayMyChave());
 
-        callme.enqueue(new Callback<List<UserRelatorioObj>>() {
+        callme.enqueue(new Callback<List<RelatorioObj>>() {
             @Override
-            public void onResponse(Call<List<UserRelatorioObj>> call, Response<List<UserRelatorioObj>> response) {
+            public void onResponse(Call<List<RelatorioObj>> call, Response<List<RelatorioObj>> response) {
                 if (!response.isSuccessful()){
                     Toast.makeText(context, "wassup", Toast.LENGTH_SHORT).show();
                     return;
                 }
-
                 //tentando guardar num objeto para que seja depois visivel no item_list_admin do dionisio
-                userRelatorioObjList = response.body();
-                UserRelatorioObj UserRelatorioObj = userRelatorioObjList.get(0);
-
-                int id = UserRelatorioObj.getIdRelatorio();
+                relatorioObjList = response.body();
+                RelatorioObj relatorioObj = relatorioObjList.get(0);
+                int id = relatorioObj.getIdRelatorio();
                 RVAdapterUserRelatorio recyclerViewAdapter = new RVAdapterUserRelatorio(context,
-                        userRelatorioObjList, recyclerViewInteface, R.layout.item_historico);
+                        relatorioObjList, recyclerViewInteface, R.layout.item_historico);
                 recyclerview.setAdapter(recyclerViewAdapter);
                 recyclerViewAdapter.notifyDataSetChanged();
             }
-
             @Override
-            public void onFailure(Call<List<UserRelatorioObj>> call, Throwable t) {
-
+            public void onFailure(Call<List<RelatorioObj>> call, Throwable t) {
             }
         });
-
     }
 
-    private String sayMyName(){
+    private String sayMyChave(){
         SharedPreferences sharedPreferences = this.getActivity().getSharedPreferences(
                 getString(R.string.preference_file_key), Context.MODE_PRIVATE);
 
@@ -108,8 +103,8 @@ public class History extends Fragment implements RecyclerViewInteface {
         Intent intent = new Intent(getActivity(), Relatorio.class);
 
         // Definição de valores que serão redirecionados
-        int iddacerteza = userRelatorioObjList.get(position).getIdRelatorio();
-        intent.putExtra("idRelatorio", userRelatorioObjList.get(position).getIdRelatorio());
+        int idRelatorio = relatorioObjList.get(position).getIdRelatorio();
+        intent.putExtra("idRelatorio", idRelatorio);
         startActivity(intent);
 
 //        // Redirecionamento para a tela do problema contendo os títulos das soluções

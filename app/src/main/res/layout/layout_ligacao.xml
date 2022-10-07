@@ -96,7 +96,7 @@
                     android:layout_height="132dp"
                     android:layout_marginTop="4dp"
                     android:paddingLeft="10dp"
-                    android:text="Vimos que é necessario chamar o suporte, o botão abaixo te levará à ligação."
+                    android:text="@string/suporteliga"
                     android:textColor="@color/black"
                     android:textSize="18sp"
                     app:layout_constraintStart_toStartOf="parent"

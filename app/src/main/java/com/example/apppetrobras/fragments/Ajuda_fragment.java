@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.apppetrobras.Activities.Perfil;
@@ -28,7 +29,7 @@ import com.example.apppetrobras.Adapters.RecyclerViewAdapter;
 import java.util.ArrayList;
 
 public class Ajuda_fragment extends Fragment {
-    ;
+    Button btn;
 //    SharedPreferences sharedPreferences = getSharedPreferences(
 //            getString(R.string.preference_file_key), Context.MODE_PRIVATE);
     // private ArrayList<ProblemasObj> dataArrayList1, dataArrayList2;
@@ -37,8 +38,18 @@ public class Ajuda_fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        LayoutInflater lf = getActivity().getLayoutInflater();
-        View view = lf.inflate(R.layout.fragment_ajuda_fragment, container, false);
+        //LayoutInflater lf = getActivity().getLayoutInflater();
+        View view = inflater.inflate(R.layout.fragment_ajuda_fragment, container, false);
+
+        btn = view.findViewById(R.id.btn_tela_perfil);
+
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getActivity(), PerfilAtualizar.class);
+                startActivity(i);
+            }
+        });
 
 
 //        SharedPreferences sharedPreferences = this.getActivity().getSharedPreferences(

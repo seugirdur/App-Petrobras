@@ -55,9 +55,6 @@
             android:name=".Activities.Privacidade"
             android:exported="false" />
         <activity
-            android:name=".Activities.TelaPrivacidade"
-            android:exported="false" />
-        <activity
             android:name="com.example.Navigations.Drawer"
             android:exported="false" />
         <activity

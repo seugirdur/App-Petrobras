@@ -1,9 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".Activities.Privacidade">
+    android:layout_height="match_parent">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ppja"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Activities.Privacidade">
+
+        <TextView
+            android:id="@+id/somos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="O que somos?"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="148dp"
+            tools:layout_editor_absoluteY="171dp"
+            app:layout_constraintEnd_toEndOf="@id/nos"
+            app:layout_constraintStart_toStartOf="@id/nos"
+            app:layout_constraintTop_toBottomOf="@id/nos"/>
+
+        <TextView
+            android:id="@+id/textosomos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@string/texto1"
+            android:textColor="@color/black"
+            android:textSize="15dp"
+            app:layout_constraintEnd_toEndOf="@id/somos"
+            app:layout_constraintStart_toStartOf="@id/somos"
+            app:layout_constraintTop_toBottomOf="@id/somos"
+            android:padding="5dp"/>
+
+        <TextView
+            android:id="@+id/fizemos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="O que fizemos?"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/textosomos"
+            app:layout_constraintStart_toStartOf="@id/textosomos"
+            app:layout_constraintTop_toBottomOf="@id/textosomos" />
+
+        <TextView
+            android:id="@+id/textofizemos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@string/texto2"
+            android:textColor="@color/black"
+            android:textSize="15dp"
+            app:layout_constraintEnd_toEndOf="@id/fizemos"
+            app:layout_constraintStart_toStartOf="@id/fizemos"
+            app:layout_constraintTop_toBottomOf="@id/fizemos"
+            android:padding="5dp"/>
+
+        <TextView
+            android:id="@+id/apoio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="Apoio (quem nos ajudou e nos deu suporte)"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/textofizemos"
+            app:layout_constraintStart_toStartOf="@id/textofizemos"
+            app:layout_constraintTop_toBottomOf="@id/textofizemos" />
+
+        <TextView
+            android:id="@+id/textoapoio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@string/texto3"
+            android:textColor="@color/black"
+            android:textSize="15dp"
+            app:layout_constraintEnd_toEndOf="@id/apoio"
+            app:layout_constraintStart_toStartOf="@id/apoio"
+            app:layout_constraintTop_toBottomOf="@id/apoio"
+            android:padding="5dp"/>
+
+        <ImageView
+            android:id="@+id/nos"
+            android:layout_width="300dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.537"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ppja" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

@@ -92,28 +92,16 @@ Seu nome completo, telefone, data de nascimento, e-mail, chave de acesso e irá 
 Além disso, o aplicativo pode coletar certas informações automaticamente, incluindo, mas não se limitando ao tipo de dispositivo móvel que você usa, o ID exclusivo do dispositivo móvel, o endereço IP do dispositivo móvel, o sistema operacional móvel, o tipo de dispositivo móvel, navegadores de internet que você usa e informações sobre como você usa o aplicativo.</p>
     </string>
 
+    <string name="texto1"><p>   Nós somos a turma M1TI, jovens entre 16 à 21 anos que foram selecionados pela Petrobras para participar do projeto PPJA (Programa Petrobras Jovem Aprendiz). Jovens que estavam procurando adentrar no mercado de trabalho e tiveram uma grande oportunidade de aprendizagem, amadurecimento e criação de uma base mais sólida para conseguir adentrar ao meio profissional.</p></string>
 
-
-
-    <string name="segundoTexto"><p>“O aplicativo coleta informações precisas de localização em tempo real do dispositivo?”
-Este Aplicativo não coleta informações precisas sobre a localização do seu dispositivo móvel.</p>\n
-        <p>“Terceiros veem e/ou têm acesso às informações obtidas pelo aplicativo?”
-Apenas dados agregados e anônimos são transmitidos periodicamente para serviços externos para nos ajudar a melhorar o aplicativo e nosso serviço. Compartilharemos suas informações com terceiros apenas nas formas descritas nesta declaração de privacidade.</p>
+    <string name="texto2"><p>   No período de 1 ano e meio, realizamos um curso de aprendizagem industrial sobre Operador de Suporte Técnico em Tecnologia da Informação, onde desenvolvemos as nossas capacidades técnicas no ramo da TI, desde manutenção até programação.</p>
+    <p>   Também tivemos a oportunidade de trabalhar e desenvolver as nossas Soft Skills e Hard Skills, sendo expostos a situações e trabalhos que tivemos de trabalhar em equipe, assim surgiu o ASET, fruto de um grande trabalho em equipe, onde todos se entregaram e se dedicaram 100% em pró ao aplicativo.</p>
+    <p>   Percebemos o quão era difícil contatar um técnico quando entrávamos em contato com algum problema, ou quando acabávamos o chamando por algum problema simples e fácil de ser resolvido, pensando assim, criamos a ferramenta tecnológica com o objetivo de ampliar os processos relacionados ao suporte à área de negócio, gerando uma solução para a melhora do atendimento e gerenciamento de Help-Desk no meio empresarial.</p>
+    <p>   Assim, observando as dificuldades e aprendendo com situações distintas sempre contando com o apoio da equipe, evoluímos profissionalmente, com a certeza de que o conhecimento técnico, as construções interpessoais e a articulação para aprimoramento são os melhores artifícios para uma capacitação honrosa.</p>
     </string>
 
 
-
-
-    <string name="terceiroTexto"><p>    -Conforme exigido por lei, como para cumprir uma intimação ou processo legal similar;</p>\n
-        <p>-Quando acreditarmos de boa fé que a divulgação é necessária para proteger nossos direitos, proteger sua segurança ou a segurança de terceiros, investigar fraudes ou responder a uma solicitação do governo;</p>\n
-        <p>-Com nossos provedores de serviços confiáveis que trabalham em nosso nome, não têm um uso independente das informações que divulgamos a eles e concordaram em aderir às regras estabelecidas nesta declaração de privacidade.</p>\n
-        <p>-Se a PPJA estiver envolvida em uma fusão, aquisição ou venda de todos ou parte de seus ativos, você será notificado por e-mail e/ou um aviso em destaque em nosso site sobre qualquer mudança de propriedade ou uso dessas informações, bem como como quaisquer escolhas que você possa ter em relação a essas informações.</p>
-    </string>
-
-
-
-
-    <string name="quartoTexto"><p>Você pode interromper toda a coleta de informações pelo aplicativo facilmente desinstalando o aplicativo. Você pode usar os processos de desinstalação padrão conforme podem estar disponíveis como parte de seu dispositivo móvel ou por meio do mercado ou rede de aplicativos móveis. Você também pode solicitar o opt-out por e-mail, em suporte@aset.com.br.</p></string>
+    <string name="texto3"><p>   Durante todo o processo de aprendizagem obtivemos o apoio de diversos docentes com capacitações específicas de destaque, e que buscaram desenvolver diversas habilidades diferentes juntos, gerando alunos e profissionais multifacetados, com a presença da versatilidade, da busca por inovação e conhecimento além dos princípios de harmonia, comunicação e ética. Aprendemos sobre Fundamentos de tecnologia da informação, suporte de manutenção, eletroeletrônica, Redes  e desenvolvimento de habilidades sociais com o Soft Skills, transformando nossas construções profissionais no mercado de trabalho.</p></string>
 
 
 

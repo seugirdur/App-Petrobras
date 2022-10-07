@@ -100,7 +100,7 @@ public class Relatorio extends Drawer implements RecyclerViewInteface{
             @Override
             public void onClick(View view) {
                 animateFab();
-                Toast.makeText(Relatorio.this, "download clicked", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Relatorio.this, "coming soon", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -109,10 +109,8 @@ public class Relatorio extends Drawer implements RecyclerViewInteface{
         observacoes_icon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                mDialog.setContentView(R.layout.popup_observacoes);
-                mDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-                mDialog.show();
+                animateFab();
+                Toast.makeText(Relatorio.this, "coming soon", Toast.LENGTH_SHORT).show();
 
             }
         });

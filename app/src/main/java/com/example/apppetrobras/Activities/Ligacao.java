@@ -43,4 +43,8 @@ public class Ligacao extends Drawer {
         allocateActivityTitle("Ligação");
     }
 
+    public void ligacao(View view){
+
+    }
+
 }

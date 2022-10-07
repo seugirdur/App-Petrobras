@@ -25,13 +25,13 @@ public class Ajuda extends AppCompatActivity {
         solChamar = findViewById(R.id.solChamar);
         solBuscar = findViewById(R.id.solBuscar);
         solVer = findViewById(R.id.solVer);
-        solChamado = findViewById(R.id.solChamado);
+        solChamado = findViewById(R.id.solChamar);
 
 
          btnUsar = findViewById(R.id.btnUsar);
          btnChamar = findViewById(R.id.btnChamar);
          btnBuscar = findViewById(R.id.btnBuscar);
-         btnChamado = findViewById(R.id.btnChamado);
+         btnChamado = findViewById(R.id.btnChamar);
 
          btnVer = findViewById(R.id.btnVer);
 
@@ -40,7 +40,7 @@ public class Ajuda extends AppCompatActivity {
         btnUsar = findViewById(R.id.btnUsar);
         btnChamar = findViewById(R.id.btnChamar);
         btnBuscar = findViewById(R.id.btnBuscar);
-        btnChamado = findViewById(R.id.btnChamado);
+       // btnChamado = findViewById(R.id.btnChamado);
 
         btnVer = findViewById(R.id.btnVer);
 

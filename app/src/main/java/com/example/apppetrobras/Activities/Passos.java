@@ -250,7 +250,7 @@ public class Passos extends Drawer {
         call.enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                    Toast.makeText(Passos.this, "Relatorio criado", Toast.LENGTH_LONG).show();
+                Toast.makeText(Passos.this, "Relatorio criado", Toast.LENGTH_LONG).show();
 
             }
 
@@ -315,6 +315,7 @@ public class Passos extends Drawer {
             }
             else {
                 holder += check.charAt(i);
+
             }
         }
         check = holder;
@@ -329,20 +330,28 @@ public class Passos extends Drawer {
         // Adição de um relatório no Banco de Dados
         iAmWhoKnocks();
 
-        // Redirecionamento para a tela de "parabéns"
-        mdialog.setContentView(R.layout.popupparabens);
-        mdialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        mdialog.show();
+        if (check.contains("2")) {
+            // Redirecionamento para a tela de "parabéns"
+            mdialog.setContentView(R.layout.popupparabens);
+            mdialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+            mdialog.show();
 
-        //temporario:
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                Intent intent = new Intent(Passos.this, Tabs.class);
-                startActivity(intent);
-                finish();
-            }
-        }, 3500);
+            //temporario:
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    Intent intent = new Intent(Passos.this, Tabs.class);
+                    startActivity(intent);
+                    finish();
+                }
+            }, 3500);
+        }else {
+            mdialog.setContentView(R.layout.layout_ligacao);
+            mdialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+            mdialog.show();
+
+
+        }
 
     }
 
@@ -368,6 +377,22 @@ public class Passos extends Drawer {
     public void onBackPressed() {
         mudarTela();
     }
+
+    public void ligacao(View view){
+
+        Toast.makeText(Passos.this, "Ainda não há número de suporte", Toast.LENGTH_LONG).show();
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Intent intent = new Intent(Passos.this, Tabs.class);
+                startActivity(intent);
+                finish();
+            }
+        }, 100);
+
+
+    }
+
 
     public void fecharPopup(View view){
         mDialog.dismiss();

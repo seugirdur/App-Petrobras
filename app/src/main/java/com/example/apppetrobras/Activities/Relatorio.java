@@ -290,7 +290,7 @@ public class Relatorio extends Drawer implements RecyclerViewInteface{
             download_icon.setClickable(false);
             observacoes_icon.setClickable(false);
             isOpen=false;
-
+//
         }
         else {
 

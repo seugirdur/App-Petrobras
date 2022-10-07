@@ -106,7 +106,7 @@ public class Historico extends Drawer implements RecyclerViewInteface {
 
                 int id = UserRelatorioObj.getIdRelatorio();
                 RVAdapterUserRelatorio recyclerViewAdapter = new RVAdapterUserRelatorio(context,
-                        userRelatorioObjList, recyclerViewInteface, R.layout.item_list_admin);
+                        userRelatorioObjList, recyclerViewInteface, R.layout.item_historico);
                 recyclerview.setAdapter(recyclerViewAdapter);
                 recyclerViewAdapter.notifyDataSetChanged();
 

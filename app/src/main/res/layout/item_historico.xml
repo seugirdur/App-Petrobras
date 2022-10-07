@@ -27,15 +27,13 @@
                 android:text="Data do processo"
                 android:textColor="@color/black"
                 android:textSize="17dp"
+                android:layout_marginStart="20dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.313"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.407" />
+                app:layout_constraintStart_toEndOf="@+id/incentivoVisual"
+                app:layout_constraintTop_toTopOf="parent"/>
 
             <ImageView
-                android:id="@+id/imageButton5"
+                android:id="@+id/seta"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:background="?android:attr/selectableItemBackground"
@@ -49,18 +47,14 @@
                 app:srcCompat="@drawable/ic_baseline_arrow_back_ios_new_24" />
 
             <ImageView
-                android:id="@+id/imageButton"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
+                android:id="@+id/incentivoVisual"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:background="?android:attr/selectableItemBackground"
-                android:rotation="180"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.043"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.64"
-                app:srcCompat="@drawable/ic_baseline_arrow_back_ios_new_24" />
+                app:srcCompat="@drawable/ic_check_circle" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

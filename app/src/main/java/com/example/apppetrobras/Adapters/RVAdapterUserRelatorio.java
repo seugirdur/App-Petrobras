@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -37,16 +38,14 @@ public class RVAdapterUserRelatorio extends RecyclerView.Adapter<RVAdapterUserRe
         View view = LayoutInflater.from(context).inflate(layout,parent,false);
 
         // Instanciação das variáveis
-        int idTexto1, idTexto2, idTexto3, idTexto4;
+        int text1, visual1;
 
         // Estrutura de decisão de acordo com o layout(xml) da recyclerview,
         // a partir disso são atribuídos os id's que existem em cada item
-        idTexto1 = R.id.textProblema;
-        idTexto2 = R.id.textView25;
-        idTexto3 = R.id.textView27;
-        idTexto4 = R.id.textView29;
+        text1 = R.id.txtdata;
+        visual1 = R.id.incentivoVisual;
         return new RVAdapterUserRelatorio.MyViewHolder(view, recyclerViewInteface,
-                idTexto1, idTexto2, idTexto3, idTexto4);
+                text1, visual1);
     }
 
     @Override
@@ -58,10 +57,8 @@ public class RVAdapterUserRelatorio extends RecyclerView.Adapter<RVAdapterUserRe
         // Isso é necessário pois as listas recebem diferentes quantidades de valores
 
 
-        if(holder.text1 !=null){ holder.text1.setText(data.getDataProcesso());}
-        if(holder.text2 !=null){ holder.text2.setText(data.getNome());}
-        if(holder.text3 !=null){ holder.text3.setText(data.getEmail());}
-        if(holder.text4 !=null){ holder.text4.setText(data.getSetor());}
+        if(holder.text1 != null){ holder.text1.setText(data.getDataProcesso());}
+        if(holder.text1 != null){ holder.visual1.setImageResource(R.drawable.ic_add);}
     }
 
     @Override
@@ -71,17 +68,16 @@ public class RVAdapterUserRelatorio extends RecyclerView.Adapter<RVAdapterUserRe
 
     public static class MyViewHolder extends RecyclerView.ViewHolder{
 
-        TextView text1, text2, text3, text4;
+        TextView text1;
+        ImageView visual1;
 
         public MyViewHolder(@NonNull View itemView, RecyclerViewInteface recyclerViewInteface,
-                            int item1, int item2, int item3, int item4) {
+                            int item1, int item2) {
             super(itemView);
 
             // Definição de variáveis com os valores dos id's
             text1 = itemView.findViewById(item1);
-            text2 = itemView.findViewById(item2);
-            text3 = itemView.findViewById(item3);
-            text4 = itemView.findViewById(item4);
+            visual1 = itemView.findViewById(item2);
 
             // Define o método onItemClik da interface para cada item da RecyclerView
             moduleOnClick(recyclerViewInteface);

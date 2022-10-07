@@ -1,5 +1,7 @@
 package com.example.apppetrobras.fragments;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -14,17 +16,25 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.widget.Toast;
 
-import com.example.apppetrobras.Objects.ProblemasObj;
+import com.example.apppetrobras.Activities.Relatorio;
+import com.example.apppetrobras.Adapters.RVAdapterUserRelatorio;
+import com.example.apppetrobras.Objects.UserRelatorioObj;
 import com.example.apppetrobras.R;
-import com.example.apppetrobras.Adapters.RecyclerViewAdapter;
-import com.example.apppetrobras.Activities.Inicio;
-
-import java.util.ArrayList;
+import com.example.apppetrobras.api.RetroFitClient;
+import java.util.List;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class History extends Fragment implements RecyclerViewInteface {
 
-    private ArrayList<ProblemasObj> dataArrayList;
+    List<UserRelatorioObj> userRelatorioObjList;
+
+    private RecyclerView recyclerview;
+    private Context context;
+    private RecyclerViewInteface recyclerViewInteface;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -36,56 +46,79 @@ public class History extends Fragment implements RecyclerViewInteface {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        dataInitialize();
+        context = getContext();
+        recyclerViewInteface = this;
 
         // Essa variável recebe (por meio do id) a reciclerView no xml dessa tela
         RecyclerView recyclerview = view.findViewById(R.id.recyclerviewhst);
         recyclerview.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerview.setHasFixedSize(true);
-        // Aqui há uma instância da RecyclerViewAdapter utilizando o construtor adequado:
-        // RecyclerViewAdapter(Context, Lista<Objeto>, RecyclerViewInterface, layout do item)
-        RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(getContext(),
-                dataArrayList, this, R.layout.item_historico);
-        recyclerview.setAdapter(recyclerViewAdapter);
+
+        listen();
+        sayMyName();
     }
 
-    // Função para popular a lista usada na recyclerView
-    private void dataInitialize() {
+    public void listen(){
 
-        dataArrayList = new ArrayList<>();
+        Call<List<UserRelatorioObj>> callme = RetroFitClient
+                .getInstance()
+                .getAPI()
+                .getRelatorio(sayMyName());
 
-        String[] titulosProblemas = new String[]{
-                "Relatório do dia --/--/----",
-                "Relatório do dia --/--/----",
-                "Relatório do dia --/--/----",
-                "Relatório do dia --/--/----",
-                "Relatório do dia --/--/----",
-                "Relatório do dia --/--/----",
-                "Relatório do dia --/--/----",
-                "Relatório do dia --/--/----",
-                "Relatório do dia --/--/----",
-                "Relatório do dia --/--/----",
-                "Relatório do dia --/--/----",
-                "Relatório do dia --/--/----",
-                "Relatório do dia --/--/----",
-                "Relatório do dia --/--/----",
-        };
+        callme.enqueue(new Callback<List<UserRelatorioObj>>() {
+            @Override
+            public void onResponse(Call<List<UserRelatorioObj>> call, Response<List<UserRelatorioObj>> response) {
+                if (!response.isSuccessful()){
+                    Toast.makeText(context, "wassup", Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
-        for(int i = 0; i < titulosProblemas.length; i++){
-            ProblemasObj data = new ProblemasObj(titulosProblemas[i]);
-            dataArrayList.add(data);
-        }
+                //tentando guardar num objeto para que seja depois visivel no item_list_admin do dionisio
+                userRelatorioObjList = response.body();
+                UserRelatorioObj UserRelatorioObj = userRelatorioObjList.get(0);
+
+                int id = UserRelatorioObj.getIdRelatorio();
+                RVAdapterUserRelatorio recyclerViewAdapter = new RVAdapterUserRelatorio(context,
+                        userRelatorioObjList, recyclerViewInteface, R.layout.item_historico);
+                recyclerview.setAdapter(recyclerViewAdapter);
+                recyclerViewAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onFailure(Call<List<UserRelatorioObj>> call, Throwable t) {
+
+            }
+        });
+
+    }
+
+    private String sayMyName(){
+        SharedPreferences sharedPreferences = this.getActivity().getSharedPreferences(
+                getString(R.string.preference_file_key), Context.MODE_PRIVATE);
+
+        String chave = sharedPreferences.getString("chave", "");
+
+        return chave;
     }
 
     @Override
     public void onItemClick(int position) {
+
         // Redirecionamento para a tela do problema contendo os títulos das soluções
-        Intent intent = new Intent(getActivity(), Inicio.class);
+        Intent intent = new Intent(getActivity(), Relatorio.class);
 
         // Definição de valores que serão redirecionados
-        intent.putExtra("TIPO",3);
-        intent.putExtra("ID_TITULO", dataArrayList.get(position).getId());
+        int iddacerteza = userRelatorioObjList.get(position).getIdRelatorio();
+        intent.putExtra("idRelatorio", userRelatorioObjList.get(position).getIdRelatorio());
         startActivity(intent);
+
+//        // Redirecionamento para a tela do problema contendo os títulos das soluções
+//        Intent intent = new Intent(getActivity(), Inicio.class);
+//
+//        // Definição de valores que serão redirecionados
+//        intent.putExtra("TIPO",3);
+//        intent.putExtra("ID_TITULO", dataArrayList.get(position).getId());
+//        startActivity(intent);
     }
 
 }

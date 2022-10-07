@@ -29,7 +29,7 @@ public class Hub extends AppCompatActivity {
         setContentView(R.layout.layout_hub);
     }
 
-    public void rediriciona0(View view){
+    public void redireciona0(View view){
         Intent intent = new Intent(Hub.this, Inicio.class);
         startActivity(intent);
         finish();

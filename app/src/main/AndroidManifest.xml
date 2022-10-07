@@ -25,15 +25,7 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <activity
-            android:name=".Privacidade"
-            android:exported="false" />
-        <activity
-            android:name=".TelaPrivacidade"
-            android:exported="false" />
-        <activity
-            android:name=".Seguranca"
-            android:exported="false" />
+
         <activity
             android:name=".Activities.Perfil"
             android:exported="false" />

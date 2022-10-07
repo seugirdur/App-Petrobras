@@ -187,6 +187,8 @@ public class Relatorio extends Drawer implements RecyclerViewInteface{
                         break;
                 }
 
+
+
                 call2.enqueue(new Callback<List<SolucoesObj>>() {
                     @Override
                     public void onResponse(Call<List<SolucoesObj>> call, Response<List<SolucoesObj>> response) {
@@ -235,7 +237,6 @@ public class Relatorio extends Drawer implements RecyclerViewInteface{
                         TextView data = findViewById(R.id.data_atual);
                         String textData = cRelatorio.getDataProcesso();
                         //String textData = "310505";
-                        textData = textData.substring(0,2) + "/" + textData.substring(2,4) + "/20" + textData.substring(4);
                         data.setText(textData);
                         nome.setText(cRelatorio.getNome());
                         if(funciona){solucionado.setText("Solucionado");}else{solucionado.setText("Não solucionado");}

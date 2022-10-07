@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.Navigations.Configuracoes;
 import com.example.Navigations.Drawer;
 import com.example.apppetrobras.Objects.CadastroObj;
 import com.example.apppetrobras.Objects.LoginObj;
@@ -23,6 +24,7 @@ import com.example.apppetrobras.R;
 import com.example.apppetrobras.api.RetroFitClient;
 import com.example.apppetrobras.databinding.LayoutPassosBinding;
 import com.example.apppetrobras.databinding.LayoutPerfilAtualizarBinding;
+import com.example.apppetrobras.fragments.Ajuda_fragment;
 
 import java.io.IOException;
 import java.util.List;
@@ -231,7 +233,7 @@ public class PerfilAtualizar extends Drawer {
                 editor.putString("email", email);
                 editor.putString("tel", tel);
                 editor.apply();
-                Intent intent = new Intent(PerfilAtualizar.this, Perfil.class);
+                Intent intent = new Intent(PerfilAtualizar.this, Configuracoes.class);
                 startActivity(intent);
             }
         });

@@ -21,7 +21,7 @@
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Histórico" />
+            android:text="Perfil" />
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
@@ -31,7 +31,7 @@
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Ajuda e Suporte" />
+            android:text="Histórico" />
     </com.google.android.material.tabs.TabLayout>
 
     <androidx.viewpager2.widget.ViewPager2

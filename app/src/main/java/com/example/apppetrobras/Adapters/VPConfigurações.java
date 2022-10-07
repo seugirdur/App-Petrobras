@@ -21,13 +21,13 @@ public class VPConfigurações extends FragmentStateAdapter {
     public Fragment createFragment(int position) {
         switch (position){
             case 0:
-                return new History();
+                return new Ajuda_fragment();
             case 1:
                 return new Opcoes_Fragment();
             case 2:
-                return new Ajuda_fragment();
-            default:
                 return new History();
+            default:
+                return new Ajuda_fragment();
         }
     }
 

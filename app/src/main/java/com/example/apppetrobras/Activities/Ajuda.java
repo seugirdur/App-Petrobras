@@ -10,9 +10,14 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.example.Navigations.Drawer;
 import com.example.apppetrobras.R;
+import com.example.apppetrobras.databinding.ActivityAjudaBinding;
+import com.example.apppetrobras.databinding.LayoutHistoricoBinding;
 
-public class Ajuda extends AppCompatActivity {
+public class Ajuda extends Drawer {
+
+    ActivityAjudaBinding activityAjudaBinding;
 
     private TextView solUsar, solChamar, solBuscar, solVer, solChamado, solEscolha;
     private ImageButton btnUsar, btnChamar, btnBuscar, btnVer, btnEscolha, btnChamado;
@@ -20,7 +25,13 @@ public class Ajuda extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ajuda);
+        activityAjudaBinding = ActivityAjudaBinding.inflate(getLayoutInflater());
+        setContentView(activityAjudaBinding.getRoot());
+        allocateActivityTitle("Ajuda e Suporte");
+
+
+
+
         solUsar = findViewById(R.id.solUsar);
         solChamar = findViewById(R.id.solChamar);
         solBuscar = findViewById(R.id.solBuscar);

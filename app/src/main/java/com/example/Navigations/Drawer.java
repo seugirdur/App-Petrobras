@@ -106,10 +106,6 @@ import com.google.android.material.navigation.NavigationView;
                     overridePendingTransition(0, 0);
                     break;
 
-                case R.id.historico:
-                    startActivity(new Intent(this, Historico.class));
-                    overridePendingTransition(0, 0);
-                    break;
 
 
                 case R.id.configuracoes:
@@ -117,14 +113,11 @@ import com.google.android.material.navigation.NavigationView;
                     overridePendingTransition(0, 0);
                     break;
 
-                case R.id.perfil:
-                    startActivity(new Intent(this, Perfil.class));
-                    overridePendingTransition(0, 0);
-                    break;
+
 
                 case R.id.ajuda_suporte:
-                    //startActivity(new Intent(this, Ajuda.class));
-                    //overridePendingTransition(0, 0);
+                    startActivity(new Intent(this, Ajuda.class));
+                    overridePendingTransition(0, 0);
                     break;
 
                 case R.id.administrador:

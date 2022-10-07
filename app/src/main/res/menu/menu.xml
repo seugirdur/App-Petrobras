@@ -8,18 +8,10 @@
             android:icon="@drawable/ic_home"
             />
 
-        <item android:id="@+id/historico"
-            android:title="Histórico"
-            android:icon="@drawable/ic_baseline_call_24"
-            />
 
         <item android:id="@+id/configuracoes"
             android:title="Configurações"
             android:icon="@drawable/ic_settings"/>
-
-        <item android:id="@+id/perfil"
-            android:title="Perfil"
-            android:icon="@drawable/ic_foto_perfil"/>
 
         <item android:id="@+id/ajuda_suporte"
             android:title="Ajuda e Suporte"

@@ -30,10 +30,8 @@ import java.util.ArrayList;
 
 public class Ajuda_fragment extends Fragment {
     Button btn;
-//    SharedPreferences sharedPreferences = getSharedPreferences(
-//            getString(R.string.preference_file_key), Context.MODE_PRIVATE);
-    // private ArrayList<ProblemasObj> dataArrayList1, dataArrayList2;
     TextView nomecompleto,num_tel,email1,num_chave, nome1;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -51,32 +49,31 @@ public class Ajuda_fragment extends Fragment {
             }
         });
 
+        SharedPreferences sharedPreferences = this.getActivity().getSharedPreferences(
+                getString(R.string.preference_file_key), Context.MODE_PRIVATE);
 
-//        SharedPreferences sharedPreferences = this.getActivity().getSharedPreferences(
-//                getString(R.string.preference_file_key), Context.MODE_PRIVATE);
-//
-//        String nome = sharedPreferences.getString("nome", "");
-//        String tel = sharedPreferences.getString("tel", "");
-//        String email = sharedPreferences.getString("email", "");
-//        String chave = sharedPreferences.getString("chave", "");
-//
-//
-//        String[] fullNameArray = nome.split("\\s+");
-//        String firstName = fullNameArray[0];
-//        nome1 = this.getActivity().findViewById(R.id.nome_login);
-//        nome1.setText(firstName);
-//
-//        nomecompleto = this.getActivity().findViewById(R.id.nomecompleto);
-//        nomecompleto.setText(nome);
-//
-//        num_tel = this.getActivity().findViewById(R.id.num_tel);
-//        num_tel.setText(tel);
-//
-//        email1 = this.getActivity().findViewById(R.id.email);
-//        email1.setText(email);
-//
-//        num_chave = this.getActivity().findViewById(R.id.num_chave);
-//        num_chave.setText(chave);
+        String nome = sharedPreferences.getString("nome", "");
+        String tel = sharedPreferences.getString("tel", "");
+        String email = sharedPreferences.getString("email", "");
+        String chave = sharedPreferences.getString("chave", "");
+
+
+        String[] fullNameArray = nome.split("\\s+");
+        String firstName = fullNameArray[0];
+        nome1 = this.getActivity().findViewById(R.id.nome_login);
+        nome1.setText(firstName);
+
+        nomecompleto = this.getActivity().findViewById(R.id.nomecompleto);
+        nomecompleto.setText(nome);
+
+        num_tel = this.getActivity().findViewById(R.id.num_tel);
+        num_tel.setText(tel);
+
+        email1 = this.getActivity().findViewById(R.id.email);
+        email1.setText(email);
+
+        num_chave = this.getActivity().findViewById(R.id.num_chave);
+        num_chave.setText(chave);
 
         return view;
     }

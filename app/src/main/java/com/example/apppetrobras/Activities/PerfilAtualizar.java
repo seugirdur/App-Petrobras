@@ -23,6 +23,7 @@ import com.example.apppetrobras.R;
 import com.example.apppetrobras.api.RetroFitClient;
 import com.example.apppetrobras.databinding.LayoutPassosBinding;
 import com.example.apppetrobras.databinding.LayoutPerfilAtualizarBinding;
+import com.example.apppetrobras.fragments.Ajuda_fragment;
 
 import java.io.IOException;
 import java.util.List;
@@ -231,7 +232,7 @@ public class PerfilAtualizar extends Drawer {
                 editor.putString("email", email);
                 editor.putString("tel", tel);
                 editor.apply();
-                Intent intent = new Intent(PerfilAtualizar.this, Perfil.class);
+                Intent intent = new Intent(PerfilAtualizar.this, Ajuda_fragment.class);
                 startActivity(intent);
             }
         });

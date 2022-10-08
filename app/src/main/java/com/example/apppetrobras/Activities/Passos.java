@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.TextUtils;
@@ -386,9 +387,9 @@ public class Passos extends Drawer {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(Passos.this, Tabs.class);
+                Intent intent = new Intent(Intent.ACTION_DIAL);
+                intent.setData(Uri.parse("tel:0123456789"));
                 startActivity(intent);
-                finish();
             }
         }, 100);
 

@@ -184,7 +184,7 @@ public class PerfilAtualizar extends Drawer {
 
 
 
-    private void atualizate(String nome, String tel,String email, String chave){
+    private void atualizate(String nome, String email,String tel, String chave){
 //        PerfilObj perfilObj = new PerfilObj();
 //
 //        perfilObj.setNome(nome);
@@ -195,7 +195,7 @@ public class PerfilAtualizar extends Drawer {
         Call<List<PerfilObj>> call = RetroFitClient
                 .getInstance()
                 .getAPI()
-                .updateUser(nome, tel, email, chave);
+                .updateUser(nome, email, tel, chave);
 
         call.enqueue(new Callback<List<PerfilObj>>() {
             @Override

@@ -149,5 +149,14 @@ public interface  API {
     @GET("/relatorios/admin/fechado")
     Call<List<AdminObj>> getAllRelatoriosClosed();
 
+    @FormUrlEncoded
+    @POST("/relatorios/finish")
+    Call<ResponseBody> finishRelatorio(
+            @Field("nome") String nome,
+            @Field("idRelatorio") int idRelatorio
+
+
+    );
+
 
 }

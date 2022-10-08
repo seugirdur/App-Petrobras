@@ -26,6 +26,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
+                android:gravity="center"
+                android:textAlignment="center"
                 android:text="Tipo do Problema"
                 android:textColor="@color/black"
                 android:textSize="25dp"
@@ -52,16 +54,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
-                android:layout_marginLeft="15dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:gravity="center"
+                android:textAlignment="center"
                 android:text="Problema Específico"
                 android:textColor="@color/black"
                 android:textSize="20dp"
-                android:paddingRight="5dp"
-                android:paddingLeft="5dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/txtSecao"
                 app:layout_constraintBottom_toTopOf="@id/recicle"
-                />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtSecao" />
 
 
             <!-- Labels -->
@@ -207,9 +210,10 @@
         android:layout_marginRight="16dp"
         android:layout_marginBottom="20dp"
         android:clickable="true"
+        android:onClick="concludeRelatorio"
         android:focusable="true"
         android:visibility="invisible"
-        android:src="@drawable/ic_observacoes"
+        android:src="@drawable/ic_check_black"
         android:backgroundTint="@color/Amarelo_Petrobras"
 
         />

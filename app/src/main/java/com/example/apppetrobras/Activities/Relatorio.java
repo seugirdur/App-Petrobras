@@ -33,9 +33,12 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.example.apppetrobras.fragments.RecyclerViewInteface;
 
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -58,6 +61,7 @@ public class Relatorio extends Drawer implements RecyclerViewInteface{
     SharedPreferences sp;
     SharedPreferences.Editor editor;
     LayoutRelatorioBinding layoutRelatorioBinding;
+
 
     boolean isOpen = false; // by default it is false
 
@@ -110,23 +114,23 @@ public class Relatorio extends Drawer implements RecyclerViewInteface{
 
 
         // Botão de observações presente no FAB chamando o seu popup de observações
-        concludeicon.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                animateFab();
-                if (areYouAdmin()==1) {
-                    concludeRelatorio();
-                }
-                else {
-                    Toast.makeText(Relatorio.this, "Você não é Administrador", Toast.LENGTH_SHORT).show();
-                }
-
-                //mDialog.setContentView(R.layout.popup_observacoes);
-                //mDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-                //mDialog.show();
-
-            }
-        });
+//        concludeicon.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                animateFab();
+//                if (areYouAdmin()==1) {
+//                    concludeRelatorio();
+//                }
+//                else {
+//                    Toast.makeText(Relatorio.this, "Você não é Administrador", Toast.LENGTH_SHORT).show();
+//                }
+//
+//                //mDialog.setContentView(R.layout.popup_observacoes);
+//                //mDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+//                //mDialog.show();
+//
+//            }
+//        });
 
 
         //= sharedPreferences.getString("nome", "");
@@ -296,6 +300,17 @@ public class Relatorio extends Drawer implements RecyclerViewInteface{
 
     }
 
+    public String sayMyName() {
+
+        SharedPreferences sharedPreferences = getSharedPreferences(
+                getString(R.string.preference_file_key), Context.MODE_PRIVATE);
+
+        String SayMyName = sharedPreferences.getString("nome", "");
+
+        return SayMyName;
+
+    }
+
 
     // Método para o FAB chamar os botões presentes, realizando sua animação de rotação.
     private void animateFab() {
@@ -323,7 +338,46 @@ public class Relatorio extends Drawer implements RecyclerViewInteface{
 
     }
 
-    private void concludeRelatorio(){
+    public void concludeRelatorio(View view){
+        SharedPreferences sharedPreferences = getSharedPreferences(
+                getString(R.string.preference_file_key), Context.MODE_PRIVATE);
+
+        String SayMyName = sharedPreferences.getString("nome", "").toUpperCase(Locale.ROOT);
+        int isAdmin = sharedPreferences.getInt("isAdmin", 0);
+
+
+        if (isAdmin==1) {
+
+            Call<ResponseBody> call = RetroFitClient
+                    .getInstance()
+                    .getAPI()
+                    .finishRelatorio(SayMyName, idRelatorio);
+
+            call.enqueue(new Callback<ResponseBody>() {
+                @Override
+                public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                    try {
+                        String body = response.body().string();
+                        Toast.makeText(Relatorio.this, "Finalizado com sucesso", Toast.LENGTH_LONG).show();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<ResponseBody> call, Throwable t) {
+                    Toast.makeText(Relatorio.this, "Não foi possível finalizar", Toast.LENGTH_LONG).show();
+
+                }
+            });
+            Intent intent = new Intent(this, Administrador.class);
+            startActivity(intent);
+
+
+        } else {
+            Toast.makeText(Relatorio.this, "Você não é administrador", Toast.LENGTH_LONG).show();
+
+        }
 
     }
 

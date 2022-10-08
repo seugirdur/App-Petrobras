@@ -67,6 +67,10 @@ public class Login extends AppCompatActivity {
                 guardate();
                 //new Task().execute();
                 progressbar.setVisibility(View.VISIBLE);
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() { progressbar.setVisibility(View.INVISIBLE); }
+                }, 1000);
 
             }
         });
@@ -223,7 +227,9 @@ public class Login extends AppCompatActivity {
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() { progressbar.setVisibility(View.INVISIBLE); }
-                }, 2000);
+                }, 1000);
+
+
 
             }
         });

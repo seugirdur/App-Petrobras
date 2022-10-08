@@ -292,7 +292,7 @@ public class Passos extends Drawer {
 
         Call<ResponseBody> call = RetroFitClient
                 .getInstance()
-                .getAPI().postRelatorio(nome, chave, getTodaysDate(), tipoProblema, titulo,idTitulo,tituloSolucao,check);
+                .getAPI().postRelatorio(nome, chave, getTodaysDate(), tipoProblema, titulo,idTitulo,titulosProblemas,check);
 
         call.enqueue(new Callback<ResponseBody>() {
             @Override

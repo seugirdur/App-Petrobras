@@ -202,6 +202,13 @@ public class Login extends AppCompatActivity {
                 String chave = loginObj.getChave();
                 int isAdmin = loginObj.getIsAdmin();
                 Toast.makeText(Login.this, "Bem vindo "+nome, Toast.LENGTH_SHORT).show();
+                progressbar=findViewById(R.id.progressbar);
+                 //new Task().execute();
+                progressbar.setVisibility(View.VISIBLE);
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() { progressbar.setVisibility(View.INVISIBLE); }
+                }, 5000);
 
                 SharedPreferences sharedPreferences = getSharedPreferences(
                         getString(R.string.preference_file_key), Context.MODE_PRIVATE);

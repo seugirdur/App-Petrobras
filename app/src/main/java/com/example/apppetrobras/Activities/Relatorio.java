@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -16,6 +17,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.Navigations.Administrador;
 import com.example.Navigations.Drawer;
 import com.example.apppetrobras.Adapters.RecyclerViewAdapter;
 import com.example.apppetrobras.Adapters.RelatorioAdapter;
@@ -49,7 +51,7 @@ public class Relatorio extends Drawer implements RecyclerViewInteface{
     private RecyclerViewInteface recyclerViewInteface;
     private List<EtapasRelatorioObj> items = new ArrayList<>();
     private boolean funciona = false;
-    FloatingActionButton add_icon, download_icon, observacoes_icon;
+    FloatingActionButton add_icon, download_icon, concludeicon;
     Animation fabOpen, fabClose, rotateForward, rotateBackward;
     int idRelatorio;
     Dialog mDialog;
@@ -70,7 +72,7 @@ public class Relatorio extends Drawer implements RecyclerViewInteface{
 
         add_icon = (FloatingActionButton) findViewById(R.id.add_icon);
         download_icon = (FloatingActionButton) findViewById(R.id.download_icon);
-        observacoes_icon = (FloatingActionButton) findViewById(R.id.observacoes_icon);
+        concludeicon = (FloatingActionButton) findViewById(R.id.concludeicon);
         mDialog = new Dialog(this);
         settingTheName();
 
@@ -105,12 +107,20 @@ public class Relatorio extends Drawer implements RecyclerViewInteface{
         });
 
 
+
+
         // Botão de observações presente no FAB chamando o seu popup de observações
-        observacoes_icon.setOnClickListener(new View.OnClickListener() {
+        concludeicon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 animateFab();
-                Toast.makeText(Relatorio.this, "Coming soon", Toast.LENGTH_SHORT).show();
+                if (areYouAdmin()==1) {
+                    concludeRelatorio();
+                }
+                else {
+                    Toast.makeText(Relatorio.this, "Você não é Administrador", Toast.LENGTH_SHORT).show();
+                }
+
                 //mDialog.setContentView(R.layout.popup_observacoes);
                 //mDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                 //mDialog.show();
@@ -118,10 +128,6 @@ public class Relatorio extends Drawer implements RecyclerViewInteface{
             }
         });
 
-        SharedPreferences sharedPreferences = getSharedPreferences(
-                getString(R.string.preference_file_key), Context.MODE_PRIVATE);
-
-        String chave = sharedPreferences.getString("chave", "");
 
         //= sharedPreferences.getString("nome", "");
 
@@ -265,6 +271,16 @@ public class Relatorio extends Drawer implements RecyclerViewInteface{
 
     }
 
+    private int areYouAdmin() {
+        SharedPreferences sharedPreferences = getSharedPreferences(
+                getString(R.string.preference_file_key), Context.MODE_PRIVATE);
+
+        int LordVader = sharedPreferences.getInt("isAdmin", 0);
+
+        return LordVader;
+    }
+
+
     private void settingTheName() {
 
         TextView nome_usuario;
@@ -287,9 +303,9 @@ public class Relatorio extends Drawer implements RecyclerViewInteface{
 
             add_icon.startAnimation(rotateBackward);
             download_icon.startAnimation(fabClose);
-            observacoes_icon.startAnimation(fabClose);
+            concludeicon.startAnimation(fabClose);
             download_icon.setClickable(false);
-            observacoes_icon.setClickable(false);
+            concludeicon.setClickable(false);
             isOpen=false;
 //
         }
@@ -297,13 +313,17 @@ public class Relatorio extends Drawer implements RecyclerViewInteface{
 
             add_icon.startAnimation(rotateForward);
             download_icon.startAnimation(fabOpen);
-            observacoes_icon.startAnimation(fabOpen);
+            concludeicon.startAnimation(fabOpen);
             download_icon.setClickable(true);
-            observacoes_icon.setClickable(true);
+            concludeicon.setClickable(true);
             isOpen=true;
 
 
         }
+
+    }
+
+    private void concludeRelatorio(){
 
     }
 

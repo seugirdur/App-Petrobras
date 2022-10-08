@@ -79,7 +79,7 @@
     <!--    Tela de Escolha     -->
     <string name="botao_cadastro">Cadastrar nova conta</string>
     <string name="botao_entrar">Entrar na minha conta</string>
-    <string name="texto_tela_escolha">Com dúvidas? \nEntre em contato conosco <a href='https://github.com/seugirdur/App-petrobras'>clicando aqui</a></string>
+    <string name="texto_tela_escolha">Com dúvidas? \nEntre em contato conosco <a href=''>clicando aqui</a></string>
     <string name="ppja">PPJA - Santos ©</string>
     <string name="textologin"><a href='https://github.com/seugirdur/App-petrobras'>clicando aqui</a></string>
 

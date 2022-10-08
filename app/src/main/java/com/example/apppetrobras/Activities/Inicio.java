@@ -49,7 +49,7 @@ public class Inicio extends AppCompatActivity {
         };
 
         // declarando parte que funcionará como clicável
-        ss.setSpan(clicavel1, 47, 60, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+//        ss.setSpan(clicavel1, 47, 60, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
 
         linkTextView.setText(ss);
         linkTextView.setMovementMethod(LinkMovementMethod.getInstance());

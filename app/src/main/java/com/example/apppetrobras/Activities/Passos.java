@@ -430,7 +430,6 @@ public class Passos extends Drawer {
     public void ligacao(View view){
 
 
-        Toast.makeText(Passos.this, "Ainda não há número de suporte", Toast.LENGTH_LONG).show();
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {

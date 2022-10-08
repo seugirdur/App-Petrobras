@@ -3,20 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="385dp"
-    android:layout_height="wrap_content"
-    android:padding="10dp">
+    android:layout_height="230dp">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#EDEDED"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="wrap_content"
-            android:layout_height="155dp"
+            android:layout_height="match_parent"
             android:padding="10dp"
             tools:layout_editor_absoluteX="-55dp"
             tools:layout_editor_absoluteY="-10dp">
@@ -36,12 +36,12 @@
 
             <TextView
                 android:id="@+id/dataRelatorio"
-                android:layout_width="wrap_content"
-                android:layout_height="20dp"
+                android:layout_width="288dp"
+                android:layout_height="28dp"
                 android:layout_marginStart="18dp"
                 android:text="@string/data_do_relat_rio_dd_mm_yyyy"
                 android:textColor="@color/black"
-                android:textSize="15sp"
+                android:textSize="20sp"
                 app:layout_constraintStart_toEndOf="@+id/imageProblema"
                 app:layout_constraintTop_toTopOf="@id/imageProblema"
                 tools:ignore="MissingConstraints" />
@@ -50,9 +50,10 @@
                 android:id="@+id/labelNome"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
                 android:text="NOME COMPLETO"
                 android:textColor="@color/black"
-                android:textSize="12sp"
+                android:textSize="14sp"
                 app:layout_constraintStart_toStartOf="@+id/dataRelatorio"
                 app:layout_constraintTop_toBottomOf="@+id/dataRelatorio"
                 tools:ignore="HardcodedText,MissingConstraints" />
@@ -63,7 +64,7 @@
                 android:layout_height="wrap_content"
                 android:text="EMAIL"
                 android:textColor="@color/black"
-                android:textSize="12sp"
+                android:textSize="14sp"
                 app:layout_constraintStart_toStartOf="@+id/textNome"
                 app:layout_constraintTop_toBottomOf="@+id/textNome"
                 tools:ignore="HardcodedText,MissingConstraints" />
@@ -73,7 +74,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/email_robson_petrobras_com_br"
-                android:textSize="12sp"
+                android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="@+id/labelEmail"
                 app:layout_constraintTop_toBottomOf="@+id/labelEmail"
                 tools:ignore="MissingConstraints" />
@@ -83,7 +84,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/nome_completo"
-                android:textSize="12sp"
+                android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="@+id/labelNome"
                 app:layout_constraintTop_toBottomOf="@+id/labelNome"
                 tools:ignore="MissingConstraints" />
@@ -95,7 +96,7 @@
                 android:layout_marginTop="15px"
                 android:text="@string/setor"
                 android:textColor="@color/black"
-                android:textSize="12sp"
+                android:textSize="14sp"
                 app:layout_constraintStart_toStartOf="@+id/textEmail"
                 app:layout_constraintTop_toBottomOf="@+id/textEmail"
                 tools:ignore="MissingConstraints" />
@@ -105,7 +106,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Setor do Usuário"
-                android:textSize="12sp"
+                android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="@+id/labelSetor"
                 app:layout_constraintTop_toBottomOf="@+id/labelSetor"
                 tools:ignore="MissingConstraints" />
@@ -114,10 +115,9 @@
                 android:id="@+id/divider3"
                 android:layout_width="400dp"
                 android:layout_height="1dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="18dp"
                 android:background="@color/black"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textSetor" />
 

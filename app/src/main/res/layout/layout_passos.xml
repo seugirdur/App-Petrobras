@@ -57,17 +57,30 @@
             android:layout_marginTop="20dp"
             />
 
+
+        <ProgressBar
+            android:id="@+id/progressbar"
+            android:visibility="visible"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imagemSolucao"
+            app:layout_constraintEnd_toEndOf="@+id/imagemSolucao"
+            app:layout_constraintStart_toStartOf="@+id/imagemSolucao"
+            app:layout_constraintTop_toTopOf="@+id/imagemSolucao" />
         <ImageView
             android:id="@+id/imagemSolucao"
             android:layout_width="match_parent"
             android:layout_height="300dp"
-            app:srcCompat="@drawable/ic_image_search"
             app:layout_constraintStart_toStartOf="@id/view_content"
             app:layout_constraintEnd_toEndOf="@id/view_content"
             app:layout_constraintTop_toTopOf="@id/view_content"
             android:layout_marginLeft="50dp"
             android:layout_marginRight="50dp"
             android:layout_marginTop="10dp"  />
+
+
+
+
 
 
         <TextView

@@ -14,6 +14,7 @@ import android.os.Handler;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -52,6 +53,9 @@ public class Passos extends Drawer {
     FloatingActionButton callbtn;
     static int PERMISSION_CODE= 100;
     private static final int PERMISSION_REQUEST_CODE = 1;
+    ProgressBar progressobar;
+    Boolean itsNotFirstTime = false;
+
 
     Context context;
 
@@ -59,16 +63,17 @@ public class Passos extends Drawer {
     ImageView imagemSolucao, btnSemAcesso;
 
     List<PassosObj> passosObjList;
-
+    Dialog mDialog;
     Call<List<PassosObj>> call;
 
     LayoutPassosBinding layoutPassosBinding;
 
-    Dialog mDialog;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Boolean itsNotFirstTime = false;
+
 
         super.onCreate(savedInstanceState);
         layoutPassosBinding = LayoutPassosBinding.inflate(getLayoutInflater());
@@ -92,6 +97,8 @@ public class Passos extends Drawer {
         tituloSolucao = getIntent().getStringExtra("TITULO_SOLUCAO");
         titulo = getIntent().getStringExtra("titulo");
         titulosProblemas = getIntent().getStringExtra("titulosProblemas");
+
+
 
         // Instanciação de variáveis chave
         context = this;
@@ -140,6 +147,7 @@ public class Passos extends Drawer {
                     return;
                 }
                 passosObjList = response.body();
+
                 // Armazena o total de passos dessa solução
                 qtdPassos = passosObjList.size();
                 inserirNaTela();
@@ -153,6 +161,31 @@ public class Passos extends Drawer {
             }
         });
 
+    }
+
+    private void progressbarshow(){
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() { progressobar.setVisibility(View.VISIBLE); }
+        }, 0);    }
+
+    private void progressobarhide(){
+
+        progressobar=findViewById(R.id.progressbar);
+
+        if (itsNotFirstTime) {
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() { progressobar.setVisibility(View.INVISIBLE); }
+            }, 3000);
+        } else {
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() { progressobar.setVisibility(View.INVISIBLE); }
+            }, 300);
+
+            itsNotFirstTime = true;
+        }
     }
 
     public void rtrnPasso(View view){
@@ -225,6 +258,7 @@ public class Passos extends Drawer {
 
     public void inserirNaTela(){
         // Inserção dos Valores na tela
+        progressbarshow();
 
         nomeSolucao.setText(tituloSolucao);
 
@@ -241,6 +275,8 @@ public class Passos extends Drawer {
                 .load(imagemBD)
                 .error(R.drawable.ic_error)
                 .into(imagemSolucao);
+        progressobarhide();
+
     }
 
 

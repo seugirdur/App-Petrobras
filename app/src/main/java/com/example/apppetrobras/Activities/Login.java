@@ -70,7 +70,7 @@ public class Login extends AppCompatActivity {
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() { progressbar.setVisibility(View.INVISIBLE); }
-                }, 1000);
+                }, 5000);
 
             }
         });

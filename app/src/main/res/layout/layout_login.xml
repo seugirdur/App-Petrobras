@@ -72,7 +72,6 @@
             android:gravity="center"
             android:text="@string/keep_loggedin"
             android:textColor="@color/black"
-            android:onClick="storecheckconn"
             android:textSize="14dp"
             app:layout_constraintEnd_toEndOf="@+id/view"
             app:layout_constraintHorizontal_bias="0.486"
@@ -116,14 +115,14 @@
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:background="?android:attr/selectableItemBackground"
-            android:text="@string/texto_tela_escolha"
+            android:text="@string/textologin"
             android:textColor="@color/black"
             app:layout_constraintStart_toEndOf="@id/entre_em_contato_conosco"
             app:layout_constraintTop_toBottomOf="@id/esta_com_problemas"
             app:layout_constraintBottom_toTopOf="@id/button_login"
             app:layout_constraintEnd_toEndOf="@id/esta_com_problemas"
             android:layout_marginTop="7dp"
-             />
+            />
 
         <androidx.appcompat.widget.AppCompatButton
 

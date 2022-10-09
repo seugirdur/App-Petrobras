@@ -6,7 +6,7 @@
         android:gravity="center"/>
 
     <item
-        android:drawable="@drawable/ic_person"
+        android:drawable="@drawable/ic_person_white"
         android:gravity="center"/>
 
 </layer-list>

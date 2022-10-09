@@ -196,15 +196,28 @@
         <entry key="..\:/Users/sabri/StudioProjects/App-petrobras/app/src/main/res/drawable/view_tela_login.xml" value="0.2265" />
         <entry key="..\:/Users/sabri/StudioProjects/App-petrobras/app/src/main/res/layout/fragment_ajuda_fragment.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/sabri/StudioProjects/App-petrobras/app/src/main/res/layout/fragment_historico_.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/sabri/StudioProjects/App-petrobras/app/src/main/res/layout/fragment_opcoes_.xml" value="0.2" />
         <entry key="..\:/Users/sabri/StudioProjects/App-petrobras/app/src/main/res/layout/fragment_perfil_.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/sabri/StudioProjects/App-petrobras/app/src/main/res/layout/item_ajuda_list.xml" value="0.22826086956521738" />
-        <entry key="..\:/Users/sabri/StudioProjects/App-petrobras/app/src/main/res/layout/item_historico.xml" value="0.4" />
+        <entry key="..\:/Users/sabri/StudioProjects/App-petrobras/app/src/main/res/layout/item_historico.xml" value="0.264" />
         <entry key="..\:/Users/sabri/StudioProjects/App-petrobras/app/src/main/res/layout/item_list.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/sabri/StudioProjects/App-petrobras/app/src/main/res/layout/item_list_admin.xml" value="0.2" />
         <entry key="..\:/Users/sabri/StudioProjects/App-petrobras/app/src/main/res/layout/item_opcoes.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/sabri/StudioProjects/App-petrobras/app/src/main/res/layout/item_relatorio.xml" value="0.25" />
+        <entry key="..\:/Users/sabri/StudioProjects/App-petrobras/app/src/main/res/layout/item_soluction_list.xml" value="0.25" />
+        <entry key="..\:/Users/sabri/StudioProjects/App-petrobras/app/src/main/res/layout/layout_administrador.xml" value="0.25" />
+        <entry key="..\:/Users/sabri/StudioProjects/App-petrobras/app/src/main/res/layout/layout_cadastro.xml" value="0.25" />
+        <entry key="..\:/Users/sabri/StudioProjects/App-petrobras/app/src/main/res/layout/layout_configuracoes.xml" value="0.25" />
+        <entry key="..\:/Users/sabri/StudioProjects/App-petrobras/app/src/main/res/layout/layout_drawer.xml" value="0.25" />
+        <entry key="..\:/Users/sabri/StudioProjects/App-petrobras/app/src/main/res/layout/layout_historico.xml" value="0.25" />
+        <entry key="..\:/Users/sabri/StudioProjects/App-petrobras/app/src/main/res/layout/layout_hub.xml" value="0.25" />
+        <entry key="..\:/Users/sabri/StudioProjects/App-petrobras/app/src/main/res/layout/layout_inicio.xml" value="0.25" />
         <entry key="..\:/Users/sabri/StudioProjects/App-petrobras/app/src/main/res/layout/layout_login.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/sabri/StudioProjects/App-petrobras/app/src/main/res/layout/layout_perfil.xml" value="0.264" />
         <entry key="..\:/Users/sabri/StudioProjects/App-petrobras/app/src/main/res/layout/layout_perfil_atualizar.xml" value="0.2" />
+        <entry key="..\:/Users/sabri/StudioProjects/App-petrobras/app/src/main/res/layout/layout_relatorio.xml" value="0.25" />
+        <entry key="..\:/Users/sabri/StudioProjects/App-petrobras/app/src/main/res/layout/layout_tab.xml" value="0.25" />
+        <entry key="..\:/Users/sabri/StudioProjects/App-petrobras/app/src/main/res/layout/layout_tela_admin_chamadas.xml" value="0.25" />
         <entry key="..\:/Users/sabri/StudioProjects/App-petrobras/app/src/main/res/layouts/act/drawable/ic_user_perfil.xml" value="0.2265" />
         <entry key="app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.123" />
         <entry key="app/src/main/res/layout/activity_form_cadastro.xml" value="0.19322916666666667" />

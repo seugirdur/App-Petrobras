@@ -153,7 +153,7 @@ public class Login extends AppCompatActivity {
         SharedPreferences sharedPreferences = getSharedPreferences(
                 getString(R.string.preference_file_key), Context.MODE_PRIVATE);
 
-        Boolean checktorf = sharedPreferences.getBoolean("checktorf", false);
+        Boolean checktorf = sharedPreferences.getBoolean("checktorf",false);
         edit_user=findViewById(R.id.edit_user);
         if(checktorf){
             check_connected.setChecked(true);

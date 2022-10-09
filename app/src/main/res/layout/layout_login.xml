@@ -72,6 +72,7 @@
             android:gravity="center"
             android:text="@string/keep_loggedin"
             android:textColor="@color/black"
+            android:onClick="storecheckconn"
             android:textSize="14dp"
             app:layout_constraintEnd_toEndOf="@+id/view"
             app:layout_constraintHorizontal_bias="0.486"

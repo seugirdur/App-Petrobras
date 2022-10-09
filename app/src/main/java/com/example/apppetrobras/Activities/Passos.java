@@ -454,6 +454,14 @@ public class Passos extends Drawer {
 
         } else {
             startActivity(intent);
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    Intent i = new Intent(context, Tabs.class);
+                    startActivity(i);
+                }
+            }, 3000);
+
 
         }
     }

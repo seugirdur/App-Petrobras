@@ -58,9 +58,10 @@ public class Inicio extends AppCompatActivity {
 
     //redirecionamento para ajuda
     public void ajuda(View view){
-        Intent intent = new Intent(this, Ajuda.class);
-        startActivity(intent);
 
+        mDialog.setContentView(R.layout.popup);
+        mDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        mDialog.show();
     }
 
     public void cadastrar (View view){

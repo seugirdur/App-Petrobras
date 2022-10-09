@@ -69,7 +69,7 @@ public class EquipamentosFragment extends Fragment implements RecyclerViewIntefa
                 getString(R.string.equipamentos_10),
                 getString(R.string.equipamentos_11),
                 getString(R.string.equipamentos_12),
-                getString(R.string.equipamentos_13),
+                getString(R.string.equipamentos_13)
         };
 
         int[] idProblemas = new int[]{

@@ -79,6 +79,7 @@ public class EmAbertoFragment extends Fragment implements RecyclerViewInteface{
         // Definição de valores que serão redirecionados
         int idRelatorio = AdminObjList.get(position).getIdRelatorio();
         intent.putExtra("idRelatorio", idRelatorio);
+        intent.putExtra("notnotlmao", 1);
         startActivity(intent);
     }
 

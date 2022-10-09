@@ -107,7 +107,7 @@ public interface  API {
     );
 
     @FormUrlEncoded
-    @POST("/soluctions/textoEquipamento")
+    @POST("/soluctions/textoEquipamentos")
     Call<List<PassosObj>> getTextoEquipamento(
             @Field("idSolucao") int idSolucao,
             @Field("idtexto") int idtexto

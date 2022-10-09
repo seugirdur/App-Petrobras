@@ -56,7 +56,7 @@ public class Relatorio extends Drawer implements RecyclerViewInteface{
     private boolean funciona = false;
     FloatingActionButton add_icon, download_icon, concludeicon;
     Animation fabOpen, fabClose, rotateForward, rotateBackward;
-    int idRelatorio;
+    int idRelatorio, notnotlmao;
     Dialog mDialog;
     SharedPreferences sp;
     SharedPreferences.Editor editor;
@@ -72,6 +72,7 @@ public class Relatorio extends Drawer implements RecyclerViewInteface{
         setContentView(layoutRelatorioBinding.getRoot());
         allocateActivityTitle("Relatório");
         idRelatorio = getIntent().getIntExtra("idRelatorio",6);
+        notnotlmao = getIntent().getIntExtra("notnotlmao",0);
 
 
         add_icon = (FloatingActionButton) findViewById(R.id.add_icon);
@@ -348,6 +349,8 @@ public class Relatorio extends Drawer implements RecyclerViewInteface{
 
         if (isAdmin==1) {
 
+            if (notnotlmao==1){
+
             Call<ResponseBody> call = RetroFitClient
                     .getInstance()
                     .getAPI()
@@ -374,6 +377,10 @@ public class Relatorio extends Drawer implements RecyclerViewInteface{
             startActivity(intent);
 
 
+        }else {
+                Toast.makeText(Relatorio.this, "Esse problema já foi solucionado", Toast.LENGTH_LONG).show();
+
+            }
         } else {
             Toast.makeText(Relatorio.this, "Você não é administrador", Toast.LENGTH_LONG).show();
 

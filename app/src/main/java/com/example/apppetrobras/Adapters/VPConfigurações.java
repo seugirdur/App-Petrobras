@@ -8,6 +8,7 @@ import androidx.viewpager2.adapter.FragmentStateAdapter;
 import com.example.apppetrobras.fragments.Ajuda_fragment;
 import com.example.apppetrobras.fragments.History;
 import com.example.apppetrobras.fragments.Opcoes_Fragment;
+import com.example.apppetrobras.fragments.Perfil_Fragment;
 
 public class VPConfigurações extends FragmentStateAdapter {
 
@@ -21,7 +22,7 @@ public class VPConfigurações extends FragmentStateAdapter {
     public Fragment createFragment(int position) {
         switch (position){
             case 0:
-                return new Ajuda_fragment();
+                return new Perfil_Fragment();
             case 1:
                 return new Opcoes_Fragment();
             case 2:

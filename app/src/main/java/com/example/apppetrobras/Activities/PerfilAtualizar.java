@@ -83,35 +83,34 @@ public class PerfilAtualizar extends Drawer {
             }
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                String str=num_tel .getText().toString();
-                int textLength=num_tel .getText().length();
+                String str= num_tel.getText().toString();
+                int textLength= num_tel.getText().length();
                 if (textLength == 1) {
-
                     if (!str.contains("(")) {
-                        num_tel .setText(new StringBuilder(num_tel.getText().toString()).insert(str.length() - 1, "(").toString());
-                        num_tel.setSelection(num_tel .getText().length());
+                        num_tel.setText(new StringBuilder(num_tel.getText().toString()).insert(str.length() - 1, "(").toString());
+                        num_tel.setSelection(num_tel.getText().length());
                     }
                 }
                 if (textLength == 4) {
 
                     if (!str.contains(")")) {
-                        num_tel .setText(new StringBuilder(num_tel.getText().toString()).insert(str.length() - 1, ")").toString());
-                        num_tel.setSelection(num_tel .getText().length());
+                        num_tel.setText(new StringBuilder(num_tel.getText().toString()).insert(str.length() - 1, ")").toString());
+                        num_tel.setSelection(num_tel.getText().length());
                     }
                 }
 
                 if (textLength == 5) {
 
                     if (!str.contains(" ")) {
-                        num_tel .setText(new StringBuilder(num_tel.getText().toString()).insert(str.length() - 1, " ").toString());
-                        num_tel.setSelection(num_tel .getText().length());
+                        num_tel.setText(new StringBuilder(num_tel.getText().toString()).insert(str.length() - 1, " ").toString());
+                        num_tel.setSelection(num_tel.getText().length());
                     }
                 }
                 if (textLength == 11) {
 
                     if (!str.contains("-")) {
-                        num_tel .setText(new StringBuilder(num_tel.getText().toString()).insert(str.length() - 1, "-").toString());
-                        num_tel.setSelection(num_tel .getText().length());
+                        num_tel.setText(new StringBuilder(num_tel.getText().toString()).insert(str.length() - 1, "-").toString());
+                        num_tel.setSelection(num_tel.getText().length());
                     }
                 }
 
@@ -137,39 +136,40 @@ public class PerfilAtualizar extends Drawer {
                 String nomeatualizado = nomecompleto.getText().toString();
                 String telatualizado = num_tel.getText().toString();
                 String emailatualizado = email1.getText().toString();
-//        String telatualizado = String.valueOf(num_tel.getText());
+//              String telatualizado = String.valueOf(num_tel.getText());
 
+                if(nomeatualizado.isEmpty()) { nomeatualizado = nome;}
+                if(telatualizado.isEmpty()) { telatualizado = tel;}
+                if(emailatualizado.isEmpty()) { emailatualizado = email;}
 
+                atualizate(nomeatualizado, emailatualizado, telatualizado, chave);
 
-
-
-                if(nomeatualizado.isEmpty()){
-                    atualizate(nome, telatualizado, emailatualizado,chave);
-
-                }
-                if(telatualizado.isEmpty()){
-                    atualizate(nomeatualizado,tel,emailatualizado,chave);
-                }
-
-                if(emailatualizado.isEmpty()){
-                    atualizate(nomeatualizado,telatualizado,email,chave);
-                }
-                if(emailatualizado.isEmpty() && telatualizado.isEmpty()){
-                    atualizate(nomeatualizado,tel,email,chave);
-                }
-
-                if(emailatualizado.isEmpty() && nomeatualizado.isEmpty()){
-                    atualizate(nome,telatualizado,email,chave);
-                }
-                if(telatualizado.isEmpty() && nomeatualizado.isEmpty()){
-                    atualizate(nome,tel,emailatualizado,chave);
-                }
-                if(nomeatualizado.isEmpty() && emailatualizado.isEmpty() && telatualizado.isEmpty()){
-                    atualizate(nome,tel,email,chave);
-                }
-
-                if(!nomeatualizado.isEmpty() && !emailatualizado.isEmpty() && !telatualizado.isEmpty()){
-                    atualizate(nomeatualizado, telatualizado, emailatualizado, chave);}
+//                if(nomeatualizado.isEmpty()){
+//                    atualizate(nome, telatualizado, emailatualizado,chave);
+//                }
+//                if(telatualizado.isEmpty()){
+//                    atualizate(nomeatualizado,tel,emailatualizado,chave);
+//                }
+//
+//                if(emailatualizado.isEmpty()){
+//                    atualizate(nomeatualizado,telatualizado,email,chave);
+//                }
+//                if(emailatualizado.isEmpty() && telatualizado.isEmpty()){
+//                    atualizate(nomeatualizado,tel,email,chave);
+//                }
+//
+//                if(emailatualizado.isEmpty() && nomeatualizado.isEmpty()){
+//                    atualizate(nome,telatualizado,email,chave);
+//                }
+//                if(telatualizado.isEmpty() && nomeatualizado.isEmpty()){
+//                    atualizate(nome,tel,emailatualizado,chave);
+//                }
+//                if(nomeatualizado.isEmpty() && emailatualizado.isEmpty() && telatualizado.isEmpty()){
+//                    atualizate(nome,tel,email,chave);
+//                }
+//
+//                if(!nomeatualizado.isEmpty() && !emailatualizado.isEmpty() && !telatualizado.isEmpty()){
+//                    atualizate(nomeatualizado, telatualizado, emailatualizado, chave);}
 
 
                 btn_tela_perfil_update.setEnabled(false);

@@ -48,7 +48,7 @@ public class Cadastro extends AppCompatActivity {
 
 
         CheckBox textView = findViewById(R.id.aceitoTermos);
-        String text = "Li e concordo com os Termos de Uso e Políticas de Privacidade";
+        String text = "Li e concordo com os Termos de Uso";
 
         SpannableString ss = new SpannableString(text);
 
@@ -58,7 +58,7 @@ public class Cadastro extends AppCompatActivity {
         ClickableSpan clicavel1 = new ClickableSpan() {
             public void onClick(View widget) {
                 //link do pdf dos termos de uso
-                String url = "https://www.hostinger.com.br/tutoriais/tutorial-do-git-basics-introducao#:~:text=Instalar%20o%20GIT%20no%20Windows%3A&text=Acesse%20o%20site%20oficial%20e,concluir%20com%20%C3%AAxito%20a%20instala%C3%A7%C3%A3o.";
+                String url = "https://drive.google.com/file/d/1P39Iel7CKZqv8UF3EkSCCzer_GmJ5_BX/view?usp=sharing";
                 Intent i = new Intent(Intent.ACTION_VIEW);
                 i.setData(Uri.parse(url));
                 startActivity(i);
@@ -68,28 +68,28 @@ public class Cadastro extends AppCompatActivity {
         ClickableSpan clicavel15 = new ClickableSpan() {
             public void onClick(View widget) {
                 //link do pdf dos termos de uso
-                String url = "https://www.hostinger.com.br/tutoriais/tutorial-do-git-basics-introducao#:~:text=Instalar%20o%20GIT%20no%20Windows%3A&text=Acesse%20o%20site%20oficial%20e,concluir%20com%20%C3%AAxito%20a%20instala%C3%A7%C3%A3o.";
+                String url = "https://drive.google.com/file/d/1P39Iel7CKZqv8UF3EkSCCzer_GmJ5_BX/view?usp=sharing";
                 Intent i = new Intent(Intent.ACTION_VIEW);
                 i.setData(Uri.parse(url));
             }
         };
-
-
-        ClickableSpan clicavel2 = new ClickableSpan() {
-            @Override
-            public void onClick(View widget) {
-                //link do pdf das políticas de privacidade
-                String url = "https://github.com/seugirdur/App-petrobras";
-                Intent i = new Intent(Intent.ACTION_VIEW);
-                i.setData(Uri.parse(url));
-                startActivity(i);
-            }
-        };
+//
+//
+//        ClickableSpan clicavel2 = new ClickableSpan() {
+//            @Override
+//            public void onClick(View widget) {
+//                //link do pdf das políticas de privacidade
+//                String url = "https://drive.google.com/file/d/1P39Iel7CKZqv8UF3EkSCCzer_GmJ5_BX/view?usp=sharing";
+//                Intent i = new Intent(Intent.ACTION_VIEW);
+//                i.setData(Uri.parse(url));
+//                startActivity(i);
+//            }
+//        };
 
         // declarando parte que funcionará como clicável
         ss.setSpan(clicavel1, 21, 27, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         ss.setSpan(clicavel15, 21, 34, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-        ss.setSpan(clicavel2, 37, 61, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        //ss.setSpan(clicavel2, 37, 61, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
 
         textView.setText(ss);
         textView.setMovementMethod(LinkMovementMethod.getInstance());
@@ -499,4 +499,5 @@ private void registrate(){
 //            return null;
 //        }
 //    }
+
 }

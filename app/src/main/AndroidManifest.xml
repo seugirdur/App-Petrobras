@@ -20,13 +20,15 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".Activities.AjudaCad"
+            android:exported="false" />
+        <activity
             android:name=".Activities.Historico"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-
         <activity
             android:name=".Activities.Perfil"
             android:exported="false" />
@@ -39,11 +41,9 @@
         <activity
             android:name=".Activities.Ligacao"
             android:exported="false" />
-
         <activity
             android:name="com.example.Navigations.Hub"
-            android:exported="false"/>
-
+            android:exported="false" />
         <activity
             android:name=".Activities.Ajuda"
             android:exported="false" />
@@ -82,17 +82,17 @@
             android:name="com.example.Navigations.Administrador"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-
         <activity
             android:name=".Activities.SplashScreen"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.NoActionBar">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

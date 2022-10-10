@@ -1,5 +1,6 @@
 package com.example.Navigations;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.content.Context;
@@ -79,7 +80,9 @@ public class Tabs extends Drawer {
         viewPager2.setCurrentItem(0);
     }
 
-
+    public void OnBackPressedCallback() {
+        finish();
+    }
 
     
 }

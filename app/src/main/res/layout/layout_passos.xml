@@ -1,207 +1,223 @@
 <?xml version="1.0" encoding="utf-8"?>
- <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/layout_principal"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activities.Passos"
-    android:theme="@style/Theme.AppCompat.Light">
+    android:fillViewport="true">
 
-
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/second_layout"
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/layout_principal"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_constraintStart_toStartOf="@id/layout_principal"
-        app:layout_constraintEnd_toEndOf="@id/layout_principal"
-        app:layout_constraintTop_toTopOf="@id/layout_principal"
-        android:background="@color/white"
-         >
+        tools:context=".Activities.Passos"
+        android:theme="@style/Theme.AppCompat.Light">
 
-        <TextView
-            android:id="@+id/nomeSolucao"
-            android:layout_height="wrap_content"
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/second_layout"
             android:layout_width="match_parent"
-            android:text=""
-            android:textStyle="bold"
-            android:textColor="@color/Verde_Petrobras"
-            android:textSize="25dp"
-            android:paddingLeft="5dp"
-            android:paddingRight="5dp"
-            android:textAlignment="center"
-            app:layout_constraintStart_toStartOf="@id/second_layout"
-            app:layout_constraintEnd_toEndOf="@id/second_layout"
-            app:layout_constraintTop_toTopOf="@id/second_layout"
-            app:layout_constraintBottom_toTopOf="@id/view_content"
-            android:layout_marginTop="10dp"
-            android:ellipsize="marquee"
-            android:fadingEdge="horizontal"
-            android:lines="1"
-            android:marqueeRepeatLimit="marquee_forever"
-            android:scrollHorizontally="true"
-            android:singleLine="true"
-            tools:ignore="EllipsizeMaxLines" />
+            android:layout_height="match_parent"
+            app:layout_constraintStart_toStartOf="@id/layout_principal"
+            app:layout_constraintEnd_toEndOf="@id/layout_principal"
+            app:layout_constraintTop_toTopOf="@id/layout_principal"
+            android:background="@color/white"
+            >
 
-        <View
-            android:id="@+id/view_content"
-            android:layout_width="match_parent"
-            android:layout_height="380dp"
-            android:background="@drawable/passos_background_1"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/nomeSolucao"
-            android:layout_marginLeft="50dp"
-            android:layout_marginRight="50dp"
-            android:layout_marginTop="20dp"
-            />
+            <TextView
+                android:id="@+id/nomeSolucao"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:text=""
+                android:textStyle="bold"
+                android:textColor="@color/Verde_Petrobras"
+                android:textSize="25dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:textAlignment="center"
+                app:layout_constraintStart_toStartOf="@id/second_layout"
+                app:layout_constraintEnd_toEndOf="@id/second_layout"
+                app:layout_constraintTop_toTopOf="@id/second_layout"
+                app:layout_constraintBottom_toTopOf="@id/view_content"
+                android:layout_marginTop="10dp"
+                android:ellipsize="marquee"
+                android:fadingEdge="horizontal"
+                android:lines="1"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:scrollHorizontally="true"
+                android:singleLine="true"
+                tools:ignore="EllipsizeMaxLines" />
 
-
-        <ProgressBar
-            android:id="@+id/progressbar"
-            android:visibility="visible"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            app:layout_constraintBottom_toBottomOf="@+id/imagemSolucao"
-            app:layout_constraintEnd_toEndOf="@+id/imagemSolucao"
-            app:layout_constraintStart_toStartOf="@+id/imagemSolucao"
-            app:layout_constraintTop_toTopOf="@+id/imagemSolucao" />
-        <ImageView
-            android:id="@+id/imagemSolucao"
-            android:layout_width="match_parent"
-            android:layout_height="300dp"
-            app:layout_constraintStart_toStartOf="@id/view_content"
-            app:layout_constraintEnd_toEndOf="@id/view_content"
-            app:layout_constraintTop_toTopOf="@id/view_content"
-            android:layout_marginLeft="50dp"
-            android:layout_marginRight="50dp"
-            android:layout_marginTop="10dp"  />
+            <View
+                android:id="@+id/view_content"
+                android:layout_width="match_parent"
+                android:layout_height="380dp"
+                android:background="@drawable/passos_background_1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/nomeSolucao"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:layout_marginTop="20dp"
+                />
 
 
+            <ProgressBar
+                android:id="@+id/progressbar"
+                android:visibility="visible"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:layout_constraintBottom_toBottomOf="@+id/imagemSolucao"
+                app:layout_constraintEnd_toEndOf="@+id/imagemSolucao"
+                app:layout_constraintStart_toStartOf="@+id/imagemSolucao"
+                app:layout_constraintTop_toTopOf="@+id/imagemSolucao" />
+            <ImageView
+                android:id="@+id/imagemSolucao"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                app:layout_constraintStart_toStartOf="@id/view_content"
+                app:layout_constraintEnd_toEndOf="@id/view_content"
+                app:layout_constraintTop_toTopOf="@id/view_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:layout_marginTop="10dp"  />
 
 
 
 
-        <TextView
-            android:id="@+id/numeroPasso"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="20dp"
-            android:text="Passo:"
-            android:textColor="@color/black"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="@id/view_content"
-            app:layout_constraintTop_toBottomOf="@id/imagemSolucao" />
 
-        <ImageButton
-            android:id="@+id/avanca_passo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_avanca_passo"
-            app:layout_constraintTop_toTopOf="@id/view_content"
-            app:layout_constraintBottom_toBottomOf="@id/text_layout"
-            app:layout_constraintEnd_toEndOf="@id/second_layout"
-            android:background="?android:attr/selectableItemBackground"
-            android:layout_marginRight="5dp"
-            android:onClick="proxPasso"
-            />
 
-        <ImageButton
-            android:id="@+id/volta_passo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_volta_passo"
-            app:layout_constraintTop_toTopOf="@id/view_content"
-            app:layout_constraintBottom_toBottomOf="@id/text_layout"
-            app:layout_constraintStart_toStartOf="@id/second_layout"
-            android:background="?android:attr/selectableItemBackground"
-            android:layout_marginLeft="5dp"
-            android:onClick="rtrnPasso" />
+            <TextView
+                android:id="@+id/numeroPasso"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:text="Passo:"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/view_content"
+                app:layout_constraintTop_toBottomOf="@id/imagemSolucao" />
 
-        <ImageView
-            android:id="@+id/btnResolveu"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:visibility="invisible"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/ripple_effect_soluction"
-            android:clickable="true"
-            android:onClick="dontGetMeRight"
-            android:src="@drawable/ic_check_circle"
-            app:layout_constraintStart_toStartOf="@id/text_layout"
-            app:layout_constraintTop_toBottomOf="@id/text_layout" />
+            <ImageButton
+                android:id="@+id/avanca_passo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_avanca_passo"
+                app:layout_constraintTop_toTopOf="@id/view_content"
+                app:layout_constraintBottom_toBottomOf="@id/text_layout"
+                app:layout_constraintEnd_toEndOf="@id/second_layout"
+                android:background="?android:attr/selectableItemBackground"
+                android:layout_marginRight="5dp"
+                android:onClick="proxPasso"
+                />
 
-        <ImageView
-            android:id="@+id/btnSemAcesso"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/ripple_effect_soluction"
-            android:visibility="visible"
-            android:onClick="abrirpopup"
-            android:src="@drawable/lock_open_and_circle"
-            app:layout_constraintStart_toStartOf="@id/text_layout"
-            app:layout_constraintEnd_toEndOf="@id/text_layout"
-            app:layout_constraintTop_toBottomOf="@id/text_layout" />
+            <ImageButton
+                android:id="@+id/volta_passo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_volta_passo"
+                app:layout_constraintTop_toTopOf="@id/view_content"
+                app:layout_constraintBottom_toBottomOf="@id/text_layout"
+                app:layout_constraintStart_toStartOf="@id/second_layout"
+                android:background="?android:attr/selectableItemBackground"
+                android:layout_marginLeft="5dp"
+                android:onClick="rtrnPasso" />
+
+            <ImageView
+                android:id="@+id/btnResolveu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                android:background="@drawable/ripple_effect_soluction"
+                android:clickable="true"
+                android:onClick="dontGetMeRight"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/ic_check_circle"
+                app:layout_constraintStart_toStartOf="@id/text_layout"
+                app:layout_constraintTop_toBottomOf="@id/text_layout"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <ImageView
+                android:id="@+id/btnSemAcesso"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ripple_effect_soluction"
+                android:visibility="visible"
+                android:onClick="abrirpopup"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/lock_open_and_circle"
+                app:layout_constraintStart_toStartOf="@id/text_layout"
+                app:layout_constraintEnd_toEndOf="@id/text_layout"
+                app:layout_constraintTop_toBottomOf="@id/text_layout"
+                app:layout_constraintBottom_toBottomOf="parent"/>
 
             <ImageView
                 android:id="@+id/btnNaoResolveu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:visibility="invisible"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
                 app:layout_constraintEnd_toEndOf="@id/text_layout"
                 app:layout_constraintTop_toBottomOf="@id/text_layout"
-                android:layout_marginTop="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 android:onClick="dontGetMeWrong"
                 android:clickable="true"
                 android:background="@drawable/ripple_effect_soluction"
                 app:srcCompat="@drawable/ic_cancel_circle"/>
 
 
-         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/text_layout"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:background="@drawable/passos_background_2"
-            app:layout_constraintStart_toStartOf="@id/view_content"
-            app:layout_constraintEnd_toEndOf="@id/view_content"
-            app:layout_constraintTop_toBottomOf="@id/numeroPasso"
-            android:layout_marginLeft="50dp"
-            android:layout_marginRight="50dp"
-             android:layout_marginTop="20dp"
-            >
-
-            <ScrollView
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/text_layout"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:layout_constraintStart_toStartOf="@id/text_layout"
-                app:layout_constraintTop_toTopOf="@id/text_layout"
-                app:layout_constraintBottom_toBottomOf="@id/text_layout"
-                app:layout_constraintEnd_toEndOf="@id/text_layout"
-                android:fillViewport="true"
+                android:layout_height="200dp"
+                android:background="@drawable/passos_background_2"
+                app:layout_constraintStart_toStartOf="@id/view_content"
+                app:layout_constraintEnd_toEndOf="@id/view_content"
+                app:layout_constraintTop_toBottomOf="@id/numeroPasso"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:layout_marginTop="20dp"
                 >
 
-            <TextView
-                android:id="@+id/descricaoPasso"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text=""
-                android:textSize="18dp"
-                android:textColor="@color/black"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="3dp"
-                />
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintStart_toStartOf="@id/text_layout"
+                    app:layout_constraintTop_toTopOf="@id/text_layout"
+                    app:layout_constraintBottom_toBottomOf="@id/text_layout"
+                    app:layout_constraintEnd_toEndOf="@id/text_layout"
+                    android:fillViewport="true"
+                    >
 
-            </ScrollView>
+                    <TextView
+                        android:id="@+id/descricaoPasso"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text=""
+                        android:textSize="18dp"
+                        android:textColor="@color/black"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="3dp"
+                        />
 
-         </androidx.constraintlayout.widget.ConstraintLayout>
+                </ScrollView>
 
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

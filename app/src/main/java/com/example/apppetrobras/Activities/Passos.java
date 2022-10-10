@@ -490,7 +490,10 @@ public class Passos extends Drawer {
     }
 
 
-    public void fecharPopup(View view){
-        mDialog.dismiss();
+    public void Sair(View view){
+        Toast.makeText(this, "Liga pra evitar dor de cabeça", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(Passos.this,Tabs.class);
+        startActivity(intent);
+        finish();
     }
 }

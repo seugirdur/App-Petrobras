@@ -33,7 +33,7 @@ import retrofit2.Response;
 
 public class Ligacao extends Drawer {
 
-    LayoutLigacaoBinding layoutLigacaoBinding;
+   LayoutLigacaoBinding layoutLigacaoBinding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +42,7 @@ public class Ligacao extends Drawer {
         setContentView(layoutLigacaoBinding.getRoot());
         allocateActivityTitle("Ligação");
     }
+
 
     public void ligacao(View view){}
 

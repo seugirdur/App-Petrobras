@@ -332,7 +332,6 @@ public class Cadastro extends AppCompatActivity {
         String Checksenha =  senha.getText().toString();
 
 
-
         if(!senhaIgual()){
             Toast.makeText(this, "As senhas não coincidem", Toast.LENGTH_SHORT).show();
             senha1.setText("");

@@ -76,4 +76,5 @@ dependencies {
     // Skip this if you don't want to use integration libraries or configure Glide.
     annotationProcessor 'com.github.bumptech.glide:compiler:4.13.2'
     implementation 'com.github.chrisbanes:PhotoView:2.3.0'
+    // https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple
 }

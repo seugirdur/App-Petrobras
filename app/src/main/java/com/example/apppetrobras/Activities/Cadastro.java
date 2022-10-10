@@ -120,13 +120,13 @@ public class Cadastro extends AppCompatActivity {
                 }
 
 
-                    if (textLength == 6) {
+                if (textLength == 6) {
 
-                        if (dataNascArray[5] != "/" && flag == true) {
-                            dataNasc.setText(new StringBuilder(dataNasc.getText().toString()).insert(str.length() - 1, "/").toString());
-                            dataNasc.setSelection(dataNasc.getText().length());
-                            flag = false;
-                        }
+                    if (dataNascArray[5] != "/" && flag == true) {
+                        dataNasc.setText(new StringBuilder(dataNasc.getText().toString()).insert(str.length() - 1, "/").toString());
+                        dataNasc.setSelection(dataNasc.getText().length());
+                        flag = false;
+                    }
 
                 }
 
@@ -284,7 +284,7 @@ public class Cadastro extends AppCompatActivity {
         });
 
 
-        }
+    }
 
     //redirecionamento para ajuda
     public void ajuda(View view){
@@ -332,7 +332,6 @@ public class Cadastro extends AppCompatActivity {
         String Checksenha =  senha.getText().toString();
 
 
-
         if(!senhaIgual()){
             Toast.makeText(this, "As senhas não coincidem", Toast.LENGTH_SHORT).show();
             senha1.setText("");
@@ -344,6 +343,13 @@ public class Cadastro extends AppCompatActivity {
             //new Insert().execute();
             registrate();
             CadastroObj cadastro = resgataInfo();
+        }
+
+
+        }
+
+
+        private void vamoprologin() {
             Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
                 public void run() {
@@ -352,8 +358,6 @@ public class Cadastro extends AppCompatActivity {
                 }
             }, 1500);
         }
-
-    }
 
 
     public CadastroObj resgataInfo() {
@@ -395,40 +399,47 @@ public class Cadastro extends AppCompatActivity {
         return checking;
     }
 
-private void registrate(){
-    CadastroObj info = new CadastroObj(resgataInfo().nome, resgataInfo().email, resgataInfo().tel,resgataInfo().dataNasc, resgataInfo().chave, resgataInfo().senha, resgataInfo().isAdmin);
-            String nome = info.nome.toString().trim();
-            String email = info.email.toString().trim();
-            String tel = info.tel.toString().trim();
-            String dataNasc = info.dataNasc.toString().trim();
-            String chave = info.chave.toString().trim();
-            String senha = info.senha.toString().trim();
-            int isAdmin = 0;
+    private void registrate(){
+        CadastroObj info = new CadastroObj(resgataInfo().nome, resgataInfo().email, resgataInfo().tel,resgataInfo().dataNasc, resgataInfo().chave, resgataInfo().senha, resgataInfo().isAdmin);
+        String nome = info.nome.toString().trim();
+        String email = info.email.toString().trim();
+        String tel = info.tel.toString().trim();
+        String dataNasc = info.dataNasc.toString().trim();
+        String chave = info.chave.toString().trim();
+        String senha = info.senha.toString().trim();
+        int isAdmin = 0;
 
-            Call<ResponseBody> call = RetroFitClient
-                    .getInstance()
-                    .getAPI()
-                    .createUser(nome, email, tel, dataNasc, 0 , chave, senha);
+        Call<ResponseBody> call = RetroFitClient
+                .getInstance()
+                .getAPI()
+                .createUser(nome, email, tel, dataNasc, 0 , chave, senha);
 
-            call.enqueue(new Callback<ResponseBody>() {
-                @Override
-                public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                    try {
+        call.enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                try {
+                    int code = response.code();
+                    if (code == 201){
+                        Toast.makeText(Cadastro.this, "Usuario já cadastrado, selecione outra chave", Toast.LENGTH_LONG).show();
+                    } else {
                         String body = response.body().string();
-                        Toast.makeText(Cadastro.this, "Cadastrado com sucesso", Toast.LENGTH_LONG).show();
-                    }catch (IOException e) {
-                        e.printStackTrace();
+                    Toast.makeText(Cadastro.this, "Cadastrado com sucesso", Toast.LENGTH_LONG).show();
+                        vamoprologin();
+
                     }
+                }catch (IOException e) {
+                    e.printStackTrace();
                 }
+            }
 
-                @Override
-                public void onFailure(Call<ResponseBody> call, Throwable t) {
-                    Toast.makeText(Cadastro.this, "Cadastro não realizado", Toast.LENGTH_LONG).show();
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+                Toast.makeText(Cadastro.this, "Cadastro não realizado", Toast.LENGTH_LONG).show();
 
-                }
-            });
+            }
+        });
 
-}
+    }
 
 
 

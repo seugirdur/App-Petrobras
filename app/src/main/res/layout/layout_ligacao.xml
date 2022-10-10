@@ -12,7 +12,7 @@
         android:id="@+id/second_layout"
         android:layout_width="348dp"
         android:layout_height="706dp"
-        android:background="@drawable/popup_background"
+        android:background="@drawable/popup_background1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/layout_principal"
         app:layout_constraintHorizontal_bias="0.492"
@@ -45,7 +45,7 @@
             android:layout_marginLeft="50dp"
             android:layout_marginTop="48dp"
             android:layout_marginRight="50dp"
-            android:background="@color/white"
+            android:background="@color/white1"
             android:paddingStart="20dp"
             android:paddingLeft="15dp"
             android:paddingEnd="20dp"
@@ -76,7 +76,7 @@
             android:paddingRight="20dp"
             android:src="@drawable/ligagif"
             app:layout_constraintEnd_toEndOf="@id/view_content"
-            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_bias="0.666"
             app:layout_constraintStart_toStartOf="@id/view_content"
             app:layout_constraintTop_toTopOf="@id/view_content" />
 
@@ -86,13 +86,12 @@
             android:layout_height="103dp"
             android:layout_marginLeft="50dp"
             android:layout_marginRight="50dp"
-            android:background="@color/cinza"
+            android:background="@color/white1"
             app:layout_constraintEnd_toEndOf="@id/view_content"
             app:layout_constraintStart_toStartOf="@id/view_content"
             app:layout_constraintTop_toBottomOf="@+id/view_content"
             tools:ignore="MissingConstraints">
 
-            <ScrollView
                 android:layout_width="314dp"
                 android:layout_height="96dp"
                 android:fillViewport="true"
@@ -112,7 +111,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-            </ScrollView>
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
@@ -154,7 +153,7 @@
             android:layout_width="192dp"
             android:layout_height="26dp"
             android:layout_marginTop="12dp"
-            android:onClick="VoltarparaMenu"
+            android:onClick="BacktoMenu"
             android:text="Não quero ligar no momento"
             android:textAlignment="center"
             app:layout_constraintEnd_toEndOf="parent"

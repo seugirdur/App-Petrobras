@@ -332,10 +332,14 @@ public class Cadastro extends AppCompatActivity {
         String Checksenha =  senha.getText().toString();
         String str=chave .getText().toString();
         int textLength=chave .getText().length();
+        int textLength1=tel .getText().length();
 
-
+        if(textLength1<15){
+            Toast.makeText(this, "Telefone incorreto", Toast.LENGTH_SHORT).show();
+            tel.setText("");
+        }
         if(textLength<4){
-            Toast.makeText(this, "Digite sua Chave de Acesso corretamente", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Chave de Acesso incorreta", Toast.LENGTH_SHORT).show();
             chave.setText("");
         }
         else if(!senhaIgual()){

@@ -491,8 +491,7 @@ public class Passos extends Drawer {
     }
 
 
-    public void VoltarparaMenu(View view){
-        Toast.makeText(this, "Liga pra evitar dor de cabeça", Toast.LENGTH_SHORT).show();
+    public void BacktoMenu(View view){
         Intent intent = new Intent(Passos.this,Tabs.class);
         startActivity(intent);
         finish();

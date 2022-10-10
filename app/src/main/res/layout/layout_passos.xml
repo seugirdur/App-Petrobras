@@ -57,6 +57,7 @@
             android:layout_marginTop="20dp"
             />
 
+
         <ProgressBar
             android:id="@+id/progressbar"
             android:visibility="visible"
@@ -66,8 +67,7 @@
             app:layout_constraintEnd_toEndOf="@+id/imagemSolucao"
             app:layout_constraintStart_toStartOf="@+id/imagemSolucao"
             app:layout_constraintTop_toTopOf="@+id/imagemSolucao" />
-
-        <com.github.chrisbanes.photoview.PhotoView
+        <ImageView
             android:id="@+id/imagemSolucao"
             android:layout_width="match_parent"
             android:layout_height="300dp"
@@ -77,6 +77,11 @@
             android:layout_marginLeft="50dp"
             android:layout_marginRight="50dp"
             android:layout_marginTop="10dp"  />
+
+
+
+
+
 
         <TextView
             android:id="@+id/numeroPasso"

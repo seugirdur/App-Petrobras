@@ -7,10 +7,13 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.app.Dialog;
 import android.content.ClipData;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -33,6 +36,8 @@ import com.google.android.material.navigation.NavigationView;
         DrawerLayout drawerLayout;
         private MenuItem itemToHide;
         private MenuItem itemToShow;
+        Dialog mDialog;
+
 
         @Override
         public void setContentView(View view) {
@@ -133,16 +138,29 @@ import com.google.android.material.navigation.NavigationView;
                     }
 
                 case R.id.sair:
-                    startActivity(new Intent(this, SplashScreen.class));
-                    overridePendingTransition(0, 0);
-                    finish();
+                    mDialog = new Dialog(this);
+
+                    // Defini o click dentro do popup
+                    mDialog.setContentView(R.layout.popup_sair);
+                    mDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                    mDialog.show();
                     break;
-
-
 
             }
 
             return false;
+        }
+
+        public void areyousure(View view){
+
+            startActivity(new Intent(this, SplashScreen.class));
+            overridePendingTransition(0, 0);
+            finish();
+
+        }
+
+        public void areyounotsure(View view){
+            mDialog.hide();
         }
 
         @Override

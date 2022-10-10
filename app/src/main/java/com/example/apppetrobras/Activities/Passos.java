@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -32,6 +33,7 @@ import com.example.apppetrobras.R;
 import com.example.apppetrobras.Objects.PassosObj;
 import com.example.apppetrobras.api.RetroFitClient;
 import com.example.apppetrobras.databinding.LayoutPassosBinding;
+import com.github.chrisbanes.photoview.PhotoView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 
@@ -60,7 +62,8 @@ public class Passos extends Drawer {
     Context context;
 
     TextView numeroPasso, nomeSolucao, descSolucao;
-    ImageView imagemSolucao, btnSemAcesso;
+    ImageView btnSemAcesso;
+    PhotoView imagemSolucao;
 
     List<PassosObj> passosObjList;
     Dialog mDialog;

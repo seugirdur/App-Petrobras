@@ -104,8 +104,14 @@ public class InicioFragment extends Fragment implements RecyclerViewInteface{
         //criação da string para armazenamento no banco
         // Esse valor é temporário. Ainda não foi definido o funcionamento da aba 1(Inicio)
         switch (position){
-            case 1:
+            case 0:
             default:
+                titulo = "Internet";
+                idtype = 2;
+                posi_id = 2;
+                posi_title = "A internet cai constantemente";
+                break;
+            case 1:
                  titulo = "Lentidão";
                  idtype = 1;
                  posi_id = 3;

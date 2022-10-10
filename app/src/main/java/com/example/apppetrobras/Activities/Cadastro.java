@@ -212,7 +212,7 @@ public class Cadastro extends AppCompatActivity {
                         if(passwordVisible){
 
                             // set drawable image here
-                            senha.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0, R.drawable.ic_eye, 0);
+                            senha.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0, R.drawable.ic_eye_off, 0);
 
                             //for hide password
                             senha.setTransformationMethod(PasswordTransformationMethod.getInstance());
@@ -222,7 +222,7 @@ public class Cadastro extends AppCompatActivity {
                         }else {
 
                             //set drawable image here
-                            senha.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0,R.drawable.ic_eye_off,0);
+                            senha.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0,R.drawable.ic_eye,0);
 
 
                             //for show password
@@ -254,7 +254,7 @@ public class Cadastro extends AppCompatActivity {
                         if(passwordVisible){
 
                             // set drawable image here
-                            confirmar_senha.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0, R.drawable.ic_eye, 0);
+                            confirmar_senha.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0, R.drawable.ic_eye_off, 0);
 
                             //for hide password
                             confirmar_senha.setTransformationMethod(PasswordTransformationMethod.getInstance());
@@ -264,7 +264,7 @@ public class Cadastro extends AppCompatActivity {
                         }else {
 
                             //set drawable image here
-                            confirmar_senha.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0,R.drawable.ic_eye_off,0);
+                            confirmar_senha.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0,R.drawable.ic_eye,0);
 
 
                             //for show password

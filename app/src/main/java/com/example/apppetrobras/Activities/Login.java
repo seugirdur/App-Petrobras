@@ -102,7 +102,7 @@ public class Login extends AppCompatActivity {
                         if(passwordVisible){
 
                             // set drawable image here
-                            edit_senha.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0, R.drawable.ic_eye, 0);
+                            edit_senha.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0, R.drawable.ic_eye_off, 0);
 
                             //for hide password
                             edit_senha.setTransformationMethod(PasswordTransformationMethod.getInstance());
@@ -112,7 +112,7 @@ public class Login extends AppCompatActivity {
                         }else {
 
                             //set drawable image here
-                            edit_senha.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0,R.drawable.ic_eye_off,0);
+                            edit_senha.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0,R.drawable.ic_eye,0);
 
 
                             //for show password

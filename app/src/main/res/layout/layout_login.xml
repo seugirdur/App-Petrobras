@@ -57,7 +57,7 @@
         <EditText
             android:id="@+id/edit_senha"
             style="@style/btn_tela_login"
-            android:drawableRight="@drawable/ic_eye"
+            android:drawableRight="@drawable/ic_eye_off"
             android:hint="@string/password"
             android:inputType="textPassword"
             android:longClickable="false"

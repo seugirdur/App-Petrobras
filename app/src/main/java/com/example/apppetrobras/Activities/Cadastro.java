@@ -330,9 +330,15 @@ public class Cadastro extends AppCompatActivity {
         String Checkemail = email.getText().toString();
         String Checkchave =  chave.getText().toString();
         String Checksenha =  senha.getText().toString();
+        String str=chave .getText().toString();
+        int textLength=chave .getText().length();
 
 
-        if(!senhaIgual()){
+        if(textLength<4){
+            Toast.makeText(this, "Digite sua Chave de Acesso corretamente", Toast.LENGTH_SHORT).show();
+            chave.setText("");
+        }
+        else if(!senhaIgual()){
             Toast.makeText(this, "As senhas não coincidem", Toast.LENGTH_SHORT).show();
             senha1.setText("");
             senha2.setText("");

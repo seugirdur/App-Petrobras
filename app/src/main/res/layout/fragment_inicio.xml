@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
-    tools:context=".fragments.InicioFragment">
+    tools:context=".fragments.InicioFragment"
+    >
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview"

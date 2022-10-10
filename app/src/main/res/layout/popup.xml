@@ -14,21 +14,32 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="15dp"
-        android:text="Problemas em se conectar?"
+        android:text="Precisa de ajuda?"
         android:textStyle="bold"
         android:textSize="20dp"
         android:textColor="@color/black"
-
         />
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        app:layout_constraintStart_toStartOf="@id/problemas"
+        app:layout_constraintEnd_toEndOf="@id/problemas"
+        app:layout_constraintTop_toBottomOf="@id/problemas"
+        android:background="@color/gray"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="13dp"
+        android:layout_marginRight="13dp" />
+
+
     <TextView
-        android:id="@+id/para_alterar"
+        android:id="@+id/entre_em_contato"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="@id/problemas"
         app:layout_constraintEnd_toEndOf="@id/problemas"
         app:layout_constraintTop_toBottomOf="@id/problemas"
-        android:text="Para alterar sua senha, será necessário entrar em contato com o nosso suporte ao aplicativo."
+        android:text="Entre em contato com o nosso \n       suporte ao aplicativo."
         android:layout_marginTop="30dp"
         android:layout_marginLeft="15dp"
         android:textSize="15dp"
@@ -37,35 +48,25 @@
         />
 
     <TextView
-        android:id="@+id/contato"
+        android:id="@+id/ligue_suporte"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@id/problemas"
-        app:layout_constraintTop_toBottomOf="@id/para_alterar"
-        android:text="Contatos:"
-        android:textStyle="bold"
-        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="@id/entre_em_contato"
+        app:layout_constraintEnd_toEndOf="@id/entre_em_contato"
+        app:layout_constraintTop_toBottomOf="@id/entre_em_contato"
+        android:text="Ligue:  (12) 3456-5897"
         android:layout_marginTop="30dp"
-        android:textColor="@color/black"
-        />
-
-    <TextView
-        android:id="@+id/n_01"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@id/para_alterar"
-        app:layout_constraintTop_toBottomOf="@id/contato"
-        android:text="(12) 3456-5897"
-        android:layout_marginTop="15dp"
         android:textColor="@color/black"/>
 
     <TextView
+        android:id="@+id/email_suporte"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@id/para_alterar"
-        app:layout_constraintTop_toBottomOf="@id/n_01"
-        android:text="(12) 5658-7854"
-        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toStartOf="@id/ligue_suporte"
+        app:layout_constraintEnd_toEndOf="@id/ligue_suporte"
+        app:layout_constraintTop_toBottomOf="@id/ligue_suporte"
+        android:text="Email: suporteapp@aset.com"
+        android:layout_marginTop="8dp"
         android:textColor="@color/black"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

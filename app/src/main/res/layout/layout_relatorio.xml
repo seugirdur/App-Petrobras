@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/main_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".Activities.Relatorio"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/second_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="@id/main_layout"
+            app:layout_constraintEnd_toEndOf="@id/main_layout"
+            app:layout_constraintStart_toStartOf="@id/main_layout"
+            app:layout_constraintTop_toTopOf="@id/main_layout"
+            tools:context=".RelatorioProcesso">
+
+            <TextView
+                android:id="@+id/txtSecao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:gravity="center"
+                android:textAlignment="center"
+                android:text="Tipo do Problema"
+                android:textColor="@color/black"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/txtProblema"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recicle"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="25dp"
+                app:layout_constraintBottom_toTopOf="@id/bottom_label"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtProblema"
+                tools:listitem="@layout/item_relatorio" />
+
+            <TextView
+                android:id="@+id/txtProblema"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:gravity="center"
+                android:textAlignment="center"
+                android:text="Problema Específico"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                app:layout_constraintBottom_toTopOf="@id/recicle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtSecao" />
+
+
+            <!-- Labels -->
+
+
+            <!-- Text Views -->
+
+
+            <!-- Vectors-->
+
+            <!-- Check image -->
+
+
+
+        <View
+            android:id="@+id/bottom_label"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:background="@color/Verde_Petrobras"
+            android:layout_marginTop="35dp"
+            />
+
+        <TextView
+            android:id="@+id/usuario_bottom_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Usuário:"
+            android:textSize="17dp"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="@id/bottom_label"
+            app:layout_constraintTop_toTopOf="@id/bottom_label"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp" />
+
+        <TextView
+            android:id="@+id/nome_usuario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Juvanilson"
+            android:textSize="17dp"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="@id/bottom_label"
+            app:layout_constraintTop_toTopOf="@id/bottom_label"
+            android:layout_marginLeft="120dp"
+            android:layout_marginTop="10dp" />
+
+
+
+        <TextView
+            android:id="@+id/data_bottom_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Data:"
+            android:textSize="17dp"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="@id/bottom_label"
+            app:layout_constraintTop_toTopOf="@id/bottom_label"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="30dp" />
+
+        <TextView
+            android:id="@+id/data_atual"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="31/08/2022"
+            android:textSize="17dp"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="@id/bottom_label"
+            app:layout_constraintTop_toTopOf="@id/bottom_label"
+            android:layout_marginLeft="120dp"
+            android:layout_marginTop="30dp" />
+
+
+        <TextView
+            android:id="@+id/processo_bottom_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Processo:"
+            android:textSize="17dp"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="@id/bottom_label"
+            app:layout_constraintTop_toTopOf="@id/bottom_label"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="50dp" />
+
+        <TextView
+            android:id="@+id/resultado_processo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Solucionado"
+            android:textSize="17dp"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="@id/bottom_label"
+            app:layout_constraintTop_toTopOf="@id/bottom_label"
+            android:layout_marginLeft="120dp"
+            android:layout_marginTop="50dp" />
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/add_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@id/bottom_label"
+            app:layout_constraintBottom_toBottomOf="@id/bottom_label"
+            app:layout_constraintEnd_toEndOf="@id/bottom_label"
+            android:layout_marginRight="16dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:elevation="0dp"
+            android:src="@drawable/ic_add"
+            android:backgroundTint="@color/Amarelo_Petrobras"/>
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/download_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="90dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:visibility="invisible"
+        android:src="@drawable/ic_download"
+        android:backgroundTint="@color/Amarelo_Petrobras"
+
+        />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/concludeicon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/download_icon"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="20dp"
+        android:clickable="true"
+        android:onClick="concludeRelatorio"
+        android:focusable="true"
+        android:visibility="invisible"
+        android:src="@drawable/ic_check_black"
+        android:backgroundTint="@color/Amarelo_Petrobras"
+
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,119 @@
+Index: app/src/main/java/com/example/apppetrobras/FormCadastro.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.apppetrobras;\r\n\r\nimport androidx.appcompat.app.AppCompatActivity;\r\n\r\nimport android.content.Intent;\r\nimport android.net.Uri;\r\nimport android.os.AsyncTask;\r\nimport android.text.SpannableString;\r\nimport android.text.Spanned;\r\nimport android.text.method.LinkMovementMethod;\r\nimport android.text.style.ClickableSpan;\r\nimport android.view.View;\r\nimport android.widget.Button;\r\nimport android.widget.CheckBox;\r\nimport android.widget.EditText;\r\nimport android.widget.TextView;\r\n\r\nimport android.os.Bundle;\r\n\r\nimport java.sql.Connection;\r\nimport java.sql.DriverManager;\r\nimport java.sql.ResultSet;\r\nimport java.sql.Statement;\r\n\r\npublic class FormCadastro extends AppCompatActivity {\r\n\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.activity_form_cadastro);\r\n\r\n        CheckBox textView = findViewById(R.id.aceitoTermos);\r\n        String text = \"Li e concordo com os TERMOS DE USO e POLÍTICAS DE PRIVACIDADE\";\r\n\r\n        SpannableString ss = new SpannableString(text);\r\n\r\n\r\n        ClickableSpan clicavel1 = new ClickableSpan() {\r\n            public void onClick(View widget) {\r\n                //link do pdf dos termos de uso\r\n                String url = \"https://www.hostinger.com.br/tutoriais/tutorial-do-git-basics-introducao#:~:text=Instalar%20o%20GIT%20no%20Windows%3A&text=Acesse%20o%20site%20oficial%20e,concluir%20com%20%C3%AAxito%20a%20instala%C3%A7%C3%A3o.\";\r\n                Intent i = new Intent(Intent.ACTION_VIEW);\r\n                i.setData(Uri.parse(url));\r\n                startActivity(i);\r\n            }\r\n        };\r\n\r\n        ClickableSpan clicavel2 = new ClickableSpan() {\r\n            @Override\r\n            public void onClick(View widget) {\r\n                //link do pdf das políticas de privacidade\r\n                String url = \"https://github.com/seugirdur/App-petrobras\";\r\n                Intent i = new Intent(Intent.ACTION_VIEW);\r\n                i.setData(Uri.parse(url));\r\n                startActivity(i);\r\n            }\r\n        };\r\n\r\n        // declarando parte que funcionará como clicável\r\n        ss.setSpan(clicavel1, 21, 34, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);\r\n        ss.setSpan(clicavel2, 37, 61, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);\r\n\r\n        textView.setText(ss);\r\n        textView.setMovementMethod(LinkMovementMethod.getInstance());\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n        //android:visibility=\"invisible\"\r\n    }\r\n\r\n    public void ajuda(View view){\r\n        Intent intent = new Intent(this, minhaPagina.class);\r\n        startActivity(intent);\r\n\r\n    }\r\n\r\n    public void checarTermos (View view){\r\n        Button cad = findViewById(R.id.btn);\r\n        CheckBox check = findViewById(R.id.aceitoTermos);\r\n\r\n        if(check.isChecked())\r\n        {\r\n            cad.setEnabled(true);\r\n        }\r\n        else\r\n        {\r\n            cad.setEnabled(false);\r\n        }\r\n\r\n    }\r\n\r\n    public void cadastro(View view){\r\n        TextView aviso = findViewById(R.id.avisaSenha);\r\n        EditText senha1 = (EditText) findViewById(R.id.insertSenha);\r\n        EditText senha2 = (EditText) findViewById(R.id.insertConfirmaSenha);\r\n        resgataInfo();\r\n\r\n        if(!senhaIgual()){\r\n            aviso.setVisibility(View.VISIBLE);\r\n            senha1.setText(\"\");\r\n            senha2.setText(\"\");\r\n        }else{\r\n            Infos cadastro = resgataInfo();\r\n        }\r\n\r\n\r\n    }\r\n\r\n    public Infos resgataInfo(){\r\n        TextView nome = findViewById(R.id.insertNomeCompleto);\r\n        TextView tel = findViewById(R.id.insertTelefone);\r\n        TextView dataNas = findViewById(R.id.insertDataNascimento);\r\n        TextView email = findViewById(R.id.insertEmail);\r\n        TextView chave = findViewById(R.id.insertChave);\r\n        TextView senha = findViewById(R.id.insertSenha);\r\n\r\n        String _nome = nome.getText() + \"\";\r\n        String _tel = tel.getText() + \"\";\r\n        String _dataNas = dataNas.getText() + \"\";\r\n        String _email = email.getText() + \"\";\r\n        String _chave = chave.getText() + \"\";\r\n        String _senha = senha.getText() + \"\";\r\n\r\n        Infos cliente = new Infos( _nome,  _email,  _tel,  _dataNas,  _chave,  _senha);\r\n\r\n        new Task().execute();\r\n\r\n        class Task extends AsyncTask<Void, Void, Void> {\r\n            String records = \"\", error=\"\";\r\n\r\n            @Override\r\n            protected Void doInBackground(Void... voids) {\r\n                try {\r\n\r\n                    //busca no bd\r\n                    //userbd = SELECT username FROM funcionarios;\r\n\r\n                    Class.forName(\"com.mysql.jdbc.Driver\");\r\n                    Connection connection = DriverManager.getConnection(\"jdbc:mysql://139.177.199.178/test\",\"backend\",\"agathusia\");\r\n                    Statement statement = connection.createStatement();\r\n                    ResultSet resultSet = statement.executeQuery(\"Insert into funcionarios(nome, email) values (\\\"\" + _nome+ \"\\\"\" +\"\\\",\\\"\"+ _email +\"\\\" );\");\r\n\r\n                    while(resultSet.next()) {\r\n                        //  userbd = resultSet.getString(1);\r\n                    }\r\n\r\n                } catch(Exception e) {\r\n                    error = e.toString();\r\n                }\r\n                return null;\r\n            }\r\n\r\n        return cliente;\r\n\r\n\r\n    }\r\n\r\n\r\n\r\n    //checar se senhas combinam\r\n    private boolean senhaIgual(){\r\n        boolean checking = false;\r\n        EditText senha1;\r\n        EditText senha2;\r\n\r\n        senha1 = (EditText) findViewById(R.id.insertSenha);\r\n        senha2 = (EditText) findViewById(R.id.insertConfirmaSenha);\r\n\r\n        String senhaTrans1 = senha1.getText() + \"\";\r\n        String senhaTrans2 = senha2.getText() + \"\";\r\n\r\n\r\n        if (senhaTrans1.equals(senhaTrans2)) {\r\n            checking = true;\r\n        }\r\n        return checking;\r\n    }\r\n\r\n}\r\n\r\n}
+===================================================================
+diff --git a/app/src/main/java/com/example/apppetrobras/FormCadastro.java b/app/src/main/java/com/example/apppetrobras/FormCadastro.java
+--- a/app/src/main/java/com/example/apppetrobras/FormCadastro.java	
++++ b/app/src/main/java/com/example/apppetrobras/FormCadastro.java	
+@@ -127,59 +127,63 @@
+ 
+         Infos cliente = new Infos( _nome,  _email,  _tel,  _dataNas,  _chave,  _senha);
+ 
+-        new Task().execute();
++
++        return cliente;
++
++
++
++
++
++
++        //checar se senhas combinam
++    private boolean senhaIgual(){
++        boolean checking = false;
++        EditText senha1;
++        EditText senha2;
++
++        senha1 = (EditText) findViewById(R.id.insertSenha);
++        senha2 = (EditText) findViewById(R.id.insertConfirmaSenha);
++
++        String senhaTrans1 = senha1.getText() + "";
++        String senhaTrans2 = senha2.getText() + "";
++
++
++        if (senhaTrans1.equals(senhaTrans2)) {
++            checking = true;
++        }
++        return checking;
++    }
++
++}
++
++}
+ 
+-        class Task extends AsyncTask<Void, Void, Void> {
+-            String records = "", error="";
++class Task extends AsyncTask<Void, Void, Void> {
++    String records = "", error="";
+ 
+-            @Override
+-            protected Void doInBackground(Void... voids) {
+-                try {
++    @Override
++    protected Void doInBackground(Void... voids) {
++        try {
+ 
+-                    //busca no bd
+-                    //userbd = SELECT username FROM funcionarios;
++            //busca no bd
++            //userbd = SELECT username FROM funcionarios;
+ 
+-                    Class.forName("com.mysql.jdbc.Driver");
+-                    Connection connection = DriverManager.getConnection("jdbc:mysql://139.177.199.178/test","backend","agathusia");
+-                    Statement statement = connection.createStatement();
+-                    ResultSet resultSet = statement.executeQuery("Insert into funcionarios(nome, email) values (\"" + _nome+ "\"" +"\",\""+ _email +"\" );");
++            Class.forName("com.mysql.jdbc.Driver");
++            Connection connection = DriverManager.getConnection("jdbc:mysql://139.177.199.178/test","backend","agathusia");
++            Statement statement = connection.createStatement();
++            ResultSet resultSet = statement.executeQuery("Insert into funcionarios(nome, email) values (\"" + _nome+ "\"" +"\",\""+ _email +"\" );");
+ 
+-                    while(resultSet.next()) {
+-                        //  userbd = resultSet.getString(1);
+-                    }
++            while(resultSet.next()) {
++                //  userbd = resultSet.getString(1);
++            }
+ 
+-                } catch(Exception e) {
+-                    error = e.toString();
+-                }
+-                return null;
+-            }
++        } catch(Exception e) {
++            error = e.toString();
++        }
++        return null;
++    }
+ 
+-        return cliente;
+-
++        new Task().execute();
+ 
+-    }
+-
+-
+-
+-    //checar se senhas combinam
+-    private boolean senhaIgual(){
+-        boolean checking = false;
+-        EditText senha1;
+-        EditText senha2;
+-
+-        senha1 = (EditText) findViewById(R.id.insertSenha);
+-        senha2 = (EditText) findViewById(R.id.insertConfirmaSenha);
+-
+-        String senhaTrans1 = senha1.getText() + "";
+-        String senhaTrans2 = senha2.getText() + "";
+-
+-
+-        if (senhaTrans1.equals(senhaTrans2)) {
+-            checking = true;
+-        }
+-        return checking;
+-    }
+-
+-}
+ 
+ }
+\ No newline at end of file

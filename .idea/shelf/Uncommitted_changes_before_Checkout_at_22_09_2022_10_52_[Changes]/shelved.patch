@@ -1,0 +1,39 @@
+Index: app/src/main/AndroidManifest.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<manifest xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    package=\"com.example.apppetrobras\">\r\n\r\n    <uses-permission android:name=\"android.permission.INTERNET\" />\r\n    <uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />\r\n    <uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\" />\r\n\r\n    <application\r\n        android:allowBackup=\"true\"\r\n        android:dataExtractionRules=\"@xml/data_extraction_rules\"\r\n        android:fullBackupContent=\"@xml/backup_rules\"\r\n        android:icon=\"@drawable/img\"\r\n        android:label=\"@string/app_name\"\r\n        android:roundIcon=\"@drawable/img\"\r\n        android:supportsRtl=\"true\"\r\n        android:theme=\"@style/Theme.APPPetrobras\"\r\n        android:usesCleartextTraffic=\"true\"\r\n        tools:targetApi=\"31\">\r\n        <activity\r\n            android:name=\".SoluctionActivity\"\r\n            android:exported=\"false\"\r\n            android:theme=\"@style/Theme.AppCompat.Light.NoActionBar\"/>\r\n        <activity\r\n            android:name=\".Hub\"\r\n            android:exported=\"true\">\r\n            <intent-filter>\r\n                <action android:name=\"android.intent.action.MAIN\" />\r\n                <category android:name=\"android.intent.category.LAUNCHER\" />\r\n            </intent-filter>\r\n        </activity>\r\n        <activity\r\n            android:name=\".AjudaeSuporte\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".Configuracoes\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".Historico\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".DrawerBaseActivity\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".Conteudo\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".FormCadastro\"\r\n            android:exported=\"false\"\r\n            android:theme=\"@style/Theme.AppCompat.Light.NoActionBar\" />\r\n        <activity\r\n            android:name=\".minhaPagina\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".FormLogin\"\r\n            android:exported=\"false\"\r\n            android:theme=\"@style/Theme.AppCompat.Light.NoActionBar\" />\r\n        <activity\r\n            android:name=\".Tela_de_escolha\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".Ajuda\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".MainActivity\"\r\n            android:exported=\"false\" />\r\n        <activity\r\n            android:name=\".ProblemActivity\"\r\n            android:exported=\"false\"\r\n            android:theme=\"@style/Theme.AppCompat.Light.NoActionBar\" />\r\n        <activity\r\n            android:name=\".TabActivity\"\r\n            android:exported=\"true\"\r\n            android:theme=\"@style/Theme.AppCompat.Light.NoActionBar\" />\r\n        <activity\r\n            android:name=\".RelatorioProcesso\"\r\n            android:exported=\"true\" />\r\n        <activity\r\n            android:name=\".SplashScreenActivity\"\r\n            android:exported=\"true\"\r\n            android:theme=\"@style/Theme.AppCompat.NoActionBar\" >\r\n        </activity>\r\n\r\n        <meta-data\r\n            android:name=\"preloaded_fonts\"\r\n            android:resource=\"@array/preloaded_fonts\" />\r\n    </application>\r\n\r\n</manifest>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/AndroidManifest.xml b/app/src/main/AndroidManifest.xml
+--- a/app/src/main/AndroidManifest.xml	
++++ b/app/src/main/AndroidManifest.xml	
+@@ -24,12 +24,7 @@
+             android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+         <activity
+             android:name=".Hub"
+-            android:exported="true">
+-            <intent-filter>
+-                <action android:name="android.intent.action.MAIN" />
+-                <category android:name="android.intent.category.LAUNCHER" />
+-            </intent-filter>
+-        </activity>
++            android:exported="true"/>
+         <activity
+             android:name=".AjudaeSuporte"
+             android:exported="false" />
+@@ -76,6 +71,14 @@
+         <activity
+             android:name=".RelatorioProcesso"
+             android:exported="true" />
++        <activity
++            android:name=".arrastaprolado"
++            android:exported="true">
++            <intent-filter>
++                <action android:name="android.intent.action.MAIN" />
++                <category android:name="android.intent.category.LAUNCHER" />
++            </intent-filter>
++        </activity>
+         <activity
+             android:name=".SplashScreenActivity"
+             android:exported="true"

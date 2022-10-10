@@ -3,57 +3,99 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.apppetrobras">
 
-    <uses-permission
-        android:name="android.permission.INTERNET">
-    </uses-permission>
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@drawable/logo_dionisio"
+        android:icon="@mipmap/real_logo"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/logo_dionisio"
+        android:roundIcon="@mipmap/real_logo_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.APPPetrobras"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+        android:usesCleartextTraffic="true"
         tools:targetApi="31">
+        <activity
+            android:name=".Activities.Historico"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
 
         <activity
-            android:name=".FormCadastro"
+            android:name=".Activities.Perfil"
             android:exported="false" />
         <activity
-            android:name=".minhaPagina"
+            android:name=".Activities.PerfilAtualizar"
             android:exported="false" />
         <activity
-            android:name=".FormLogin"
+            android:name=".Activities.Passos"
             android:exported="false" />
         <activity
-            android:name=".Tela_de_escolha"
+            android:name=".Activities.Ligacao"
+            android:exported="false" />
+
+        <activity
+            android:name="com.example.Navigations.Hub"
             android:exported="false"/>
+
         <activity
-            android:name=".ProblemActivity"
-            android:exported="false"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+            android:name=".Activities.Ajuda"
+            android:exported="false" />
         <activity
-            android:name=".TabActivity"
+            android:name=".Activities.Privacidade"
+            android:exported="false" />
+        <activity
+            android:name="com.example.Navigations.Drawer"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.Cadastro"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.Login"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.Inicio"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.Solucoes"
+            android:exported="false" />
+        <activity
+            android:name="com.example.Navigations.Tabs"
+            android:exported="true" />
+        <activity
+            android:name=".Activities.Relatorio"
+            android:exported="true" />
+        <activity
+            android:name=".FormLoginPedro"
+            android:exported="true" />
+        <activity
+            android:name="com.example.Navigations.Configuracoes"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name="com.example.Navigations.Administrador"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
 
         <activity
-            android:name=".SplashScreenActivity"
+            android:name=".Activities.SplashScreen"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.NoActionBar">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
 
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
         </activity>
-
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

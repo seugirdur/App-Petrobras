@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:visibility="visible"
+        tools:context=".Activities.Cadastro">
+
+
+        <View
+            android:id="@+id/view_principal"
+            android:layout_width="match_parent"
+            android:layout_height="740dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginRight="40dp"
+            android:background="@drawable/view_principal_cadastro"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/logo_psdesk"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="60dp"
+            android:src="@drawable/aset_logo"
+            app:layout_constraintBottom_toTopOf="@id/view_principal"
+            app:layout_constraintEnd_toEndOf="@id/view_principal"
+            app:layout_constraintStart_toStartOf="@id/view_principal"
+            app:layout_constraintTop_toTopOf="@id/view_principal" />
+
+        <!--        <View-->
+        <!--            android:id="@+id/logo"-->
+        <!--            android:layout_width="125dp"-->
+        <!--            android:layout_height="125dp"-->
+        <!--            android:layout_marginTop="50dp"-->
+        <!--            android:background="@drawable/logo_tela_cadastro"-->
+        <!--            app:layout_constraintBottom_toTopOf="@id/view_principal"-->
+        <!--            app:layout_constraintEnd_toEndOf="@id/view_principal"-->
+        <!--            app:layout_constraintStart_toStartOf="@id/view_principal"-->
+        <!--            app:layout_constraintTop_toTopOf="@id/view_principal" />-->
+
+        <TextView
+            android:id="@+id/cadastro_texto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="13dp"
+            android:text="Cadastro"
+            android:textColor="@color/black"
+            android:textSize="40dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/logo_psdesk"
+            app:layout_constraintStart_toStartOf="@id/logo_psdesk"
+            app:layout_constraintTop_toBottomOf="@id/logo_psdesk" />
+
+        <View
+            android:id="@+id/first_view"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="22dp"
+            android:layout_marginRight="40dp"
+            android:background="@color/cinza"
+            app:layout_constraintEnd_toEndOf="@id/view_principal"
+            app:layout_constraintStart_toStartOf="@id/view_principal"
+            app:layout_constraintTop_toBottomOf="@id/cadastro_texto" />
+
+        <View
+            android:id="@+id/second_view"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:background="@color/cinza"
+            app:layout_constraintEnd_toEndOf="@id/view_principal"
+            app:layout_constraintStart_toStartOf="@id/view_principal"
+            app:layout_constraintTop_toBottomOf="@id/first_view"
+
+            />
+
+        <View
+            android:id="@+id/third_view"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:background="@color/cinza"
+            app:layout_constraintEnd_toEndOf="@id/view_principal"
+            app:layout_constraintStart_toStartOf="@id/view_principal"
+            app:layout_constraintTop_toBottomOf="@id/second_view"
+
+            />
+
+        <View
+            android:id="@+id/fourth_view"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:background="@color/cinza"
+            app:layout_constraintEnd_toEndOf="@id/view_principal"
+            app:layout_constraintStart_toStartOf="@id/view_principal"
+            app:layout_constraintTop_toBottomOf="@id/third_view"
+
+            />
+
+        <View
+            android:id="@+id/fifth_view"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:background="@color/cinza"
+            app:layout_constraintEnd_toEndOf="@id/view_principal"
+            app:layout_constraintStart_toStartOf="@id/view_principal"
+            app:layout_constraintTop_toBottomOf="@id/fourth_view"
+
+            />
+
+        <View
+            android:id="@+id/sixth_view"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:background="@color/cinza"
+            app:layout_constraintEnd_toEndOf="@id/view_principal"
+            app:layout_constraintStart_toStartOf="@id/view_principal"
+            app:layout_constraintTop_toBottomOf="@id/fifth_view"
+
+            />
+
+        <View
+            android:id="@+id/seventh_view"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:background="@color/cinza"
+            app:layout_constraintEnd_toEndOf="@id/view_principal"
+            app:layout_constraintStart_toStartOf="@id/view_principal"
+            app:layout_constraintTop_toBottomOf="@id/sixth_view"
+
+            />
+
+        <ImageView
+            android:id="@+id/first_icon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="3dp"
+            android:src="@drawable/ic_person_and_circle"
+            app:layout_constraintStart_toStartOf="@id/first_view"
+            app:layout_constraintTop_toTopOf="@id/first_view" />
+
+        <TextView
+            android:id="@+id/nome_completo_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="65dp"
+            android:layout_marginTop="2dp"
+            android:text="NOME COMPLETO"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/first_view"
+            app:layout_constraintTop_toTopOf="@id/first_view" />
+
+        <EditText
+            android:id="@+id/nome_completo"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_marginStart="100dp"
+            android:layout_marginEnd="60dp"
+            android:inputType="textCapWords"
+            app:layout_constraintBottom_toBottomOf="@id/first_view"
+            app:layout_constraintStart_toStartOf="@id/nome_completo_text"
+            app:layout_constraintTop_toBottomOf="@id/nome_completo_text" />
+
+        <ImageView
+            android:id="@+id/second_icon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="3dp"
+            android:src="@drawable/ic_calendar_and_circle"
+            app:layout_constraintStart_toStartOf="@id/second_view"
+            app:layout_constraintTop_toTopOf="@id/second_view" />
+
+        <TextView
+            android:id="@+id/data_nascimento_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="65dp"
+            android:layout_marginTop="2dp"
+            android:text="DATA DE NASCIMENTO"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/second_view"
+            app:layout_constraintTop_toTopOf="@id/second_view" />
+
+        <EditText
+            android:id="@+id/data_nascimento"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_marginStart="100dp"
+            android:layout_marginEnd="60dp"
+            android:inputType="date"
+            android:maxLength="10"
+            app:layout_constraintBottom_toBottomOf="@id/second_view"
+            app:layout_constraintStart_toStartOf="@id/data_nascimento_text"
+            app:layout_constraintTop_toBottomOf="@id/data_nascimento_text" />
+
+
+        <ImageView
+            android:id="@+id/third_icon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="3dp"
+            android:src="@drawable/ic_email_and_circle"
+            app:layout_constraintStart_toStartOf="@id/third_view"
+            app:layout_constraintTop_toTopOf="@id/third_view" />
+
+
+        <TextView
+            android:id="@+id/email_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="65dp"
+            android:layout_marginTop="2dp"
+            android:text="E-MAIL"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/third_view"
+            app:layout_constraintTop_toTopOf="@id/third_view" />
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_marginStart="100dp"
+            android:layout_marginEnd="60dp"
+            android:inputType="textEmailAddress"
+            app:layout_constraintBottom_toBottomOf="@id/third_view"
+            app:layout_constraintStart_toStartOf="@id/email_text"
+            app:layout_constraintTop_toBottomOf="@id/email_text" />
+
+
+        <ImageView
+            android:id="@+id/fourth_icon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="3dp"
+            android:src="@drawable/ic_call_and_circle"
+            app:layout_constraintStart_toStartOf="@id/fourth_view"
+            app:layout_constraintTop_toTopOf="@id/fourth_view" />
+
+        <TextView
+            android:id="@+id/telefone_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="65dp"
+            android:layout_marginTop="2dp"
+            android:text="TELEFONE"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/fourth_view"
+            app:layout_constraintTop_toTopOf="@id/fourth_view" />
+
+        <EditText
+            android:id="@+id/telefone"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_marginStart="100dp"
+            android:layout_marginEnd="60dp"
+            android:inputType="phone"
+            android:maxLength="15"
+            app:layout_constraintBottom_toBottomOf="@id/fourth_view"
+            app:layout_constraintStart_toStartOf="@id/telefone_text"
+            app:layout_constraintTop_toBottomOf="@id/telefone_text" />
+
+        <ImageView
+            android:id="@+id/fifth_icon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="3dp"
+            android:src="@drawable/ic_key_and_circle"
+            app:layout_constraintStart_toStartOf="@id/fifth_view"
+            app:layout_constraintTop_toTopOf="@id/fifth_view" />
+
+        <TextView
+            android:id="@+id/chave_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="65dp"
+            android:layout_marginTop="2dp"
+            android:text="CHAVE DE ACESSO"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/fifth_view"
+            app:layout_constraintTop_toTopOf="@id/fifth_view" />
+
+        <EditText
+            android:id="@+id/chave_acesso"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_marginStart="100dp"
+            android:layout_marginEnd="60dp"
+            android:inputType="textCapCharacters"
+            android:maxLength="4"
+            app:layout_constraintBottom_toBottomOf="@id/fifth_view"
+            app:layout_constraintStart_toStartOf="@id/chave_text"
+            app:layout_constraintTop_toBottomOf="@id/chave_text"
+            />
+
+        <ImageView
+            android:id="@+id/sixth_icon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="3dp"
+            android:src="@drawable/ic_lock_and_circle"
+            app:layout_constraintStart_toStartOf="@id/sixth_view"
+            app:layout_constraintTop_toTopOf="@id/sixth_view" />
+
+        <TextView
+            android:id="@+id/senha_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="65dp"
+            android:layout_marginTop="2dp"
+            android:text="SENHA"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/sixth_view"
+            app:layout_constraintTop_toTopOf="@id/sixth_view" />
+
+        <EditText
+            android:id="@+id/senha"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_marginStart="100dp"
+            android:layout_marginEnd="60dp"
+            android:drawableRight="@drawable/ic_eye_off"
+            android:inputType="textPassword"
+            app:layout_constraintBottom_toBottomOf="@id/sixth_view"
+            app:layout_constraintStart_toStartOf="@id/senha_text"
+            app:layout_constraintTop_toBottomOf="@id/senha_text" />
+
+        <ImageView
+            android:id="@+id/seventh_icon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="3dp"
+            android:src="@drawable/ic_lock_and_circle"
+            app:layout_constraintStart_toStartOf="@id/seventh_view"
+            app:layout_constraintTop_toTopOf="@id/seventh_view" />
+
+        <TextView
+            android:id="@+id/confirmar_senha_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="65dp"
+            android:layout_marginTop="2dp"
+            android:text="CONFIRMAR SENHA"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/seventh_view"
+            app:layout_constraintTop_toTopOf="@id/seventh_view" />
+
+        <EditText
+            android:id="@+id/confirmar_senha"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_marginStart="100dp"
+            android:layout_marginEnd="60dp"
+            android:drawableRight="@drawable/ic_eye_off"
+            android:inputType="textPassword"
+            app:layout_constraintBottom_toBottomOf="@id/seventh_view"
+            app:layout_constraintStart_toStartOf="@id/confirmar_senha_text"
+            app:layout_constraintTop_toBottomOf="@id/confirmar_senha_text" />
+
+
+        <CheckBox
+            android:id="@+id/aceitoTermos"
+            android:layout_width="302dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="13dp"
+            android:onClick="checarTermos"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="@string/texto_cadastr"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/seventh_view" />
+
+        <ImageButton
+            android:id="@+id/button_cadastro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:onClick="cadastro"
+            android:src="@drawable/ic_button_cadastro_and_login"
+            app:layout_constraintEnd_toEndOf="@id/aceitoTermos"
+            app:layout_constraintStart_toStartOf="@id/aceitoTermos"
+            app:layout_constraintTop_toBottomOf="@id/aceitoTermos" />
+
+        <ImageButton
+            android:id="@+id/button_cadastro1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_button_cadastro_and_login_preto"
+            app:layout_constraintEnd_toEndOf="@id/aceitoTermos"
+            app:layout_constraintStart_toStartOf="@id/aceitoTermos"
+            app:layout_constraintTop_toBottomOf="@id/aceitoTermos" />
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/ppja"
+            android:textColor="@color/black"
+            android:textSize="12dp"
+            app:layout_constraintEnd_toEndOf="@id/button_cadastro"
+            app:layout_constraintStart_toStartOf="@id/button_cadastro"
+            app:layout_constraintTop_toBottomOf="@id/button_cadastro" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

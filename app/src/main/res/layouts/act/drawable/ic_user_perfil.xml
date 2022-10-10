@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+<item
+    android:drawable="@drawable/ic_circle_preto"
+    android:gravity="center"/>
+    <item
+        android:width="50sp"
+        android:height="50sp"
+        android:drawable="@drawable/ic_foto_perfil"
+        android:gravity="center"/>
+</layer-list>

@@ -75,7 +75,7 @@
                 app:layout_constraintEnd_toEndOf="@+id/imagemSolucao"
                 app:layout_constraintStart_toStartOf="@+id/imagemSolucao"
                 app:layout_constraintTop_toTopOf="@+id/imagemSolucao" />
-            <ImageView
+            <com.github.chrisbanes.photoview.PhotoView
                 android:id="@+id/imagemSolucao"
                 android:layout_width="match_parent"
                 android:layout_height="300dp"

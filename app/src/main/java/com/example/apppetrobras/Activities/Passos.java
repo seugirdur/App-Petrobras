@@ -90,8 +90,8 @@ public class Passos extends Drawer {
         nomeSolucao.setSingleLine(true);
         numeroPasso = findViewById(R.id.numeroPasso);
         descSolucao = findViewById(R.id.descricaoPasso);
-        imagemSolucao = findViewById(R.id.imagemSolucao);
         btnSemAcesso = findViewById(R.id.btnSemAcesso);
+        imagemSolucao = findViewById(R.id.imagemSolucao);
 
         // Requisição dos dados passados durante o intent
         tipoProblema = getIntent().getIntExtra("TIPO", 1);

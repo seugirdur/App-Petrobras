@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.ImageButton;
 
 import com.example.apppetrobras.Activities.Privacidade;
@@ -43,7 +44,7 @@ public class Opcoes_Fragment extends Fragment implements View.OnClickListener {
         btnab1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String url = "https://drive.google.com/file/d/1P39Iel7CKZqv8UF3EkSCCzer_GmJ5_BX/view?usp=sharing";
+                String url = "https://drive.google.com/file/d/1P39Iel7CKZqv8UF3EkSCCzer_GmJ5_BX/sview?usp=sharing";
                 Intent i = new Intent(Intent.ACTION_VIEW);
                 i.setData(Uri.parse(url));
                 startActivity(i);

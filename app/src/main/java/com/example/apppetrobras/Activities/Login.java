@@ -226,6 +226,7 @@ public class Login extends AppCompatActivity {
 
                 Intent intent = new Intent(Login.this, Tabs.class);
                 startActivity(intent);
+                finish();
             }
 
             @Override

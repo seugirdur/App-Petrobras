@@ -134,14 +134,14 @@
                 android:layout_height="wrap_content"
                 android:visibility="invisible"
                 android:background="@drawable/ripple_effect_soluction"
+                app:srcCompat="@drawable/ic_check_circle"
                 android:clickable="true"
                 android:onClick="dontGetMeRight"
                 android:layout_marginBottom="10dp"
                 android:layout_marginTop="10dp"
-                android:src="@drawable/ic_check_circle"
-                app:layout_constraintStart_toStartOf="@id/text_layout"
+                app:layout_constraintEnd_toEndOf="@id/text_layout"
                 app:layout_constraintTop_toBottomOf="@id/text_layout"
-                app:layout_constraintBottom_toBottomOf="parent"/>
+                app:layout_constraintBottom_toBottomOf="parent" />
 
             <ImageView
                 android:id="@+id/btnSemAcesso"
@@ -163,15 +163,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:visibility="invisible"
-                android:layout_marginBottom="10dp"
-                android:layout_marginTop="10dp"
-                app:layout_constraintEnd_toEndOf="@id/text_layout"
-                app:layout_constraintTop_toBottomOf="@id/text_layout"
-                app:layout_constraintBottom_toBottomOf="parent"
                 android:onClick="dontGetMeWrong"
                 android:clickable="true"
                 android:background="@drawable/ripple_effect_soluction"
-                app:srcCompat="@drawable/ic_cancel_circle"/>
+                app:srcCompat="@drawable/ic_cancel_circle"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/ic_check_circle"
+                app:layout_constraintStart_toStartOf="@id/text_layout"
+                app:layout_constraintTop_toBottomOf="@id/text_layout"
+                app:layout_constraintBottom_toBottomOf="parent"/>
 
 
             <androidx.constraintlayout.widget.ConstraintLayout

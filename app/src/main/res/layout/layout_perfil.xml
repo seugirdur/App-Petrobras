@@ -168,15 +168,17 @@
         app:layout_constraintTop_toBottomOf="@id/nome_login"
         />
 
-    <androidx.appcompat.widget.AppCompatButton
+    <Button
         android:id="@+id/btn_tela_perfil"
         style="@style/btn_tela_perfil"
         android:drawableStart="@drawable/ic_conf"
         android:text="EDITAR PERFIL"
         android:textColor="@color/white"
         android:onClick="mudame"
-        app:layout_constraintStart_toStartOf="@id/view2"
-        app:layout_constraintEnd_toEndOf="@id/view2"
+        android:layout_marginTop="30dp"
+        android:layout_marginHorizontal="20dp"
+        app:layout_constraintLeft_toLeftOf="@id/view2"
+        app:layout_constraintRight_toRightOf="@id/view2"
         app:layout_constraintTop_toBottomOf="@id/num_chave"
         app:layout_constraintBottom_toTopOf="@id/textView18"
          />

@@ -52,7 +52,8 @@
             android:maxLength="4"
             app:layout_constraintEnd_toEndOf="@+id/view"
             app:layout_constraintStart_toStartOf="@+id/view"
-            app:layout_constraintTop_toBottomOf="@+id/textView14" />
+            app:layout_constraintTop_toBottomOf="@+id/textView14"
+            android:layout_marginHorizontal="40dp"/>
 
         <EditText
             android:id="@+id/edit_senha"
@@ -63,7 +64,9 @@
             android:longClickable="false"
             app:layout_constraintEnd_toEndOf="@+id/view"
             app:layout_constraintStart_toStartOf="@+id/view"
-            app:layout_constraintTop_toBottomOf="@+id/edit_user" />
+            app:layout_constraintTop_toBottomOf="@+id/edit_user"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginTop="15dp"/>
 
         <CheckBox
             android:id="@+id/check_connected"

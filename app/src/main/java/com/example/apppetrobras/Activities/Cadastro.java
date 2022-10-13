@@ -29,6 +29,8 @@ import com.example.apppetrobras.Objects.CadastroObj;
 import com.example.apppetrobras.R;
 import com.example.apppetrobras.api.RetroFitClient;
 
+import org.w3c.dom.Text;
+
 import java.io.IOException;
 
 import okhttp3.ResponseBody;
@@ -47,8 +49,8 @@ public class Cadastro extends AppCompatActivity {
         setContentView(R.layout.layout_cadastro);
 
 
-        CheckBox textView = findViewById(R.id.aceitoTermos);
-        String text = "Li e concordo com os Termos de Uso";
+        TextView textView = findViewById(R.id.texto_aceito_termos);
+        String text = "Li e concordo com os \nTermos de Uso e \nPolíticas de Privacidade";
 
         SpannableString ss = new SpannableString(text);
 
@@ -65,31 +67,32 @@ public class Cadastro extends AppCompatActivity {
             }
         };
 
-        ClickableSpan clicavel15 = new ClickableSpan() {
-            public void onClick(View widget) {
-                //link do pdf dos termos de uso
-                String url = "https://drive.google.com/file/d/1P39Iel7CKZqv8UF3EkSCCzer_GmJ5_BX/view?usp=sharing";
-                Intent i = new Intent(Intent.ACTION_VIEW);
-                i.setData(Uri.parse(url));
-            }
-        };
-//
-//
-//        ClickableSpan clicavel2 = new ClickableSpan() {
-//            @Override
+//       ClickableSpan clicavel15 = new ClickableSpan() {
 //            public void onClick(View widget) {
-//                //link do pdf das políticas de privacidade
+//                //link do pdf dos termos de uso
 //                String url = "https://drive.google.com/file/d/1P39Iel7CKZqv8UF3EkSCCzer_GmJ5_BX/view?usp=sharing";
 //                Intent i = new Intent(Intent.ACTION_VIEW);
 //                i.setData(Uri.parse(url));
-//                startActivity(i);
 //            }
 //        };
 
+
+
+        ClickableSpan clicavel2 = new ClickableSpan() {
+            @Override
+            public void onClick(View widget) {
+                //link do pdf das políticas de privacidade
+                String url = "https://drive.google.com/file/d/1P39Iel7CKZqv8UF3EkSCCzer_GmJ5_BX/view?usp=sharing";
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(url));
+                startActivity(i);
+            }
+        };
+
         // declarando parte que funcionará como clicável
-        ss.setSpan(clicavel1, 21, 27, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-        ss.setSpan(clicavel15, 21, 34, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-        //ss.setSpan(clicavel2, 37, 61, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        ss.setSpan(clicavel1, 21, 29, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        //ss.setSpan(clicavel15, 22, 63, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        ss.setSpan(clicavel2, 22, 63, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
 
         textView.setText(ss);
         textView.setMovementMethod(LinkMovementMethod.getInstance());
@@ -120,13 +123,13 @@ public class Cadastro extends AppCompatActivity {
                 }
 
 
-                    if (textLength == 6) {
+                if (textLength == 6) {
 
-                        if (dataNascArray[5] != "/" && flag == true) {
-                            dataNasc.setText(new StringBuilder(dataNasc.getText().toString()).insert(str.length() - 1, "/").toString());
-                            dataNasc.setSelection(dataNasc.getText().length());
-                            flag = false;
-                        }
+                    if (dataNascArray[5] != "/" && flag == true) {
+                        dataNasc.setText(new StringBuilder(dataNasc.getText().toString()).insert(str.length() - 1, "/").toString());
+                        dataNasc.setSelection(dataNasc.getText().length());
+                        flag = false;
+                    }
 
                 }
 
@@ -212,7 +215,7 @@ public class Cadastro extends AppCompatActivity {
                         if(passwordVisible){
 
                             // set drawable image here
-                            senha.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0, R.drawable.ic_eye, 0);
+                            senha.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0, R.drawable.ic_eye_off, 0);
 
                             //for hide password
                             senha.setTransformationMethod(PasswordTransformationMethod.getInstance());
@@ -222,7 +225,7 @@ public class Cadastro extends AppCompatActivity {
                         }else {
 
                             //set drawable image here
-                            senha.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0,R.drawable.ic_eye_off,0);
+                            senha.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0,R.drawable.ic_eye,0);
 
 
                             //for show password
@@ -254,7 +257,7 @@ public class Cadastro extends AppCompatActivity {
                         if(passwordVisible){
 
                             // set drawable image here
-                            confirmar_senha.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0, R.drawable.ic_eye, 0);
+                            confirmar_senha.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0, R.drawable.ic_eye_off, 0);
 
                             //for hide password
                             confirmar_senha.setTransformationMethod(PasswordTransformationMethod.getInstance());
@@ -264,7 +267,7 @@ public class Cadastro extends AppCompatActivity {
                         }else {
 
                             //set drawable image here
-                            confirmar_senha.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0,R.drawable.ic_eye_off,0);
+                            confirmar_senha.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0,R.drawable.ic_eye,0);
 
 
                             //for show password
@@ -284,7 +287,7 @@ public class Cadastro extends AppCompatActivity {
         });
 
 
-        }
+    }
 
     //redirecionamento para ajuda
     public void ajuda(View view){
@@ -330,10 +333,19 @@ public class Cadastro extends AppCompatActivity {
         String Checkemail = email.getText().toString();
         String Checkchave =  chave.getText().toString();
         String Checksenha =  senha.getText().toString();
+        String str=chave .getText().toString();
+        int textLength=chave .getText().length();
+        int textLength1=tel .getText().length();
 
-
-
-        if(!senhaIgual()){
+        if(textLength1<15){
+            Toast.makeText(this, "Telefone incorreto", Toast.LENGTH_SHORT).show();
+            tel.setText("");
+        }
+        if(textLength<4){
+            Toast.makeText(this, "Chave de Acesso incorreta", Toast.LENGTH_SHORT).show();
+            chave.setText("");
+        }
+        else if(!senhaIgual()){
             Toast.makeText(this, "As senhas não coincidem", Toast.LENGTH_SHORT).show();
             senha1.setText("");
             senha2.setText("");
@@ -344,15 +356,20 @@ public class Cadastro extends AppCompatActivity {
             //new Insert().execute();
             registrate();
             CadastroObj cadastro = resgataInfo();
-            Handler handler = new Handler();
-            handler.postDelayed(new Runnable() {
-                public void run() {
-                    Intent myIntent = new Intent(Cadastro.this, Login.class);
-                    startActivity(myIntent);
-                }
-            }, 1500);
         }
 
+
+    }
+
+
+    private void vamoprologin() {
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            public void run() {
+                Intent myIntent = new Intent(Cadastro.this, Login.class);
+                startActivity(myIntent);
+            }
+        }, 1500);
     }
 
 
@@ -395,40 +412,47 @@ public class Cadastro extends AppCompatActivity {
         return checking;
     }
 
-private void registrate(){
-    CadastroObj info = new CadastroObj(resgataInfo().nome, resgataInfo().email, resgataInfo().tel,resgataInfo().dataNasc, resgataInfo().chave, resgataInfo().senha, resgataInfo().isAdmin);
-            String nome = info.nome.toString().trim();
-            String email = info.email.toString().trim();
-            String tel = info.tel.toString().trim();
-            String dataNasc = info.dataNasc.toString().trim();
-            String chave = info.chave.toString().trim();
-            String senha = info.senha.toString().trim();
-            int isAdmin = 0;
+    private void registrate(){
+        CadastroObj info = new CadastroObj(resgataInfo().nome, resgataInfo().email, resgataInfo().tel,resgataInfo().dataNasc, resgataInfo().chave, resgataInfo().senha, resgataInfo().isAdmin);
+        String nome = info.nome.toString().trim();
+        String email = info.email.toString().trim();
+        String tel = info.tel.toString().trim();
+        String dataNasc = info.dataNasc.toString().trim();
+        String chave = info.chave.toString().trim();
+        String senha = info.senha.toString().trim();
+        int isAdmin = 0;
 
-            Call<ResponseBody> call = RetroFitClient
-                    .getInstance()
-                    .getAPI()
-                    .createUser(nome, email, tel, dataNasc, 0 , chave, senha);
+        Call<ResponseBody> call = RetroFitClient
+                .getInstance()
+                .getAPI()
+                .createUser(nome, email, tel, dataNasc, 0 , chave, senha);
 
-            call.enqueue(new Callback<ResponseBody>() {
-                @Override
-                public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                    try {
+        call.enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                try {
+                    int code = response.code();
+                    if (code == 201){
+                        Toast.makeText(Cadastro.this, "Usuario já cadastrado, selecione outra chave", Toast.LENGTH_LONG).show();
+                    } else {
                         String body = response.body().string();
                         Toast.makeText(Cadastro.this, "Cadastrado com sucesso", Toast.LENGTH_LONG).show();
-                    }catch (IOException e) {
-                        e.printStackTrace();
+                        vamoprologin();
+
                     }
+                }catch (IOException e) {
+                    e.printStackTrace();
                 }
+            }
 
-                @Override
-                public void onFailure(Call<ResponseBody> call, Throwable t) {
-                    Toast.makeText(Cadastro.this, "Cadastro não realizado", Toast.LENGTH_LONG).show();
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+                Toast.makeText(Cadastro.this, "Cadastro não realizado", Toast.LENGTH_LONG).show();
 
-                }
-            });
+            }
+        });
 
-}
+    }
 
 
 
@@ -499,5 +523,4 @@ private void registrate(){
 //            return null;
 //        }
 //    }
-
 }

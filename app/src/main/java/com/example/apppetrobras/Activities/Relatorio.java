@@ -4,13 +4,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.Manifest;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.graphics.Rect;
 import android.graphics.drawable.ColorDrawable;
+import android.net.Uri;
 import android.os.Bundle;
+import android.util.Base64;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -32,6 +36,59 @@ import com.example.apppetrobras.databinding.LayoutRelatorioBinding;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.example.apppetrobras.fragments.RecyclerViewInteface;
 
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.os.Environment;
+import android.util.Log;
+import android.widget.Button;
+import android.widget.Toast;
+
+import com.example.apppetrobras.R;
+import com.itextpdf.text.BaseColor;
+import com.itextpdf.text.*;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Element;
+import com.itextpdf.text.Font;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.Phrase;
+import com.itextpdf.text.pdf.PdfPCell;
+import com.itextpdf.text.pdf.*;
+import com.itextpdf.text.pdf.PdfWriter;
+import java.io.*;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+
+import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Typeface;
+import android.graphics.pdf.PdfDocument;
+import android.os.Bundle;
+import android.os.Environment;
+import android.view.View;
+import android.widget.Button;
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.PageSize;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfWriter;
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
+import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -54,6 +111,7 @@ public class Relatorio extends Drawer implements RecyclerViewInteface{
     private RecyclerViewInteface recyclerViewInteface;
     private List<EtapasRelatorioObj> items = new ArrayList<>();
     private boolean funciona = false;
+    Document document;
     FloatingActionButton add_icon, download_icon, concludeicon;
     Animation fabOpen, fabClose, rotateForward, rotateBackward;
     int idRelatorio, notnotlmao;
@@ -73,6 +131,8 @@ public class Relatorio extends Drawer implements RecyclerViewInteface{
         allocateActivityTitle("Relatório");
         idRelatorio = getIntent().getIntExtra("idRelatorio",6);
         notnotlmao = getIntent().getIntExtra("notnotlmao",0);
+
+   //     makePDF();
 
 
         add_icon = (FloatingActionButton) findViewById(R.id.add_icon);
@@ -99,17 +159,16 @@ public class Relatorio extends Drawer implements RecyclerViewInteface{
                 animateFab();
 
 
+
             }
         });
 
-        // Botão de download presente no FAB
-        download_icon.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                animateFab();
-                Toast.makeText(Relatorio.this, "Coming soon", Toast.LENGTH_SHORT).show();
-            }
-        });
+
+
+
+
+
+
 
 
 
@@ -417,6 +476,44 @@ public class Relatorio extends Drawer implements RecyclerViewInteface{
         }
         return false;
     }
+
+
+
+    // Botão de download presente no FAB
+    //   private void makePDF(){
+
+
+        public void makePdf(View view) {
+            ActivityCompat.requestPermissions(Relatorio.this, new String[]{
+                    Manifest.permission.WRITE_EXTERNAL_STORAGE}, PackageManager.PERMISSION_GRANTED);
+            Toast.makeText(Relatorio.this, "Cheque sua conexão", Toast.LENGTH_SHORT).show();
+
+            PdfDocument document = new PdfDocument();
+            Paint myPaint = new Paint();
+
+            // cria a descrição da página
+            //
+            PdfDocument.PageInfo pageInfo = new PdfDocument.PageInfo.Builder(400, 600, 1).create();
+
+            // inicia a página
+            PdfDocument.Page page = document.startPage(pageInfo);
+            Canvas canvas = page.getCanvas();
+            canvas.drawText("Teste", 40, 50, myPaint);
+            document.finishPage(page);
+
+            File file = new File(Environment.getExternalStorageDirectory(), "Teste.pdf");
+            try{
+                document.writeTo(new FileOutputStream(file));
+            }catch (IOException e){
+                e.printStackTrace();
+            }
+            document.close();
+
+
+
+        }
+    // }
+
 
 
     @Override

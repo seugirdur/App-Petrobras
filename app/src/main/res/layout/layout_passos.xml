@@ -169,7 +169,6 @@
                 app:srcCompat="@drawable/ic_cancel_circle"
                 android:layout_marginBottom="10dp"
                 android:layout_marginTop="10dp"
-                android:src="@drawable/ic_check_circle"
                 app:layout_constraintStart_toStartOf="@id/text_layout"
                 app:layout_constraintTop_toBottomOf="@id/text_layout"
                 app:layout_constraintBottom_toBottomOf="parent"/>

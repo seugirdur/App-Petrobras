@@ -60,7 +60,7 @@ public class Cadastro extends AppCompatActivity {
         ClickableSpan clicavel1 = new ClickableSpan() {
             public void onClick(View widget) {
                 //link do pdf dos termos de uso
-                String url = "https://drive.google.com/file/d/1P39Iel7CKZqv8UF3EkSCCzer_GmJ5_BX/view?usp=sharing";
+                String url = "https://drive.google.com/file/d/11U4-N8wFcqf6MZF9mwzGNJNrBVx3MbKB/view?usp=sharing";
                 Intent i = new Intent(Intent.ACTION_VIEW);
                 i.setData(Uri.parse(url));
                 startActivity(i);
@@ -82,7 +82,7 @@ public class Cadastro extends AppCompatActivity {
             @Override
             public void onClick(View widget) {
                 //link do pdf das políticas de privacidade
-                String url = "https://drive.google.com/file/d/1P39Iel7CKZqv8UF3EkSCCzer_GmJ5_BX/view?usp=sharing";
+                String url = "https://drive.google.com/file/d/11U4-N8wFcqf6MZF9mwzGNJNrBVx3MbKB/view?usp=sharing";
                 Intent i = new Intent(Intent.ACTION_VIEW);
                 i.setData(Uri.parse(url));
                 startActivity(i);

@@ -19,7 +19,7 @@ import com.example.apppetrobras.R;
 public class Opcoes_Fragment extends Fragment implements View.OnClickListener {
 
     Dialog nDialog;
-    ImageButton btnab1,btnab2;
+    ImageButton btnab1,btnab2, btnab3;
     View view;
 
     // Declaração das variáveis
@@ -33,6 +33,7 @@ public class Opcoes_Fragment extends Fragment implements View.OnClickListener {
 
         btnab2 = view.findViewById(R.id.btnab2);
         btnab1 = view.findViewById(R.id.btnab1);
+        btnab3 = view.findViewById(R.id.btnab3);
 
         btnab2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,12 +45,23 @@ public class Opcoes_Fragment extends Fragment implements View.OnClickListener {
         btnab1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String url = "https://drive.google.com/file/d/1P39Iel7CKZqv8UF3EkSCCzer_GmJ5_BX/sview?usp=sharing";
+                String url = "https://drive.google.com/file/d/11U4-N8wFcqf6MZF9mwzGNJNrBVx3MbKB/view?usp=sharing";
                 Intent i = new Intent(Intent.ACTION_VIEW);
                 i.setData(Uri.parse(url));
                 startActivity(i);
             }
         });
+
+        btnab3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String url = "https://is.gd/suporteaset";
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(url));
+                startActivity(i);
+            }
+        });
+
         return view;
 
 //        btnab1 = view.findViewById(R.id.btnab1);

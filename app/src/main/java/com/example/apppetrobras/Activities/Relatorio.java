@@ -538,7 +538,7 @@ public class Relatorio extends Drawer implements RecyclerViewInteface{
             title.setTypeface(Typeface.defaultFromStyle(Typeface.NORMAL));
             title.setColor(ContextCompat.getColor(this, R.color.purple_200));
             title.setTextSize(20);
-
+//
             // below line is used for setting
             // our text to center of PDF.
             //title.setTextAlign(Paint.Align.CENTER);

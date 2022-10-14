@@ -542,7 +542,7 @@ public class Relatorio extends Drawer implements RecyclerViewInteface{
             // below line is used for setting
             // our text to center of PDF.
             title.setTextAlign(Paint.Align.CENTER);
-            for(int i=0; items.l)
+            for(int i=0; items.l)//
             canvas.drawText("This is sample document which we have created.", 396, 560, title);
 
             // after adding all attributes to our

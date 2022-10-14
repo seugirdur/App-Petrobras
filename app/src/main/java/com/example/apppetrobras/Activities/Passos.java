@@ -246,17 +246,10 @@ public class Passos extends Drawer {
         mDialog.setContentView(R.layout.popup_cadeado_solucoes);
         mDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         mDialog.show();
+    }
 
-//        btnSemAcesso.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//                mDialog.setContentView(R.layout.popup_cadeado_solucoes);
-//                mDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-//                mDialog.show();
-//
-//            }
-//        });
+    public void fecharPopup(View view) {
+        mDialog.dismiss();
     }
 
     public void inserirNaTela(){

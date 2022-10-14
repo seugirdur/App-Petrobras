@@ -537,13 +537,17 @@ public class Relatorio extends Drawer implements RecyclerViewInteface{
             // we are aligning this text to center of our PDF file.
             title.setTypeface(Typeface.defaultFromStyle(Typeface.NORMAL));
             title.setColor(ContextCompat.getColor(this, R.color.purple_200));
-            title.setTextSize(15);
+            title.setTextSize(20);
 
             // below line is used for setting
             // our text to center of PDF.
-            title.setTextAlign(Paint.Align.CENTER);
-            for(int i=0; items.l)//
-            canvas.drawText("This is sample document which we have created.", 396, 560, title);
+            //title.setTextAlign(Paint.Align.CENTER);
+            for(int i=0; i< items.size();i++){
+                EtapasRelatorioObj etapa = items.get(i);
+                canvas.drawText(etapa.getTitulo(), 209, 300+(i*40), title);
+                canvas.drawText(etapa.getSubtitulo(), 209, 320+(i*40), title);
+            }
+
 
             // after adding all attributes to our
             // PDF file we will be finishing our page.

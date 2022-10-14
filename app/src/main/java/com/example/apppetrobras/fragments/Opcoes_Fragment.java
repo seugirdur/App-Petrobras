@@ -55,7 +55,7 @@ public class Opcoes_Fragment extends Fragment implements View.OnClickListener {
         btnab3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String url = "https://is.gd/suporteaset";
+                String url = "https://is.gd/asetfeedback";
                 Intent i = new Intent(Intent.ACTION_VIEW);
                 i.setData(Uri.parse(url));
                 startActivity(i);

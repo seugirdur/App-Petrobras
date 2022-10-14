@@ -87,11 +87,10 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
-import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
-
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
 
@@ -100,11 +99,23 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-
+import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
+import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 
 
 public class Relatorio extends Drawer implements RecyclerViewInteface{
 
+    // declaring width and height
+    // for our PDF file.
+    int pageHeight = 1120;
+    int pagewidth = 792;
+
+    // creating a bitmap variable
+    // for storing our images
+  //  Bitmap bmp, scaledbmp;
+
+    // constant code for runtime permissions
+    private static final int PERMISSION_REQUEST_CODE = 200;
     private RecyclerView recyclerview;
     private String checking;
     private Context context;
@@ -119,6 +130,7 @@ public class Relatorio extends Drawer implements RecyclerViewInteface{
     SharedPreferences sp;
     SharedPreferences.Editor editor;
     LayoutRelatorioBinding layoutRelatorioBinding;
+    private String textData, nomeRel;
 
 
     boolean isOpen = false; // by default it is false
@@ -131,9 +143,6 @@ public class Relatorio extends Drawer implements RecyclerViewInteface{
         allocateActivityTitle("Relatório");
         idRelatorio = getIntent().getIntExtra("idRelatorio",6);
         notnotlmao = getIntent().getIntExtra("notnotlmao",0);
-
-   //     makePDF();
-
 
         add_icon = (FloatingActionButton) findViewById(R.id.add_icon);
         download_icon = (FloatingActionButton) findViewById(R.id.download_icon);
@@ -172,25 +181,6 @@ public class Relatorio extends Drawer implements RecyclerViewInteface{
 
 
 
-
-        // Botão de observações presente no FAB chamando o seu popup de observações
-//        concludeicon.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                animateFab();
-//                if (areYouAdmin()==1) {
-//                    concludeRelatorio();
-//                }
-//                else {
-//                    Toast.makeText(Relatorio.this, "Você não é Administrador", Toast.LENGTH_SHORT).show();
-//                }
-//
-//                //mDialog.setContentView(R.layout.popup_observacoes);
-//                //mDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-//                //mDialog.show();
-//
-//            }
-//        });
 
 
         //= sharedPreferences.getString("nome", "");
@@ -305,10 +295,10 @@ public class Relatorio extends Drawer implements RecyclerViewInteface{
                         problema.setText(cRelatorio.getTitulo());
                         TextView nome = findViewById(R.id.nome_usuario);
                         TextView data = findViewById(R.id.data_atual);
-                        String textData = cRelatorio.getDataProcesso();
-                        //String textData = "310505";
+                        textData = cRelatorio.getDataProcesso();
+                        nomeRel = cRelatorio.getNome();
                         data.setText(textData);
-                        nome.setText(cRelatorio.getNome());
+                        nome.setText(nomeRel);
                         if(funciona){solucionado.setText("Solucionado");}else{solucionado.setText("Não solucionado");}
 
 
@@ -484,35 +474,120 @@ public class Relatorio extends Drawer implements RecyclerViewInteface{
 
 
         public void makePdf(View view) {
-            ActivityCompat.requestPermissions(Relatorio.this, new String[]{
-                    Manifest.permission.WRITE_EXTERNAL_STORAGE}, PackageManager.PERMISSION_GRANTED);
-            Toast.makeText(Relatorio.this, "Cheque sua conexão", Toast.LENGTH_SHORT).show();
 
-            PdfDocument document = new PdfDocument();
-            Paint myPaint = new Paint();
+            if (checarPermissao()) {
 
-            // cria a descrição da página
-            //
-            PdfDocument.PageInfo pageInfo = new PdfDocument.PageInfo.Builder(400, 600, 1).create();
+            } else {
+                pedirPermissao();
+            }
 
-            // inicia a página
-            PdfDocument.Page page = document.startPage(pageInfo);
-            Canvas canvas = page.getCanvas();
-            canvas.drawText("Teste", 40, 50, myPaint);
-            document.finishPage(page);
 
-            File file = new File(Environment.getExternalStorageDirectory(), "Teste.pdf");
-            try{
-                document.writeTo(new FileOutputStream(file));
-            }catch (IOException e){
+            PdfDocument pdfDocument = new PdfDocument();
+            Paint title = new Paint();
+
+            // we are adding page info to our PDF file
+            // in which we will be passing our pageWidth,
+            // pageHeight and number of pages and after that
+            // we are calling it to create our PDF.
+            Bitmap bmp, scaledbmp;
+            bmp = BitmapFactory.decodeResource(getResources(), R.drawable.aset_logo);
+            scaledbmp = Bitmap.createScaledBitmap(bmp, 140, 140, false);
+            PdfDocument.PageInfo mypageInfo = new PdfDocument.PageInfo.Builder(pagewidth, pageHeight, 1).create();
+
+            // below line is used for setting
+            // start page for our PDF file.
+            PdfDocument.Page myPage = pdfDocument.startPage(mypageInfo);
+
+            // creating a variable for canvas
+            // from our page of PDF.
+            Canvas canvas = myPage.getCanvas();
+            Paint paint = new Paint();
+
+            // below line is used to draw our image on our PDF file.
+            // the first parameter of our drawbitmap method is
+            // our bitmap
+            // second parameter is position from left
+            // third parameter is position from top and last
+            // one is our variable for paint.
+            canvas.drawBitmap(scaledbmp, 56, 40, paint);
+
+            // below line is used for adding typeface for
+            // our text which we will be adding in our PDF file.
+            title.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
+
+            // below line is used for setting text size
+            // which we will be displaying in our PDF file.
+            title.setTextSize(15);
+
+            // below line is sued for setting color
+            // of our text inside our PDF file.
+            title.setColor(ContextCompat.getColor(this, R.color.black));
+
+            // below line is used to draw text in our PDF file.
+            // the first parameter is our text, second parameter
+            // is position from start, third parameter is position from top
+            // and then we are passing our variable of paint which is title.
+
+            canvas.drawText(nomeRel, 209, 80, title);
+            canvas.drawText("Data: " + textData, 209, 100, title);
+            if (checking.contains("2")){canvas.drawText("Solucionado ", 209, 120, title);}
+            else{canvas.drawText("Não solucionado ", 209, 120, title);}
+
+            // similarly we are creating another text and in this
+            // we are aligning this text to center of our PDF file.
+            title.setTypeface(Typeface.defaultFromStyle(Typeface.NORMAL));
+            title.setColor(ContextCompat.getColor(this, R.color.purple_200));
+            title.setTextSize(15);
+
+            // below line is used for setting
+            // our text to center of PDF.
+            title.setTextAlign(Paint.Align.CENTER);
+            for(int i=0; items.l)
+            canvas.drawText("This is sample document which we have created.", 396, 560, title);
+
+            // after adding all attributes to our
+            // PDF file we will be finishing our page.
+            pdfDocument.finishPage(myPage);
+
+
+            String data = textData.replace("/", "");
+            // below line is used to set the name of
+            // our PDF file and its path.
+            String nomeArquivo = "Relatorio" + data;
+            File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/Download/"
+                     + nomeArquivo + ".pdf");
+
+            try {
+                // after creating a file name we will
+                // write our PDF file to that location.
+                pdfDocument.writeTo(new FileOutputStream(file));
+
+                // below line is to print toast message
+                // on completion of PDF generation.
+                Toast.makeText(Relatorio.this, "PDF " + nomeArquivo  +  " criado com sucesso. Cheque sua pasta Download", Toast.LENGTH_SHORT).show();
+            } catch (IOException e) {
+                // below line is used
+                // to handle error
+                Toast.makeText(Relatorio.this, "Erro em baixar o arquivo.", Toast.LENGTH_SHORT).show();
                 e.printStackTrace();
             }
-            document.close();
-
-
-
+            // after storing our pdf to that
+            // location we are closing our PDF file.
+            pdfDocument.close();
         }
-    // }
+
+    private boolean checarPermissao() {
+        // checando as permissões
+        int p1 = ContextCompat.checkSelfPermission(getApplicationContext(), WRITE_EXTERNAL_STORAGE);
+        int p2 = ContextCompat.checkSelfPermission(getApplicationContext(), READ_EXTERNAL_STORAGE);
+        return p1 == PackageManager.PERMISSION_GRANTED && p2 == PackageManager.PERMISSION_GRANTED;
+    }
+
+    private void pedirPermissao() {
+        // pedir permissão
+        ActivityCompat.requestPermissions(this, new String[]{WRITE_EXTERNAL_STORAGE, READ_EXTERNAL_STORAGE}, PERMISSION_REQUEST_CODE);
+    }
+
 
 
 

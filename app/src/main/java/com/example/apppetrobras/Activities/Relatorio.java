@@ -390,12 +390,15 @@ public class Relatorio extends Drawer implements RecyclerViewInteface{
 
 
     //declarar a imagem do "se deu certo ou errado"
-    public int check(int a){
-        if(a==0){
-            return R.drawable.ic_cancel_circle;
-        }
-        else {
-            return R.drawable.ic_check_circle;
+    public int check(int check){
+        switch(check){
+            case 0:
+            default:
+                return R.drawable.ic_cancel_circle;
+            case 1:
+                return R.drawable.ic_asterisco;
+            case 2:
+                return R.drawable.ic_check_circle;
         }
     }
 

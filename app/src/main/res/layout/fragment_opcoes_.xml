@@ -10,138 +10,153 @@
     <TextView
         android:layout_width="280dp"
         android:layout_height="23dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="15dp"
         android:text="Termos de Política e Privacidade"
         android:textSize="16dp"
-        app:layout_constraintEnd_toEndOf="@+id/btnab1"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/priv"
-        app:layout_constraintTop_toTopOf="@+id/btnab1"
         android:textColor="@color/black"
-        android:paddingLeft="15dp"
+        app:layout_constraintStart_toEndOf="@+id/priv"
+        app:layout_constraintTop_toTopOf="@id/btnab1"
+        app:layout_constraintBottom_toBottomOf="@+id/btnab1"
         />
 
     <ImageView
         android:id="@+id/priv"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
         android:src="@drawable/priv_icon"
+        android:layout_marginStart="15dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@id/btnab1"
+        app:layout_constraintBottom_toBottomOf="@+id/btnab1"/>
 
 
     <ImageView
         android:id="@+id/sobre"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="15dp"
         android:src="@drawable/nos_circle"
-        app:layout_constraintEnd_toEndOf="@id/priv"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@id/priv"
-        app:layout_constraintTop_toBottomOf="@id/priv" />
+        android:layout_marginStart="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/btnab2"
+        app:layout_constraintBottom_toBottomOf="@+id/btnab2" />
 
     <TextView
         android:id="@+id/feed"
         android:layout_width="232dp"
         android:layout_height="22dp"
-        android:layout_marginBottom="16dp"
-        android:paddingLeft="15dp"
-        android:text="Feedback"
+        android:text="Avaliação do app"
         android:textColor="@color/black"
         android:textSize="17dp"
-        app:layout_constraintBottom_toBottomOf="@id/imageView2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.008"
-        app:layout_constraintStart_toEndOf="@+id/imageView2"
-        app:layout_constraintTop_toBottomOf="@+id/btnab2"
-        app:layout_constraintVertical_bias="1.0" />
+        android:layout_marginStart="15dp"
+        app:layout_constraintStart_toEndOf="@id/imageView2"
+        app:layout_constraintTop_toTopOf="@id/btnab3"
+        app:layout_constraintBottom_toBottomOf="@+id/btnab3"/>
 
     <TextView
         android:id="@+id/textView23"
         android:layout_width="203dp"
         android:layout_height="25dp"
-        android:layout_marginTop="12dp"
-        android:paddingLeft="15dp"
         android:text="Sobre nós"
         android:textColor="@color/black"
         android:textSize="17dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.007"
-        app:layout_constraintStart_toEndOf="@+id/sobre"
-        app:layout_constraintTop_toTopOf="@+id/btnab2" />
+        android:layout_marginStart="15dp"
+        app:layout_constraintStart_toEndOf="@id/sobre"
+        app:layout_constraintTop_toTopOf="@id/btnab2"
+        app:layout_constraintBottom_toBottomOf="@+id/btnab2"/>
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:src="@drawable/icon_feedback"
-        tools:layout_editor_absoluteX="20dp"
-        tools:layout_editor_absoluteY="227dp"
-        app:layout_constraintStart_toStartOf="@id/sobre"
-        app:layout_constraintEnd_toEndOf="@id/sobre"
-        app:layout_constraintTop_toBottomOf="@id/sobre"
-        android:layout_marginTop="15dp"/>
+        android:layout_marginStart="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/btnab3"
+        app:layout_constraintBottom_toBottomOf="@+id/btnab3"/>
 
     <ImageButton
         android:id="@+id/btnab1"
         android:layout_width="409dp"
         android:layout_height="56dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="10dp"
         android:src="@drawable/ic_launcher_foreground"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.399"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnab3"
         android:background="?android:attr/selectableItemBackground"/>
 
     <ImageButton
         android:id="@+id/btnab2"
         android:layout_width="409dp"
         android:layout_height="56dp"
-        android:layout_marginTop="84dp"
+        android:layout_marginTop="10dp"
         android:background="?android:attr/selectableItemBackground"
         android:src="@drawable/ic_launcher_foreground"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/btn_manual" />
 
     <ImageButton
         android:id="@+id/btnab3"
         android:layout_width="409dp"
         android:layout_height="56dp"
-        android:layout_marginTop="148dp"
+        android:layout_marginTop="10dp"
         android:background="?android:attr/selectableItemBackground"
         android:src="@drawable/ic_launcher_foreground"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/btnab2" />
 
     <ImageView
+        android:id="@+id/versao"
         android:layout_width="50dp"
         android:layout_height="50dp"
         app:layout_constraintEnd_toEndOf="@id/imageView2"
         app:layout_constraintStart_toStartOf="@id/imageView2"
-        app:layout_constraintTop_toBottomOf="@id/imageView2"
+        app:layout_constraintTop_toBottomOf="@id/priv"
         android:layout_marginTop="15dp"
         android:src="@drawable/icon_smart"/>
 
     <TextView
         android:layout_width="272dp"
         android:layout_height="21dp"
-        android:layout_marginTop="44dp"
-        android:paddingLeft="15dp"
         android:text="Versão do APP 11.1.24"
         android:textColor="@color/black"
         android:textSize="16dp"
-        app:layout_constraintEnd_toEndOf="@id/feed"
-        app:layout_constraintHorizontal_bias="0.025"
-        app:layout_constraintStart_toStartOf="@id/feed"
-        app:layout_constraintTop_toBottomOf="@id/feed" />
+        android:layout_marginStart="15dp"
+        app:layout_constraintStart_toEndOf="@+id/versao"
+        app:layout_constraintTop_toTopOf="@+id/versao"
+        app:layout_constraintBottom_toBottomOf="@+id/versao"/>
 
+    <ImageButton
+        android:id="@+id/btn_manual"
+        android:layout_width="409dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="10dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:src="@drawable/ic_launcher_foreground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/img_manual"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/btn_manual"
+        app:layout_constraintBottom_toBottomOf="@id/btn_manual"
+        android:src="@drawable/arrow_forward_24"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="16dp"
+        android:text="Manual"
+        android:layout_marginStart="15dp"
+        app:layout_constraintStart_toEndOf="@id/img_manual"
+        app:layout_constraintTop_toTopOf="@id/btn_manual"
+        app:layout_constraintBottom_toBottomOf="@id/btn_manual"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

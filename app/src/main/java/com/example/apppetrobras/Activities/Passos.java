@@ -3,6 +3,7 @@ package com.example.apppetrobras.Activities;
 import android.Manifest;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -393,9 +394,7 @@ public class Passos extends Drawer {
             mdialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
             mdialog.show();
 
-
-
-
+            mdialog.setOnCancelListener(dialog -> Passos.this.finish());
         }
 
     }

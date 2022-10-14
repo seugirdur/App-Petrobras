@@ -1,7 +1,10 @@
 package com.example.apppetrobras.fragments;
 
 import android.app.Dialog;
+import android.content.ClipDescription;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -55,10 +58,21 @@ public class Opcoes_Fragment extends Fragment implements View.OnClickListener {
         btnab3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String url = "https://is.gd/suporteaset";
-                Intent i = new Intent(Intent.ACTION_VIEW);
-                i.setData(Uri.parse(url));
-                startActivity(i);
+//                String url = "https://is.gd/suporteaset";
+//                Intent i = new Intent(Intent.ACTION_VIEW);
+//                i.setData(Uri.parse(url));
+
+                SharedPreferences sharedPreferences = getActivity().getSharedPreferences(
+                        getString(R.string.preference_file_key), Context.MODE_PRIVATE);
+                String nome = sharedPreferences.getString("nome", "");
+
+
+                Intent intent = new Intent(Intent.ACTION_SENDTO);
+                intent.setData(Uri.parse("mailto:"));
+                intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"suporteaset@gmail.com"});
+                intent.putExtra(Intent.EXTRA_SUBJECT, "Avaliação de "+nome);
+//                intent.putExtra(Intent.EXTRA_TEXT, "");
+                startActivity(Intent.createChooser(intent,"Escolha o aplicativo de email"));
             }
         });
 

@@ -1,0 +1,571 @@
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_10_4_2022_11_41_AM__Changes_.xml
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_10_4_2022_11_41_AM__Changes_.xml b/.idea/shelf/Uncommitted_changes_before_Update_at_10_4_2022_11_41_AM__Changes_.xml
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_10_4_2022_11_41_AM__Changes_.xml	(revision 5b1670f3fe9f1020724165b277a1cca9513d5ff1)
++++ /dev/null	(revision 5b1670f3fe9f1020724165b277a1cca9513d5ff1)
+@@ -1,4 +0,0 @@
+-<changelist name="Uncommitted_changes_before_Update_at_10_4_2022_11_41_AM_[Changes]" date="1664894473294" recycled="true" deleted="true">
+-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_4_2022_11_41_AM_[Changes]/shelved.patch" />
+-  <option name="DESCRIPTION" value="Uncommitted changes before Update at 10/4/2022 11:41 AM [Changes]" />
+-</changelist>
+\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_04_10_2022_09_37__Changes_.xml
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_04_10_2022_09_37__Changes_.xml b/.idea/shelf/Uncommitted_changes_before_Update_at_04_10_2022_09_37__Changes_.xml
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_04_10_2022_09_37__Changes_.xml	(revision 5b1670f3fe9f1020724165b277a1cca9513d5ff1)
++++ /dev/null	(revision 5b1670f3fe9f1020724165b277a1cca9513d5ff1)
+@@ -1,4 +0,0 @@
+-<changelist name="Uncommitted_changes_before_Update_at_04_10_2022_09_37_[Changes]" date="1664887071933" recycled="true" deleted="true">
+-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_04_10_2022_09_37_[Changes]/shelved.patch" />
+-  <option name="DESCRIPTION" value="Uncommitted changes before Update at 04/10/2022 09:37 [Changes]" />
+-</changelist>
+\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_10_4_2022_11_41_AM_[Changes]/shelved.patch
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_10_4_2022_11_41_AM_[Changes]/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Update_at_10_4_2022_11_41_AM_[Changes]/shelved.patch
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_10_4_2022_11_41_AM_[Changes]/shelved.patch	(revision 5b1670f3fe9f1020724165b277a1cca9513d5ff1)
++++ /dev/null	(revision 5b1670f3fe9f1020724165b277a1cca9513d5ff1)
+@@ -1,233 +0,0 @@
+-Index: app/src/main/java/com/example/apppetrobras/Adapters/RVAdapterEmAberto.java
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>package com.example.apppetrobras.Adapters;\r\n\r\nimport android.content.Context;\r\nimport android.text.Layout;\r\nimport android.view.LayoutInflater;\r\nimport android.view.View;\r\nimport android.view.ViewGroup;\r\nimport android.widget.TextView;\r\n\r\nimport androidx.annotation.NonNull;\r\nimport androidx.recyclerview.widget.RecyclerView;\r\n\r\nimport com.example.apppetrobras.Objects.ProblemasObj;\r\nimport com.example.apppetrobras.Objects.RelatorioObj;\r\nimport com.example.apppetrobras.R;\r\nimport com.example.apppetrobras.fragments.RecyclerViewInteface;\r\nimport java.util.List;\r\n\r\npublic class RVAdapterEmAberto extends RecyclerView.Adapter<RVAdapterEmAberto.MyViewHolder>{\r\n    // Declaração das variáveis\r\n    private final RecyclerViewInteface recyclerViewInteface;\r\n    private final int layout;\r\n    Context context;\r\n    List<RelatorioObj> relatorioObjList;\r\n\r\n    public RVAdapterEmAberto(Context context, List<RelatorioObj> relatorioObjList,\r\n                             RecyclerViewInteface recyclerViewInteface, int layout){\r\n        this.context = context;\r\n        this.relatorioObjList = relatorioObjList;\r\n        this.recyclerViewInteface = recyclerViewInteface;\r\n        this.layout = layout;\r\n    }\r\n\r\n    @NonNull\r\n    @Override\r\n    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {\r\n        View view = LayoutInflater.from(context).inflate(layout,parent,false);\r\n\r\n        // Instanciação das variáveis\r\n        int idTexto1, idTexto2, idTexto3, idTexto4;\r\n\r\n        // Estrutura de decisão de acordo com o layout(xml) da recyclerview,\r\n        // a partir disso são atribuídos os id's que existem em cada item\r\n        idTexto1 = R.id.textProblema;\r\n        idTexto2 = R.id.textView25;\r\n        idTexto3 = R.id.textView27;\r\n        idTexto4 = R.id.textView29;\r\n        return new RVAdapterEmAberto.MyViewHolder(view, recyclerViewInteface,\r\n                idTexto1, idTexto2, idTexto3, idTexto4);\r\n    }\r\n\r\n    @Override\r\n    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {\r\n\r\n\r\n        RelatorioObj data = relatorioObjList.get(position);\r\n        // Há a verificação de cada variável, caso ela tenha sido definida, ela passa o valor\r\n        // Isso é necessário pois as listas recebem diferentes quantidades de valores\r\n\r\n        String dataProccesso = data.getDataProcesso().substring(0,2) + \"/\"\r\n                + data.getDataProcesso().substring(2,4) + \"/\"\r\n                + data.getDataProcesso().substring(4,6);\r\n        if(holder.text1 !=null){ holder.text1.setText(dataProccesso);}\r\n        if(holder.text2 !=null){ holder.text2.setText(data.getNome());}\r\n        if(holder.text3 !=null){ holder.text3.setText(\"Não é possível resgatar dessa tabela do BD\");}\r\n        if(holder.text4 !=null){ holder.text4.setText(\"Não é possível resgatar dessa tabela do BD\");}\r\n    }\r\n\r\n    @Override\r\n    public int getItemCount() {\r\n        return relatorioObjList.size();\r\n    }\r\n\r\n    public static class MyViewHolder extends RecyclerView.ViewHolder{\r\n\r\n        TextView text1, text2, text3, text4;\r\n\r\n        public MyViewHolder(@NonNull View itemView, RecyclerViewInteface recyclerViewInteface,\r\n                            int item1, int item2, int item3, int item4) {\r\n            super(itemView);\r\n\r\n            // Definição de variáveis com os valores dos id's\r\n            text1 = itemView.findViewById(item1);\r\n            text2 = itemView.findViewById(item2);\r\n            text3 = itemView.findViewById(item3);\r\n            text4 = itemView.findViewById(item4);\r\n\r\n            // Define o método onItemClik da interface para cada item da RecyclerView\r\n            moduleOnClick(recyclerViewInteface);\r\n        }\r\n\r\n        // Módulo que define o método onItemClik da interface para cada item da RecyclerView\r\n        private void moduleOnClick(RecyclerViewInteface recyclerViewInteface){\r\n            itemView.setOnClickListener(new View.OnClickListener() {\r\n                @Override\r\n                public void onClick(View view) {\r\n                    if(recyclerViewInteface != null){\r\n                        int pos = getBindingAdapterPosition();\r\n                        if (pos != RecyclerView.NO_POSITION) {\r\n                            recyclerViewInteface.onItemClick(pos);\r\n                        }\r\n                    }\r\n                }\r\n            });\r\n        }\r\n    }\r\n}
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/app/src/main/java/com/example/apppetrobras/Adapters/RVAdapterEmAberto.java b/app/src/main/java/com/example/apppetrobras/Adapters/RVAdapterEmAberto.java
+---- a/app/src/main/java/com/example/apppetrobras/Adapters/RVAdapterEmAberto.java	(revision 2988f28d483b65992f11497099d0f29120738a2b)
+-+++ b/app/src/main/java/com/example/apppetrobras/Adapters/RVAdapterEmAberto.java	(date 1664891592613)
+-@@ -11,7 +11,7 @@
+- import androidx.recyclerview.widget.RecyclerView;
+- 
+- import com.example.apppetrobras.Objects.ProblemasObj;
+--import com.example.apppetrobras.Objects.RelatorioObj;
+-+import com.example.apppetrobras.Objects.AdminObj;
+- import com.example.apppetrobras.R;
+- import com.example.apppetrobras.fragments.RecyclerViewInteface;
+- import java.util.List;
+-@@ -21,12 +21,12 @@
+-     private final RecyclerViewInteface recyclerViewInteface;
+-     private final int layout;
+-     Context context;
+--    List<RelatorioObj> relatorioObjList;
+-+    List<AdminObj> AdminObjList;
+- 
+--    public RVAdapterEmAberto(Context context, List<RelatorioObj> relatorioObjList,
+-+    public RVAdapterEmAberto(Context context, List<AdminObj> AdminObjList,
+-                              RecyclerViewInteface recyclerViewInteface, int layout){
+-         this.context = context;
+--        this.relatorioObjList = relatorioObjList;
+-+        this.AdminObjList = AdminObjList;
+-         this.recyclerViewInteface = recyclerViewInteface;
+-         this.layout = layout;
+-     }
+-@@ -53,22 +53,20 @@
+-     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+- 
+- 
+--        RelatorioObj data = relatorioObjList.get(position);
+-+        AdminObj data = AdminObjList.get(position);
+-         // Há a verificação de cada variável, caso ela tenha sido definida, ela passa o valor
+-         // Isso é necessário pois as listas recebem diferentes quantidades de valores
+- 
+--        String dataProccesso = data.getDataProcesso().substring(0,2) + "/"
+--                + data.getDataProcesso().substring(2,4) + "/"
+--                + data.getDataProcesso().substring(4,6);
+--        if(holder.text1 !=null){ holder.text1.setText(dataProccesso);}
+-+
+-+        if(holder.text1 !=null){ holder.text1.setText(data.getDataProcesso());}
+-         if(holder.text2 !=null){ holder.text2.setText(data.getNome());}
+--        if(holder.text3 !=null){ holder.text3.setText("Não é possível resgatar dessa tabela do BD");}
+--        if(holder.text4 !=null){ holder.text4.setText("Não é possível resgatar dessa tabela do BD");}
+-+        if(holder.text3 !=null){ holder.text3.setText(data.getEmail());}
+-+        if(holder.text4 !=null){ holder.text4.setText(data.getSetor());}
+-     }
+- 
+-     @Override
+-     public int getItemCount() {
+--        return relatorioObjList.size();
+-+        return AdminObjList.size();
+-     }
+- 
+-     public static class MyViewHolder extends RecyclerView.ViewHolder{
+-Index: app/src/main/java/com/example/apppetrobras/api/API.java
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>package com.example.apppetrobras.api;\r\n\r\nimport com.example.apppetrobras.Objects.PerfilObj;\r\nimport com.example.apppetrobras.Objects.RelatorioObj;\r\nimport com.example.apppetrobras.Objects.SolucoesObj;\r\nimport com.example.apppetrobras.Objects.PassosObj;\r\nimport com.example.apppetrobras.Objects.LoginObj;\r\n\r\nimport java.util.List;\r\n\r\nimport okhttp3.ResponseBody;\r\nimport retrofit2.Call;\r\nimport retrofit2.http.Field;\r\nimport retrofit2.http.FormUrlEncoded;\r\nimport retrofit2.http.GET;\r\nimport retrofit2.http.POST;\r\n\r\npublic interface  API {\r\n\r\n    //Classe com todos os metodos para as diferentes rotas da nossa API\r\n\r\n\r\n    //Rota POST para cadastro\r\n    @FormUrlEncoded\r\n    @POST(\"/usuarios/cadastro\")\r\n    Call<ResponseBody> createUser(\r\n            @Field(\"nome\") String nome,\r\n            @Field(\"email\") String email,\r\n            @Field(\"tel\") String tel,\r\n            @Field(\"dataNasc\") String dataNasc,\r\n            @Field(\"chave\") String chave,\r\n            @Field(\"senha\") String senha\r\n    );\r\n\r\n    //Rota POST para login do usuario\r\n    @FormUrlEncoded\r\n    @POST(\"/usuarios/login\")\r\n    Call<List<LoginObj>> userLogin(\r\n            @Field(\"chave\") String chave,\r\n            @Field(\"senha\") String senha\r\n    );\r\n\r\n    @FormUrlEncoded\r\n    @POST(\"/usuarios/update\")\r\n    Call<List<PerfilObj>> updateUser(\r\n            @Field(\"nome\") String nome,\r\n            @Field(\"tel\") String tel,\r\n            @Field(\"email\") String email,\r\n            @Field(\"chave\") String chave\r\n    );\r\n\r\n    //Rota GET para receber o JSON com a lista teste de todos os problemas\r\n    @FormUrlEncoded\r\n    @POST(\"/problems/internet\")\r\n    Call<List<SolucoesObj>> getInternet(\r\n            @Field(\"idTitulo\") int idTitulo\r\n    );\r\n\r\n    @FormUrlEncoded\r\n    @POST(\"/problems/equipamentos\")\r\n    Call<List<SolucoesObj>> getEquipamentos(\r\n            @Field(\"idTitulo\") int idTitulo\r\n\r\n    );\r\n\r\n    @FormUrlEncoded\r\n    @POST(\"/problems/lentidao\")\r\n    Call<List<SolucoesObj>> getLentidao(\r\n            @Field(\"idTitulo\") int idTitulo\r\n\r\n    );\r\n\r\n    @FormUrlEncoded\r\n    @POST(\"/problems/outros\")\r\n    Call<List<SolucoesObj>> getOutros(\r\n            @Field(\"idTitulo\") int idTitulo\r\n\r\n    );\r\n\r\n\r\n\r\n    @FormUrlEncoded\r\n    @POST(\"/soluctions/textoInternet\")\r\n    Call<List<PassosObj>> getTextoInternet(\r\n            @Field(\"idSolucao\") int idSolucao,\r\n            @Field(\"idtexto\") int idtexto\r\n\r\n    );\r\n\r\n    @FormUrlEncoded\r\n    @POST(\"/soluctions/textoLentidao\")\r\n    Call<List<PassosObj>> getTextoLentidao(\r\n            @Field(\"idSolucao\") int idSolucao,\r\n            @Field(\"idtexto\") int idtexto\r\n\r\n    );\r\n\r\n    @FormUrlEncoded\r\n    @POST(\"/soluctions/textoOutros\")\r\n    Call<List<PassosObj>> getTextoOutros(\r\n            @Field(\"idSolucao\") int idSolucao,\r\n            @Field(\"idtexto\") int idtexto\r\n\r\n    );\r\n\r\n    @FormUrlEncoded\r\n    @POST(\"/soluctions/textoEquipamento\")\r\n    Call<List<PassosObj>> getTextoEquipamento(\r\n            @Field(\"idSolucao\") int idSolucao,\r\n            @Field(\"idtexto\") int idtexto\r\n\r\n    );\r\n\r\n    @FormUrlEncoded\r\n    @POST(\"/relatorios/access\")\r\n    Call<List<RelatorioObj>> getRelatorio(\r\n            @Field(\"chave\") String chave\r\n\r\n    );\r\n\r\n    @FormUrlEncoded\r\n    @POST(\"/relatorios/store\")\r\n    Call<ResponseBody> postRelatorio(\r\n            @Field(\"nome\") String nome,\r\n            @Field(\"chave\") String chave,\r\n            @Field(\"dataProcesso\") String dataProcesso,\r\n            @Field(\"idSecao\") int idSecao,\r\n            @Field(\"secao\") String secao,\r\n            @Field(\"idTitulo\") int idTitulo,\r\n            @Field(\"titulo\") String titulo,\r\n            @Field(\"made_check\") String made_check\r\n\r\n    );\r\n\r\n    @GET(\"/relatorios/admin/aberto\")\r\n    Call<List<RelatorioObj>> getAllRelatoriosOpen();\r\n\r\n\r\n    @GET(\"/relatorios/admin/fechado\")\r\n    Call<List<RelatorioObj>> getAllRelatoriosClosed();\r\n\r\n\r\n}\r\n
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/app/src/main/java/com/example/apppetrobras/api/API.java b/app/src/main/java/com/example/apppetrobras/api/API.java
+---- a/app/src/main/java/com/example/apppetrobras/api/API.java	(revision 2988f28d483b65992f11497099d0f29120738a2b)
+-+++ b/app/src/main/java/com/example/apppetrobras/api/API.java	(date 1664892068591)
+-@@ -1,5 +1,6 @@
+- package com.example.apppetrobras.api;
+- 
+-+import com.example.apppetrobras.Objects.AdminObj;
+- import com.example.apppetrobras.Objects.PerfilObj;
+- import com.example.apppetrobras.Objects.RelatorioObj;
+- import com.example.apppetrobras.Objects.SolucoesObj;
+-@@ -133,11 +134,11 @@
+-     );
+- 
+-     @GET("/relatorios/admin/aberto")
+--    Call<List<RelatorioObj>> getAllRelatoriosOpen();
+-+    Call<List<AdminObj>> getAllRelatoriosOpen();
+- 
+- 
+-     @GET("/relatorios/admin/fechado")
+--    Call<List<RelatorioObj>> getAllRelatoriosClosed();
+-+    Call<List<AdminObj>> getAllRelatoriosClosed();
+- 
+- 
+- }
+-Index: app/src/main/java/com/example/apppetrobras/fragments/EmAbertoFragment.java
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>package com.example.apppetrobras.fragments;\r\n\r\nimport android.content.Context;\r\nimport android.content.Intent;\r\nimport android.os.Bundle;\r\nimport android.view.LayoutInflater;\r\nimport android.view.View;\r\nimport android.view.ViewGroup;\r\nimport android.widget.Toast;\r\n\r\nimport androidx.annotation.NonNull;\r\nimport androidx.annotation.Nullable;\r\nimport androidx.fragment.app.Fragment;\r\nimport androidx.recyclerview.widget.LinearLayoutManager;\r\nimport androidx.recyclerview.widget.RecyclerView;\r\n\r\nimport com.example.apppetrobras.Activities.Inicio;\r\nimport com.example.apppetrobras.Activities.Solucoes;\r\nimport com.example.apppetrobras.Adapters.RVAdapterEmAberto;\r\nimport com.example.apppetrobras.Adapters.RecyclerViewAdapter;\r\nimport com.example.apppetrobras.Adapters.RelatorioAdapter;\r\nimport com.example.apppetrobras.Objects.ProblemasObj;\r\nimport com.example.apppetrobras.Objects.RelatorioObj;\r\nimport com.example.apppetrobras.Objects.SolucoesObj;\r\nimport com.example.apppetrobras.R;\r\nimport com.example.apppetrobras.api.RetroFitClient;\r\nimport com.example.apppetrobras.databinding.LayoutSolucoesBinding;\r\n\r\nimport java.util.ArrayList;\r\nimport java.util.List;\r\n\r\nimport retrofit2.Call;\r\nimport retrofit2.Callback;\r\nimport retrofit2.Response;\r\n\r\npublic class EmAbertoFragment extends Fragment implements RecyclerViewInteface{\r\n\r\n    // Declaração das variáveis\r\n    private ArrayList<ProblemasObj> dataArrayList;\r\n    List<RelatorioObj> relatorioObjList;\r\n\r\n    private RecyclerView recyclerview;\r\n    private Context context;\r\n    private RecyclerViewInteface recyclerViewInteface;\r\n\r\n\r\n    @Override\r\n    public View onCreateView(LayoutInflater inflater, ViewGroup container,\r\n                             Bundle savedInstanceState) {\r\n        // Inflate the layout for this fragment\r\n        return inflater.inflate(R.layout.layout_tela_admin_chamadas, container, false);\r\n\r\n    }\r\n\r\n    @Override\r\n    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {\r\n        super.onViewCreated(view, savedInstanceState);\r\n\r\n        context = getContext();\r\n        recyclerViewInteface = this;\r\n\r\n        recyclerview = view.findViewById(R.id.recyclerviewadmin);\r\n        recyclerview.setLayoutManager(new LinearLayoutManager(context));\r\n        recyclerview.setHasFixedSize(true);\r\n\r\n        listen();\r\n    }\r\n\r\n    @Override\r\n    public void onItemClick(int position) {\r\n        // Redirecionamento para a tela do problema contendo os títulos das soluções\r\n        Intent intent = new Intent(getActivity(), Inicio.class);\r\n\r\n        // Definição de valores que serão redirecionados\r\n        intent.putExtra(\"TIPO\",3);\r\n        intent.putExtra(\"ID_TITULO\", dataArrayList.get(position).getId());\r\n        startActivity(intent);\r\n    }\r\n\r\n    private void listen(){\r\n\r\n        Call<List<RelatorioObj>> callme = RetroFitClient\r\n                .getInstance()\r\n                .getAPI()\r\n                .getAllRelatoriosOpen();\r\n\r\n        callme.enqueue(new Callback<List<RelatorioObj>>() {\r\n            @Override\r\n            public void onResponse(Call<List<RelatorioObj>> call, Response<List<RelatorioObj>> response) {\r\n                if (!response.isSuccessful()){\r\n                    Toast.makeText(getContext(), \"wassup\", Toast.LENGTH_SHORT).show();\r\n                    return;\r\n                }\r\n\r\n                //tentando guardar num objeto para que seja depois visivel no item_list_admin do dionisio\r\n                relatorioObjList = response.body();\r\n\r\n                RVAdapterEmAberto recyclerViewAdapter = new RVAdapterEmAberto(context,\r\n                        relatorioObjList, recyclerViewInteface, R.layout.item_list_admin);\r\n                recyclerview.setAdapter(recyclerViewAdapter);\r\n                recyclerViewAdapter.notifyDataSetChanged();\r\n\r\n            }\r\n\r\n            @Override\r\n            public void onFailure(Call<List<RelatorioObj>> call, Throwable t) {\r\n\r\n            }\r\n        });\r\n\r\n    }\r\n\r\n\r\n\r\n}
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/app/src/main/java/com/example/apppetrobras/fragments/EmAbertoFragment.java b/app/src/main/java/com/example/apppetrobras/fragments/EmAbertoFragment.java
+---- a/app/src/main/java/com/example/apppetrobras/fragments/EmAbertoFragment.java	(revision 2988f28d483b65992f11497099d0f29120738a2b)
+-+++ b/app/src/main/java/com/example/apppetrobras/fragments/EmAbertoFragment.java	(date 1664892068612)
+-@@ -20,7 +20,7 @@
+- import com.example.apppetrobras.Adapters.RecyclerViewAdapter;
+- import com.example.apppetrobras.Adapters.RelatorioAdapter;
+- import com.example.apppetrobras.Objects.ProblemasObj;
+--import com.example.apppetrobras.Objects.RelatorioObj;
+-+import com.example.apppetrobras.Objects.AdminObj;
+- import com.example.apppetrobras.Objects.SolucoesObj;
+- import com.example.apppetrobras.R;
+- import com.example.apppetrobras.api.RetroFitClient;
+-@@ -37,7 +37,7 @@
+- 
+-     // Declaração das variáveis
+-     private ArrayList<ProblemasObj> dataArrayList;
+--    List<RelatorioObj> relatorioObjList;
+-+    List<AdminObj> AdminObjList;
+- 
+-     private RecyclerView recyclerview;
+-     private Context context;
+-@@ -79,31 +79,31 @@
+- 
+-     private void listen(){
+- 
+--        Call<List<RelatorioObj>> callme = RetroFitClient
+-+        Call<List<AdminObj>> callme = RetroFitClient
+-                 .getInstance()
+-                 .getAPI()
+-                 .getAllRelatoriosOpen();
+- 
+--        callme.enqueue(new Callback<List<RelatorioObj>>() {
+-+        callme.enqueue(new Callback<List<AdminObj>>() {
+-             @Override
+--            public void onResponse(Call<List<RelatorioObj>> call, Response<List<RelatorioObj>> response) {
+-+            public void onResponse(Call<List<AdminObj>> call, Response<List<AdminObj>> response) {
+-                 if (!response.isSuccessful()){
+-                     Toast.makeText(getContext(), "wassup", Toast.LENGTH_SHORT).show();
+-                     return;
+-                 }
+- 
+-                 //tentando guardar num objeto para que seja depois visivel no item_list_admin do dionisio
+--                relatorioObjList = response.body();
+-+                AdminObjList = response.body();
+- 
+-                 RVAdapterEmAberto recyclerViewAdapter = new RVAdapterEmAberto(context,
+--                        relatorioObjList, recyclerViewInteface, R.layout.item_list_admin);
+-+                        AdminObjList, recyclerViewInteface, R.layout.item_list_admin);
+-                 recyclerview.setAdapter(recyclerViewAdapter);
+-                 recyclerViewAdapter.notifyDataSetChanged();
+- 
+-             }
+- 
+-             @Override
+--            public void onFailure(Call<List<RelatorioObj>> call, Throwable t) {
+-+            public void onFailure(Call<List<AdminObj>> call, Throwable t) {
+- 
+-             }
+-         });
+-Index: app/src/main/java/com/example/apppetrobras/Objects/AdminObj.java
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/app/src/main/java/com/example/apppetrobras/Objects/AdminObj.java b/app/src/main/java/com/example/apppetrobras/Objects/AdminObj.java
+-new file mode 100644
+---- /dev/null	(date 1664891592626)
+-+++ b/app/src/main/java/com/example/apppetrobras/Objects/AdminObj.java	(date 1664891592626)
+-@@ -0,0 +1,62 @@
+-+package com.example.apppetrobras.Objects;
+-+
+-+public class AdminObj {
+-+
+-+    int id;
+-+    String nome, email, dataProcesso, Setor;
+-+
+-+
+-+    public AdminObj(int id, String nome, String email, String dataProcesso, String setor) {
+-+        this.id = id;
+-+        this.nome = nome;
+-+        this.email = email;
+-+        this.dataProcesso = dataProcesso;
+-+        Setor = setor;
+-+    }
+-+
+-+    public int getId() {
+-+        return id;
+-+    }
+-+
+-+    public void setId(int id) {
+-+        this.id = id;
+-+    }
+-+
+-+    public String getNome() {
+-+        return nome;
+-+    }
+-+
+-+    public void setNome(String nome) {
+-+        this.nome = nome;
+-+    }
+-+
+-+    public String getEmail() {
+-+        return email;
+-+    }
+-+
+-+    public void setEmail(String email) {
+-+        this.email = email;
+-+    }
+-+
+-+    public String getDataProcesso() {
+-+        return dataProcesso;
+-+    }
+-+
+-+    public void setDataProcesso(String dataProcesso) {
+-+        this.dataProcesso = dataProcesso;
+-+    }
+-+
+-+    public String getSetor() {
+-+        return Setor;
+-+    }
+-+
+-+    public void setSetor(String setor) {
+-+        Setor = setor;
+-+    }
+-+
+-+
+-+
+-+
+-+
+-+
+-+}
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_10_5_2022_10_27_AM__Changes_.xml
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_10_5_2022_10_27_AM__Changes_.xml b/.idea/shelf/Uncommitted_changes_before_Update_at_10_5_2022_10_27_AM__Changes_.xml
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_10_5_2022_10_27_AM__Changes_.xml	(revision 5b1670f3fe9f1020724165b277a1cca9513d5ff1)
++++ /dev/null	(revision 5b1670f3fe9f1020724165b277a1cca9513d5ff1)
+@@ -1,9 +0,0 @@
+-<changelist name="Uncommitted_changes_before_Update_at_10_5_2022_10_27_AM_[Changes]" date="1664976523900" recycled="true" deleted="true">
+-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_5_2022_10_27_AM_[Changes]/shelved.patch" />
+-  <option name="DESCRIPTION" value="Uncommitted changes before Update at 10/5/2022 10:27 AM [Changes]" />
+-  <binary>
+-    <option name="BEFORE_PATH" />
+-    <option name="AFTER_PATH" value="app/src/main/res/drawable-v24/lentidao.png" />
+-    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_5_2022_10_27_AM_[Changes]/lentidao.png" />
+-  </binary>
+-</changelist>
+\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_10_5_2022_10_27_AM_[Changes]/shelved.patch
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_10_5_2022_10_27_AM_[Changes]/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Update_at_10_5_2022_10_27_AM_[Changes]/shelved.patch
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_10_5_2022_10_27_AM_[Changes]/shelved.patch	(revision 5b1670f3fe9f1020724165b277a1cca9513d5ff1)
++++ /dev/null	(revision 5b1670f3fe9f1020724165b277a1cca9513d5ff1)
+@@ -1,208 +0,0 @@
+-Index: app/src/main/java/com/example/apppetrobras/Activities/Passos.java
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>package com.example.apppetrobras.Activities;\r\n\r\nimport android.app.Dialog;\r\nimport android.content.Context;\r\nimport android.content.SharedPreferences;\r\nimport android.content.Intent;\r\nimport android.graphics.Color;\r\nimport android.graphics.drawable.ColorDrawable;\r\nimport android.os.Bundle;\r\nimport android.os.Handler;\r\nimport android.text.TextUtils;\r\nimport android.view.View;\r\nimport android.widget.ImageView;\r\nimport android.widget.TextView;\r\nimport android.widget.Toast;\r\n\r\nimport java.text.SimpleDateFormat;\r\nimport java.time.LocalDate;\r\n\r\nimport com.bumptech.glide.Glide;\r\nimport com.example.Navigations.Drawer;\r\nimport com.example.Navigations.Tabs;\r\nimport com.example.apppetrobras.R;\r\nimport com.example.apppetrobras.Objects.PassosObj;\r\nimport com.example.apppetrobras.api.RetroFitClient;\r\nimport com.example.apppetrobras.databinding.LayoutPassosBinding;\r\n\r\n\r\nimport java.util.Date;\r\nimport java.util.List;\r\nimport java.util.Locale;\r\n\r\nimport okhttp3.ResponseBody;\r\nimport retrofit2.Call;\r\nimport retrofit2.Callback;\r\nimport retrofit2.Response;\r\n\r\npublic class Passos extends Drawer {\r\n\r\n    // Declaração das variáveis\r\n\r\n    int idTitulo, idSolucao, idPasso, tipoProblema, qtdPassos;\r\n    String tituloSolucao, titulo, check, titulosProblemas;\r\n\r\n    Context context;\r\n\r\n    TextView numeroPasso, nomeSolucao, descSolucao;\r\n    ImageView imagemSolucao;\r\n\r\n    List<PassosObj> passosObjList;\r\n\r\n    Call<List<PassosObj>> call;\r\n\r\n    LayoutPassosBinding layoutPassosBinding;\r\n\r\n\r\n\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n\r\n        super.onCreate(savedInstanceState);\r\n        layoutPassosBinding = LayoutPassosBinding.inflate(getLayoutInflater());\r\n        setContentView(layoutPassosBinding.getRoot());\r\n        allocateActivityTitle(\"Menu Principal\");\r\n\r\n        // Criação de variáveis para se referenciar aos intens do layout\r\n        nomeSolucao = findViewById(R.id.nomeSolucao);\r\n        nomeSolucao.setSelected(true);\r\n        nomeSolucao.setEllipsize(TextUtils.TruncateAt.MARQUEE);\r\n        nomeSolucao.setSingleLine(true);\r\n        numeroPasso = findViewById(R.id.numeroPasso);\r\n        descSolucao = findViewById(R.id.descricaoPasso);\r\n        imagemSolucao = findViewById(R.id.imagemSolucao);\r\n\r\n        // Requisição dos dados passados durante o intent\r\n        tipoProblema = getIntent().getIntExtra(\"TIPO\", 1);\r\n        idTitulo = getIntent().getIntExtra(\"ID_TITULO\",1);\r\n        idSolucao = getIntent().getIntExtra(\"ID_SOLUCAO\",1);\r\n        tituloSolucao = getIntent().getStringExtra(\"TITULO_SOLUCAO\");\r\n        titulo = getIntent().getStringExtra(\"titulo\");\r\n        titulosProblemas = getIntent().getStringExtra(\"titulosProblemas\");\r\n\r\n\r\n\r\n        // Instanciação de variáveis chave\r\n        context = this;\r\n        idPasso = 1;\r\n        String concatenar = Integer.toString(idTitulo) + Integer.toString(idSolucao);\r\n        int numerojunto = Integer.parseInt(concatenar);\r\n\r\n        // Resgata o check\r\n\r\n        // Trata o check para o caso do usuário retornar às soluções inadequadamente\r\n        trataCheck(3);\r\n\r\n        switch (tipoProblema){\r\n            case 1:\r\n            default:\r\n                call = RetroFitClient\r\n                        .getInstance()\r\n                        .getAPI()\r\n                        .getTextoLentidao(numerojunto, idPasso);\r\n                break;\r\n            case 2:\r\n                call = RetroFitClient\r\n                        .getInstance()\r\n                        .getAPI()\r\n                        .getTextoInternet(numerojunto, idPasso);\r\n                break;\r\n            case 3:\r\n                call = RetroFitClient\r\n                        .getInstance()\r\n                        .getAPI()\r\n                        .getTextoEquipamento(numerojunto, idPasso);\r\n                break;\r\n            case 4:\r\n                call = RetroFitClient\r\n                        .getInstance()\r\n                        .getAPI()\r\n                        .getTextoOutros(numerojunto, idPasso);\r\n                break;\r\n        }\r\n\r\n        call.enqueue(new Callback<List<PassosObj>>() {\r\n            @Override\r\n            public void onResponse(Call<List<PassosObj>> call, Response<List<PassosObj>> response) {\r\n                if (!response.isSuccessful()){\r\n                    Toast.makeText(context, response.code(), Toast.LENGTH_SHORT).show();\r\n                    return;\r\n                }\r\n                passosObjList = response.body();\r\n                // Armazena o total de passos dessa solução\r\n                qtdPassos = passosObjList.size();\r\n                inserirNaTela();\r\n\r\n            }\r\n\r\n            @Override\r\n            public void onFailure(Call<List<PassosObj>> call, Throwable t) {\r\n                Toast.makeText(context, t.getMessage(), Toast.LENGTH_SHORT).show();\r\n            }\r\n        });\r\n\r\n    }\r\n\r\n    public void rtrnPasso(View view){\r\n        if (idPasso > 1) {\r\n            idPasso-=1;\r\n            inserirNaTela();\r\n        }\r\n    }\r\n\r\n    public void proxPasso(View view){\r\n        // verifica se há mais um passo então atualiza as informações na tela:\r\n        if (idPasso < qtdPassos) {\r\n            idPasso+=1;\r\n            inserirNaTela();\r\n            thereIsNoPasso();\r\n\r\n        }\r\n    }\r\n\r\n    //vendo que chegou no ultimo passo e revelando os botoes de conseguiu e nao conseguiu\r\n    public void thereIsNoPasso(){\r\n        if (idPasso == qtdPassos) {\r\n            ImageView right = findViewById(R.id.btnResolveu);\r\n            ImageView wrong = findViewById(R.id.btnNaoResolveu);\r\n\r\n            right.setVisibility(View.VISIBLE);\r\n            wrong.setVisibility(View.VISIBLE);\r\n        }\r\n    }\r\n    //função do botao de X\r\n    public void dontGetMeWrong(View view){\r\n        trataCheck(1);\r\n        mudarTela();\r\n    }\r\n\r\n    //função do botao de correto\r\n    public void dontGetMeRight(View view){\r\n        trataCheck(2);\r\n        finalizarSolucao();\r\n    }\r\n\r\n    //função do botao sem acesso\r\n    public void dontGetMeLost(View view){\r\n        trataCheck(3);\r\n        mudarTela();\r\n    }\r\n\r\n    public void inserirNaTela(){\r\n        // Inserção dos Valores na tela\r\n\r\n        nomeSolucao.setText(tituloSolucao);\r\n\r\n        numeroPasso.setText(\"Passo: \"+idPasso);\r\n\r\n        // idPasso começa em 0, preciso somar 1 a ele para se adequar ao BD\r\n        String descricaoBD = passosObjList.get(idPasso-1).getTexto();\r\n        descSolucao.setText(descricaoBD);\r\n\r\n        // idPasso começa em 0, preciso somar 1 a ele para se adequar ao BD\r\n//        String imagemBD = soluctionsList.get(idPasso-1).getUrl();\r\n        String imagemBD = \"\";\r\n        Glide.with(this)\r\n                .load(imagemBD)\r\n                .error(R.drawable.ic_error)\r\n                .into(imagemSolucao);\r\n    }\r\n\r\n\r\n    //função que guarda no bd o relatório\r\n    public void iAmWhoKnocks(){\r\n\r\n\r\n        SharedPreferences sharedPreferences = getSharedPreferences(\r\n                getString(R.string.preference_file_key), Context.MODE_PRIVATE);\r\n\r\n        String nome = sharedPreferences.getString(\"nome\", \"\");\r\n        String chave = sharedPreferences.getString(\"chave\", \"\");\r\n\r\n        Call<ResponseBody> call = RetroFitClient\r\n                .getInstance()\r\n                .getAPI().postRelatorio(nome, chave, getTodaysDate(), tipoProblema, titulo,idTitulo,tituloSolucao,check);\r\n\r\n        call.enqueue(new Callback<ResponseBody>() {\r\n            @Override\r\n            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {\r\n                    Toast.makeText(Passos.this, \"Relatorio criado\", Toast.LENGTH_LONG).show();\r\n\r\n            }\r\n\r\n\r\n            @Override\r\n            public void onFailure(Call<ResponseBody> call, Throwable t) {\r\n                Toast.makeText(Passos.this, t.getMessage(), Toast.LENGTH_LONG).show();\r\n\r\n            }\r\n        });\r\n\r\n        // Zera o check (Só pra garantir)\r\n        SharedPreferences.Editor editor = sharedPreferences.edit();\r\n        editor.putString(\"check\", \"\");\r\n        editor.apply();\r\n    }\r\n\r\n\r\n\r\n    public void trataCheck(int _estadoCheck){\r\n        // Resgata check\r\n        SharedPreferences sharedPreferences = getSharedPreferences(\r\n                getString(R.string.preference_file_key), Context.MODE_PRIVATE);\r\n        check = sharedPreferences.getString(\"check\",\"\");\r\n\r\n        String holder = \"\";\r\n\r\n        for (int i = 0; i < check.length(); i++){\r\n            if (i != idSolucao-1){\r\n                holder += check.charAt(i);\r\n            }\r\n            else{\r\n                holder += _estadoCheck;\r\n            }\r\n        }\r\n\r\n        check = holder;\r\n\r\n        // Atualização do check\r\n        SharedPreferences.Editor editor = sharedPreferences.edit();\r\n        editor.putString(\"check\", check);\r\n        editor.apply();\r\n    }\r\n\r\n    public void mudarTela(){\r\n        if (check.contains(\"0\")){\r\n            retornarParaSolucoes();\r\n        }\r\n        else {\r\n            finalizarSolucao();\r\n        }\r\n    }\r\n\r\n    private void finalizarSolucao() {\r\n        Dialog mdialog;\r\n        mdialog = new Dialog(this);\r\n        // Trata a checagem interna para ser enviada ao Banco de Dados (substitui o 3 por 0)\r\n        String holder = \"\";\r\n        for (int i = 0; i < check.length(); i++){\r\n            if (check.charAt(i) == '3'){\r\n                holder += \"0\";\r\n            }\r\n            else {\r\n                holder += check.charAt(i);\r\n            }\r\n        }\r\n        check = holder;\r\n\r\n        // Atualização do check\r\n        SharedPreferences sharedPreferences = getSharedPreferences(\r\n                getString(R.string.preference_file_key), Context.MODE_PRIVATE);\r\n        SharedPreferences.Editor editor = sharedPreferences.edit();\r\n        editor.putString(\"check\", check);\r\n        editor.apply();\r\n\r\n        // Adição de um relatório no Banco de Dados\r\n        iAmWhoKnocks();\r\n\r\n        // Redirecionamento para a tela de \"parabéns\"\r\n        mdialog.setContentView(R.layout.popupparabens);\r\n        mdialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));\r\n        mdialog.show();\r\n\r\n        //temporario:\r\n        new Handler().postDelayed(new Runnable() {\r\n            @Override\r\n            public void run() {\r\n                Intent intent = new Intent(Passos.this, Relatorio.class);\r\n                startActivity(intent);\r\n                finish();\r\n            }\r\n        }, 3500);\r\n\r\n    }\r\n\r\n    public String getTodaysDate() {\r\n        return new SimpleDateFormat(\"dd/MM/yyyy\", Locale.getDefault()).format(new Date());\r\n    }\r\n\r\n\r\n    public void retornarParaSolucoes(){\r\n        // Redirecionamento para a tela do problema contendo os títulos das soluções\r\n        Intent intent = new Intent(Passos.this, Solucoes.class);\r\n\r\n        intent.putExtra(\"TIPO\",tipoProblema);\r\n        intent.putExtra(\"ID_TITULO\",idTitulo);\r\n        intent.putExtra(\"titulo\", titulo);\r\n        intent.putExtra(\"titulosProblemas\", titulosProblemas);\r\n\r\n        startActivity(intent);\r\n        finish();\r\n    }\r\n\r\n    @Override\r\n    public void onBackPressed() {\r\n        mudarTela();\r\n    }\r\n}
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/app/src/main/java/com/example/apppetrobras/Activities/Passos.java b/app/src/main/java/com/example/apppetrobras/Activities/Passos.java
+---- a/app/src/main/java/com/example/apppetrobras/Activities/Passos.java	(revision 0923599e0c49f64c390f0ac32408cee8ad385b64)
+-+++ b/app/src/main/java/com/example/apppetrobras/Activities/Passos.java	(date 1664976436712)
+-@@ -1,13 +1,9 @@
+- package com.example.apppetrobras.Activities;
+- 
+--import android.app.Dialog;
+- import android.content.Context;
+- import android.content.SharedPreferences;
+- import android.content.Intent;
+--import android.graphics.Color;
+--import android.graphics.drawable.ColorDrawable;
+- import android.os.Bundle;
+--import android.os.Handler;
+- import android.text.TextUtils;
+- import android.view.View;
+- import android.widget.ImageView;
+-@@ -17,9 +13,8 @@
+- import java.text.SimpleDateFormat;
+- import java.time.LocalDate;
+- 
+--import com.bumptech.glide.Glide;
+-+//import com.bumptech.glide.Glide;
+- import com.example.Navigations.Drawer;
+--import com.example.Navigations.Tabs;
+- import com.example.apppetrobras.R;
+- import com.example.apppetrobras.Objects.PassosObj;
+- import com.example.apppetrobras.api.RetroFitClient;
+-@@ -53,8 +48,6 @@
+- 
+-     LayoutPassosBinding layoutPassosBinding;
+- 
+--
+--
+-     @Override
+-     protected void onCreate(Bundle savedInstanceState) {
+- 
+-@@ -80,18 +73,13 @@
+-         titulo = getIntent().getStringExtra("titulo");
+-         titulosProblemas = getIntent().getStringExtra("titulosProblemas");
+- 
+--
+--
+-         // Instanciação de variáveis chave
+-         context = this;
+-         idPasso = 1;
+-         String concatenar = Integer.toString(idTitulo) + Integer.toString(idSolucao);
+-         int numerojunto = Integer.parseInt(concatenar);
+- 
+--        // Resgata o check
+- 
+--        // Trata o check para o caso do usuário retornar às soluções inadequadamente
+--        trataCheck(3);
+- 
+-         switch (tipoProblema){
+-             case 1:
+-@@ -173,19 +161,27 @@
+-     //função do botao de X
+-     public void dontGetMeWrong(View view){
+-         trataCheck(1);
+-+        Toast.makeText(context, ""+check , Toast.LENGTH_SHORT).show();
+-         mudarTela();
+-+
+-     }
+- 
+-     //função do botao de correto
+-     public void dontGetMeRight(View view){
+-         trataCheck(2);
+--        finalizarSolucao();
+-+        Toast.makeText(context, ""+check, Toast.LENGTH_SHORT).show();
+-+        mudarTela();
+-+
+-+        iAmWhoKnocks();
+-     }
+- 
+-     //função do botao sem acesso
+-     public void dontGetMeLost(View view){
+-         trataCheck(3);
+-+        Toast.makeText(context, ""+check, Toast.LENGTH_SHORT).show();
+-         mudarTela();
+-+
+-+
+-     }
+- 
+-     public void inserirNaTela(){
+-@@ -202,10 +198,10 @@
+-         // idPasso começa em 0, preciso somar 1 a ele para se adequar ao BD
+- //        String imagemBD = soluctionsList.get(idPasso-1).getUrl();
+-         String imagemBD = "";
+--        Glide.with(this)
+--                .load(imagemBD)
+--                .error(R.drawable.ic_error)
+--                .into(imagemSolucao);
+-+        //Glide.with(this)
+-+                //.load(imagemBD)
+-+                //.error(R.drawable.ic_error)
+-+                //.into(imagemSolucao);
+-     }
+- 
+- 
+-@@ -237,21 +233,11 @@
+- 
+-             }
+-         });
+--
+--        // Zera o check (Só pra garantir)
+--        SharedPreferences.Editor editor = sharedPreferences.edit();
+--        editor.putString("check", "");
+--        editor.apply();
+-     }
+- 
+- 
+- 
+-     public void trataCheck(int _estadoCheck){
+--        // Resgata check
+--        SharedPreferences sharedPreferences = getSharedPreferences(
+--                getString(R.string.preference_file_key), Context.MODE_PRIVATE);
+--        check = sharedPreferences.getString("check","");
+--
+-         String holder = "";
+- 
+-         for (int i = 0; i < check.length(); i++){
+-@@ -264,11 +250,6 @@
+-         }
+- 
+-         check = holder;
+--
+--        // Atualização do check
+--        SharedPreferences.Editor editor = sharedPreferences.edit();
+--        editor.putString("check", check);
+--        editor.apply();
+-     }
+- 
+-     public void mudarTela(){
+-@@ -281,8 +262,7 @@
+-     }
+- 
+-     private void finalizarSolucao() {
+--        Dialog mdialog;
+--        mdialog = new Dialog(this);
+-+
+-         // Trata a checagem interna para ser enviada ao Banco de Dados (substitui o 3 por 0)
+-         String holder = "";
+-         for (int i = 0; i < check.length(); i++){
+-@@ -293,32 +273,15 @@
+-                 holder += check.charAt(i);
+-             }
+-         }
+--        check = holder;
+--
+--        // Atualização do check
+--        SharedPreferences sharedPreferences = getSharedPreferences(
+--                getString(R.string.preference_file_key), Context.MODE_PRIVATE);
+--        SharedPreferences.Editor editor = sharedPreferences.edit();
+--        editor.putString("check", check);
+--        editor.apply();
+- 
+-         // Adição de um relatório no Banco de Dados
+--        iAmWhoKnocks();
+-+
+-+
+-+
+- 
+-         // Redirecionamento para a tela de "parabéns"
+--        mdialog.setContentView(R.layout.popupparabens);
+--        mdialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+--        mdialog.show();
+--
+-         //temporario:
+--        new Handler().postDelayed(new Runnable() {
+--            @Override
+--            public void run() {
+--                Intent intent = new Intent(Passos.this, Relatorio.class);
+--                startActivity(intent);
+--                finish();
+--            }
+--        }, 3500);
+-+        Intent intent = new Intent(Passos.this, Inicio.class);
+- 
+-     }
+- 
+-@@ -330,18 +293,6 @@
+-     public void retornarParaSolucoes(){
+-         // Redirecionamento para a tela do problema contendo os títulos das soluções
+-         Intent intent = new Intent(Passos.this, Solucoes.class);
+--
+--        intent.putExtra("TIPO",tipoProblema);
+--        intent.putExtra("ID_TITULO",idTitulo);
+--        intent.putExtra("titulo", titulo);
+--        intent.putExtra("titulosProblemas", titulosProblemas);
+--
+-         startActivity(intent);
+--        finish();
+--    }
+--
+--    @Override
+--    public void onBackPressed() {
+--        mudarTela();
+-     }
+- }
+-\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_04_10_2022_09_37_[Changes]/shelved.patch
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_04_10_2022_09_37_[Changes]/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Update_at_04_10_2022_09_37_[Changes]/shelved.patch
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_04_10_2022_09_37_[Changes]/shelved.patch	(revision 5b1670f3fe9f1020724165b277a1cca9513d5ff1)
++++ /dev/null	(revision 5b1670f3fe9f1020724165b277a1cca9513d5ff1)
+@@ -1,22 +0,0 @@
+-Index: app/build.gradle
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>plugins {\r\n    id 'com.android.application'\r\n}\r\n\r\nandroid {\r\n    compileSdk 32\r\n\r\n    defaultConfig {\r\n        applicationId \"com.example.apppetrobras\"\r\n        minSdk 21\r\n        targetSdk 32\r\n        versionCode 1\r\n        versionName \"1.0\"\r\n\r\n        testInstrumentationRunner \"androidx.test.runner.AndroidJUnitRunner\"\r\n    }\r\n\r\n    sourceSets {\r\n        main {\r\n            res.srcDirs = [\r\n                    'src/main/res/layouts/act',\r\n                    'src/main/res/layouts',\r\n                    'src/main/res'\r\n            ]\r\n        }\r\n    }\r\n\r\n    buildFeatures {\r\n\r\n        viewBinding true\r\n    }\r\n\r\n    buildTypes {\r\n        release {\r\n            minifyEnabled false\r\n            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'\r\n        }\r\n    }\r\n    compileOptions {\r\n        sourceCompatibility JavaVersion.VERSION_1_8\r\n        targetCompatibility JavaVersion.VERSION_1_8\r\n    }\r\n    namespace 'com.example.apppetrobras'\r\n\r\n}\r\n\r\ndependencies {\r\n\r\n\r\n    implementation 'androidx.appcompat:appcompat:1.5.1'\r\n    implementation 'com.google.android.material:material:1.6.1'\r\n    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'\r\n    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.5.1'\r\n    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1'\r\n    implementation \"androidx.cardview:cardview:1.0.0\"\r\n    implementation \"androidx.recyclerview:recyclerview:1.2.1\"\r\n\r\n    // For control over item selection of both touch and mouse driven selection\r\n    implementation \"androidx.recyclerview:recyclerview-selection:1.1.0\"\r\n    implementation 'androidx.appcompat:appcompat:1.5.1'\r\n    implementation 'com.google.android.material:material:1.6.1'\r\n    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'\r\n    implementation 'androidx.navigation:navigation-fragment:2.5.2'\r\n    implementation 'androidx.navigation:navigation-ui:2.5.2'\r\n    implementation 'com.airbnb.android:lottie:5.2.0'\r\n    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'\r\n    implementation files('libs\\\\mysql-connector-java-5.1.5-bin.jar')\r\n    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'\r\n    implementation 'androidx.legacy:legacy-support-v4:1.0.0'\r\n    testImplementation 'junit:junit:4.13.2'\r\n    androidTestImplementation 'androidx.test.ext:junit:1.1.3'\r\n    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'\r\n    implementation 'de.hdodenhof:circleimageview:2.1.0'\r\n    implementation 'com.squareup.retrofit2:retrofit:2.9.0'\r\n    implementation 'com.ms-square:expandableTextView:0.1.4'\r\n    // https://mvnrepository.com/artifact/com.github.bumptech.glide/glide\r\n    implementation 'com.github.bumptech.glide:glide:4.13.2'\r\n    // Skip this if you don't want to use integration libraries or configure Glide.\r\n    annotationProcessor 'com.github.bumptech.glide:compiler:4.13.2'\r\n}\r\n
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/app/build.gradle b/app/build.gradle
+---- a/app/build.gradle	(revision 3e50c64e7338f08efd8a60cc6f80e657a4d4ffbb)
+-+++ b/app/build.gradle	(date 1664886960402)
+-@@ -68,8 +68,10 @@
+-     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+-     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+-     testImplementation 'junit:junit:4.13.2'
+--    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+-+
+-+
+-     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+-+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+-     implementation 'de.hdodenhof:circleimageview:2.1.0'
+-     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+-     implementation 'com.ms-square:expandableTextView:0.1.4'
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_10_5_2022_8_38_AM__Changes_.xml
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_10_5_2022_8_38_AM__Changes_.xml b/.idea/shelf/Uncommitted_changes_before_Update_at_10_5_2022_8_38_AM__Changes_.xml
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_10_5_2022_8_38_AM__Changes_.xml	(revision 5b1670f3fe9f1020724165b277a1cca9513d5ff1)
++++ /dev/null	(revision 5b1670f3fe9f1020724165b277a1cca9513d5ff1)
+@@ -1,4 +0,0 @@
+-<changelist name="Uncommitted_changes_before_Update_at_10_5_2022_8_38_AM_[Changes]" date="1664969946247" recycled="true" deleted="true">
+-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_5_2022_8_38_AM_[Changes]/shelved.patch" />
+-  <option name="DESCRIPTION" value="Uncommitted changes before Update at 10/5/2022 8:38 AM [Changes]" />
+-</changelist>
+\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_10_5_2022_8_38_AM_[Changes]/shelved.patch
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_10_5_2022_8_38_AM_[Changes]/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Update_at_10_5_2022_8_38_AM_[Changes]/shelved.patch
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_10_5_2022_8_38_AM_[Changes]/shelved.patch	(revision 5b1670f3fe9f1020724165b277a1cca9513d5ff1)
++++ /dev/null	(revision 5b1670f3fe9f1020724165b277a1cca9513d5ff1)
+@@ -1,27 +0,0 @@
+-Index: app/src/main/res/layout/item_list_admin.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<androidx.constraintlayout.widget.ConstraintLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"wrap_content\"\r\n    android:layout_height=\"wrap_content\"\r\n    android:padding=\"10dp\">\r\n\r\n    <androidx.cardview.widget.CardView\r\n        android:layout_width=\"364dp\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_marginTop=\"8dp\"\r\n        android:background=\"#EDEDED\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\">\r\n\r\n        <androidx.constraintlayout.widget.ConstraintLayout\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"match_parent\"\r\n            android:padding=\"10dp\"\r\n            tools:layout_editor_absoluteX=\"-55dp\"\r\n            tools:layout_editor_absoluteY=\"-10dp\">\r\n\r\n            <ImageView\r\n                android:id=\"@+id/imageProblema\"\r\n                android:layout_width=\"46dp\"\r\n                android:layout_height=\"20dp\"\r\n                android:contentDescription=\"@string/todo\"\r\n                app:layout_constraintEnd_toStartOf=\"@+id/textProblema\"\r\n                app:layout_constraintStart_toStartOf=\"parent\"\r\n                app:srcCompat=\"@drawable/ic_launcher_background\"\r\n                tools:ignore=\"MissingConstraints\"\r\n                tools:layout_editor_absoluteY=\"4dp\" />\r\n\r\n            <TextView\r\n                android:id=\"@+id/textProblema\"\r\n                android:layout_width=\"240dp\"\r\n                android:layout_height=\"20dp\"\r\n                android:text=\"@string/data_do_relat_rio_dd_mm_yyyy\"\r\n                android:textColor=\"@color/black\"\r\n                android:textSize=\"15sp\"\r\n                tools:ignore=\"MissingConstraints\"\r\n                tools:layout_editor_absoluteX=\"74dp\"\r\n                tools:layout_editor_absoluteY=\"4dp\" />\r\n\r\n            <TextView\r\n                android:id=\"@+id/textView24\"\r\n                android:layout_width=\"240dp\"\r\n                android:layout_height=\"15dp\"\r\n                android:text=\"NOME COMPLETO\"\r\n                android:textColor=\"@color/black\"\r\n                android:textSize=\"12sp\"\r\n                tools:ignore=\"HardcodedText,MissingConstraints\"\r\n                tools:layout_editor_absoluteX=\"74dp\"\r\n                tools:layout_editor_absoluteY=\"32dp\" />\r\n\r\n            <TextView\r\n                android:id=\"@+id/textView26\"\r\n                android:layout_width=\"240dp\"\r\n                android:layout_height=\"15dp\"\r\n                android:text=\"EMAIL\"\r\n                android:textColor=\"@color/black\"\r\n                android:textSize=\"12sp\"\r\n                tools:ignore=\"HardcodedText,MissingConstraints\"\r\n                tools:layout_editor_absoluteX=\"74dp\"\r\n                tools:layout_editor_absoluteY=\"72dp\" />\r\n\r\n            <TextView\r\n                android:id=\"@+id/textView27\"\r\n                android:layout_width=\"240dp\"\r\n                android:layout_height=\"15dp\"\r\n                android:text=\"@string/email_robson_petrobras_com_br\"\r\n                android:textSize=\"12sp\"\r\n                app:layout_constraintTop_toBottomOf=\"@+id/textView26\"\r\n                tools:ignore=\"MissingConstraints\"\r\n                tools:layout_editor_absoluteX=\"74dp\" />\r\n\r\n            <TextView\r\n                android:id=\"@+id/textView25\"\r\n                android:layout_width=\"240dp\"\r\n                android:layout_height=\"15dp\"\r\n                android:text=\"@string/nome_completo\"\r\n                android:textSize=\"12sp\"\r\n                app:layout_constraintTop_toBottomOf=\"@+id/textView24\"\r\n                tools:ignore=\"MissingConstraints\"\r\n                tools:layout_editor_absoluteX=\"75dp\" />\r\n\r\n            <TextView\r\n                android:id=\"@+id/textView28\"\r\n                android:layout_width=\"240dp\"\r\n                android:layout_height=\"15dp\"\r\n                android:text=\"@string/setor\"\r\n                android:textColor=\"@color/black\"\r\n                android:textSize=\"12sp\"\r\n                tools:ignore=\"MissingConstraints\"\r\n                tools:layout_editor_absoluteX=\"75dp\"\r\n                tools:layout_editor_absoluteY=\"112dp\" />\r\n\r\n            <TextView\r\n                android:id=\"@+id/textView29\"\r\n                android:layout_width=\"240dp\"\r\n                android:layout_height=\"15dp\"\r\n                android:text=\"Setor do Usuário\"\r\n                android:textSize=\"12sp\"\r\n                app:layout_constraintTop_toBottomOf=\"@+id/textView28\"\r\n                tools:ignore=\"MissingConstraints\"\r\n                tools:layout_editor_absoluteX=\"74dp\" />\r\n\r\n            <View\r\n                android:id=\"@+id/divider3\"\r\n                android:layout_width=\"400dp\"\r\n                android:layout_height=\"1dp\"\r\n                android:background=\"@color/black\"\r\n                app:layout_constraintEnd_toEndOf=\"parent\"\r\n                app:layout_constraintStart_toStartOf=\"parent\"\r\n                tools:layout_editor_absoluteY=\"166dp\" />\r\n\r\n\r\n        </androidx.constraintlayout.widget.ConstraintLayout>\r\n    </androidx.cardview.widget.CardView>\r\n</androidx.constraintlayout.widget.ConstraintLayout>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/app/src/main/res/layout/item_list_admin.xml b/app/src/main/res/layout/item_list_admin.xml
+---- a/app/src/main/res/layout/item_list_admin.xml	(revision a428ba3893743d6a577d8a8a3d398058266bd707)
+-+++ b/app/src/main/res/layout/item_list_admin.xml	(date 1664969799465)
+-@@ -25,13 +25,14 @@
+-             <ImageView
+-                 android:id="@+id/imageProblema"
+-                 android:layout_width="46dp"
+-+                android:layout_marginTop="4dp"
+-                 android:layout_height="20dp"
+-                 android:contentDescription="@string/todo"
+-                 app:layout_constraintEnd_toStartOf="@+id/textProblema"
+-                 app:layout_constraintStart_toStartOf="parent"
+-+                app:layout_constraintTop_toTopOf="parent"
+-                 app:srcCompat="@drawable/ic_launcher_background"
+--                tools:ignore="MissingConstraints"
+--                tools:layout_editor_absoluteY="4dp" />
+-+                tools:ignore="MissingConstraints" />
+- 
+-             <TextView
+-                 android:id="@+id/textProblema"

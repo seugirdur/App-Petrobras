@@ -50,7 +50,7 @@ public class Opcoes_Fragment extends Fragment implements View.OnClickListener {
         btnab1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String url = "https://drive.google.com/file/d/11U4-N8wFcqf6MZF9mwzGNJNrBVx3MbKB/view?usp=sharing";
+                String url = "https://drive.google.com/file/d/13x7qNiF3JogETBmRLnJ-ZnHv-oLCOcNA/view?usp=sharing";
                 Intent i = new Intent(Intent.ACTION_VIEW);
                 i.setData(Uri.parse(url));
                 startActivity(i);
@@ -82,7 +82,7 @@ public class Opcoes_Fragment extends Fragment implements View.OnClickListener {
             @Override
             public void onClick(View view) {
                 //link do manual
-                String url = "https://drive.google.com";
+                String url = "https://drive.google.com/file/d/1i9v_hsjVKj9h4qRWnj-KO0TXSCDSY-Y5/view?usp=sharing";
                 Intent i = new Intent(Intent.ACTION_VIEW);
                 i.setData(Uri.parse(url));
                 startActivity(i);

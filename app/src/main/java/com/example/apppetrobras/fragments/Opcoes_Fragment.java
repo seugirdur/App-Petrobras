@@ -22,7 +22,7 @@ import com.example.apppetrobras.R;
 public class Opcoes_Fragment extends Fragment implements View.OnClickListener {
 
     Dialog nDialog;
-    ImageButton btnab1,btnab2, btnab3;
+    ImageButton btnab1,btnab2, btnab3, btnManual;
     View view;
 
     // Declaração das variáveis
@@ -37,6 +37,7 @@ public class Opcoes_Fragment extends Fragment implements View.OnClickListener {
         btnab2 = view.findViewById(R.id.btnab2);
         btnab1 = view.findViewById(R.id.btnab1);
         btnab3 = view.findViewById(R.id.btnab3);
+        btnManual = view.findViewById(R.id.btn_manual);
 
         btnab2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,6 +46,7 @@ public class Opcoes_Fragment extends Fragment implements View.OnClickListener {
                 startActivity(intent);
             }
         });
+
         btnab1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -73,6 +75,17 @@ public class Opcoes_Fragment extends Fragment implements View.OnClickListener {
                 intent.putExtra(Intent.EXTRA_SUBJECT, "Avaliação de "+nome);
 //                intent.putExtra(Intent.EXTRA_TEXT, "");
                 startActivity(Intent.createChooser(intent,"Escolha o aplicativo de email"));
+            }
+        });
+
+        btnManual.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //link do manual
+                String url = "https://drive.google.com";
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(url));
+                startActivity(i);
             }
         });
 

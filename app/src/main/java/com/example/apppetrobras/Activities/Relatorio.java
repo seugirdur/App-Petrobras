@@ -89,6 +89,7 @@ import java.io.IOException;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -122,6 +123,8 @@ public class Relatorio extends Drawer implements RecyclerViewInteface{
     private RecyclerViewInteface recyclerViewInteface;
     private List<EtapasRelatorioObj> items = new ArrayList<>();
     private boolean funciona = false;
+    private String problemaApi;
+    private String secaoApi;
     Document document;
     FloatingActionButton add_icon, download_icon, concludeicon;
     Animation fabOpen, fabClose, rotateForward, rotateBackward;
@@ -291,8 +294,10 @@ public class Relatorio extends Drawer implements RecyclerViewInteface{
                         TextView solucionado = findViewById(R.id.resultado_processo);
                         TextView secao = findViewById(R.id.txtSecao);
                         TextView problema = findViewById(R.id.txtProblema);
-                        secao.setText(cRelatorio.getSecao());
-                        problema.setText(cRelatorio.getTitulo());
+                        problemaApi = cRelatorio.getTitulo();
+                        secaoApi = cRelatorio.getSecao();
+                        secao.setText(secaoApi);
+                        problema.setText(problemaApi);
                         TextView nome = findViewById(R.id.nome_usuario);
                         TextView data = findViewById(R.id.data_atual);
                         textData = cRelatorio.getDataProcesso();
@@ -470,7 +475,6 @@ public class Relatorio extends Drawer implements RecyclerViewInteface{
 
 
     // Botão de download presente no FAB
-    //   private void makePDF(){
 
 
         public void makePdf(View view) {
@@ -485,98 +489,93 @@ public class Relatorio extends Drawer implements RecyclerViewInteface{
             PdfDocument pdfDocument = new PdfDocument();
             Paint title = new Paint();
 
-            // we are adding page info to our PDF file
-            // in which we will be passing our pageWidth,
-            // pageHeight and number of pages and after that
-            // we are calling it to create our PDF.
+            //declaracoes dos recursos que serão utilizados no PDF
             Bitmap bmp, scaledbmp;
+
+            //declarando a imagem do bpm
             bmp = BitmapFactory.decodeResource(getResources(), R.drawable.aset_logo);
             scaledbmp = Bitmap.createScaledBitmap(bmp, 140, 140, false);
             PdfDocument.PageInfo mypageInfo = new PdfDocument.PageInfo.Builder(pagewidth, pageHeight, 1).create();
-
-            // below line is used for setting
-            // start page for our PDF file.
             PdfDocument.Page myPage = pdfDocument.startPage(mypageInfo);
-
-            // creating a variable for canvas
-            // from our page of PDF.
             Canvas canvas = myPage.getCanvas();
             Paint paint = new Paint();
 
-            // below line is used to draw our image on our PDF file.
-            // the first parameter of our drawbitmap method is
-            // our bitmap
-            // second parameter is position from left
-            // third parameter is position from top and last
-            // one is our variable for paint.
+
+            //criação da imagem
             canvas.drawBitmap(scaledbmp, 56, 40, paint);
 
-            // below line is used for adding typeface for
-            // our text which we will be adding in our PDF file.
+            //dando a configurações do texto
             title.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
-
-            // below line is used for setting text size
-            // which we will be displaying in our PDF file.
             title.setTextSize(15);
-
-            // below line is sued for setting color
-            // of our text inside our PDF file.
             title.setColor(ContextCompat.getColor(this, R.color.black));
 
-            // below line is used to draw text in our PDF file.
-            // the first parameter is our text, second parameter
-            // is position from start, third parameter is position from top
-            // and then we are passing our variable of paint which is title.
-
+            //escrevendo o texto de informações gerais no pdf
+            // texto, posicção em x, posição em y, var com configurações do texto
             canvas.drawText(nomeRel, 209, 80, title);
             canvas.drawText("Data: " + textData, 209, 100, title);
             if (checking.contains("2")){canvas.drawText("Solucionado ", 209, 120, title);}
             else{canvas.drawText("Não solucionado ", 209, 120, title);}
 
-            // similarly we are creating another text and in this
-            // we are aligning this text to center of our PDF file.
+
             title.setTypeface(Typeface.defaultFromStyle(Typeface.NORMAL));
-            title.setColor(ContextCompat.getColor(this, R.color.purple_200));
+            title.setColor(ContextCompat.getColor(this, R.color.black));
+            title.setTextSize(17);
+
+            canvas.drawText("Problema: " + problemaApi, 56, 220, title);
+            title.setTypeface(Typeface.defaultFromStyle(Typeface.NORMAL));
+            title.setColor(ContextCompat.getColor(this, R.color.black));
             title.setTextSize(20);
-//
-            // below line is used for setting
-            // our text to center of PDF.
-            //title.setTextAlign(Paint.Align.CENTER);
+            title.setTextAlign(Paint.Align.LEFT);
+
+
+            //for com cada etapa do relatório
             for(int i=0; i< items.size();i++){
                 EtapasRelatorioObj etapa = items.get(i);
-                canvas.drawText(etapa.getTitulo(), 209, 300+(i*40), title);
-                canvas.drawText(etapa.getSubtitulo(), 209, 320+(i*40), title);
+                title.setColor(ContextCompat.getColor(this, R.color.black));
+                canvas.drawText(etapa.getTitulo(), 56, 300+(i*50), title);
+                switch(etapa.getImagem()) {
+                    case R.drawable.ic_cancel_circle:
+                        title.setColor(ContextCompat.getColor(this, R.color.red));
+                        break;
+//                    case :
+//                        title.setColor(ContextCompat.getColor(this, R.color.Amarelo_Petrobras));
+//                        break;
+                    case R.drawable.ic_check_circle:
+                        title.setColor(ContextCompat.getColor(this, R.color.Verde_Petrobras));
+                        break;
+                    default:
+                        break;
+                }
+                canvas.drawText(etapa.getSubtitulo(), 56, 320+(i*50), title);
             }
 
 
-            // after adding all attributes to our
-            // PDF file we will be finishing our page.
+            // colocando todas as alterações no pdf
             pdfDocument.finishPage(myPage);
 
-
+            //declarando um título do pdf
             String data = textData.replace("/", "");
-            // below line is used to set the name of
-            // our PDF file and its path.
-            String nomeArquivo = "Relatorio" + data;
+            String horario = new SimpleDateFormat("HH:mm").format(Calendar.getInstance().getTime());
+            horario = horario.replace(":", "");
+
+            //criando arquivo pdf
+            String nomeArquivo = "Relatorio" + data + "baixadoem" + horario;
             File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/Download/"
                      + nomeArquivo + ".pdf");
 
+            //escrevendo o pdf criando dentro do arquivo
             try {
-                // after creating a file name we will
-                // write our PDF file to that location.
+
                 pdfDocument.writeTo(new FileOutputStream(file));
 
-                // below line is to print toast message
-                // on completion of PDF generation.
+
                 Toast.makeText(Relatorio.this, "PDF " + nomeArquivo  +  " criado com sucesso. Cheque sua pasta Download", Toast.LENGTH_SHORT).show();
             } catch (IOException e) {
-                // below line is used
-                // to handle error
+
                 Toast.makeText(Relatorio.this, "Erro em baixar o arquivo.", Toast.LENGTH_SHORT).show();
                 e.printStackTrace();
             }
-            // after storing our pdf to that
-            // location we are closing our PDF file.
+
             pdfDocument.close();
         }
 
@@ -592,7 +591,18 @@ public class Relatorio extends Drawer implements RecyclerViewInteface{
         ActivityCompat.requestPermissions(this, new String[]{WRITE_EXTERNAL_STORAGE, READ_EXTERNAL_STORAGE}, PERMISSION_REQUEST_CODE);
     }
 
-
+    private boolean checarVeracidade(int a){
+        switch(a){
+            case 0:
+                return false;
+            case 1:
+                return false;
+            case 2:
+                return true;
+            default:
+                return false;
+        }
+    }
 
 
     @Override

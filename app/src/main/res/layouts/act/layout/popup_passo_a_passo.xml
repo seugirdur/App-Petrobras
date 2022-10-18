@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="348dp"
+    android:layout_height="620dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/popup_background1"
+    android:layout_gravity="center"
+    android:layout_marginBottom="48dp"
+
+    >
+
+    <ImageView
+        android:id="@+id/logo_aset"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:src="@drawable/asetfavicon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="8dp"/>
+
+    <TextView
+        android:id="@+id/titulo_passo_a_passo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Passo a Passo"
+        android:textColor="@color/Verde_Petrobras"
+        android:textStyle="bold"
+        android:textSize="35dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/logo_aset"
+        />
+
+    <TextView
+        android:id="@+id/txt1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:paddingLeft="24dp"
+        android:text='Essa é a tela de passos.\nClique no'
+        android:textColor="@color/black"
+        android:textSize="22dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/titulo_passo_a_passo"/>
+
+    <ImageView
+        android:id="@+id/resolvido_imagem"
+        android:layout_width="wrap_content"
+        android:layout_height="46dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="85dp"
+        app:layout_constraintStart_toStartOf="@id/txt1"
+        app:layout_constraintEnd_toEndOf="@id/txt1"
+        app:layout_constraintTop_toBottomOf="@id/txt1"
+        app:layout_constraintBottom_toTopOf="@id/txt2"
+        android:src="@drawable/ic_check_circle"/>
+
+
+    <TextView
+        android:id="@+id/txt2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text='Caso seu problema tenha sido solucionado ou clique no'
+        android:textSize="22dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:paddingLeft="24dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="@id/txt1"
+        app:layout_constraintTop_toBottomOf="@id/resolvido_imagem"/>
+
+    <ImageView
+        android:id="@+id/nao_resolvido_imagem"
+        android:layout_width="wrap_content"
+        android:layout_height="46dp"
+        app:layout_constraintStart_toStartOf="@id/txt2"
+        app:layout_constraintEnd_toEndOf="@id/txt2"
+        app:layout_constraintTop_toBottomOf="@id/txt2"
+        app:layout_constraintBottom_toTopOf="@id/txt3"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/ic_cancel_circle"/>
+
+    <TextView
+        android:id="@+id/txt3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text='Caso não tenha sido solucionado. '
+        android:textSize="22dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:paddingLeft="24dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="@id/txt2"
+        app:layout_constraintEnd_toEndOf="@id/txt2"
+        app:layout_constraintTop_toBottomOf="@id/nao_resolvido_imagem"/>
+
+
+    <TextView
+        android:id="@+id/txt4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text='O cadeado'
+        android:textSize="22dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:paddingLeft="24dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="@id/txt3"
+        app:layout_constraintTop_toBottomOf="@id/txt3"/>
+
+    <ImageView
+        android:id="@+id/cadeado_imagem"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:src="@drawable/lock_open_and_circle"
+        app:layout_constraintStart_toStartOf="@id/txt3"
+        app:layout_constraintEnd_toEndOf="@id/txt3"
+        app:layout_constraintTop_toBottomOf="@id/txt4"/>
+
+    <TextView
+        android:id="@+id/txt5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="serve para caso não consiga avançar nos passos."
+        android:textSize="22dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:paddingLeft="24dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="@id/txt4"
+        app:layout_constraintTop_toBottomOf="@id/cadeado_imagem"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -90,7 +90,7 @@ Além disso, o aplicativo pode coletar certas informações automaticamente, inc
 
     <string name="texto1"><p> Nós somos a turma M1TI, jovens entre 16 a 21 anos que foram selecionados pela Petrobras para participar do projeto PPJA (Programa Petrobras Jovem Aprendiz). Participando do projeto, tivemos uma grande oportunidade de aprendizagem, amadurecimento e criação de uma base mais sólida para conseguirmos nos inserir no mercado de trabalho.</p></string>>
     <string name="texto2"><p> Trabalhamos nossas Soft e Hard Skills ao redor da área de TI enquanto realizávamos o curso de Aprendizagem Industrial “Operador de Suporte Técnico em Tecnologia da Informação”, o que foi posto à prova no desenvolvimento do ASET, um software de Help Desk criado inteiramente pela turma M1TI.</p>
-    <p>\n\n O ASET surgiu como uma oportunidade de melhora no atendimento ao usuário de computador e/ou notebook, que encontra dificuldades ao contatar o suporte técnico, e para os agente de atendimento, que são sobrecarregados com chamadas muitas vezes desnecessárias levando em conta a gravidade do problema relatado pelo usuário.</p>
+    <p>\n  O ASET surgiu como uma oportunidade de melhora no atendimento ao usuário de computador e/ou notebook, que encontra dificuldades ao contatar o suporte técnico, e para os agente de atendimento, que são sobrecarregados com chamadas muitas vezes desnecessárias levando em conta a gravidade do problema relatado pelo usuário.</p>
     </string>
 
 

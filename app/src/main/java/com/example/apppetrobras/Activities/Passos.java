@@ -78,11 +78,27 @@ public class Passos extends Drawer {
     protected void onCreate(Bundle savedInstanceState) {
         Boolean itsNotFirstTime = false;
 
+        SharedPreferences sharedPref = getSharedPreferences(
+                getString(R.string.popupcheck), Context.MODE_PRIVATE);
+
+        Boolean isFirstOpen = sharedPref.getBoolean("firstopenpassos", true);
+
+        if(isFirstOpen) {
+            mDialog = new Dialog(this);
+
+            // Defini o click dentro do popup
+            mDialog.setContentView(R.layout.popup_cadeado_solucoes);
+            mDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+            mDialog.show();
+
+            afterYou();
+        }
+
 
         super.onCreate(savedInstanceState);
         layoutPassosBinding = LayoutPassosBinding.inflate(getLayoutInflater());
         setContentView(layoutPassosBinding.getRoot());
-        allocateActivityTitle("Menu Principal");
+        allocateActivityTitle("Passo a Passo");
 
         // Criação de variáveis para se referenciar aos intens do layout
         nomeSolucao = findViewById(R.id.nomeSolucao);
@@ -490,4 +506,14 @@ public class Passos extends Drawer {
         startActivity(intent);
         finish();
     }
+
+    private void afterYou() {
+        SharedPreferences sharedPreferences = getSharedPreferences(
+                getString(R.string.popupcheck), Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putBoolean("firstopenpassos",false);
+        editor.apply();
+    }
+
+
 }

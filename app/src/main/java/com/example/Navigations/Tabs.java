@@ -3,8 +3,11 @@ package com.example.Navigations;
 import androidx.activity.OnBackPressedCallback;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -26,6 +29,26 @@ public class Tabs extends Drawer {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        SharedPreferences sharedPref = getSharedPreferences(
+                getString(R.string.popupcheck), Context.MODE_PRIVATE);
+
+        Boolean isFirstOpen = sharedPref.getBoolean("firstopentab", true);
+
+        if(isFirstOpen) {
+            mDialog = new Dialog(this);
+
+            // Defini o click dentro do popup
+            mDialog.setContentView(R.layout.popup_cadeado_solucoes);
+            mDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+            mDialog.show();
+
+            afterYou();
+        }
+
+
+
+
 
         // Zera o check das soluções
         SharedPreferences sharedPreferences = getSharedPreferences(
@@ -73,6 +96,14 @@ public class Tabs extends Drawer {
         });
 
 
+    }
+
+    private void afterYou() {
+        SharedPreferences sharedPreferences = getSharedPreferences(
+                getString(R.string.popupcheck), Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putBoolean("firstopentab",false);
+        editor.apply();
     }
 
     //Captura o click no logo e vai para a tela inicial

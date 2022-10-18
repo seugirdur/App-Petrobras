@@ -3,9 +3,12 @@ package com.example.apppetrobras.Activities;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.widget.Toast;
 
@@ -35,19 +38,35 @@ public class Solucoes extends Drawer implements RecyclerViewInteface {
     private Context context;
     private RecyclerViewInteface recyclerViewInteface;
     LayoutSolucoesBinding layoutSolucoesBinding;
-
+    Dialog mDialog;
     List<SolucoesObj> solucoesObjList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        SharedPreferences sharedPref = getSharedPreferences(
+                getString(R.string.popupcheck), Context.MODE_PRIVATE);
+
+        Boolean isFirstOpen = sharedPref.getBoolean("firstopensolucoes", true);
+
+        if(isFirstOpen) {
+            mDialog = new Dialog(this);
+
+            // Defini o click dentro do popup
+            mDialog.setContentView(R.layout.popup_cadeado_solucoes);
+            mDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+            mDialog.show();
+
+            afterYou();
+        }
+
         context = this;
         recyclerViewInteface = this;
 
         layoutSolucoesBinding = LayoutSolucoesBinding.inflate(getLayoutInflater());
         setContentView(layoutSolucoesBinding.getRoot());
-        allocateActivityTitle("Menu Principal");
+        allocateActivityTitle("Soluções");
 
         // Resgata as informações da teka anterior
         tipoProblema = getIntent().getIntExtra("TIPO", 1);
@@ -165,6 +184,14 @@ public class Solucoes extends Drawer implements RecyclerViewInteface {
         editor.apply();
 
         finish();
+    }
+
+    private void afterYou() {
+        SharedPreferences sharedPreferences = getSharedPreferences(
+                getString(R.string.popupcheck), Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putBoolean("firstopensolucoes",false);
+        editor.apply();
     }
 
 }

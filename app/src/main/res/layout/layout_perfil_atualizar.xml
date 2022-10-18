@@ -8,9 +8,7 @@
     android:layout_height="match_parent"
     android:fillViewport="true">
     
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -23,11 +21,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.528"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView3"
+        app:layout_constraintTop_toTopOf="@+id/imagemPerfil"
         tools:ignore="MissingConstraints" />
 
-    <ImageView
-        android:id="@+id/imageView3"
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imagemPerfil"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_marginTop="15dp"
@@ -35,9 +33,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/view2"
         app:layout_constraintStart_toStartOf="@+id/view2"
-        app:srcCompat="@drawable/ic_user_perfil"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="47dp" />
+        android:src="@drawable/ic_user_perfil"
+        tools:ignore="MissingConstraints"/>
 
     <ImageView
         android:id="@+id/imageView5"
@@ -73,7 +70,7 @@
         android:id="@+id/num_chave"
         android:layout_width="240dp"
         android:layout_height="25dp"
-        android:layout_marginStart="92dp"
+        android:layout_marginStart="90dp"
         android:layout_marginEnd="26dp"
         android:hint="Chave"
         app:layout_constraintEnd_toEndOf="@+id/view2"
@@ -85,7 +82,7 @@
         android:id="@+id/editText4"
         android:layout_width="240dp"
         android:layout_height="25dp"
-        android:layout_marginStart="92dp"
+        android:layout_marginStart="90dp"
         android:layout_marginTop="19dp"
         android:layout_marginEnd="26dp"
         android:ems="10"
@@ -104,7 +101,7 @@
         android:layout_width="240dp"
         android:layout_height="wrap_content"
         android:minHeight="45dp"
-        android:layout_marginStart="88dp"
+        android:layout_marginStart="90dp"
         android:layout_marginEnd="25dp"
         android:hint="E-mail"
         android:inputType="textEmailAddress"
@@ -117,7 +114,7 @@
         android:id="@+id/editText3"
         android:layout_width="240dp"
         android:layout_height="25dp"
-        android:layout_marginStart="93dp"
+        android:layout_marginStart="90dp"
         android:layout_marginTop="19dp"
         android:layout_marginEnd="25dp"
         android:ems="10"
@@ -134,8 +131,8 @@
         android:id="@+id/num_telupdate"
         android:layout_width="240dp"
         android:layout_height="45dp"
-        android:layout_marginStart="88dp"
-        android:layout_marginEnd="26dp"
+        android:layout_marginStart="90dp"
+        android:layout_marginEnd="25dp"
         android:hint="Número de Telefone"
         android:maxLength="15"
         android:inputType="phone"
@@ -148,9 +145,9 @@
         android:id="@+id/editText2"
         android:layout_width="240dp"
         android:layout_height="25dp"
-        android:layout_marginStart="92dp"
+        android:layout_marginStart="90dp"
         android:layout_marginTop="19dp"
-        android:layout_marginEnd="26dp"
+        android:layout_marginEnd="25dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Telefone"
@@ -180,7 +177,7 @@
         android:id="@+id/editText1"
         android:layout_width="240dp"
         android:layout_height="25dp"
-        android:layout_marginStart="93dp"
+        android:layout_marginStart="90dp"
         android:layout_marginTop="39dp"
         android:layout_marginEnd="25dp"
         android:ems="10"
@@ -239,9 +236,18 @@
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        app:layout_constraintTop_toBottomOf="@+id/imagemPerfil"
         tools:ignore="MissingConstraints" />
 
+    <ImageButton
+        android:id="@+id/btn_add_imagem"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_margin="5dp"
+        android:src="@drawable/circle_green_add_white"
+        app:layout_constraintBottom_toBottomOf="@id/imagemPerfil"
+        app:layout_constraintEnd_toEndOf="@id/imagemPerfil"
+        android:background="@drawable/nos_circle"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

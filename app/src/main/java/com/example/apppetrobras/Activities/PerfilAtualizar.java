@@ -10,6 +10,7 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -39,6 +40,7 @@ public class PerfilAtualizar extends Drawer {
     TextView nome1,num_chave;
     EditText nomecompleto, num_tel, email1;
     Button btn_tela_perfil_update;
+    ImageButton btn_add_imagem;
     LayoutPerfilAtualizarBinding layoutPerfilAtualizarBinding;
 
     @SuppressLint("MissingInflatedId")

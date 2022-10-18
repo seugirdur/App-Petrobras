@@ -155,7 +155,6 @@ public class SolucionadoFragment extends Fragment implements RecyclerViewIntefac
 
         if (filteredList.isEmpty()) {
             recyclerViewAdapter.setFilteredList(filteredList);
-            Toast.makeText(context, "Não há relatórios com esse nome", Toast.LENGTH_SHORT).show();
         } else {
             recyclerViewAdapter.setFilteredList(filteredList);
         }

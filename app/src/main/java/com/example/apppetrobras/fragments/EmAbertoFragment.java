@@ -99,7 +99,6 @@ public class EmAbertoFragment extends Fragment implements RecyclerViewInteface{
 
             if (filteredList.isEmpty()) {
                 recyclerViewAdapter.setFilteredList(filteredList);
-                Toast.makeText(context, "Não há relatórios com esse nome", Toast.LENGTH_SHORT).show();
             } else {
                 recyclerViewAdapter.setFilteredList(filteredList);
             }

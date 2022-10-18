@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -49,6 +50,9 @@ public class SolucionadoFragment extends Fragment implements RecyclerViewIntefac
     private Context context;
     private RecyclerViewInteface recyclerViewInteface;
     RVAdapterEmAberto recyclerViewAdapter;
+    private SearchView searchView;
+
+
 
 
     @Override
@@ -65,6 +69,21 @@ public class SolucionadoFragment extends Fragment implements RecyclerViewIntefac
 
         context = getContext();
         recyclerViewInteface = this;
+
+        searchView = view.findViewById(R.id.searchview);
+        searchView.clearFocus();
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return true;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                filterList(newText);
+                return true;
+            }
+        });
 
         recyclerview = view.findViewById(R.id.recyclerviewadmin);
         recyclerview.setLayoutManager(new LinearLayoutManager(context));
@@ -135,7 +154,8 @@ public class SolucionadoFragment extends Fragment implements RecyclerViewIntefac
         }
 
         if (filteredList.isEmpty()) {
-
+            recyclerViewAdapter.setFilteredList(filteredList);
+            Toast.makeText(context, "Não há relatórios com esse nome", Toast.LENGTH_SHORT).show();
         } else {
             recyclerViewAdapter.setFilteredList(filteredList);
         }

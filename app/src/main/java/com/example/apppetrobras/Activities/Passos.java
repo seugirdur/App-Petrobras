@@ -251,6 +251,7 @@ public class Passos extends Drawer {
 
     public void fecharPopup(View view) {
         mDialog.dismiss();
+
     }
 
     public void inserirNaTela(){

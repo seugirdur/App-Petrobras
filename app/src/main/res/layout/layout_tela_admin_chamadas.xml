@@ -3,13 +3,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.InicioFragment">
 
     <androidx.appcompat.widget.SearchView
         android:id="@+id/searchview"
         android:layout_marginTop="12dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        app:queryHint="Busque o nome do funcionário"
+        android:layout_margin="10dp"
+        android:background="@drawable/popup_background1"
+        app:iconifiedByDefault="false"
+        >
+
 
     </androidx.appcompat.widget.SearchView>
 

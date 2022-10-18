@@ -54,7 +54,7 @@ public class Solucoes extends Drawer implements RecyclerViewInteface {
             mDialog = new Dialog(this);
 
             // Defini o click dentro do popup
-            mDialog.setContentView(R.layout.popup_cadeado_solucoes);
+            mDialog.setContentView(R.layout.popup_solucoes);
             mDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
             mDialog.show();
 

@@ -24,6 +24,11 @@ public class RVAdapterEmAberto extends RecyclerView.Adapter<RVAdapterEmAberto.My
     Context context;
     List<AdminObj> AdminObjList;
 
+    public void setFilteredList(List<AdminObj> filteredList) {
+        this.AdminObjList = filteredList;
+        notifyDataSetChanged();
+    }
+
     public RVAdapterEmAberto(Context context, List<AdminObj> AdminObjList,
                              RecyclerViewInteface recyclerViewInteface, int layout){
         this.context = context;

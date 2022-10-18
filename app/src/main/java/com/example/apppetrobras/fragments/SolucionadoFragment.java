@@ -48,6 +48,7 @@ public class SolucionadoFragment extends Fragment implements RecyclerViewIntefac
     private RecyclerView recyclerview;
     private Context context;
     private RecyclerViewInteface recyclerViewInteface;
+    RVAdapterEmAberto recyclerViewAdapter;
 
 
     @Override
@@ -110,7 +111,7 @@ public class SolucionadoFragment extends Fragment implements RecyclerViewIntefac
                 //tentando guardar num objeto para que seja depois visivel no item_list_admin do dionisio
                 AdminObjList = response.body();
 
-                RVAdapterEmAberto recyclerViewAdapter = new RVAdapterEmAberto(context,
+                recyclerViewAdapter = new RVAdapterEmAberto(context,
                         AdminObjList, recyclerViewInteface, R.layout.item_list_admin);
                 recyclerview.setAdapter(recyclerViewAdapter);
                 recyclerViewAdapter.notifyDataSetChanged();
@@ -122,6 +123,23 @@ public class SolucionadoFragment extends Fragment implements RecyclerViewIntefac
 
             }
         });
+
+    }
+
+    private void filterList(String text) {
+        List<AdminObj> filteredList = new ArrayList<>();
+        for (AdminObj adminObj: AdminObjList){
+            if(adminObj.getNome().toLowerCase().contains(text.toLowerCase())) {
+                filteredList.add(adminObj);
+            }
+        }
+
+        if (filteredList.isEmpty()) {
+
+        } else {
+            recyclerViewAdapter.setFilteredList(filteredList);
+        }
+
 
     }
 

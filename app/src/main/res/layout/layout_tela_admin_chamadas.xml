@@ -5,10 +5,19 @@
     android:layout_height="match_parent"
     tools:context=".fragments.InicioFragment">
 
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/searchview"
+        android:layout_marginTop="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </androidx.appcompat.widget.SearchView>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerviewadmin"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="80dp"
         tools:listitem="@layout/item_list_admin" />
 
 </FrameLayout>

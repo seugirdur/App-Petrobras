@@ -39,7 +39,7 @@ public class Tabs extends Drawer {
             mDialog = new Dialog(this);
 
             // Defini o click dentro do popup
-            mDialog.setContentView(R.layout.popup_cadeado_solucoes);
+            mDialog.setContentView(R.layout.popup_menu_principal);
             mDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
             mDialog.show();
 

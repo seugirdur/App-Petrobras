@@ -115,37 +115,37 @@ public class InicioFragment extends Fragment implements RecyclerViewInteface{
                  titulo = "Lentidão";
                  idtype = 1;
                  posi_id = 3;
-                 posi_title = "Computador está muito lento";
+                 posi_title = "O computador está muito lento";
                 break;
             case 2:
                  titulo = "Equipamentos";
                  idtype = 3;
                 posi_id = 1;
-                posi_title = "Quando eu clico no botão de ligar do meu computador, ele faz barulho e fica toda hora reiniciando";
+                posi_title = "O computador faz barulhos e reinicia toda vez que o botão de ligar é clicado";
                 break;
             case 3:
                  titulo = "Outros";
                 idtype = 4;
                 posi_id = 9;
-                posi_title = "Como recuperar um arquivo que apaguei?";
+                posi_title = "Como recuperar um arquivo que foi excluído?";
                 break;
             case 4:
                  titulo = "Outros";
                 idtype = 4;
                 posi_id = 7;
-                posi_title = "O meu navegador diz que estou com problema de memória";
+                posi_title = "O navegador relata problema de memória";
                 break;
             case 5:
                 titulo = "Internet";
                 idtype = 2;
                 posi_id = 1;
-                posi_title = "Meu computador não consegue se conectar a rede";
+                posi_title = "O computador não consegue se conectar a rede";
                 break;
             case 6:
                 titulo = "Equipamentos";
                 idtype = 3;
                 posi_id = 8;
-                posi_title = "Quando eu clico no botão de ligar do computador, não acontece nada";
+                posi_title = "Após clicar no botão de ligar, o computador não liga e não demonstra nada";
                 break;
         }
 

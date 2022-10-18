@@ -15,19 +15,19 @@
     <string name="inicio_5">Problema Início 5</string>
     <string name="inicio_6">Problema Início 6</string>
 
-    <string name="lentidao_1">Computador travando com aplicações específicas</string>
+    <string name="lentidao_1">O computador está travando com aplicações específicas</string>
     <string name="lentidao_2">O computador demora muito para ligar </string>
-    <string name="lentidao_3">O Computador está muito lento</string>
+    <string name="lentidao_3">O computador está muito lento</string>
 
     <string name="internet_1">O computador não consegue se conectar a rede</string>
     <string name="internet_2">A internet cai constantemente</string>
-    <string name="internet_3">A rede não aparece na lista de wi-fi</string>
+    <string name="internet_3">A rede não aparece na lista de Wi-Fi</string>
     <string name="internet_4">O computador se conecta à rede, mas não é possível navegar na internet </string>
 
     <string name="equipamentos_1">O computador faz barulhos e reinicia toda vez que o botão de ligar é clicado</string>
     <string name="equipamentos_2">O mouse não está funcionando</string>
     <string name="equipamentos_3">O teclado não está funcionando</string>
-    <string name="equipamentos_4">O som não está saindo no fone de ouvido</string>
+    <string name="equipamentos_4">O som não está saindo do fone de ouvido</string>
     <string name="equipamentos_5">O carregador do notebook não está funcionando</string>
     <string name="equipamentos_6">O computador não reconhece o celular ao ser conectado</string>
     <string name="equipamentos_7">O microfone do computador não está funcionando</string>
@@ -35,19 +35,19 @@
     <string name="equipamentos_9">O computador está em modo suspensão e não liga mais</string>
     <string name="equipamentos_10">O computador começa a apitar quando é ligado</string>
     <string name="equipamentos_11">Tela azul de erro</string>
-    <string name="equipamentos_12">O computador não está reconhecendo o pen-drive</string>
+    <string name="equipamentos_12">O computador não está reconhecendo o pen drive</string>
     <string name="equipamentos_13">Mensagens de erro</string>
 
-    <string name="outros_1">Abas ficam abrindo sozinhas no meu navegador </string>
-    <string name="outros_2">Como Remover Propagandas Estranhas que Aparecem no Navegador</string>
-    <string name="outros_3">Como Liberar os Cookies</string>
-    <string name="outros_4">Alguns sites do navegador não carregam no computador </string>
-    <string name="outros_5">Como saber se um site é seguro ?</string>
-    <string name="outros_6">O computador está com vírus, como retira-lo ?</string>
-    <string name="outros_7">O navegador relata problema de memória </string>
-    <string name="outros_8">A barra de tarefa do windows desapareceu </string>
-    <string name="outros_9">Recuperar um aplicativo excluído ?</string>
-    <string name="outros_10">Tela invertida</string>
+    <string name="outros_1">Abas ficam abrindo sozinhas no meu navegador</string>
+    <string name="outros_2">Como remover propagandas estranhas que aparecem no navegador</string>
+    <string name="outros_3">Como liberar os cookies</string>
+    <string name="outros_4">Alguns sites do navegador não carregam no computador</string>
+    <string name="outros_5">Como saber se um site é seguro?</string>
+    <string name="outros_6">O computador está com vírus, como retirá-lo?</string>
+    <string name="outros_7">O navegador relata problema de memória</string>
+    <string name="outros_8">A barra de tarefa do Windows desapareceu</string>
+    <string name="outros_9">Como recuperar um arquivo que foi excluído?</string>
+    <string name="outros_10">A tela está invertida</string>
     <string name="outros_11">Um aplicativo foi excluido da área de trabalho </string>
     <string name="outros_12">A página do navegador não fecha </string>
 

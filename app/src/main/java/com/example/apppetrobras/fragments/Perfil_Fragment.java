@@ -3,6 +3,7 @@ package com.example.apppetrobras.fragments;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -18,9 +19,12 @@ import android.widget.TextView;
 import com.example.apppetrobras.Activities.PerfilAtualizar;
 import com.example.apppetrobras.R;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class Perfil_Fragment extends Fragment {
     Button btn;
     TextView nomecompleto,num_tel,email1,num_chave, nome1;
+    CircleImageView circleImagePerfil;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -38,7 +42,10 @@ public class Perfil_Fragment extends Fragment {
         String email = sharedPreferences.getString("email", "");
         String tel = sharedPreferences.getString("tel", "");
         String chave = sharedPreferences.getString("chave", "");
+        String imagemUser = sharedPreferences.getString("imagemUser","");
 
+        circleImagePerfil = view.findViewById(R.id.imagemPerfil);
+        circleImagePerfil.setImageURI(Uri.parse(imagemUser));
 
         String[] fullNameArray = nome.split("\\s+");
         String firstName = fullNameArray[0];

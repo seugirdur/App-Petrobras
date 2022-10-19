@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.method.HideReturnsTransformationMethod;
@@ -221,6 +222,21 @@ public class Login extends AppCompatActivity {
                 editor.putString("tel", tel);
                 editor.putString("dataNasc", dataNasc);
                 editor.putString("chave", chave);
+
+                //verifição para imagem de usuario
+                Boolean isFirstOpenApp = sharedPreferences.getBoolean("firstopenapp", true);
+                if (isFirstOpenApp){
+                    Toast.makeText(Login.this, "primeira vez", Toast.LENGTH_LONG).show();
+
+                    // Insere essa imagem no shared preferences imagemUser
+                    Uri uri = Uri.parse("android.resource://com.example.apppetrobras/drawable/user_perfil_padrao");
+                    String fotoPadrao = uri.toString();
+                    editor.putString("imagemUser", fotoPadrao);
+
+                    // Muda a flag se o app foi aberto
+                    editor.putBoolean("firstopenapp", false);
+                }
+
                 editor.apply();
 
 

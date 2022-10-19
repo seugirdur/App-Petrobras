@@ -45,6 +45,7 @@ public class PerfilAtualizar extends Drawer {
     TextView nome1,num_chave;
     EditText nomecompleto, num_tel, email1;
     Button btn_tela_perfil_update;
+    CircleImageView circleImagePerfil;
     ImageButton btn_add_imagem;
     LayoutPerfilAtualizarBinding layoutPerfilAtualizarBinding;
     ActivityResultLauncher<String> mTakePhoto;
@@ -65,7 +66,10 @@ public class PerfilAtualizar extends Drawer {
         String tel = sharedPreferences.getString("tel", "");
         String email = sharedPreferences.getString("email", "");
         String chave = sharedPreferences.getString("chave", "");
+        String imagemUser = sharedPreferences.getString("imagemUser","");
 
+//        circleImagePerfil = findViewById(R.id.imagemPerfil);
+//        circleImagePerfil.setImageURI(Uri.parse(imagemUser));
 
         String[] fullNameArray = nome.split("\\s+");
         String firstName = fullNameArray[0];
@@ -185,13 +189,19 @@ public class PerfilAtualizar extends Drawer {
             }
         });
 
+
         mTakePhoto = registerForActivityResult(
                 new ActivityResultContracts.GetContent(),
                 new ActivityResultCallback<Uri>() {
                     @Override
                     public void onActivityResult(Uri result){
-                        CircleImageView circleImagePerfil = findViewById(R.id.imagemPerfil);
-                        circleImagePerfil.setImageURI(result);
+
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        editor.putString("imagemUser",result.toString());
+                        editor.apply();
+
+                        String imagemUser = sharedPreferences.getString("imagemUser","");
+                        circleImagePerfil.setImageURI(Uri.parse(imagemUser));
                     }
                 }
         );
@@ -259,6 +269,7 @@ public class PerfilAtualizar extends Drawer {
                 editor.apply();
                 Intent intent = new Intent(PerfilAtualizar.this, Configuracoes.class);
                 startActivity(intent);
+                finish();
             }
         });
 

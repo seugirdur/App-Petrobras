@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -14,6 +15,9 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.Navigations.Configuracoes;
@@ -30,6 +34,7 @@ import com.example.apppetrobras.fragments.Ajuda_fragment;
 import java.io.IOException;
 import java.util.List;
 
+import de.hdodenhof.circleimageview.CircleImageView;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -42,6 +47,7 @@ public class PerfilAtualizar extends Drawer {
     Button btn_tela_perfil_update;
     ImageButton btn_add_imagem;
     LayoutPerfilAtualizarBinding layoutPerfilAtualizarBinding;
+    ActivityResultLauncher<String> mTakePhoto;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -179,8 +185,24 @@ public class PerfilAtualizar extends Drawer {
             }
         });
 
+        mTakePhoto = registerForActivityResult(
+                new ActivityResultContracts.GetContent(),
+                new ActivityResultCallback<Uri>() {
+                    @Override
+                    public void onActivityResult(Uri result){
+                        CircleImageView circleImagePerfil = findViewById(R.id.imagemPerfil);
+                        circleImagePerfil.setImageURI(result);
+                    }
+                }
+        );
 
-
+        ImageButton btnAddImagem = findViewById(R.id.btn_add_imagem);
+        btnAddImagem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mTakePhoto.launch("image/*");
+            }
+        });
 
     }
 

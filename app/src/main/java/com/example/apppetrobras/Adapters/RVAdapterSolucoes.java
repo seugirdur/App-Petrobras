@@ -54,7 +54,7 @@ public class RVAdapterSolucoes extends RecyclerView.Adapter<RVAdapterSolucoes.My
         // Estrutura de decisão de acordo com o layout(xml) da recyclerview,
         // a partir disso são atribuídos os id's que existem em cada item
         idText = R.id.title_soluction;
-        idVisual = R.id.container;
+        idVisual = R.id.error_solucoes;
         return new MyViewHolder(view, recyclerViewInteface, idText, idVisual);
 
     }
@@ -65,12 +65,10 @@ public class RVAdapterSolucoes extends RecyclerView.Adapter<RVAdapterSolucoes.My
 
         holder.textView1.setText(data.getTituloSolucao());
 
-        int cor = ContextCompat.getColor(context, R.color.white);
         // Verifica se a solução já foi vizualida e então altera a cor desse item da recyclerView
         if (check.charAt(position) != '0'){
-            cor = ContextCompat.getColor(context, R.color.Tomate);
+            holder.imageView1.setVisibility(View.VISIBLE);
         }
-        holder.container.setBackgroundColor(cor);
     }
 
     @Override
@@ -95,7 +93,7 @@ public class RVAdapterSolucoes extends RecyclerView.Adapter<RVAdapterSolucoes.My
 
             // Definição de variáveis com os valores dos id's
             textView1 = itemView.findViewById(id1);
-            container = itemView.findViewById(id2);
+           imageView1 = itemView.findViewById(id2);
 
             // Define o método onItemClik da interface para cada item da RecyclerView
             moduleOnClick(recyclerViewInteface);

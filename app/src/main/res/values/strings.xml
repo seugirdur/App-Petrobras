@@ -79,7 +79,7 @@
     <string name="textologin"><a href='https://github.com/seugirdur/App-petrobras'>clicando aqui</a></string>
 
 
-    <string name="bemVindo">Bem Vindo!</string>
+    <string name="bemVindo">Bem-vindo!</string>
 
     <string name="dummyText"><p>1. Informações fornecidas pelo usuário:
 O aplicativo obtém as informações que você fornece quando você baixa e registra no aplicativo. O registro conosco é obrigatório, para que possa utilizar todos os serviços fornecidos pelo aplicativo.</p> \n

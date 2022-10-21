@@ -239,15 +239,6 @@
         app:layout_constraintTop_toBottomOf="@+id/imagemPerfil"
         tools:ignore="MissingConstraints" />
 
-    <ImageButton
-        android:id="@+id/btn_add_imagem"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_margin="5dp"
-        android:src="@drawable/circle_green_add_white"
-        app:layout_constraintBottom_toBottomOf="@id/imagemPerfil"
-        app:layout_constraintEnd_toEndOf="@id/imagemPerfil"
-        android:background="@drawable/nos_circle"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

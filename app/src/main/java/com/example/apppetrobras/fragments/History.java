@@ -105,6 +105,8 @@ public class History extends Fragment implements RecyclerViewInteface {
         // Definição de valores que serão redirecionados
         int idRelatorio = relatorioObjList.get(position).getIdRelatorio();
         intent.putExtra("idRelatorio", idRelatorio);
+        intent.putExtra("notnotlmao", 2);
+
         startActivity(intent);
 
 //        // Redirecionamento para a tela do problema contendo os títulos das soluções

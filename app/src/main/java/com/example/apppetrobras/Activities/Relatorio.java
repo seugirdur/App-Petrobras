@@ -378,7 +378,11 @@ public class Relatorio extends Drawer implements RecyclerViewInteface{
             startActivity(intent);
 
 
-        }else {
+        } else if(notnotlmao==2) {
+                Toast.makeText(Relatorio.this, "Só é possível finalizar relatórios na tela de Administrador.", Toast.LENGTH_LONG).show();
+
+            }
+            else {
                 Toast.makeText(Relatorio.this, "Esse problema já foi solucionado", Toast.LENGTH_LONG).show();
 
             }
@@ -504,7 +508,7 @@ public class Relatorio extends Drawer implements RecyclerViewInteface{
         horario = horario.replace(":", "");
 
         //criando arquivo pdf
-        String nomeArquivo = "Relatorio" + data + "baixadoem" + horario;
+        String nomeArquivo = "Relatorio_" + data + "_" + horario;
         File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/Download/"
                 + nomeArquivo + ".pdf");
 
@@ -514,7 +518,7 @@ public class Relatorio extends Drawer implements RecyclerViewInteface{
             pdfDocument.writeTo(new FileOutputStream(file));
 
 
-            Toast.makeText(Relatorio.this, "PDF " + nomeArquivo  +  " criado com sucesso. Cheque sua pasta Download", Toast.LENGTH_SHORT).show();
+            Toast.makeText(Relatorio.this, nomeArquivo  +  " criado. Cheque sua pasta Downloads.", Toast.LENGTH_LONG).show();
         } catch (IOException e) {
 
             Toast.makeText(Relatorio.this, "Erro em baixar o arquivo.", Toast.LENGTH_SHORT).show();

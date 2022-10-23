@@ -65,7 +65,7 @@
     <string name="previous">Previous</string>
 
     <string name="hello_first_fragment">Email: <a href='mailto:suporte@aset.com'>suporteaset@gmail.com</a></string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="hello_second_fragment">Ligue:  <a href='mailto:suporte@aset.com'>(13) 99150-9119</a></string>
 
     <string name="menu_drawer_open">Drawer Open</string>
     <string name="menu_drawer_close">Drawer Close</string>
@@ -75,7 +75,8 @@
     <string name="botao_entrar">Entrar na minha conta</string>
     <string name="texto_tela_escolha">Com dúvidas? \nEntre em contato conosco <a href=''>clicando aqui</a></string>
     <string name="ppja">PPJA - Santos ©</string>
-    <string name="textologin">Ligue:  <a href='mailto:suporte@aset.com'>(13) 99150-9119</a></string>
+    <string name="textologin"> <a href='https://github.com/seugirdur/App-petrobras'>clicando aqui</a>.</string>
+
     <string name="telto" tools:ignore="ExtraTranslation"><a href='tel:5513991509119'>Ligue:  (13) 99150-9119</a></string>
 
 

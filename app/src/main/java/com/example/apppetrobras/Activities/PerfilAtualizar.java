@@ -73,10 +73,10 @@ public class PerfilAtualizar extends Drawer {
         layoutPerfilAtualizarBinding = LayoutPerfilAtualizarBinding.inflate(getLayoutInflater());
         setContentView(layoutPerfilAtualizarBinding.getRoot());
         allocateActivityTitle("Editar Perfil");
-        imagemparatodos();
         storage = FirebaseStorage.getInstance();
 
         imagemUser = findViewById(R.id.imagemPerfil);
+        imagemparatodos();
 
         SharedPreferences sharedPreferences = getSharedPreferences(
                 getString(R.string.preference_file_key), Context.MODE_PRIVATE);

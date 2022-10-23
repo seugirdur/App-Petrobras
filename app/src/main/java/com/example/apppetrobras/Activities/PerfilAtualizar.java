@@ -199,6 +199,9 @@ public class PerfilAtualizar extends Drawer {
                 public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
                     if (task.isSuccessful()){
                         pegarImagem();
+
+                        Intent intent = new Intent(PerfilAtualizar.this, Configuracoes.class);
+                        startActivity(intent);
                         finish();
                     } else {
                         Toast.makeText(PerfilAtualizar.this,"Não foi salva",Toast.LENGTH_SHORT).show();
@@ -278,6 +281,8 @@ public class PerfilAtualizar extends Drawer {
                 if (imageUri!=null) {
                     uploadImage(imageUri);
                 } else {
+                    Intent intent = new Intent(PerfilAtualizar.this, Configuracoes.class);
+                    startActivity(intent);
                     finish();
                 }
             }

@@ -20,6 +20,8 @@ import android.widget.TextView;
 import com.example.apppetrobras.Activities.PerfilAtualizar;
 import com.example.apppetrobras.R;
 
+import java.util.Objects;
+
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class Perfil_Fragment extends Fragment {
@@ -76,6 +78,7 @@ public class Perfil_Fragment extends Fragment {
             public void onClick(View view) {
                 Intent i = new Intent(getActivity(), PerfilAtualizar.class);
                 startActivity(i);
+                requireActivity().finish();
             }
         });
 

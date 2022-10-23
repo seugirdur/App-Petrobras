@@ -12,6 +12,8 @@ import android.content.ClipData;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.view.Menu;
@@ -29,14 +31,25 @@ import com.example.apppetrobras.Activities.Perfil;
 import com.example.apppetrobras.Activities.Relatorio;
 import com.example.apppetrobras.R;
 import com.example.apppetrobras.Activities.SplashScreen;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.storage.FileDownloadTask;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
-    public class Drawer extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+import java.io.File;
+import java.io.IOException;
+
+import de.hdodenhof.circleimageview.CircleImageView;
+
+public class Drawer extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
         DrawerLayout drawerLayout;
         private MenuItem itemToHide;
         private MenuItem itemToShow;
         Dialog mDialog;
+        String chave;
 
 
         @Override
@@ -58,6 +71,8 @@ import com.google.android.material.navigation.NavigationView;
             navUsername.setText(settingTheName());
             navigationView.setNavigationItemSelectedListener(this);
 
+            CircleImageView imagemUser = (CircleImageView) headerView.findViewById(R.id.imagemUser);
+            pegarImagem(imagemUser);
 
             ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.menu_drawer_open, R.string.menu_drawer_close);
             toggle.getDrawerArrowDrawable().setColor(getResources().getColor(R.color.white));
@@ -85,6 +100,8 @@ import com.google.android.material.navigation.NavigationView;
             String[] fullNameArray = SayMyName.split("\\s+");
             String firstName = fullNameArray[0];
             String nome = "Olá, "+firstName;
+
+            chave = sharedPreferences.getString("chave","");
             return nome;
         }
 
@@ -194,8 +211,32 @@ import com.google.android.material.navigation.NavigationView;
 
         }
 
+    private void pegarImagem(CircleImageView imagemUser) {
+        FirebaseStorage storage = FirebaseStorage.getInstance();
+        StorageReference storageReference = storage.getReference("images/"+chave);
+        try {
+            File localfile = File.createTempFile("tempfile",".jpg");
+            storageReference.getFile(localfile)
+                    .addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
+                        @Override
+                        public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
 
+                            Bitmap bitmap = BitmapFactory.decodeFile(localfile.getAbsolutePath());
 
+                            imagemUser.setImageBitmap(bitmap);
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+//                            Toast.makeText(getContext(), "falha ao pegar", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
+
+}
 
 

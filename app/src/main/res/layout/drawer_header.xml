@@ -7,31 +7,17 @@
 
     >
 
-    <View
-        android:id="@+id/fundo"
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imagemUser"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:background="@drawable/logo_tela_cadastro"
+        android:src="@drawable/default_img_user"
         android:backgroundTint="@color/Amarelo_Petrobras"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         />
-
-
-    <ImageView
-        android:id="@+id/img_user"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="40dp"
-        android:src="@drawable/ic_person_24"
-        app:layout_constraintStart_toStartOf="@id/fundo"
-        app:layout_constraintEnd_toEndOf="@+id/fundo"
-        app:layout_constraintTop_toTopOf="@id/fundo"
-        app:layout_constraintBottom_toBottomOf="@id/fundo"
-         />
 
     <TextView
         android:id="@+id/tv_name_vand"
@@ -44,7 +30,6 @@
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/fundo"
-         />
+        app:layout_constraintTop_toBottomOf="@id/imagemUser" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

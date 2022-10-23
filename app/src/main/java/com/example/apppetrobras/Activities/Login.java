@@ -268,7 +268,7 @@ public class Login extends AppCompatActivity {
                 String dataNasc = loginObj.getDataNasc();
                 String chave = loginObj.getChave();
                 int isAdmin = loginObj.getIsAdmin();
-                Toast.makeText(Login.this, "Bem vindo "+nome, Toast.LENGTH_SHORT).show();
+
                 progressbar=findViewById(R.id.progressbar);
                  //new Task().execute();
                 progressbar.setVisibility(View.VISIBLE);
@@ -292,10 +292,18 @@ public class Login extends AppCompatActivity {
 
                 pegarImagem();
 
-                Intent intent = new Intent(Login.this, Tabs.class);
-                startActivity(intent);
-                finish();
 
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        Toast.makeText(Login.this, "Bem vindo "+nome, Toast.LENGTH_SHORT).show();
+
+                        Intent intent = new Intent(Login.this, Tabs.class);
+
+                        startActivity(intent);
+                        finish();
+                    }
+                }, 3000);
 
             }
 

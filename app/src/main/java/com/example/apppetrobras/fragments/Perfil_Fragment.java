@@ -25,7 +25,8 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class Perfil_Fragment extends Fragment {
     Button btn;
     TextView nomecompleto,num_tel,email1,num_chave, nome1;
-    CircleImageView imagemPerfil;
+    CircleImageView imagemUser;
+    String encoded;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -43,14 +44,11 @@ public class Perfil_Fragment extends Fragment {
         String email = sharedPreferences.getString("email", "");
         String tel = sharedPreferences.getString("tel", "");
         String chave = sharedPreferences.getString("chave", "");
-        String imagemUser = sharedPreferences.getString("imagemUser", "");
+        encoded = sharedPreferences.getString("encoded", "");
 
-        imagemPerfil = view.findViewById(R.id.imageView3);
+        imagemUser = view.findViewById(R.id.imageView3);
 
-        if (imagemUser != null){
-            byte[] imageAsBytes = Base64.decode(imagemUser.getBytes(), Base64.DEFAULT);
-            imagemPerfil.setImageBitmap(BitmapFactory.decodeByteArray(imageAsBytes, 0, imageAsBytes.length));
-        }
+        imagemparatodos();
 
         String[] fullNameArray = nome.split("\\s+");
         String firstName = fullNameArray[0];
@@ -87,6 +85,13 @@ public class Perfil_Fragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+    }
+
+    private void imagemparatodos() {
+
+        byte[] imageAsBytes = Base64.decode(encoded.getBytes(), Base64.DEFAULT);
+        imagemUser.setImageBitmap(BitmapFactory.decodeByteArray(imageAsBytes, 0, imageAsBytes.length));
 
     }
 }

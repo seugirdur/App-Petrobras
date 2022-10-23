@@ -73,7 +73,7 @@ public class PerfilAtualizar extends Drawer {
         layoutPerfilAtualizarBinding = LayoutPerfilAtualizarBinding.inflate(getLayoutInflater());
         setContentView(layoutPerfilAtualizarBinding.getRoot());
         allocateActivityTitle("Editar Perfil");
-
+        imagemparatodos();
         storage = FirebaseStorage.getInstance();
 
         imagemUser = findViewById(R.id.imagemPerfil);
@@ -85,8 +85,6 @@ public class PerfilAtualizar extends Drawer {
         String tel = sharedPreferences.getString("tel", "");
         String email = sharedPreferences.getString("email", "");
         chave = sharedPreferences.getString("chave", "");
-
-        pegarImagem();
 
         String[] fullNameArray = nome.split("\\s+");
         String firstName = fullNameArray[0];
@@ -199,6 +197,7 @@ public class PerfilAtualizar extends Drawer {
                 public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
                     if (task.isSuccessful()){
                         Toast.makeText(PerfilAtualizar.this,"imagem salva",Toast.LENGTH_SHORT).show();
+                        pegarImagem();
                     } else {
                         Toast.makeText(PerfilAtualizar.this,"Não foi salva",Toast.LENGTH_SHORT).show();
                     }

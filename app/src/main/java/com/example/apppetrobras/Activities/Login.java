@@ -67,6 +67,8 @@ public class Login extends AppCompatActivity {
         edit_senha = findViewById(R.id.edit_senha);
         button_login = findViewById(R.id.button_login);
         esqueceu_senha = findViewById(R.id.esqueceu_senha);
+        storage = FirebaseStorage.getInstance();
+
 
         mDialog = new Dialog(this);
         checkconn();
@@ -208,11 +210,10 @@ public class Login extends AppCompatActivity {
 
                             String encoded = Base64.encodeToString(b, Base64.DEFAULT);
 
-                            // atualizar shared Preference
-                            SharedPreferences sharedPreferences = getSharedPreferences(
+                            SharedPreferences sharedPreferences1 = getSharedPreferences(
                                     getString(R.string.preference_file_key), Context.MODE_PRIVATE);
-                            SharedPreferences.Editor editor = sharedPreferences.edit();
-                            editor.putString("imagemUser",encoded);
+                            SharedPreferences.Editor editor = sharedPreferences1.edit();
+                            editor.putString("encoded", encoded);
                             editor.apply();
                         }
                     }).addOnFailureListener(new OnFailureListener() {
@@ -289,7 +290,7 @@ public class Login extends AppCompatActivity {
                 editor.putString("chave", chave);
                 editor.apply();
 
-//                pegarImagem();
+                pegarImagem();
 
                 Intent intent = new Intent(Login.this, Tabs.class);
                 startActivity(intent);

@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">ASET</string>
     <string name="key">Chave de acesso</string>
     <string name="icone_dioniso">Icone Dionisio</string>
@@ -24,7 +24,6 @@
     <string name="internet_2">A internet cai constantemente</string>
     <string name="internet_3">A rede não aparece na lista de Wi-Fi</string>
     <string name="internet_4">O computador se conecta à rede, mas não é possível navegar na internet </string>
-
     <string name="equipamentos_1">O computador faz barulhos e reinicia toda vez que o botão de ligar é clicado</string>
     <string name="equipamentos_2">O mouse não está funcionando</string>
     <string name="equipamentos_3">O teclado não está funcionando</string>
@@ -65,7 +64,7 @@
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
-    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_first_fragment">Email: <a href='mailto:suporte@aset.com'>suporteaset@gmail.com</a></string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 
     <string name="menu_drawer_open">Drawer Open</string>
@@ -76,7 +75,8 @@
     <string name="botao_entrar">Entrar na minha conta</string>
     <string name="texto_tela_escolha">Com dúvidas? \nEntre em contato conosco <a href=''>clicando aqui</a></string>
     <string name="ppja">PPJA - Santos ©</string>
-    <string name="textologin"><a href='https://github.com/seugirdur/App-petrobras'>clicando aqui</a></string>
+    <string name="textologin">Ligue:  <a href='mailto:suporte@aset.com'>(13) 99150-9119</a></string>
+    <string name="telto" tools:ignore="ExtraTranslation"><a href='tel:5513991509119'>Ligue:  (13) 99150-9119</a></string>
 
 
     <string name="bemVindo">Bem-vindo!</string>

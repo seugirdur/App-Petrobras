@@ -185,6 +185,58 @@ public class Login extends AppCompatActivity {
         }
     }
 
+    private void pegarImagem() {
+        SharedPreferences sharedPreferences = getSharedPreferences(
+                getString(R.string.preference_file_key), Context.MODE_PRIVATE);
+
+        String chave = sharedPreferences.getString("chave","");
+
+        StorageReference storageReference = storage.getReference("images/"+chave);
+        try {
+            File localfile = File.createTempFile("tempfile",".jpg");
+            storageReference.getFile(localfile)
+                    .addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
+                        @Override
+                        public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
+
+                            Bitmap bitmap = BitmapFactory.decodeFile(localfile.getAbsolutePath());
+
+                            //Converter bitmap to string
+                            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                            bitmap.compress(Bitmap.CompressFormat.PNG, 100, baos); //bitmap is the bitmap object
+                            byte[] b = baos.toByteArray();
+
+                            String encoded = Base64.encodeToString(b, Base64.DEFAULT);
+
+                            // atualizar shared Preference
+                            SharedPreferences sharedPreferences = getSharedPreferences(
+                                    getString(R.string.preference_file_key), Context.MODE_PRIVATE);
+                            SharedPreferences.Editor editor = sharedPreferences.edit();
+                            editor.putString("imagemUser",encoded);
+                            editor.apply();
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            SharedPreferences sharedPreferences = getSharedPreferences(
+                                    getString(R.string.preference_file_key), Context.MODE_PRIVATE);
+                            SharedPreferences.Editor editor = sharedPreferences.edit();
+                            editor.putString("imagemUser","");
+                            editor.apply();
+
+                            Toast.makeText(Login.this, "falha ao pegar", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+
+        } catch (IOException e) {
+            e.printStackTrace();
+
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putString("imagemUser","");
+            editor.apply();
+        }
+    }
+
 
     private void guardate(){
 
@@ -237,7 +289,7 @@ public class Login extends AppCompatActivity {
                 editor.putString("chave", chave);
                 editor.apply();
 
-                pegarImagem();
+//                pegarImagem();
 
                 Intent intent = new Intent(Login.this, Tabs.class);
                 startActivity(intent);
@@ -246,57 +298,7 @@ public class Login extends AppCompatActivity {
 
             }
 
-            private void pegarImagem() {
-                SharedPreferences sharedPreferences = getSharedPreferences(
-                        getString(R.string.preference_file_key), Context.MODE_PRIVATE);
 
-                sharedPreferences.getString("chave","");
-
-                StorageReference storageReference = storage.getReference("images/"+chave);
-                try {
-                    File localfile = File.createTempFile("tempfile",".jpg");
-                    storageReference.getFile(localfile)
-                            .addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
-                                @Override
-                                public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
-
-                                    Bitmap bitmap = BitmapFactory.decodeFile(localfile.getAbsolutePath());
-
-                                    //Converter bitmap to string
-                                    ByteArrayOutputStream baos = new ByteArrayOutputStream();
-                                    bitmap.compress(Bitmap.CompressFormat.PNG, 100, baos); //bitmap is the bitmap object
-                                    byte[] b = baos.toByteArray();
-
-                                    String encoded = Base64.encodeToString(b, Base64.DEFAULT);
-
-                                    // atualizar shared Preference
-                                    SharedPreferences sharedPreferences = getSharedPreferences(
-                                            getString(R.string.preference_file_key), Context.MODE_PRIVATE);
-                                    SharedPreferences.Editor editor = sharedPreferences.edit();
-                                    editor.putString("imagemUser",encoded);
-                                    editor.apply();
-                                }
-                            }).addOnFailureListener(new OnFailureListener() {
-                                @Override
-                                public void onFailure(@NonNull Exception e) {
-                                    SharedPreferences sharedPreferences = getSharedPreferences(
-                                            getString(R.string.preference_file_key), Context.MODE_PRIVATE);
-                                    SharedPreferences.Editor editor = sharedPreferences.edit();
-                                    editor.putString("imagemUser","");
-                                    editor.apply();
-
-                                    Toast.makeText(Login.this, "falha ao pegar", Toast.LENGTH_SHORT).show();
-                                }
-                            });
-
-                } catch (IOException e) {
-                    e.printStackTrace();
-
-                    SharedPreferences.Editor editor = sharedPreferences.edit();
-                    editor.putString("imagemUser","");
-                    editor.apply();
-                }
-            }
 
             @Override
             public void onFailure(Call<List<LoginObj>> call, Throwable t) {

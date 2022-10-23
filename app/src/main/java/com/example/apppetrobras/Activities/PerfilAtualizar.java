@@ -194,6 +194,7 @@ public class PerfilAtualizar extends Drawer {
             StorageReference reference = storage.getReference().child("images/"+chave);
 
             reference.putFile(imageUri).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
+
                 @Override
                 public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
                     if (task.isSuccessful()){
@@ -278,6 +279,18 @@ public class PerfilAtualizar extends Drawer {
         });
     }
 
+    private void imagemparatodos() {
+        SharedPreferences sharedPreferences = getSharedPreferences(
+                getString(R.string.preference_file_key), Context.MODE_PRIVATE);
+
+        String encoded = sharedPreferences.getString("encoded", "");
+
+
+        byte[] imageAsBytes = Base64.decode(encoded.getBytes(), Base64.DEFAULT);
+        imagemUser.setImageBitmap(BitmapFactory.decodeByteArray(imageAsBytes, 0, imageAsBytes.length));
+
+    }
+
     private void pegarImagem() {
         StorageReference storageReference = storage.getReference("images/"+chave);
         try {
@@ -296,8 +309,16 @@ public class PerfilAtualizar extends Drawer {
 
                             String encoded = Base64.encodeToString(b, Base64.DEFAULT);
 
+                            SharedPreferences sharedPreferences1 = getSharedPreferences(
+                                    getString(R.string.preference_file_key), Context.MODE_PRIVATE);
+                            SharedPreferences.Editor editor = sharedPreferences1.edit();
+                            editor.putString("encoded", encoded);
+                            editor.apply();
+
                             // setar imagem a partir do bitmap
-                            imagemUser.setImageBitmap(bitmap);
+//                            imagemUser.setImageBitmap(bitmap);
+
+                            imagemparatodos();
                         }
                     }).addOnFailureListener(new OnFailureListener() {
                         @Override

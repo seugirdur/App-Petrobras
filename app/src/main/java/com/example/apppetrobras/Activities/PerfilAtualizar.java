@@ -85,8 +85,11 @@ public class PerfilAtualizar extends Drawer {
         String tel = sharedPreferences.getString("tel", "");
         String email = sharedPreferences.getString("email", "");
         chave = sharedPreferences.getString("chave", "");
+        String encoded = sharedPreferences.getString("encoded", "");
 
-        pegarImagem();
+        imagemUser = findViewById(R.id.imagemPerfil);
+
+        imagemparatodos();
 
         String[] fullNameArray = nome.split("\\s+");
         String firstName = fullNameArray[0];
@@ -199,6 +202,7 @@ public class PerfilAtualizar extends Drawer {
                 public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
                     if (task.isSuccessful()){
                         Toast.makeText(PerfilAtualizar.this,"imagem salva",Toast.LENGTH_SHORT).show();
+                        pegarImagem();
                     } else {
                         Toast.makeText(PerfilAtualizar.this,"Não foi salva",Toast.LENGTH_SHORT).show();
                     }
@@ -317,8 +321,6 @@ public class PerfilAtualizar extends Drawer {
 
                             // setar imagem a partir do bitmap
 //                            imagemUser.setImageBitmap(bitmap);
-
-                            imagemparatodos();
                         }
                     }).addOnFailureListener(new OnFailureListener() {
                         @Override

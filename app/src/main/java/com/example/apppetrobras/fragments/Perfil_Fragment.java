@@ -76,9 +76,9 @@ public class Perfil_Fragment extends Fragment {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getActivity(), PerfilAtualizar.class);
-                startActivity(i);
-                requireActivity().finish();
+                Intent intent = new Intent(getActivity(), PerfilAtualizar.class);
+                startActivity(intent);
+                getActivity().finish();
             }
         });
 

@@ -232,9 +232,6 @@ public class PerfilAtualizar extends Drawer {
 //        perfilObj.setEmail(email);
 //        perfilObj.setTelefone(tel);
 
-        if (imageUri!=null) {
-            uploadImage(imageUri);
-        }
 
         Call<List<PerfilObj>> call = RetroFitClient
                 .getInstance()
@@ -277,16 +274,17 @@ public class PerfilAtualizar extends Drawer {
                 editor.putString("email", email);
                 editor.putString("tel", tel);
                 editor.apply();
-
-                if (imageUri!=null) {
-                    uploadImage(imageUri);
-                } else {
-                    Intent intent = new Intent(PerfilAtualizar.this, Configuracoes.class);
-                    startActivity(intent);
-                    finish();
-                }
             }
+
         });
+
+        if (imageUri!=null) {
+            uploadImage(imageUri);
+        } else {
+            Intent intent = new Intent(PerfilAtualizar.this, Configuracoes.class);
+            startActivity(intent);
+            finish();
+        }
     }
 
     private void imagemparatodos() {
@@ -340,5 +338,13 @@ public class PerfilAtualizar extends Drawer {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(PerfilAtualizar.this, Configuracoes.class);
+        startActivity(intent);
+        finish();
     }
 }

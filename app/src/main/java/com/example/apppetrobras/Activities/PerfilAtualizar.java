@@ -8,6 +8,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Base64;
@@ -26,6 +27,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.Navigations.Configuracoes;
 import com.example.Navigations.Drawer;
+import com.example.Navigations.Tabs;
 import com.example.apppetrobras.Objects.CadastroObj;
 import com.example.apppetrobras.Objects.LoginObj;
 import com.example.apppetrobras.Objects.PerfilObj;
@@ -196,8 +198,8 @@ public class PerfilAtualizar extends Drawer {
                 @Override
                 public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
                     if (task.isSuccessful()){
-                        Toast.makeText(PerfilAtualizar.this,"imagem salva",Toast.LENGTH_SHORT).show();
                         pegarImagem();
+                        finish();
                     } else {
                         Toast.makeText(PerfilAtualizar.this,"Não foi salva",Toast.LENGTH_SHORT).show();
                     }
@@ -272,8 +274,12 @@ public class PerfilAtualizar extends Drawer {
                 editor.putString("email", email);
                 editor.putString("tel", tel);
                 editor.apply();
-                Intent intent = new Intent(PerfilAtualizar.this, Configuracoes.class);
-                startActivity(intent);
+
+                if (imageUri!=null) {
+                    uploadImage(imageUri);
+                } else {
+                    finish();
+                }
             }
         });
     }

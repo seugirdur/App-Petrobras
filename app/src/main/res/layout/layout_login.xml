@@ -100,7 +100,7 @@
             android:id="@+id/entre_em_contato_conosco"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Entre em contato conosco "
+            android:text="Entre em contato conosco"
             android:textColor="@color/black"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@id/esta_com_problemas"

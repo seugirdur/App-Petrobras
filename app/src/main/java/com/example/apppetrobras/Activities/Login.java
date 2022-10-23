@@ -15,7 +15,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
-import android.util.Base64;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
@@ -35,7 +34,6 @@ import com.google.firebase.storage.FileDownloadTask;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
-import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
@@ -237,65 +235,9 @@ public class Login extends AppCompatActivity {
                 editor.putString("chave", chave);
                 editor.apply();
 
-                pegarImagem();
-
                 Intent intent = new Intent(Login.this, Tabs.class);
                 startActivity(intent);
                 finish();
-
-
-            }
-
-            private void pegarImagem() {
-                SharedPreferences sharedPreferences = getSharedPreferences(
-                        getString(R.string.preference_file_key), Context.MODE_PRIVATE);
-
-                sharedPreferences.getString("chave","");
-
-                StorageReference storageReference = storage.getReference("images/"+chave);
-                try {
-                    File localfile = File.createTempFile("tempfile",".jpg");
-                    storageReference.getFile(localfile)
-                            .addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
-                                @Override
-                                public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
-
-                                    Bitmap bitmap = BitmapFactory.decodeFile(localfile.getAbsolutePath());
-
-                                    //Converter bitmap to string
-                                    ByteArrayOutputStream baos = new ByteArrayOutputStream();
-                                    bitmap.compress(Bitmap.CompressFormat.PNG, 100, baos); //bitmap is the bitmap object
-                                    byte[] b = baos.toByteArray();
-
-                                    String encoded = Base64.encodeToString(b, Base64.DEFAULT);
-
-                                    // atualizar shared Preference
-                                    SharedPreferences sharedPreferences = getSharedPreferences(
-                                            getString(R.string.preference_file_key), Context.MODE_PRIVATE);
-                                    SharedPreferences.Editor editor = sharedPreferences.edit();
-                                    editor.putString("imagemUser",encoded);
-                                    editor.apply();
-                                }
-                            }).addOnFailureListener(new OnFailureListener() {
-                                @Override
-                                public void onFailure(@NonNull Exception e) {
-                                    SharedPreferences sharedPreferences = getSharedPreferences(
-                                            getString(R.string.preference_file_key), Context.MODE_PRIVATE);
-                                    SharedPreferences.Editor editor = sharedPreferences.edit();
-                                    editor.putString("imagemUser","");
-                                    editor.apply();
-
-                                    Toast.makeText(Login.this, "falha ao pegar", Toast.LENGTH_SHORT).show();
-                                }
-                            });
-
-                } catch (IOException e) {
-                    e.printStackTrace();
-
-                    SharedPreferences.Editor editor = sharedPreferences.edit();
-                    editor.putString("imagemUser","");
-                    editor.apply();
-                }
             }
 
             @Override

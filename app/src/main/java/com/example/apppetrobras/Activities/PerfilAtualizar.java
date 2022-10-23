@@ -289,14 +289,6 @@ public class PerfilAtualizar extends Drawer {
 
                             Bitmap bitmap = BitmapFactory.decodeFile(localfile.getAbsolutePath());
 
-                            //Converter bitmap to string
-                            ByteArrayOutputStream baos = new ByteArrayOutputStream();
-                            bitmap.compress(Bitmap.CompressFormat.PNG, 100, baos); //bitmap is the bitmap object
-                            byte[] b = baos.toByteArray();
-
-                            String encoded = Base64.encodeToString(b, Base64.DEFAULT);
-
-                            // setar imagem a partir do bitmap
                             imagemUser.setImageBitmap(bitmap);
                         }
                     }).addOnFailureListener(new OnFailureListener() {

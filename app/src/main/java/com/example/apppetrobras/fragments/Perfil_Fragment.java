@@ -3,6 +3,7 @@ package com.example.apppetrobras.fragments;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 
@@ -16,16 +17,27 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.apppetrobras.Activities.PerfilAtualizar;
 import com.example.apppetrobras.R;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.storage.FileDownloadTask;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+
+import java.io.File;
+import java.io.IOException;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class Perfil_Fragment extends Fragment {
     Button btn;
     TextView nomecompleto,num_tel,email1,num_chave, nome1;
-    CircleImageView imagemPerfil;
+    CircleImageView imagemUser;
+    String chave;
+    FirebaseStorage storage;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -42,15 +54,12 @@ public class Perfil_Fragment extends Fragment {
         String nome = sharedPreferences.getString("nome", "");
         String email = sharedPreferences.getString("email", "");
         String tel = sharedPreferences.getString("tel", "");
-        String chave = sharedPreferences.getString("chave", "");
-        String imagemUser = sharedPreferences.getString("imagemUser", "");
+        chave = sharedPreferences.getString("chave", "");
 
-        imagemPerfil = view.findViewById(R.id.imageView3);
+        imagemUser = view.findViewById(R.id.imageView3);
 
-        if (imagemUser != null){
-            byte[] imageAsBytes = Base64.decode(imagemUser.getBytes(), Base64.DEFAULT);
-            imagemPerfil.setImageBitmap(BitmapFactory.decodeByteArray(imageAsBytes, 0, imageAsBytes.length));
-        }
+        storage = FirebaseStorage.getInstance();
+        pegarImagem();
 
         String[] fullNameArray = nome.split("\\s+");
         String firstName = fullNameArray[0];
@@ -88,5 +97,30 @@ public class Perfil_Fragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+    }
+
+    private void pegarImagem() {
+        StorageReference storageReference = storage.getReference("images/"+chave);
+        try {
+            File localfile = File.createTempFile("tempfile",".jpg");
+            storageReference.getFile(localfile)
+                    .addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
+                        @Override
+                        public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
+
+                            Bitmap bitmap = BitmapFactory.decodeFile(localfile.getAbsolutePath());
+
+                            imagemUser.setImageBitmap(bitmap);
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Toast.makeText(getContext(), "falha ao pegar", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

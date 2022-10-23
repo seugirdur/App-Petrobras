@@ -92,12 +92,36 @@ public class SolucionadoFragment extends Fragment implements RecyclerViewIntefac
         listen();
     }
 
+    private void filterList(String text) {
+        filteredList = new ArrayList<>();
+        for (AdminObj adminObj: AdminObjList){
+            if(adminObj.getNome().toLowerCase().contains(text.toLowerCase())) {
+                filteredList.add(adminObj);
+            }
+        }
+
+        if (filteredList != null) {
+            if (filteredList.isEmpty()) {
+                recyclerViewAdapter.setFilteredList(filteredList);
+            } else {
+                recyclerViewAdapter.setFilteredList(filteredList);
+            }
+        }
+    }
+
     @Override
     public void onItemClick(int position) {
         Intent intent = new Intent(getActivity(), Relatorio.class);
 
+        int idRelatorio;
+
         // Definição de valores que serão redirecionados
-        int idRelatorio = filteredList.get(position).getIdRelatorio();
+        if(filteredList == null) {
+            idRelatorio = AdminObjList.get(position).getIdRelatorio();
+        } else {
+            idRelatorio = filteredList.get(position).getIdRelatorio();
+        }
+
         intent.putExtra("idRelatorio", idRelatorio);
         intent.putExtra("notnotlmao", 0);
         startActivity(intent);
@@ -142,23 +166,6 @@ public class SolucionadoFragment extends Fragment implements RecyclerViewIntefac
 
             }
         });
-
-    }
-
-    private void filterList(String text) {
-        List<AdminObj> filteredList = new ArrayList<>();
-        for (AdminObj adminObj: AdminObjList){
-            if(adminObj.getNome().toLowerCase().contains(text.toLowerCase())) {
-                filteredList.add(adminObj);
-            }
-        }
-
-        if (filteredList.isEmpty()) {
-            recyclerViewAdapter.setFilteredList(filteredList);
-        } else {
-            recyclerViewAdapter.setFilteredList(filteredList);
-        }
-
 
     }
 

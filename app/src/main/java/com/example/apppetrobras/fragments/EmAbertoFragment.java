@@ -44,6 +44,7 @@ public class EmAbertoFragment extends Fragment implements RecyclerViewInteface{
     private ArrayList<ProblemasObj> dataArrayList;
     List<AdminObj> AdminObjList;
     List<RelatorioObj> relatorioObjList;
+    List<AdminObj> filteredList;
 
     private SearchView searchView;
     private RecyclerView recyclerview;
@@ -90,7 +91,7 @@ public class EmAbertoFragment extends Fragment implements RecyclerViewInteface{
     }
 
         private void filterList(String text) {
-            List<AdminObj> filteredList = new ArrayList<>();
+            filteredList = new ArrayList<>();
             for (AdminObj adminObj: AdminObjList){
                 if(adminObj.getNome().toLowerCase().contains(text.toLowerCase())) {
                     filteredList.add(adminObj);
@@ -112,7 +113,7 @@ public class EmAbertoFragment extends Fragment implements RecyclerViewInteface{
         Intent intent = new Intent(getActivity(), Relatorio.class);
 
         // Definição de valores que serão redirecionados
-        int idRelatorio = AdminObjList.get(position).getIdRelatorio();
+        int idRelatorio = filteredList.get(position).getIdRelatorio();
         intent.putExtra("idRelatorio", idRelatorio);
         intent.putExtra("notnotlmao", 1);
         startActivity(intent);

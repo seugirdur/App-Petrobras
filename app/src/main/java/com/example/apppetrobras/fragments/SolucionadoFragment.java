@@ -43,7 +43,7 @@ public class SolucionadoFragment extends Fragment implements RecyclerViewIntefac
     // Declaração das variáveis
     private ArrayList<ProblemasObj> dataArrayList;
     List<AdminObj> AdminObjList;
-    List<RelatorioObj> relatorioObjList;
+    List<AdminObj> filteredList;
 
 
     private RecyclerView recyclerview;
@@ -97,7 +97,7 @@ public class SolucionadoFragment extends Fragment implements RecyclerViewIntefac
         Intent intent = new Intent(getActivity(), Relatorio.class);
 
         // Definição de valores que serão redirecionados
-        int idRelatorio = AdminObjList.get(position).getIdRelatorio();
+        int idRelatorio = filteredList.get(position).getIdRelatorio();
         intent.putExtra("idRelatorio", idRelatorio);
         intent.putExtra("notnotlmao", 0);
         startActivity(intent);

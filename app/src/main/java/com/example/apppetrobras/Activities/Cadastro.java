@@ -5,6 +5,7 @@ import androidx.core.content.ContextCompat;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Handler;
 import android.text.Editable;
@@ -294,6 +295,38 @@ public class Cadastro extends AppCompatActivity {
         Intent intent = new Intent(this, Ajuda.class);
         startActivity(intent);
 
+    }
+
+    public void ligacao(View view){
+
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+//                Intent intent = new Intent(Intent.ACTION_DIAL);
+//                intent.setData(Uri.parse("tel:0123456789"));
+//                startActivity(intent);
+                makeCall("+5513991509119");
+
+            }
+        }, 100);
+
+
+
+
+    }
+    public void email(View view) {
+        SharedPreferences sharedPref = getSharedPreferences(
+                getString(R.string.popupcheck), Context.MODE_PRIVATE);
+        String nome = sharedPref.getString("nome", "");
+
+
+        Intent intent = new Intent(Intent.ACTION_SENDTO);
+        intent.setData(Uri.parse("mailto:"));
+        intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"suporteaset@gmail.com"});
+        intent.putExtra(Intent.EXTRA_SUBJECT, "Suporte de "+nome);
+//                intent.putExtra(Intent.EXTRA_TEXT, "");
+        startActivity(Intent.createChooser(intent,"Escolha o aplicativo de email"));
     }
 
 

@@ -3,10 +3,14 @@ package com.example.apppetrobras.Activities;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.text.method.LinkMovementMethod;
 import android.view.View;
 import android.widget.Button;
@@ -67,6 +71,38 @@ public class Inicio extends AppCompatActivity {
 
     }
 
+
+    public void ligacao(View view){
+
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+//                Intent intent = new Intent(Intent.ACTION_DIAL);
+//                intent.setData(Uri.parse("tel:0123456789"));
+//                startActivity(intent);
+                makeCall("+5513991509119");
+
+            }
+        }, 100);
+
+
+
+
+    }
+    public void email(View view) {
+        SharedPreferences sharedPref = getSharedPreferences(
+                getString(R.string.popupcheck), Context.MODE_PRIVATE);
+        String nome = sharedPref.getString("nome", "");
+
+
+        Intent intent = new Intent(Intent.ACTION_SENDTO);
+        intent.setData(Uri.parse("mailto:"));
+        intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"suporteaset@gmail.com"});
+        intent.putExtra(Intent.EXTRA_SUBJECT, "Suporte de "+nome);
+//                intent.putExtra(Intent.EXTRA_TEXT, "");
+        startActivity(Intent.createChooser(intent,"Escolha o aplicativo de email"));
+    }
 
     //redirecionamento para ajuda
     public void ajuda(View view){

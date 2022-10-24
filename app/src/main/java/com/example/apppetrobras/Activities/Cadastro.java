@@ -1,11 +1,14 @@
 package com.example.apppetrobras.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Handler;
 import android.text.Editable;
@@ -26,6 +29,7 @@ import android.os.Bundle;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.example.Navigations.Tabs;
 import com.example.apppetrobras.Objects.CadastroObj;
 import com.example.apppetrobras.R;
 import com.example.apppetrobras.api.RetroFitClient;
@@ -43,7 +47,9 @@ public class Cadastro extends AppCompatActivity {
 
     EditText senha, confirmar_senha;
     boolean passwordVisible;
-
+    Context context = this;
+    static int PERMISSION_CODE= 100;
+    private static final int PERMISSION_REQUEST_CODE = 1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -315,6 +321,52 @@ public class Cadastro extends AppCompatActivity {
 
 
     }
+
+    public void makeCall(String s)
+    {
+        Intent intent = new Intent(Intent.ACTION_CALL);
+        intent.setData(Uri.parse("tel:" + s));
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED){
+
+            requestForCallPermission();
+
+        } else {
+            startActivity(intent);
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    Intent i = new Intent(context, Tabs.class);
+                    startActivity(i);
+                }
+            }, 3000);
+
+
+        }
+    }
+    public void requestForCallPermission()
+    {
+
+        if (ActivityCompat.shouldShowRequestPermissionRationale(this,Manifest.permission.CALL_PHONE))
+        {
+        }
+        else {
+
+            ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.CALL_PHONE},PERMISSION_REQUEST_CODE);
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        switch (requestCode) {
+            case PERMISSION_REQUEST_CODE:
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    makeCall("+551399150-9119");
+                }
+                break;
+        }
+    }
+
     public void email(View view) {
         SharedPreferences sharedPref = getSharedPreferences(
                 getString(R.string.popupcheck), Context.MODE_PRIVATE);
@@ -324,7 +376,7 @@ public class Cadastro extends AppCompatActivity {
         Intent intent = new Intent(Intent.ACTION_SENDTO);
         intent.setData(Uri.parse("mailto:"));
         intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"suporteaset@gmail.com"});
-        intent.putExtra(Intent.EXTRA_SUBJECT, "Suporte de "+nome);
+        intent.putExtra(Intent.EXTRA_SUBJECT, "Suporte para uso do App");
 //                intent.putExtra(Intent.EXTRA_TEXT, "");
         startActivity(Intent.createChooser(intent,"Escolha o aplicativo de email"));
     }

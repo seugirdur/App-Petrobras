@@ -56,7 +56,8 @@
         app:layout_constraintTop_toBottomOf="@id/entre_em_contato"
         android:text="@string/hello_second_fragment"
         android:layout_marginTop="30dp"
-        android:textColor="@color/black"/>
+        android:textColor="@color/black"
+        android:onClick="ligacao"/>
 
     <TextView
         android:id="@+id/email_suporte"
@@ -67,6 +68,7 @@
         app:layout_constraintTop_toBottomOf="@id/ligue_suporte"
         android:text="@string/hello_first_fragment"
         android:layout_marginTop="8dp"
-        android:textColor="@color/black"/>
+        android:textColor="@color/black"
+        android:onClick="email"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

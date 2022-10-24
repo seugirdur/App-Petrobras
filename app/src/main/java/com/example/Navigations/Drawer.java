@@ -12,8 +12,10 @@ import android.content.ClipData;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.util.Base64;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -31,7 +33,9 @@ import com.example.apppetrobras.R;
 import com.example.apppetrobras.Activities.SplashScreen;
 import com.google.android.material.navigation.NavigationView;
 
-    public class Drawer extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+import de.hdodenhof.circleimageview.CircleImageView;
+
+public class Drawer extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
         DrawerLayout drawerLayout;
         private MenuItem itemToHide;
@@ -54,6 +58,14 @@ import com.google.android.material.navigation.NavigationView;
 
             NavigationView navigationView = drawerLayout.findViewById(R.id.nav_view);
             View headerView = navigationView.getHeaderView(0);
+
+            CircleImageView imageView = (CircleImageView) headerView.findViewById(R.id.img_user);
+            SharedPreferences sharedPreferences = getSharedPreferences(
+                    getString(R.string.preference_file_key), Context.MODE_PRIVATE);
+            String encoded = sharedPreferences.getString("encoded", "");
+            byte[] imageAsBytes = Base64.decode(encoded.getBytes(), Base64.DEFAULT);
+            imageView.setImageBitmap(BitmapFactory.decodeByteArray(imageAsBytes, 0, imageAsBytes.length));
+
             TextView navUsername = (TextView) headerView.findViewById(R.id.tv_name_vand);
             navUsername.setText(settingTheName());
             navigationView.setNavigationItemSelectedListener(this);
@@ -87,6 +99,8 @@ import com.google.android.material.navigation.NavigationView;
             String nome = "Olá, "+firstName;
             return nome;
         }
+
+
 
         private int areYouAdmin() {
             SharedPreferences sharedPreferences = getSharedPreferences(

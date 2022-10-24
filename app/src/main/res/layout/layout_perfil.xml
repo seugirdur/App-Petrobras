@@ -23,17 +23,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        />
+        android:layout_marginTop="20dp"/>
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/imageView3"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
         app:layout_constraintTop_toTopOf="@id/view2"
         app:layout_constraintBottom_toTopOf="@id/view2"
         app:layout_constraintEnd_toEndOf="@+id/view2"
         app:layout_constraintStart_toStartOf="@+id/view2"
-        app:srcCompat="@drawable/ic_user_perfil"/>
+        android:src="@drawable/default_img_user"/>
 
     <ImageView
         android:id="@+id/imageView5"

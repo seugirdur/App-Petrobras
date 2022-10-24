@@ -3,12 +3,14 @@ package com.example.apppetrobras.fragments;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,9 +20,15 @@ import android.widget.TextView;
 import com.example.apppetrobras.Activities.PerfilAtualizar;
 import com.example.apppetrobras.R;
 
+import java.util.Objects;
+
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class Perfil_Fragment extends Fragment {
     Button btn;
     TextView nomecompleto,num_tel,email1,num_chave, nome1;
+    CircleImageView imagemUser;
+    String encoded;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -38,7 +46,11 @@ public class Perfil_Fragment extends Fragment {
         String email = sharedPreferences.getString("email", "");
         String tel = sharedPreferences.getString("tel", "");
         String chave = sharedPreferences.getString("chave", "");
+        encoded = sharedPreferences.getString("encoded", "");
 
+        imagemUser = view.findViewById(R.id.imageView3);
+
+        imagemparatodos();
 
         String[] fullNameArray = nome.split("\\s+");
         String firstName = fullNameArray[0];
@@ -64,8 +76,9 @@ public class Perfil_Fragment extends Fragment {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getActivity(), PerfilAtualizar.class);
-                startActivity(i);
+                Intent intent = new Intent(getActivity(), PerfilAtualizar.class);
+                startActivity(intent);
+                getActivity().finish();
             }
         });
 
@@ -75,6 +88,13 @@ public class Perfil_Fragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+    }
+
+    private void imagemparatodos() {
+
+        byte[] imageAsBytes = Base64.decode(encoded.getBytes(), Base64.DEFAULT);
+        imagemUser.setImageBitmap(BitmapFactory.decodeByteArray(imageAsBytes, 0, imageAsBytes.length));
 
     }
 }

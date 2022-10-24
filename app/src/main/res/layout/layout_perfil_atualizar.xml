@@ -26,14 +26,14 @@
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/imagemPerfil"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
         android:layout_marginTop="15dp"
         android:foregroundGravity="center"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/view2"
         app:layout_constraintStart_toStartOf="@+id/view2"
-        android:src="@drawable/ic_user_perfil"
+        android:src="@drawable/default_img_user"
         tools:ignore="MissingConstraints"/>
 
     <ImageView
@@ -237,7 +237,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imagemPerfil"
+        android:layout_marginTop="10dp"
         tools:ignore="MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/btn_add_imagem"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@drawable/nos_circle"
+        android:src="@drawable/circle_green_add_white"
+        app:layout_constraintEnd_toEndOf="@+id/imagemPerfil"
+        app:layout_constraintBottom_toBottomOf="@+id/imagemPerfil"
+        android:layout_marginBottom="-10dp"
+        android:layout_marginEnd="-10dp"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

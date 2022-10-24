@@ -57,6 +57,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="13dp"
             android:text="Cadastro"
+            android:fontFamily="@font/lmao"
             android:textColor="@color/black"
             android:textSize="40dp"
             android:textStyle="bold"

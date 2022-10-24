@@ -2,6 +2,7 @@ package com.example.Navigations;
 
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.example.apppetrobras.R;
@@ -23,6 +24,17 @@ public class Configuracoes extends Drawer {
         setContentView(layoutConfiguracoesBinding.getRoot());
         allocateActivityTitle("Configurações do Usuário");
 
+        Boolean updatephoto = getIntent().getBooleanExtra("photo", false);
+
+
+//            onCreate(savedInstanceState);
+//            super.onCreate(savedInstanceState);
+        if (updatephoto) {
+            Intent intento = new Intent(Configuracoes.this, Configuracoes.class);
+            intento.putExtra("photo", false);
+            startActivity(intento);
+            finish();
+        }
 
         // Navigation Drawer
         //activityTabBinding = ActivityTabBinding.inflate(getLayoutInflater());

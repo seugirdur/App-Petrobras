@@ -65,8 +65,8 @@
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="hello_first_fragment">Email: <a href='mailto:suporte@aset.com'>suporteaset@gmail.com</a></string>
+    <string name="hello_second_fragment">Ligue:  <a href='mailto:suporte@aset.com'>(13) 99150-9119</a></string>
 
     <string name="menu_drawer_open">Drawer Open</string>
     <string name="menu_drawer_close">Drawer Close</string>

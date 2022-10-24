@@ -54,7 +54,7 @@
         app:layout_constraintStart_toStartOf="@id/entre_em_contato"
         app:layout_constraintEnd_toEndOf="@id/entre_em_contato"
         app:layout_constraintTop_toBottomOf="@id/entre_em_contato"
-        android:text="Ligue:  (13) 99150-9119"
+        android:text="@string/hello_second_fragment"
         android:layout_marginTop="30dp"
         android:textColor="@color/black"/>
 
@@ -65,7 +65,7 @@
         app:layout_constraintStart_toStartOf="@id/ligue_suporte"
         app:layout_constraintEnd_toEndOf="@id/ligue_suporte"
         app:layout_constraintTop_toBottomOf="@id/ligue_suporte"
-        android:text="Email: suporteaset@gmail.com"
+        android:text="@string/hello_first_fragment"
         android:layout_marginTop="8dp"
         android:textColor="@color/black"/>
 

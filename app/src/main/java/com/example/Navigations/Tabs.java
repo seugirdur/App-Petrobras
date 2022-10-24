@@ -5,6 +5,7 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -44,6 +45,12 @@ public class Tabs extends Drawer {
             mDialog.show();
 
             afterYou();
+//            Boolean updatephoto = getIntent().getBooleanExtra("bomdia", false);
+//            Intent intento = new Intent(Tabs.this, Configuracoes.class);
+//            intento.putExtra("photo", false);
+//            startActivity(intento);
+
+
         }
 
 

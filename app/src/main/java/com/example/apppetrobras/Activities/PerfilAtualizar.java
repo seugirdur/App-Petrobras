@@ -16,6 +16,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,6 +26,7 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.Navigations.App;
 import com.example.Navigations.Configuracoes;
 import com.example.Navigations.Drawer;
 import com.example.Navigations.Tabs;
@@ -67,6 +69,7 @@ public class PerfilAtualizar extends Drawer {
     CircleImageView imagemUser;
     FirebaseStorage storage;
     Uri imageUri;
+    ProgressBar progressbar;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -199,10 +202,17 @@ public class PerfilAtualizar extends Drawer {
                 public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
                     if (task.isSuccessful()){
                         pegarImagem();
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
 
-                        Intent intent = new Intent(PerfilAtualizar.this, Configuracoes.class);
-                        startActivity(intent);
-                        finish();
+                                Intent intent = new Intent(PerfilAtualizar.this, Configuracoes.class);
+                                intent.putExtra("photo",true);
+                                startActivity(intent);
+                                finish();
+                            }
+                        }, 1500);
+
                     } else {
                         Toast.makeText(PerfilAtualizar.this,"Não foi salva",Toast.LENGTH_SHORT).show();
                     }
@@ -252,7 +262,7 @@ public class PerfilAtualizar extends Drawer {
                 String nome = perfilObj.getNome();
                 String email = perfilObj.getEmail();
                 String tel = perfilObj.getTelefone();
-                Toast.makeText(PerfilAtualizar.this, "Informações alteradas com sucesso!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(PerfilAtualizar.this, "Informações alteradas com sucesso!", Toast.LENGTH_LONG).show();
 
                 SharedPreferences sharedPreferences = getSharedPreferences(
                         getString(R.string.preference_file_key), Context.MODE_PRIVATE);
@@ -266,7 +276,10 @@ public class PerfilAtualizar extends Drawer {
 
             @Override
             public void onFailure(Call<List<PerfilObj>> call, Throwable t) {
-                Toast.makeText(PerfilAtualizar.this, "Cadastro atualizado com sucesso!", Toast.LENGTH_SHORT).show();
+                progressbar=findViewById(R.id.progressbar2);
+
+                progressbar.setVisibility(View.VISIBLE);
+                Toast.makeText(PerfilAtualizar.this, "Cadastro atualizando, aguarde!", Toast.LENGTH_SHORT).show();
                 SharedPreferences sharedPreferences = getSharedPreferences(
                         getString(R.string.preference_file_key), Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = sharedPreferences.edit();

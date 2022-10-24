@@ -79,6 +79,7 @@ public class Perfil_Fragment extends Fragment {
                 Intent intent = new Intent(getActivity(), PerfilAtualizar.class);
                 startActivity(intent);
                 getActivity().finish();
+
             }
         });
 

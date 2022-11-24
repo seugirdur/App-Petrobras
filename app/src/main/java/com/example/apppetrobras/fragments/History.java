@@ -24,7 +24,9 @@ import com.example.apppetrobras.Objects.RelatorioObj;
 import com.example.apppetrobras.Objects.UserRelatorioObj;
 import com.example.apppetrobras.R;
 import com.example.apppetrobras.api.RetroFitClient;
+
 import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -43,6 +45,7 @@ public class History extends Fragment implements RecyclerViewInteface {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_historico_, container, false);
     }
+
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -59,7 +62,7 @@ public class History extends Fragment implements RecyclerViewInteface {
         sayMyChave();
     }
 
-    public void listen(){
+    public void listen() {
         Call<List<RelatorioObj>> callme = RetroFitClient
                 .getInstance()
                 .getAPI()
@@ -68,7 +71,7 @@ public class History extends Fragment implements RecyclerViewInteface {
         callme.enqueue(new Callback<List<RelatorioObj>>() {
             @Override
             public void onResponse(Call<List<RelatorioObj>> call, Response<List<RelatorioObj>> response) {
-                if (!response.isSuccessful()){
+                if (!response.isSuccessful()) {
                     Toast.makeText(context, "wassup", Toast.LENGTH_SHORT).show();
                     return;
                 }
@@ -81,13 +84,14 @@ public class History extends Fragment implements RecyclerViewInteface {
                 recyclerview.setAdapter(recyclerViewAdapter);
                 recyclerViewAdapter.notifyDataSetChanged();
             }
+
             @Override
             public void onFailure(Call<List<RelatorioObj>> call, Throwable t) {
             }
         });
     }
 
-    private String sayMyChave(){
+    private String sayMyChave() {
         SharedPreferences sharedPreferences = this.getActivity().getSharedPreferences(
                 getString(R.string.preference_file_key), Context.MODE_PRIVATE);
 

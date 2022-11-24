@@ -26,8 +26,6 @@ public class AjudaCad extends Drawer {
         allocateActivityTitle("Ajuda e Suporte");
 
 
-
-
         solUsar = findViewById(R.id.solUsar);
         solChamar = findViewById(R.id.solChamar);
         solBuscar = findViewById(R.id.solBuscar);
@@ -43,7 +41,6 @@ public class AjudaCad extends Drawer {
         btnVer = findViewById(R.id.btnVer);
 
 
-
         btnUsar = findViewById(R.id.btnUsar);
         btnChamar = findViewById(R.id.btnChamar);
         btnBuscar = findViewById(R.id.btnBuscar);
@@ -53,62 +50,61 @@ public class AjudaCad extends Drawer {
 
 
     }
-    public void btnUsar(View view){
+
+    public void btnUsar(View view) {
         if (solUsar.getVisibility() == View.GONE) {
             solUsar.setVisibility(View.VISIBLE);
             btnUsar.setRotation(90);
 
-        }else{
+        } else {
             solUsar.setVisibility(View.GONE);
             btnUsar.setRotation(270);
         }
     }
 
-    public void btnChamar(View view){
+    public void btnChamar(View view) {
         if (solChamar.getVisibility() == View.GONE) {
             solChamar.setVisibility(View.VISIBLE);
             btnChamar.setRotation(90);
 
-        }else{
+        } else {
             solChamar.setVisibility(View.GONE);
             btnChamar.setRotation(270);
         }
     }
 
-    public void btnBuscar(View view){
+    public void btnBuscar(View view) {
         if (solBuscar.getVisibility() == View.GONE) {
             solBuscar.setVisibility(View.VISIBLE);
             btnBuscar.setRotation(90);
 
-        }else{
+        } else {
             solBuscar.setVisibility(View.GONE);
             btnBuscar.setRotation(270);
         }
     }
 
-    public void btnVer(View view){
+    public void btnVer(View view) {
         if (solVer.getVisibility() == View.GONE) {
             solVer.setVisibility(View.VISIBLE);
             btnVer.setRotation(90);
 
-        }else{
+        } else {
             solVer.setVisibility(View.GONE);
             btnVer.setRotation(270);
         }
     }
 
-    public void btnChamado(View view){
+    public void btnChamado(View view) {
         if (solChamado.getVisibility() == View.GONE) {
             solChamado.setVisibility(View.VISIBLE);
             btnChamado.setRotation(90);
 
-        }else{
+        } else {
             solChamado.setVisibility(View.GONE);
             btnChamado.setRotation(270);
         }
     }
-
-
 
 
 }

@@ -37,47 +37,45 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class Drawer extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-        DrawerLayout drawerLayout;
-        private MenuItem itemToHide;
-        private MenuItem itemToShow;
-        Dialog mDialog;
+    DrawerLayout drawerLayout;
+    private MenuItem itemToHide;
+    private MenuItem itemToShow;
+    Dialog mDialog;
 
 
-        @Override
-        public void setContentView(View view) {
-            drawerLayout = (DrawerLayout) getLayoutInflater().inflate(R.layout.layout_drawer, null);
-            FrameLayout container = drawerLayout.findViewById(R.id.activityContainer);
-            container.addView(view);
-            super.setContentView(drawerLayout);
+    @Override
+    public void setContentView(View view) {
+        drawerLayout = (DrawerLayout) getLayoutInflater().inflate(R.layout.layout_drawer, null);
+        FrameLayout container = drawerLayout.findViewById(R.id.activityContainer);
+        container.addView(view);
+        super.setContentView(drawerLayout);
 
 
+        Toolbar toolbar = drawerLayout.findViewById(R.id.toolBar);
+        setSupportActionBar(toolbar);
+
+        NavigationView navigationView = drawerLayout.findViewById(R.id.nav_view);
+        View headerView = navigationView.getHeaderView(0);
+
+        CircleImageView imageView = (CircleImageView) headerView.findViewById(R.id.img_user);
+        SharedPreferences sharedPreferences = getSharedPreferences(
+                getString(R.string.preference_file_key), Context.MODE_PRIVATE);
+        String encoded = sharedPreferences.getString("encoded", "");
+        byte[] imageAsBytes = Base64.decode(encoded.getBytes(), Base64.DEFAULT);
+        imageView.setImageBitmap(BitmapFactory.decodeByteArray(imageAsBytes, 0, imageAsBytes.length));
+
+        TextView navUsername = (TextView) headerView.findViewById(R.id.tv_name_vand);
+        navUsername.setText(settingTheName());
+        navigationView.setNavigationItemSelectedListener(this);
 
 
-            Toolbar toolbar = drawerLayout.findViewById(R.id.toolBar);
-            setSupportActionBar(toolbar);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.menu_drawer_open, R.string.menu_drawer_close);
+        toggle.getDrawerArrowDrawable().setColor(getResources().getColor(R.color.white));
+        drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
+    }
 
-            NavigationView navigationView = drawerLayout.findViewById(R.id.nav_view);
-            View headerView = navigationView.getHeaderView(0);
-
-            CircleImageView imageView = (CircleImageView) headerView.findViewById(R.id.img_user);
-            SharedPreferences sharedPreferences = getSharedPreferences(
-                    getString(R.string.preference_file_key), Context.MODE_PRIVATE);
-            String encoded = sharedPreferences.getString("encoded", "");
-            byte[] imageAsBytes = Base64.decode(encoded.getBytes(), Base64.DEFAULT);
-            imageView.setImageBitmap(BitmapFactory.decodeByteArray(imageAsBytes, 0, imageAsBytes.length));
-
-            TextView navUsername = (TextView) headerView.findViewById(R.id.tv_name_vand);
-            navUsername.setText(settingTheName());
-            navigationView.setNavigationItemSelectedListener(this);
-
-
-            ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.menu_drawer_open, R.string.menu_drawer_close);
-            toggle.getDrawerArrowDrawable().setColor(getResources().getColor(R.color.white));
-            drawerLayout.addDrawerListener(toggle);
-            toggle.syncState();
-        }
-
-//        private void checkingadmin() {
+    //        private void checkingadmin() {
 //            MenuItem itemadmin = findViewById(R.id.administrador);
 //            SharedPreferences sharedPreferences1 = getSharedPreferences(
 //                    getString(R.string.preference_file_key), Context.MODE_PRIVATE);
@@ -89,127 +87,119 @@ public class Drawer extends AppCompatActivity implements NavigationView.OnNaviga
 //            }
 //
 //        }
-        private String settingTheName() {
-            SharedPreferences sharedPreferences = getSharedPreferences(
-                    getString(R.string.preference_file_key), Context.MODE_PRIVATE);
+    private String settingTheName() {
+        SharedPreferences sharedPreferences = getSharedPreferences(
+                getString(R.string.preference_file_key), Context.MODE_PRIVATE);
 
-            String SayMyName = sharedPreferences.getString("nome", "");
-            String[] fullNameArray = SayMyName.split("\\s+");
-            String firstName = fullNameArray[0];
-            String nome = "Olá, "+firstName;
-            return nome;
-        }
-
-
-
-        private int areYouAdmin() {
-            SharedPreferences sharedPreferences = getSharedPreferences(
-                    getString(R.string.preference_file_key), Context.MODE_PRIVATE);
-
-            int LordVader = sharedPreferences.getInt("isAdmin", 0);
-
-            return LordVader;
-        }
-
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            drawerLayout.closeDrawer(GravityCompat.START);
+        String SayMyName = sharedPreferences.getString("nome", "");
+        String[] fullNameArray = SayMyName.split("\\s+");
+        String firstName = fullNameArray[0];
+        String nome = "Olá, " + firstName;
+        return nome;
+    }
 
 
+    private int areYouAdmin() {
+        SharedPreferences sharedPreferences = getSharedPreferences(
+                getString(R.string.preference_file_key), Context.MODE_PRIVATE);
+
+        int LordVader = sharedPreferences.getInt("isAdmin", 0);
+
+        return LordVader;
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        drawerLayout.closeDrawer(GravityCompat.START);
 
 
-            switch (item.getItemId()) {
+        switch (item.getItemId()) {
 
-                case R.id.menu_principal:
-                    startActivity(new Intent(this, Tabs.class));
+            case R.id.menu_principal:
+                startActivity(new Intent(this, Tabs.class));
+                overridePendingTransition(0, 0);
+                break;
+
+
+            case R.id.configuracoes:
+                startActivity(new Intent(this, Configuracoes.class));
+                overridePendingTransition(0, 0);
+                break;
+
+
+            case R.id.ajuda_suporte:
+                startActivity(new Intent(this, Ajuda.class));
+                overridePendingTransition(0, 0);
+                break;
+
+            case R.id.administrador:
+                if (areYouAdmin() == 1) {
+                    startActivity(new Intent(this, Administrador.class));
                     overridePendingTransition(0, 0);
                     break;
-
-
-
-                case R.id.configuracoes:
-                    startActivity(new Intent(this, Configuracoes.class));
+                } else {
+                    Toast.makeText(this, "Você não é Administrador", Toast.LENGTH_SHORT).show();
                     overridePendingTransition(0, 0);
                     break;
+                }
 
+            case R.id.sair:
+                mDialog = new Dialog(this);
 
-
-                case R.id.ajuda_suporte:
-                    startActivity(new Intent(this, Ajuda.class));
-                    overridePendingTransition(0, 0);
-                    break;
-
-                case R.id.administrador:
-                    if (areYouAdmin()==1) {
-                        startActivity(new Intent(this, Administrador.class));
-                        overridePendingTransition(0, 0);
-                        break;
-                    }
-                    else {
-                        Toast.makeText(this, "Você não é Administrador", Toast.LENGTH_SHORT).show();
-                        overridePendingTransition(0, 0);
-                        break;
-                    }
-
-                case R.id.sair:
-                    mDialog = new Dialog(this);
-
-                    // Defini o click dentro do popup
-                    mDialog.setContentView(R.layout.popup_sair);
-                    mDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-                    mDialog.show();
-                    break;
-
-            }
-
-            return false;
-        }
-
-        public void areyousure(View view){
-
-            startActivity(new Intent(this, SplashScreen.class));
-            overridePendingTransition(0, 0);
-            finish();
+                // Defini o click dentro do popup
+                mDialog.setContentView(R.layout.popup_sair);
+                mDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                mDialog.show();
+                break;
 
         }
 
-        public void areyounotsure(View view){
-            mDialog.hide();
-        }
+        return false;
+    }
 
-        @Override
-        public boolean onCreateOptionsMenu(Menu menu) {
+    public void areyousure(View view) {
+
+        startActivity(new Intent(this, SplashScreen.class));
+        overridePendingTransition(0, 0);
+        finish();
+
+    }
+
+    public void areyounotsure(View view) {
+        mDialog.hide();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
 
 
-            return true;
-        }
+        return true;
+    }
 
-        @Override
-        public boolean onOptionsItemSelected(MenuItem item) {
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
 
-                    // hide the menu item
+        // hide the menu item
 //                    itemToHide.setVisible(false);
-                    // show the menu item
+        // show the menu item
 
 
-            return super.onOptionsItemSelected(item);
-        }
+        return super.onOptionsItemSelected(item);
+    }
 
-        protected void allocateActivityTitle(String titleString) {
+    protected void allocateActivityTitle(String titleString) {
 
-            if (getSupportActionBar() != null) {
+        if (getSupportActionBar() != null) {
 
-                getSupportActionBar().setTitle(titleString);
-
-
-            }
-
+            getSupportActionBar().setTitle(titleString);
 
 
         }
-
 
 
     }
+
+
+}
 
 

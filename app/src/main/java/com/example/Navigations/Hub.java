@@ -29,88 +29,91 @@ public class Hub extends AppCompatActivity {
         setContentView(R.layout.layout_hub);
     }
 
-    public void redireciona0(View view){
+    public void redireciona0(View view) {
         Intent intent = new Intent(Hub.this, Inicio.class);
         startActivity(intent);
         finish();
     }
 
-    public void rediriciona1(View view){
+    public void rediriciona1(View view) {
         Intent intent = new Intent(Hub.this, Login.class);
         startActivity(intent);
         finish();
     }
 
-    public void rediriciona2(View view){
+    public void rediriciona2(View view) {
         Intent intent = new Intent(Hub.this, Cadastro.class);
         startActivity(intent);
         finish();
     }
 
-    public void rediriciona3(View view){
+    public void rediriciona3(View view) {
         Intent intent = new Intent(Hub.this, Tabs.class);
         startActivity(intent);
         finish();
     }
 
-    public void rediriciona4(View view){
+    public void rediriciona4(View view) {
         Intent intent = new Intent(Hub.this, Solucoes.class);
         startActivity(intent);
         finish();
     }
 
-    public void rediriciona5(View view){
+    public void rediriciona5(View view) {
         Intent intent = new Intent(Hub.this, Relatorio.class);
         startActivity(intent);
         finish();
     }
 
-    public void rediriciona6(View view){
+    public void rediriciona6(View view) {
         Intent intent = new Intent(Hub.this, Ajuda.class);
         startActivity(intent);
         finish();
     }
 
-    public void rediriciona7(View view){
+    public void rediriciona7(View view) {
         Intent intent = new Intent(Hub.this, Administrador.class);
         startActivity(intent);
         finish();
     }
 
-    public void rediriciona8(View view){
+    public void rediriciona8(View view) {
         Intent intent = new Intent(Hub.this, SplashScreen.class);
         startActivity(intent);
         finish();
     }
 
-    public void rediriciona9(View view){
+    public void rediriciona9(View view) {
         Intent intent = new Intent(Hub.this, Passos.class);
         startActivity(intent);
         finish();
     }
 
-    public void rediriciona10(View view){
+    public void rediriciona10(View view) {
         Intent intent = new Intent(Hub.this, Perfil.class);
         startActivity(intent);
         finish();
     }
 
-    public void rediriciona11(View view){
+    public void rediriciona11(View view) {
         Intent intent = new Intent(Hub.this, Ligacao.class);
         startActivity(intent);
         finish();
     }
-    public void rediriciona12(View view){
+
+    public void rediriciona12(View view) {
         Intent intent = new Intent(Hub.this, PerfilAtualizar.class);
         startActivity(intent);
         finish();
     }
-    public void rediriciona13(View view){
+
+    public void rediriciona13(View view) {
         Intent intent = new Intent(Hub.this, Historico.class);
         startActivity(intent);
         finish();
     }
-    public void rediriciona14(View view){
+
+    public void rediriciona14(View view) {
         Intent intent = new Intent(Hub.this, FormLoginPedro.class);
         startActivity(intent);
         finish();

@@ -13,7 +13,7 @@ public class RetroFitClient {
     private Retrofit retrofit;
 
     //Codigo padrao para instancia do Retrofit com o GSON
-    private RetroFitClient(){
+    private RetroFitClient() {
         retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
@@ -22,7 +22,7 @@ public class RetroFitClient {
     }
 
     //Metodo para instanciar novamente o Retrofit caso ele seja cancelado por algum motivo
-    public static synchronized RetroFitClient getInstance(){
+    public static synchronized RetroFitClient getInstance() {
         if (mInstance == null) {
             mInstance = new RetroFitClient();
         }

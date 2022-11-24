@@ -30,7 +30,7 @@ import java.util.ArrayList;
 
 public class Ajuda_fragment extends Fragment {
     Button btn;
-    TextView nomecompleto,num_tel,email1,num_chave, nome1;
+    TextView nomecompleto, num_tel, email1, num_chave, nome1;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -38,7 +38,6 @@ public class Ajuda_fragment extends Fragment {
         // Inflate the layout for this fragment
         //LayoutInflater lf = getActivity().getLayoutInflater();
         View view = inflater.inflate(R.layout.fragment_ajuda_fragment, container, false);
-
 
 
         SharedPreferences sharedPreferences = this.getActivity().getSharedPreferences(
@@ -69,26 +68,23 @@ public class Ajuda_fragment extends Fragment {
         num_chave.setText(chave);
 
 
-    btn = view.findViewById(R.id.btn_tela_perfil);
+        btn = view.findViewById(R.id.btn_tela_perfil);
 
         btn.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-            Intent i = new Intent(getActivity(), PerfilAtualizar.class);
-            startActivity(i);
-        }
-    });
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getActivity(), PerfilAtualizar.class);
+                startActivity(i);
+            }
+        });
 
-  return view;
-}
+        return view;
+    }
 
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-
-
 
 
 //        dataInitialize1();

@@ -66,7 +66,7 @@ public class RVAdapterSolucoes extends RecyclerView.Adapter<RVAdapterSolucoes.My
         holder.textView1.setText(data.getTituloSolucao());
 
         // Verifica se a solução já foi vizualida e então altera a cor desse item da recyclerView
-        if (check.charAt(position) != '0'){
+        if (check.charAt(position) != '0') {
             holder.imageView1.setVisibility(View.VISIBLE);
         }
     }
@@ -93,7 +93,7 @@ public class RVAdapterSolucoes extends RecyclerView.Adapter<RVAdapterSolucoes.My
 
             // Definição de variáveis com os valores dos id's
             textView1 = itemView.findViewById(id1);
-           imageView1 = itemView.findViewById(id2);
+            imageView1 = itemView.findViewById(id2);
 
             // Define o método onItemClik da interface para cada item da RecyclerView
             moduleOnClick(recyclerViewInteface);

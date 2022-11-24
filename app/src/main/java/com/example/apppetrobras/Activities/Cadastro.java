@@ -48,8 +48,9 @@ public class Cadastro extends AppCompatActivity {
     EditText senha, confirmar_senha;
     boolean passwordVisible;
     Context context = this;
-    static int PERMISSION_CODE= 100;
+    static int PERMISSION_CODE = 100;
     private static final int PERMISSION_REQUEST_CODE = 1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,8 +61,6 @@ public class Cadastro extends AppCompatActivity {
         String text = "Li e concordo com os \nTermos de Uso e \nPolíticas de Privacidade";
 
         SpannableString ss = new SpannableString(text);
-
-
 
 
         ClickableSpan clicavel1 = new ClickableSpan() {
@@ -82,7 +81,6 @@ public class Cadastro extends AppCompatActivity {
 //                i.setData(Uri.parse(url));
 //            }
 //        };
-
 
 
         ClickableSpan clicavel2 = new ClickableSpan() {
@@ -107,25 +105,26 @@ public class Cadastro extends AppCompatActivity {
 
         EditText dataNasc;
 
-        dataNasc = (EditText)findViewById(R.id.data_nascimento);
-        dataNasc .addTextChangedListener(new TextWatcher() {
-            boolean flag= true;
+        dataNasc = (EditText) findViewById(R.id.data_nascimento);
+        dataNasc.addTextChangedListener(new TextWatcher() {
+            boolean flag = true;
 
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
             }
+
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                String str=dataNasc .getText().toString();
-                int textLength=dataNasc .getText().length();
+                String str = dataNasc.getText().toString();
+                int textLength = dataNasc.getText().length();
 
                 String[] dataNascArray = str.split("");
                 if (textLength == 3) {
 
                     if (!str.contains("/")) {
-                        dataNasc .setText(new StringBuilder(dataNasc .getText().toString()).insert(str.length() - 1, "/").toString());
-                        dataNasc .setSelection(dataNasc .getText().length());
+                        dataNasc.setText(new StringBuilder(dataNasc.getText().toString()).insert(str.length() - 1, "/").toString());
+                        dataNasc.setSelection(dataNasc.getText().length());
                     }
                 }
 
@@ -140,7 +139,7 @@ public class Cadastro extends AppCompatActivity {
 
                 }
 
-                if (flag==false && textLength <= 5) {
+                if (flag == false && textLength <= 5) {
                     flag = true;
                 }
 
@@ -154,44 +153,45 @@ public class Cadastro extends AppCompatActivity {
 
         EditText tel;
 
-        tel = (EditText)findViewById(R.id.telefone);
+        tel = (EditText) findViewById(R.id.telefone);
 
-        tel .addTextChangedListener(new TextWatcher() {
+        tel.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
             }
+
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                String str=tel .getText().toString();
-                int textLength=tel .getText().length();
+                String str = tel.getText().toString();
+                int textLength = tel.getText().length();
                 if (textLength == 1) {
 
                     if (!str.contains("(")) {
-                        tel .setText(new StringBuilder(tel.getText().toString()).insert(str.length() - 1, "(").toString());
-                        tel.setSelection(tel .getText().length());
+                        tel.setText(new StringBuilder(tel.getText().toString()).insert(str.length() - 1, "(").toString());
+                        tel.setSelection(tel.getText().length());
                     }
                 }
                 if (textLength == 4) {
 
                     if (!str.contains(")")) {
-                        tel .setText(new StringBuilder(tel.getText().toString()).insert(str.length() - 1, ")").toString());
-                        tel.setSelection(tel .getText().length());
+                        tel.setText(new StringBuilder(tel.getText().toString()).insert(str.length() - 1, ")").toString());
+                        tel.setSelection(tel.getText().length());
                     }
                 }
 
                 if (textLength == 5) {
 
                     if (!str.contains(" ")) {
-                        tel .setText(new StringBuilder(tel.getText().toString()).insert(str.length() - 1, " ").toString());
-                        tel.setSelection(tel .getText().length());
+                        tel.setText(new StringBuilder(tel.getText().toString()).insert(str.length() - 1, " ").toString());
+                        tel.setSelection(tel.getText().length());
                     }
                 }
                 if (textLength == 11) {
 
                     if (!str.contains("-")) {
-                        tel .setText(new StringBuilder(tel.getText().toString()).insert(str.length() - 1, "-").toString());
-                        tel.setSelection(tel .getText().length());
+                        tel.setText(new StringBuilder(tel.getText().toString()).insert(str.length() - 1, "-").toString());
+                        tel.setSelection(tel.getText().length());
                     }
                 }
 
@@ -213,31 +213,31 @@ public class Cadastro extends AppCompatActivity {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
 
-                final int Right=2;
-                if(motionEvent.getAction()==MotionEvent.ACTION_UP) {
+                final int Right = 2;
+                if (motionEvent.getAction() == MotionEvent.ACTION_UP) {
 
-                    if(motionEvent.getRawX()>=senha.getRight()-senha.getCompoundDrawables() [Right].getBounds().width()) {
+                    if (motionEvent.getRawX() >= senha.getRight() - senha.getCompoundDrawables()[Right].getBounds().width()) {
 
-                        int selection=senha.getSelectionEnd();
-                        if(passwordVisible){
+                        int selection = senha.getSelectionEnd();
+                        if (passwordVisible) {
 
                             // set drawable image here
-                            senha.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0, R.drawable.ic_eye_off, 0);
+                            senha.setCompoundDrawablesRelativeWithIntrinsicBounds(0, 0, R.drawable.ic_eye_off, 0);
 
                             //for hide password
                             senha.setTransformationMethod(PasswordTransformationMethod.getInstance());
-                            passwordVisible=false;
+                            passwordVisible = false;
 
 
-                        }else {
+                        } else {
 
                             //set drawable image here
-                            senha.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0,R.drawable.ic_eye,0);
+                            senha.setCompoundDrawablesRelativeWithIntrinsicBounds(0, 0, R.drawable.ic_eye, 0);
 
 
                             //for show password
                             senha.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
-                            passwordVisible=true;
+                            passwordVisible = true;
 
 
                         }
@@ -255,31 +255,31 @@ public class Cadastro extends AppCompatActivity {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
 
-                final int Right=2;
-                if(motionEvent.getAction()==MotionEvent.ACTION_UP) {
+                final int Right = 2;
+                if (motionEvent.getAction() == MotionEvent.ACTION_UP) {
 
-                    if(motionEvent.getRawX()>=confirmar_senha.getRight()-confirmar_senha.getCompoundDrawables() [Right].getBounds().width()) {
+                    if (motionEvent.getRawX() >= confirmar_senha.getRight() - confirmar_senha.getCompoundDrawables()[Right].getBounds().width()) {
 
-                        int selection=confirmar_senha.getSelectionEnd();
-                        if(passwordVisible){
+                        int selection = confirmar_senha.getSelectionEnd();
+                        if (passwordVisible) {
 
                             // set drawable image here
-                            confirmar_senha.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0, R.drawable.ic_eye_off, 0);
+                            confirmar_senha.setCompoundDrawablesRelativeWithIntrinsicBounds(0, 0, R.drawable.ic_eye_off, 0);
 
                             //for hide password
                             confirmar_senha.setTransformationMethod(PasswordTransformationMethod.getInstance());
-                            passwordVisible=false;
+                            passwordVisible = false;
 
 
-                        }else {
+                        } else {
 
                             //set drawable image here
-                            confirmar_senha.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0,R.drawable.ic_eye,0);
+                            confirmar_senha.setCompoundDrawablesRelativeWithIntrinsicBounds(0, 0, R.drawable.ic_eye, 0);
 
 
                             //for show password
                             confirmar_senha.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
-                            passwordVisible=true;
+                            passwordVisible = true;
 
 
                         }
@@ -297,13 +297,13 @@ public class Cadastro extends AppCompatActivity {
     }
 
     //redirecionamento para ajuda
-    public void ajuda(View view){
+    public void ajuda(View view) {
         Intent intent = new Intent(this, Ajuda.class);
         startActivity(intent);
 
     }
 
-    public void ligacao(View view){
+    public void ligacao(View view) {
 
 
         new Handler().postDelayed(new Runnable() {
@@ -318,15 +318,12 @@ public class Cadastro extends AppCompatActivity {
         }, 100);
 
 
-
-
     }
 
-    public void makeCall(String s)
-    {
+    public void makeCall(String s) {
         Intent intent = new Intent(Intent.ACTION_CALL);
         intent.setData(Uri.parse("tel:" + s));
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED){
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
 
             requestForCallPermission();
 
@@ -343,15 +340,13 @@ public class Cadastro extends AppCompatActivity {
 
         }
     }
-    public void requestForCallPermission()
-    {
 
-        if (ActivityCompat.shouldShowRequestPermissionRationale(this,Manifest.permission.CALL_PHONE))
-        {
-        }
-        else {
+    public void requestForCallPermission() {
 
-            ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.CALL_PHONE},PERMISSION_REQUEST_CODE);
+        if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.CALL_PHONE)) {
+        } else {
+
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CALL_PHONE}, PERMISSION_REQUEST_CODE);
         }
     }
 
@@ -378,23 +373,20 @@ public class Cadastro extends AppCompatActivity {
         intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"suporteaset@gmail.com"});
         intent.putExtra(Intent.EXTRA_SUBJECT, "Suporte para uso do App");
 //                intent.putExtra(Intent.EXTRA_TEXT, "");
-        startActivity(Intent.createChooser(intent,"Escolha o aplicativo de email"));
+        startActivity(Intent.createChooser(intent, "Escolha o aplicativo de email"));
     }
 
 
     //check-in do termos e condições
-    public void checarTermos (View view){
+    public void checarTermos(View view) {
         ImageButton cad = findViewById(R.id.button_cadastro);
         CheckBox check = findViewById(R.id.aceitoTermos);
         ImageButton cad1 = findViewById(R.id.button_cadastro1);
 
-        if(check.isChecked())
-        {
+        if (check.isChecked()) {
             cad.setEnabled(true);
             cad1.setVisibility(View.INVISIBLE);
-        }
-        else
-        {
+        } else {
             cad.setEnabled(false);
             cad1.setVisibility(View.VISIBLE);
         }
@@ -402,7 +394,7 @@ public class Cadastro extends AppCompatActivity {
     }
 
     //cadastro das informações
-    public void cadastro(View view){
+    public void cadastro(View view) {
         EditText senha1 = (EditText) findViewById(R.id.senha);
         EditText senha2 = (EditText) findViewById(R.id.confirmar_senha);
         TextView nome = findViewById(R.id.nome_completo);
@@ -416,28 +408,26 @@ public class Cadastro extends AppCompatActivity {
         String Checktel = tel.getText().toString();
         String CheckdataNasc = dataNasc.getText().toString();
         String Checkemail = email.getText().toString();
-        String Checkchave =  chave.getText().toString();
-        String Checksenha =  senha.getText().toString();
-        String str=chave .getText().toString();
-        int textLength=chave .getText().length();
-        int textLength1=tel .getText().length();
+        String Checkchave = chave.getText().toString();
+        String Checksenha = senha.getText().toString();
+        String str = chave.getText().toString();
+        int textLength = chave.getText().length();
+        int textLength1 = tel.getText().length();
 
-        if(textLength1<15){
+        if (textLength1 < 15) {
             Toast.makeText(this, "Telefone incorreto", Toast.LENGTH_SHORT).show();
             tel.setText("");
         }
-        if(textLength<4){
+        if (textLength < 4) {
             Toast.makeText(this, "Chave de Acesso incorreta", Toast.LENGTH_SHORT).show();
             chave.setText("");
-        }
-        else if(!senhaIgual()){
+        } else if (!senhaIgual()) {
             Toast.makeText(this, "As senhas não coincidem", Toast.LENGTH_SHORT).show();
             senha1.setText("");
             senha2.setText("");
-        }else if(Checknome.isEmpty() | Checkemail.isEmpty() |Checkchave.isEmpty()|Checksenha.isEmpty()|Checktel.isEmpty()|CheckdataNasc.isEmpty()){
+        } else if (Checknome.isEmpty() | Checkemail.isEmpty() | Checkchave.isEmpty() | Checksenha.isEmpty() | Checktel.isEmpty() | CheckdataNasc.isEmpty()) {
             Toast.makeText(this, "Preencha as informações", Toast.LENGTH_SHORT).show();
-        }
-        else {
+        } else {
             //new Insert().execute();
             registrate();
             CadastroObj cadastro = resgataInfo();
@@ -473,13 +463,13 @@ public class Cadastro extends AppCompatActivity {
         String _chave = chave.getText() + "";
         String _senha = senha.getText() + "";
 
-        CadastroObj cliente = new CadastroObj(_nome, _email, _tel, _dataNasc , _chave, _senha,0 );
+        CadastroObj cliente = new CadastroObj(_nome, _email, _tel, _dataNasc, _chave, _senha, 0);
 
         return cliente;
     }
 
     //checar se senhas combinam
-    private boolean senhaIgual(){
+    private boolean senhaIgual() {
         boolean checking = false;
         EditText senha1;
         EditText senha2;
@@ -497,8 +487,8 @@ public class Cadastro extends AppCompatActivity {
         return checking;
     }
 
-    private void registrate(){
-        CadastroObj info = new CadastroObj(resgataInfo().nome, resgataInfo().email, resgataInfo().tel,resgataInfo().dataNasc, resgataInfo().chave, resgataInfo().senha, resgataInfo().isAdmin);
+    private void registrate() {
+        CadastroObj info = new CadastroObj(resgataInfo().nome, resgataInfo().email, resgataInfo().tel, resgataInfo().dataNasc, resgataInfo().chave, resgataInfo().senha, resgataInfo().isAdmin);
         String nome = info.nome.toString().trim();
         String email = info.email.toString().trim();
         String tel = info.tel.toString().trim();
@@ -510,14 +500,14 @@ public class Cadastro extends AppCompatActivity {
         Call<ResponseBody> call = RetroFitClient
                 .getInstance()
                 .getAPI()
-                .createUser(nome, email, tel, dataNasc, 0 , chave, senha);
+                .createUser(nome, email, tel, dataNasc, 0, chave, senha);
 
         call.enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                 try {
                     int code = response.code();
-                    if (code == 201){
+                    if (code == 201) {
                         Toast.makeText(Cadastro.this, "Usuario já cadastrado, selecione outra chave", Toast.LENGTH_LONG).show();
                     } else {
                         String body = response.body().string();
@@ -525,7 +515,7 @@ public class Cadastro extends AppCompatActivity {
                         vamoprologin();
 
                     }
-                }catch (IOException e) {
+                } catch (IOException e) {
                     e.printStackTrace();
                 }
             }
@@ -540,72 +530,4 @@ public class Cadastro extends AppCompatActivity {
     }
 
 
-
-//    class Insert extends AsyncTask<Void, Void, Void> {
-//
-//        String checkchave1= "";
-//        String error="";
-//        boolean flag=false;
-//
-//
-//        @Override
-//        protected Void doInBackground(Void... voids) {
-//            Infos info = new Infos(resgataInfo().nome, resgataInfo().email, resgataInfo().tel, resgataInfo().dataNas, resgataInfo().chave, resgataInfo().senha);
-//            String nome = info.nome;
-//            String email = info.email;
-//            String tel = info.tel;
-//            String datanasc = "";
-//            String chave = info.chave;
-//            String senha = info.senha;
-//            String datanasc_br = info.dataNas;
-//            char ch;
-//
-//            for (int i=0; i<datanasc_br.length(); i++)
-//            {
-//                ch= datanasc_br.charAt(i); //extracts each character
-//                datanasc= ch+datanasc; //adds each character in front of the existing string
-//            }
-//            try {
-//                Class.forName("com.mysql.jdbc.Driver");
-//                Connection connection = DriverManager.getConnection("jdbc:mysql://139.177.199.178/test","backend","agathusia");
-//
-//               Statement statement = connection.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
-//               ResultSet resultSet = statement.executeQuery("SELECT * FROM funcionarios");
-//
-//                    while (resultSet.next()) {
-//                        checkchave1 = resultSet.getString("chave");
-//
-//                        if (checkchave1.equals(chave)) {
-//                            flag=false;
-//                            Toast.makeText(FormCadastro.this, "Usuário já cadastrado", Toast.LENGTH_SHORT).show();
-//                            break;
-//
-//                        } else {
-//                            flag=true;
-//                        }
-//                    }
-//
-//                    if (flag) {
-//
-//                        //statement.executeUpdate("INSERT INTO funcionarios (nome, email, chave) values (\"" + nome + "\",\"" + email + "\",\"" + chave + "\");");
-//
-//                    resultSet.last();
-//                    //int id = resultSet.getInt("id") + 1;
-//                    resultSet.moveToInsertRow();
-//                    //resultSet.updateInt("id", id);
-//                    resultSet.updateString("nome", nome);
-//                    resultSet.updateString("email", email);
-//                    resultSet.updateString("tel", tel);
-//                    //resultSet.updateString("dataNasc", datanasc);
-//                    resultSet.updateString("chave", chave);
-//                    resultSet.updateString("senha", senha);
-//                    resultSet.insertRow();
-//                    resultSet.beforeFirst();
-//                    }
-//            } catch(Exception e) {
-//                    error = e.toString();
-//            }
-//            return null;
-//        }
-//    }
 }

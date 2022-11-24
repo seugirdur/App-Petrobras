@@ -38,7 +38,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class SolucionadoFragment extends Fragment implements RecyclerViewInteface{
+public class SolucionadoFragment extends Fragment implements RecyclerViewInteface {
 
     // Declaração das variáveis
     private ArrayList<ProblemasObj> dataArrayList;
@@ -51,8 +51,6 @@ public class SolucionadoFragment extends Fragment implements RecyclerViewIntefac
     private RecyclerViewInteface recyclerViewInteface;
     RVAdapterEmAberto recyclerViewAdapter;
     private SearchView searchView;
-
-
 
 
     @Override
@@ -94,8 +92,8 @@ public class SolucionadoFragment extends Fragment implements RecyclerViewIntefac
 
     private void filterList(String text) {
         filteredList = new ArrayList<>();
-        for (AdminObj adminObj: AdminObjList){
-            if(adminObj.getNome().toLowerCase().contains(text.toLowerCase())) {
+        for (AdminObj adminObj : AdminObjList) {
+            if (adminObj.getNome().toLowerCase().contains(text.toLowerCase())) {
                 filteredList.add(adminObj);
             }
         }
@@ -116,7 +114,7 @@ public class SolucionadoFragment extends Fragment implements RecyclerViewIntefac
         int idRelatorio;
 
         // Definição de valores que serão redirecionados
-        if(filteredList == null) {
+        if (filteredList == null) {
             idRelatorio = AdminObjList.get(position).getIdRelatorio();
         } else {
             idRelatorio = filteredList.get(position).getIdRelatorio();
@@ -127,7 +125,7 @@ public class SolucionadoFragment extends Fragment implements RecyclerViewIntefac
         startActivity(intent);
     }
 
-    private String sayMyChave(){
+    private String sayMyChave() {
         SharedPreferences sharedPreferences = this.getActivity().getSharedPreferences(
                 getString(R.string.preference_file_key), Context.MODE_PRIVATE);
 
@@ -136,7 +134,7 @@ public class SolucionadoFragment extends Fragment implements RecyclerViewIntefac
         return chave;
     }
 
-    private void listen(){
+    private void listen() {
 
         Call<List<AdminObj>> callme = RetroFitClient
                 .getInstance()
@@ -146,7 +144,7 @@ public class SolucionadoFragment extends Fragment implements RecyclerViewIntefac
         callme.enqueue(new Callback<List<AdminObj>>() {
             @Override
             public void onResponse(Call<List<AdminObj>> call, Response<List<AdminObj>> response) {
-                if (!response.isSuccessful()){
+                if (!response.isSuccessful()) {
                     Toast.makeText(getContext(), "wassup", Toast.LENGTH_SHORT).show();
                     return;
                 }
@@ -168,7 +166,6 @@ public class SolucionadoFragment extends Fragment implements RecyclerViewIntefac
         });
 
     }
-
 
 
 }

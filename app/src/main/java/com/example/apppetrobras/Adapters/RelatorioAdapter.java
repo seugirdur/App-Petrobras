@@ -17,7 +17,7 @@ import java.util.List;
 public class RelatorioAdapter extends RecyclerView.Adapter<RelatorioAdapter.MyViewHolder> {
     private List<EtapasRelatorioObj> listaRel;
 
-    public RelatorioAdapter(List<EtapasRelatorioObj> lista){
+    public RelatorioAdapter(List<EtapasRelatorioObj> lista) {
         this.listaRel = lista;
     }
 

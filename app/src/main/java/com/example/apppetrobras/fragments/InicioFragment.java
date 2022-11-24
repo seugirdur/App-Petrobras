@@ -21,7 +21,7 @@ import com.example.apppetrobras.api.RetroFitClient;
 
 import java.util.ArrayList;
 
-public class InicioFragment extends Fragment implements RecyclerViewInteface{
+public class InicioFragment extends Fragment implements RecyclerViewInteface {
 
     // Declaração das variáveis
     private ArrayList<ProblemasObj> dataArrayList;
@@ -89,7 +89,7 @@ public class InicioFragment extends Fragment implements RecyclerViewInteface{
 
         };
 
-        for(int i = 0; i < titulosProblemas.length; i++){
+        for (int i = 0; i < titulosProblemas.length; i++) {
             ProblemasObj data = new ProblemasObj(titulosProblemas[i], idProblemas[i], imagensProblemas[i]);
             dataArrayList.add(data);
         }
@@ -100,10 +100,10 @@ public class InicioFragment extends Fragment implements RecyclerViewInteface{
     public void onItemClick(int position) {
 
         int idtype, posi_id;
-        String titulo = "", posi_title="";
+        String titulo = "", posi_title = "";
         //criação da string para armazenamento no banco
         // Esse valor é temporário. Ainda não foi definido o funcionamento da aba 1(Inicio)
-        switch (position){
+        switch (position) {
             case 0:
             default:
                 titulo = "Internet";
@@ -112,25 +112,25 @@ public class InicioFragment extends Fragment implements RecyclerViewInteface{
                 posi_title = "A internet cai constantemente";
                 break;
             case 1:
-                 titulo = "Lentidão";
-                 idtype = 1;
-                 posi_id = 3;
-                 posi_title = "O computador está muito lento";
+                titulo = "Lentidão";
+                idtype = 1;
+                posi_id = 3;
+                posi_title = "O computador está muito lento";
                 break;
             case 2:
-                 titulo = "Equipamentos";
-                 idtype = 3;
+                titulo = "Equipamentos";
+                idtype = 3;
                 posi_id = 1;
                 posi_title = "O computador faz barulhos e reinicia toda vez que o botão de ligar é clicado";
                 break;
             case 3:
-                 titulo = "Outros";
+                titulo = "Outros";
                 idtype = 4;
                 posi_id = 9;
                 posi_title = "Como recuperar um arquivo que foi excluído?";
                 break;
             case 4:
-                 titulo = "Outros";
+                titulo = "Outros";
                 idtype = 4;
                 posi_id = 7;
                 posi_title = "O navegador relata problema de memória";
@@ -155,9 +155,9 @@ public class InicioFragment extends Fragment implements RecyclerViewInteface{
 
         // Definição de valores que serão redirecionados
         // Valor do tipo é temporário. Ainda não foi definido o funcionamento da aba 1(Inicio)
-        intent.putExtra("TIPO",idtype);
-        intent.putExtra("titulo",titulo);
-        intent.putExtra("ID_TITULO", posi_id );
+        intent.putExtra("TIPO", idtype);
+        intent.putExtra("titulo", titulo);
+        intent.putExtra("ID_TITULO", posi_id);
         intent.putExtra("titulosProblemas", posi_title);
         startActivity(intent);
     }

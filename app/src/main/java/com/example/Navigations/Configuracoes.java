@@ -17,6 +17,7 @@ public class Configuracoes extends Drawer {
     ViewPager2 viewPager2;
     VPConfigurações VPConfigurações;
     LayoutConfiguracoesBinding layoutConfiguracoesBinding;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,7 +39,7 @@ public class Configuracoes extends Drawer {
 
         // Navigation Drawer
         //activityTabBinding = ActivityTabBinding.inflate(getLayoutInflater());
-       // setContentView(activityTabBinding.getRoot());
+        // setContentView(activityTabBinding.getRoot());
         //allocateActivityTitle("Menu Principal");
 
         tabLayout = findViewById(R.id.tabLayout);
@@ -47,8 +48,6 @@ public class Configuracoes extends Drawer {
         viewPager2.setAdapter(VPConfigurações);
 
 //       settingTheName();
-
-
 
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
@@ -81,8 +80,8 @@ public class Configuracoes extends Drawer {
 
     //Captura o click no logo e vai para a tela inicial
     //public void goHome(View view) {
-        //viewPager2.setCurrentItem(0);
-    }
+    //viewPager2.setCurrentItem(0);
+}
 
 
 

@@ -26,7 +26,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class Perfil_Fragment extends Fragment {
     Button btn;
-    TextView nomecompleto,num_tel,email1,num_chave, nome1;
+    TextView nomecompleto, num_tel, email1, num_chave, nome1;
     CircleImageView imagemUser;
     String encoded;
 
@@ -36,7 +36,6 @@ public class Perfil_Fragment extends Fragment {
         // Inflate the layout for this fragment
         //LayoutInflater lf = getActivity().getLayoutInflater();
         View view = inflater.inflate(R.layout.layout_perfil, container, false);
-
 
 
         SharedPreferences sharedPreferences = this.getActivity().getSharedPreferences(

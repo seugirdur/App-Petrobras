@@ -36,7 +36,7 @@ public class Tabs extends Drawer {
 
         Boolean isFirstOpen = sharedPref.getBoolean("firstopentab", true);
 
-        if(isFirstOpen) {
+        if (isFirstOpen) {
             mDialog = new Dialog(this);
 
             // Defini o click dentro do popup
@@ -54,14 +54,11 @@ public class Tabs extends Drawer {
         }
 
 
-
-
-
         // Zera o check das soluções
         SharedPreferences sharedPreferences = getSharedPreferences(
                 getString(R.string.preference_file_key), Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString("check","");
+        editor.putString("check", "");
         editor.apply();
 
 
@@ -109,7 +106,7 @@ public class Tabs extends Drawer {
         SharedPreferences sharedPreferences = getSharedPreferences(
                 getString(R.string.popupcheck), Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putBoolean("firstopentab",false);
+        editor.putBoolean("firstopentab", false);
         editor.apply();
     }
 
@@ -122,5 +119,5 @@ public class Tabs extends Drawer {
         finish();
     }
 
-    
+
 }

@@ -66,7 +66,7 @@ public class Historico extends Drawer implements RecyclerViewInteface {
         recyclerview = findViewById(R.id.recyclerviewadmin);
         recyclerview.setLayoutManager(new LinearLayoutManager(context));
         recyclerview.setHasFixedSize(true);
-        idRelatorio = getIntent().getIntExtra("ID_TITULO",1);
+        idRelatorio = getIntent().getIntExtra("ID_TITULO", 1);
 
         listen();
 
@@ -86,7 +86,7 @@ public class Historico extends Drawer implements RecyclerViewInteface {
     }
 
 
-    public void listen(){
+    public void listen() {
         Call<List<RelatorioObj>> callme = RetroFitClient
                 .getInstance()
                 .getAPI()
@@ -95,7 +95,7 @@ public class Historico extends Drawer implements RecyclerViewInteface {
         callme.enqueue(new Callback<List<RelatorioObj>>() {
             @Override
             public void onResponse(Call<List<RelatorioObj>> call, Response<List<RelatorioObj>> response) {
-                if (!response.isSuccessful()){
+                if (!response.isSuccessful()) {
                     Toast.makeText(context, "wassup", Toast.LENGTH_SHORT).show();
                     return;
                 }
@@ -108,6 +108,7 @@ public class Historico extends Drawer implements RecyclerViewInteface {
                 recyclerview.setAdapter(recyclerViewAdapter);
                 recyclerViewAdapter.notifyDataSetChanged();
             }
+
             @Override
             public void onFailure(Call<List<RelatorioObj>> call, Throwable t) {
             }
@@ -115,7 +116,7 @@ public class Historico extends Drawer implements RecyclerViewInteface {
     }
 
 
-    private String sayMyChave(){
+    private String sayMyChave() {
         SharedPreferences sharedPreferences = getSharedPreferences(
                 getString(R.string.preference_file_key), Context.MODE_PRIVATE);
 

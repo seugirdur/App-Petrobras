@@ -61,7 +61,7 @@ import retrofit2.Response;
 public class PerfilAtualizar extends Drawer {
 
     String chave;
-    TextView nome1,num_chave;
+    TextView nome1, num_chave;
     EditText nomecompleto, num_tel, email1;
     Button btn_tela_perfil_update;
     ImageButton btn_add_imagem;
@@ -93,7 +93,7 @@ public class PerfilAtualizar extends Drawer {
 
         String[] fullNameArray = nome.split("\\s+");
         String firstName = fullNameArray[0];
-        nome1=findViewById(R.id.nome_login);
+        nome1 = findViewById(R.id.nome_login);
         nome1.setText(firstName);
 
         nomecompleto = findViewById(R.id.nomecompletoupdate);
@@ -108,15 +108,16 @@ public class PerfilAtualizar extends Drawer {
         num_chave = findViewById(R.id.num_chave);
         num_chave.setHint(chave);
 
-        num_tel .addTextChangedListener(new TextWatcher() {
+        num_tel.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
             }
+
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                String str= num_tel.getText().toString();
-                int textLength= num_tel.getText().length();
+                String str = num_tel.getText().toString();
+                int textLength = num_tel.getText().length();
                 if (textLength == 1) {
                     if (!str.contains("(")) {
                         num_tel.setText(new StringBuilder(num_tel.getText().toString()).insert(str.length() - 1, "(").toString());
@@ -157,9 +158,6 @@ public class PerfilAtualizar extends Drawer {
 //        String emailatualizado = String.valueOf(email1.getText());
 
 
-
-
-
         btn_tela_perfil_update = findViewById(R.id.btn_tela_perfil_update);
 
         btn_tela_perfil_update.setOnClickListener(new View.OnClickListener() {
@@ -170,9 +168,15 @@ public class PerfilAtualizar extends Drawer {
                 String emailatualizado = email1.getText().toString();
 //              String telatualizado = String.valueOf(num_tel.getText());
 
-                if(nomeatualizado.isEmpty()) { nomeatualizado = nome;}
-                if(telatualizado.isEmpty()) { telatualizado = tel;}
-                if(emailatualizado.isEmpty()) { emailatualizado = email;}
+                if (nomeatualizado.isEmpty()) {
+                    nomeatualizado = nome;
+                }
+                if (telatualizado.isEmpty()) {
+                    telatualizado = tel;
+                }
+                if (emailatualizado.isEmpty()) {
+                    emailatualizado = email;
+                }
 
                 atualizate(nomeatualizado, emailatualizado, telatualizado, chave);
 
@@ -191,30 +195,30 @@ public class PerfilAtualizar extends Drawer {
 
     }
 
-    private void uploadImage(Uri imageUri){
+    private void uploadImage(Uri imageUri) {
 
         if (imageUri != null) {
-            StorageReference reference = storage.getReference().child("images/"+chave);
+            StorageReference reference = storage.getReference().child("images/" + chave);
 
             reference.putFile(imageUri).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
 
                 @Override
                 public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
-                    if (task.isSuccessful()){
+                    if (task.isSuccessful()) {
                         pegarImagem();
                         new Handler().postDelayed(new Runnable() {
                             @Override
                             public void run() {
 
                                 Intent intent = new Intent(PerfilAtualizar.this, Configuracoes.class);
-                                intent.putExtra("photo",true);
+                                intent.putExtra("photo", true);
                                 startActivity(intent);
                                 finish();
                             }
                         }, 1500);
 
                     } else {
-                        Toast.makeText(PerfilAtualizar.this,"Não foi salva",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(PerfilAtualizar.this, "Não foi salva", Toast.LENGTH_SHORT).show();
                     }
                 }
             });
@@ -224,7 +228,7 @@ public class PerfilAtualizar extends Drawer {
     ActivityResultLauncher<String> mGetContent = registerForActivityResult(
             new ActivityResultContracts.GetContent(), new ActivityResultCallback<Uri>() {
                 @Override
-                public void onActivityResult(Uri result){
+                public void onActivityResult(Uri result) {
                     if (result != null) {
                         imagemUser.setImageURI(result);
                         imageUri = result;
@@ -234,8 +238,7 @@ public class PerfilAtualizar extends Drawer {
     );
 
 
-
-    private void atualizate(String nome, String email,String tel, String chave){
+    private void atualizate(String nome, String email, String tel, String chave) {
 //        PerfilObj perfilObj = new PerfilObj();
 //
 //        perfilObj.setNome(nome);
@@ -251,7 +254,7 @@ public class PerfilAtualizar extends Drawer {
         call.enqueue(new Callback<List<PerfilObj>>() {
             @Override
             public void onResponse(Call<List<PerfilObj>> call, Response<List<PerfilObj>> response) {
-                if (!response.isSuccessful()){
+                if (!response.isSuccessful()) {
                     Toast.makeText(PerfilAtualizar.this, response.code(), Toast.LENGTH_SHORT).show();
                     return;
                 }
@@ -276,7 +279,7 @@ public class PerfilAtualizar extends Drawer {
 
             @Override
             public void onFailure(Call<List<PerfilObj>> call, Throwable t) {
-                progressbar=findViewById(R.id.progressbar2);
+                progressbar = findViewById(R.id.progressbar2);
 
                 progressbar.setVisibility(View.VISIBLE);
                 Toast.makeText(PerfilAtualizar.this, "Cadastro atualizando, aguarde!", Toast.LENGTH_SHORT).show();
@@ -291,7 +294,7 @@ public class PerfilAtualizar extends Drawer {
 
         });
 
-        if (imageUri!=null) {
+        if (imageUri != null) {
             uploadImage(imageUri);
         } else {
             Intent intent = new Intent(PerfilAtualizar.this, Configuracoes.class);
@@ -313,9 +316,9 @@ public class PerfilAtualizar extends Drawer {
     }
 
     private void pegarImagem() {
-        StorageReference storageReference = storage.getReference("images/"+chave);
+        StorageReference storageReference = storage.getReference("images/" + chave);
         try {
-            File localfile = File.createTempFile("tempfile",".jpg");
+            File localfile = File.createTempFile("tempfile", ".jpg");
             storageReference.getFile(localfile)
                     .addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
                         @Override

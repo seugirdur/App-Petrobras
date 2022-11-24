@@ -50,7 +50,7 @@ public class Solucoes extends Drawer implements RecyclerViewInteface {
 
         Boolean isFirstOpen = sharedPref.getBoolean("firstopensolucoes", true);
 
-        if(isFirstOpen) {
+        if (isFirstOpen) {
             mDialog = new Dialog(this);
 
             // Defini o click dentro do popup
@@ -70,14 +70,14 @@ public class Solucoes extends Drawer implements RecyclerViewInteface {
 
         // Resgata as informações da teka anterior
         tipoProblema = getIntent().getIntExtra("TIPO", 1);
-        idTitulo = getIntent().getIntExtra("ID_TITULO",1);
+        idTitulo = getIntent().getIntExtra("ID_TITULO", 1);
         titulo = getIntent().getStringExtra("titulo");
         titulosProblemas = getIntent().getStringExtra("titulosProblemas");
 
         // Resgata o check
         SharedPreferences sharedPreferences = getSharedPreferences(
                 getString(R.string.preference_file_key), Context.MODE_PRIVATE);
-        check = sharedPreferences.getString("check","");
+        check = sharedPreferences.getString("check", "");
 
         // RecyclerView instanciação
         recyclerview = findViewById(R.id.recyclerview);
@@ -86,7 +86,7 @@ public class Solucoes extends Drawer implements RecyclerViewInteface {
 
         Call<List<SolucoesObj>> call;
 
-        switch (tipoProblema){
+        switch (tipoProblema) {
             case 1:
             default:
                 call = RetroFitClient
@@ -117,7 +117,7 @@ public class Solucoes extends Drawer implements RecyclerViewInteface {
         call.enqueue(new Callback<List<SolucoesObj>>() {
             @Override
             public void onResponse(Call<List<SolucoesObj>> call, Response<List<SolucoesObj>> response) {
-                if (!response.isSuccessful()){
+                if (!response.isSuccessful()) {
                     Toast.makeText(context, response.code(), Toast.LENGTH_SHORT).show();
                     return;
                 }
@@ -125,7 +125,7 @@ public class Solucoes extends Drawer implements RecyclerViewInteface {
 
                 qtdSolucoes = solucoesObjList.size();
 
-                if(check.isEmpty()){
+                if (check.isEmpty()) {
 
                     check = "";
                     for (int i = 0; i < qtdSolucoes; i++) {
@@ -161,14 +161,14 @@ public class Solucoes extends Drawer implements RecyclerViewInteface {
         String tituloSolucao = solucoesObjList.get(position).getTituloSolucao();
 
         // Definição de valores que serão redirecionados
-        intent.putExtra("TIPO",tipoProblema);
+        intent.putExtra("TIPO", tipoProblema);
         intent.putExtra("ID_TITULO", idTitulo);
         intent.putExtra("titulo", titulo);
         tituloSolucao = solucoesObjList.get(position).getTituloSolucao();
         intent.putExtra("TITULO_SOLUCAO", tituloSolucao);
         // position começa em 0, para condizer ao BD é necessário adicionar 1 a ele
-        intent.putExtra("ID_SOLUCAO", position+1);
-        intent.putExtra("titulosProblemas",titulosProblemas);
+        intent.putExtra("ID_SOLUCAO", position + 1);
+        intent.putExtra("titulosProblemas", titulosProblemas);
         startActivity(intent);
         finish();
     }
@@ -190,7 +190,7 @@ public class Solucoes extends Drawer implements RecyclerViewInteface {
         SharedPreferences sharedPreferences = getSharedPreferences(
                 getString(R.string.popupcheck), Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putBoolean("firstopensolucoes",false);
+        editor.putBoolean("firstopensolucoes", false);
         editor.apply();
     }
 

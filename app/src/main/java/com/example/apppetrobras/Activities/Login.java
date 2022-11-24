@@ -58,14 +58,14 @@ public class Login extends AppCompatActivity {
 
     EditText edit_user, edit_senha;
     Button button_login, esqueceu_senha;
-    String user, pass, userbd, passbd,nomebd, emailbd, telbd;
+    String user, pass, userbd, passbd, nomebd, emailbd, telbd;
     Dialog mDialog;
     ProgressBar progressbar;
     FirebaseStorage storage;
     boolean passwordVisible;
     public static final String meliorism = "meliorism";
 
-    static int PERMISSION_CODE= 100;
+    static int PERMISSION_CODE = 100;
     private static final int PERMISSION_REQUEST_CODE = 1;
     Context context;
 
@@ -93,13 +93,15 @@ public class Login extends AppCompatActivity {
             public void onClick(View view) {
                 //new Task().execute();
 
-                progressbar=findViewById(id.progressbar);
+                progressbar = findViewById(id.progressbar);
                 guardate();
                 //new Task().execute();
                 progressbar.setVisibility(View.VISIBLE);
                 new Handler().postDelayed(new Runnable() {
                     @Override
-                    public void run() { progressbar.setVisibility(View.INVISIBLE); }
+                    public void run() {
+                        progressbar.setVisibility(View.INVISIBLE);
+                    }
                 }, 5000);
 
             }
@@ -123,31 +125,31 @@ public class Login extends AppCompatActivity {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
 
-                final int Right=2;
-                if(motionEvent.getAction()==MotionEvent.ACTION_UP) {
+                final int Right = 2;
+                if (motionEvent.getAction() == MotionEvent.ACTION_UP) {
 
-                    if(motionEvent.getRawX()>=edit_senha.getRight()-edit_senha.getCompoundDrawables() [Right].getBounds().width()) {
+                    if (motionEvent.getRawX() >= edit_senha.getRight() - edit_senha.getCompoundDrawables()[Right].getBounds().width()) {
 
-                        int selection=edit_senha.getSelectionEnd();
-                        if(passwordVisible){
+                        int selection = edit_senha.getSelectionEnd();
+                        if (passwordVisible) {
 
                             // set drawable image here
-                            edit_senha.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0, drawable.ic_eye_off, 0);
+                            edit_senha.setCompoundDrawablesRelativeWithIntrinsicBounds(0, 0, drawable.ic_eye_off, 0);
 
                             //for hide password
                             edit_senha.setTransformationMethod(PasswordTransformationMethod.getInstance());
-                            passwordVisible=false;
+                            passwordVisible = false;
 
 
-                        }else {
+                        } else {
 
                             //set drawable image here
-                            edit_senha.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0, drawable.ic_eye,0);
+                            edit_senha.setCompoundDrawablesRelativeWithIntrinsicBounds(0, 0, drawable.ic_eye, 0);
 
 
                             //for show password
                             edit_senha.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
-                            passwordVisible=true;
+                            passwordVisible = true;
 
 
                         }
@@ -165,7 +167,7 @@ public class Login extends AppCompatActivity {
         //aqui é o dionisio
     }
 
-    public void storecheckconn(View view){
+    public void storecheckconn(View view) {
         CheckBox check_connected = findViewById(id.check_connected);
         Boolean checktorf = check_connected.isChecked();
         SharedPreferences sharedPreferences = getSharedPreferences(
@@ -183,9 +185,9 @@ public class Login extends AppCompatActivity {
         SharedPreferences sharedPreferences = getSharedPreferences(
                 getString(string.preference_file_key), Context.MODE_PRIVATE);
 
-        Boolean checktorf = sharedPreferences.getBoolean("checktorf",false);
-        edit_user=findViewById(id.edit_user);
-        if(checktorf){
+        Boolean checktorf = sharedPreferences.getBoolean("checktorf", false);
+        edit_user = findViewById(id.edit_user);
+        if (checktorf) {
             check_connected.setChecked(true);
             SharedPreferences sharedPreferences1 = getSharedPreferences(
                     getString(string.preference_file_key), Context.MODE_PRIVATE);
@@ -193,8 +195,7 @@ public class Login extends AppCompatActivity {
             String sayMyChave = sharedPreferences1.getString("chave", "");
 
             edit_user.setText(sayMyChave);
-        }
-        else{
+        } else {
             check_connected.setChecked(false);
             edit_user.setText("");
 
@@ -205,11 +206,11 @@ public class Login extends AppCompatActivity {
         SharedPreferences sharedPreferences = getSharedPreferences(
                 getString(string.preference_file_key), Context.MODE_PRIVATE);
 
-        String chave = sharedPreferences.getString("chave","");
+        String chave = sharedPreferences.getString("chave", "");
 
-        StorageReference storageReference = storage.getReference("images/"+chave);
+        StorageReference storageReference = storage.getReference("images/" + chave);
         try {
-            File localfile = File.createTempFile("tempfile",".jpg");
+            File localfile = File.createTempFile("tempfile", ".jpg");
             storageReference.getFile(localfile)
                     .addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
                         @Override
@@ -259,13 +260,13 @@ public class Login extends AppCompatActivity {
             e.printStackTrace();
 
             SharedPreferences.Editor editor = sharedPreferences.edit();
-            editor.putString("imagemUser","");
+            editor.putString("imagemUser", "");
             editor.apply();
         }
     }
 
 
-    private void guardate(){
+    private void guardate() {
 
         String chave = edit_user.getText().toString().trim();
         String senha = edit_senha.getText().toString().trim();
@@ -279,7 +280,7 @@ public class Login extends AppCompatActivity {
         call.enqueue(new Callback<List<LoginObj>>() {
             @Override
             public void onResponse(Call<List<LoginObj>> call, Response<List<LoginObj>> response) {
-                if (!response.isSuccessful()){
+                if (!response.isSuccessful()) {
                     Toast.makeText(Login.this, "Cheque sua conexão", Toast.LENGTH_SHORT).show();
                     return;
                 }
@@ -295,12 +296,14 @@ public class Login extends AppCompatActivity {
                 String chave = loginObj.getChave();
                 int isAdmin = loginObj.getIsAdmin();
 
-                progressbar=findViewById(R.id.progressbar);
-                 //new Task().execute();
+                progressbar = findViewById(R.id.progressbar);
+                //new Task().execute();
                 progressbar.setVisibility(View.VISIBLE);
                 new Handler().postDelayed(new Runnable() {
                     @Override
-                    public void run() { progressbar.setVisibility(View.INVISIBLE); }
+                    public void run() {
+                        progressbar.setVisibility(View.INVISIBLE);
+                    }
                 }, 5000);
 
                 SharedPreferences sharedPreferences = getSharedPreferences(
@@ -322,7 +325,7 @@ public class Login extends AppCompatActivity {
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        Toast.makeText(Login.this, "Bem vindo "+nome, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Login.this, "Bem vindo " + nome, Toast.LENGTH_SHORT).show();
 
                         Intent intent = new Intent(Login.this, Tabs.class);
 
@@ -334,15 +337,15 @@ public class Login extends AppCompatActivity {
             }
 
 
-
             @Override
             public void onFailure(Call<List<LoginObj>> call, Throwable t) {
                 Toast.makeText(Login.this, "O dados estão incorretos", Toast.LENGTH_SHORT).show();
                 new Handler().postDelayed(new Runnable() {
                     @Override
-                    public void run() { progressbar.setVisibility(View.INVISIBLE); }
+                    public void run() {
+                        progressbar.setVisibility(View.INVISIBLE);
+                    }
                 }, 1000);
-
 
 
             }
@@ -360,7 +363,7 @@ public class Login extends AppCompatActivity {
         intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"suporteaset@gmail.com"});
         intent.putExtra(Intent.EXTRA_SUBJECT, "Suporte para uso do App");
 //                intent.putExtra(Intent.EXTRA_TEXT, "");
-        startActivity(Intent.createChooser(intent,"Escolha o aplicativo de email"));
+        startActivity(Intent.createChooser(intent, "Escolha o aplicativo de email"));
     }
 
     public void ligacao(View view) {
@@ -369,52 +372,46 @@ public class Login extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-//                Intent intent = new Intent(Intent.ACTION_DIAL);
-//                intent.setData(Uri.parse("tel:0123456789"));
-//                startActivity(intent);
+
                 makeCall("+5513991509119");
 
             }
         }, 100);
     }
 
-        public void makeCall(String s)
-        {
-            Intent intent = new Intent(Intent.ACTION_CALL);
-            intent.setData(Uri.parse("tel:" + s));
-            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED){
+    public void makeCall(String s) {
+        Intent intent = new Intent(Intent.ACTION_CALL);
+        intent.setData(Uri.parse("tel:" + s));
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
 
-                requestForCallPermission();
+            requestForCallPermission();
 
-            } else {
-                startActivity(intent);
-
+        } else {
+            startActivity(intent);
 
 
-            }
         }
-        public void requestForCallPermission()
-        {
+    }
 
-            if (ActivityCompat.shouldShowRequestPermissionRationale(this,Manifest.permission.CALL_PHONE))
-            {
-            }
-            else {
+    public void requestForCallPermission() {
 
-                ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.CALL_PHONE},PERMISSION_REQUEST_CODE);
-            }
+        if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.CALL_PHONE)) {
+        } else {
+
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CALL_PHONE}, PERMISSION_REQUEST_CODE);
         }
+    }
 
-        @Override
-        public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
-            super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-            switch (requestCode) {
-                case PERMISSION_REQUEST_CODE:
-                    if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                        makeCall("+551399150-9119");
-                    }
-                    break;
-            }
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        switch (requestCode) {
+            case PERMISSION_REQUEST_CODE:
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    makeCall("+551399150-9119");
+                }
+                break;
         }
+    }
 
 }

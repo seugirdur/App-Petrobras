@@ -30,7 +30,7 @@ public class Inicio extends AppCompatActivity {
     Dialog mDialog;
     ImageButton btn123;
     Context context = this;
-    static int PERMISSION_CODE= 100;
+    static int PERMISSION_CODE = 100;
     private static final int PERMISSION_REQUEST_CODE = 1;
 
 
@@ -39,7 +39,6 @@ public class Inicio extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_inicio);
         mDialog = new Dialog(this);
-
 
 
         button2 = findViewById(R.id.button2);
@@ -53,18 +52,11 @@ public class Inicio extends AppCompatActivity {
                 finish();
             }
         });
-//
-//        btn123.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent int1 = new Intent(Inicio.this, AjudaCad.class);
-//                startActivity(int1);
-//            }
-//        });
+
 
 
         //link no botão 'clique aqui' o texto e o link estão no @strings
-        linkTextView=findViewById(R.id.textView12);
+        linkTextView = findViewById(R.id.textView12);
         linkTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -79,7 +71,7 @@ public class Inicio extends AppCompatActivity {
     }
 
 
-    public void ligacao(View view){
+    public void ligacao(View view) {
 
 
         new Handler().postDelayed(new Runnable() {
@@ -94,9 +86,8 @@ public class Inicio extends AppCompatActivity {
         }, 100);
 
 
-
-
     }
+
     public void email(View view) {
         SharedPreferences sharedPref = getSharedPreferences(
                 getString(R.string.popupcheck), Context.MODE_PRIVATE);
@@ -108,14 +99,13 @@ public class Inicio extends AppCompatActivity {
         intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"suporteaset@gmail.com"});
         intent.putExtra(Intent.EXTRA_SUBJECT, "Suporte para entrar");
 //                intent.putExtra(Intent.EXTRA_TEXT, "");
-        startActivity(Intent.createChooser(intent,"Escolha o aplicativo de email"));
+        startActivity(Intent.createChooser(intent, "Escolha o aplicativo de email"));
     }
 
-    public void makeCall(String s)
-    {
+    public void makeCall(String s) {
         Intent intent = new Intent(Intent.ACTION_CALL);
         intent.setData(Uri.parse("tel:" + s));
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED){
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
 
             requestForCallPermission();
 
@@ -123,18 +113,15 @@ public class Inicio extends AppCompatActivity {
             startActivity(intent);
 
 
-
         }
     }
-    public void requestForCallPermission()
-    {
 
-        if (ActivityCompat.shouldShowRequestPermissionRationale(this,Manifest.permission.CALL_PHONE))
-        {
-        }
-        else {
+    public void requestForCallPermission() {
 
-            ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.CALL_PHONE},PERMISSION_REQUEST_CODE);
+        if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.CALL_PHONE)) {
+        } else {
+
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CALL_PHONE}, PERMISSION_REQUEST_CODE);
         }
     }
 
@@ -151,14 +138,14 @@ public class Inicio extends AppCompatActivity {
     }
 
     //redirecionamento para ajuda
-    public void ajuda(View view){
+    public void ajuda(View view) {
 
-    Intent int1 = new Intent(Inicio.this, AjudaCad.class);
-    startActivity(int1);
-    finish();
+        Intent int1 = new Intent(Inicio.this, AjudaCad.class);
+        startActivity(int1);
+        finish();
     }
 
-    public void cadastrar (View view){
+    public void cadastrar(View view) {
 
         Intent intent = new Intent(this, Cadastro.class);
         startActivity(intent);
@@ -168,7 +155,6 @@ public class Inicio extends AppCompatActivity {
 
     public void setCurrentItemPager(int i) {
     }
-
 
 
 }

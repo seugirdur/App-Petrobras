@@ -15,9 +15,10 @@ import com.example.apppetrobras.Objects.ProblemasObj;
 import com.example.apppetrobras.Objects.AdminObj;
 import com.example.apppetrobras.R;
 import com.example.apppetrobras.fragments.RecyclerViewInteface;
+
 import java.util.List;
 
-public class RVAdapterEmAberto extends RecyclerView.Adapter<RVAdapterEmAberto.MyViewHolder>{
+public class RVAdapterEmAberto extends RecyclerView.Adapter<RVAdapterEmAberto.MyViewHolder> {
     // Declaração das variáveis
     private final RecyclerViewInteface recyclerViewInteface;
     private final int layout;
@@ -30,7 +31,7 @@ public class RVAdapterEmAberto extends RecyclerView.Adapter<RVAdapterEmAberto.My
     }
 
     public RVAdapterEmAberto(Context context, List<AdminObj> AdminObjList,
-                             RecyclerViewInteface recyclerViewInteface, int layout){
+                             RecyclerViewInteface recyclerViewInteface, int layout) {
         this.context = context;
         this.AdminObjList = AdminObjList;
         this.recyclerViewInteface = recyclerViewInteface;
@@ -40,7 +41,7 @@ public class RVAdapterEmAberto extends RecyclerView.Adapter<RVAdapterEmAberto.My
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(layout,parent,false);
+        View view = LayoutInflater.from(context).inflate(layout, parent, false);
 
         // Instanciação das variáveis
         int idTexto1, idTexto2, idTexto3, idTexto4, idVisual;
@@ -65,14 +66,25 @@ public class RVAdapterEmAberto extends RecyclerView.Adapter<RVAdapterEmAberto.My
         // Isso é necessário pois as listas recebem diferentes quantidades de valores
 
 
-        if(holder.text1 !=null){ holder.text1.setText(data.getDataProcesso());}
-        if(holder.text2 !=null){ holder.text2.setText(data.getNome());}
-        if(holder.text3 !=null){ holder.text3.setText(data.getEmail());}
-        if(holder.text4 !=null){ holder.text4.setText(data.getSetor());}
-        if(holder.visual1 != null){
+        if (holder.text1 != null) {
+            holder.text1.setText(data.getDataProcesso());
+        }
+        if (holder.text2 != null) {
+            holder.text2.setText(data.getNome());
+        }
+        if (holder.text3 != null) {
+            holder.text3.setText(data.getEmail());
+        }
+        if (holder.text4 != null) {
+            holder.text4.setText(data.getSetor());
+        }
+        if (holder.visual1 != null) {
             if (data.getMade_check() != null) {
-                if(data.getMade_check().contains("2")){ holder.visual1.setImageResource(R.drawable.ic_check_circle);}
-                else{ holder.visual1.setImageResource(R.drawable.ic_cancel_circle);}
+                if (data.getMade_check().contains("2")) {
+                    holder.visual1.setImageResource(R.drawable.ic_check_circle);
+                } else {
+                    holder.visual1.setImageResource(R.drawable.ic_cancel_circle);
+                }
             }
         }
     }
@@ -82,7 +94,7 @@ public class RVAdapterEmAberto extends RecyclerView.Adapter<RVAdapterEmAberto.My
         return AdminObjList.size();
     }
 
-    public static class MyViewHolder extends RecyclerView.ViewHolder{
+    public static class MyViewHolder extends RecyclerView.ViewHolder {
 
         TextView text1, text2, text3, text4;
         ImageView visual1;
@@ -103,11 +115,11 @@ public class RVAdapterEmAberto extends RecyclerView.Adapter<RVAdapterEmAberto.My
         }
 
         // Módulo que define o método onItemClik da interface para cada item da RecyclerView
-        private void moduleOnClick(RecyclerViewInteface recyclerViewInteface){
+        private void moduleOnClick(RecyclerViewInteface recyclerViewInteface) {
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    if(recyclerViewInteface != null){
+                    if (recyclerViewInteface != null) {
                         int pos = getBindingAdapterPosition();
                         if (pos != RecyclerView.NO_POSITION) {
                             recyclerViewInteface.onItemClick(pos);

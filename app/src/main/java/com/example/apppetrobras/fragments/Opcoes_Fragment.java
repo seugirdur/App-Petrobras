@@ -22,7 +22,7 @@ import com.example.apppetrobras.R;
 public class Opcoes_Fragment extends Fragment implements View.OnClickListener {
 
     Dialog nDialog;
-    ImageButton btnab1,btnab2, btnab3, btnManual;
+    ImageButton btnab1, btnab2, btnab3, btnManual;
     View view;
 
     // Declaração das variáveis
@@ -72,9 +72,9 @@ public class Opcoes_Fragment extends Fragment implements View.OnClickListener {
                 Intent intent = new Intent(Intent.ACTION_SENDTO);
                 intent.setData(Uri.parse("mailto:"));
                 intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"suporteaset@gmail.com"});
-                intent.putExtra(Intent.EXTRA_SUBJECT, "Avaliação de "+nome);
+                intent.putExtra(Intent.EXTRA_SUBJECT, "Avaliação de " + nome);
 //                intent.putExtra(Intent.EXTRA_TEXT, "");
-                startActivity(Intent.createChooser(intent,"Escolha o aplicativo de email"));
+                startActivity(Intent.createChooser(intent, "Escolha o aplicativo de email"));
             }
         });
 
@@ -95,7 +95,7 @@ public class Opcoes_Fragment extends Fragment implements View.OnClickListener {
 //        btnab1.setOnClickListener(new View.OnClickListener() {
 //           Intent i = new Intent(getActivity(), Cadastro.class);
 
-   }
+    }
 
     @Override
     public void onClick(View view) {

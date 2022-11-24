@@ -18,12 +18,12 @@ public class Perfil extends Drawer {
 
     LayoutPerfilBinding layoutPerfilBinding;
 
-    TextView nomecompleto,num_tel,email1,num_chave, nome1;
+    TextView nomecompleto, num_tel, email1, num_chave, nome1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        layoutPerfilBinding= LayoutPerfilBinding.inflate(getLayoutInflater());
+        layoutPerfilBinding = LayoutPerfilBinding.inflate(getLayoutInflater());
         setContentView(layoutPerfilBinding.getRoot());
         allocateActivityTitle("Perfil");
 
@@ -39,7 +39,7 @@ public class Perfil extends Drawer {
 
         String[] fullNameArray = nome.split("\\s+");
         String firstName = fullNameArray[0];
-        nome1=findViewById(R.id.nome_login);
+        nome1 = findViewById(R.id.nome_login);
         nome1.setText(firstName);
 
         nomecompleto = findViewById(R.id.nomecompleto);
@@ -55,7 +55,7 @@ public class Perfil extends Drawer {
         num_chave.setText(chave);
     }
 
-    public void mudame(View view){
+    public void mudame(View view) {
         Intent intent = new Intent(Perfil.this, PerfilAtualizar.class);
         startActivity(intent);
     }

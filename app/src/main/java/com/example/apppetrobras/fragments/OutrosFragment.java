@@ -20,7 +20,7 @@ import com.example.apppetrobras.Adapters.RecyclerViewAdapter;
 
 import java.util.ArrayList;
 
-public class OutrosFragment extends Fragment implements RecyclerViewInteface{
+public class OutrosFragment extends Fragment implements RecyclerViewInteface {
 
     // Declaração das variáveis
     private ArrayList<ProblemasObj> dataArrayList;
@@ -90,7 +90,7 @@ public class OutrosFragment extends Fragment implements RecyclerViewInteface{
                 R.drawable.outros
         };
 
-        for(int i = 0; i < titulosProblemas.length; i++){
+        for (int i = 0; i < titulosProblemas.length; i++) {
             ProblemasObj data = new ProblemasObj(titulosProblemas[i], idProblemas[i], imagensProblemas[i]);
             dataArrayList.add(data);
         }
@@ -102,12 +102,12 @@ public class OutrosFragment extends Fragment implements RecyclerViewInteface{
         //criação da string para armazenamento no banco
         String titulo = "Outros";
 
-       // Redirecionamento para a tela do problema contendo os títulos das soluções
+        // Redirecionamento para a tela do problema contendo os títulos das soluções
         Intent intent = new Intent(getActivity(), Solucoes.class);
 
         // Definição de valores que serão redirecionados
-        intent.putExtra("TIPO",4);
-        intent.putExtra("titulo",titulo);
+        intent.putExtra("TIPO", 4);
+        intent.putExtra("titulo", titulo);
         intent.putExtra("ID_TITULO", dataArrayList.get(position).getId());
         intent.putExtra("titulosProblemas", dataArrayList.get(position).getText());
         startActivity(intent);

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "535937710163",
+    "project_id": "aset-firebase",
+    "storage_bucket": "aset-firebase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:535937710163:android:8e7f5d7918458816222ea6",
+        "android_client_info": {
+          "package_name": "com.example.apppetrobras"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "535937710163-01og0pacs97u5loufh1nr203lp6kfn60.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJm7FWsAWKJTdflbD5kr9_fHIJTHlZ6ag"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "535937710163-01og0pacs97u5loufh1nr203lp6kfn60.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

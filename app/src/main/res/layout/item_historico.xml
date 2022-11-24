@@ -9,7 +9,7 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="90dp"
         android:padding="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -30,17 +30,30 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
+                android:layout_marginTop="3dp"
                 android:text="Data do processo"
                 android:textColor="@color/black"
                 android:textSize="20dp"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/incentivoVisual"
                 app:layout_constraintTop_toTopOf="parent"/>
 
+            <TextView
+                android:id="@+id/txtsecao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="10dp"
+                android:text="Secao"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                app:layout_constraintTop_toBottomOf="@id/txtdata"
+                app:layout_constraintStart_toEndOf="@+id/incentivoVisual"
+                />
+
             <ImageView
                 android:id="@+id/seta"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
                 android:layout_marginEnd="15dp"
                 android:background="?android:attr/selectableItemBackground"
                 android:rotation="180"
@@ -51,10 +64,9 @@
 
             <ImageView
                 android:id="@+id/incentivoVisual"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
                 android:layout_marginStart="15dp"
-                android:background="?android:attr/selectableItemBackground"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"

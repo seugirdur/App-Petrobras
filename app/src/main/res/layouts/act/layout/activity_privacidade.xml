@@ -29,12 +29,14 @@
 
         <TextView
             android:id="@+id/textosomos"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
             android:layout_marginTop="15dp"
             android:text="@string/texto1"
             android:textColor="@color/black"
             android:textSize="15dp"
+            android:justificationMode="inter_word"
             app:layout_constraintEnd_toEndOf="@id/somos"
             app:layout_constraintStart_toStartOf="@id/somos"
             app:layout_constraintTop_toBottomOf="@id/somos"
@@ -55,12 +57,14 @@
 
         <TextView
             android:id="@+id/textofizemos"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
             android:layout_marginTop="15dp"
             android:text="@string/texto2"
             android:textColor="@color/black"
             android:textSize="15dp"
+            android:justificationMode="inter_word"
             app:layout_constraintEnd_toEndOf="@id/fizemos"
             app:layout_constraintStart_toStartOf="@id/fizemos"
             app:layout_constraintTop_toBottomOf="@id/fizemos"
@@ -71,7 +75,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
-            android:text="Apoio"
+            android:text="Agradecimentos"
             android:textColor="@color/black"
             android:textSize="18dp"
             android:textStyle="bold"
@@ -81,12 +85,14 @@
 
         <TextView
             android:id="@+id/textoapoio"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
             android:layout_marginTop="15dp"
             android:text="@string/texto3"
             android:textColor="@color/black"
             android:textSize="15dp"
+            android:justificationMode="inter_word"
             app:layout_constraintEnd_toEndOf="@id/apoio"
             app:layout_constraintStart_toStartOf="@id/apoio"
             app:layout_constraintTop_toBottomOf="@id/apoio"
@@ -94,14 +100,24 @@
 
         <ImageView
             android:id="@+id/nos"
-            android:layout_width="300dp"
-            android:layout_height="150dp"
+            android:layout_width="match_parent"
+            android:layout_height="167dp"
             android:layout_marginTop="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.537"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ppja" />
+
+        <TextView
+            android:id="@+id/espaco_final"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textoapoio"
+            />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>

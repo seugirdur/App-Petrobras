@@ -5,6 +5,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="preference_file_key">com.example.apppetrobras.PREFERENCE_FILE_KEY</string>
+    <string name="popupcheck">popupcheck</string>
 
 
     <!-- Titulos Problemas -->
@@ -15,47 +16,41 @@
     <string name="inicio_5">Problema Início 5</string>
     <string name="inicio_6">Problema Início 6</string>
 
-    <string name="lentidao_1">Computador travando com aplicações específicas</string>
+    <string name="lentidao_1">O computador está travando com aplicações específicas</string>
     <string name="lentidao_2">O computador demora muito para ligar </string>
-    <string name="lentidao_3">Computador está muito lento</string>
-    <string name="lentidao_4">Problema Lentidão 4</string>
-    <string name="lentidao_5">Problema Lentidão 5</string>
-    <string name="lentidao_6">Problema Lentidão 6</string>
+    <string name="lentidao_3">O computador está muito lento</string>
 
-    <string name="internet_1">Meu computador não consegue se conectar a rede</string>
+    <string name="internet_1">O computador não consegue se conectar a rede</string>
     <string name="internet_2">A internet cai constantemente</string>
-    <string name="internet_3">A rede não aparece na lista de wi-fi</string>
-    <string name="internet_4">Meu computador se conecta à rede, mas não consigo navegar na internet </string>
-    <string name="internet_5">Problema Internet 5</string>
-    <string name="internet_6">Problema Internet 6</string>
+    <string name="internet_3">A rede não aparece na lista de Wi-Fi</string>
+    <string name="internet_4">O computador se conecta à rede, mas não é possível navegar na internet </string>
 
-    <string name="equipamentos_1">Quando eu clico no botão de Ligar do meu computador, ele faz barulho e fica toda hora reiniciando.</string>
+    <string name="equipamentos_1">O computador faz barulhos e reinicia toda vez que o botão de ligar é clicado</string>
     <string name="equipamentos_2">O mouse não está funcionando</string>
     <string name="equipamentos_3">O teclado não está funcionando</string>
-    <string name="equipamentos_4">O som não está saindo no fone de ouvido</string>
-    <string name="equipamentos_5">O carregador do  notebook não está carregando.</string>
+    <string name="equipamentos_4">O som não está saindo do fone de ouvido</string>
+    <string name="equipamentos_5">O carregador do notebook não está funcionando</string>
     <string name="equipamentos_6">O computador não reconhece o celular ao ser conectado</string>
     <string name="equipamentos_7">O microfone do computador não está funcionando</string>
-    <string name="equipamentos_8">Quando clico no botão de ligar do computador, não acontece nada.</string>
+    <string name="equipamentos_8">Após clicar no botão de ligar, o computador não liga e não demonstra nada</string>
     <string name="equipamentos_9">O computador está em modo suspensão e não liga mais</string>
-    <string name="equipamentos_10">Quando ligo o computador, ele começa a apitar</string>
+    <string name="equipamentos_10">O computador começa a apitar quando é ligado</string>
     <string name="equipamentos_11">Tela azul de erro</string>
-    <string name="equipamentos_12">O computador não está reconhecendo o pen-drive</string>
+    <string name="equipamentos_12">O computador não está reconhecendo o pen drive</string>
     <string name="equipamentos_13">Mensagens de erro</string>
 
-    <string name="outros_1">Abas ficam abrindo sozinhas no meu navegador </string>
-    <string name="outros_2">Como Remover Propagandas Estranhas que Aparecem no Navegador</string>
-    <string name="outros_3">Como Liberar os Cookies</string>
-    <string name="outros_4">Alguns sites do navegador não carregam no meu computador </string>
+    <string name="outros_1">Abas ficam abrindo sozinhas no meu navegador</string>
+    <string name="outros_2">Como remover propagandas estranhas que aparecem no navegador</string>
+    <string name="outros_3">Como liberar os cookies</string>
+    <string name="outros_4">Alguns sites do navegador não carregam no computador</string>
     <string name="outros_5">Como saber se um site é seguro?</string>
-    <string name="outros_6">Meu computador está com vírus, como eu faço para retira-lo ?</string>
-    <string name="outros_7">O meu navegador diz que estou com problema de memória </string>
-    <string name="outros_8">A barra de tarefa do windows desapareceu </string>
-    <string name="outros_9">Como recuperar um arquivo que apaguei ?</string>
-    <string name="outros_10">Inverti minha tela, como faço para ela voltar ao normal ? </string>
-    <string name="outros_11">Apaguei um aplicativo da mimnha área de trabalho, o que faço ? </string>
-    <string name="outros_12">Não consigo fechar uma página do meu navegador </string>
-
+    <string name="outros_6">O computador está com vírus, como retirá-lo?</string>
+    <string name="outros_7">O navegador relata problema de memória</string>
+    <string name="outros_8">A barra de tarefa do Windows desapareceu</string>
+    <string name="outros_9">Como recuperar um arquivo que foi excluído?</string>
+    <string name="outros_10">A tela está invertida</string>
+    <string name="outros_11">Um aplicativo foi excluido da área de trabalho </string>
+    <string name="outros_12">A página do navegador não fecha </string>
 
     <string name="textview">TextView</string>
     <string name="email">E-mail</string>
@@ -70,8 +65,8 @@
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="hello_first_fragment">Email: <a href='mailto:suporte@aset.com'>suporteaset@gmail.com</a></string>
+    <string name="hello_second_fragment">Ligue:  <a href='mailto:suporte@aset.com'>(13) 99150-9119</a></string>
 
     <string name="menu_drawer_open">Drawer Open</string>
     <string name="menu_drawer_close">Drawer Close</string>
@@ -79,12 +74,13 @@
     <!--    Tela de Escolha     -->
     <string name="botao_cadastro">Cadastrar nova conta</string>
     <string name="botao_entrar">Entrar na minha conta</string>
-    <string name="texto_tela_escolha">Com dúvidas? \nEntre em contato conosco <a href=''>clicando aqui</a></string>
+    <string name="texto_tela_escolha">Com dúvidas? \nEntre em contato conosco <a href=''>clicando aqui</a>.</string>
     <string name="ppja">PPJA - Santos ©</string>
-    <string name="textologin"><a href='https://github.com/seugirdur/App-petrobras'>clicando aqui</a></string>
+    <string name="textologin"> <a href='https://github.com/seugirdur/App-petrobras'>clicando aqui</a>.</string>
 
 
-    <string name="bemVindo">Bem Vindo!</string>
+    <string name="bemVindo">Bem-vindo!</string>
+    <string name="entrar">Entrar</string>
 
     <string name="dummyText"><p>1. Informações fornecidas pelo usuário:
 O aplicativo obtém as informações que você fornece quando você baixa e registra no aplicativo. O registro conosco é obrigatório, para que possa utilizar todos os serviços fornecidos pelo aplicativo.</p> \n
@@ -94,20 +90,18 @@ Seu nome completo, telefone, data de nascimento, e-mail, chave de acesso e irá 
 Além disso, o aplicativo pode coletar certas informações automaticamente, incluindo, mas não se limitando ao tipo de dispositivo móvel que você usa, o ID exclusivo do dispositivo móvel, o endereço IP do dispositivo móvel, o sistema operacional móvel, o tipo de dispositivo móvel, navegadores de internet que você usa e informações sobre como você usa o aplicativo.</p>
     </string>
 
-    <string name="texto1"><p>   Nós somos a turma M1TI, jovens entre 16 à 21 anos que foram selecionados pela Petrobras para participar do projeto PPJA (Programa Petrobras Jovem Aprendiz). Jovens que estavam procurando adentrar no mercado de trabalho e tiveram uma grande oportunidade de aprendizagem, amadurecimento e criação de uma base mais sólida para conseguir adentrar ao meio profissional.</p></string>
-
-    <string name="texto2"><p>   No período de 1 ano e meio, realizamos um curso de aprendizagem industrial sobre Operador de Suporte Técnico em Tecnologia da Informação, onde desenvolvemos as nossas capacidades técnicas no ramo da TI, desde manutenção até programação.</p>
-    <p>   Também tivemos a oportunidade de trabalhar e desenvolver as nossas Soft Skills e Hard Skills, sendo expostos a situações e trabalhos que tivemos de trabalhar em equipe, assim surgiu o ASET, fruto de um grande trabalho em equipe, onde todos se entregaram e se dedicaram 100% em pró ao aplicativo.</p>
-    <p>   Percebemos o quão era difícil contatar um técnico quando entrávamos em contato com algum problema, ou quando acabávamos o chamando por algum problema simples e fácil de ser resolvido, pensando assim, criamos a ferramenta tecnológica com o objetivo de ampliar os processos relacionados ao suporte à área de negócio, gerando uma solução para a melhora do atendimento e gerenciamento de Help-Desk no meio empresarial.</p>
-    <p>   Assim, observando as dificuldades e aprendendo com situações distintas sempre contando com o apoio da equipe, evoluímos profissionalmente, com a certeza de que o conhecimento técnico, as construções interpessoais e a articulação para aprimoramento são os melhores artifícios para uma capacitação honrosa.</p>
+    <string name="texto1"><p> Nós somos a turma M1TI, jovens entre 16 a 21 anos que foram selecionados pela Petrobras para participar do projeto PPJA (Programa Petrobras Jovem Aprendiz). Participando do projeto, tivemos uma grande oportunidade de aprendizagem, amadurecimento e criação de uma base mais sólida para conseguirmos nos inserir no mercado de trabalho.</p></string>>
+    <string name="texto2"><p> Trabalhamos nossas Soft e Hard Skills ao redor da área de TI enquanto realizávamos o curso de Aprendizagem Industrial “Operador de Suporte Técnico em Tecnologia da Informação”, o que foi posto à prova no desenvolvimento do ASET, um software de Help Desk criado inteiramente pela turma M1TI.</p>
+    <p>\n  O ASET surgiu como uma oportunidade de melhora no atendimento ao usuário de computador e/ou notebook, que encontra dificuldades ao contatar o suporte técnico, e para os agente de atendimento, que são sobrecarregados com chamadas muitas vezes desnecessárias levando em conta a gravidade do problema relatado pelo usuário.</p>
     </string>
 
 
-    <string name="texto3"><p>   Durante todo o processo de aprendizagem obtivemos o apoio de diversos docentes com capacitações específicas de destaque, e que buscaram desenvolver diversas habilidades diferentes juntos, gerando alunos e profissionais multifacetados, com a presença da versatilidade, da busca por inovação e conhecimento além dos princípios de harmonia, comunicação e ética. Aprendemos sobre Fundamentos de tecnologia da informação, suporte de manutenção, eletroeletrônica, Redes  e desenvolvimento de habilidades sociais com o Soft Skills, transformando nossas construções profissionais no mercado de trabalho.</p></string>
+
+    <string name="texto3"><p> Agradecemos à Petrobras pela oportunidade transformadora, às professoras Mirena Costa e Luciana Seguin e aos professores Alexandre Stucchi, Rodrigo Mineiro, Carlos Fontes e Leo Billi pelo comprometimento e ensinamentos, ao diretor Daniel e à analista de qualidade de vida Tânia pelo apoio e a todos aqueles envolvidos na união da Petrobras e do SENAI por serem responsáveis pela nossa evolução como profissionais.</p></string>
 
 
 
-    <string name="texto_cadastr">Li e concordo com os <a href='https://github.com/seugirdur/App-petrobras'>Termos de uso</a> e <a href='https://github.com/seugirdur/App-petrobras'>Politicas de privacidade</a></string>
+    <string name="texto_cadastr">Li e concordo com os \n<a href='https://github.com/seugirdur/App-petrobras'>Termos de uso</a> e \n<a href='https://github.com/seugirdur/App-petrobras'>Politicas de privacidade</a></string>
     <string name="nome_completo">Nome Completo</string>
     <string name="data_do_relat_rio_dd_mm_yyyy">Data do Relatório dd/mm/yyyy</string>
     <string name="todo">TODO</string>

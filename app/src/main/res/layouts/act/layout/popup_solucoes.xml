@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="348dp"
+    android:layout_height="350dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/popup_background1"
+    android:layout_gravity="center"
+    >
+
+    <ImageView
+        android:id="@+id/logo_aset"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:src="@drawable/asetfavicon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/titulo_solucoes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Soluções"
+        android:textColor="@color/Verde_Petrobras"
+        android:textStyle="bold"
+        android:textSize="35dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/logo_aset"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Essa é a tela de soluções. Escolha por qual delas\nvocê deseja começar."
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_marginTop="36dp"
+        android:paddingLeft="24dp"
+        android:paddingRight="24dp"
+        app:layout_constraintStart_toStartOf="@id/titulo_solucoes"
+        app:layout_constraintEnd_toEndOf="@id/titulo_solucoes"
+        app:layout_constraintTop_toBottomOf="@id/titulo_solucoes"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,9 +3,12 @@ package com.example.apppetrobras.Activities;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.widget.Toast;
 
@@ -35,30 +38,46 @@ public class Solucoes extends Drawer implements RecyclerViewInteface {
     private Context context;
     private RecyclerViewInteface recyclerViewInteface;
     LayoutSolucoesBinding layoutSolucoesBinding;
-
+    Dialog mDialog;
     List<SolucoesObj> solucoesObjList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        SharedPreferences sharedPref = getSharedPreferences(
+                getString(R.string.popupcheck), Context.MODE_PRIVATE);
+
+        Boolean isFirstOpen = sharedPref.getBoolean("firstopensolucoes", true);
+
+        if (isFirstOpen) {
+            mDialog = new Dialog(this);
+
+            // Defini o click dentro do popup
+            mDialog.setContentView(R.layout.popup_solucoes);
+            mDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+            mDialog.show();
+
+            afterYou();
+        }
+
         context = this;
         recyclerViewInteface = this;
 
         layoutSolucoesBinding = LayoutSolucoesBinding.inflate(getLayoutInflater());
         setContentView(layoutSolucoesBinding.getRoot());
-        allocateActivityTitle("Menu Principal");
+        allocateActivityTitle("Soluções");
 
         // Resgata as informações da teka anterior
         tipoProblema = getIntent().getIntExtra("TIPO", 1);
-        idTitulo = getIntent().getIntExtra("ID_TITULO",1);
+        idTitulo = getIntent().getIntExtra("ID_TITULO", 1);
         titulo = getIntent().getStringExtra("titulo");
         titulosProblemas = getIntent().getStringExtra("titulosProblemas");
 
         // Resgata o check
         SharedPreferences sharedPreferences = getSharedPreferences(
                 getString(R.string.preference_file_key), Context.MODE_PRIVATE);
-        check = sharedPreferences.getString("check","");
+        check = sharedPreferences.getString("check", "");
 
         // RecyclerView instanciação
         recyclerview = findViewById(R.id.recyclerview);
@@ -67,7 +86,7 @@ public class Solucoes extends Drawer implements RecyclerViewInteface {
 
         Call<List<SolucoesObj>> call;
 
-        switch (tipoProblema){
+        switch (tipoProblema) {
             case 1:
             default:
                 call = RetroFitClient
@@ -98,7 +117,7 @@ public class Solucoes extends Drawer implements RecyclerViewInteface {
         call.enqueue(new Callback<List<SolucoesObj>>() {
             @Override
             public void onResponse(Call<List<SolucoesObj>> call, Response<List<SolucoesObj>> response) {
-                if (!response.isSuccessful()){
+                if (!response.isSuccessful()) {
                     Toast.makeText(context, response.code(), Toast.LENGTH_SHORT).show();
                     return;
                 }
@@ -106,7 +125,7 @@ public class Solucoes extends Drawer implements RecyclerViewInteface {
 
                 qtdSolucoes = solucoesObjList.size();
 
-                if(check.isEmpty()){
+                if (check.isEmpty()) {
 
                     check = "";
                     for (int i = 0; i < qtdSolucoes; i++) {
@@ -142,14 +161,14 @@ public class Solucoes extends Drawer implements RecyclerViewInteface {
         String tituloSolucao = solucoesObjList.get(position).getTituloSolucao();
 
         // Definição de valores que serão redirecionados
-        intent.putExtra("TIPO",tipoProblema);
+        intent.putExtra("TIPO", tipoProblema);
         intent.putExtra("ID_TITULO", idTitulo);
         intent.putExtra("titulo", titulo);
         tituloSolucao = solucoesObjList.get(position).getTituloSolucao();
         intent.putExtra("TITULO_SOLUCAO", tituloSolucao);
         // position começa em 0, para condizer ao BD é necessário adicionar 1 a ele
-        intent.putExtra("ID_SOLUCAO", position+1);
-        intent.putExtra("titulosProblemas",titulosProblemas);
+        intent.putExtra("ID_SOLUCAO", position + 1);
+        intent.putExtra("titulosProblemas", titulosProblemas);
         startActivity(intent);
         finish();
     }
@@ -165,6 +184,14 @@ public class Solucoes extends Drawer implements RecyclerViewInteface {
         editor.apply();
 
         finish();
+    }
+
+    private void afterYou() {
+        SharedPreferences sharedPreferences = getSharedPreferences(
+                getString(R.string.popupcheck), Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putBoolean("firstopensolucoes", false);
+        editor.apply();
     }
 
 }

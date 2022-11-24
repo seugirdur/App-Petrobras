@@ -52,7 +52,8 @@
             android:maxLength="4"
             app:layout_constraintEnd_toEndOf="@+id/view"
             app:layout_constraintStart_toStartOf="@+id/view"
-            app:layout_constraintTop_toBottomOf="@+id/textView14" />
+            app:layout_constraintTop_toBottomOf="@+id/textView14"
+            android:layout_marginHorizontal="50dp"/>
 
         <EditText
             android:id="@+id/edit_senha"
@@ -63,7 +64,9 @@
             android:longClickable="false"
             app:layout_constraintEnd_toEndOf="@+id/view"
             app:layout_constraintStart_toStartOf="@+id/view"
-            app:layout_constraintTop_toBottomOf="@+id/edit_user" />
+            app:layout_constraintTop_toBottomOf="@+id/edit_user"
+            android:layout_marginHorizontal="50dp"
+            android:layout_marginTop="15dp"/>
 
         <CheckBox
             android:id="@+id/check_connected"
@@ -97,7 +100,7 @@
             android:id="@+id/entre_em_contato_conosco"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Entre em contato conosco "
+            android:text="Entre em contato conosco"
             android:textColor="@color/black"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@id/esta_com_problemas"
@@ -159,9 +162,9 @@
             android:layout_marginStart="66dp"
             android:layout_marginTop="28dp"
             android:layout_marginEnd="65dp"
-            android:fontFamily="@font/open_sans_bold"
+            android:fontFamily="@font/lmao"
             android:gravity="center"
-            android:text="@string/bemVindo"
+            android:text="Entrar"
             android:textColor="@color/black"
             android:textSize="45dp"
             app:layout_constraintEnd_toEndOf="@+id/view"

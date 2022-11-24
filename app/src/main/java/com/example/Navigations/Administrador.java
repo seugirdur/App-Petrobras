@@ -27,7 +27,7 @@ public class Administrador extends Drawer {
 
         // Navigation Drawer
         //activityTabBinding = ActivityTabBinding.inflate(getLayoutInflater());
-       // setContentView(activityTabBinding.getRoot());
+        // setContentView(activityTabBinding.getRoot());
         //allocateActivityTitle("Menu Principal");
 
         tabLayout = findViewById(R.id.tabLayout);
@@ -36,8 +36,6 @@ public class Administrador extends Drawer {
         viewPager2.setAdapter(VPAdministrador);
 
 //       settingTheName();
-
-
 
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
@@ -70,8 +68,8 @@ public class Administrador extends Drawer {
 
     //Captura o click no logo e vai para a tela inicial
     //public void goHome(View view) {
-        //viewPager2.setCurrentItem(0);
-    }
+    //viewPager2.setCurrentItem(0);
+}
 
 
 

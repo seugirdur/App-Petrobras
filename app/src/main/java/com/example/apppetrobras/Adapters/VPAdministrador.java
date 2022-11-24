@@ -18,7 +18,7 @@ public class VPAdministrador extends FragmentStateAdapter {
     @NonNull
     @Override
     public Fragment createFragment(int position) {
-        switch (position){
+        switch (position) {
             case 0:
                 return new EmAbertoFragment();
 

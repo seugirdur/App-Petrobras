@@ -12,7 +12,7 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:background="@drawable/logo_tela_cadastro"
-        android:backgroundTint="@color/Amarelo_Petrobras"
+        android:backgroundTint="#ffbe00"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -20,10 +20,10 @@
         />
 
 
-    <ImageView
-        android:id="@+id/img_user"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+    <de.hdodenhof.circleimageview.CircleImageView
+    android:id="@+id/img_user"
+        android:layout_width="101dp"
+        android:layout_height="101dp"
         android:layout_marginTop="30dp"
         android:layout_marginBottom="40dp"
         android:src="@drawable/ic_person_24"

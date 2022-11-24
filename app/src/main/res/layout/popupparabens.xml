@@ -32,26 +32,27 @@
         android:textColor="@color/black"
         android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="@id/problemas"
-
         app:layout_constraintStart_toStartOf="@id/problemas"
         app:layout_constraintTop_toBottomOf="@id/problemas" />
 
     <TextView
-        android:layout_width="255dp"
-        android:layout_height="24dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="Confira seu relatório na aba Histórico"
-        android:textAlignment="center"
         android:textColor="@color/black"
+        android:textAlignment="center"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnResolveu" />
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toStartOf="@id/btnResolveu"
+        app:layout_constraintEnd_toEndOf="@id/btnResolveu"
+        app:layout_constraintTop_toBottomOf="@id/btnResolveu"
+
+        />
 
     <ImageView
         android:id="@+id/btnResolveu"
         android:layout_width="207dp"
-        android:layout_height="217dp"
+        android:layout_height="210dp"
         android:layout_marginStart="12dp"
         android:layout_marginTop="12dp"
         android:background="@drawable/ripple_effect_soluction"

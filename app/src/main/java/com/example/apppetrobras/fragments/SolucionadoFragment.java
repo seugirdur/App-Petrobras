@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -37,17 +38,19 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class SolucionadoFragment extends Fragment implements RecyclerViewInteface{
+public class SolucionadoFragment extends Fragment implements RecyclerViewInteface {
 
     // Declaração das variáveis
     private ArrayList<ProblemasObj> dataArrayList;
     List<AdminObj> AdminObjList;
-    List<RelatorioObj> relatorioObjList;
+    List<AdminObj> filteredList;
 
 
     private RecyclerView recyclerview;
     private Context context;
     private RecyclerViewInteface recyclerViewInteface;
+    RVAdapterEmAberto recyclerViewAdapter;
+    private SearchView searchView;
 
 
     @Override
@@ -65,6 +68,21 @@ public class SolucionadoFragment extends Fragment implements RecyclerViewIntefac
         context = getContext();
         recyclerViewInteface = this;
 
+        searchView = view.findViewById(R.id.searchview);
+        searchView.clearFocus();
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return true;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                filterList(newText);
+                return true;
+            }
+        });
+
         recyclerview = view.findViewById(R.id.recyclerviewadmin);
         recyclerview.setLayoutManager(new LinearLayoutManager(context));
         recyclerview.setHasFixedSize(true);
@@ -72,18 +90,42 @@ public class SolucionadoFragment extends Fragment implements RecyclerViewIntefac
         listen();
     }
 
+    private void filterList(String text) {
+        filteredList = new ArrayList<>();
+        for (AdminObj adminObj : AdminObjList) {
+            if (adminObj.getNome().toLowerCase().contains(text.toLowerCase())) {
+                filteredList.add(adminObj);
+            }
+        }
+
+        if (filteredList != null) {
+            if (filteredList.isEmpty()) {
+                recyclerViewAdapter.setFilteredList(filteredList);
+            } else {
+                recyclerViewAdapter.setFilteredList(filteredList);
+            }
+        }
+    }
+
     @Override
     public void onItemClick(int position) {
         Intent intent = new Intent(getActivity(), Relatorio.class);
 
+        int idRelatorio;
+
         // Definição de valores que serão redirecionados
-        int idRelatorio = AdminObjList.get(position).getIdRelatorio();
+        if (filteredList == null) {
+            idRelatorio = AdminObjList.get(position).getIdRelatorio();
+        } else {
+            idRelatorio = filteredList.get(position).getIdRelatorio();
+        }
+
         intent.putExtra("idRelatorio", idRelatorio);
         intent.putExtra("notnotlmao", 0);
         startActivity(intent);
     }
 
-    private String sayMyChave(){
+    private String sayMyChave() {
         SharedPreferences sharedPreferences = this.getActivity().getSharedPreferences(
                 getString(R.string.preference_file_key), Context.MODE_PRIVATE);
 
@@ -92,7 +134,7 @@ public class SolucionadoFragment extends Fragment implements RecyclerViewIntefac
         return chave;
     }
 
-    private void listen(){
+    private void listen() {
 
         Call<List<AdminObj>> callme = RetroFitClient
                 .getInstance()
@@ -102,7 +144,7 @@ public class SolucionadoFragment extends Fragment implements RecyclerViewIntefac
         callme.enqueue(new Callback<List<AdminObj>>() {
             @Override
             public void onResponse(Call<List<AdminObj>> call, Response<List<AdminObj>> response) {
-                if (!response.isSuccessful()){
+                if (!response.isSuccessful()) {
                     Toast.makeText(getContext(), "wassup", Toast.LENGTH_SHORT).show();
                     return;
                 }
@@ -110,7 +152,7 @@ public class SolucionadoFragment extends Fragment implements RecyclerViewIntefac
                 //tentando guardar num objeto para que seja depois visivel no item_list_admin do dionisio
                 AdminObjList = response.body();
 
-                RVAdapterEmAberto recyclerViewAdapter = new RVAdapterEmAberto(context,
+                recyclerViewAdapter = new RVAdapterEmAberto(context,
                         AdminObjList, recyclerViewInteface, R.layout.item_list_admin);
                 recyclerview.setAdapter(recyclerViewAdapter);
                 recyclerViewAdapter.notifyDataSetChanged();
@@ -124,7 +166,6 @@ public class SolucionadoFragment extends Fragment implements RecyclerViewIntefac
         });
 
     }
-
 
 
 }

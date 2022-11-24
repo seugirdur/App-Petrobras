@@ -26,7 +26,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.466" />
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/logo_psdesk"
@@ -56,6 +57,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="13dp"
             android:text="Cadastro"
+            android:fontFamily="@font/lmao"
             android:textColor="@color/black"
             android:textSize="40dp"
             android:textStyle="bold"
@@ -396,16 +398,30 @@
 
         <CheckBox
             android:id="@+id/aceitoTermos"
-            android:layout_width="302dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="13dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
             android:onClick="checarTermos"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
+            app:layout_constraintStart_toStartOf="@id/seventh_icon"
+            app:layout_constraintEnd_toEndOf="@id/seventh_icon"
+            app:layout_constraintTop_toBottomOf="@id/seventh_icon"
+            />
+
+        <TextView
+            android:id="@+id/texto_aceito_termos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
             android:text="@string/texto_cadastr"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/seventh_view" />
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            app:layout_constraintStart_toStartOf="@id/view_principal"
+            app:layout_constraintEnd_toEndOf="@id/view_principal"
+            app:layout_constraintTop_toTopOf="@id/aceitoTermos"
+            app:layout_constraintBottom_toBottomOf="@id/aceitoTermos"
+            android:layout_marginLeft="20dp"
+
+            />
 
         <ImageButton
             android:id="@+id/button_cadastro"
@@ -415,9 +431,9 @@
             android:background="?android:attr/selectableItemBackgroundBorderless"
             android:onClick="cadastro"
             android:src="@drawable/ic_button_cadastro_and_login"
-            app:layout_constraintEnd_toEndOf="@id/aceitoTermos"
-            app:layout_constraintStart_toStartOf="@id/aceitoTermos"
-            app:layout_constraintTop_toBottomOf="@id/aceitoTermos" />
+            app:layout_constraintStart_toStartOf="@id/view_principal"
+            app:layout_constraintEnd_toEndOf="@id/view_principal"
+            app:layout_constraintTop_toBottomOf="@id/texto_aceito_termos"/>
 
         <ImageButton
             android:id="@+id/button_cadastro1"
@@ -426,9 +442,10 @@
             android:layout_marginTop="7dp"
             android:background="?android:attr/selectableItemBackgroundBorderless"
             android:src="@drawable/ic_button_cadastro_and_login_preto"
-            app:layout_constraintEnd_toEndOf="@id/aceitoTermos"
-            app:layout_constraintStart_toStartOf="@id/aceitoTermos"
-            app:layout_constraintTop_toBottomOf="@id/aceitoTermos" />
+            app:layout_constraintStart_toStartOf="@id/view_principal"
+            app:layout_constraintEnd_toEndOf="@id/view_principal"
+            app:layout_constraintTop_toBottomOf="@id/texto_aceito_termos"
+            />
 
         <TextView
             android:id="@+id/textView16"

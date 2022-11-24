@@ -6,107 +6,157 @@
     android:layout_height="match_parent"
     tools:context=".fragments.Opcoes_Fragment">
 
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginStart="20dp"
-        android:src="@drawable/ic_call_and_circle"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-
-
-    <ImageButton
-        android:id="@+id/btnab1"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="20dp"
-        android:background="?android:attr/selectableItemBackground"
-        android:src="@drawable/ic_launcher_foreground"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4"
-        android:onClick="funciona"/>
-
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="20dp"
-        android:src="@drawable/priv_icon"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btnab1"
-        app:layout_constraintBottom_toBottomOf="@id/btnab1"/>
 
     <TextView
-        android:id="@+id/textView21"
-        android:layout_width="300dp"
-        android:layout_height="25dp"
-        android:layout_marginStart="10dp"
-        android:text="Termos de Privacidade e segurança"
+        android:layout_width="280dp"
+        android:layout_height="23dp"
+        android:layout_marginStart="15dp"
+        android:text="Termos de Política e Privacidade"
+        android:textSize="16dp"
         android:textColor="@color/black"
-        android:textSize="17dp"
-        app:layout_constraintStart_toEndOf="@+id/imageView5"
-        app:layout_constraintTop_toTopOf="@+id/btnab1"
-        app:layout_constraintBottom_toBottomOf="@id/btnab1"/>
-
-    <ImageButton
-        android:id="@+id/btnab2"
-        android:layout_width="414dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="20dp"
-        android:background="?android:attr/selectableItemBackground"
-        android:src="@drawable/ic_launcher_foreground"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnab1" />
+        app:layout_constraintStart_toEndOf="@+id/priv"
+        app:layout_constraintTop_toTopOf="@id/btnab1"
+        app:layout_constraintBottom_toBottomOf="@+id/btnab1"
+        />
 
     <ImageView
-        android:id="@+id/imageView12"
+        android:id="@+id/priv"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginStart="20dp"
-        android:src="@drawable/nos_circle"
+        android:src="@drawable/priv_icon"
+        android:layout_marginStart="15dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btnab2"
-        app:layout_constraintBottom_toBottomOf="@id/btnab2" />
+        app:layout_constraintTop_toTopOf="@id/btnab1"
+        app:layout_constraintBottom_toBottomOf="@+id/btnab1"/>
+
+
+    <ImageView
+        android:id="@+id/sobre"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/nos_circle"
+        android:layout_marginStart="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/btnab2"
+        app:layout_constraintBottom_toBottomOf="@+id/btnab2" />
+
+    <TextView
+        android:id="@+id/feed"
+        android:layout_width="232dp"
+        android:layout_height="22dp"
+        android:text="Avaliação do app"
+        android:textColor="@color/black"
+        android:textSize="17dp"
+        android:layout_marginStart="15dp"
+        app:layout_constraintStart_toEndOf="@id/imageView2"
+        app:layout_constraintTop_toTopOf="@id/btnab3"
+        app:layout_constraintBottom_toBottomOf="@+id/btnab3"/>
 
     <TextView
         android:id="@+id/textView23"
-        android:layout_width="128dp"
+        android:layout_width="203dp"
         android:layout_height="25dp"
-        android:layout_marginStart="10dp"
         android:text="Sobre nós"
         android:textColor="@color/black"
         android:textSize="17dp"
-        app:layout_constraintStart_toEndOf="@+id/imageView12"
-        app:layout_constraintTop_toTopOf="@+id/btnab2"
-        app:layout_constraintBottom_toBottomOf="@id/btnab2"/>
+        android:layout_marginStart="15dp"
+        app:layout_constraintStart_toEndOf="@id/sobre"
+        app:layout_constraintTop_toTopOf="@id/btnab2"
+        app:layout_constraintBottom_toBottomOf="@+id/btnab2"/>
 
-    <CheckBox
-        android:id="@+id/checkBox3"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginEnd="60dp"
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/icon_feedback"
+        android:layout_marginStart="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/btnab3"
+        app:layout_constraintBottom_toBottomOf="@+id/btnab3"/>
+
+    <ImageButton
+        android:id="@+id/btnab1"
+        android:layout_width="409dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/ic_launcher_foreground"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/imageView4"
-        app:layout_constraintBottom_toBottomOf="@id/imageView4"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnab3"
+        android:background="?android:attr/selectableItemBackground"/>
+
+    <ImageButton
+        android:id="@+id/btnab2"
+        android:layout_width="409dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="10dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:src="@drawable/ic_launcher_foreground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_manual" />
+
+    <ImageButton
+        android:id="@+id/btnab3"
+        android:layout_width="409dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="10dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:src="@drawable/ic_launcher_foreground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnab2" />
+
+    <ImageView
+        android:id="@+id/versao"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintEnd_toEndOf="@id/imageView2"
+        app:layout_constraintStart_toStartOf="@id/imageView2"
+        app:layout_constraintTop_toBottomOf="@id/priv"
+        android:layout_marginTop="15dp"
+        android:src="@drawable/icon_smart"/>
 
     <TextView
-        android:id="@+id/textView19"
-        android:layout_width="99dp"
-        android:layout_height="25dp"
-        android:layout_marginStart="10dp"
-        android:text="Notificações"
+        android:layout_width="272dp"
+        android:layout_height="21dp"
+        android:text="ASET - Versão 1.0"
         android:textColor="@color/black"
-        android:textSize="17dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.237"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.042" />
+        android:textSize="16dp"
+        android:layout_marginStart="15dp"
+        app:layout_constraintStart_toEndOf="@+id/versao"
+        app:layout_constraintTop_toTopOf="@+id/versao"
+        app:layout_constraintBottom_toBottomOf="@+id/versao"/>
 
+    <ImageButton
+        android:id="@+id/btn_manual"
+        android:layout_width="409dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="10dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:src="@drawable/ic_launcher_foreground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/img_manual"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/btn_manual"
+        app:layout_constraintBottom_toBottomOf="@id/btn_manual"
+        android:src="@drawable/ic_book_circle"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="16dp"
+        android:text="Manual"
+        android:layout_marginStart="15dp"
+        app:layout_constraintStart_toEndOf="@id/img_manual"
+        app:layout_constraintTop_toTopOf="@id/btn_manual"
+        app:layout_constraintBottom_toBottomOf="@id/btn_manual"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

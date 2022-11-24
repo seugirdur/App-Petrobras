@@ -2,6 +2,7 @@ package com.example.Navigations;
 
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.example.apppetrobras.R;
@@ -16,6 +17,7 @@ public class Configuracoes extends Drawer {
     ViewPager2 viewPager2;
     VPConfigurações VPConfigurações;
     LayoutConfiguracoesBinding layoutConfiguracoesBinding;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,10 +25,21 @@ public class Configuracoes extends Drawer {
         setContentView(layoutConfiguracoesBinding.getRoot());
         allocateActivityTitle("Configurações do Usuário");
 
+        Boolean updatephoto = getIntent().getBooleanExtra("photo", false);
+
+
+//            onCreate(savedInstanceState);
+//            super.onCreate(savedInstanceState);
+        if (updatephoto) {
+            Intent intento = new Intent(Configuracoes.this, Configuracoes.class);
+            intento.putExtra("photo", false);
+            startActivity(intento);
+            finish();
+        }
 
         // Navigation Drawer
         //activityTabBinding = ActivityTabBinding.inflate(getLayoutInflater());
-       // setContentView(activityTabBinding.getRoot());
+        // setContentView(activityTabBinding.getRoot());
         //allocateActivityTitle("Menu Principal");
 
         tabLayout = findViewById(R.id.tabLayout);
@@ -35,8 +48,6 @@ public class Configuracoes extends Drawer {
         viewPager2.setAdapter(VPConfigurações);
 
 //       settingTheName();
-
-
 
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
@@ -69,8 +80,8 @@ public class Configuracoes extends Drawer {
 
     //Captura o click no logo e vai para a tela inicial
     //public void goHome(View view) {
-        //viewPager2.setCurrentItem(0);
-    }
+    //viewPager2.setCurrentItem(0);
+}
 
 
 

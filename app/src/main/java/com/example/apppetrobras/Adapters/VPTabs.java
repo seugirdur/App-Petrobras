@@ -21,7 +21,7 @@ public class VPTabs extends FragmentStateAdapter {
     @NonNull
     @Override
     public Fragment createFragment(int position) {
-        switch (position){
+        switch (position) {
             case 0:
                 return new InicioFragment();
             case 1:

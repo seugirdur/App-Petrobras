@@ -18,7 +18,7 @@ public class SplashScreen extends AppCompatActivity {
         setContentView(R.layout.layout_splashscreen);
 
         //colocar tela em fullscreen
-        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
 
         // Delay = Tempo de tela da Splash Screen

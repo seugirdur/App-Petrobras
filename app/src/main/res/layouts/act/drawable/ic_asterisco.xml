@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:height="15dp"
+        android:width="15dp"
+        android:gravity="center">
+        <shape
+            android:shape="oval"
+            android:tint="@color/white">
+        </shape>
+    </item>
+
+    <item
+        android:drawable="@drawable/ic_cancel_amarelo"
+        android:height="25dp"
+        android:width="25dp"
+        android:gravity="center">
+
+    </item>
+
+    <item
+        android:drawable="@drawable/ic_add_white"
+        android:width="25dp"
+        android:height="25dp"
+        android:gravity="center">
+    </item>
+
+</layer-list>

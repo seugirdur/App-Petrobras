@@ -12,6 +12,7 @@
         android:id="@+id/second_layout"
         android:layout_width="348dp"
         android:layout_height="706dp"
+        android:backgroundTint="#f2f1f1"
         android:background="@drawable/popup_background1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/layout_principal"
@@ -92,11 +93,7 @@
             app:layout_constraintTop_toBottomOf="@+id/view_content"
             tools:ignore="MissingConstraints">
 
-                android:layout_width="314dp"
-                android:layout_height="96dp"
-                android:fillViewport="true"
-                tools:layout_editor_absoluteX="-2dp"
-                tools:layout_editor_absoluteY="3dp">
+
 
                 <TextView
                     android:id="@+id/textoSuporte"
@@ -120,7 +117,7 @@
             style="@style/Button_ligacao"
             android:layout_width="167dp"
             android:layout_height="45dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="25dp"
             android:layout_marginBottom="30dp"
             android:drawableStart="@drawable/ic_tel_liga_invertido"
             android:foregroundGravity="center"
@@ -150,15 +147,16 @@
             app:layout_constraintTop_toBottomOf="@+id/nomeSolucao" />
 
         <TextView
-            android:layout_width="192dp"
-            android:layout_height="26dp"
-            android:layout_marginTop="12dp"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="20dp"
             android:onClick="BacktoMenu"
             android:text="Não quero ligar no momento"
-            android:textAlignment="center"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="@id/btn_liga"
+            app:layout_constraintEnd_toEndOf="@id/btn_liga"
             app:layout_constraintTop_toBottomOf="@id/btn_liga" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

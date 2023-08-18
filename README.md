@@ -18,14 +18,14 @@
   <p align="center">
     Um Aplicativo de Suporte para a Equipe de TI da empresa
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore a documentação »</strong></a>
+    <a href="https://github.com/seugirdur/App-Petrobras"><strong>Explore a documentação »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template">Ver Demonstração</a>
+    <a href="https://github.com/seugirdur/App-Petrobras">Ver Demonstração</a>
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Reportar Problema</a>
+    <a href="https://github.com/seugirdur/App-Petrobras/issues">Reportar Problema</a>
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Solicitar Recurso</a>
+    <a href="https://github.com/seugirdur/App-Petrobras/issues">Solicitar Recurso</a>
   </p>
 </div>
 
@@ -35,7 +35,7 @@
     <li>
       <a href="#about-the-project">Sobre o Projeto</a>
       <ul>
-        <li><a href="#built-with">Construído Com</a></li>
+        <li><a href="#built-with">Ferramentas</a></li>
       </ul>
     </li>
     <li>
@@ -56,7 +56,7 @@
 
 ## Sobre o Projeto
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Product Name Screen Shot][product-screenshot]](https://seugirdur.github.io/ASET/)
 
 Existem hoje muitos aplicativos para HelpDesk presentes no mercado, mas o ASET é uma gananciosa ideia nossa que tem como principal objetivo diminuir a quantidade de chamados em uma empresa e assistir facilitando o chamado com a criação de um relatório dos itens testados.
 
@@ -73,9 +73,8 @@ Use nosso `Manual.pdf` para começar.
 
 
 
-### Built With
-
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
+### Ferramentas
+Esta seção serve para mostrar as tecnologias abordadas no projeto. Segue abaixo alguns exemplos:
 
 * [![Java][JavaLang]][Java-url]
 * [![Android][AndroidStudio]][AndroidStudio-url]
@@ -88,102 +87,102 @@ This section should list any major frameworks/libraries used to bootstrap your p
 
 <p align="right">(<a href="#readme-top">voltar ao topo</a>)</p>
 
-## Getting Started
+## Iniciando
 
+Você pode ter uma versão do aplicativo no seu próprio dispositivo móvel
 This is an example of how you may give instructions on setting up your project locally.
 To get a local copy up and running follow these simple example steps.
 
-### Prerequisites
-
+### Pré-Requisito
+<!--- 
 This is an example of how to list things you need to use the software and how to install them.
 * npm
   ```sh
   npm install npm@latest -g
   ```
+ -->
 
-### Installation
+ Para realizar a instalação da versão debug do aplicativo, deve-se primeiro fazer a instalação do JDK e do Android Studio no Computador através dos seguintes links:
+ * https://developer.android.com/studio
 
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
+ 
+### Instalação
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+_Segue abaixo as instruções de como fazer a correta instalação do projeto em sua máquina e sua build debug para testes._
+
+1. Pegue uma chave de graça me enviando um e-mail em gabrielfreitas897@gmail.com
+2. Clone o repositório
    ```sh
-   git clone https://github.com/your_username_/Project-Name.git
+   git clone https://github.com/seugirdur/App-Petrobras.git
    ```
-3. Install NPM packages
+3. Faça a build usando o gradle
    ```sh
-   npm install
-   ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
+   gradlew assembleDebug
    ```
 
 <p align="right">(<a href="#readme-top">voltar ao topo</a>)</p>
 
-## Usage
+## Uso
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+Você pode ver como usar nosso aplicativo através do <a href="https://seugirdur.github.io/ASET/load/Manual.pdf">Manual</a> ou dos tutoriais no <a href="https://www.youtube.com/playlist?list=PLO3KU5ptRysg6wz3IZxieVsZZubkM8lkE">Youtube</a>.
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+
+_Para mais exemplos, acesse [Documentation](https://seugirdur.github.io/ASET/)_
 
 <p align="right">(<a href="#readme-top">voltar ao topo</a>)</p>
 
 ## Roadmap
 
-- [x] Add Changelog
-- [x] Add voltar ao topo links
-- [ ] Add Additional Templates w/ Examples
-- [ ] Add "components" document to easily copy & paste sections of the readme
+- [x] Adição do Changelog
+- [x] Adição links de voltar ao topo
+- [x] Adição de código revisado
+- [x] Adição da documentação do aplicativo comentada
 - [ ] Multi-language Support
-    - [ ] Chinese
-    - [ ] Spanish
+    - [x] Português
+    - [ ] Inglês
+    - [ ] Chinês
+    - [ ] Espanhol
 
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a full list of proposed features (and known issues).
-
-<p align="right">(<a href="#readme-top">voltar ao topo</a>)</p>
-
-## Contributing
-
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+Veja o [open issues](https://github.com/seugirdur/App-Petrobras/issues) para uma lista completa de possíveis melhorias (e problemas existentes).
 
 <p align="right">(<a href="#readme-top">voltar ao topo</a>)</p>
 
-## License
+## Contribuindo
 
-Distributed under the MIT License. See `LICENSE.txt` for more information.
+Se você tiver uma sugestão que possa tornar isso melhor, por favor, faça um fork do repositório e crie um pull request. Você também pode simplesmente abrir um problema com a tag "melhoria".
+Não se esqueça de dar uma estrela ao projeto! Obrigado novamente!
+
+1. Faça um fork do Projeto
+2. Crie seu Branch de Recurso (`git checkout -b feature/RecursoIncrível`)
+3. Comite suas Mudanças (`git commit -m 'Adicione algum RecursoIncrível'`)
+4. Envie para o Branch (`git push origin feature/RecursoIncrível`)
+5. Abra um Pull Request
 
 <p align="right">(<a href="#readme-top">voltar ao topo</a>)</p>
 
-## Contact
+## Licença
 
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
-
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+Distribuído sob a Licença MIT. Veja `LICENSE.txt` para mais informações.
 
 <p align="right">(<a href="#readme-top">voltar ao topo</a>)</p>
 
-## Acknowledgments
+## Contato
+
+Gabriel Rudrigues Lima - [@gang_gabe](https://twitter.com/gang_gabe) - gabriel.lima137170@gmail.com
+
+Link do Projeto: [https://github.com/seugirdur/App-Petrobras](https://github.com/seugirdur/App-Petrobras)
+
+<p align="right">(<a href="#readme-top">voltar ao topo</a>)</p>
+
+## Referências
+
+Uma lista de itens úteis para o desenvolvimento deste projeto:
 
 Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
 
-* [Choose an Open Source License](https://choosealicense.com)
-* [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
-* [Malven's Flexbox Cheatsheet](https://flexbox.malven.co/)
-* [Malven's Grid Cheatsheet](https://grid.malven.co/)
-* [Img Shields](https://shields.io)
-* [GitHub Pages](https://pages.github.com)
-* [Font Awesome](https://fontawesome.com)
-* [React Icons](https://react-icons.github.io/react-icons/search)
+* [Iniciando seu novo projeto no Android Studio](https://developer.android.com/studio/projects/create-project?hl=pt-br)
+* [Como criar autenticação JWT](https://cloud.google.com/api-gateway/docs/authenticating-users-jwt?hl=pt-br)
+* [Criando um acesso de imagens usando o Firebase](https://firebase.google.com/docs/android/setup?hl=pt-br)
 
 <p align="right">(<a href="#readme-top">voltar ao topo</a>)</p>
 

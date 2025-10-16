@@ -13,68 +13,68 @@
     <img src="https://raw.githubusercontent.com/seugirdur/App-Petrobras/master/app/src/main/res/drawable-v24/aset_logo.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">ASET - Aplicativo de Suporte da Petrobras</h3>
+  <h3 align="center">ASET - Petrobras Support Application</h3>
 
   <p align="center">
-    Um Aplicativo de Suporte para a Equipe de TI da empresa
+    A Support Application for the Company's IT Team
     <br />
-    <a href="https://github.com/seugirdur/App-Petrobras"><strong>Explore a documentação »</strong></a>
+    <a href="https://github.com/seugirdur/App-Petrobras"><strong>Explore the documentation »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/seugirdur/App-Petrobras">Ver Demonstração</a>
+    <a href="https://github.com/seugirdur/App-Petrobras">View Demo</a>
     ·
-    <a href="https://github.com/seugirdur/App-Petrobras/issues">Reportar Problema</a>
+    <a href="https://github.com/seugirdur/App-Petrobras/issues">Report Bug</a>
     ·
-    <a href="https://github.com/seugirdur/App-Petrobras/issues">Solicitar Recurso</a>
+    <a href="https://github.com/seugirdur/App-Petrobras/issues">Request Feature</a>
   </p>
 </div>
 
 <details>
-  <summary>Índice</summary>
+  <summary>Table of Contents</summary>
   <ol>
     <li>
-      <a href="#about-the-project">Sobre o Projeto</a>
+      <a href="#about-the-project">About the Project</a>
       <ul>
-        <li><a href="#built-with">Ferramentas</a></li>
+        <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
     <li>
-      <a href="#getting-started">Primeiros Passos</a>
+      <a href="#getting-started">Getting Started</a>
       <ul>
-        <li><a href="#prerequisites">Pré-requisitos</a></li>
-        <li><a href="#installation">Instalação</a></li>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Uso</a></li>
-    <li><a href="#roadmap">Roteiro</a></li>
-    <li><a href="#contributing">Contribuições</a></li>
-    <li><a href="#license">Licença</a></li>
-    <li><a href="#contact">Contato</a></li>
-    <li><a href="#acknowledgments">Agradecimentos</a></li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
 
-## Sobre o Projeto
+## About the Project
 
 [![Product Name Screen Shot][product-screenshot]](https://seugirdur.github.io/ASET/)
 
-Existem hoje muitos aplicativos para HelpDesk presentes no mercado, mas o ASET é uma gananciosa ideia nossa que tem como principal objetivo diminuir a quantidade de chamados em uma empresa e assistir facilitando o chamado com a criação de um relatório dos itens testados.
+There are many HelpDesk applications available in the market today, but ASET is our ambitious idea that aims to reduce the number of support tickets in a company and assist by facilitating the ticket creation with a report of tested items.
 
-Aqui está o porquê:
-* Você garante que a equipe testou os diversos itens que poderiam resolver o problema de TI, como um mouse desconectado ou um wi-fi não conectado.
-* Você diminui a quantidade de chamados graças a funcionários que resolveram o problema sozinho
-* Você acelera o procedimento de suporte, uma vez que eles já sabem qual o seu problema e o que você tentou :smile:
+Here's why:
+* You ensure that the team has tested various items that could solve the IT problem, such as a disconnected mouse or unconnected Wi-Fi.
+* You reduce the number of tickets thanks to employees who solved the problem themselves
+* You speed up the support procedure, since they already know what your problem is and what you tried :smile:
 
-Obviamente que dentro dessas problemáticas, uma vez que o problema não foi resolvido automaticamente uma ligação para a nossa equipe de suporte é feita.
+Obviously, within these issues, once the problem is not resolved automatically, a call to our support team is made.
 
-Use nosso `Manual.pdf` para começar.
+Use our `Manual.pdf` to get started.
 
-<p align="right">(<a href="#readme-top">voltar ao topo</a>)</p>
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
-### Ferramentas
-Esta seção serve para mostrar as tecnologias abordadas no projeto. Segue abaixo alguns exemplos:
+### Built With
+This section shows the technologies used in the project. Here are some examples:
 
 * [![Java][JavaLang]][Java-url]
 * [![Android][AndroidStudio]][AndroidStudio-url]
@@ -85,16 +85,16 @@ Esta seção serve para mostrar as tecnologias abordadas no projeto. Segue abaix
 * [![Linode][Linode.com]][Linode-url]
 * [![Heroku][Heroku.com]][Heroku-url]
 
-<p align="right">(<a href="#readme-top">voltar ao topo</a>)</p>
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## Iniciando
+## Getting Started
 
-Você pode ter uma versão do aplicativo no seu próprio dispositivo móvel
+You can have a version of the application on your own mobile device.
 This is an example of how you may give instructions on setting up your project locally.
 To get a local copy up and running follow these simple example steps.
 
-### Pré-Requisito
-<!--- 
+### Prerequisites
+<!---
 This is an example of how to list things you need to use the software and how to install them.
 * npm
   ```sh
@@ -102,89 +102,89 @@ This is an example of how to list things you need to use the software and how to
   ```
  -->
 
- Para realizar a instalação da versão debug do aplicativo, deve-se primeiro fazer a instalação do JDK e do Android Studio no Computador através dos seguintes links:
+ To install the debug version of the application, you must first install the JDK and Android Studio on your computer through the following links:
  * https://developer.android.com/studio
 
- 
-### Instalação
 
-_Segue abaixo as instruções de como fazer a correta instalação do projeto em sua máquina e sua build debug para testes._
+### Installation
 
-1. Pegue uma chave de graça me enviando um e-mail em gabrielfreitas897@gmail.com
-2. Clone o repositório
+_Below are instructions on how to properly install the project on your machine and build the debug version for testing._
+
+1. Get a free key by sending me an email at gabrielfreitas897@gmail.com
+2. Clone the repository
    ```sh
    git clone https://github.com/seugirdur/App-Petrobras.git
    ```
-3. Faça a build usando o gradle
+3. Build using gradle
    ```sh
    gradlew assembleDebug
    ```
 
-<p align="right">(<a href="#readme-top">voltar ao topo</a>)</p>
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## Uso
+## Usage
 
-Você pode ver como usar nosso aplicativo através do <a href="https://seugirdur.github.io/ASET/load/Manual.pdf">Manual</a> ou dos tutoriais no <a href="https://www.youtube.com/playlist?list=PLO3KU5ptRysg6wz3IZxieVsZZubkM8lkE">Youtube</a>.
+You can see how to use our application through the <a href="https://seugirdur.github.io/ASET/load/Manual.pdf">Manual</a> or the tutorials on <a href="https://www.youtube.com/playlist?list=PLO3KU5ptRysg6wz3IZxieVsZZubkM8lkE">Youtube</a>.
 
 
-_Para mais exemplos, acesse [Documentation](https://seugirdur.github.io/ASET/)_
+_For more examples, visit [Documentation](https://seugirdur.github.io/ASET/)_
 
-<p align="right">(<a href="#readme-top">voltar ao topo</a>)</p>
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Roadmap
 
-- [x] Adição do Changelog
-- [x] Adição links de voltar ao topo
-- [x] Adição de código revisado
-- [x] Adição da documentação do aplicativo comentada
+- [x] Added Changelog
+- [x] Added back to top links
+- [x] Added reviewed code
+- [x] Added commented application documentation
 - [ ] Multi-language Support
-    - [x] Português
-    - [ ] Inglês
-    - [ ] Chinês
-    - [ ] Espanhol
+    - [x] Portuguese
+    - [ ] English
+    - [ ] Chinese
+    - [ ] Spanish
 
-Veja o [open issues](https://github.com/seugirdur/App-Petrobras/issues) para uma lista completa de possíveis melhorias (e problemas existentes).
+See the [open issues](https://github.com/seugirdur/App-Petrobras/issues) for a complete list of possible improvements (and existing issues).
 
-<p align="right">(<a href="#readme-top">voltar ao topo</a>)</p>
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## Contribuindo
+## Contributing
 
-Se você tiver uma sugestão que possa tornar isso melhor, por favor, faça um fork do repositório e crie um pull request. Você também pode simplesmente abrir um problema com a tag "melhoria".
-Não se esqueça de dar uma estrela ao projeto! Obrigado novamente!
+If you have a suggestion that could make this better, please fork the repository and create a pull request. You can also simply open an issue with the "enhancement" tag.
+Don't forget to give the project a star! Thanks again!
 
-1. Faça um fork do Projeto
-2. Crie seu Branch de Recurso (`git checkout -b feature/RecursoIncrível`)
-3. Comite suas Mudanças (`git commit -m 'Adicione algum RecursoIncrível'`)
-4. Envie para o Branch (`git push origin feature/RecursoIncrível`)
-5. Abra um Pull Request
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-<p align="right">(<a href="#readme-top">voltar ao topo</a>)</p>
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## Licença
+## License
 
-Distribuído sob a Licença MIT. Veja `LICENSE.txt` para mais informações.
+Distributed under the MIT License. See `LICENSE.txt` for more information.
 
-<p align="right">(<a href="#readme-top">voltar ao topo</a>)</p>
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## Contato
+## Contact
 
 Gabriel Rudrigues Lima - [@gang_gabe](https://twitter.com/gang_gabe) - gabriel.lima137170@gmail.com
 
-Link do Projeto: [https://github.com/seugirdur/App-Petrobras](https://github.com/seugirdur/App-Petrobras)
+Project Link: [https://github.com/seugirdur/App-Petrobras](https://github.com/seugirdur/App-Petrobras)
 
-<p align="right">(<a href="#readme-top">voltar ao topo</a>)</p>
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## Referências
+## References
 
-Uma lista de itens úteis para o desenvolvimento deste projeto:
+A list of useful items for the development of this project:
 
 Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
 
-* [Iniciando seu novo projeto no Android Studio](https://developer.android.com/studio/projects/create-project?hl=pt-br)
-* [Como criar autenticação JWT](https://cloud.google.com/api-gateway/docs/authenticating-users-jwt?hl=pt-br)
-* [Criando um acesso de imagens usando o Firebase](https://firebase.google.com/docs/android/setup?hl=pt-br)
+* [Starting your new project in Android Studio](https://developer.android.com/studio/projects/create-project?hl=pt-br)
+* [How to create JWT authentication](https://cloud.google.com/api-gateway/docs/authenticating-users-jwt?hl=pt-br)
+* [Creating image access using Firebase](https://firebase.google.com/docs/android/setup?hl=pt-br)
 
-<p align="right">(<a href="#readme-top">voltar ao topo</a>)</p>
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 [contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
 [contributors-url]: https://github.com/seugirdur/App-Petrobras/graphs/contributors
